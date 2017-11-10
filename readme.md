@@ -15,7 +15,7 @@ spring boot demo 是整合 logback、mybatis的 demo 项目
 
 ### spring-boot-demo-parent
 
-所有的**Module**均依赖：[**spring-boot-demo-parent**](./spring-boot-demo-parent)
+所有的 **Module** 均依赖：[**spring-boot-demo-parent**](./spring-boot-demo-parent)
 
 ### pom.xml
 
@@ -102,7 +102,17 @@ spring boot demo 是整合 logback、mybatis的 demo 项目
 </project>
 ```
 
-### 官方提供的 starter 介绍
+### 各 Module 介绍
+
+| Module 名称                                | Module 介绍                                |
+| ---------------------------------------- | ---------------------------------------- |
+| [spring-boot-demo-helloworld](./spring-boot-demo-helloworld) | spring-boot 的一个 helloworld               |
+| [spring-boot-demo-logback](./spring-boot-demo-logback) | spring-boot 集成 logback 日志                |
+| [spring-boot-demo-mybatis](./spring-boot-demo-mybatis) | spring-boot 集成 [mybatis-spring-boot-starter](https://github.com/mybatis/spring-boot-starter)、[mybatis-spring-boot-starter](https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter) |
+
+
+
+# 官方提供的 starter 介绍
 
 | Name                                   | Description                              |
 | :------------------------------------- | :--------------------------------------- |
