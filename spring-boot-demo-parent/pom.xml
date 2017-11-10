@@ -9,7 +9,7 @@
 	<packaging>pom</packaging>
 
 	<name>spring-boot-demo-parent</name>
-	<description>Demo project for Spring Boot</description>
+	<description>The parent of spring-boot-demo</description>
 
 	<modules>
 		<module>../spring-boot-demo-helloworld</module>
@@ -39,6 +39,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 
 		<!--DB-->
 		<dependency>
@@ -60,11 +65,7 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -75,6 +76,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>
