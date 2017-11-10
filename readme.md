@@ -15,7 +15,7 @@ spring boot demo 是整合 logback、mybatis的 demo 项目
 
 ### spring-boot-demo-parent
 
-所有的**Module**均依赖：[**spring-boot-demo-parent**](https://github.com/xkcoding/spring-boot-demo/tree/master/spring-boot-demo-parent)
+所有的**Module**均依赖：[**spring-boot-demo-parent**](./spring-boot-demo-parent)
 
 ### pom.xml
 
