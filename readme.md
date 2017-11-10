@@ -1,6 +1,8 @@
 # Spring Boot Demo
 
-依赖版本：
+spring boot demo 是整合 logback、mybatis的 demo 项目
+
+依赖的 Spring Boot 版本：
 
 ```xml
 <parent>
@@ -100,7 +102,7 @@
 </project>
 ```
 
-### 官方提供的starter
+### 官方提供的 starter 介绍
 
 | Name                                   | Description                              |
 | :------------------------------------- | :--------------------------------------- |
