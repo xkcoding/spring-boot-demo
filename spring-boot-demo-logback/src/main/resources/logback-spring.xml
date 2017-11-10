@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<conversionRule conversionWord="clr"
+	                converterClass="org.springframework.boot.logging.logback.ColorConverter"/>
+	<conversionRule conversionWord="wex"
+	                converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter"/>
+	<conversionRule conversionWord="wEx"
+	                converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter"/>
+
+	<appender name="consoleLog" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>【xkcoding】%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}
+			</pattern>
+		</layout>
+	</appender>
+
+	<appender name="fileLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<!--滚动策略-->
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!--输出路径-->
+			<fileNamePattern>${user.dir}/logs/log/logback-demo.%d.log</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern>【xkcoding】%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="fileErrorLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<!--滚动策略-->
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!--输出路径-->
+			<fileNamePattern>${user.dir}/logs/error/logback-demo.%d.error</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern>【xkcoding】%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<root level="info">
+		<appender-ref ref="consoleLog"/>
+		<appender-ref ref="fileLog"/>
+		<appender-ref ref="fileErrorLog"/>
+	</root>
+</configuration>

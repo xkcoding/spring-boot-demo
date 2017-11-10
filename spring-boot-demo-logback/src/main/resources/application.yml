@@ -1,0 +1,6 @@
+server:
+  port: 8080
+  context-path: /demo
+spring:
+  application:
+    name: logback-demo

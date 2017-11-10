@@ -1,0 +1,12 @@
+server:
+  port: 8080
+  context-path: /demo
+spring:
+  boot:
+    demo:
+      helloworld:
+        data:
+          version: 1.0.0
+author: xkcoding
+exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
