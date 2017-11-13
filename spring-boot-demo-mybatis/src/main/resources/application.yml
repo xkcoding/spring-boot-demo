@@ -2,6 +2,8 @@ server:
   port: 8080
   context-path: /demo
 spring:
+  jackson:
+    default-property-inclusion: non_null
   datasource:
     # 启动时自动运行的 SQL 文件
     schema: classpath:init-sql/schema.sql
@@ -55,7 +57,7 @@ mybatis:
 mapper:
   not-empty: false
   identity: MYSQL
-  mappers: com.xkcoding.springbootdemomybatis.utils.MyMapper
+  mappers: com.xkcoding.springbootdemomybatis.util.MyMapper
 #PageHelper 配置
 pagehelper:
   helper-dialect: mysql

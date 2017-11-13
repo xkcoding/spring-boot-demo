@@ -1,4 +1,4 @@
-package com.xkcoding.springbootdemomybatis.utils;
+package com.xkcoding.springbootdemomybatis.util;
 
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.common.MySqlMapper;
