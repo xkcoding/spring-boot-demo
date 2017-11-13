@@ -49,16 +49,19 @@ spring:
           log-slow-sql: true
           slow-sql-millis: 5000
           merge-sql: true
-#mybatis 配置
+# mybatis 配置
 mybatis:
   type-aliases-package: com.xkcoding.springbootdemomybatis.model
   mapper-locations: classpath:mapper/*.xml
-#通用 Mapper 配置
+  # 配置项：开启下划线到驼峰的自动转换. 作用：将数据库字段根据驼峰规则自动注入到对象属性
+  configuration:
+    map-underscore-to-camel-case: true
+# 通用 Mapper 配置
 mapper:
   not-empty: false
   identity: MYSQL
   mappers: com.xkcoding.springbootdemomybatis.util.MyMapper
-#PageHelper 配置
+# PageHelper 配置
 pagehelper:
   helper-dialect: mysql
   reasonable: true
