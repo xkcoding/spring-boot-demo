@@ -2,6 +2,8 @@
 
 依赖 [spring-boot-demo-helloworld](../spring-boot-demo-parent)
 
+集成了通用Mapper、分页插件PageHelper以及阿里的数据源Druid
+
 ### pom.xml
 
 ```xml
