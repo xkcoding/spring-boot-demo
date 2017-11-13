@@ -2,7 +2,36 @@
 
 依赖 [spring-boot-demo-helloworld](../spring-boot-demo-parent)
 
-SpringBootDemoHelloworldApplication.java
+### pom.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>spring-boot-demo-helloworld</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<name>spring-boot-demo-helloworld</name>
+	<description>Demo project for Spring Boot</description>
+
+	<parent>
+		<groupId>com.xkcoding</groupId>
+		<artifactId>spring-boot-demo-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../spring-boot-demo-parent/pom.xml</relativePath>
+	</parent>
+
+	<build>
+		<finalName>spring-boot-demo-helloworld</finalName>
+	</build>
+
+</project>
+```
+
+### SpringBootDemoHelloworldApplication.java
 
 ```java
 @RestController
@@ -36,7 +65,7 @@ public class SpringBootDemoHelloworldApplication {
 }
 ```
 
-application.yml
+### application.yml
 
 ```yml
 server:
