@@ -1,6 +1,6 @@
 # Spring Boot Demo
 
-spring boot demo 是整合 logback、mybatis的 demo 项目，后续会加整合ctivemq,redis,email, freemarker,shiro,websocket,sitemesh,ehcache,easyui,kindeditor,quartz,springfox,swagger,jpa,hibernate,querydsl,netty等的 demo。
+spring boot demo 是整合 logback、mybatis的 demo 项目，后续会加整合activemq,redis,email, freemarker,shiro,websocket,sitemesh,ehcache,easyui,kindeditor,quartz,springfox,swagger,jpa,hibernate,querydsl,netty等的 demo。
 
 依赖的 Spring Boot 版本：
 
