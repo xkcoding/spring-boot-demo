@@ -3,6 +3,7 @@ server:
   context-path: /demo
 spring:
   datasource:
+    # 启动时自动运行的 SQL 文件
     schema: classpath:init-sql/schema.sql
     continue-on-error: true
     druid:
@@ -46,3 +47,18 @@ spring:
           log-slow-sql: true
           slow-sql-millis: 5000
           merge-sql: true
+#mybatis 配置
+mybatis:
+  type-aliases-package: com.xkcoding.springbootdemomybatis.model
+  mapper-locations: classpath:mapper/*.xml
+#通用 Mapper 配置
+mapper:
+  not-empty: false
+  identity: MYSQL
+  mappers: com.xkcoding.springbootdemomybatis.utils.MyMapper
+#PageHelper 配置
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql

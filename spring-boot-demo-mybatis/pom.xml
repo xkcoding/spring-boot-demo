@@ -20,18 +20,34 @@
 	<properties>
 		<mybatis.starter.version>1.3.1</mybatis.starter.version>
 		<druid.starter.version>1.1.5</druid.starter.version>
+		<mapper.version>1.1.1</mapper.version>
+		<pagehelper.version>1.1.0</pagehelper.version>
 	</properties>
 
 	<dependencies>
+		<!--mybatis-->
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>${mybatis.starter.version}</version>
 		</dependency>
+		<!--druid-->
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid-spring-boot-starter</artifactId>
 			<version>${druid.starter.version}</version>
+		</dependency>
+		<!--通用 Mapper-->
+		<dependency>
+			<groupId>tk.mybatis</groupId>
+			<artifactId>mapper-spring-boot-starter</artifactId>
+			<version>${mapper.version}</version>
+		</dependency>
+		<!--PageHelper-->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper-spring-boot-starter</artifactId>
+			<version>${pagehelper.version}</version>
 		</dependency>
 	</dependencies>
 

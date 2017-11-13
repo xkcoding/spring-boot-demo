@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xkcoding.springbootdemomybatis.mapper.MybatisUserMapper">
+	<resultMap id="mybatisUserMap" type="com.xkcoding.springbootdemomybatis.model.MybatisUser">
+		<id property="id" column="id"/>
+
+		<result property="name" column="name"/>
+		<result property="tel" column="tel"/>
+		<result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+	</resultMap>
+
+	<select id="findByName" resultMap="mybatisUserMap">
+		SELECT * FROM mybatis_user WHERE name LIKE #{name}
+	</select>
+
+</mapper>
