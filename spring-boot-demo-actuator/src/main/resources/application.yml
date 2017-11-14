@@ -1,0 +1,12 @@
+server:
+  port: 8080
+  context-path: /demo
+# actuator 配置
+management:
+  security:
+    # 关闭 actuator 的身份验证
+    enabled: false
+  # 配置 actuator 的访问路径前缀
+  context-path: /sys
+  # actuator暴露接口使用的端口，为了和api接口使用的端口进行分离
+  port: 1111

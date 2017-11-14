@@ -35,6 +35,7 @@ spring boot demo 是整合 logback、mybatis的 demo 项目，后续会加整合
 
 	<modules>
 		<module>../spring-boot-demo-helloworld</module>
+		<module>../spring-boot-demo-actuator</module>
 		<module>../spring-boot-demo-logback</module>
 		<module>../spring-boot-demo-mybatis</module>
 	</modules>
@@ -107,6 +108,7 @@ spring boot demo 是整合 logback、mybatis的 demo 项目，后续会加整合
 | Module 名称                                | Module 介绍                                |
 | ---------------------------------------- | ---------------------------------------- |
 | [spring-boot-demo-helloworld](./spring-boot-demo-helloworld) | spring-boot 的一个 helloworld               |
+| [spring-boot-demo-actuator](./spring-boot-demo-actuator) | spring-boot 集成 spring-boot-starter-actuator 用于监控 spring-boot 的启动和运行状态 |
 | [spring-boot-demo-logback](./spring-boot-demo-logback) | spring-boot 集成 logback 日志                |
 | [spring-boot-demo-mybatis](./spring-boot-demo-mybatis) | spring-boot 集成 [mybatis-spring-boot-starter](https://github.com/mybatis/spring-boot-starter)、[mybatis-spring-boot-starter](https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter) |
 
