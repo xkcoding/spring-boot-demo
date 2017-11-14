@@ -1,6 +1,6 @@
 # spring-boot-demo-helloworld
 
-依赖 [spring-boot-demo-helloworld](../spring-boot-demo-parent)
+依赖 [spring-boot-demo-parent](../spring-boot-demo-parent)
 
 ### pom.xml
 

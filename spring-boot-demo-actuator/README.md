@@ -1,6 +1,6 @@
 # spring-boot-demo-actuator
 
-依赖 [spring-boot-demo-helloworld](../spring-boot-demo-parent)、spring-boot-starter-actuator
+依赖 [spring-boot-demo-parent](../spring-boot-demo-parent)、spring-boot-starter-actuator
 
 ### pom.xml
 

@@ -1,6 +1,6 @@
 # spring-boot-demo-jpa
 
-依赖 [spring-boot-demo-helloworld](../spring-boot-demo-parent)、`spring-boot-starter-data-jpa`、`druid-spring-boot-starter`
+依赖 [spring-boot-demo-parent](../spring-boot-demo-parent)、`spring-boot-starter-data-jpa`、`druid-spring-boot-starter`
 
 ### pom.xml
 
