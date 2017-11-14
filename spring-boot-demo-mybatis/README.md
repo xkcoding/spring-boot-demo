@@ -1,8 +1,6 @@
 # spring-boot-demo-mybatis
 
-依赖 [spring-boot-demo-helloworld](../spring-boot-demo-parent)
-
-集成了通用Mapper、分页插件PageHelper以及阿里的数据源Druid
+依赖 [spring-boot-demo-parent](../spring-boot-demo-parent)、`mybatis-spring-boot-starter`、`druid-spring-boot-starter`、`mapper-spring-boot-starter`(通用Mapper)、`pagehelper-spring-boot-starter`(分页插件PageHelper)
 
 ### pom.xml
 
@@ -142,22 +140,9 @@ pagehelper:
   params: count=countSql
 ```
 
-### SpringBootDemoMybatisApplication.java
-
-```java
-@SpringBootApplication
-@MapperScan(basePackages = {"com.xkcoding.springbootdemomybatis.mapper"})
-public class SpringBootDemoMybatisApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(SpringBootDemoMybatisApplication.class, args);
-	}
-}
-```
-
 ### schema.sql
 
-```sql
+```mysql
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
@@ -177,6 +162,81 @@ CREATE TABLE `mybatis_user` (
 -- ----------------------------
 INSERT INTO `mybatis_user` VALUES (1, 'klay', '13799008800', '2017-11-13 16:04:39');
 INSERT INTO `mybatis_user` VALUES (2, 'Tome', '18988991234', '2017-11-13 16:13:28');
+```
+
+### SpringBootDemoMybatisApplication.java
+
+```java
+@SpringBootApplication
+@MapperScan(basePackages = {"com.xkcoding.springbootdemomybatis.mapper"})
+public class SpringBootDemoMybatisApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringBootDemoMybatisApplication.class, args);
+	}
+}
+```
+
+### MybatisUser.java
+
+```java
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@Table(name = "mybatis_user")
+public class MybatisUser {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY,generator = "JDBC")
+	private Long id;
+
+	@Column(name = "name")
+	private String name;
+
+	@Column(name = "tel")
+	private String tel;
+
+	@Column(name = "create_time")
+	private Date createTime;
+}
+```
+
+### MyMapper.java
+
+```java
+public interface MyMapper<T> extends Mapper<T>, MySqlMapper<T> {
+}
+```
+
+### MybatisUserMapper.java
+
+```java
+@Component
+public interface MybatisUserMapper extends MyMapper<MybatisUser> {
+   MybatisUser findByName(@Param("name") String name);
+}
+```
+
+### MybatisUserMapper.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xkcoding.springbootdemomybatis.mapper.MybatisUserMapper">
+	<resultMap id="mybatisUserMap" type="com.xkcoding.springbootdemomybatis.model.MybatisUser">
+		<id property="id" column="id"/>
+
+		<result property="name" column="name"/>
+		<result property="tel" column="tel"/>
+		<result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+	</resultMap>
+
+	<select id="findByName" resultMap="mybatisUserMap">
+		SELECT * FROM mybatis_user WHERE name LIKE #{name}
+	</select>
+
+</mapper>
 ```
 
 ### 其余代码
