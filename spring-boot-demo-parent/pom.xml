@@ -16,6 +16,7 @@
 		<module>../spring-boot-demo-properties</module>
 		<module>../spring-boot-demo-actuator</module>
 		<module>../spring-boot-demo-logback</module>
+		<module>../spring-boot-demo-jpa</module>
 		<module>../spring-boot-demo-mybatis</module>
 	</modules>
 
@@ -30,6 +31,10 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<hutool.version>3.2.0</hutool.version>
+		<commons.lang3.version>3.5</commons.lang3.version>
+		<commons.collections.version>3.2.2</commons.collections.version>
+		<commons.codec.version>1.10</commons.codec.version>
 	</properties>
 
 	<dependencies>
@@ -53,9 +58,24 @@
 		</dependency>
 		<!--工具类-->
 		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons.lang3.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>${commons.collections.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>${commons.codec.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>com.xiaoleilu</groupId>
 			<artifactId>hutool-all</artifactId>
-			<version>3.1.2</version>
+			<version>${hutool.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.guava</groupId>
