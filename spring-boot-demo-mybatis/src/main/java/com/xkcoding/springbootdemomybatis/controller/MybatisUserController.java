@@ -2,7 +2,7 @@ package com.xkcoding.springbootdemomybatis.controller;
 
 import com.google.common.collect.Lists;
 import com.xkcoding.springbootdemomybatis.model.MybatisUser;
-import com.xkcoding.springbootdemomybatis.service.impl.MybatisUserServiceImpl;
+import com.xkcoding.springbootdemomybatis.service.MybatisUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +15,7 @@ import java.util.List;
 public class MybatisUserController {
 
 	@Autowired
-	private MybatisUserServiceImpl mybatisUserService;
+	private MybatisUserService mybatisUserService;
 
 	@GetMapping("/save")
 	public MybatisUser save() {
