@@ -38,6 +38,7 @@ spring boot demo 一个用来学习 spring boot 的项目，已经集成 actuato
 		<module>../spring-boot-demo-properties</module>
 		<module>../spring-boot-demo-actuator</module>
 		<module>../spring-boot-demo-logback</module>
+		<module>../spring-boot-demo-jpa</module>
 		<module>../spring-boot-demo-mybatis</module>
 	</modules>
 
