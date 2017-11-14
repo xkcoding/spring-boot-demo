@@ -35,7 +35,7 @@ spring boot demo 一个用来学习 spring boot 的项目，已经集成 actuato
 
 	<modules>
 		<module>../spring-boot-demo-helloworld</module>
-      	<module>../spring-boot-demo-properties</module>
+		<module>../spring-boot-demo-properties</module>
 		<module>../spring-boot-demo-actuator</module>
 		<module>../spring-boot-demo-logback</module>
 		<module>../spring-boot-demo-mybatis</module>
@@ -63,12 +63,11 @@ spring boot demo 一个用来学习 spring boot 的项目，已经集成 actuato
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-      	<dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
 		<!--DB-->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -89,7 +88,6 @@ spring boot demo 一个用来学习 spring boot 的项目，已经集成 actuato
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 		</dependency>
-
 	</dependencies>
 
 	<build>
