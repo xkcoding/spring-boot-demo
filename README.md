@@ -111,9 +111,8 @@ spring boot demo 一个用来学习 spring boot 的项目，已经集成 actuato
 | [spring-boot-demo-properties](./spring-boot-demo-properties) | spring-boot 读取配置文件中的内容                   |
 | [spring-boot-demo-actuator](./spring-boot-demo-actuator) | spring-boot 集成 spring-boot-starter-actuator 用于监控 spring-boot 的启动和运行状态 |
 | [spring-boot-demo-logback](./spring-boot-demo-logback) | spring-boot 集成 logback 日志                |
+| [spring-boot-demo-jpa](./spring-boot-demo-jpa) | spring-boot 集成 spring-boot-starter-data-jpa 操作数据库 |
 | [spring-boot-demo-mybatis](./spring-boot-demo-mybatis) | spring-boot 集成 [mybatis-spring-boot-starter](https://github.com/mybatis/spring-boot-starter)、[mybatis-spring-boot-starter](https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter) |
-
-
 
 # 官方提供的 starter 介绍
 
