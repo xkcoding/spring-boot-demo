@@ -2,8 +2,9 @@ server:
   port: 8080
   context-path: /demo
 spring:
-  jackson:
-    default-property-inclusion: non_null
+  # json 转化移除 null 字段
+  # jackson:
+  #   default-property-inclusion: non_null
   datasource:
     # 启动时自动运行的 SQL 文件
     schema: classpath:init-sql/schema.sql
