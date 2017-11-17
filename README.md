@@ -1,6 +1,6 @@
 # Spring Boot Demo
 
-spring boot demo 一个用来学习 spring boot 的项目，已经集成 actuator、logback、jpa、mybatis、redis缓存、swagger模块，后续会集成activemq,email, freemarker,shiro,websocket,quartz,netty等模块。
+spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actuator、logback、jpa、mybatis、redis缓存、swagger模块，后续会集成activemq,email, freemarker,shiro,websocket,quartz,netty等模块。
 
 依赖的 Spring Boot 版本：
 
