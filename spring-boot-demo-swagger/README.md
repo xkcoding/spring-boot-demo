@@ -169,6 +169,10 @@ public class UserController {
 }
 ```
 
+### 启动项目，查看 API 接口信息
+
+http://localhost:8080/demo/swagger-ui.html
+
 ### 附上大佬(翟永超)博客关于 swagger 的一些文章
 
 http://blog.didispace.com/tags/Swagger/
