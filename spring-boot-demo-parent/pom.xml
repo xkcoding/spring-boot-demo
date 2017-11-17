@@ -19,6 +19,7 @@
 		<module>../spring-boot-demo-jpa</module>
 		<module>../spring-boot-demo-mybatis</module>
 		<module>../spring-boot-demo-cache-redis</module>
+		<module>../spring-boot-demo-swagger</module>
 	</modules>
 
 	<parent>

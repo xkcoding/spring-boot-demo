@@ -1,6 +1,6 @@
 # Spring Boot Demo
 
-spring boot demo 一个用来学习 spring boot 的项目，已经集成 actuator、logback、jpa、mybatis、redis缓存 模块，后续会集成activemq,email, freemarker,shiro,websocket,quartz,springfox,swagger,netty等模块。
+spring boot demo 一个用来学习 spring boot 的项目，已经集成 actuator、logback、jpa、mybatis、redis缓存、swagger模块，后续会集成activemq,email, freemarker,shiro,websocket,quartz,netty等模块。
 
 依赖的 Spring Boot 版本：
 
@@ -41,6 +41,7 @@ spring boot demo 一个用来学习 spring boot 的项目，已经集成 actuato
 		<module>../spring-boot-demo-jpa</module>
 		<module>../spring-boot-demo-mybatis</module>
 		<module>../spring-boot-demo-cache-redis</module>
+		<module>../spring-boot-demo-swagger</module>
 	</modules>
 
 	<parent>
@@ -134,6 +135,7 @@ spring boot demo 一个用来学习 spring boot 的项目，已经集成 actuato
 | [spring-boot-demo-jpa](./spring-boot-demo-jpa) | spring-boot 集成 spring-boot-starter-data-jpa 操作数据库 |
 | [spring-boot-demo-mybatis](./spring-boot-demo-mybatis) | spring-boot 集成 [mybatis-spring-boot-starter](https://github.com/mybatis/spring-boot-starter)、[mybatis-spring-boot-starter](https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter) |
 | [spring-boot-demo-cache-redis](./spring-boot-demo-cache-redis) | spring-boot 使用 Redis 做缓存                 |
+| [spring-boot-demo-swagger](./spring-boot-demo-swagger) | spring-boot 集成 [spring-boot-starter-swagger](https://github.com/SpringForAll/spring-boot-starter-swagger) (由大佬[翟永超](http://blog.didispace.com/)开源)用于统一管理、测试 API 接口 |
 
 # 官方提供的 starter 介绍
 
