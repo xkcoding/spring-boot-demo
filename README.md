@@ -1,6 +1,6 @@
 # Spring Boot Demo
 
-spring boot demo 一个用来学习 spring boot 的项目，已经集成 actuator、logback、mybatis 模块，后续会集成activemq,redis,email, freemarker,shiro,websocket,sitemesh,ehcache,easyui,kindeditor,quartz,springfox,swagger,jpa,hibernate,querydsl,netty等模块。
+spring boot demo 一个用来学习 spring boot 的项目，已经集成 actuator、logback、jpa、mybatis、redis缓存 模块，后续会集成activemq,email, freemarker,shiro,websocket,quartz,springfox,swagger,netty等模块。
 
 依赖的 Spring Boot 版本：
 
@@ -40,6 +40,7 @@ spring boot demo 一个用来学习 spring boot 的项目，已经集成 actuato
 		<module>../spring-boot-demo-logback</module>
 		<module>../spring-boot-demo-jpa</module>
 		<module>../spring-boot-demo-mybatis</module>
+		<module>../spring-boot-demo-cache-redis</module>
 	</modules>
 
 	<parent>
@@ -53,6 +54,10 @@ spring boot demo 一个用来学习 spring boot 的项目，已经集成 actuato
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<hutool.version>3.2.0</hutool.version>
+		<commons.lang3.version>3.5</commons.lang3.version>
+		<commons.collections.version>3.2.2</commons.collections.version>
+		<commons.codec.version>1.10</commons.codec.version>
 	</properties>
 
 	<dependencies>
@@ -76,9 +81,24 @@ spring boot demo 一个用来学习 spring boot 的项目，已经集成 actuato
 		</dependency>
 		<!--工具类-->
 		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons.lang3.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>${commons.collections.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>${commons.codec.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>com.xiaoleilu</groupId>
 			<artifactId>hutool-all</artifactId>
-			<version>3.1.2</version>
+			<version>${hutool.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.guava</groupId>
@@ -113,6 +133,7 @@ spring boot demo 一个用来学习 spring boot 的项目，已经集成 actuato
 | [spring-boot-demo-logback](./spring-boot-demo-logback) | spring-boot 集成 logback 日志                |
 | [spring-boot-demo-jpa](./spring-boot-demo-jpa) | spring-boot 集成 spring-boot-starter-data-jpa 操作数据库 |
 | [spring-boot-demo-mybatis](./spring-boot-demo-mybatis) | spring-boot 集成 [mybatis-spring-boot-starter](https://github.com/mybatis/spring-boot-starter)、[mybatis-spring-boot-starter](https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter) |
+| [spring-boot-demo-cache-redis](./spring-boot-demo-cache-redis) | spring-boot 使用 Redis 做缓存                 |
 
 # 官方提供的 starter 介绍
 

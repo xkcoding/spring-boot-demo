@@ -18,6 +18,7 @@
 		<module>../spring-boot-demo-logback</module>
 		<module>../spring-boot-demo-jpa</module>
 		<module>../spring-boot-demo-mybatis</module>
+		<module>../spring-boot-demo-cache-redis</module>
 	</modules>
 
 	<parent>
