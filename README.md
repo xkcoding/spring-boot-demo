@@ -179,3 +179,8 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 | spring-boot-starter-websocket          | Support for WebSocket development.       |
 | spring-boot-starter-ws                 | Support for Spring Web Services.         |
 
+# License
+
+[MIT](http://opensource.org/licenses/MIT)
+
+Copyright (c) 2017 Yangkai.Shen
