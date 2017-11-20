@@ -20,6 +20,7 @@
 		<module>../spring-boot-demo-mybatis</module>
 		<module>../spring-boot-demo-cache-redis</module>
 		<module>../spring-boot-demo-swagger</module>
+		<module>../spring-boot-demo-ureport2</module>
 	</modules>
 
 	<parent>
