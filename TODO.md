@@ -5,7 +5,7 @@
 - [x] ~~spring-boot-demo-helloworld（Helloworld 示例）~~
 - [x] ~~spring-boot-demo-properties（读取配置文件信息）~~
 - [x] ~~spring-boot-demo-actuator（对 Spring boot 的端点监控）~~
-- [ ] spring-boot-demo-admin（对 Spring boot 可视化管控）
+- [x] ~~spring-boot-demo-admin（对 Spring boot 可视化管控）~~
 - [x] ~~spring-boot-demo-logback（集成 logback 日志）~~
 - [ ] spring-boot-demo-aopLog（使用 AOP 拦截请求日志信息）
 - [ ] spring-boot-demo-orm-jdbcTemplate（操作 SQL 关系型数据库 - JdbcTemplate）
