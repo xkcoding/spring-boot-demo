@@ -13,6 +13,13 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 </parent>
 ```
 
+### 开发环境
+
+- **JDK1.8 +**
+- **Maven 3.5 +**
+- **InteliJ idea 2017.2 +**
+- **mysql 5.7 +** (*尽量5.7版本以上，因为5.7版本加了一些新特性，不向下兼容。本demo里会尽量避免这种不兼容的地方，但还是建议尽量保证5.7版本以上*)
+
 ### spring-boot-demo-parent
 
 所有的 **Module** 均依赖：[**spring-boot-demo-parent**](./spring-boot-demo-parent)
