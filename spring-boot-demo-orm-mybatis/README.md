@@ -224,7 +224,7 @@ public interface MybatisUserMapper extends MyMapper<MybatisUser> {
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xkcoding.springbootdemoormmybatis.mapper.MybatisUserMapper">
-	<resultMap id="mybatisUserMap" type="com.xkcoding.springbootdemomybatis.model.MybatisUser">
+	<resultMap id="mybatisUserMap" type="com.xkcoding.springbootdemoormmybatis.model.MybatisUser">
 		<id property="id" column="id"/>
 
 		<result property="name" column="name"/>
