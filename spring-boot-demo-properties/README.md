@@ -4,7 +4,7 @@
 
 ### application.yml
 
-```yml
+```yaml
 server:
   port: 8080
   context-path: /demo

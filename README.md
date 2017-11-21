@@ -48,6 +48,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 		<module>../spring-boot-demo-helloworld</module>
 		<module>../spring-boot-demo-properties</module>
 		<module>../spring-boot-demo-actuator</module>
+		<module>../spring-boot-demo-admin</module>
 		<module>../spring-boot-demo-logback</module>
 		<module>../spring-boot-demo-orm-jpa</module>
 		<module>../spring-boot-demo-orm-mybatis</module>
@@ -143,6 +144,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 | [spring-boot-demo-helloworld](./spring-boot-demo-helloworld) | spring-boot 的一个 helloworld               |
 | [spring-boot-demo-properties](./spring-boot-demo-properties) | spring-boot 读取配置文件中的内容                   |
 | [spring-boot-demo-actuator](./spring-boot-demo-actuator) | spring-boot 集成 spring-boot-starter-actuator 用于监控 spring-boot 的启动和运行状态 |
+| [spring-boot-demo-admin](./spring-boot-demo-admin) | spring-boot 集成 spring-boot-admin 来可视化的监控 spring-boot 程序的运行状态，可以与 actuator 互相搭配使用 |
 | [spring-boot-demo-logback](./spring-boot-demo-logback) | spring-boot 集成 logback 日志                |
 | [spring-boot-demo-orm-jpa](./spring-boot-demo-orm-jpa) | spring-boot 集成 spring-boot-starter-data-jpa 操作数据库 |
 | [spring-boot-demo-orm-mybatis](./spring-boot-demo-orm-mybatis) | spring-boot 集成 [mybatis-spring-boot-starter](https://github.com/mybatis/spring-boot-starter)、[mybatis-spring-boot-starter](https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter) |

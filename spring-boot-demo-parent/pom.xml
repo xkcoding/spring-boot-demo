@@ -15,6 +15,7 @@
 		<module>../spring-boot-demo-helloworld</module>
 		<module>../spring-boot-demo-properties</module>
 		<module>../spring-boot-demo-actuator</module>
+		<module>../spring-boot-demo-admin</module>
 		<module>../spring-boot-demo-logback</module>
 		<module>../spring-boot-demo-orm-jpa</module>
 		<module>../spring-boot-demo-orm-mybatis</module>

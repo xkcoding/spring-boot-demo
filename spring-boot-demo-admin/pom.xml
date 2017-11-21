@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>spring-boot-demo-admin</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<name>spring-boot-demo-admin</name>
+	<description>Demo project for Spring Boot</description>
+
+	<parent>
+		<groupId>com.xkcoding</groupId>
+		<artifactId>spring-boot-demo-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../spring-boot-demo-parent/pom.xml</relativePath>
+	</parent>
+
+	<properties>
+		<admin.server.version>1.5.2</admin.server.version>
+		<admin.server.ui.version>1.5.2</admin.server.ui.version>
+		<admin.client.version>1.5.2</admin.client.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>de.codecentric</groupId>
+			<artifactId>spring-boot-admin-server</artifactId>
+			<version>${admin.server.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>de.codecentric</groupId>
+			<artifactId>spring-boot-admin-server-ui</artifactId>
+			<version>${admin.server.ui.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>de.codecentric</groupId>
+			<artifactId>spring-boot-admin-starter-client</artifactId>
+			<version>${admin.client.version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>spring-boot-demo-admin</finalName>
+	</build>
+
+</project>

@@ -75,7 +75,7 @@ management:
 
 #### 方法一：(本 demo 中使用的是这种)
 
-```yml
+```yaml
 management:
   security:
     enabled: false
@@ -94,7 +94,7 @@ pom.xml 中添加以下 `spring-boot-starter-security` 依赖：
 
 并在 `application.yml` 文件中设置访问的密码
 
-```yml
+```yaml
 security:
   basic:
     enabled: true
