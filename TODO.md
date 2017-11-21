@@ -36,3 +36,7 @@
 - [ ] spring-boot-demo-activiti（集成 Activiti 实现流程控制引擎）
 - [ ] spring-boot-demo-async（Spring boot 异步调用）
 - [ ] spring-boot-demo-dubbo（集成 dubbo）
+
+### 备注
+
+尽量保证按照上面的顺序集成相应的 demo。
