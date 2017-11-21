@@ -97,3 +97,6 @@ resources
     └── ureport-demo.ureport.xml··············demo 示例的模板文件
 ```
 
+### 访问
+
+ 报表设计器 http://localhost:8080/demo/ureport/designer
