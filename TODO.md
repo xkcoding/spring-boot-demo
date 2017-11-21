@@ -8,6 +8,7 @@
 - [x] ~~spring-boot-demo-admin（对 Spring boot 可视化管控）~~
 - [x] ~~spring-boot-demo-logback（集成 logback 日志）~~
 - [ ] spring-boot-demo-aopLog（使用 AOP 拦截请求日志信息）
+- [ ] spring-boot-demo-exceptionHandler（统一异常处理）
 - [ ] spring-boot-demo-orm-jdbcTemplate（操作 SQL 关系型数据库 - JdbcTemplate）
 - [x] ~~spring-boot-demo-orm-jpa（操作 SQL 关系型数据库 - JPA）~~
 - [x] ~~spring-boot-demo-orm-mybatis（操作 SQL 关系型数据库 - mybatis）~~
