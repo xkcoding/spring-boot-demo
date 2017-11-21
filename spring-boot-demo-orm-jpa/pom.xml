@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>spring-boot-demo-orm-jpa</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>spring-boot-demo-orm-jpa</name>
+	<description>Demo project for Spring Boot</description>
+
+	<parent>
+		<groupId>com.xkcoding</groupId>
+		<artifactId>spring-boot-demo-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../spring-boot-demo-parent</relativePath>
+	</parent>
+
+	<properties>
+		<druid.starter.version>1.1.5</druid.starter.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid-spring-boot-starter</artifactId>
+			<version>${druid.starter.version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>spring-boot-demo-orm-jpa</finalName>
+	</build>
+
+</project>

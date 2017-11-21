@@ -1,0 +1,70 @@
+server:
+  port: 8080
+  context-path: /demo
+spring:
+  # json 转化移除 null 字段
+  # jackson:
+  #   default-property-inclusion: non_null
+  datasource:
+    # 启动时自动运行的 SQL 文件
+    schema: classpath:init-sql/schema.sql
+    continue-on-error: true
+    druid:
+      url: jdbc:mysql://localhost:3306/spring-boot-demo?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+      username: root
+      password: root
+      driver-class-name: com.mysql.jdbc.Driver
+      # 连接池配置
+      # 初始化大小，最小，最大
+      initialSize: 5
+      minIdle: 5
+      maxActive: 20
+      # 配置获取连接等待超时的时间
+      maxWait: 60000
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      timeBetweenEvictionRunsMillis: 60000
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      # 打开PSCache，并且指定每个连接上PSCache的大小
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+      filters: stat,wall,log4j
+      # 监控配置
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /sys/druid/*
+        reset-enable: fasle
+        login-username: xkcoding
+        login-password: 123456
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 5000
+          merge-sql: true
+# mybatis 配置
+mybatis:
+  type-aliases-package: com.xkcoding.springbootdemoormmybatistis.model
+  mapper-locations: classpath:mapper/*.xml
+  # 配置项：开启下划线到驼峰的自动转换. 作用：将数据库字段根据驼峰规则自动注入到对象属性
+  configuration:
+    map-underscore-to-camel-case: true
+# 通用 Mapper 配置
+mapper:
+  not-empty: false
+  identity: MYSQL
+  mappers: com.xkcoding.springbootdemoormmybatistis.util.MyMapper
+# PageHelper 配置
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql

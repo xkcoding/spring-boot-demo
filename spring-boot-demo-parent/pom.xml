@@ -16,8 +16,8 @@
 		<module>../spring-boot-demo-properties</module>
 		<module>../spring-boot-demo-actuator</module>
 		<module>../spring-boot-demo-logback</module>
-		<module>../spring-boot-demo-jpa</module>
-		<module>../spring-boot-demo-mybatis</module>
+		<module>../spring-boot-demo-orm-jpa</module>
+		<module>../spring-boot-demo-orm-mybatis</module>
 		<module>../spring-boot-demo-cache-redis</module>
 		<module>../spring-boot-demo-swagger</module>
 		<module>../spring-boot-demo-ureport2</module>

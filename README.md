@@ -38,8 +38,8 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 		<module>../spring-boot-demo-properties</module>
 		<module>../spring-boot-demo-actuator</module>
 		<module>../spring-boot-demo-logback</module>
-		<module>../spring-boot-demo-jpa</module>
-		<module>../spring-boot-demo-mybatis</module>
+		<module>../spring-boot-demo-orm-jpa</module>
+		<module>../spring-boot-demo-orm-mybatis</module>
 		<module>../spring-boot-demo-cache-redis</module>
 		<module>../spring-boot-demo-swagger</module>
 		<module>../spring-boot-demo-ureport2</module>
@@ -133,8 +133,8 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 | [spring-boot-demo-properties](./spring-boot-demo-properties) | spring-boot 读取配置文件中的内容                   |
 | [spring-boot-demo-actuator](./spring-boot-demo-actuator) | spring-boot 集成 spring-boot-starter-actuator 用于监控 spring-boot 的启动和运行状态 |
 | [spring-boot-demo-logback](./spring-boot-demo-logback) | spring-boot 集成 logback 日志                |
-| [spring-boot-demo-jpa](./spring-boot-demo-jpa) | spring-boot 集成 spring-boot-starter-data-jpa 操作数据库 |
-| [spring-boot-demo-mybatis](./spring-boot-demo-mybatis) | spring-boot 集成 [mybatis-spring-boot-starter](https://github.com/mybatis/spring-boot-starter)、[mybatis-spring-boot-starter](https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter) |
+| [spring-boot-demo-orm-jpa](./spring-boot-demo-orm-jpa) | spring-boot 集成 spring-boot-starter-data-jpa 操作数据库 |
+| [spring-boot-demo-orm-mybatis](./spring-boot-demo-orm-mybatis) | spring-boot 集成 [mybatis-spring-boot-starter](https://github.com/mybatis/spring-boot-starter)、[mybatis-spring-boot-starter](https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter) |
 | [spring-boot-demo-cache-redis](./spring-boot-demo-cache-redis) | spring-boot 使用 Redis 做缓存                 |
 | [spring-boot-demo-swagger](./spring-boot-demo-swagger) | spring-boot 集成 [spring-boot-starter-swagger](https://github.com/SpringForAll/spring-boot-starter-swagger) (由大佬[翟永超](http://blog.didispace.com/)开源)用于统一管理、测试 API 接口 |
 | [spring-boot-demo-ureport2](./spring-boot-demo-ureport2) | spring-boot 集成 [ureport2](https://github.com/youseries/ureport) 实现自定义报表（ureport2可以轻松实现复杂的中国式报表，功能十分强大） |
