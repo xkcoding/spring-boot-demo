@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * TODO
+ * 测试 page 异常处理
  *
  * @package: com.xkcoding.springbootdemoexceptionhandler.controller
- * @description： TODO
+ * @description： 测试 page 异常处理
  * @author: yangkai.shen
  * @date: Created in 2017/11/24 下午2:29
  * @copyright: Copyright (c) 2017
