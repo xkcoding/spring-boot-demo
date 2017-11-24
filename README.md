@@ -1,6 +1,6 @@
 # Spring Boot Demo
 
-spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actuator(监控)、logback(日志)、JPA(ORM 框架)、mybatis(ORM 框架)、redis-cache(缓存)、swagger(API 接口管理测试)、ureport2(中国式报表)模块，后续会集成activemq,email, freemarker,shiro,websocket,quartz,netty等模块。
+spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actuator(监控)、admin(可视化监控)、logback(日志)、aopLog(通过 AOP 记录 web 请求日志)、JPA(ORM 框架)、mybatis(ORM 框架)、redis-cache(缓存)、swagger(API 接口管理测试)、ureport2(中国式报表)模块，后续会集成activemq,email, freemarker,shiro,websocket,quartz,netty等模块。
 
 依赖的 Spring Boot 版本：
 
@@ -50,6 +50,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 		<module>../spring-boot-demo-actuator</module>
 		<module>../spring-boot-demo-admin</module>
 		<module>../spring-boot-demo-logback</module>
+		<module>../spring-boot-demo-aoplog</module>
 		<module>../spring-boot-demo-orm-jpa</module>
 		<module>../spring-boot-demo-orm-mybatis</module>
 		<module>../spring-boot-demo-cache-redis</module>
@@ -146,6 +147,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 | [spring-boot-demo-actuator](./spring-boot-demo-actuator) | spring-boot 集成 spring-boot-starter-actuator 用于监控 spring-boot 的启动和运行状态 |
 | [spring-boot-demo-admin](./spring-boot-demo-admin) | spring-boot 集成 spring-boot-admin 来可视化的监控 spring-boot 程序的运行状态，可以与 actuator 互相搭配使用 |
 | [spring-boot-demo-logback](./spring-boot-demo-logback) | spring-boot 集成 logback 日志                |
+| [spring-boot-demo-aoplog](./spring-boot-demo-aoplog) | spring-boot 使用 AOP 切面的方式记录 web 请求日志      |
 | [spring-boot-demo-orm-jpa](./spring-boot-demo-orm-jpa) | spring-boot 集成 spring-boot-starter-data-jpa 操作数据库 |
 | [spring-boot-demo-orm-mybatis](./spring-boot-demo-orm-mybatis) | spring-boot 集成 [mybatis-spring-boot-starter](https://github.com/mybatis/spring-boot-starter)、[mybatis-spring-boot-starter](https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter) |
 | [spring-boot-demo-cache-redis](./spring-boot-demo-cache-redis) | spring-boot 使用 Redis 做缓存                 |

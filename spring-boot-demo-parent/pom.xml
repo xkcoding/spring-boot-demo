@@ -17,6 +17,7 @@
 		<module>../spring-boot-demo-actuator</module>
 		<module>../spring-boot-demo-admin</module>
 		<module>../spring-boot-demo-logback</module>
+		<module>../spring-boot-demo-aoplog</module>
 		<module>../spring-boot-demo-orm-jpa</module>
 		<module>../spring-boot-demo-orm-mybatis</module>
 		<module>../spring-boot-demo-cache-redis</module>
