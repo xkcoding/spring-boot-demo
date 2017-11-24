@@ -1,0 +1,9 @@
+server:
+  port: 8080
+  context-path: /demo
+spring:
+  thymeleaf:
+    mode: HTML5
+    encoding: UTF-8
+    content-type: text/html
+    cache: false

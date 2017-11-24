@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>spring-boot-demo-aoplog</artifactId>
+	<artifactId>spring-boot-demo-exceptionhandler</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>spring-boot-demo-aoplog</name>
+	<name>spring-boot-demo-exceptionhandler</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -17,25 +17,15 @@
 		<relativePath>../spring-boot-demo-parent/pom.xml</relativePath>
 	</parent>
 
-	<properties>
-		<useragent.version>1.20</useragent.version>
-	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-aop</artifactId>
-		</dependency>
-		<!--UserAgent工具类-->
-		<dependency>
-			<groupId>eu.bitwalker</groupId>
-			<artifactId>UserAgentUtils</artifactId>
-			<version>${useragent.version}</version>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 	</dependencies>
 
 	<build>
-		<finalName>spring-boot-demo-aoplog</finalName>
+		<finalName>spring-boot-demo-exceptionhandler</finalName>
 	</build>
 
 </project>

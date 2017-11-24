@@ -12,7 +12,7 @@
 
 	<artifactId>spring-boot-demo-aoplog</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>spring-boot-demo-aoplog</name>
 	<description>Demo project for Spring Boot</description>
