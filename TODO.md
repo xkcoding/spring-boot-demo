@@ -1,6 +1,6 @@
 # spring-boot-demo 项目
 
-##  模块计划(已完成：12 / 35)
+##  模块计划(已完成：13 / 35)
 
 - [x] ~~spring-boot-demo-helloworld（Helloworld 示例）~~
 - [x] ~~spring-boot-demo-properties（读取配置文件信息）~~
@@ -9,16 +9,16 @@
 - [x] ~~spring-boot-demo-logback（集成 logback 日志）~~
 - [x] ~~spring-boot-demo-aoplog（使用 AOP 拦截请求日志信息）~~
 - [x] ~~spring-boot-demo-exceptionhandler（统一异常处理）~~
-- [ ] spring-boot-demo-orm-jdbcTemplate（操作 SQL 关系型数据库 - JdbcTemplate）
-- [x] ~~spring-boot-demo-orm-jpa（操作 SQL 关系型数据库 - JPA）~~
-- [x] ~~spring-boot-demo-orm-mybatis（操作 SQL 关系型数据库 - mybatis）~~
-- [ ] spring-boot-demo-orm-beetlSQL（操作 SQL 关系型数据库 - beetlSQL）
-- [x] ~~spring-boot-demo-cache-redis（使用 redis 进行缓存）~~
-- [ ] spring-boot-demo-cache-ehcache（使用 Ehcache 进行缓存）
-- [ ] spring-boot-demo-template-freemarker（使用模板引擎 - Freemarker）
+- [x] ~~spring-boot-demo-template-freemarker（使用模板引擎 - Freemarker）~~
 - [ ] spring-boot-demo-template-thymeleaf（使用模板引擎 - thymeleaf）
 - [ ] spring-boot-demo-template-beetl（使用模板引擎 - beetl）
 - [ ] spring-boot-demo-template-enjoy（使用模板引擎 - JFinal-Enjoy）
+- [ ] spring-boot-demo-orm-jdbctemplate（操作 SQL 关系型数据库 - JdbcTemplate）
+- [x] ~~spring-boot-demo-orm-jpa（操作 SQL 关系型数据库 - JPA）~~
+- [x] ~~spring-boot-demo-orm-mybatis（操作 SQL 关系型数据库 - mybatis）~~
+- [ ] spring-boot-demo-orm-beetlsql（操作 SQL 关系型数据库 - beetlSQL）
+- [x] ~~spring-boot-demo-cache-redis（使用 redis 进行缓存）~~
+- [ ] spring-boot-demo-cache-ehcache（使用 Ehcache 进行缓存）
 - [ ] spring-boot-demo-email（集成邮件服务）
 - [ ] spring-boot-demo-task-schedule（定时任务 - Task 实现）
 - [ ] spring-boot-demo-task-quartz（定时任务 - Quartz 实现）

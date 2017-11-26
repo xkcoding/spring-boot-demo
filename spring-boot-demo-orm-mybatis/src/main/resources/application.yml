@@ -61,7 +61,7 @@ mybatis:
 mapper:
   not-empty: false
   identity: MYSQL
-  mappers: com.xkcoding.springbootdemoormmybatistis.util.MyMapper
+  mappers: com.xkcoding.springbootdemoormmybatis.util.MyMapper
 # PageHelper 配置
 pagehelper:
   helper-dialect: mysql
