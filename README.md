@@ -1,6 +1,6 @@
 # Spring Boot Demo
 
-spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actuator(监控)、admin(可视化监控)、logback(日志)、aopLog(通过 AOP 记录 web 请求日志)、统一异常处理( json 级别和页面级别)、freemarker、JPA(ORM 框架)、mybatis(ORM 框架)、redis-cache(缓存)、swagger(API 接口管理测试)、ureport2(中国式报表)模块，后续会集成activemq,email,shiro,websocket,quartz,netty等模块。
+spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actuator(监控)、admin(可视化监控)、logback(日志)、aopLog(通过 AOP 记录 web 请求日志)、统一异常处理( json 级别和页面级别)、freemarker(模板引擎)、thymeleaf(模板引擎)、JPA(ORM 框架)、mybatis(ORM 框架)、redis-cache(缓存)、swagger(API 接口管理测试)、ureport2(中国式报表)模块，后续会集成activemq,email,shiro,websocket,quartz,netty等模块。
 
 依赖的 Spring Boot 版本：
 
@@ -53,6 +53,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 		<module>../spring-boot-demo-aoplog</module>
 		<module>../spring-boot-demo-exceptionhandler</module>
 		<module>../spring-boot-demo-template-freemarker</module>
+		<module>../spring-boot-demo-template-thymeleaf</module>
 		<module>../spring-boot-demo-orm-jpa</module>
 		<module>../spring-boot-demo-orm-mybatis</module>
 		<module>../spring-boot-demo-cache-redis</module>
@@ -152,6 +153,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 | [spring-boot-demo-aoplog](./spring-boot-demo-aoplog) | spring-boot 使用 AOP 切面的方式记录 web 请求日志      |
 | [spring-boot-demo-exceptionhandler](./spring-boot-demo-exceptionhandler) | spring-boot 统一异常处理，包括2种，一种返回统一的 json 格式，第二种统一跳转到异常页面 |
 | [spring-boot-demo-template-freemarker](./spring-boot-demo-template-freemarker) | spring-boot 集成 freemarker 模板引擎           |
+| [spring-boot-demo-template-thymeleaf](./spring-boot-demo-template-thymeleaf) | spring-boot 集成 thymeleaf 模板引擎            |
 | [spring-boot-demo-orm-jpa](./spring-boot-demo-orm-jpa) | spring-boot 集成 spring-boot-starter-data-jpa 操作数据库 |
 | [spring-boot-demo-orm-mybatis](./spring-boot-demo-orm-mybatis) | spring-boot 集成 [mybatis-spring-boot-starter](https://github.com/mybatis/spring-boot-starter)、[mybatis-spring-boot-starter](https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter) |
 | [spring-boot-demo-cache-redis](./spring-boot-demo-cache-redis) | spring-boot 使用 Redis 做缓存                 |

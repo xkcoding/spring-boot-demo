@@ -20,6 +20,7 @@
 		<module>../spring-boot-demo-aoplog</module>
 		<module>../spring-boot-demo-exceptionhandler</module>
 		<module>../spring-boot-demo-template-freemarker</module>
+		<module>../spring-boot-demo-template-thymeleaf</module>
 		<module>../spring-boot-demo-orm-jpa</module>
 		<module>../spring-boot-demo-orm-mybatis</module>
 		<module>../spring-boot-demo-cache-redis</module>

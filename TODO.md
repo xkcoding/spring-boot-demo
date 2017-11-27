@@ -1,6 +1,6 @@
 # spring-boot-demo 项目
 
-##  模块计划(已完成：13 / 35)
+##  模块计划(已完成：14 / 35)
 
 - [x] ~~spring-boot-demo-helloworld（Helloworld 示例）~~
 - [x] ~~spring-boot-demo-properties（读取配置文件信息）~~
@@ -10,7 +10,7 @@
 - [x] ~~spring-boot-demo-aoplog（使用 AOP 拦截请求日志信息）~~
 - [x] ~~spring-boot-demo-exceptionhandler（统一异常处理）~~
 - [x] ~~spring-boot-demo-template-freemarker（使用模板引擎 - Freemarker）~~
-- [ ] spring-boot-demo-template-thymeleaf（使用模板引擎 - thymeleaf）
+- [x] ~~spring-boot-demo-template-thymeleaf（使用模板引擎 - thymeleaf）~~
 - [ ] spring-boot-demo-template-beetl（使用模板引擎 - beetl）
 - [ ] spring-boot-demo-template-enjoy（使用模板引擎 - JFinal-Enjoy）
 - [ ] spring-boot-demo-orm-jdbctemplate（操作 SQL 关系型数据库 - JdbcTemplate）
