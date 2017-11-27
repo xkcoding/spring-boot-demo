@@ -1,6 +1,6 @@
 # spring-boot-demo 项目
 
-##  模块计划(已完成：14 / 35)
+##  模块计划(已完成：14 / 36)
 
 - [x] ~~spring-boot-demo-helloworld（Helloworld 示例）~~
 - [x] ~~spring-boot-demo-properties（读取配置文件信息）~~
@@ -24,7 +24,8 @@
 - [ ] spring-boot-demo-task-quartz（定时任务 - Quartz 实现）
 - [x] ~~spring-boot-demo-swagger（集成 Swagger 对 API 接口进行测试管理）~~
 - [ ] spring-boot-demo-rabc-security（实现基于 RABC 的权限模型 - Spring Security）
-- [ ] spring-boot-demo-rabc-shiro（实现基于 RABC 的权限模型 - shiro）
+- [ ] spring-boot-demo-rabc-shiro-jpa（实现基于 RABC 的权限模型 - shiro、JPA）
+- [ ] spring-boot-demo-rabc-shiro-mybatis（实现基于 RABC 的权限模型 - shiro、Mybatis）
 - [ ] spring-boot-demo-session（统一 Session 管理）
 - [ ] spring-boot-demo-social（第三方授权验证，实现 QQ、微信、GitHub 等第三方登录）
 - [ ] spring-boot-demo-zookeeper（操作 zookeeper，可能会考虑实现分布式锁~）
@@ -35,7 +36,7 @@
 - [ ] spring-boot-demo-uflo（集成  uflo 实现流程控制引擎）
 - [ ] spring-boot-demo-urule（集成  urule 实现规则引擎）
 - [ ] spring-boot-demo-activiti（集成 Activiti 实现流程控制引擎）
-- [ ] spring-boot-demo-async（Spring boot 异步调用）
+- [ ] spring-boot-demo-async（Spring boot 实现异步调用）
 - [ ] spring-boot-demo-dubbo（集成 dubbo）
 
 ### 备注
