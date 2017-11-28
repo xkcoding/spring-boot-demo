@@ -24,8 +24,9 @@ public class MybatisUserServiceImpl implements MybatisUserService {
 	}
 
 	@Override
-	public Integer saveList(List<MybatisUser> userList) {
-		return mybatisUserMapper.insertList(userList);
+	public List<MybatisUser> saveList(List<MybatisUser> userList) {
+		mybatisUserMapper.insertList(userList);
+		return userList;
 	}
 
 	@Override

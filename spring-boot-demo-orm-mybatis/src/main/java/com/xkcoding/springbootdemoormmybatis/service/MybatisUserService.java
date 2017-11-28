@@ -7,7 +7,7 @@ import java.util.List;
 public interface MybatisUserService {
 	MybatisUser save(MybatisUser user);
 
-	Integer saveList(List<MybatisUser> userList);
+	List<MybatisUser> saveList(List<MybatisUser> userList);
 
 	MybatisUser update(MybatisUser user);
 

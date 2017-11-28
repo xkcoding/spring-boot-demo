@@ -27,7 +27,7 @@ public class MybatisUserController {
 	}
 
 	@GetMapping("/saveList")
-	public Integer saveList() {
+	public List<MybatisUser> saveList() {
 		ArrayList<MybatisUser> userList = Lists.newArrayList();
 		for (int i = 0; i < 20; i++) {
 			MybatisUser mybatisUser = new MybatisUser();
