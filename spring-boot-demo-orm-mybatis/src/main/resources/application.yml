@@ -52,7 +52,7 @@ spring:
           merge-sql: true
 # mybatis 配置
 mybatis:
-  type-aliases-package: com.xkcoding.springbootdemoormmybatistis.model
+  type-aliases-package: com.xkcoding.springbootdemoormmybatis.model
   mapper-locations: classpath:mapper/*.xml
   # 配置项：开启下划线到驼峰的自动转换. 作用：将数据库字段根据驼峰规则自动注入到对象属性
   configuration:
