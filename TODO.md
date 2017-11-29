@@ -1,6 +1,6 @@
 # spring-boot-demo 项目
 
-##  模块计划(已完成：14 / 36)
+##  模块计划(已完成：14 / 37)
 
 - [x] ~~spring-boot-demo-helloworld（Helloworld 示例）~~
 - [x] ~~spring-boot-demo-properties（读取配置文件信息）~~
@@ -38,6 +38,7 @@
 - [ ] spring-boot-demo-activiti（集成 Activiti 实现流程控制引擎）
 - [ ] spring-boot-demo-async（Spring boot 实现异步调用）
 - [ ] spring-boot-demo-dubbo（集成 dubbo）
+- [ ] spring-boot-demo-war（打包成war包）
 
 ### 备注
 
