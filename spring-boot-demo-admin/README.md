@@ -12,7 +12,7 @@
 
 	<artifactId>spring-boot-demo-admin</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>spring-boot-demo-admin</name>
 	<description>Demo project for Spring Boot</description>

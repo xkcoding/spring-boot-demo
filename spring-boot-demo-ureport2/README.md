@@ -12,7 +12,7 @@
 
 	<artifactId>spring-boot-demo-ureport2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>spring-boot-demo-ureport2</name>
 	<description>Demo project for Spring Boot</description>
