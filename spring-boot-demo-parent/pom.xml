@@ -26,6 +26,7 @@
 		<module>../spring-boot-demo-cache-redis</module>
 		<module>../spring-boot-demo-swagger</module>
 		<module>../spring-boot-demo-ureport2</module>
+		<module>../spring-boot-demo-war</module>
 	</modules>
 
 	<parent>
