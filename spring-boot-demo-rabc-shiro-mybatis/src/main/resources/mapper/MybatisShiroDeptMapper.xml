@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xkcoding.springbootdemorabcshiromybatis.dao.MybatisShiroDeptMapper">
+	<resultMap id="BaseResultMap" type="com.xkcoding.springbootdemorabcshiromybatis.model.MybatisShiroDept">
+		<id column="id" property="id" jdbcType="INTEGER"/>
+		<result column="name" property="name" jdbcType="VARCHAR"/>
+		<result column="parent_id" property="parentId" jdbcType="INTEGER"/>
+		<result column="level" property="level" jdbcType="VARCHAR"/>
+		<result column="seq" property="seq" jdbcType="INTEGER"/>
+		<result column="remark" property="remark" jdbcType="VARCHAR"/>
+		<result column="operator" property="operator" jdbcType="VARCHAR"/>
+		<result column="operate_time" property="operateTime" jdbcType="TIMESTAMP"/>
+		<result column="operate_ip" property="operateIp" jdbcType="VARCHAR"/>
+	</resultMap>
+</mapper>

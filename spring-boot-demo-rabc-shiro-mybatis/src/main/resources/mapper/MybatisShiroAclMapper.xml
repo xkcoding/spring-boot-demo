@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xkcoding.springbootdemorabcshiromybatis.dao.MybatisShiroAclMapper">
+	<resultMap id="BaseResultMap" type="com.xkcoding.springbootdemorabcshiromybatis.model.MybatisShiroAcl">
+		<id column="id" property="id" jdbcType="INTEGER"/>
+		<result column="code" property="code" jdbcType="VARCHAR"/>
+		<result column="name" property="name" jdbcType="VARCHAR"/>
+		<result column="icon" property="icon" jdbcType="VARCHAR"/>
+		<result column="parent_id" property="parentId" jdbcType="INTEGER"/>
+		<result column="level" property="level" jdbcType="VARCHAR"/>
+		<result column="url" property="url" jdbcType="VARCHAR"/>
+		<result column="type" property="type" jdbcType="INTEGER"/>
+		<result column="status" property="status" jdbcType="INTEGER"/>
+		<result column="seq" property="seq" jdbcType="INTEGER"/>
+		<result column="remark" property="remark" jdbcType="VARCHAR"/>
+		<result column="operator" property="operator" jdbcType="VARCHAR"/>
+		<result column="operate_time" property="operateTime" jdbcType="TIMESTAMP"/>
+		<result column="operate_ip" property="operateIp" jdbcType="VARCHAR"/>
+	</resultMap>
+
+	<select id="getResUrlsByRoleId" resultType="string">
+		select url from
+		mybatis_shiro_role_acl rel
+		inner join mybatis_shiro_acl acl on rel.acl_id = acl.id
+		where rel.role_id = #{roleId}
+	</select>
+</mapper>

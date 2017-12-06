@@ -25,8 +25,10 @@
 		<module>../spring-boot-demo-orm-mybatis</module>
 		<module>../spring-boot-demo-cache-redis</module>
 		<module>../spring-boot-demo-swagger</module>
+		<module>../spring-boot-demo-rabc-shiro-mybatis</module>
 		<module>../spring-boot-demo-ureport2</module>
 		<module>../spring-boot-demo-war</module>
+		<module>../spring-boot-demo-util</module>
 	</modules>
 
 	<parent>

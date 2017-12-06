@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xkcoding.springbootdemorabcshiromybatis.dao.MybatisShiroUserMapper">
+	<resultMap id="BaseResultMap" type="com.xkcoding.springbootdemorabcshiromybatis.model.MybatisShiroUser">
+		<id column="id" property="id" jdbcType="INTEGER"/>
+		<result column="username" property="username" jdbcType="VARCHAR"/>
+		<result column="password" property="password" jdbcType="VARCHAR"/>
+		<result column="salt" property="salt" jdbcType="VARCHAR"/>
+		<result column="avatar" property="avatar" jdbcType="VARCHAR"/>
+		<result column="realname" property="realname" jdbcType="VARCHAR"/>
+		<result column="telephone" property="telephone" jdbcType="VARCHAR"/>
+		<result column="mail" property="mail" jdbcType="VARCHAR"/>
+		<result column="dept_id" property="deptId" jdbcType="INTEGER"/>
+		<result column="status" property="status" jdbcType="INTEGER"/>
+		<result column="remark" property="remark" jdbcType="VARCHAR"/>
+		<result column="last_time" property="lastTime" jdbcType="TIMESTAMP"/>
+		<result column="last_ip" property="lastIp" jdbcType="VARCHAR"/>
+		<result column="operator" property="operator" jdbcType="VARCHAR"/>
+		<result column="operate_time" property="operateTime" jdbcType="TIMESTAMP"/>
+		<result column="operate_ip" property="operateIp" jdbcType="VARCHAR"/>
+	</resultMap>
+
+	<select id="findByUsername" resultMap="BaseResultMap">
+		SELECT *
+		FROM mybatis_shiro_user
+		WHERE username = #{username}
+	</select>
+</mapper>
