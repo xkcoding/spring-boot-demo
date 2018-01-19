@@ -2,6 +2,10 @@
 
 依赖 [spring-boot-demo-parent](../spring-boot-demo-parent)
 
+> 关于 ES 的更多内容，可以参考[官方文档](https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started.html)
+>
+> 本例对应博客文章地址，http://xkcoding.com/2018/01/12/elasticsearch_note.html
+
 ElasticSearch 的 demo 我这里没有使用 spring-data-elasticsearch，我使用的是原生的方式
 
 操作 ElasticSearch 由很多种方式：
