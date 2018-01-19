@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+	<title>Document</title>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/axios/0.17.1/axios.min.js"></script>
+</head>
+<body>
+用户名：<input type="text" id="ipt_username" name="username"/>
+密码：<input type="password" id="ipt_password" name="password"/>
+<button id="btn_login"> 登录</button>
+
+<script>
+	$(function () {
+		$("#btn_login").click(function () {
+			var username = $("#ipt_username").val();
+			var password = $("#ipt_password").val();
+			axios.post('/demo/ajaxLogin', {username, password}).then((res) => {
+				console.log(res);
+			}).catch((err) => {
+				console.log(err);
+			})
+		});
+	});
+</script>
+</body>
+</html>

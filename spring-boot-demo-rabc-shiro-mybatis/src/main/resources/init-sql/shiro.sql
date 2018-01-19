@@ -20,6 +20,8 @@ INSERT INTO `mybatis_shiro_dept` VALUES (3, '运营部', 1, '0,1', 1, '运营部
 INSERT INTO `mybatis_shiro_dept` VALUES (4, '战略部', 1, '0,1', 2, '战略部', '系统', '2017-12-01 00:00:00', '127.0.0.1');
 INSERT INTO `mybatis_shiro_dept` VALUES (5, '软件部', 2, '0,1,2', 0, '软件部', '系统', '2017-12-01 00:00:00', '127.0.0.1');
 INSERT INTO `mybatis_shiro_dept` VALUES (6, '硬件部', 2, '0,1,2', 1, '硬件部', '系统', '2017-12-01 00:00:00', '127.0.0.1');
+INSERT INTO `mybatis_shiro_dept` VALUES (7, '采购部', 6, '0,1,2,6', 0, '采购部', '系统', '2017-12-01 00:00:00', '127.0.0.1');
+INSERT INTO `mybatis_shiro_dept` VALUES (8, '维修部', 6, '0,1,2,6', 1, '维修部', '系统', '2017-12-01 00:00:00', '127.0.0.1');
 
 -- 用户表 --
 DROP TABLE IF EXISTS `mybatis_shiro_user`;
