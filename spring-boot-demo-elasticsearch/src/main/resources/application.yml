@@ -1,0 +1,8 @@
+server:
+  port: 8080
+  context-path: /demo
+elasticsearch:
+  host: 127.0.0.1
+  port: 9300
+  cluster:
+    name: xkcoding

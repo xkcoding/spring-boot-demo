@@ -29,6 +29,7 @@
 		<module>../spring-boot-demo-ureport2</module>
 		<module>../spring-boot-demo-war</module>
 		<module>../spring-boot-demo-util</module>
+		<module>../spring-boot-demo-elasticsearch</module>
 	</modules>
 
 	<parent>
@@ -91,7 +92,7 @@
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>20.0</version>
+			<version>23.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
