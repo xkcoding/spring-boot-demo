@@ -1,6 +1,6 @@
 # spring-boot-demo 项目
 
-##  模块计划(已完成：15 / 37)
+##  模块计划(已完成：16 / 38)
 
 - [x] ~~spring-boot-demo-helloworld（Helloworld 示例）~~
 - [x] ~~spring-boot-demo-properties（读取配置文件信息）~~
