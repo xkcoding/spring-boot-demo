@@ -1,6 +1,6 @@
 # Spring Boot Demo
 
-spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actuator(监控)、admin(可视化监控)、logback(日志)、aopLog(通过 AOP 记录 web 请求日志)、统一异常处理( json 级别和页面级别)、freemarker(模板引擎)、thymeleaf(模板引擎)、JPA(ORM 框架)、mybatis(ORM 框架)、redis-cache(缓存)、swagger(API 接口管理测试)、ureport2(中国式报表)、打包成 war 文件、集成 ElasticSearch（采用原生操作 ES 的方式）、集成 Dubbo（采用非官方的 starter），后续会集成activemq,email,shiro,websocket,quartz,netty等模块。
+spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actuator (监控)、admin (可视化监控)、logback (日志)、aopLog (通过 AOP 记录 web 请求日志)、统一异常处理( json 级别和页面级别)、freemarker (模板引擎)、thymeleaf (模板引擎)、JPA (ORM 框架)、mybatis (ORM 框架)、redis-cache (缓存)、swagger (API 接口管理测试)、ureport2 (中国式报表)、打包成 war 文件、集成 ElasticSearch (采用原生操作 ES 的方式)、集成 Dubbo (采用非官方的 starter)，后续会集成activemq,email,shiro,websocket,quartz,netty等模块。
 
 依赖的 Spring Boot 版本：
 
