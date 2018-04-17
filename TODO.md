@@ -37,7 +37,7 @@
 - [ ] spring-boot-demo-urule（集成  urule 实现规则引擎）
 - [ ] spring-boot-demo-activiti（集成 Activiti 实现流程控制引擎）
 - [ ] spring-boot-demo-async（Spring boot 实现异步调用）
-- [ ] spring-boot-demo-dubbo（集成 dubbo）
+- [x] ~~spring-boot-demo-dubbo（集成 dubbo）~~
 - [x] ~~spring-boot-demo-war（打包成war包）~~
 - [x] ~~spring-boot-demo-elasticsearch（集成 ElasticSearch，使用原生操作 ES 的方式）~~
 

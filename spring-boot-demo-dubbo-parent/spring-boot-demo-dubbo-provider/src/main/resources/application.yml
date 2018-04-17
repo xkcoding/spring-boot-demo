@@ -1,0 +1,15 @@
+server:
+  port: 8082
+spring:
+  dubbo:
+    application:
+      name: dubbo-provider
+    base-package: com.xkcoding.springbootdemodubboprovider.service  # dubbo服务发布者所在的包
+    registry:
+      address: 127.0.0.1                   # zookeeper注册中心的地址
+      port: 2181                           # zookeeper注册中心的端口
+    protocol:
+      name: dubbo
+      serialization: hessian2
+    provider:
+      retries: 0
