@@ -26,7 +26,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 
 ### spring-boot-demo-parent
 
-所有的 **Module** 均依赖：[**spring-boot-demo-parent**](./spring-boot-demo-parent)
+除了 **Dubbo** 的 demo 以外，所有的 **Module** 均依赖：[**spring-boot-demo-parent**](./spring-boot-demo-parent)
 
 ### pom.xml
 
