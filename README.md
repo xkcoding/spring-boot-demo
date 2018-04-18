@@ -22,7 +22,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 
 ### 开发计划
 
-[TODO](./TODO.md)
+[**进度计划**](https://github.com/xkcoding/spring-boot-demo/projects/1?fullscreen=true) 或直接查看 [TODO](./TODO.md)
 
 ### spring-boot-demo-parent
 
