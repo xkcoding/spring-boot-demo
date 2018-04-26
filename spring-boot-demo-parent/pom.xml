@@ -30,6 +30,7 @@
 		<module>../spring-boot-demo-war</module>
 		<module>../spring-boot-demo-util</module>
 		<module>../spring-boot-demo-elasticsearch</module>
+		<module>../spring-boot-demo-template-beetl</module>
 	</modules>
 
 	<parent>
