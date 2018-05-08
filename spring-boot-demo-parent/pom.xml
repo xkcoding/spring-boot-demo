@@ -31,6 +31,7 @@
 		<module>../spring-boot-demo-util</module>
 		<module>../spring-boot-demo-elasticsearch</module>
 		<module>../spring-boot-demo-template-beetl</module>
+		<module>../spring-boot-demo-task-schedule</module>
 	</modules>
 
 	<parent>
