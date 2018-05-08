@@ -34,6 +34,7 @@ public class TaskJob {
 
 	/**
 	 * 间隔 2s 执行
+	 * 固定间隔时间
 	 */
 	@Scheduled(fixedRate = 2000)
 	public void job2(){
@@ -42,6 +43,7 @@ public class TaskJob {
 
 	/**
 	 * 延迟 5s 后间隔 4s 执行
+	 * 固定等待时间
 	 */
 	@Scheduled(fixedDelay = 4000,initialDelay = 5000)
 	public void job3(){
