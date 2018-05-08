@@ -2,7 +2,7 @@
 
 推荐直接查看 [**进度计划**](https://github.com/xkcoding/spring-boot-demo/projects/1?fullscreen=true) 了解开发情况
 
-##  模块计划(已完成：16 / 38)
+##  模块计划(已完成：19 / 38)
 
 - [x] ~~spring-boot-demo-helloworld（Helloworld 示例）~~
 - [x] ~~spring-boot-demo-properties（读取配置文件信息）~~
@@ -22,7 +22,7 @@
 - [x] ~~spring-boot-demo-cache-redis（使用 redis 进行缓存）~~
 - [ ] spring-boot-demo-cache-ehcache（使用 Ehcache 进行缓存）
 - [ ] spring-boot-demo-email（集成邮件服务）
-- [ ] spring-boot-demo-task-schedule（定时任务 - Task 实现）
+- [x] spring-boot-demo-task-schedule（定时任务 - Task 实现）
 - [ ] spring-boot-demo-task-quartz（定时任务 - Quartz 实现）
 - [x] ~~spring-boot-demo-swagger（集成 Swagger 对 API 接口进行测试管理）~~
 - [ ] spring-boot-demo-rabc-security（实现基于 RABC 的权限模型 - Spring Security）
