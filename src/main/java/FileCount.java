@@ -1,3 +1,5 @@
+import com.sun.istack.internal.NotNull;
+
 import java.io.File;
 import java.io.FilenameFilter;
 import java.util.Arrays;
@@ -5,18 +7,11 @@ import java.util.List;
 
 public class FileCount {
     public static void main(String[] args) {
-        File file=new File("C:\\Users\\powerfulyang\\IdeaProjects\\spring-boot-demo");
-        FilenameFilter filter=new FilenameFilter() {
-            public boolean accept(File dir, String name) {
-                if(name.contains("spring-boot-demo")){
-                    return true;
-                }else{
-                    return false;
-                }
-            }
-        };
-        String[] strs=file.list(filter);
-        List<String> list= Arrays.asList(strs);
+        File file=new File(System.getProperty("user.dir"));
+        FilenameFilter filter= (dir, name) -> name.contains("spring-boot-demo");
+        String[] fileList=file.list(filter);
+        assert fileList != null;
+        List<String> list= Arrays.asList(fileList);
         list.forEach((x)-> System.out.println("<module>"+x+"</module>"));
 
     }
