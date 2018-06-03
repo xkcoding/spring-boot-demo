@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>groupId</groupId>
+    <artifactId>spring-boot-demo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <modules>
+        <module>spring-boot-demo-actuator</module>
+        <module>spring-boot-demo-admin</module>
+        <module>spring-boot-demo-aoplog</module>
+        <module>spring-boot-demo-cache-redis</module>
+        <module>spring-boot-demo-dubbo-parent</module>
+        <module>spring-boot-demo-elasticsearch</module>
+        <module>spring-boot-demo-exceptionhandler</module>
+        <module>spring-boot-demo-helloworld</module>
+        <module>spring-boot-demo-logback</module>
+        <module>spring-boot-demo-orm-jdbctemplate</module>
+        <module>spring-boot-demo-orm-jpa</module>
+        <module>spring-boot-demo-orm-mybatis</module>
+        <module>spring-boot-demo-parent</module>
+        <module>spring-boot-demo-properties</module>
+        <module>spring-boot-demo-rabc-shiro-mybatis</module>
+        <module>spring-boot-demo-swagger</module>
+        <module>spring-boot-demo-task-schedule</module>
+        <module>spring-boot-demo-template-beetl</module>
+        <module>spring-boot-demo-template-freemarker</module>
+        <module>spring-boot-demo-template-thymeleaf</module>
+        <module>spring-boot-demo-ureport2</module>
+        <module>spring-boot-demo-util</module>
+        <module>spring-boot-demo-war</module>
+
+    </modules>
+</project>
