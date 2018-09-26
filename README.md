@@ -4,151 +4,21 @@
 
 spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actuator (监控)、admin (可视化监控)、logback (日志)、aopLog (通过 AOP 记录 web 请求日志)、统一异常处理( json 级别和页面级别)、freemarker (模板引擎)、thymeleaf (模板引擎)、Beetl (模板引擎)、JdbcTemplate、JPA (ORM 框架)、mybatis (ORM 框架)、redis-cache (缓存)、task (定时任务)、swagger (API 接口管理测试)、ureport2 (中国式报表)、打包成 war 文件、集成 ElasticSearch (采用原生操作 ES 的方式)、集成 Dubbo (采用非官方的 starter)，后续会集成activemq,email,shiro,websocket,quartz,netty等模块。
 
-依赖的 Spring Boot 版本：
+### 分支：
 
-```xml
-<parent>
-	<groupId>org.springframework.boot</groupId>
-	<artifactId>spring-boot-starter-parent</artifactId>
-	<version>1.5.8.RELEASE</version>
-	<relativePath/> <!-- lookup parent from repository -->
-</parent>
-```
+- master 分支：基于 SpringBoot 版本 2.0.x，每个 module 不额外依赖 parent，可以单独运行，方便大家学习
+- v-1.5.x 分支：基于 SpringBoot 版本 1.5.8.RELEASE，每个 module 均依赖 spring-boot-demo-parent，有挺多同学们反映这种方式对新手不是很友好，运行起来有些难度，因此`此分支暂停维护`，所有内容会慢慢以 master 分支的形式同步过去，此分支暂未完成的，也会直接在master分支上加，在此分支学习的同学们，仍然可以在此分支学习，但是建议后期切换到master分支，会更加容易。🙂
 
 ### 开发环境
 
 - **JDK1.8 +**
 - **Maven 3.5 +**
-- **IntelliJ IDEA ULTIMATE 2017.2 +**
+- **IntelliJ IDEA ULTIMATE 2018.2 +**
 - **mysql 5.7 +** (*尽量5.7版本以上，因为5.7版本加了一些新特性，不向下兼容。本demo里会尽量避免这种不兼容的地方，但还是建议尽量保证5.7版本以上*)
 
 ### 开发计划
 
 [**进度计划**](https://github.com/xkcoding/spring-boot-demo/projects/1?fullscreen=true) 或直接查看 [TODO](./TODO.md)
-
-### spring-boot-demo-parent
-
-除了 **Dubbo** 的 demo 以外，所有的 **Module** 均依赖：[**spring-boot-demo-parent**](./spring-boot-demo-parent)
-
-### pom.xml
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-
-	<groupId>com.xkcoding</groupId>
-	<artifactId>spring-boot-demo-parent</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
-
-	<name>spring-boot-demo-parent</name>
-	<description>The parent of spring-boot-demo</description>
-
-	<modules>
-		<module>../spring-boot-demo-helloworld</module>
-		<module>../spring-boot-demo-properties</module>
-		<module>../spring-boot-demo-actuator</module>
-		<module>../spring-boot-demo-admin</module>
-		<module>../spring-boot-demo-logback</module>
-		<module>../spring-boot-demo-aoplog</module>
-		<module>../spring-boot-demo-exceptionhandler</module>
-		<module>../spring-boot-demo-template-freemarker</module>
-		<module>../spring-boot-demo-template-thymeleaf</module>
-		<module>../spring-boot-demo-orm-jpa</module>
-		<module>../spring-boot-demo-orm-mybatis</module>
-		<module>../spring-boot-demo-cache-redis</module>
-		<module>../spring-boot-demo-swagger</module>
-		<module>../spring-boot-demo-rabc-shiro-mybatis</module>
-		<module>../spring-boot-demo-ureport2</module>
-		<module>../spring-boot-demo-war</module>
-		<module>../spring-boot-demo-util</module>
-		<module>../spring-boot-demo-elasticsearch</module>
-		<module>../spring-boot-demo-template-beetl</module>
-		<module>../spring-boot-demo-task-schedule</module>
-		<module>../spring-boot-demo-orm-jdbctemplate</module>
-	</modules>
-
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.8.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
-		<hutool.version>3.2.0</hutool.version>
-		<commons.lang3.version>3.5</commons.lang3.version>
-		<commons.collections.version>3.2.2</commons.collections.version>
-		<commons.codec.version>1.10</commons.codec.version>
-	</properties>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<!--DB-->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-		</dependency>
-		<!--工具类-->
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>${commons.lang3.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-collections</groupId>
-			<artifactId>commons-collections</artifactId>
-			<version>${commons.collections.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-codec</groupId>
-			<artifactId>commons-codec</artifactId>
-			<version>${commons.codec.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.xiaoleilu</groupId>
-			<artifactId>hutool-all</artifactId>
-			<version>${hutool.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>23.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-		</dependency>
-	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
-
-</project>
-```
 
 ### 各 Module 介绍
 
@@ -220,4 +90,4 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 
 [MIT](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2017 Yangkai.Shen
+Copyright (c) 2018 Yangkai.Shen
