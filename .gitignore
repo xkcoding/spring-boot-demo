@@ -1,4 +1,37 @@
-.idea/
+# Created by .ignore support plugin (hsz.mobi)
+### xkcoding-后端 template
+### Spring Boot ###
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
 *.iml
+*.ipr
+out/
+gen/
+
+### NetBeans ###
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### LOGS ###
 logs/
-target/
+*.log
+
+### Mac OS ###
+.DS_Store
