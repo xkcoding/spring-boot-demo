@@ -1,5 +1,0 @@
-server:
-  port: 8080
-  context-path: /demo
-beetlSql:
-  enabled: false

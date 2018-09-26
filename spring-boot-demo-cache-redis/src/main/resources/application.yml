@@ -1,7 +1,0 @@
-server:
-  port: 8080
-  context-path: /demo
-spring:
-  redis:
-    host: localhost
-    port: 6379
