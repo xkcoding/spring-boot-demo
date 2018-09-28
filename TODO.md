@@ -1,6 +1,6 @@
 # spring-boot-demo 项目TODO
 
-推荐直接查看 [**进度计划**](https://github.com/ xkcoding/spring-boot-demo/projects/1) 了解开发情况
+推荐直接查看 [**进度计划**](https://github.com/xkcoding/spring-boot-demo/projects/1) 了解开发情况
 
 ##  模块计划(已完成：1 / 38)
 
