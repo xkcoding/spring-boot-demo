@@ -1,5 +1,7 @@
 # spring-boot-demo-helloworld
 
+> 本 demo 是 Spring Boot 的一个起步demo
+
 ## pom.xml
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -58,7 +60,6 @@
 	</build>
 
 </project>
-
 ```
 
 ## SpringBootDemoHelloworldApplication.java
@@ -99,7 +100,6 @@ public class SpringBootDemoHelloworldApplication {
 		return StrUtil.format("Hello, {}!", who);
 	}
 }
-
 ```
 
 ## application.yml
