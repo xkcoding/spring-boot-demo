@@ -1,6 +1,6 @@
 # spring-boot-demo-helloworld
 
-> 本 demo 是 Spring Boot 的一个起步demo
+> 本 demo 演示如何使用 Spring Boot 写一个hello world
 
 ## pom.xml
 ```xml
