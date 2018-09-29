@@ -2,11 +2,11 @@
 
 推荐直接查看 [**进度计划**](https://github.com/xkcoding/spring-boot-demo/projects/1) 了解开发情况
 
-##  模块计划(已完成：2 / 38)
+##  模块计划(已完成：3 / 38)
 
 - [x] ~~spring-boot-demo-helloworld（Helloworld 示例）~~
 - [x] ~~spring-boot-demo-properties（读取配置文件信息）~~
-- [ ] spring-boot-demo-actuator（对 Spring boot 的端点监控）
+- [x] ~~spring-boot-demo-actuator（对 Spring boot 的端点监控）~~
 - [ ] spring-boot-demo-admin（对 Spring boot 可视化管控）
 - [ ] spring-boot-demo-logback（集成 logback 日志）
 - [ ] spring-boot-demo-aoplog（使用 AOP 拦截请求日志信息）
