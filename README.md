@@ -29,7 +29,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 | [spring-boot-demo-actuator](./spring-boot-demo-actuator)     | spring-boot 集成 spring-boot-starter-actuator 用于监控 spring-boot 的启动和运行状态 |
 | [spring-boot-demo-admin](./spring-boot-demo-admin)           | spring-boot 集成 spring-boot-admin 来可视化的监控 spring-boot 程序的运行状态，可以与 actuator 互相搭配使用 |
 | [spring-boot-demo-logback](./spring-boot-demo-logback)       | spring-boot 集成 logback 日志                                |
-| [spring-boot-demo-aoplog](./spring-boot-demo-aoplog)         | spring-boot 使用 AOP 切面的方式记录 web 请求日志             |
+| [spring-boot-demo-log-aop](./spring-boot-demo-log-aop)         | spring-boot 使用 AOP 切面的方式记录 web 请求日志             |
 | [spring-boot-demo-exceptionhandler](./spring-boot-demo-exceptionhandler) | spring-boot 统一异常处理，包括2种，一种返回统一的 json 格式，第二种统一跳转到异常页面 |
 | [spring-boot-demo-template-freemarker](./spring-boot-demo-template-freemarker) | spring-boot 集成 freemarker 模板引擎                         |
 | [spring-boot-demo-template-thymeleaf](./spring-boot-demo-template-thymeleaf) | spring-boot 集成 thymeleaf 模板引擎                          |
