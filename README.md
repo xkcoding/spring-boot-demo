@@ -16,6 +16,15 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 - **IntelliJ IDEA ULTIMATE 2018.2 +**
 - **mysql 5.7 +** (*尽量5.7版本以上，因为5.7版本加了一些新特性，不向下兼容。本demo里会尽量避免这种不兼容的地方，但还是建议尽量保证5.7版本以上*)
 
+### 运行方式
+
+1. `git clone https://github.com/xkcoding/spring-boot-demo.git`
+2. 使用 IDEA 打开 clone 下来的项目
+3. 在 IDEA 中打开项目
+4. 在 IDEA 中 Maven Projects 的面板导入各个 module 的 `pom.xml`
+5. Maven Projects 找不到的童鞋，可以勾上 View -> Tool Buttons ，然后Maven Projects的面板就会出现在IDEA的右侧
+6. 找到各个 module 的 Application 类就可以运行各个 module 了
+
 ### 开发计划
 
 [**进度计划**](https://github.com/xkcoding/spring-boot-demo/projects/1?fullscreen=true) 或直接查看 [TODO](./TODO.md)
