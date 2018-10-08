@@ -1,13 +1,14 @@
-# spring-boot-demo 项目TODO
+# spring-boot-demo 项目 todo-list
 
 推荐直接查看 [**进度计划**](https://github.com/xkcoding/spring-boot-demo/projects/1) 了解开发情况
 
-##  模块计划(已完成：6 / 38)
+##  模块计划(已完成：8 / 39)
 
 - [x] ~~spring-boot-demo-helloworld（Helloworld 示例）~~
 - [x] ~~spring-boot-demo-properties（读取配置文件信息）~~
 - [x] ~~spring-boot-demo-actuator（对 Spring boot 的端点监控）~~
-- [ ] spring-boot-demo-admin（对 Spring boot 可视化管控）
+- [x] ~~spring-boot-demo-admin-client（对 Spring boot 可视化管控 客户端）~~
+- [x] ~~spring-boot-demo-admin-server（对 Spring boot 可视化管控 服务端）~~
 - [x] ~~spring-boot-demo-logback（集成 logback 日志）~~
 - [x] ~~spring-boot-demo-log-aop（使用 AOP 拦截请求日志信息）~~
 - [x] ~~spring-boot-demo-exception-handler（统一异常处理）~~
@@ -42,6 +43,7 @@
 - [ ] spring-boot-demo-dubbo（集成 dubbo）
 - [ ] spring-boot-demo-war（打包成war包）
 - [ ] spring-boot-demo-elasticsearch（集成 ElasticSearch，使用原生操作 ES 的方式）
+- [ ] spring-boot-demo-neo4j（集成 neo4j 图数据库）
 
 ### 备注
 
