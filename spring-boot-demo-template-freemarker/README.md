@@ -192,5 +192,6 @@ spring:
   freemarker:
     suffix: .ftl
     cache: false
+    charset: UTF-8
 ```
 
