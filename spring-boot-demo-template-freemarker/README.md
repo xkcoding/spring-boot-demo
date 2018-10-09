@@ -181,3 +181,16 @@ public class UserController {
 </html>
 ```
 
+## application.yml
+
+```yaml
+server:
+  port: 8080
+  servlet:
+    context-path: /demo
+spring:
+  freemarker:
+    suffix: .ftl
+    cache: false
+```
+
