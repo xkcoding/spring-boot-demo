@@ -17,9 +17,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @modified: yangkai.shen
  */
 @SpringBootApplication
-public class SpringBootTemplateFreemarkerApplication {
+public class SpringBootDemoTemplateFreemarkerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootTemplateFreemarkerApplication.class, args);
+		SpringApplication.run(SpringBootDemoTemplateFreemarkerApplication.class, args);
 	}
 }

@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.xkcoding</groupId>
-	<artifactId>spring-boot-template-freemarker</artifactId>
+	<artifactId>spring-boot-demo-template-freemarker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>spring-boot-template-freemarker</name>
+	<name>spring-boot-demo-template-freemarker</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -55,7 +55,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>spring-boot-template-freemarker</finalName>
+		<finalName>spring-boot-demo-template-freemarker</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
