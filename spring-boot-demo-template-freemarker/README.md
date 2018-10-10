@@ -195,3 +195,7 @@ spring:
     charset: UTF-8
 ```
 
+## Freemarker 语法糖学习文档
+
+https://freemarker.apache.org/docs/dgui.html
+
