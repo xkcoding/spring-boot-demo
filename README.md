@@ -6,7 +6,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 
 ### 分支：
 
-- master 分支：基于 SpringBoot 版本 2.0.x，每个 module 不额外依赖 parent，可以单独运行，方便大家学习
+- master 分支：基于 SpringBoot 版本 2.0.5.RELEASE，每个 module 的 parent 依赖根目录下的pom.xml，主要用于管理每个module的依赖版本，方便大家学习
 - v-1.5.x 分支：基于 SpringBoot 版本 1.5.8.RELEASE，每个 module 均依赖 spring-boot-demo-parent，有挺多同学们反映这种方式对新手不是很友好，运行起来有些难度，因此 ***此分支(v-1.5.x)会暂停开发维护*** ，所有内容会慢慢以 master 分支的形式同步过去，此分支暂未完成的，也会直接在master分支上加，在此分支学习的同学们，仍然可以在此分支学习，但是建议后期切换到master分支，会更加容易。🙂
 
 ### 开发环境
@@ -21,13 +21,127 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 1. `git clone https://github.com/xkcoding/spring-boot-demo.git`
 2. 使用 IDEA 打开 clone 下来的项目
 3. 在 IDEA 中打开项目
-4. 在 IDEA 中 Maven Projects 的面板导入各个 module 的 `pom.xml`
+4. 在 IDEA 中 Maven Projects 的面板导入根目录下 的 `pom.xml`
 5. Maven Projects 找不到的童鞋，可以勾上 View -> Tool Buttons ，然后Maven Projects的面板就会出现在IDEA的右侧
 6. 找到各个 module 的 Application 类就可以运行各个 module 了
 
 ### 开发计划
 
 [**进度计划**](https://github.com/xkcoding/spring-boot-demo/projects/1?fullscreen=true) 或直接查看 [TODO](./TODO.md)
+
+### 根目录下的 pom.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.xkcoding</groupId>
+	<artifactId>spring-boot-demo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<modules>
+		<module>spring-boot-demo-helloworld</module>
+		<module>spring-boot-demo-properties</module>
+		<module>spring-boot-demo-actuator</module>
+		<module>spring-boot-demo-admin-client</module>
+		<module>spring-boot-demo-admin-server</module>
+		<module>spring-boot-demo-logback</module>
+		<module>spring-boot-demo-log-aop</module>
+		<module>spring-boot-demo-exception-handler</module>
+		<module>spring-boot-demo-template-freemarker</module>
+		<module>spring-boot-demo-template-thymeleaf</module>
+		<module>spring-boot-demo-template-beetl</module>
+	</modules>
+	<packaging>pom</packaging>
+
+	<name>spring-boot-demo</name>
+	<url>http://xkcoding.com</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<spring.boot.version>2.0.5.RELEASE</spring.boot.version>
+		<hutool.version>4.1.17</hutool.version>
+		<user.agent.version>1.20</user.agent.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring.boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!-- hutool工具类 -->
+			<dependency>
+				<groupId>cn.hutool</groupId>
+				<artifactId>hutool-all</artifactId>
+				<version>${hutool.version}</version>
+			</dependency>
+			<!-- 解析 UserAgent 信息 -->
+			<dependency>
+				<groupId>eu.bitwalker</groupId>
+				<artifactId>UserAgentUtils</artifactId>
+				<version>${user.agent.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>3.0.0</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>3.0.2</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.7.0</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.20.1</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>3.0.2</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>2.5.2</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>2.8.2</version>
+				</plugin>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<version>${spring.boot.version}</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>repackage</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>
+```
 
 ### 各 Module 介绍
 
