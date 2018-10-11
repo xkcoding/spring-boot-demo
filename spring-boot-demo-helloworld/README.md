@@ -28,6 +28,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<hutool.version>4.1.17</hutool.version>
 	</properties>
 
 	<dependencies>
@@ -45,7 +46,7 @@
 		<dependency>
 			<groupId>cn.hutool</groupId>
 			<artifactId>hutool-all</artifactId>
-			<version>4.1.14</version>
+			<version>${hutool.version}</version>
 		</dependency>
 	</dependencies>
 
