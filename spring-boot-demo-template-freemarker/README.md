@@ -11,11 +11,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.xkcoding</groupId>
-	<artifactId>spring-boot-template-freemarker</artifactId>
+	<artifactId>spring-boot-demo-template-freemarker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>spring-boot-template-freemarker</name>
+	<name>spring-boot-demo-template-freemarker</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -29,7 +29,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<hutool.version>4.1.15</hutool.version>
+		<hutool.version>4.1.17</hutool.version>
 	</properties>
 
 	<dependencies>
@@ -62,7 +62,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>spring-boot-template-freemarker</finalName>
+		<finalName>spring-boot-demo-template-freemarker</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
