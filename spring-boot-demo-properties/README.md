@@ -11,11 +11,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.xkcoding</groupId>
-	<artifactId>spring-boot-demo-properties</artifactId>
+	<artifactId>spring-boot-demo-template-beetl</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>spring-boot-demo-properties</name>
+	<name>spring-boot-demo-template-beetl</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -29,22 +29,20 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<ibeetl.version>1.1.63.RELEASE</ibeetl.version>
+		<hutool.version>4.1.17</hutool.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<groupId>com.ibeetl</groupId>
+			<artifactId>beetl-framework-starter</artifactId>
+			<version>${ibeetl.version}</version>
 		</dependency>
 
-		<!--
-		在 META-INF/additional-spring-configuration-metadata.json 中配置
-		可以去除 application.yml 中自定义配置的红线警告，并且为自定义配置添加 hint 提醒
-		 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-configuration-processor</artifactId>
-			<optional>true</optional>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<dependency>
@@ -56,17 +54,18 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+			<optional>true</optional>
 		</dependency>
 
 		<dependency>
 			<groupId>cn.hutool</groupId>
 			<artifactId>hutool-all</artifactId>
-			<version>4.1.14</version>
+			<version>${hutool.version}</version>
 		</dependency>
 	</dependencies>
 
 	<build>
-		<finalName>spring-boot-demo-properties</finalName>
+		<finalName>spring-boot-demo-template-beetl</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
