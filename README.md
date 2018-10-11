@@ -53,6 +53,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 		<module>spring-boot-demo-template-freemarker</module>
 		<module>spring-boot-demo-template-thymeleaf</module>
 		<module>spring-boot-demo-template-beetl</module>
+		<module>spring-boot-demo-template-enjoy</module>
 	</modules>
 	<packaging>pom</packaging>
 
