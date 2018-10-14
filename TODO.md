@@ -16,7 +16,7 @@
 - [x] ~~spring-boot-demo-template-thymeleaf（使用模板引擎 - thymeleaf）~~
 - [x] ~~spring-boot-demo-template-beetl（使用模板引擎 - beetl）~~
 - [x] ~~spring-boot-demo-template-enjoy（使用模板引擎 - JFinal-Enjoy）~~
-- [ ] spring-boot-demo-orm-jdbc-template（操作 SQL 关系型数据库 - JdbcTemplate）
+- [x] ~~spring-boot-demo-orm-jdbctemplate（操作 SQL 关系型数据库 - JdbcTemplate）~~
 - [ ] spring-boot-demo-orm-jpa（操作 SQL 关系型数据库 - JPA）
 - [ ] spring-boot-demo-orm-mybatis（操作 SQL 关系型数据库 - mybatis）
 - [ ] spring-boot-demo-orm-beetlsql（操作 SQL 关系型数据库 - beetlSQL）
