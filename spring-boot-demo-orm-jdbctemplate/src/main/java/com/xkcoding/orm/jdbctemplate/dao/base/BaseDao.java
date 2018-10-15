@@ -46,7 +46,7 @@ public class BaseDao<T> {
 	 * @param ignoreNull 是否忽略 null 值
 	 * @return 操作的行数
 	 */
-	public Integer insert(T t, Boolean ignoreNull) {
+	protected Integer insert(T t, Boolean ignoreNull) {
 		Table tableAnnotation = t.getClass().getAnnotation(Table.class);
 		String table;
 		if (ObjectUtil.isNotNull(tableAnnotation)) {
