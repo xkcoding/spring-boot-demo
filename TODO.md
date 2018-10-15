@@ -2,7 +2,7 @@
 
 推荐直接查看 [**进度计划**](https://github.com/xkcoding/spring-boot-demo/projects/1) 了解开发情况
 
-##  模块计划(已完成：11 / 39)
+##  模块计划(已完成：13 / 39)
 
 - [x] ~~spring-boot-demo-helloworld（Helloworld 示例）~~
 - [x] ~~spring-boot-demo-properties（读取配置文件信息）~~
