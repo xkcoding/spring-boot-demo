@@ -50,9 +50,9 @@ public class BaseDao<T> {
 		Table tableAnnotation = t.getClass().getAnnotation(Table.class);
 		String table;
 		if (ObjectUtil.isNotNull(tableAnnotation)) {
-			table = tableAnnotation.name();
+			table = StrUtil.format("`{}`", tableAnnotation.name());
 		} else {
-			table = t.getClass().getName().toLowerCase();
+			table = StrUtil.format("`{}`", t.getClass().getName().toLowerCase());
 		}
 
 		// 获取所有字段，包含父类中的字段
@@ -89,7 +89,7 @@ public class BaseDao<T> {
 		// 构造值
 		Object[] values = filterField.stream().map(field -> ReflectUtil.getFieldValue(t, field)).toArray();
 
-		String sql = StrUtil.format("INSERT INTO `{table}`({columns}) VALUES ({params})", Dict.create().set("table", table).set("columns", columns).set("params", params));
+		String sql = StrUtil.format("INSERT INTO {table} ({columns}) VALUES ({params})", Dict.create().set("table", table).set("columns", columns).set("params", params));
 		log.debug("【执行SQL】SQL：{}", sql);
 		log.debug("【执行SQL】参数：{}", JSONUtil.toJsonStr(values));
 		return jdbcTemplate.update(sql, values);
