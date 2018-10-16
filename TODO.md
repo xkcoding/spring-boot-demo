@@ -2,7 +2,7 @@
 
 推荐直接查看 [**进度计划**](https://github.com/xkcoding/spring-boot-demo/projects/1) 了解开发情况
 
-##  模块计划(已完成：13 / 39)
+## 模块计划(已完成：13 / 42)
 
 - [x] ~~spring-boot-demo-helloworld（Helloworld 示例）~~
 - [x] ~~spring-boot-demo-properties（读取配置文件信息）~~
@@ -16,9 +16,12 @@
 - [x] ~~spring-boot-demo-template-thymeleaf（使用模板引擎 - thymeleaf）~~
 - [x] ~~spring-boot-demo-template-beetl（使用模板引擎 - beetl）~~
 - [x] ~~spring-boot-demo-template-enjoy（使用模板引擎 - JFinal-Enjoy）~~
+- [ ] spring-boot-demo-upload（上传 - 集成本地上传和七牛云上传）
 - [x] ~~spring-boot-demo-orm-jdbctemplate（操作 SQL 关系型数据库 - JdbcTemplate）~~
 - [ ] spring-boot-demo-orm-jpa（操作 SQL 关系型数据库 - JPA）
 - [ ] spring-boot-demo-orm-mybatis（操作 SQL 关系型数据库 - mybatis）
+- [ ] spring-boot-demo-orm-mybatis-mapper（操作 SQL 关系型数据库 - 集成mybatis通用Mapper）
+- [ ] spring-boot-demo-orm-mybatis-plus（操作 SQL 关系型数据库 - 集成mybatis-plus）
 - [ ] spring-boot-demo-orm-beetlsql（操作 SQL 关系型数据库 - beetlSQL）
 - [ ] spring-boot-demo-cache-redis（使用 redis 进行缓存）
 - [ ] spring-boot-demo-cache-ehcache（使用 Ehcache 进行缓存）
@@ -27,8 +30,7 @@
 - [ ] spring-boot-demo-task-quartz（定时任务 - Quartz 实现）
 - [ ] spring-boot-demo-swagger（集成 Swagger 对 API 接口进行测试管理）
 - [ ] spring-boot-demo-rabc-security（实现基于 RABC 的权限模型 - Spring Security）
-- [ ] spring-boot-demo-rabc-shiro-jpa（实现基于 RABC 的权限模型 - shiro、JPA）
-- [ ] spring-boot-demo-rabc-shiro-mybatis（实现基于 RABC 的权限模型 - shiro、Mybatis）
+- [ ] spring-boot-demo-rabc-shiro（实现基于 RABC 的权限模型 - shiro）
 - [ ] spring-boot-demo-session（统一 Session 管理）
 - [ ] spring-boot-demo-social（第三方授权验证，实现 QQ、微信、GitHub 等第三方登录）
 - [ ] spring-boot-demo-zookeeper（操作 zookeeper，可能会考虑实现分布式锁~）
@@ -42,7 +44,7 @@
 - [ ] spring-boot-demo-async（Spring boot 实现异步调用）
 - [ ] spring-boot-demo-dubbo（集成 dubbo）
 - [ ] spring-boot-demo-war（打包成war包）
-- [ ] spring-boot-demo-elasticsearch（集成 ElasticSearch，使用原生操作 ES 的方式）
+- [ ] spring-boot-demo-elasticsearch（集成 ElasticSearch）
 - [ ] spring-boot-demo-neo4j（集成 neo4j 图数据库）
 
 ### 备注
