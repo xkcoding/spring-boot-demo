@@ -7,11 +7,11 @@ import java.lang.annotation.Target;
 
 /**
  * <p>
- * 自增列注解
+ * 主键注解
  * </p>
  *
  * @package: com.xkcoding.orm.jdbctemplate.annotation
- * @description: 自增列注解
+ * @description: 主键注解
  * @author: yangkai.shen
  * @date: Created in 2018/10/15 11:23 AM
  * @copyright: Copyright (c) 2018
@@ -20,5 +20,11 @@ import java.lang.annotation.Target;
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD})
-public @interface Auto {
+public @interface Pk {
+	/**
+	 * 自增
+	 *
+	 * @return 自增主键
+	 */
+	boolean auto() default true;
 }

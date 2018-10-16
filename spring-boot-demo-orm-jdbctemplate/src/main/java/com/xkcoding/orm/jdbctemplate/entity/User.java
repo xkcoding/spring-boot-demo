@@ -1,6 +1,6 @@
 package com.xkcoding.orm.jdbctemplate.entity;
 
-import com.xkcoding.orm.jdbctemplate.annotation.Auto;
+import com.xkcoding.orm.jdbctemplate.annotation.Pk;
 import com.xkcoding.orm.jdbctemplate.annotation.Column;
 import com.xkcoding.orm.jdbctemplate.annotation.Table;
 import lombok.Data;
@@ -27,7 +27,7 @@ public class User implements Serializable {
 	/**
 	 * 主键
 	 */
-	@Auto
+	@Pk
 	private Long id;
 
 	/**
