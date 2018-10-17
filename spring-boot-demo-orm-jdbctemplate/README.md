@@ -78,33 +78,6 @@
 ## BaseDao.java
 
 ```java
-package com.xkcoding.orm.jdbctemplate.dao.base;
-
-import cn.hutool.core.bean.BeanUtil;
-import cn.hutool.core.collection.CollUtil;
-import cn.hutool.core.lang.Dict;
-import cn.hutool.core.util.ArrayUtil;
-import cn.hutool.core.util.ObjectUtil;
-import cn.hutool.core.util.ReflectUtil;
-import cn.hutool.core.util.StrUtil;
-import cn.hutool.json.JSONUtil;
-import com.xkcoding.orm.jdbctemplate.annotation.Column;
-import com.xkcoding.orm.jdbctemplate.annotation.Ignore;
-import com.xkcoding.orm.jdbctemplate.annotation.Pk;
-import com.xkcoding.orm.jdbctemplate.annotation.Table;
-import com.xkcoding.orm.jdbctemplate.constant.Const;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
-
-import java.lang.reflect.Field;
-import java.lang.reflect.ParameterizedType;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 /**
  * <p>
  * Dao基类
