@@ -22,6 +22,7 @@
         <module>spring-boot-demo-template-enjoy</module>
         <module>spring-boot-demo-orm-jdbctemplate</module>
         <module>spring-boot-demo-orm-jpa</module>
+        <module>spring-boot-demo-upload</module>
     </modules>
     <packaging>pom</packaging>
 
