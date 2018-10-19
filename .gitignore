@@ -35,3 +35,6 @@ logs/
 
 ### Mac OS ###
 .DS_Store
+
+### VS CODE ###
+.vscode/
