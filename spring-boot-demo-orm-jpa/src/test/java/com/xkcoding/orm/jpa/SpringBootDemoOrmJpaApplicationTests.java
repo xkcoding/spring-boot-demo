@@ -1,4 +1,4 @@
-package com.xkcoding.springbootdemoormjpa;
+package com.xkcoding.orm.jpa;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
