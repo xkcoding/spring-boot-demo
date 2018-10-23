@@ -2,3 +2,13 @@ server:
   port: 8080
   servlet:
     context-path: /demo
+qiniu:
+  accessKey: ## 此处填写你自己的七牛云 access key
+  secretKey: ## 此处填写你自己的七牛云 secret key
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      location: /Users/yangkai.shen/Documents/code/back-end/spring-boot-demo/spring-boot-demo-upload/tmp
+      file-size-threshold: 5MB
+      max-file-size: 20MB

@@ -1,4 +1,4 @@
-package com.xkcoding.springbootdemoupload;
+package com.xkcoding.upload;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 启动类
  * </p>
  *
- * @package: com.xkcoding.springbootdemoupload
+ * @package: com.xkcoding.upload
  * @description: 启动类
  * @author: shenyangkai
  * @date: Created in 2018/10/20 21:23

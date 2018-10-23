@@ -1,4 +1,4 @@
-package com.xkcoding.springbootdemoupload.controller;
+package com.xkcoding.upload.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * 首页Controller
  * </p>
  *
- * @package: com.xkcoding.springbootdemoupload.controller
+ * @package: com.xkcoding.upload.controller
  * @description: 首页Controller
  * @author: shenyangkai
  * @date: Created in 2018/10/20 21:22
