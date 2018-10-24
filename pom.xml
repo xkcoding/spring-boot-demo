@@ -23,6 +23,7 @@
         <module>spring-boot-demo-orm-jdbctemplate</module>
         <module>spring-boot-demo-orm-jpa</module>
         <module>spring-boot-demo-upload</module>
+        <module>spring-boot-demo-neo4j</module>
     </modules>
     <packaging>pom</packaging>
 
