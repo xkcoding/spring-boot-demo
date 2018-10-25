@@ -24,6 +24,7 @@
         <module>spring-boot-demo-orm-jpa</module>
         <module>spring-boot-demo-upload</module>
         <module>spring-boot-demo-neo4j</module>
+        <module>spring-boot-demo-elasticsearch</module>
     </modules>
     <packaging>pom</packaging>
 
