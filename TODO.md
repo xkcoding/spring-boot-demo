@@ -18,7 +18,7 @@
 - [x] ~~spring-boot-demo-template-enjoy（使用模板引擎 - JFinal-Enjoy）~~
 - [ ] spring-boot-demo-upload（上传 - 集成本地上传和七牛云上传）
 - [x] ~~spring-boot-demo-orm-jdbctemplate（操作 SQL 关系型数据库 - JdbcTemplate）~~
-- [ ] ~~spring-boot-demo-orm-jpa（操作 SQL 关系型数据库 - JPA）~~
+- [ ] spring-boot-demo-orm-jpa（操作 SQL 关系型数据库 - JPA）
 - [ ] spring-boot-demo-orm-mybatis（操作 SQL 关系型数据库 - mybatis）
 - [ ] spring-boot-demo-orm-mybatis-mapper（操作 SQL 关系型数据库 - 集成mybatis通用Mapper）
 - [ ] spring-boot-demo-orm-mybatis-plus（操作 SQL 关系型数据库 - 集成mybatis-plus）
@@ -43,7 +43,7 @@
 - [ ] spring-boot-demo-activiti（集成 Activiti 实现流程控制引擎）
 - [ ] spring-boot-demo-async（Spring boot 实现异步调用）
 - [ ] spring-boot-demo-dubbo（集成 dubbo）
-- [ ] spring-boot-demo-war（打包成war包）
+- [x] ~~spring-boot-demo-war（打包成war包）~~
 - [ ] spring-boot-demo-elasticsearch（集成 ElasticSearch）
 - [ ] spring-boot-demo-neo4j（集成 neo4j 图数据库）
 
