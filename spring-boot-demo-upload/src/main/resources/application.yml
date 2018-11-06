@@ -3,8 +3,14 @@ server:
   servlet:
     context-path: /demo
 qiniu:
-  accessKey: ## 此处填写你自己的七牛云 access key
-  secretKey: ## 此处填写你自己的七牛云 secret key
+  ## 此处填写你自己的七牛云 access key
+  accessKey:
+  ## 此处填写你自己的七牛云 secret key
+  secretKey:
+  ## 此处填写你自己的七牛云 bucket
+  bucket:
+  ## 此处填写你自己的七牛云 域名
+  prefix:
 spring:
   servlet:
     multipart:
