@@ -2,7 +2,7 @@
 
 推荐直接查看 [**进度计划**](https://github.com/xkcoding/spring-boot-demo/projects/1) 了解开发情况
 
-## 模块计划(已完成：16 / 42)
+## 模块计划(已完成：19 / 42)
 
 - [x] ~~spring-boot-demo-helloworld（Helloworld 示例）~~
 - [x] ~~spring-boot-demo-properties（读取配置文件信息）~~
@@ -21,7 +21,7 @@
 - [x] ~~spring-boot-demo-orm-jpa（操作 SQL 关系型数据库 - JPA）~~
 - [x] ~~spring-boot-demo-orm-mybatis（操作 SQL 关系型数据库 - mybatis）~~
 - [x] ~~spring-boot-demo-orm-mybatis-mapper-page（操作 SQL 关系型数据库 - 集成mybatis通用Mapper,PageHelper）~~
-- [ ] spring-boot-demo-orm-mybatis-plus（操作 SQL 关系型数据库 - 集成mybatis-plus）
+- [x] ~~spring-boot-demo-orm-mybatis-plus（操作 SQL 关系型数据库 - 集成mybatis-plus）~~
 - [ ] spring-boot-demo-orm-beetlsql（操作 SQL 关系型数据库 - beetlSQL）
 - [ ] spring-boot-demo-cache-redis（使用 redis 进行缓存）
 - [ ] spring-boot-demo-cache-ehcache（使用 Ehcache 进行缓存）
