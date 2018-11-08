@@ -31,6 +31,9 @@ public class UserMapperTest extends SpringBootDemoOrmMybatisApplicationTests {
     @Autowired
     private UserMapper userMapper;
 
+    /**
+     * 测试查询所有
+     */
     @Test
     public void selectAllUser() {
         List<User> userList = userMapper.selectAllUser();
@@ -38,6 +41,9 @@ public class UserMapperTest extends SpringBootDemoOrmMybatisApplicationTests {
         log.debug("【userList】= {}", userList);
     }
 
+    /**
+     * 测试根据主键查询单个
+     */
     @Test
     public void selectUserById() {
         User user = userMapper.selectUserById(1L);
@@ -45,6 +51,9 @@ public class UserMapperTest extends SpringBootDemoOrmMybatisApplicationTests {
         log.debug("【user】= {}", user);
     }
 
+    /**
+     * 测试保存
+     */
     @Test
     public void saveUser() {
         String salt = IdUtil.fastSimpleUUID();
@@ -53,6 +62,9 @@ public class UserMapperTest extends SpringBootDemoOrmMybatisApplicationTests {
         Assert.assertEquals(1, i);
     }
 
+    /**
+     * 测试根据主键删除
+     */
     @Test
     public void deleteById() {
         int i = userMapper.deleteById(1L);
