@@ -23,6 +23,7 @@
         <module>spring-boot-demo-orm-jdbctemplate</module>
         <module>spring-boot-demo-orm-jpa</module>
         <module>spring-boot-demo-orm-mybatis</module>
+        <module>spring-boot-demo-orm-mybatis-mapper-page</module>
         <module>spring-boot-demo-email</module>
         <module>spring-boot-demo-upload</module>
         <module>spring-boot-demo-war</module>
