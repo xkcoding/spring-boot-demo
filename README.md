@@ -57,6 +57,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
         <module>spring-boot-demo-orm-jdbctemplate</module>
         <module>spring-boot-demo-orm-jpa</module>
         <module>spring-boot-demo-orm-mybatis</module>
+        <module>spring-boot-demo-orm-mybatis-mapper-page</module>
         <module>spring-boot-demo-email</module>
         <module>spring-boot-demo-upload</module>
         <module>spring-boot-demo-war</module>
@@ -183,7 +184,8 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 | [spring-boot-demo-template-enjoy](./spring-boot-demo-template-enjoy) | spring-boot 集成 Enjoy 模板引擎                              |
 | [spring-boot-demo-orm-jdbctemplate](./spring-boot-demo-orm-jdbctemplate) | spring-boot 集成 Jdbc Template 操作数据库，并简易封装通用 Dao 层 |
 | [spring-boot-demo-orm-jpa](./spring-boot-demo-orm-jpa)       | spring-boot 集成 spring-boot-starter-data-jpa 操作数据库     |
-| [spring-boot-demo-orm-mybatis](./spring-boot-demo-orm-mybatis) | spring-boot 集成原生mybatis，使用 [mybatis-spring-boot-starter](https://github.com/mybatis/spring-boot-starter) |
+| [spring-boot-demo-orm-mybatis](./spring-boot-demo-orm-mybatis) | spring-boot 集成原生mybatis，使用 [mybatis-spring-boot-starter](https://github.com/mybatis/spring-boot-starter) 集成 |
+| [spring-boot-demo-orm-mybatis-mapper-page](./spring-boot-demo-orm-mybatis-mapper-page) | spring-boot 集成通用Mapper和PageHelper，使用 [mapper-spring-boot-starter](https://github.com/abel533/Mapper/tree/master/spring-boot-starter) 和 [pagehelper-spring-boot-starter](https://github.com/pagehelper/pagehelper-spring-boot) 集成 |
 | [spring-boot-demo-upload](./spring-boot-demo-upload)         | spring-boot 文件上传示例，包含本地文件上传以及七牛云文件上传 |
 | [spring-boot-demo-cache-redis](./spring-boot-demo-cache-redis) | spring-boot 使用 Redis 做缓存                                |
 | [spring-boot-demo-task-schedule](./spring-boot-demo-task-schedule) | spring-boot 使用 @Scheduled 实现定时任务                     |
