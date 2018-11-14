@@ -1,9 +1,11 @@
 package com.xkcoding.orm.beetlsql.service.impl;
 
+import cn.hutool.core.util.ObjectUtil;
 import com.xkcoding.orm.beetlsql.dao.UserDao;
 import com.xkcoding.orm.beetlsql.entity.User;
 import com.xkcoding.orm.beetlsql.service.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.beetl.sql.core.engine.PageQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,8 +41,19 @@ public class UserServiceImpl implements UserService {
      * @param user 用户
      */
     @Override
-    public void saveUser(User user) {
+    public User saveUser(User user) {
+        userDao.insert(user, true);
+        return user;
+    }
 
+    /**
+     * 批量插入用户
+     *
+     * @param users 用户列表
+     */
+    @Override
+    public void saveUserList(List<User> users) {
+        userDao.insertBatch(users);
     }
 
     /**
@@ -50,7 +63,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public void deleteUser(Long id) {
-
+        userDao.deleteById(id);
     }
 
     /**
@@ -61,7 +74,11 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public User updateUser(User user) {
-        return null;
+        if (ObjectUtil.isNull(user)) {
+            throw new RuntimeException("用户id不能为null");
+        }
+        userDao.updateTemplateById(user);
+        return userDao.single(user.getId());
     }
 
     /**
@@ -82,7 +99,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public List<User> getUserList() {
-        return null;
+        return userDao.all();
     }
 
     /**
@@ -93,7 +110,7 @@ public class UserServiceImpl implements UserService {
      * @return 分页用户列表
      */
     @Override
-    public List<User> getUserByPage(Integer currentPage, Integer pageSize) {
-        return null;
+    public PageQuery<User> getUserByPage(Integer currentPage, Integer pageSize) {
+        return userDao.createLambdaQuery().page(currentPage, pageSize);
     }
 }

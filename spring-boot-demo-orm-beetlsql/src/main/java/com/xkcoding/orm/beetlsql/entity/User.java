@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.beetl.sql.core.annotatoin.Table;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -25,6 +26,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name = "orm_user")
 public class User implements Serializable {
     private static final long serialVersionUID = -1840831686851699943L;
 

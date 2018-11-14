@@ -4,22 +4,23 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
-    type: com.zaxxer.hikari.HikariDataSource
-    initialization-mode: always
-    continue-on-error: true
-    schema:
-    - "classpath:db/schema.sql"
-    data:
-    - "classpath:db/data.sql"
-    hikari:
-      minimum-idle: 5
-      connection-test-query: SELECT 1 FROM DUAL
-      maximum-pool-size: 20
-      auto-commit: true
-      idle-timeout: 30000
-      pool-name: SpringBootDemoHikariCP
-      max-lifetime: 60000
-      connection-timeout: 30000
+#### beetlsql starter不能开启下面选项
+#    type: com.zaxxer.hikari.HikariDataSource
+#    initialization-mode: always
+#    continue-on-error: true
+#    schema:
+#    - "classpath:db/schema.sql"
+#    data:
+#    - "classpath:db/data.sql"
+#    hikari:
+#      minimum-idle: 5
+#      connection-test-query: SELECT 1 FROM DUAL
+#      maximum-pool-size: 20
+#      auto-commit: true
+#      idle-timeout: 30000
+#      pool-name: SpringBootDemoHikariCP
+#      max-lifetime: 60000
+#      connection-timeout: 30000
 logging:
   level:
     com.xkcoding: debug
@@ -27,5 +28,11 @@ logging:
 beetl:
   enabled: false
 beetlsql:
+  enabled: true
+  sqlPath: /sql
   daoSuffix: Dao
   basePackage: com.xkcoding.orm.beetlsql.dao
+  dbStyle: org.beetl.sql.core.db.MySqlStyle
+  nameConversion: org.beetl.sql.core.UnderlinedNameConversion
+beet-beetlsql:
+  dev: true

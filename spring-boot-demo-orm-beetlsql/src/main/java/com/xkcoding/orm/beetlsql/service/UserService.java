@@ -1,6 +1,7 @@
 package com.xkcoding.orm.beetlsql.service;
 
 import com.xkcoding.orm.beetlsql.entity.User;
+import org.beetl.sql.core.engine.PageQuery;
 
 import java.util.List;
 
@@ -22,8 +23,17 @@ public interface UserService {
      * 新增用户
      *
      * @param user 用户
+     * @return 保存的用户
      */
-    void saveUser(User user);
+    User saveUser(User user);
+
+
+    /**
+     * 批量插入用户
+     *
+     * @param users 用户列表
+     */
+    void saveUserList(List<User> users);
 
     /**
      * 根据主键删除用户
@@ -62,5 +72,5 @@ public interface UserService {
      * @param pageSize    每页条数
      * @return 分页用户列表
      */
-    List<User> getUserByPage(Integer currentPage, Integer pageSize);
+    PageQuery<User> getUserByPage(Integer currentPage, Integer pageSize);
 }
