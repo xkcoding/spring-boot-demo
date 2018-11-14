@@ -22,7 +22,7 @@
 - [x] ~~spring-boot-demo-orm-mybatis（操作 SQL 关系型数据库 - mybatis）~~
 - [x] ~~spring-boot-demo-orm-mybatis-mapper-page（操作 SQL 关系型数据库 - 集成mybatis通用Mapper,PageHelper）~~
 - [x] ~~spring-boot-demo-orm-mybatis-plus（操作 SQL 关系型数据库 - 集成mybatis-plus）~~
-- [ ] spring-boot-demo-orm-beetlsql（操作 SQL 关系型数据库 - beetlSQL）
+- [x] ~~spring-boot-demo-orm-beetlsql（操作 SQL 关系型数据库 - beetlSQL）~~
 - [ ] spring-boot-demo-cache-redis（使用 redis 进行缓存）
 - [ ] spring-boot-demo-cache-ehcache（使用 Ehcache 进行缓存）
 - [ ] spring-boot-demo-email（集成邮件服务）
