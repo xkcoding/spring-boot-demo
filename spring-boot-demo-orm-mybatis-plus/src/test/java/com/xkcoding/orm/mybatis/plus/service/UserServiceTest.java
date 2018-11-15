@@ -1,4 +1,4 @@
-package com.xkcoding.orm.mybatis.plus.service.impl;
+package com.xkcoding.orm.mybatis.plus.service;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.date.DateTime;
@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
  * User Service 测试
  * </p>
  *
- * @package: com.xkcoding.orm.mybatis.plus.service.impl
+ * @package: com.xkcoding.orm.mybatis.plus.service
  * @description: User Service 测试
  * @author: yangkai.shen
  * @date: Created in 2018/11/8 18:13
@@ -33,7 +33,7 @@ import java.util.stream.Collectors;
  * @modified: yangkai.shen
  */
 @Slf4j
-public class UserServiceImplTest extends SpringBootDemoOrmMybatisPlusApplicationTests {
+public class UserServiceTest extends SpringBootDemoOrmMybatisPlusApplicationTests {
     @Autowired
     private UserService userService;
 

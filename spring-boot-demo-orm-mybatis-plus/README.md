@@ -283,7 +283,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 }
 ```
 
-## UserServiceImplTest.java
+## UserServiceTest.java
 
 ```java
 /**
@@ -291,7 +291,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
  * User Service 测试
  * </p>
  *
- * @package: com.xkcoding.orm.mybatis.plus.service.impl
+ * @package: com.xkcoding.orm.mybatis.plus.service
  * @description: User Service 测试
  * @author: yangkai.shen
  * @date: Created in 2018/11/8 18:13
@@ -300,7 +300,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
  * @modified: yangkai.shen
  */
 @Slf4j
-public class UserServiceImplTest extends SpringBootDemoOrmMybatisPlusApplicationTests {
+public class UserServiceTest extends SpringBootDemoOrmMybatisPlusApplicationTests {
     @Autowired
     private UserService userService;
 
