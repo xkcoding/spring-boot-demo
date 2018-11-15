@@ -2,7 +2,7 @@
 
 [![MIT](https://img.shields.io/github/license/xkcoding/spring-boot-demo.svg)](https://github.com/xkcoding/spring-boot-demo/blob/master/LICENSE) [![GitHub stars](https://img.shields.io/github/stars/xkcoding/spring-boot-demo.svg?style=flat&label=Star)](https://github.com/xkcoding/spring-boot-demo/stargazers) [![GitHub forks](https://img.shields.io/github/forks/xkcoding/spring-boot-demo.svg?style=flat&label=Fork)](https://github.com/xkcoding/spring-boot-demo/fork) [![GitHub watchers](https://img.shields.io/github/watchers/xkcoding/spring-boot-demo.svg?style=flat&label=Watch)](https://github.com/xkcoding/spring-boot-demo/watchers)
 
-spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actuator (监控)、admin (可视化监控)、logback (日志)、aopLog (通过 AOP 记录 web 请求日志)、统一异常处理( json 级别和页面级别)、freemarker (模板引擎)、thymeleaf (模板引擎)、Beetl (模板引擎)、Enjoy(模板引擎)、JdbcTemplate、JPA (ORM 框架)、mybatis (ORM 框架)、通用Mapper、PageHelper、mybatis-plus、BeetlSQL、upload(本地文件上传和七牛云文件上传)、redis-cache (缓存)、task (定时任务)、swagger (API 接口管理测试)、ureport2 (中国式报表)、打包成 war 文件、集成 ElasticSearch (采用原生操作 ES 的方式)、集成 Dubbo (采用非官方的 starter)，后续会集成activemq,email,shiro,websocket,quartz,netty等模块。
+spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actuator (监控)、admin (可视化监控)、logback (日志)、aopLog (通过 AOP 记录 web 请求日志)、统一异常处理( json 级别和页面级别)、freemarker (模板引擎)、thymeleaf (模板引擎)、Beetl (模板引擎)、Enjoy(模板引擎)、JdbcTemplate、JPA (ORM 框架)、mybatis (ORM 框架)、通用Mapper、PageHelper、mybatis-plus、BeetlSQL、upload(本地文件上传和七牛云文件上传)、redis (缓存)、task (定时任务)、swagger (API 接口管理测试)、ureport2 (中国式报表)、打包成 war 文件、集成 ElasticSearch (采用原生操作 ES 的方式)、集成 Dubbo (采用非官方的 starter)，后续会集成activemq,email,shiro,websocket,quartz,netty等模块。
 
 ### 分支：
 
@@ -60,6 +60,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
         <module>spring-boot-demo-orm-mybatis-mapper-page</module>
         <module>spring-boot-demo-orm-mybatis-plus</module>
         <module>spring-boot-demo-orm-beetlsql</module>
+        <module>spring-boot-demo-cache-redis</module>
         <module>spring-boot-demo-email</module>
         <module>spring-boot-demo-upload</module>
         <module>spring-boot-demo-war</module>
@@ -79,7 +80,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
         <maven.compiler.target>1.8</maven.compiler.target>
         <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
         <mysql.version>8.0.12</mysql.version>
-        <hutool.version>4.1.19</hutool.version>
+        <hutool.version>4.1.21</hutool.version>
         <guava.version>27.0-jre</guava.version>
         <user.agent.version>1.20</user.agent.version>
     </properties>
@@ -191,7 +192,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 | [spring-boot-demo-orm-mybatis-plus](./spring-boot-demo-orm-mybatis-plus) | spring-boot 集成 mybatis-plus，使用 [mybatis-plus-boot-starter](http://mp.baomidou.com/) 集成 |
 | [spring-boot-demo-orm-beetlsql](./spring-boot-demo-orm-beetlsql) | spring-boot 集成 beetl sql，使用 [beetl-framework-starter](http://ibeetl.com/guide/#beetlsql) 集成 |
 | [spring-boot-demo-upload](./spring-boot-demo-upload)         | spring-boot 文件上传示例，包含本地文件上传以及七牛云文件上传 |
-| [spring-boot-demo-cache-redis](./spring-boot-demo-cache-redis) | spring-boot 使用 Redis 做缓存                                |
+| [spring-boot-demo-cache-redis](./spring-boot-demo-cache-redis) | spring-boot 整合 redis，操作redis中的数据，并使用redis缓存数据 |
 | [spring-boot-demo-task-schedule](./spring-boot-demo-task-schedule) | spring-boot 使用 @Scheduled 实现定时任务                     |
 | [spring-boot-demo-swagger](./spring-boot-demo-swagger)       | spring-boot 集成 [spring-boot-starter-swagger](https://github.com/SpringForAll/spring-boot-starter-swagger) (由大佬[翟永超](http://blog.didispace.com/)开源)用于统一管理、测试 API 接口 |
 | [spring-boot-demo-ureport2](./spring-boot-demo-ureport2)     | spring-boot 集成 [ureport2](https://github.com/youseries/ureport) 实现自定义报表（ureport2可以轻松实现复杂的中国式报表，功能十分强大） |
