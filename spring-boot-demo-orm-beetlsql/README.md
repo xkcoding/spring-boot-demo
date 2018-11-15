@@ -297,7 +297,7 @@ public class UserServiceImpl implements UserService {
 }
 ```
 
-## UserServiceImplTest.java
+## UserServiceTest.java
 
 ```java
 /**
@@ -305,7 +305,7 @@ public class UserServiceImpl implements UserService {
  * User Service测试
  * </p>
  *
- * @package: com.xkcoding.orm.beetlsql.service.impl
+ * @package: com.xkcoding.orm.beetlsql.service
  * @description: User Service测试
  * @author: yangkai.shen
  * @date: Created in 2018/11/14 16:30
@@ -314,7 +314,7 @@ public class UserServiceImpl implements UserService {
  * @modified: yangkai.shen
  */
 @Slf4j
-public class UserServiceImplTest extends SpringBootDemoOrmBeetlsqlApplicationTests {
+public class UserServiceTest extends SpringBootDemoOrmBeetlsqlApplicationTests {
     @Autowired
     private UserService userService;
 
