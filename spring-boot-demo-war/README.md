@@ -11,7 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>spring-boot-demo-war</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <!-- 若需要打成 war 包，则需要将打包方式改成 war -->
     <packaging>war</packaging>
 
@@ -21,7 +21,7 @@
     <parent>
         <groupId>com.xkcoding</groupId>
         <artifactId>spring-boot-demo</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
 
     <properties>
