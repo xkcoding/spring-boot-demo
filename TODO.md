@@ -2,7 +2,7 @@
 
 推荐直接查看 [**进度计划**](https://github.com/xkcoding/spring-boot-demo/projects/1) 了解开发情况
 
-## 模块计划(已完成：19 / 42)
+## 模块计划(已完成：22 / 43)
 
 - [x] ~~spring-boot-demo-helloworld（Helloworld 示例）~~
 - [x] ~~spring-boot-demo-properties（读取配置文件信息）~~
@@ -24,7 +24,7 @@
 - [x] ~~spring-boot-demo-orm-mybatis-plus（操作 SQL 关系型数据库 - 集成mybatis-plus）~~
 - [x] ~~spring-boot-demo-orm-beetlsql（操作 SQL 关系型数据库 - beetlSQL）~~
 - [x] ~~spring-boot-demo-cache-redis（使用 redis 进行缓存）~~
-- [ ] spring-boot-demo-cache-ehcache（使用 Ehcache 进行缓存）
+- [x] ~~spring-boot-demo-cache-ehcache（使用 Ehcache 进行缓存）~~
 - [ ] spring-boot-demo-email（集成邮件服务）
 - [ ] spring-boot-demo-task-schedule（定时任务 - Task 实现）
 - [ ] spring-boot-demo-task-quartz（定时任务 - Quartz 实现）
@@ -46,6 +46,7 @@
 - [x] ~~spring-boot-demo-war（打包成war包）~~
 - [ ] spring-boot-demo-elasticsearch（集成 ElasticSearch）
 - [ ] spring-boot-demo-neo4j（集成 neo4j 图数据库）
+- [ ] spring-boot-demo-docker（打包成 docker 镜像）
 
 ### 备注
 
