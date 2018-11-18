@@ -26,10 +26,11 @@
         <module>spring-boot-demo-orm-mybatis-mapper-page</module>
         <module>spring-boot-demo-orm-mybatis-plus</module>
         <module>spring-boot-demo-orm-beetlsql</module>
+        <module>spring-boot-demo-upload</module>
         <module>spring-boot-demo-cache-redis</module>
         <module>spring-boot-demo-cache-ehcache</module>
         <module>spring-boot-demo-email</module>
-        <module>spring-boot-demo-upload</module>
+        <module>spring-boot-demo-task</module>
         <module>spring-boot-demo-war</module>
         <module>spring-boot-demo-elasticsearch</module>
         <module>spring-boot-demo-neo4j</module>
