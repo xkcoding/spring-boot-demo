@@ -26,7 +26,7 @@
 - [x] ~~spring-boot-demo-cache-redis（使用 redis 进行缓存）~~
 - [x] ~~spring-boot-demo-cache-ehcache（使用 Ehcache 进行缓存）~~
 - [ ] spring-boot-demo-email（集成邮件服务）
-- [ ] spring-boot-demo-task-schedule（定时任务 - Task 实现）
+- [ ] spring-boot-demo-task（定时任务 - Task 实现）
 - [ ] spring-boot-demo-task-quartz（定时任务 - Quartz 实现）
 - [ ] spring-boot-demo-swagger（集成 Swagger 对 API 接口进行测试管理）
 - [ ] spring-boot-demo-rabc-security（实现基于 RABC 的权限模型 - Spring Security）
