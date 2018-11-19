@@ -31,6 +31,7 @@
         <module>spring-boot-demo-cache-ehcache</module>
         <module>spring-boot-demo-email</module>
         <module>spring-boot-demo-task</module>
+        <module>spring-boot-demo-task-quartz</module>
         <module>spring-boot-demo-war</module>
         <module>spring-boot-demo-elasticsearch</module>
         <module>spring-boot-demo-neo4j</module>
