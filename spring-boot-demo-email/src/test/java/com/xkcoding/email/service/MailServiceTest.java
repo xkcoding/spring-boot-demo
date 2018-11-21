@@ -46,7 +46,7 @@ public class MailServiceTest extends SpringBootDemoEmailApplicationTests {
     public void sendHtmlMail() throws MessagingException {
         Context context = new Context();
         context.setVariable("project", "Spring Boot Demo");
-        context.setVariable("author", "yangkai.shen");
+        context.setVariable("author", "Yangkai.Shen");
         context.setVariable("url", "https://github.com/xkcoding/spring-boot-demo");
 
         String emailTemplate = templateEngine.process("welcome", context);
