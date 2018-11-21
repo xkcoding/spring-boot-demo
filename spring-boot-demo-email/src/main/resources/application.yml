@@ -1,0 +1,15 @@
+spring:
+  mail:
+    host: smtp.yeah.net
+    port: 994
+    username: hutool@yeah.net
+    password: q1w2e3
+    protocol: smtp
+    test-connection: true
+    default-encoding: UTF-8
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+      mail.smtp.starttls.required: true
+      mail.smtp.ssl.enable: true
+      mail.display.sendmail: xkcoding
