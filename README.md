@@ -199,7 +199,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 | [spring-boot-demo-cache-redis](./spring-boot-demo-cache-redis) | spring-boot 整合 redis，操作redis中的数据，并使用redis缓存数据 |
 | [spring-boot-demo-cache-ehcache](./spring-boot-demo-cache-ehcache) | spring-boot 整合 ehcache，使用 ehcache 缓存数据              |
 | [spring-boot-demo-email](./spring-boot-demo-email)           | spring-boot 整合 email，包括发送简单文本邮件、HTML邮件（包括模板HTML邮件）、附件邮件、静态资源邮件 |
-| [spring-boot-demo-task-schedule](./spring-boot-demo-task-schedule) | spring-boot 使用 @Scheduled 实现定时任务                     |
+| [spring-boot-demo-task](./spring-boot-demo-task)             | spring-boot 快速实现定时任务                                 |
 | [spring-boot-demo-swagger](./spring-boot-demo-swagger)       | spring-boot 集成 [spring-boot-starter-swagger](https://github.com/SpringForAll/spring-boot-starter-swagger) (由大佬[翟永超](http://blog.didispace.com/)开源)用于统一管理、测试 API 接口 |
 | [spring-boot-demo-ureport2](./spring-boot-demo-ureport2)     | spring-boot 集成 [ureport2](https://github.com/youseries/ureport) 实现自定义报表（ureport2可以轻松实现复杂的中国式报表，功能十分强大） |
 | [spring-boot-demo-war](./spring-boot-demo-war)               | spring-boot 打成 war 包的配置                                |
