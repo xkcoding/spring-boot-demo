@@ -2,6 +2,7 @@ package com.xkcoding.task.quartz;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import tk.mybatis.spring.annotation.MapperScan;
 
 /**
  * <p>
@@ -16,6 +17,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @version: V1.0
  * @modified: yangkai.shen
  */
+@MapperScan(basePackages = {"com.xkcoding.task.quartz.mapper"})
 @SpringBootApplication
 public class SpringBootDemoTaskQuartzApplication {
 
