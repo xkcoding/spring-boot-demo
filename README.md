@@ -27,7 +27,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 
 ### 开发计划
 
-[**进度计划**](https://github.com/xkcoding/spring-boot-demo/projects/1?fullscreen=true) 或直接查看 [TODO](./TODO.md)
+查看 [TODO](./TODO.md) 文件
 
 ### 根目录下的 pom.xml
 
@@ -71,6 +71,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
         <module>spring-boot-demo-war</module>
         <module>spring-boot-demo-elasticsearch</module>
         <module>spring-boot-demo-neo4j</module>
+        <module>spring-boot-demo-docker</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -208,6 +209,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 | [spring-boot-demo-war](./spring-boot-demo-war)               | spring-boot 打成 war 包的配置                                |
 | [spring-boot-demo-elasticsearch](./spring-boot-demo-elasticsearch) | spring-boot 集成 ElasticSearch（采用原生操作 ES 的方式）     |
 | [spring-boot-demo-dubbo-parent](./spring-boot-demo-dubbo-parent) | spring-boot 集成 Dubbo                                       |
+| [spring-boot-demo-docker](./spring-boot-demo-docker)         | spring-boot 容器化                                           |
 
 # 官方提供的 starter 介绍
 
