@@ -1,8 +1,5 @@
 # spring-boot-demo 项目 todo-list
-
-推荐直接查看 [**进度计划**](https://github.com/xkcoding/spring-boot-demo/projects/1) 了解开发情况
-
-## 模块计划(已完成：25 / 43)
+## 模块计划(已完成：27 / 45)
 
 - [x] ~~spring-boot-demo-helloworld（Helloworld 示例）~~
 - [x] ~~spring-boot-demo-properties（读取配置文件信息）~~
@@ -28,14 +25,16 @@
 - [x] ~~spring-boot-demo-email（集成邮件服务）~~
 - [x] ~~spring-boot-demo-task（定时任务 - Task 实现）~~
 - [x] ~~spring-boot-demo-task-quartz（定时任务 - Quartz 实现）~~
-- [ ] spring-boot-demo-swagger（集成 Swagger 对 API 接口进行测试管理）
+- [x] ~~spring-boot-demo-swagger（集成 Swagger 对 API 接口进行测试管理）~~
+- [x] ~~spring-boot-demo-swagger-beauty（集成自定义且更加美观的 Swagger 对 API 接口进行测试管理）~~
 - [ ] spring-boot-demo-rabc-security（实现基于 RABC 的权限模型 - Spring Security）
 - [ ] spring-boot-demo-rabc-shiro（实现基于 RABC 的权限模型 - shiro）
 - [ ] spring-boot-demo-session（统一 Session 管理）
 - [ ] spring-boot-demo-social（第三方授权验证，实现 QQ、微信、GitHub 等第三方登录）
 - [ ] spring-boot-demo-zookeeper（操作 zookeeper，可能会考虑实现分布式锁~）
 - [ ] spring-boot-demo-mq-rabbitmq（集成消息中间件 - RabbitMQ）
-- [ ] spring-boot-demo-mq-activemq（集成消息中间件 - ActiveMQ）
+- [ ] spring-boot-demo-mq-rocketmq（集成消息中间件 - RocketMQ）
+- [ ] spring-boot-demo-mq-kafka（集成消息中间件 - Kafka）
 - [ ] spring-boot-demo-websocket（集成 websocket 服务）
 - [ ] spring-boot-demo-ureport2 （集成 ureport2 实现自定义的复杂中国式报表引擎）
 - [ ] spring-boot-demo-uflo（集成  uflo 实现流程控制引擎）
