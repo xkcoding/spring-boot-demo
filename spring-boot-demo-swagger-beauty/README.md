@@ -1,6 +1,12 @@
 # spring-boot-demo-swagger-beauty
 
 > 此 demo 主要演示如何集成第三方的 swagger 来替换原生的 swagger，美化文档样式。本 demo 使用 [swagger-spring-boot-starter](https://github.com/battcn/swagger-spring-boot) 集成。
+>
+> 启动项目，访问地址：http://localhost:8080/demo/swagger-ui.html#/
+>
+> 用户名：xkcoding
+>
+> 密码：123456
 
 ## pom.xml
 
