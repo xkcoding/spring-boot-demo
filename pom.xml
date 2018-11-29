@@ -37,6 +37,7 @@
         <module>spring-boot-demo-war</module>
         <module>spring-boot-demo-elasticsearch</module>
         <module>spring-boot-demo-neo4j</module>
+        <module>spring-boot-demo-docker</module>
     </modules>
     <packaging>pom</packaging>
 
