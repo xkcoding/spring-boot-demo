@@ -27,8 +27,8 @@
 - [x] ~~spring-boot-demo-task-quartz（定时任务 - Quartz 实现）~~
 - [x] ~~spring-boot-demo-swagger（集成 Swagger 对 API 接口进行测试管理）~~
 - [x] ~~spring-boot-demo-swagger-beauty（集成自定义且更加美观的 Swagger 对 API 接口进行测试管理）~~
-- [ ] spring-boot-demo-rabc-security（实现基于 RABC 的权限模型 - Spring Security）
-- [ ] spring-boot-demo-rabc-shiro（实现基于 RABC 的权限模型 - shiro）
+- [ ] spring-boot-demo-rbac-security（实现基于 RBAC 的权限模型 - Spring Security）
+- [ ] spring-boot-demo-rbac-shiro（实现基于 RBAC 的权限模型 - shiro）
 - [ ] spring-boot-demo-session（统一 Session 管理）
 - [ ] spring-boot-demo-social（第三方授权验证，实现 QQ、微信、GitHub 等第三方登录）
 - [ ] spring-boot-demo-zookeeper（操作 zookeeper，可能会考虑实现分布式锁~）
