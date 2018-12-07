@@ -34,6 +34,7 @@
         <module>spring-boot-demo-task-quartz</module>
         <module>spring-boot-demo-swagger</module>
         <module>spring-boot-demo-swagger-beauty</module>
+        <module>spring-boot-demo-rbac-security</module>
         <module>spring-boot-demo-war</module>
         <module>spring-boot-demo-elasticsearch</module>
         <module>spring-boot-demo-neo4j</module>
