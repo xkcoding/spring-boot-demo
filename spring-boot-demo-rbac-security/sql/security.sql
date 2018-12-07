@@ -1,15 +1,15 @@
 # 用户表
 CREATE TABLE IF NOT EXISTS `sec_user`
 (
-  `id`         BIGINT(64)  NOT NULL COMMENT '主键',
-  `username`   VARCHAR(50) NOT NULL COMMENT '用户名',
-  `password`   VARCHAR(60) NOT NULL COMMENT '密码',
-  `nickname`   VARCHAR(255)         DEFAULT NULL COMMENT '昵称',
-  `phone`      VARCHAR(11)          DEFAULT NULL COMMENT '手机',
-  `email`      VARCHAR(50)          DEFAULT NULL COMMENT '邮箱',
-  `birthday`   BIGINT(13)           DEFAULT NULL COMMENT '生日',
-  `sex`        TINYINT(1)           DEFAULT NULL COMMENT '性别，男-1，女-2',
-  `status`     TINYINT(1)  NOT NULL DEFAULT '1' COMMENT '状态，启用-1，禁用-0',
+  `id`          BIGINT(64)  NOT NULL COMMENT '主键',
+  `username`    VARCHAR(50) NOT NULL COMMENT '用户名',
+  `password`    VARCHAR(60) NOT NULL COMMENT '密码',
+  `nickname`    VARCHAR(255)         DEFAULT NULL COMMENT '昵称',
+  `phone`       VARCHAR(11)          DEFAULT NULL COMMENT '手机',
+  `email`       VARCHAR(50)          DEFAULT NULL COMMENT '邮箱',
+  `birthday`    BIGINT(13)           DEFAULT NULL COMMENT '生日',
+  `sex`         TINYINT(1)           DEFAULT NULL COMMENT '性别，男-1，女-2',
+  `status`      TINYINT(1)  NOT NULL DEFAULT '1' COMMENT '状态，启用-1，禁用-0',
   `create_time` BIGINT(13)  NOT NULL COMMENT '创建时间',
   `update_time` BIGINT(13)  NOT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`),
@@ -25,8 +25,8 @@ CREATE TABLE IF NOT EXISTS `sec_role`
   `id`          BIGINT(64)  NOT NULL COMMENT '主键',
   `name`        VARCHAR(50) NOT NULL COMMENT '角色名',
   `description` VARCHAR(100) DEFAULT NULL COMMENT '描述',
-  `create_time`  BIGINT(13)  NOT NULL COMMENT '创建时间',
-  `update_time`  BIGINT(13)  NOT NULL COMMENT '更新时间',
+  `create_time` BIGINT(13)  NOT NULL COMMENT '创建时间',
+  `update_time` BIGINT(13)  NOT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE = InnoDB

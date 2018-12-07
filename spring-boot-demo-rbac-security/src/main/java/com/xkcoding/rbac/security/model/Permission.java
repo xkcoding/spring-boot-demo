@@ -2,7 +2,9 @@ package com.xkcoding.rbac.security.model;
 
 import lombok.Data;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
@@ -25,6 +27,7 @@ public class Permission {
     /**
      * 主键
      */
+    @Id
     private Long id;
 
     /**
@@ -55,5 +58,6 @@ public class Permission {
     /**
      * 父级id
      */
-    private String parent_id;
+    @Column(name = "parent_id")
+    private String parentId;
 }
