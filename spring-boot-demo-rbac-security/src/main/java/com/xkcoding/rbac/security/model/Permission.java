@@ -43,7 +43,7 @@ public class Permission {
     /**
      * 权限类型，页面-1，按钮-2
      */
-    private String type;
+    private Integer type;
 
     /**
      * 权限表达式
@@ -53,11 +53,11 @@ public class Permission {
     /**
      * 排序
      */
-    private String sort;
+    private Integer sort;
 
     /**
      * 父级id
      */
     @Column(name = "parent_id")
-    private String parentId;
+    private Long parentId;
 }
