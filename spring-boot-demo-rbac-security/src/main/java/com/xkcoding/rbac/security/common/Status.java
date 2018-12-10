@@ -33,6 +33,11 @@ public enum Status implements IStatus {
     LOGOUT(200, "退出成功"),
 
     /**
+     * 请先登录
+     */
+    UNAUTHORIZED(401, "请先登录"),
+
+    /**
      * 暂无权限访问
      */
     ACCESS_DENIED(403, "权限不足"),
@@ -55,23 +60,27 @@ public enum Status implements IStatus {
     /**
      * 参数不能为空
      */
-    PARAM_NOT_NULL(400,"参数不能为空"),
+    PARAM_NOT_NULL(400, "参数不能为空"),
 
     /**
      * 当前用户已被锁定，请联系管理员解锁！
      */
-    USER_DISABLED(403,"当前用户已被锁定，请联系管理员解锁！"),
+    USER_DISABLED(403, "当前用户已被锁定，请联系管理员解锁！"),
 
     /**
      * 用户名或密码错误
      */
-    USERNAME_PASSWORD_ERROR(5001,"用户名或密码错误"),
+    USERNAME_PASSWORD_ERROR(5001, "用户名或密码错误"),
 
     /**
      * token 已过期，请重新登录
      */
-    TOKEN_EXPIRED(5002,"token 已过期，请重新登录"),
-    TOKEN_PARSE_ERROR(5002,"token 解析失败，请尝试重新登录");
+    TOKEN_EXPIRED(5002, "token 已过期，请重新登录"),
+
+    /**
+     * token 解析失败，请尝试重新登录
+     */
+    TOKEN_PARSE_ERROR(5002, "token 解析失败，请尝试重新登录");
 
     /**
      * 状态码

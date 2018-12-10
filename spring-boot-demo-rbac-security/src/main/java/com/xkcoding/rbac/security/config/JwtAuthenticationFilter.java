@@ -67,7 +67,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                     ResponseUtil.renderJson(response, e);
                 }
             } else {
-                ResponseUtil.renderJson(response, Status.ACCESS_DENIED, null);
+                ResponseUtil.renderJson(response, Status.UNAUTHORIZED, null);
             }
         }
     }
