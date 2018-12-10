@@ -120,11 +120,11 @@ public class DataInitTest extends SpringBootDemoRbacSecurityApplicationTests {
     private User createUser(boolean isAdmin) {
         User user = new User();
         user.setId(snowflake.nextId());
-        user.setUsername(isAdmin ? "role" : "user");
+        user.setUsername(isAdmin ? "admin" : "user");
         user.setNickname(isAdmin ? "管理员" : "普通用户");
         user.setPassword(encoder.encode("123456"));
         user.setBirthday(DateTime.of("1994-11-22", "yyyy-MM-dd").getTime());
-        user.setEmail((isAdmin ? "role" : "user") + "@xkcoding.com");
+        user.setEmail((isAdmin ? "admin" : "user") + "@xkcoding.com");
         user.setPhone(isAdmin ? "17300000000" : "17300001111");
         user.setSex(1);
         user.setStatus(1);

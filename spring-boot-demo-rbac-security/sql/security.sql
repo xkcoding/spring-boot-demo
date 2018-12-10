@@ -25,9 +25,10 @@ CREATE TABLE `sec_permission`
 (
   `id`         bigint(64)  NOT NULL COMMENT '主键',
   `name`       varchar(50) NOT NULL COMMENT '权限名',
-  `href`       varchar(1000) DEFAULT NULL COMMENT '页面地址',
+  `href`       varchar(1000) DEFAULT NULL COMMENT '前端页面地址',
   `type`       int(2)      NOT NULL COMMENT '权限类型，页面-1，按钮-2',
-  `permission` varchar(50)   DEFAULT NULL COMMENT '权限表达式',
+  `permission` varchar(50)   DEFAULT NULL COMMENT '后端接口地址',
+  `method`     varchar(50)   DEFAULT NULL COMMENT '后端接口访问方式',
   `sort`       int(11)     NOT NULL COMMENT '排序',
   `parent_id`  bigint(64)  NOT NULL COMMENT '父级id',
   PRIMARY KEY (`id`)
@@ -39,11 +40,11 @@ CREATE TABLE `sec_permission`
 -- ----------------------------
 BEGIN;
 INSERT INTO `sec_permission`
-VALUES (1072019441543417856, '测试页面', '/test', 1, NULL, 1, 0);
+VALUES (1072019441543417856, '测试页面', '/test', 1, NULL, NULL, 1, 0);
 INSERT INTO `sec_permission`
-VALUES (1072019441564389376, '测试页面-查询', NULL, 2, 'test:query', 1, 1072019441543417856);
+VALUES (1072019441564389376, '测试页面-查询', NULL, 2, '/**/test', 'GET', 1, 1072019441543417856);
 INSERT INTO `sec_permission`
-VALUES (1072019441576972288, '测试页面-添加', NULL, 2, 'test:insert', 2, 1072019441543417856);
+VALUES (1072019441576972288, '测试页面-添加', NULL, 2, '/**/test', 'POST', 2, 1072019441543417856);
 COMMIT;
 
 -- ----------------------------
@@ -129,8 +130,8 @@ CREATE TABLE `sec_user`
 -- ----------------------------
 BEGIN;
 INSERT INTO `sec_user`
-VALUES (1072019440205434880, 'role', '$2a$10$TwdumjYKUYRQvc3VC8dleOlWr4Q2TysQtfmCMplOWygOzyfrKQee2', '管理员',
-        '17300000000', 'role@xkcoding.com', 785433600000, 1, 1, 1544424326483, 1544424326483);
+VALUES (1072019440205434880, 'admin', '$2a$10$TwdumjYKUYRQvc3VC8dleOlWr4Q2TysQtfmCMplOWygOzyfrKQee2', '管理员',
+        '17300000000', 'admin@xkcoding.com', 785433600000, 1, 1, 1544424326483, 1544424326483);
 INSERT INTO `sec_user`
 VALUES (1072019441035907072, 'user', '$2a$10$8hL7INOxQCzDzI08GGYNCOFKV6mjDcOqhJ/7c1VeF9agO.wBS3ylq', '普通用户',
         '17300001111', 'user@xkcoding.com', 785433600000, 1, 1, 1544424326659, 1544424326659);
