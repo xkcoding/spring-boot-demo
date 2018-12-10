@@ -4,6 +4,7 @@ import com.xkcoding.rbac.security.common.Status;
 import com.xkcoding.rbac.security.util.ResponseUtil;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 
 /**
@@ -30,5 +31,10 @@ public class SecurityHandlerConfig {
     @Bean
     public LogoutSuccessHandler logoutSuccessHandler() {
         return (request, response, authentication) -> ResponseUtil.renderJson(response, Status.LOGOUT, null);
+    }
+
+    @Bean
+    public AccessDeniedHandler accessDeniedHandler() {
+        return (request, response, accessDeniedException) -> ResponseUtil.renderJson(response, Status.ACCESS_DENIED, null);
     }
 }

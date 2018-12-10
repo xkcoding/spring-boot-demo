@@ -36,7 +36,7 @@ public class Permission {
     private String name;
 
     /**
-     * 页面地址
+     * 前端页面地址
      */
     private String href;
 
@@ -46,9 +46,14 @@ public class Permission {
     private Integer type;
 
     /**
-     * 权限表达式
+     * 后端接口地址
      */
     private String permission;
+
+    /**
+     * 后端接口访问方式
+     */
+    private String method;
 
     /**
      * 排序

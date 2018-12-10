@@ -2,6 +2,7 @@ package com.xkcoding.rbac.security.util;
 
 import cn.hutool.json.JSONUtil;
 import com.xkcoding.rbac.security.common.ApiResponse;
+import com.xkcoding.rbac.security.common.BaseException;
 import com.xkcoding.rbac.security.common.IStatus;
 import lombok.extern.slf4j.Slf4j;
 
@@ -40,6 +41,26 @@ public class ResponseUtil {
 
             response.getWriter()
                     .write(JSONUtil.toJsonStr(ApiResponse.ofStatus(status, data)));
+        } catch (IOException e) {
+            log.error("Response写出JSON异常，", e);
+        }
+    }
+
+    /**
+     * 往 response 写出 json
+     *
+     * @param response  响应
+     * @param exception 异常
+     */
+    public static void renderJson(HttpServletResponse response, BaseException exception) {
+        try {
+            response.setHeader("Access-Control-Allow-Origin", "*");
+            response.setHeader("Access-Control-Allow-Methods", "*");
+            response.setContentType("application/json;charset=UTF-8");
+            response.setStatus(200);
+
+            response.getWriter()
+                    .write(JSONUtil.toJsonStr(ApiResponse.ofException(exception)));
         } catch (IOException e) {
             log.error("Response写出JSON异常，", e);
         }
