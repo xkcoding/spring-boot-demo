@@ -62,10 +62,10 @@ public class DataInitTest extends SpringBootDemoRbacSecurityApplicationTests {
         createUserRoleRelation(user.getId(), roleUser.getId());
 
         // 页面权限
-        Permission pagePerm = createPermission("/test", "测试页面", 1, null, 1, 0L);
+        Permission pagePerm = createPermission("/test", "测试页面", 1, "page:test", null, 1, 0L);
         // 按钮权限
-        Permission btnQueryPerm = createPermission(null, "测试页面-查询", 2, "test:query", 1, pagePerm.getId());
-        Permission btnPermInsert = createPermission(null, "测试页面-添加", 2, "test:insert", 2, pagePerm.getId());
+        Permission btnQueryPerm = createPermission("/**/test", "测试页面-查询", 2, "btn:test:query", "GET", 1, pagePerm.getId());
+        Permission btnPermInsert = createPermission("/**/test", "测试页面-添加", 2, "btn:test:insert", "POST", 2, pagePerm.getId());
 
         createRolePermissionRelation(roleAdmin.getId(), pagePerm.getId());
         createRolePermissionRelation(roleUser.getId(), pagePerm.getId());
@@ -83,14 +83,14 @@ public class DataInitTest extends SpringBootDemoRbacSecurityApplicationTests {
         rolePermissionDao.save(adminPage);
     }
 
-    private Permission createPermission(String href, String name, Integer type, String permission, Integer sort, Long parentId) {
-        // 页面权限
+    private Permission createPermission(String url, String name, Integer type, String permission, String method, Integer sort, Long parentId) {
         Permission perm = new Permission();
         perm.setId(snowflake.nextId());
-        perm.setHref(href);
+        perm.setUrl(url);
         perm.setName(name);
         perm.setType(type);
         perm.setPermission(permission);
+        perm.setMethod(method);
         perm.setSort(sort);
         perm.setParentId(parentId);
         permissionDao.save(perm);
@@ -123,7 +123,8 @@ public class DataInitTest extends SpringBootDemoRbacSecurityApplicationTests {
         user.setUsername(isAdmin ? "admin" : "user");
         user.setNickname(isAdmin ? "管理员" : "普通用户");
         user.setPassword(encoder.encode("123456"));
-        user.setBirthday(DateTime.of("1994-11-22", "yyyy-MM-dd").getTime());
+        user.setBirthday(DateTime.of("1994-11-22", "yyyy-MM-dd")
+                .getTime());
         user.setEmail((isAdmin ? "admin" : "user") + "@xkcoding.com");
         user.setPhone(isAdmin ? "17300000000" : "17300001111");
         user.setSex(1);
