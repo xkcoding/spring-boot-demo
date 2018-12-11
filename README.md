@@ -2,7 +2,7 @@
 
 [![MIT](https://img.shields.io/github/license/xkcoding/spring-boot-demo.svg)](https://github.com/xkcoding/spring-boot-demo/blob/master/LICENSE) [![GitHub stars](https://img.shields.io/github/stars/xkcoding/spring-boot-demo.svg?style=flat&label=Star)](https://github.com/xkcoding/spring-boot-demo/stargazers) [![GitHub forks](https://img.shields.io/github/forks/xkcoding/spring-boot-demo.svg?style=flat&label=Fork)](https://github.com/xkcoding/spring-boot-demo/fork) [![GitHub watchers](https://img.shields.io/github/watchers/xkcoding/spring-boot-demo.svg?style=flat&label=Watch)](https://github.com/xkcoding/spring-boot-demo/watchers)
 
-spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actuator(监控)、admin(可视化监控)、logback(日志)、aopLog(通过AOP记录web请求日志)、统一异常处理(json级别和页面级别)、freemarker(模板引擎)、thymeleaf(模板引擎)、Beetl(模板引擎)、Enjoy(模板引擎)、JdbcTemplate、JPA(ORM框架)、mybatis(ORM框架)、通用Mapper、PageHelper、mybatis-plus、BeetlSQL、upload(本地文件上传和七牛云文件上传)、redis(缓存)、ehcache(缓存)、email(各种类型邮件)、task(定时任务)、quartz(定时任务)、swagger(API接口管理测试)、ureport2(中国式报表)、打包成war文件、集成 ElasticSearch(采用原生操作ES的方式)、集成Dubbo(采用非官方的starter)、docker(容器化)，后续会集成activemq,shiro,websocket,netty等模块。
+spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actuator(监控)、admin(可视化监控)、logback(日志)、aopLog(通过AOP记录web请求日志)、统一异常处理(json级别和页面级别)、freemarker(模板引擎)、thymeleaf(模板引擎)、Beetl(模板引擎)、Enjoy(模板引擎)、JdbcTemplate、JPA(ORM框架)、mybatis(ORM框架)、通用Mapper、PageHelper、mybatis-plus、BeetlSQL、upload(本地文件上传和七牛云文件上传)、redis(缓存)、ehcache(缓存)、email(各种类型邮件)、task(定时任务)、quartz(定时任务)、swagger(API接口管理测试)、security(权限认证)、ureport2(中国式报表)、打包成war文件、集成 ElasticSearch(采用原生操作ES的方式)、集成Dubbo(采用非官方的starter)、docker(容器化)，后续会集成activemq,shiro,websocket,netty等模块。
 
 ### 分支：
 
@@ -24,6 +24,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 4. 在 IDEA 中 Maven Projects 的面板导入根目录下 的 `pom.xml`
 5. Maven Projects 找不到的童鞋，可以勾上 View -> Tool Buttons ，然后Maven Projects的面板就会出现在IDEA的右侧
 6. 找到各个 module 的 Application 类就可以运行各个 module 了
+7. PS：运行各个 module 之前，请先注意有些模块是需要先初始化数据库数据的。
 
 ### 开发计划
 
@@ -205,6 +206,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 | [spring-boot-demo-task-quartz](./spring-boot-demo-task-quartz) | spring-boot 整合 quartz，并实现对定时任务的管理，包括新增定时任务，删除定时任务，暂停定时任务，恢复定时任务，修改定时任务启动时间，以及定时任务列表查询 |
 | [spring-boot-demo-swagger](./spring-boot-demo-swagger)       | spring-boot 集成原生的 swagger 用于统一管理、测试 API 接口   |
 | [spring-boot-demo-swagger-beauty](./spring-boot-demo-swagger-beauty) | spring-boot 集成第三方 swagger 美化API文档样式，用于统一管理、测试 API 接口 |
+| [spring-boot-demo-rbac-security](./spring-boot-demo-rbac-security) | spring-boot 集成 spring security 完成基于RBAC权限模型的权限管理，支持动态权限管理，使用 JWT 安全认证，支持在线人数统计，手动踢出用户等操作 |
 | [spring-boot-demo-ureport2](./spring-boot-demo-ureport2)     | spring-boot 集成 [ureport2](https://github.com/youseries/ureport) 实现自定义报表（ureport2可以轻松实现复杂的中国式报表，功能十分强大） |
 | [spring-boot-demo-war](./spring-boot-demo-war)               | spring-boot 打成 war 包的配置                                |
 | [spring-boot-demo-elasticsearch](./spring-boot-demo-elasticsearch) | spring-boot 集成 ElasticSearch（采用原生操作 ES 的方式）     |
