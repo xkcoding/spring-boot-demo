@@ -55,13 +55,16 @@ public class RbacAuthorityService {
 
             //获取资源，前后端分离，所以过滤页面权限，只保留按钮权限
             List<Permission> btnPerms = permissions.stream()
+                    // 过滤页面权限
                     .filter(permission -> Objects.equals(permission.getType(), Consts.BUTTON))
-                    .filter(permission -> StrUtil.isNotBlank(permission.getPermission()))
+                    // 过滤 URL 为空
+                    .filter(permission -> StrUtil.isNotBlank(permission.getUrl()))
+                    // 过滤 METHOD 为空
                     .filter(permission -> StrUtil.isNotBlank(permission.getMethod()))
                     .collect(Collectors.toList());
 
             for (Permission btnPerm : btnPerms) {
-                AntPathRequestMatcher antPathMatcher = new AntPathRequestMatcher(btnPerm.getPermission(), btnPerm.getMethod());
+                AntPathRequestMatcher antPathMatcher = new AntPathRequestMatcher(btnPerm.getUrl(), btnPerm.getMethod());
                 if (antPathMatcher.matches(request)) {
                     hasPermission = true;
                     break;

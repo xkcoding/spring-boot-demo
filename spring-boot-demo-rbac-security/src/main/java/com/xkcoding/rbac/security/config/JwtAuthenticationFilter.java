@@ -50,7 +50,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         if (antPathMatcher.match("/**/api/auth/**", request.getRequestURI())) {
             filterChain.doFilter(request, response);
         } else {
-            String jwt = getJwtFromRequest(request);
+            String jwt = jwtUtil.getJwtFromRequest(request);
 
             if (StrUtil.isNotBlank(jwt)) {
                 try {
@@ -72,11 +72,4 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         }
     }
 
-    private String getJwtFromRequest(HttpServletRequest request) {
-        String bearerToken = request.getHeader("Authorization");
-        if (StrUtil.isNotBlank(bearerToken) && bearerToken.startsWith("Bearer ")) {
-            return bearerToken.substring(7);
-        }
-        return null;
-    }
 }

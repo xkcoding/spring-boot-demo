@@ -2,7 +2,8 @@ package com.xkcoding.rbac.security.exception;
 
 import com.xkcoding.rbac.security.common.BaseException;
 import com.xkcoding.rbac.security.common.Status;
-import lombok.Getter;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * <p>
@@ -17,7 +18,8 @@ import lombok.Getter;
  * @version: V1.0
  * @modified: yangkai.shen
  */
-@Getter
+@EqualsAndHashCode(callSuper = true)
+@Data
 public class SecurityException extends BaseException {
     public SecurityException(Status status) {
         super(status);

@@ -1,6 +1,7 @@
 package com.xkcoding.rbac.security.exception.handler;
 
 import cn.hutool.core.collection.CollUtil;
+import cn.hutool.json.JSONUtil;
 import com.xkcoding.rbac.security.common.ApiResponse;
 import com.xkcoding.rbac.security.common.BaseException;
 import com.xkcoding.rbac.security.common.Status;
@@ -8,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -40,6 +42,9 @@ public class GlobalExceptionHandler {
         if (e instanceof NoHandlerFoundException) {
             log.error("【全局异常拦截】NoHandlerFoundException: 请求方法 {}, 请求路径 {}", ((NoHandlerFoundException) e).getRequestURL(), ((NoHandlerFoundException) e).getHttpMethod());
             return ApiResponse.ofStatus(Status.REQUEST_NOT_FOUND);
+        } else if (e instanceof HttpRequestMethodNotSupportedException) {
+            log.error("【全局异常拦截】HttpRequestMethodNotSupportedException: 当前请求方式 {}, 支持请求方式 {}", ((HttpRequestMethodNotSupportedException) e).getMethod(), JSONUtil.toJsonStr(((HttpRequestMethodNotSupportedException) e).getSupportedHttpMethods()));
+            return ApiResponse.ofStatus(Status.HTTP_BAD_METHOD);
         } else if (e instanceof MethodArgumentNotValidException) {
             log.error("【全局异常拦截】MethodArgumentNotValidException", e);
             return ApiResponse.of(Status.BAD_REQUEST.getCode(), ((MethodArgumentNotValidException) e).getBindingResult()

@@ -33,9 +33,6 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
-    private LogoutSuccessHandler logoutSuccessHandler;
-
-    @Autowired
     private AccessDeniedHandler accessDeniedHandler;
 
     @Autowired
@@ -70,6 +67,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf()
                 .disable()
 
+                // 登录行为由自己实现，参考 AuthController#login
                 .formLogin()
                 .disable()
                 .httpBasic()
@@ -86,17 +84,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest()
                 .access("@rbacAuthorityService.hasPermission(request,authentication)")
 
-                // 登出处理
+                // 登出行为由自己实现，参考 AuthController#logout
                 .and()
-                .logout()
-                // 登出请求默认为POST请求，改为GET请求
-                .logoutRequestMatcher(new AntPathRequestMatcher("/**/logout", "GET"))
-                // 登出成功处理器
-                .logoutSuccessHandler(logoutSuccessHandler)
-                .permitAll()
+                .logout().disable()
 
                 // Session 管理
-                .and()
                 .sessionManagement()
                 // 因为使用了JWT，所以这里不管理Session
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)

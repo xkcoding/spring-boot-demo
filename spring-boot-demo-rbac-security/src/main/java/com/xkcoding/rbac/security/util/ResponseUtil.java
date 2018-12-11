@@ -1,5 +1,6 @@
 package com.xkcoding.rbac.security.util;
 
+import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.xkcoding.rbac.security.common.ApiResponse;
 import com.xkcoding.rbac.security.common.BaseException;
@@ -39,8 +40,10 @@ public class ResponseUtil {
             response.setContentType("application/json;charset=UTF-8");
             response.setStatus(200);
 
+            // FIXME: hutool 的 BUG：JSONUtil.toJsonStr()
+            //  将JSON转为String的时候，忽略null值的时候转成的String存在错误
             response.getWriter()
-                    .write(JSONUtil.toJsonStr(ApiResponse.ofStatus(status, data)));
+                    .write(JSONUtil.toJsonStr(new JSONObject(ApiResponse.ofStatus(status, data), true)));
         } catch (IOException e) {
             log.error("Response写出JSON异常，", e);
         }
@@ -59,8 +62,10 @@ public class ResponseUtil {
             response.setContentType("application/json;charset=UTF-8");
             response.setStatus(200);
 
+            // FIXME: hutool 的 BUG：JSONUtil.toJsonStr()
+            //  将JSON转为String的时候，忽略null值的时候转成的String存在错误
             response.getWriter()
-                    .write(JSONUtil.toJsonStr(ApiResponse.ofException(exception)));
+                    .write(JSONUtil.toJsonStr(new JSONObject(ApiResponse.ofException(exception), true)));
         } catch (IOException e) {
             log.error("Response写出JSON异常，", e);
         }

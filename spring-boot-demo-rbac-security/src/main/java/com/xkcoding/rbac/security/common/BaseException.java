@@ -16,8 +16,8 @@ import lombok.EqualsAndHashCode;
  * @version: V1.0
  * @modified: yangkai.shen
  */
-@Data
 @EqualsAndHashCode(callSuper = true)
+@Data
 public class BaseException extends RuntimeException {
 	private Integer code;
 	private String message;
