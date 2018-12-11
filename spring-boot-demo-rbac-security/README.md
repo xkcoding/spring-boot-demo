@@ -9,7 +9,7 @@
 - [x] **登录 / 登出**部分均使用自定义 Controller 实现，未使用 `Spring Security` 内部实现部分，适用于前后端分离项目，详情参考 [`SecurityConfig.java`](./src/main/java/com/xkcoding/rbac/security/config/SecurityConfig.java) 和 [`AuthController.java`](./src/main/java/com/xkcoding/rbac/security/config/AuthController.java)
 - [x] 持久化技术使用 `spring-data-jpa` 完成
 - [x] 使用 `JWT` 实现安全验证，同时引入 `Redis` 解决 `JWT` 无法手动设置过期的弊端，并且保证同一用户在同一时间仅支持同一设备登录，不同设备登录会将，详情参考 [`JwtUtil.java`](./src/main/java/com/xkcoding/rbac/security/config/JwtUtil.java)
-- [ ] 在线人数统计
+- [x] 在线人数统计
 - [ ] 手动踢出用户
 
 ## 2. 运行
@@ -553,7 +553,135 @@ public class CustomUserDetailsService implements UserDetailsService {
 }
 ```
 
-### 3.7. 其余代码参见本 demo
+### 3.7. RedisUtil.java
+
+> 主要功能：根据key的格式分页获取Redis存在的key列表
+
+```java
+/**
+ * <p>
+ * Redis工具类
+ * </p>
+ *
+ * @package: com.xkcoding.rbac.security.util
+ * @description: Redis工具类
+ * @author: yangkai.shen
+ * @date: Created in 2018-12-11 20:24
+ * @copyright: Copyright (c) 2018
+ * @version: V1.0
+ * @modified: yangkai.shen
+ */
+@Component
+@Slf4j
+public class RedisUtil {
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
+
+    /**
+     * 分页获取指定格式key，使用 scan 命令代替 keys 命令，在大数据量的情况下可以提高查询效率
+     *
+     * @param patternKey  key格式
+     * @param currentPage 当前页码
+     * @param pageSize    每页条数
+     * @return 分页获取指定格式key
+     */
+    public PageResult<String> findKeysForPage(String patternKey, int currentPage, int pageSize) {
+        ScanOptions options = ScanOptions.scanOptions()
+                .match(patternKey)
+                .build();
+        RedisConnectionFactory factory = stringRedisTemplate.getConnectionFactory();
+        RedisConnection rc = factory.getConnection();
+        Cursor<byte[]> cursor = rc.scan(options);
+
+        List<String> result = Lists.newArrayList();
+
+        long tmpIndex = 0;
+        int startIndex = (currentPage - 1) * pageSize;
+        int end = currentPage * pageSize;
+        while (cursor.hasNext()) {
+            String key = new String(cursor.next());
+            if (tmpIndex >= startIndex && tmpIndex < end) {
+                result.add(key);
+            }
+            tmpIndex++;
+        }
+
+        try {
+            cursor.close();
+            RedisConnectionUtils.releaseConnection(rc, factory);
+        } catch (Exception e) {
+            log.warn("Redis连接关闭异常，", e);
+        }
+
+        return new PageResult<>(result, tmpIndex);
+    }
+}
+```
+
+### 3.8. MonitorService.java
+
+> 监控服务，主要功能：查询当前在线人数分页列表，手动踢出某个用户
+
+```java
+package com.xkcoding.rbac.security.service;
+
+import cn.hutool.core.util.StrUtil;
+import com.google.common.collect.Lists;
+import com.xkcoding.rbac.security.common.Consts;
+import com.xkcoding.rbac.security.common.PageResult;
+import com.xkcoding.rbac.security.model.User;
+import com.xkcoding.rbac.security.repository.UserDao;
+import com.xkcoding.rbac.security.util.RedisUtil;
+import com.xkcoding.rbac.security.vo.OnlineUser;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+/**
+ * <p>
+ * 监控 Service
+ * </p>
+ *
+ * @package: com.xkcoding.rbac.security.service
+ * @description: 监控 Service
+ * @author: yangkai.shen
+ * @date: Created in 2018-12-12 00:55
+ * @copyright: Copyright (c) 2018
+ * @version: V1.0
+ * @modified: yangkai.shen
+ */
+@Service
+public class MonitorService {
+    @Autowired
+    private RedisUtil redisUtil;
+
+    @Autowired
+    private UserDao userDao;
+
+    public PageResult<OnlineUser> onlineUser(Integer page, Integer size) {
+        PageResult<String> keys = redisUtil.findKeysForPage(Consts.REDIS_JWT_KEY_PREFIX + Consts.SYMBOL_STAR, page, size);
+        List<String> rows = keys.getRows();
+        Long total = keys.getTotal();
+
+        // 根据 redis 中键获取用户名列表
+        List<String> usernameList = rows.stream()
+                .map(s -> StrUtil.subAfter(s, Consts.REDIS_JWT_KEY_PREFIX, true))
+                .collect(Collectors.toList());
+        // 根据用户名查询用户信息
+        List<User> userList = userDao.findByUsernameIn(usernameList);
+
+        // 封装在线用户信息
+        List<OnlineUser> onlineUserList = Lists.newArrayList();
+        userList.forEach(user -> onlineUserList.add(OnlineUser.create(user)));
+
+        return new PageResult<>(onlineUserList, total);
+    }
+}
+```
+
+### 3.9. 其余代码参见本 demo
 
 ## 4. 参考
 
