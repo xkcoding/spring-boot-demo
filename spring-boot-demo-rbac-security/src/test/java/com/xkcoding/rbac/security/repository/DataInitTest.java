@@ -62,16 +62,21 @@ public class DataInitTest extends SpringBootDemoRbacSecurityApplicationTests {
         createUserRoleRelation(user.getId(), roleUser.getId());
 
         // 页面权限
-        Permission pagePerm = createPermission("/test", "测试页面", 1, "page:test", null, 1, 0L);
+        Permission testPagePerm = createPermission("/test", "测试页面", 1, "page:test", null, 1, 0L);
         // 按钮权限
-        Permission btnQueryPerm = createPermission("/**/test", "测试页面-查询", 2, "btn:test:query", "GET", 1, pagePerm.getId());
-        Permission btnPermInsert = createPermission("/**/test", "测试页面-添加", 2, "btn:test:insert", "POST", 2, pagePerm.getId());
+        Permission testBtnQueryPerm = createPermission("/**/test", "测试页面-查询", 2, "btn:test:query", "GET", 1, testPagePerm.getId());
+        Permission testBtnPermInsert = createPermission("/**/test", "测试页面-添加", 2, "btn:test:insert", "POST", 2, testPagePerm.getId());
 
-        createRolePermissionRelation(roleAdmin.getId(), pagePerm.getId());
-        createRolePermissionRelation(roleUser.getId(), pagePerm.getId());
-        createRolePermissionRelation(roleAdmin.getId(), btnQueryPerm.getId());
-        createRolePermissionRelation(roleUser.getId(), btnQueryPerm.getId());
-        createRolePermissionRelation(roleAdmin.getId(), btnPermInsert.getId());
+        Permission monitorOnlinePagePerm = createPermission("/monitor", "监控在线用户页面", 1, "page:monitor:online", null, 2, 0L);
+        Permission monitorOnlineBtnQueryPerm = createPermission("/**/api/monitor/online/user/**", "在线用户页面-查询", 2, "btn:monitor:online:query", "POST", 1, monitorOnlinePagePerm.getId());
+
+        createRolePermissionRelation(roleAdmin.getId(), testPagePerm.getId());
+        createRolePermissionRelation(roleUser.getId(), testPagePerm.getId());
+        createRolePermissionRelation(roleAdmin.getId(), testBtnQueryPerm.getId());
+        createRolePermissionRelation(roleUser.getId(), testBtnQueryPerm.getId());
+        createRolePermissionRelation(roleAdmin.getId(), testBtnPermInsert.getId());
+        createRolePermissionRelation(roleAdmin.getId(), monitorOnlinePagePerm.getId());
+        createRolePermissionRelation(roleAdmin.getId(), monitorOnlineBtnQueryPerm.getId());
     }
 
     private void createRolePermissionRelation(Long roleId, Long permissionId) {

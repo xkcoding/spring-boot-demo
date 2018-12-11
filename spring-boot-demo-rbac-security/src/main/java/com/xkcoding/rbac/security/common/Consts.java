@@ -37,4 +37,14 @@ public interface Consts {
      * JWT 在 Redis 中保存的key前缀
      */
     String REDIS_JWT_KEY_PREFIX = "security:jwt:";
+
+    /**
+     * 星号
+     */
+    String SYMBOL_STAR = "*";
+
+    /**
+     * 邮箱符号
+     */
+    String SYMBOL_EMAIL = "@";
 }
