@@ -25,9 +25,9 @@ CREATE TABLE `sec_permission`
 (
   `id`         bigint(64)  NOT NULL COMMENT '主键',
   `name`       varchar(50) NOT NULL COMMENT '权限名',
-  `href`       varchar(1000) DEFAULT NULL COMMENT '前端页面地址',
+  `url`        varchar(1000) DEFAULT NULL COMMENT '类型为页面时，代表前端路由地址，类型为按钮时，代表后端接口地址',
   `type`       int(2)      NOT NULL COMMENT '权限类型，页面-1，按钮-2',
-  `permission` varchar(50)   DEFAULT NULL COMMENT '后端接口地址',
+  `permission` varchar(50)   DEFAULT NULL COMMENT '权限表达式',
   `method`     varchar(50)   DEFAULT NULL COMMENT '后端接口访问方式',
   `sort`       int(11)     NOT NULL COMMENT '排序',
   `parent_id`  bigint(64)  NOT NULL COMMENT '父级id',
@@ -40,11 +40,11 @@ CREATE TABLE `sec_permission`
 -- ----------------------------
 BEGIN;
 INSERT INTO `sec_permission`
-VALUES (1072019441543417856, '测试页面', '/test', 1, NULL, NULL, 1, 0);
+VALUES (1072019441543417856, '测试页面', '/test', 1, 'page:test', NULL, 1, 0);
 INSERT INTO `sec_permission`
-VALUES (1072019441564389376, '测试页面-查询', NULL, 2, '/**/test', 'GET', 1, 1072019441543417856);
+VALUES (1072019441564389376, '测试页面-查询', '/**/test', 2, 'btn:test:query', 'GET', 1, 1072019441543417856);
 INSERT INTO `sec_permission`
-VALUES (1072019441576972288, '测试页面-添加', NULL, 2, '/**/test', 'POST', 2, 1072019441543417856);
+VALUES (1072019441576972288, '测试页面-添加', '/**/test', 2, 'btn:test:insert', 'POST', 2, 1072019441543417856);
 COMMIT;
 
 -- ----------------------------

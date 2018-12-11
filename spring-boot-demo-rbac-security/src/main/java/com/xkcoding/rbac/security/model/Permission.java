@@ -36,9 +36,9 @@ public class Permission {
     private String name;
 
     /**
-     * 前端页面地址
+     * 类型为页面时，代表前端路由地址，类型为按钮时，代表后端接口地址
      */
-    private String href;
+    private String url;
 
     /**
      * 权限类型，页面-1，按钮-2
@@ -46,7 +46,7 @@ public class Permission {
     private Integer type;
 
     /**
-     * 后端接口地址
+     * 权限表达式
      */
     private String permission;
 
