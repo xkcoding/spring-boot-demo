@@ -11,7 +11,7 @@
  Target Server Version : 50718
  File Encoding         : 65001
 
- Date: 12/12/2018 01:52:06
+ Date: 12/12/2018 18:52:51
 */
 
 SET NAMES utf8mb4;
@@ -40,16 +40,19 @@ CREATE TABLE `sec_permission`
 -- ----------------------------
 BEGIN;
 INSERT INTO `sec_permission`
-VALUES (1072548676754345984, '测试页面', '/test', 1, 'page:test', NULL, 1, 0);
+VALUES (1072806379288399872, '测试页面', '/test', 1, 'page:test', NULL, 1, 0);
 INSERT INTO `sec_permission`
-VALUES (1072548676771123200, '测试页面-查询', '/**/test', 2, 'btn:test:query', 'GET', 1, 1072548676754345984);
+VALUES (1072806379313565696, '测试页面-查询', '/**/test', 2, 'btn:test:query', 'GET', 1, 1072806379288399872);
 INSERT INTO `sec_permission`
-VALUES (1072548676783706112, '测试页面-添加', '/**/test', 2, 'btn:test:insert', 'POST', 2, 1072548676754345984);
+VALUES (1072806379330342912, '测试页面-添加', '/**/test', 2, 'btn:test:insert', 'POST', 2, 1072806379288399872);
 INSERT INTO `sec_permission`
-VALUES (1072548676792094720, '监控在线用户页面', '/monitor', 1, 'page:monitor:online', NULL, 2, 0);
+VALUES (1072806379342925824, '监控在线用户页面', '/monitor', 1, 'page:monitor:online', NULL, 2, 0);
 INSERT INTO `sec_permission`
-VALUES (1072548676800483328, '在线用户页面-查询', '/**/api/monitor/online/user/**', 2, 'btn:monitor:online:query', 'POST', 1,
-        1072548676792094720);
+VALUES (1072806379363897344, '在线用户页面-查询', '/**/api/monitor/online/user', 2, 'btn:monitor:online:query', 'GET', 1,
+        1072806379342925824);
+INSERT INTO `sec_permission`
+VALUES (1072806379384868864, '在线用户页面-踢出', '/**/api/monitor/online/user/kickout', 2, 'btn:monitor:online:kickout',
+        'DELETE', 2, 1072806379342925824);
 COMMIT;
 
 -- ----------------------------
@@ -73,9 +76,9 @@ CREATE TABLE `sec_role`
 -- ----------------------------
 BEGIN;
 INSERT INTO `sec_role`
-VALUES (1072548676695625728, '管理员', '超级管理员', 1544550506172, 1544550506172);
+VALUES (1072806379208708096, '管理员', '超级管理员', 1544611947239, 1544611947239);
 INSERT INTO `sec_role`
-VALUES (1072548676716597248, '普通用户', '普通用户', 1544550506177, 1544550506177);
+VALUES (1072806379238068224, '普通用户', '普通用户', 1544611947246, 1544611947246);
 COMMIT;
 
 -- ----------------------------
@@ -95,19 +98,21 @@ CREATE TABLE `sec_role_permission`
 -- ----------------------------
 BEGIN;
 INSERT INTO `sec_role_permission`
-VALUES (1072548676695625728, 1072548676754345984);
+VALUES (1072806379208708096, 1072806379288399872);
 INSERT INTO `sec_role_permission`
-VALUES (1072548676695625728, 1072548676771123200);
+VALUES (1072806379208708096, 1072806379313565696);
 INSERT INTO `sec_role_permission`
-VALUES (1072548676695625728, 1072548676783706112);
+VALUES (1072806379208708096, 1072806379330342912);
 INSERT INTO `sec_role_permission`
-VALUES (1072548676695625728, 1072548676792094720);
+VALUES (1072806379208708096, 1072806379342925824);
 INSERT INTO `sec_role_permission`
-VALUES (1072548676695625728, 1072548676800483328);
+VALUES (1072806379208708096, 1072806379363897344);
 INSERT INTO `sec_role_permission`
-VALUES (1072548676716597248, 1072548676754345984);
+VALUES (1072806379208708096, 1072806379384868864);
 INSERT INTO `sec_role_permission`
-VALUES (1072548676716597248, 1072548676771123200);
+VALUES (1072806379238068224, 1072806379288399872);
+INSERT INTO `sec_role_permission`
+VALUES (1072806379238068224, 1072806379313565696);
 COMMIT;
 
 -- ----------------------------
@@ -139,11 +144,11 @@ CREATE TABLE `sec_user`
 -- ----------------------------
 BEGIN;
 INSERT INTO `sec_user`
-VALUES (1072548675445723136, 'admin', '$2a$10$YNfKodirWWpUOQruzXEq9.sy3G9tATDlonLsPx2si7oVj6InP2KX2', '管理员',
-        '17300000000', 'admin@xkcoding.com', 785433600000, 1, 1, 1544550505995, 1544550505995);
+VALUES (1072806377661009920, 'admin', '$2a$10$64iuSLkKNhpTN19jGHs7xePvFsub7ZCcCmBqEYw8fbACGTE3XetYq', '管理员',
+        '17300000000', 'admin@xkcoding.com', 785433600000, 1, 1, 1544611947032, 1544611947032);
 INSERT INTO `sec_user`
-VALUES (1072548676288778240, 'user', '$2a$10$xAZBKSftV9/ZkkR2TEZUUeYPkn1yTXElmPE2.K/DmU1FrR4AR.Ggu', '普通用户',
-        '17300001111', 'user@xkcoding.com', 785433600000, 1, 1, 1544550506168, 1544550506168);
+VALUES (1072806378780889088, 'user', '$2a$10$OUDl4thpcHfs7WZ1kMUOb.ZO5eD4QANW5E.cexBLiKDIzDNt87QbO', '普通用户',
+        '17300001111', 'user@xkcoding.com', 785433600000, 1, 1, 1544611947234, 1544611947234);
 COMMIT;
 
 -- ----------------------------
@@ -163,9 +168,9 @@ CREATE TABLE `sec_user_role`
 -- ----------------------------
 BEGIN;
 INSERT INTO `sec_user_role`
-VALUES (1072548675445723136, 1072548676695625728);
+VALUES (1072806377661009920, 1072806379208708096);
 INSERT INTO `sec_user_role`
-VALUES (1072548676288778240, 1072548676716597248);
+VALUES (1072806378780889088, 1072806379238068224);
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;

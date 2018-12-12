@@ -1,15 +1,20 @@
 package com.xkcoding.rbac.security.controller;
 
+import cn.hutool.core.collection.CollUtil;
 import com.xkcoding.rbac.security.common.ApiResponse;
 import com.xkcoding.rbac.security.common.PageResult;
+import com.xkcoding.rbac.security.common.Status;
+import com.xkcoding.rbac.security.exception.SecurityException;
+import com.xkcoding.rbac.security.payload.PageCondition;
 import com.xkcoding.rbac.security.service.MonitorService;
+import com.xkcoding.rbac.security.util.PageUtil;
+import com.xkcoding.rbac.security.util.SecurityUtil;
 import com.xkcoding.rbac.security.vo.OnlineUser;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * <p>
@@ -34,13 +39,29 @@ public class MonitorController {
     /**
      * 在线用户列表
      *
-     * @param page 当前页码
-     * @param size 每页条数
+     * @param pageCondition 分页参数
      */
-    @PostMapping("/online/user/{page}/{size}")
-    public ApiResponse onlineUser(@PathVariable Integer page, @PathVariable Integer size) {
-        PageResult<OnlineUser> pageResult = monitorService.onlineUser(page, size);
+    @GetMapping("/online/user")
+    public ApiResponse onlineUser(PageCondition pageCondition) {
+        PageUtil.checkPageCondition(pageCondition, PageCondition.class);
+        PageResult<OnlineUser> pageResult = monitorService.onlineUser(pageCondition);
         return ApiResponse.ofSuccess(pageResult);
     }
 
+    /**
+     * 批量踢出在线用户
+     *
+     * @param names 用户名列表
+     */
+    @DeleteMapping("/online/user/kickout")
+    public ApiResponse kickoutOnlineUser(@RequestBody List<String> names) {
+        if (CollUtil.isEmpty(names)) {
+            throw new SecurityException(Status.PARAM_NOT_NULL);
+        }
+        if (names.contains(SecurityUtil.getCurrentUsername())){
+            throw new SecurityException(Status.KICKOUT_SELF);
+        }
+        monitorService.kickout(names);
+        return ApiResponse.ofSuccess();
+    }
 }

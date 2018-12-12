@@ -68,7 +68,8 @@ public class DataInitTest extends SpringBootDemoRbacSecurityApplicationTests {
         Permission testBtnPermInsert = createPermission("/**/test", "测试页面-添加", 2, "btn:test:insert", "POST", 2, testPagePerm.getId());
 
         Permission monitorOnlinePagePerm = createPermission("/monitor", "监控在线用户页面", 1, "page:monitor:online", null, 2, 0L);
-        Permission monitorOnlineBtnQueryPerm = createPermission("/**/api/monitor/online/user/**", "在线用户页面-查询", 2, "btn:monitor:online:query", "POST", 1, monitorOnlinePagePerm.getId());
+        Permission monitorOnlineBtnQueryPerm = createPermission("/**/api/monitor/online/user", "在线用户页面-查询", 2, "btn:monitor:online:query", "GET", 1, monitorOnlinePagePerm.getId());
+        Permission monitorOnlineBtnKickoutPerm = createPermission("/**/api/monitor/online/user/kickout", "在线用户页面-踢出", 2, "btn:monitor:online:kickout", "DELETE", 2, monitorOnlinePagePerm.getId());
 
         createRolePermissionRelation(roleAdmin.getId(), testPagePerm.getId());
         createRolePermissionRelation(roleUser.getId(), testPagePerm.getId());
@@ -77,6 +78,7 @@ public class DataInitTest extends SpringBootDemoRbacSecurityApplicationTests {
         createRolePermissionRelation(roleAdmin.getId(), testBtnPermInsert.getId());
         createRolePermissionRelation(roleAdmin.getId(), monitorOnlinePagePerm.getId());
         createRolePermissionRelation(roleAdmin.getId(), monitorOnlineBtnQueryPerm.getId());
+        createRolePermissionRelation(roleAdmin.getId(), monitorOnlineBtnKickoutPerm.getId());
     }
 
     private void createRolePermissionRelation(Long roleId, Long permissionId) {

@@ -44,3 +44,6 @@ jwt:
     key: xkcoding
     ttl: 600000
     remember: 604800000
+logging:
+  level:
+    com.xkcoding.rbac.security: debug

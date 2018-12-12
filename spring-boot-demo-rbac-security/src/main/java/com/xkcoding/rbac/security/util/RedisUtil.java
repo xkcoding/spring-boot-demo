@@ -12,6 +12,7 @@ import org.springframework.data.redis.core.ScanOptions;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -70,5 +71,23 @@ public class RedisUtil {
         }
 
         return new PageResult<>(result, tmpIndex);
+    }
+
+    /**
+     * 删除 Redis 中的某个key
+     *
+     * @param key 键
+     */
+    public void delete(String key) {
+        stringRedisTemplate.delete(key);
+    }
+
+    /**
+     * 批量删除 Redis 中的某些key
+     *
+     * @param keys 键列表
+     */
+    public void delete(Collection<String> keys) {
+        stringRedisTemplate.delete(keys);
     }
 }
