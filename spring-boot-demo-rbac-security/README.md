@@ -9,8 +9,8 @@
 - [x] **登录 / 登出**部分均使用自定义 Controller 实现，未使用 `Spring Security` 内部实现部分，适用于前后端分离项目，详情参考 [`SecurityConfig.java`](./src/main/java/com/xkcoding/rbac/security/config/SecurityConfig.java) 和 [`AuthController.java`](./src/main/java/com/xkcoding/rbac/security/controller/AuthController.java)
 - [x] 持久化技术使用 `spring-data-jpa` 完成
 - [x] 使用 `JWT` 实现安全验证，同时引入 `Redis` 解决 `JWT` 无法手动设置过期的弊端，并且保证同一用户在同一时间仅支持同一设备登录，不同设备登录会将，详情参考 [`JwtUtil.java`](./src/main/java/com/xkcoding/rbac/security/util/JwtUtil.java)
-- [x] 在线人数统计，详情参考 [`MonitorService.java`](./src/main/java/com/xkcoding/rbac/security/config/MonitorService.java) 和 [`RedisUtil.java`](./src/main/java/com/xkcoding/rbac/security/util/RedisUtil.java)
-- [x] 手动踢出用户，详情参考 [`MonitorService.java`](./src/main/java/com/xkcoding/rbac/security/config/MonitorService.java) 
+- [x] 在线人数统计，详情参考 [`MonitorService.java`](./src/main/java/com/xkcoding/rbac/security/service/MonitorService.java) 和 [`RedisUtil.java`](./src/main/java/com/xkcoding/rbac/security/util/RedisUtil.java)
+- [x] 手动踢出用户，详情参考 [`MonitorService.java`](./src/main/java/com/xkcoding/rbac/security/service/MonitorService.java) 
 
 ## 2. 运行
 
