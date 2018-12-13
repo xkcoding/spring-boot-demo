@@ -47,3 +47,8 @@ jwt:
 logging:
   level:
     com.xkcoding.rbac.security: debug
+custom:
+  config:
+    ignores:
+      - "/api/auth/login"
+      - "/api/auth/logout"

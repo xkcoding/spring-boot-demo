@@ -1,20 +1,22 @@
 package com.xkcoding.rbac.security.config;
 
+import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.util.ArrayUtil;
 import com.xkcoding.rbac.security.service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 /**
  * <p>
@@ -31,7 +33,11 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
  */
 @Configuration
 @EnableWebSecurity
+@EnableConfigurationProperties(CustomConfig.class)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    @Autowired
+    private CustomConfig customConfig;
+
     @Autowired
     private AccessDeniedHandler accessDeniedHandler;
 
@@ -76,8 +82,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // 认证请求
                 .authorizeRequests()
                 // 放行 /api/auth/** 的所有请求，参见 AuthController
-                .antMatchers("/**/api/auth/**")
-                .permitAll()
+                //.antMatchers("/api/auth/**")
+                //.permitAll()
                 .anyRequest()
                 .authenticated()
                 // RBAC 动态 url 认证
@@ -86,7 +92,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 // 登出行为由自己实现，参考 AuthController#logout
                 .and()
-                .logout().disable()
+                .logout()
+                .disable()
 
                 // Session 管理
                 .sessionManagement()
@@ -100,5 +107,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         // 添加自定义 JWT 过滤器
         http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+    }
+
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        if (CollUtil.isNotEmpty(customConfig.getIgnores())) {
+            web.ignoring()
+                    .antMatchers(ArrayUtil.toArray(customConfig.getIgnores(), String.class));
+        }
     }
 }

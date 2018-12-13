@@ -1,5 +1,6 @@
 package com.xkcoding.rbac.security.config;
 
+import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
 import com.xkcoding.rbac.security.common.Status;
 import com.xkcoding.rbac.security.exception.SecurityException;
@@ -12,8 +13,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.stereotype.Component;
-import org.springframework.util.AntPathMatcher;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
@@ -44,32 +45,41 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Autowired
     private JwtUtil jwtUtil;
 
+    @Autowired
+    private CustomConfig customConfig;
+
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        AntPathMatcher antPathMatcher = new AntPathMatcher();
-        if (antPathMatcher.match("/**/api/auth/**", request.getRequestURI())) {
-            filterChain.doFilter(request, response);
-        } else {
-            String jwt = jwtUtil.getJwtFromRequest(request);
-
-            if (StrUtil.isNotBlank(jwt)) {
-                try {
-                    String username = jwtUtil.getUsernameFromJWT(jwt);
-
-                    UserDetails userDetails = customUserDetailsService.loadUserByUsername(username);
-                    UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
-                    authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-
-                    SecurityContextHolder.getContext()
-                            .setAuthentication(authentication);
+        if (CollUtil.isNotEmpty(customConfig.getIgnores())) {
+            for (String ignore : customConfig.getIgnores()) {
+                AntPathRequestMatcher matcher = new AntPathRequestMatcher(ignore);
+                if (matcher.matches(request)) {
                     filterChain.doFilter(request, response);
-                } catch (SecurityException e) {
-                    ResponseUtil.renderJson(response, e);
+                    return;
                 }
-            } else {
-                ResponseUtil.renderJson(response, Status.UNAUTHORIZED, null);
             }
         }
+
+        String jwt = jwtUtil.getJwtFromRequest(request);
+
+        if (StrUtil.isNotBlank(jwt)) {
+            try {
+                String username = jwtUtil.getUsernameFromJWT(jwt);
+
+                UserDetails userDetails = customUserDetailsService.loadUserByUsername(username);
+                UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+                authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+
+                SecurityContextHolder.getContext()
+                        .setAuthentication(authentication);
+                filterChain.doFilter(request, response);
+            } catch (SecurityException e) {
+                ResponseUtil.renderJson(response, e);
+            }
+        } else {
+            ResponseUtil.renderJson(response, Status.UNAUTHORIZED, null);
+        }
+
     }
 
 }
