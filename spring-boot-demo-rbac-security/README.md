@@ -1,6 +1,6 @@
 # spring-boot-demo-rbac-security
 
-> 此 demo 主要演示了 Spring Boot 项目如何集成 Spring Security 完成权限拦截操作。本 demo 为基于**前后端分离**的后端权限管理部分，不同于其他博客里使用的模板技术。
+> 此 demo 主要演示了 Spring Boot 项目如何集成 Spring Security 完成权限拦截操作。本 demo 为基于**前后端分离**的后端权限管理部分，不同于其他博客里使用的模板技术，希望对大家有所帮助。
 
 ## 1. 主要功能
 
