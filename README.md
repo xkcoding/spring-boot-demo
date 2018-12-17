@@ -2,7 +2,7 @@
 
 [![MIT](https://img.shields.io/github/license/xkcoding/spring-boot-demo.svg)](https://github.com/xkcoding/spring-boot-demo/blob/master/LICENSE) [![GitHub stars](https://img.shields.io/github/stars/xkcoding/spring-boot-demo.svg?style=flat&label=Star)](https://github.com/xkcoding/spring-boot-demo/stargazers) [![GitHub forks](https://img.shields.io/github/forks/xkcoding/spring-boot-demo.svg?style=flat&label=Fork)](https://github.com/xkcoding/spring-boot-demo/fork) [![GitHub watchers](https://img.shields.io/github/watchers/xkcoding/spring-boot-demo.svg?style=flat&label=Watch)](https://github.com/xkcoding/spring-boot-demo/watchers)
 
-spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actuator(监控)、admin(可视化监控)、logback(日志)、aopLog(通过AOP记录web请求日志)、统一异常处理(json级别和页面级别)、freemarker(模板引擎)、thymeleaf(模板引擎)、Beetl(模板引擎)、Enjoy(模板引擎)、JdbcTemplate、JPA(ORM框架)、mybatis(ORM框架)、通用Mapper、PageHelper、mybatis-plus、BeetlSQL、upload(本地文件上传和七牛云文件上传)、redis(缓存)、ehcache(缓存)、email(各种类型邮件)、task(定时任务)、quartz(定时任务)、swagger(API接口管理测试)、security(权限认证)、websocket(服务端推送)、ureport2(中国式报表)、打包成war文件、集成 ElasticSearch(采用原生操作ES的方式)、集成Dubbo(采用非官方的starter)、docker(容器化)，后续会集成activemq,shiro,websocket,netty等模块。
+spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actuator(监控)、admin(可视化监控)、logback(日志)、aopLog(通过AOP记录web请求日志)、统一异常处理(json级别和页面级别)、freemarker(模板引擎)、thymeleaf(模板引擎)、Beetl(模板引擎)、Enjoy(模板引擎)、JdbcTemplate、JPA(ORM框架)、mybatis(ORM框架)、通用Mapper、PageHelper、mybatis-plus、BeetlSQL、upload(本地文件上传和七牛云文件上传)、redis(缓存)、ehcache(缓存)、email(各种类型邮件)、task(定时任务)、quartz(定时任务)、swagger(API接口管理测试)、security(基于RBAC的动态权限认证)、websocket(服务端推送)、ureport2(中国式报表)、打包成war文件、集成 ElasticSearch(采用原生操作ES的方式)、集成Dubbo(采用非官方的starter)、docker(容器化)，后续会集成activemq,shiro,websocket,netty等模块。
 
 ### 分支：
 
