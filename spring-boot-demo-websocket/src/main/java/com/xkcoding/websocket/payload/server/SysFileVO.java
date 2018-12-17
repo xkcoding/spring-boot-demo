@@ -35,7 +35,7 @@ public class SysFileVO {
             item.add(new KV("总大小", sysFile.getTotal()));
             item.add(new KV("剩余大小", sysFile.getFree()));
             item.add(new KV("已经使用量", sysFile.getUsed()));
-            item.add(new KV("资源的使用率", sysFile.getUsage()));
+            item.add(new KV("资源的使用率", sysFile.getUsage() + "%"));
 
             vo.data.add(item);
         }
