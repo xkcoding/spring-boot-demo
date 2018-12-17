@@ -50,5 +50,10 @@ logging:
 custom:
   config:
     ignores:
-      - "/api/auth/login"
-      - "/api/auth/logout"
+      # 需要过滤的 post 请求
+      post:
+        - "/api/auth/login"
+        - "/api/auth/logout"
+      # 需要过滤的请求，不限方法
+      pattern:
+        - "/test/*"

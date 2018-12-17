@@ -1,12 +1,11 @@
 package com.xkcoding.rbac.security.config;
 
-import cn.hutool.core.collection.CollUtil;
-import cn.hutool.core.util.ArrayUtil;
 import com.xkcoding.rbac.security.service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -81,9 +80,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 // 认证请求
                 .authorizeRequests()
-                // 放行 /api/auth/** 的所有请求，参见 AuthController
-                //.antMatchers("/api/auth/**")
-                //.permitAll()
+                // 所有请求都需要登录访问
                 .anyRequest()
                 .authenticated()
                 // RBAC 动态 url 认证
@@ -109,11 +106,69 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
+    /**
+     * 放行所有不需要登录就可以访问的请求，参见 AuthController
+     * 也可以在 {@link #configure(HttpSecurity)} 中配置
+     * {@code http.authorizeRequests().antMatchers("/api/auth/**").permitAll()}
+     */
     @Override
-    public void configure(WebSecurity web) throws Exception {
-        if (CollUtil.isNotEmpty(customConfig.getIgnores())) {
-            web.ignoring()
-                    .antMatchers(ArrayUtil.toArray(customConfig.getIgnores(), String.class));
-        }
+    public void configure(WebSecurity web) {
+        WebSecurity and = web.ignoring()
+                .and();
+
+        // 忽略 GET
+        customConfig.getIgnores()
+                .getGet()
+                .forEach(url -> and.ignoring()
+                        .antMatchers(HttpMethod.GET, url));
+
+        // 忽略 POST
+        customConfig.getIgnores()
+                .getPost()
+                .forEach(url -> and.ignoring()
+                        .antMatchers(HttpMethod.POST, url));
+
+        // 忽略 DELETE
+        customConfig.getIgnores()
+                .getDelete()
+                .forEach(url -> and.ignoring()
+                        .antMatchers(HttpMethod.DELETE, url));
+
+        // 忽略 PUT
+        customConfig.getIgnores()
+                .getPut()
+                .forEach(url -> and.ignoring()
+                        .antMatchers(HttpMethod.PUT, url));
+
+        // 忽略 HEAD
+        customConfig.getIgnores()
+                .getHead()
+                .forEach(url -> and.ignoring()
+                        .antMatchers(HttpMethod.HEAD, url));
+
+        // 忽略 PATCH
+        customConfig.getIgnores()
+                .getPatch()
+                .forEach(url -> and.ignoring()
+                        .antMatchers(HttpMethod.PATCH, url));
+
+        // 忽略 OPTIONS
+        customConfig.getIgnores()
+                .getOptions()
+                .forEach(url -> and.ignoring()
+                        .antMatchers(HttpMethod.OPTIONS, url));
+
+        // 忽略 TRACE
+        customConfig.getIgnores()
+                .getTrace()
+                .forEach(url -> and.ignoring()
+                        .antMatchers(HttpMethod.TRACE, url));
+
+        // 按照请求格式忽略
+        customConfig.getIgnores()
+                .getPattern()
+                .forEach(url -> and.ignoring()
+                        .antMatchers(url));
+
     }
 }
