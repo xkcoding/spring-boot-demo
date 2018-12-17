@@ -11,6 +11,7 @@
 - [x] 使用 `JWT` 实现安全验证，同时引入 `Redis` 解决 `JWT` 无法手动设置过期的弊端，并且保证同一用户在同一时间仅支持同一设备登录，不同设备登录会将，详情参考 [`JwtUtil.java`](./src/main/java/com/xkcoding/rbac/security/util/JwtUtil.java)
 - [x] 在线人数统计，详情参考 [`MonitorService.java`](./src/main/java/com/xkcoding/rbac/security/service/MonitorService.java) 和 [`RedisUtil.java`](./src/main/java/com/xkcoding/rbac/security/util/RedisUtil.java)
 - [x] 手动踢出用户，详情参考 [`MonitorService.java`](./src/main/java/com/xkcoding/rbac/security/service/MonitorService.java) 
+- [x] 自定义配置不需要进行拦截的请求，详情参考 [`CustomConfig.java`](./src/main/java/com/xkcoding/rbac/security/config/CustomConfig.java) 和 [`application.yml`](./src/main/resources/application.yml)
 
 ## 2. 运行
 
@@ -313,7 +314,11 @@ public class JwtUtil {
  */
 @Configuration
 @EnableWebSecurity
+@EnableConfigurationProperties(CustomConfig.class)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    @Autowired
+    private CustomConfig customConfig;
+
     @Autowired
     private AccessDeniedHandler accessDeniedHandler;
 
@@ -357,9 +362,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 // 认证请求
                 .authorizeRequests()
-                // 放行 /api/auth/** 的所有请求，参见 AuthController
-                .antMatchers("/**/api/auth/**")
-                .permitAll()
+                // 所有请求都需要登录访问
                 .anyRequest()
                 .authenticated()
                 // RBAC 动态 url 认证
@@ -368,7 +371,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 // 登出行为由自己实现，参考 AuthController#logout
                 .and()
-                .logout().disable()
+                .logout()
+                .disable()
 
                 // Session 管理
                 .sessionManagement()
@@ -382,6 +386,72 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         // 添加自定义 JWT 过滤器
         http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+    }
+
+    /**
+     * 放行所有不需要登录就可以访问的请求，参见 AuthController
+     * 也可以在 {@link #configure(HttpSecurity)} 中配置
+     * {@code http.authorizeRequests().antMatchers("/api/auth/**").permitAll()}
+     */
+    @Override
+    public void configure(WebSecurity web) {
+        WebSecurity and = web.ignoring()
+                .and();
+
+        // 忽略 GET
+        customConfig.getIgnores()
+                .getGet()
+                .forEach(url -> and.ignoring()
+                        .antMatchers(HttpMethod.GET, url));
+
+        // 忽略 POST
+        customConfig.getIgnores()
+                .getPost()
+                .forEach(url -> and.ignoring()
+                        .antMatchers(HttpMethod.POST, url));
+
+        // 忽略 DELETE
+        customConfig.getIgnores()
+                .getDelete()
+                .forEach(url -> and.ignoring()
+                        .antMatchers(HttpMethod.DELETE, url));
+
+        // 忽略 PUT
+        customConfig.getIgnores()
+                .getPut()
+                .forEach(url -> and.ignoring()
+                        .antMatchers(HttpMethod.PUT, url));
+
+        // 忽略 HEAD
+        customConfig.getIgnores()
+                .getHead()
+                .forEach(url -> and.ignoring()
+                        .antMatchers(HttpMethod.HEAD, url));
+
+        // 忽略 PATCH
+        customConfig.getIgnores()
+                .getPatch()
+                .forEach(url -> and.ignoring()
+                        .antMatchers(HttpMethod.PATCH, url));
+
+        // 忽略 OPTIONS
+        customConfig.getIgnores()
+                .getOptions()
+                .forEach(url -> and.ignoring()
+                        .antMatchers(HttpMethod.OPTIONS, url));
+
+        // 忽略 TRACE
+        customConfig.getIgnores()
+                .getTrace()
+                .forEach(url -> and.ignoring()
+                        .antMatchers(HttpMethod.TRACE, url));
+
+        // 按照请求格式忽略
+        customConfig.getIgnores()
+                .getPattern()
+                .forEach(url -> and.ignoring()
+                        .antMatchers(url));
+
     }
 }
 ```
@@ -518,7 +588,10 @@ public class RbacAuthorityService {
 
 ### 3.5. JwtAuthenticationFilter.java
 
-> JWT 认证过滤器，主要功能：根据当前请求的JWT，认证用户身份信息
+> JWT 认证过滤器，主要功能：
+>
+> 1. 过滤不需要拦截的请求
+> 2. 根据当前请求的JWT，认证用户身份信息
 
 ```java
 /**
@@ -543,32 +616,105 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Autowired
     private JwtUtil jwtUtil;
 
+    @Autowired
+    private CustomConfig customConfig;
+
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        AntPathMatcher antPathMatcher = new AntPathMatcher();
-        if (antPathMatcher.match("/**/api/auth/**", request.getRequestURI())) {
+
+        if (checkIgnores(request)) {
             filterChain.doFilter(request, response);
+            return;
+        }
+
+        String jwt = jwtUtil.getJwtFromRequest(request);
+
+        if (StrUtil.isNotBlank(jwt)) {
+            try {
+                String username = jwtUtil.getUsernameFromJWT(jwt);
+
+                UserDetails userDetails = customUserDetailsService.loadUserByUsername(username);
+                UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+                authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+
+                SecurityContextHolder.getContext()
+                        .setAuthentication(authentication);
+                filterChain.doFilter(request, response);
+            } catch (SecurityException e) {
+                ResponseUtil.renderJson(response, e);
+            }
         } else {
-            String jwt = jwtUtil.getJwtFromRequest(request);
+            ResponseUtil.renderJson(response, Status.UNAUTHORIZED, null);
+        }
 
-            if (StrUtil.isNotBlank(jwt)) {
-                try {
-                    String username = jwtUtil.getUsernameFromJWT(jwt);
+    }
 
-                    UserDetails userDetails = customUserDetailsService.loadUserByUsername(username);
-                    UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
-                    authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+    /**
+     * 请求是否不需要进行权限拦截
+     *
+     * @param request 当前请求
+     * @return true - 忽略，false - 不忽略
+     */
+    private boolean checkIgnores(HttpServletRequest request) {
+        String method = request.getMethod();
 
-                    SecurityContextHolder.getContext()
-                            .setAuthentication(authentication);
-                    filterChain.doFilter(request, response);
-                } catch (SecurityException e) {
-                    ResponseUtil.renderJson(response, e);
+        HttpMethod httpMethod = HttpMethod.resolve(method);
+        if (ObjectUtil.isNull(httpMethod)) {
+            httpMethod = HttpMethod.GET;
+        }
+
+        Set<String> ignores = Sets.newHashSet();
+
+        switch (httpMethod) {
+            case GET:
+                ignores.addAll(customConfig.getIgnores()
+                        .getGet());
+                break;
+            case PUT:
+                ignores.addAll(customConfig.getIgnores()
+                        .getPut());
+                break;
+            case HEAD:
+                ignores.addAll(customConfig.getIgnores()
+                        .getHead());
+                break;
+            case POST:
+                ignores.addAll(customConfig.getIgnores()
+                        .getPost());
+                break;
+            case PATCH:
+                ignores.addAll(customConfig.getIgnores()
+                        .getPatch());
+                break;
+            case TRACE:
+                ignores.addAll(customConfig.getIgnores()
+                        .getTrace());
+                break;
+            case DELETE:
+                ignores.addAll(customConfig.getIgnores()
+                        .getDelete());
+                break;
+            case OPTIONS:
+                ignores.addAll(customConfig.getIgnores()
+                        .getOptions());
+                break;
+            default:
+                break;
+        }
+
+        ignores.addAll(customConfig.getIgnores()
+                .getPattern());
+
+        if (CollUtil.isNotEmpty(ignores)) {
+            for (String ignore : ignores) {
+                AntPathRequestMatcher matcher = new AntPathRequestMatcher(ignore, method);
+                if (matcher.matches(request)) {
+                    return true;
                 }
-            } else {
-                ResponseUtil.renderJson(response, Status.UNAUTHORIZED, null);
             }
         }
+
+        return false;
     }
 
 }
