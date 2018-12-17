@@ -53,7 +53,7 @@ public class RbacAuthorityService {
     private RequestMappingHandlerMapping mapping;
 
     public boolean hasPermission(HttpServletRequest request, Authentication authentication) {
-        checkRequestNotFound(request);
+        checkRequest(request);
 
         Object userInfo = authentication.getPrincipal();
         boolean hasPermission = false;
@@ -97,7 +97,7 @@ public class RbacAuthorityService {
      *
      * @param request 请求
      */
-    private void checkRequestNotFound(HttpServletRequest request) {
+    private void checkRequest(HttpServletRequest request) {
         // 获取当前 request 的方法
         String currentMethod = request.getMethod();
         Multimap<String, String> urlMapping = allUrlMapping();
