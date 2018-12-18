@@ -47,7 +47,6 @@ public class MessageController {
      *
      * @param bean Bean对象
      * @return 是否为空，<code>true</code> - 空 / <code>false</code> - 非空
-     * @since 4.1.10
      */
     private boolean isBlank(Object bean) {
         if (null != bean) {
