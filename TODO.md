@@ -1,5 +1,5 @@
 # spring-boot-demo 项目 todo-list
-## 模块计划(已完成：31 / 47)
+## 模块计划(已完成：32 / 47)
 
 - [x] ~~spring-boot-demo-helloworld（Helloworld 示例）~~
 - [x] ~~spring-boot-demo-properties（读取配置文件信息）~~
@@ -29,7 +29,7 @@
 - [x] ~~spring-boot-demo-swagger-beauty（集成自定义且更加美观的 Swagger 对 API 接口进行测试管理）~~
 - [x] ~~spring-boot-demo-rbac-security（实现基于 RBAC 的权限模型 - Spring Security）~~
 - [ ] spring-boot-demo-rbac-shiro（实现基于 RBAC 的权限模型 - shiro）
-- [ ] spring-boot-demo-session（统一 Session 管理）
+- [x] ~~spring-boot-demo-session（统一 Session 管理）~~
 - [ ] spring-boot-demo-social（第三方授权验证，实现 QQ、微信、GitHub 等第三方登录）
 - [ ] spring-boot-demo-zookeeper（操作 zookeeper，可能会考虑实现分布式锁~）
 - [ ] spring-boot-demo-mq-rabbitmq（集成消息中间件 - RabbitMQ）
