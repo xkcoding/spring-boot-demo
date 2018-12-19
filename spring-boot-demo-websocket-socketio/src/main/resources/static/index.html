@@ -62,14 +62,6 @@
             output(`<span class="username-msg">系统通知: 收到来自 ${data.fromUid} 的悄悄话: ${data.message}</span>`);
         });
 
-        socket.on('chat_received', function (data) {
-            output(`<span class="username-msg">系统通知: 悄悄话, ${data}</span>`);
-        });
-
-        socket.on('chat_refused', function (data) {
-            output(`<span class="username-msg">系统通知: 悄悄话, ${data}</span>`);
-        });
-
         socket.on('group', function (data) {
             output(`<span class="username-msg">${data.groupId} 群消息: ${data.fromUid} 说: ${data.message}</span>`);
         });
@@ -153,8 +145,13 @@
                 toUid: toUserId,
                 message: message
             };
-            socket.emit('chat', singleRequest, function () {
+            socket.emit('chat', singleRequest, function (data) {
                 output(`<span class="username-msg">系统通知: 你刚刚和 ${singleRequest.toUid} 说了句悄悄话</span>`);
+                if (data && data.flag) {
+                    output(`<span class="username-msg">系统通知: 悄悄话, ${data.message}</span>`);
+                } else {
+                    output(`<span class="disconnect-msg">系统通知: 悄悄话, ${data.message}</span>`);
+                }
             });
         }
 

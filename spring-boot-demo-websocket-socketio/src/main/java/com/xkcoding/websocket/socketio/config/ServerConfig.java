@@ -9,11 +9,11 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * <p>
- * 服务器配置
+ * websocket服务器配置
  * </p>
  *
  * @package: com.xkcoding.websocket.socketio.config
- * @description: 服务器配置
+ * @description: websocket服务器配置
  * @author: yangkai.shen
  * @date: Created in 2018-12-18 16:42
  * @copyright: Copyright (c) 2018

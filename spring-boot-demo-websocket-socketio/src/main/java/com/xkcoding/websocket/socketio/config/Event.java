@@ -20,16 +20,6 @@ public interface Event {
     String CHAT = "chat" ;
 
     /**
-     * 收到消息
-     */
-    String CHAT_RECEIVED = "chat_received" ;
-
-    /**
-     * 拒收消息
-     */
-    String CHAT_REFUSED = "chat_refused" ;
-
-    /**
      * 广播消息
      */
     String BROADCAST = "broadcast" ;

@@ -1,5 +1,6 @@
 package com.xkcoding.websocket.socketio.handler;
 
+import cn.hutool.core.lang.Dict;
 import cn.hutool.core.util.ObjectUtil;
 import com.corundumstudio.socketio.AckRequest;
 import com.corundumstudio.socketio.SocketIOClient;
@@ -106,9 +107,11 @@ public class MessageEventHandler {
         if (toUser.isPresent()) {
             log.info("用户 {} 刚刚私信了用户 {}：{}", data.getFromUid(), data.getToUid(), data.getMessage());
             sendToSingle(toUser.get(), data);
-            client.sendEvent(Event.CHAT_RECEIVED, "发送成功");
+            request.sendAckData(Dict.create().set("flag", true).set("message", "发送成功"));
         } else {
-            client.sendEvent(Event.CHAT_REFUSED, "发送失败，对方不想理你");
+            request.sendAckData(Dict.create()
+                    .set("flag", false)
+                    .set("message", "发送失败，对方不想理你(" + data.getToUid() + "不在线)"));
         }
     }
 
