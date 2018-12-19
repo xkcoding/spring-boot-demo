@@ -10,6 +10,7 @@ import com.xkcoding.websocket.socketio.config.DbTemplate;
 import com.xkcoding.websocket.socketio.config.Event;
 import com.xkcoding.websocket.socketio.payload.BroadcastMessageRequest;
 import com.xkcoding.websocket.socketio.payload.GroupMessageRequest;
+import com.xkcoding.websocket.socketio.payload.JoinRequest;
 import com.xkcoding.websocket.socketio.payload.SingleMessageRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,14 +87,14 @@ public class MessageEventHandler {
      *
      * @param client  客户端
      * @param request 请求
-     * @param roomId  群聊号
+     * @param data    群聊
      */
     @OnEvent(value = Event.JOIN)
-    public void onJoinEvent(SocketIOClient client, AckRequest request, String roomId) {
-        // 模拟用户id 和token一致
-        String userId = client.getHandshakeData().getSingleUrlParam("token");
-        log.info("用户：{} 已加入群聊：{}", userId, roomId);
-        client.joinRoom(roomId);
+    public void onJoinEvent(SocketIOClient client, AckRequest request, JoinRequest data) {
+        log.info("用户：{} 已加入群聊：{}", data.getUserId(), data.getGroupId());
+        client.joinRoom(data.getGroupId());
+
+        server.getRoomOperations(data.getGroupId()).sendEvent(Event.JOIN, data);
     }
 
 
@@ -103,12 +104,13 @@ public class MessageEventHandler {
         if (toUser.isPresent()) {
             log.info("用户 {} 刚刚私信了用户 {}：{}", data.getFromUid(), data.getToUid(), data.getMessage());
             sendToSingle(toUser.get(), data);
+            client.sendEvent(Event.CHAT_RECEIVED, "发送成功");
         } else {
-            client.sendEvent(Event.CHAT_REFUSED, "对方不在线");
+            client.sendEvent(Event.CHAT_REFUSED, "发送失败，对方不想理你");
         }
     }
 
-    @OnEvent(value = Event.CHAT)
+    @OnEvent(value = Event.GROUP)
     public void onGroupEvent(SocketIOClient client, AckRequest request, GroupMessageRequest data) {
         log.info("群号 {} 收到来自 {} 的群聊消息：{}", data.getGroupId(), data.getFromUid(), data.getMessage());
         sendToGroup(data);
@@ -118,7 +120,7 @@ public class MessageEventHandler {
      * 单聊
      */
     public void sendToSingle(UUID sessionId, SingleMessageRequest message) {
-        server.getClient(sessionId).sendEvent(Event.CHAT_RECEIVED, message);
+        server.getClient(sessionId).sendEvent(Event.CHAT, message);
     }
 
     /**
