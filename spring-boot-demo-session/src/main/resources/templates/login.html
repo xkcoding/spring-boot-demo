@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>spring-boot-demo-session</title>
+</head>
+<body>
+<h1 th:text="${message}" style="background-color: red"></h1>
+
+<button><a th:href="@{'/page/doLogin'}">登录</a></button>
+</body>
+</html>
