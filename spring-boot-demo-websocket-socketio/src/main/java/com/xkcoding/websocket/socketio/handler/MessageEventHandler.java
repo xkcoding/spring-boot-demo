@@ -1,5 +1,6 @@
 package com.xkcoding.websocket.socketio.handler;
 
+import cn.hutool.core.util.ObjectUtil;
 import com.corundumstudio.socketio.AckRequest;
 import com.corundumstudio.socketio.SocketIOClient;
 import com.corundumstudio.socketio.SocketIOServer;
@@ -16,6 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Collection;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -112,8 +114,21 @@ public class MessageEventHandler {
 
     @OnEvent(value = Event.GROUP)
     public void onGroupEvent(SocketIOClient client, AckRequest request, GroupMessageRequest data) {
-        log.info("群号 {} 收到来自 {} 的群聊消息：{}", data.getGroupId(), data.getFromUid(), data.getMessage());
-        sendToGroup(data);
+        Collection<SocketIOClient> clients = server.getRoomOperations(data.getGroupId()).getClients();
+
+        boolean inGroup = false;
+        for (SocketIOClient socketIOClient : clients) {
+            if (ObjectUtil.equal(socketIOClient.getSessionId(), client.getSessionId())) {
+                inGroup = true;
+                break;
+            }
+        }
+        if (inGroup) {
+            log.info("群号 {} 收到来自 {} 的群聊消息：{}", data.getGroupId(), data.getFromUid(), data.getMessage());
+            sendToGroup(data);
+        } else {
+            request.sendAckData("请先加群！");
+        }
     }
 
     /**

@@ -112,7 +112,7 @@
             socket.emit('join', joinRequest);
         }
 
-        function sendMessage() {
+        function sendGroup() {
             let message = $('#msg').val();
 
             if (message === '') {
@@ -126,7 +126,11 @@
                 groupId: "666",
                 message: message
             };
-            socket.emit('group', groupRequest);
+            socket.emit('group', groupRequest, function (data) {
+                if (data) {
+                    layer.msg(data, {icon: 5});
+                }
+            });
         }
 
         function sendChat() {
@@ -171,7 +175,7 @@
     <input id="msg" class="input-xlarge" type="text" placeholder="随便输点啥"/>
     <input id="to" class="input-xlarge" type="text" placeholder="私聊发给谁"/>
     <button type="button" onClick="sendJoin()" class="btn" id="join">加入群聊</button>
-    <button type="button" onClick="sendMessage()" class="btn" id="send">群聊</button>
+    <button type="button" onClick="sendGroup()" class="btn" id="send">群聊</button>
     <button type="button" onClick="sendChat()" class="btn" id="chat">私聊</button>
     <button type="button" onClick="sendBroadcast()" class="btn">广播消息</button>
     <button type="button" onClick="sendConnect()" class="btn">连接</button>
