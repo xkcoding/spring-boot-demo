@@ -386,3 +386,4 @@ public class ServerTask {
 2. element-ui 用法：http://element-cn.eleme.io/#/zh-CN
 3. stomp.js 用法：https://github.com/jmesnil/stomp-websocket
 4. sockjs 用法：https://github.com/sockjs/sockjs-client
+5. axios.js 用法：https://github.com/axios/axios#example
