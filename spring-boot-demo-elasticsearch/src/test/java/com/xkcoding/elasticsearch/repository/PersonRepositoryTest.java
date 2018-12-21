@@ -1,6 +1,7 @@
 package com.xkcoding.elasticsearch.repository;
 
 import cn.hutool.core.date.DateUtil;
+import cn.hutool.json.JSONUtil;
 import com.google.common.collect.Lists;
 import com.xkcoding.elasticsearch.SpringBootDemoElasticsearchApplicationTests;
 import com.xkcoding.elasticsearch.model.Person;
@@ -152,7 +153,7 @@ public class PersonRepositoryTest extends SpringBootDemoElasticsearchApplication
         // 平均年龄
         queryBuilder.addAggregation(AggregationBuilders.avg("avg").field("age"));
 
-        log.info("【queryBuilder.build()】= {}", queryBuilder.build().toString());
+        log.info("【queryBuilder】= {}", JSONUtil.toJsonStr(queryBuilder.build()));
 
         AggregatedPage<Person> people = (AggregatedPage<Person>) repo.search(queryBuilder.build());
         double avgAge = ((InternalAvg) people.getAggregation("avg")).getValue();
@@ -174,7 +175,7 @@ public class PersonRepositoryTest extends SpringBootDemoElasticsearchApplication
                 // 2. 在国家聚合桶内进行嵌套聚合，求平均年龄
                 .subAggregation(AggregationBuilders.avg("avg").field("age")));
 
-        log.info("【queryBuilder.build()】= {}", queryBuilder.build().toString());
+        log.info("【queryBuilder】= {}", JSONUtil.toJsonStr(queryBuilder.build()));
 
         // 3. 查询
         AggregatedPage<Person> people = (AggregatedPage<Person>) repo.search(queryBuilder.build());
