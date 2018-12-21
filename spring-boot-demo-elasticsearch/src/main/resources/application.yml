@@ -1,6 +1,5 @@
 spring:
   data:
     elasticsearch:
-      #cluster-name: elasticsearch
-      cluster-name: metadata_es
-      cluster-nodes: 192.168.241.19:9300
+      cluster-name: docker-cluster
+      cluster-nodes: localhost:9300
