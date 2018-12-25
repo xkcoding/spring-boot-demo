@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -76,6 +77,17 @@ public class Neo4jTest extends SpringBootDemoNeo4jApplicationTests {
     public void testFindClassmates() {
         Map<String, List<Student>> classmates = neoService.findClassmatesGroupByLesson();
         classmates.forEach((k, v) -> log.info("因为一起上了【{}】这门课，成为同学关系的有：{}", k, JSONUtil.toJsonStr(v.stream()
+                .map(Student::getName)
+                .collect(Collectors.toList()))));
+    }
+
+    /**
+     * 查询所有师生关系，包括班主任/学生，任课老师/学生
+     */
+    @Test
+    public void testFindTeacherStudent() {
+        Map<String, Set<Student>> teacherStudent = neoService.findTeacherStudent();
+        teacherStudent.forEach((k, v) -> log.info("【{}】教的学生有 {}", k, JSONUtil.toJsonStr(v.stream()
                 .map(Student::getName)
                 .collect(Collectors.toList()))));
     }

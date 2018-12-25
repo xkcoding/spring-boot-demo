@@ -3,11 +3,13 @@ package com.xkcoding.neo4j.service;
 import cn.hutool.core.util.StrUtil;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.common.collect.Sets;
 import com.xkcoding.neo4j.model.Class;
 import com.xkcoding.neo4j.model.Lesson;
 import com.xkcoding.neo4j.model.Student;
 import com.xkcoding.neo4j.model.Teacher;
 import com.xkcoding.neo4j.payload.ClassmateInfoGroupByLesson;
+import com.xkcoding.neo4j.payload.TeacherStudent;
 import com.xkcoding.neo4j.repository.ClassRepository;
 import com.xkcoding.neo4j.repository.LessonRepository;
 import com.xkcoding.neo4j.repository.StudentRepository;
@@ -21,7 +23,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.Set;
 
 /**
  * <p>
@@ -160,6 +162,25 @@ public class NeoService {
 
         groupByLesson.forEach(classmateInfoGroupByLesson -> result.put(classmateInfoGroupByLesson.getLessonName(), classmateInfoGroupByLesson
                 .getStudents()));
+
+        return result;
+    }
+
+    /**
+     * 查询所有师生关系，包括班主任/学生，任课老师/学生
+     *
+     * @return 师生关系
+     */
+    public Map<String, Set<Student>> findTeacherStudent() {
+        List<TeacherStudent> teacherStudentByClass = studentRepo.findTeacherStudentByClass();
+        List<TeacherStudent> teacherStudentByLesson = studentRepo.findTeacherStudentByLesson();
+        Map<String, Set<Student>> result = Maps.newHashMap();
+
+        teacherStudentByClass.forEach(teacherStudent -> result.put(teacherStudent.getTeacherName(), Sets.newHashSet(teacherStudent
+                .getStudents())));
+
+        teacherStudentByLesson.forEach(teacherStudent -> result.put(teacherStudent.getTeacherName(), Sets.newHashSet(teacherStudent
+                .getStudents())));
 
         return result;
     }
