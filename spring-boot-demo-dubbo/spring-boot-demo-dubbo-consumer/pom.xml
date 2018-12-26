@@ -54,4 +54,8 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <finalName>spring-boot-demo-dubbo-consumer</finalName>
+    </build>
+
 </project>
