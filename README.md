@@ -212,13 +212,24 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 | [spring-boot-demo-swagger](./spring-boot-demo-swagger)       | spring-boot 集成原生的 swagger 用于统一管理、测试 API 接口   |
 | [spring-boot-demo-swagger-beauty](./spring-boot-demo-swagger-beauty) | spring-boot 集成第三方 swagger 美化API文档样式，用于统一管理、测试 API 接口 |
 | [spring-boot-demo-rbac-security](./spring-boot-demo-rbac-security) | spring-boot 集成 spring security 完成基于RBAC权限模型的权限管理，支持自定义过滤请求，动态权限认证，使用 JWT 安全认证，支持在线人数统计，手动踢出用户等操作 |
+| [spring-boot-demo-rbac-shiro](./spring-boot-demo-rbac-shiro) | <span style="color:pink;">待完成</span>                      |
 | [spring-boot-demo-session](./spring-boot-demo-session)       | spring-boot 集成 Spring Session 实现Session共享、重启程序Session不失效 |
+| [spring-boot-demo-social](./spring-boot-demo-social)         | <span style="color:pink;">待完成</span>                      |
+| [spring-boot-demo-zookeeper](./spring-boot-demo-zookeeper)   | <span style="color:pink;">待完成</span>                      |
+| [spring-boot-demo-mq-rabbitmq](./spring-boot-demo-mq-rabbitmq) | <span style="color:pink;">待完成</span>                      |
+| [spring-boot-demo-mq-rocketmq](./spring-boot-demo-mq-rocketmq) | <span style="color:pink;">待完成</span>                      |
+| [spring-boot-demo-mq-kafka](./spring-boot-demo-mq-kafka)     | <span style="color:pink;">待完成</span>                      |
 | [spring-boot-demo-websocket](./spring-boot-demo-websocket)   | spring-boot 集成 websocket，后端主动推送前端服务器运行信息   |
 | [spring-boot-demo-websocket-socketio](./spring-boot-demo-websocket-socketio) | spring-boot 使用 netty-socketio 集成 websocket，实现一个简单的聊天室 |
-| [spring-boot-demo-ureport2](./spring-boot-demo-ureport2)     | spring-boot 集成 [ureport2](https://github.com/youseries/ureport) 实现自定义报表（ureport2可以轻松实现复杂的中国式报表，功能十分强大） |
+| [spring-boot-demo-ureport2](./spring-boot-demo-ureport2)     | <span style="color:pink;">待完成</span>                      |
+| [spring-boot-demo-uflo](./spring-boot-demo-uflo)             | <span style="color:pink;">待完成</span>                      |
+| [spring-boot-demo-urule](./spring-boot-demo-urule)           | <span style="color:pink;">待完成</span>                      |
+| [spring-boot-demo-activiti](./spring-boot-demo-activiti)     | <span style="color:pink;">待完成</span>                      |
+| [spring-boot-demo-async](./spring-boot-demo-async)           | <span style="color:pink;">待完成</span>                      |
 | [spring-boot-demo-war](./spring-boot-demo-war)               | spring-boot 打成 war 包的配置                                |
 | [spring-boot-demo-elasticsearch](./spring-boot-demo-elasticsearch) | spring-boot 集成 ElasticSearch，集成 `spring-boot-starter-data-elasticsearch` 完成对 ElasticSearch 的高级使用技巧，包括创建索引、配置映射、删除索引、增删改查基本操作、复杂查询、高级查询、聚合查询等 |
 | [spring-boot-demo-dubbo](./spring-boot-demo-dubbo)           | spring-boot 集成 Dubbo，分别为公共模块 `spring-boot-demo-dubbo-common`、服务提供方`spring-boot-demo-dubbo-provider`、服务调用方`spring-boot-demo-dubbo-consumer` |
+| [spring-boot-demo-mongodb](./spring-boot-demo-mongodb)       | <span style="color:pink;">待完成</span>                      |
 | [spring-boot-demo-neo4j](./spring-boot-demo-neo4j)           | spring-boot 集成 Neo4j 图数据库，实现一个校园人物关系网的demo |
 | [spring-boot-demo-docker](./spring-boot-demo-docker)         | spring-boot 容器化                                           |
 
