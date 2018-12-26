@@ -25,7 +25,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <dubbo.starter.version>0.2.0</dubbo.starter.version>
+        <dubbo.starter.version>2.0.0</dubbo.starter.version>
+        <zkclient.version>0.10</zkclient.version>
     </properties>
 
     <build>
