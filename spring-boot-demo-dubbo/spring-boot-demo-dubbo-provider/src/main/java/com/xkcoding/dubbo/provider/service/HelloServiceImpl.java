@@ -5,7 +5,6 @@ import com.xkcoding.dubbo.common.service.HelloService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-
 /**
  * <p>
  * Hello服务实现
