@@ -44,6 +44,7 @@
         <module>spring-boot-demo-mq-kafka</module>
         <module>spring-boot-demo-websocket</module>
         <module>spring-boot-demo-websocket-socketio</module>
+        <module>spring-boot-demo-ureport2</module>
         <module>spring-boot-demo-activiti</module>
         <module>spring-boot-demo-async</module>
         <module>spring-boot-demo-dubbo</module>
