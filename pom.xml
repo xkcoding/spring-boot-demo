@@ -35,7 +35,9 @@
         <module>spring-boot-demo-swagger</module>
         <module>spring-boot-demo-swagger-beauty</module>
         <module>spring-boot-demo-rbac-security</module>
+        <module>spring-boot-demo-rbac-shiro</module>
         <module>spring-boot-demo-session</module>
+        <module>spring-boot-demo-zookeeper</module>
         <module>spring-boot-demo-websocket</module>
         <module>spring-boot-demo-websocket-socketio</module>
         <module>spring-boot-demo-dubbo</module>
