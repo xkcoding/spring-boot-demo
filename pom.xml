@@ -40,6 +40,7 @@
         <module>spring-boot-demo-social</module>
         <module>spring-boot-demo-zookeeper</module>
         <module>spring-boot-demo-mq-rabbitmq</module>
+        <module>spring-boot-demo-mq-rocketmq</module>
         <module>spring-boot-demo-websocket</module>
         <module>spring-boot-demo-websocket-socketio</module>
         <module>spring-boot-demo-activiti</module>
