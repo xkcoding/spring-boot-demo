@@ -2,7 +2,7 @@
 
 [![MIT](https://img.shields.io/github/license/xkcoding/spring-boot-demo.svg)](https://github.com/xkcoding/spring-boot-demo/blob/master/LICENSE) [![GitHub stars](https://img.shields.io/github/stars/xkcoding/spring-boot-demo.svg?style=flat&label=Star)](https://github.com/xkcoding/spring-boot-demo/stargazers) [![GitHub forks](https://img.shields.io/github/forks/xkcoding/spring-boot-demo.svg?style=flat&label=Fork)](https://github.com/xkcoding/spring-boot-demo/fork) [![GitHub watchers](https://img.shields.io/github/watchers/xkcoding/spring-boot-demo.svg?style=flat&label=Watch)](https://github.com/xkcoding/spring-boot-demo/watchers)
 
-spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actuator(监控)、admin(可视化监控)、logback(日志)、aopLog(通过AOP记录web请求日志)、统一异常处理(json级别和页面级别)、freemarker(模板引擎)、thymeleaf(模板引擎)、Beetl(模板引擎)、Enjoy(模板引擎)、JdbcTemplate、JPA(ORM框架)、mybatis(ORM框架)、通用Mapper、PageHelper、mybatis-plus、BeetlSQL、upload(本地文件上传和七牛云文件上传)、redis(缓存)、ehcache(缓存)、email(发送各种类型邮件)、task(基础定时任务)、quartz(动态管理定时任务)、swagger(API接口管理测试)、security(基于RBAC的动态权限认证)、Session共享、websocket(服务端推送监控服务器运行信息)、socket.io(聊天室)、ureport2(中国式报表)、打包成war文件、集成 ElasticSearch(基本操作和高级查询)、集成Dubbo(采用非官方的starter)、neo4j(图数据库)、docker(容器化)，后续会集成activemq,shiro等模块。
+spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actuator(监控)、admin(可视化监控)、logback(日志)、aopLog(通过AOP记录web请求日志)、统一异常处理(json级别和页面级别)、freemarker(模板引擎)、thymeleaf(模板引擎)、Beetl(模板引擎)、Enjoy(模板引擎)、JdbcTemplate、JPA(ORM框架)、mybatis(ORM框架)、通用Mapper、PageHelper、mybatis-plus、BeetlSQL、upload(本地文件上传和七牛云文件上传)、redis(缓存)、ehcache(缓存)、email(发送各种类型邮件)、task(基础定时任务)、quartz(动态管理定时任务)、swagger(API接口管理测试)、security(基于RBAC的动态权限认证)、Session共享、websocket(服务端推送监控服务器运行信息)、socket.io(聊天室)、ureport2(中国式报表)、打包成war文件、集成 ElasticSearch(基本操作和高级查询)、集成Dubbo(采用官方的starter)、neo4j(图数据库)、docker(容器化)，后续会集成activemq,shiro等模块。
 
 ### 分支：
 
@@ -73,6 +73,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
         <module>spring-boot-demo-session</module>
         <module>spring-boot-demo-websocket</module>
         <module>spring-boot-demo-websocket-socketio</module>
+        <module>spring-boot-demo-dubbo</module>
         <module>spring-boot-demo-war</module>
         <module>spring-boot-demo-elasticsearch</module>
         <module>spring-boot-demo-neo4j</module>
@@ -217,7 +218,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，已经集成 actu
 | [spring-boot-demo-ureport2](./spring-boot-demo-ureport2)     | spring-boot 集成 [ureport2](https://github.com/youseries/ureport) 实现自定义报表（ureport2可以轻松实现复杂的中国式报表，功能十分强大） |
 | [spring-boot-demo-war](./spring-boot-demo-war)               | spring-boot 打成 war 包的配置                                |
 | [spring-boot-demo-elasticsearch](./spring-boot-demo-elasticsearch) | spring-boot 集成 ElasticSearch，集成 `spring-boot-starter-data-elasticsearch` 完成对 ElasticSearch 的高级使用技巧，包括创建索引、配置映射、删除索引、增删改查基本操作、复杂查询、高级查询、聚合查询等 |
-| [spring-boot-demo-dubbo-parent](./spring-boot-demo-dubbo-parent) | spring-boot 集成 Dubbo                                       |
+| [spring-boot-demo-dubbo](./spring-boot-demo-dubbo)           | spring-boot 集成 Dubbo，分别为公共模块 `spring-boot-demo-dubbo-common`、服务提供方`spring-boot-demo-dubbo-provider`、服务调用方`spring-boot-demo-dubbo-consumer` |
 | [spring-boot-demo-neo4j](./spring-boot-demo-neo4j)           | spring-boot 集成 Neo4j 图数据库，实现一个校园人物关系网的demo |
 | [spring-boot-demo-docker](./spring-boot-demo-docker)         | spring-boot 容器化                                           |
 
