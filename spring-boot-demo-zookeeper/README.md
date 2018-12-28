@@ -1,6 +1,6 @@
 # spring-boot-demo-zookeeper
 
-> 此 demo 主要演示了如何使用 Spring Boot 集成 Zookeeper 实现分布式锁。
+> 此 demo 主要演示了如何使用 Spring Boot 集成 Zookeeper 结合AOP实现分布式锁。
 
 ## pom.xml
 
