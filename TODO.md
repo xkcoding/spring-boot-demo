@@ -1,5 +1,5 @@
 # spring-boot-demo 项目 todo-list
-## 模块计划(已完成：36 / 47)
+## 模块计划(已完成：37 / 47)
 
 - [x] ~~spring-boot-demo-helloworld（Helloworld 示例）~~
 - [x] ~~spring-boot-demo-properties（读取配置文件信息）~~
@@ -45,7 +45,7 @@
 - [x] ~~spring-boot-demo-dubbo（集成 dubbo）~~
 - [x] ~~spring-boot-demo-war（打包成war包）~~
 - [x] ~~spring-boot-demo-elasticsearch（集成 ElasticSearch）~~
-- [ ] spring-boot-demo-mongodb（集成 MongoDb）
+- [x] ~~spring-boot-demo-mongodb（集成 MongoDb）~~
 - [x] ~~spring-boot-demo-neo4j（集成 neo4j 图数据库）~~
 - [x] ~~spring-boot-demo-docker（打包成 docker 镜像）~~
 
