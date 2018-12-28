@@ -1,0 +1,9 @@
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: article_db
+logging:
+  level:
+    org.springframework.data.mongodb.core: debug
