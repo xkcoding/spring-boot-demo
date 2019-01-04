@@ -69,7 +69,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
         <mysql.version>8.0.12</mysql.version>
-        <hutool.version>4.3.1</hutool.version>
+        <hutool.version>4.4.0</hutool.version>
         <guava.version>27.0-jre</guava.version>
         <user.agent.version>1.20</user.agent.version>
     </properties>
