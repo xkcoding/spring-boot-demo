@@ -17,27 +17,27 @@ public interface RabbitConsts {
     /**
      * 直接模式1
      */
-    String DIRECT_MODE_QUEUE_ONE = "queue_direct_1";
+    String DIRECT_MODE_QUEUE_ONE = "queue.direct.1";
 
     /**
      * 队列2
      */
-    String QUEUE_TWO = "queue_2";
+    String QUEUE_TWO = "queue.2";
 
     /**
      * 队列3
      */
-    String QUEUE_THREE = "3_queue";
+    String QUEUE_THREE = "3.queue";
 
     /**
      * 分列模式
      */
-    String FANOUT_MODE_QUEUE = "fanout_mode";
+    String FANOUT_MODE_QUEUE = "fanout.mode";
 
     /**
      * 主题模式
      */
-    String TOPIC_MODE_QUEUE = "topic_mode";
+    String TOPIC_MODE_QUEUE = "topic.mode";
 
     /**
      * 路由1
@@ -57,15 +57,10 @@ public interface RabbitConsts {
     /**
      * 延迟队列
      */
-    String DELAY_QUEUE = "delay_queue";
+    String DELAY_QUEUE = "delay.queue";
 
     /**
      * 延迟队列交换器
      */
-    String DELAY_MODE_QUEUE = "delay_mode";
-
-    /**
-     * 延迟队列路由
-     */
-    String DELAY_MODE_ROUTING_KEY = "delay.#";
+    String DELAY_MODE_QUEUE = "delay.mode";
 }
