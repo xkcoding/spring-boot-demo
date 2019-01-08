@@ -1,5 +1,5 @@
 # spring-boot-demo 项目 todo-list
-## 模块计划(已完成：39 / 50)
+## 模块计划(已完成：40 / 50)
 
 - [x] ~~spring-boot-demo-helloworld（Helloworld 示例）~~
 - [x] ~~spring-boot-demo-properties（读取配置文件信息）~~
@@ -34,7 +34,7 @@
 - [x] ~~spring-boot-demo-zookeeper（使用 zookeeper 结合AOP实现分布式锁）~~
 - [x] ~~spring-boot-demo-mq-rabbitmq（集成消息中间件 - RabbitMQ）~~
 - [ ] spring-boot-demo-mq-rocketmq（集成消息中间件 - RocketMQ）
-- [ ] spring-boot-demo-mq-kafka（集成消息中间件 - Kafka）
+- [x] ~~spring-boot-demo-mq-kafka（集成消息中间件 - Kafka）~~
 - [x] ~~spring-boot-demo-websocket（集成 websocket 服务）~~
 - [x] ~~spring-boot-demo-websocket-socketio（集成 socketio 实现 websocket 服务）~~
 - [ ] spring-boot-demo-ureport2 （集成 ureport2 实现自定义的复杂中国式报表引擎）
