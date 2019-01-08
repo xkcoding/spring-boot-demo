@@ -545,4 +545,5 @@ public class SpringBootDemoMqRabbitmqApplicationTests {
 ## 参考
 
 1. Spring AMQP 官方文档：https://docs.spring.io/spring-amqp/docs/2.1.0.RELEASE/reference/html/
-2. RabbitMQ延迟队列：https://www.cnblogs.com/vipstone/p/9967649.html
+2. RabbitMQ 官网：http://www.rabbitmq.com/
+3. RabbitMQ延迟队列：https://www.cnblogs.com/vipstone/p/9967649.html
