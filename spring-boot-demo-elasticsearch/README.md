@@ -16,8 +16,6 @@
 
 5. 修改 es 配置文件：`vi ./config/elasticsearch.yml
 
-
-
    ```yaml
    cluster.name: "docker-cluster"
    network.host: 0.0.0.0

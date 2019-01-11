@@ -35,11 +35,24 @@
         <module>spring-boot-demo-swagger</module>
         <module>spring-boot-demo-swagger-beauty</module>
         <module>spring-boot-demo-rbac-security</module>
+        <module>spring-boot-demo-rbac-shiro</module>
         <module>spring-boot-demo-session</module>
+        <module>spring-boot-demo-social</module>
+        <module>spring-boot-demo-zookeeper</module>
+        <module>spring-boot-demo-mq-rabbitmq</module>
+        <module>spring-boot-demo-mq-rocketmq</module>
+        <module>spring-boot-demo-mq-kafka</module>
         <module>spring-boot-demo-websocket</module>
         <module>spring-boot-demo-websocket-socketio</module>
+        <module>spring-boot-demo-ureport2</module>
+        <module>spring-boot-demo-uflo</module>
+        <module>spring-boot-demo-urule</module>
+        <module>spring-boot-demo-activiti</module>
+        <module>spring-boot-demo-async</module>
+        <module>spring-boot-demo-dubbo</module>
         <module>spring-boot-demo-war</module>
         <module>spring-boot-demo-elasticsearch</module>
+        <module>spring-boot-demo-mongodb</module>
         <module>spring-boot-demo-neo4j</module>
         <module>spring-boot-demo-docker</module>
     </modules>
@@ -56,7 +69,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
         <mysql.version>8.0.12</mysql.version>
-        <hutool.version>4.3.1</hutool.version>
+        <hutool.version>4.4.0</hutool.version>
         <guava.version>27.0-jre</guava.version>
         <user.agent.version>1.20</user.agent.version>
     </properties>

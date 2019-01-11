@@ -5,6 +5,7 @@
 
     <artifactId>spring-boot-demo-session</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
     <name>spring-boot-demo-session</name>
     <description>Demo project for Spring Boot</description>

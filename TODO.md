@@ -1,5 +1,5 @@
 # spring-boot-demo 项目 todo-list
-## 模块计划(已完成：33 / 47)
+## 模块计划(已完成：40 / 51)
 
 - [x] ~~spring-boot-demo-helloworld（Helloworld 示例）~~
 - [x] ~~spring-boot-demo-properties（读取配置文件信息）~~
@@ -30,24 +30,28 @@
 - [x] ~~spring-boot-demo-rbac-security（实现基于 RBAC 的权限模型 - Spring Security）~~
 - [ ] spring-boot-demo-rbac-shiro（实现基于 RBAC 的权限模型 - shiro）
 - [x] ~~spring-boot-demo-session（统一 Session 管理）~~
+- [ ] spring-boot-demo-session（OAuth2 认证）
 - [ ] spring-boot-demo-social（第三方授权验证，实现 QQ、微信、GitHub 等第三方登录）
-- [ ] spring-boot-demo-zookeeper（操作 zookeeper，可能会考虑实现分布式锁~）
-- [ ] spring-boot-demo-mq-rabbitmq（集成消息中间件 - RabbitMQ）
+- [x] ~~spring-boot-demo-zookeeper（使用 zookeeper 结合AOP实现分布式锁）~~
+- [x] ~~spring-boot-demo-mq-rabbitmq（集成消息中间件 - RabbitMQ）~~
 - [ ] spring-boot-demo-mq-rocketmq（集成消息中间件 - RocketMQ）
-- [ ] spring-boot-demo-mq-kafka（集成消息中间件 - Kafka）
+- [x] ~~spring-boot-demo-mq-kafka（集成消息中间件 - Kafka）~~
 - [x] ~~spring-boot-demo-websocket（集成 websocket 服务）~~
 - [x] ~~spring-boot-demo-websocket-socketio（集成 socketio 实现 websocket 服务）~~
 - [ ] spring-boot-demo-ureport2 （集成 ureport2 实现自定义的复杂中国式报表引擎）
 - [ ] spring-boot-demo-uflo（集成  uflo 实现流程控制引擎）
 - [ ] spring-boot-demo-urule（集成  urule 实现规则引擎）
 - [ ] spring-boot-demo-activiti（集成 Activiti 实现流程控制引擎）
-- [ ] spring-boot-demo-async（Spring boot 实现异步调用）
-- [ ] spring-boot-demo-dubbo（集成 dubbo）
+- [x] ~~spring-boot-demo-async（Spring boot 实现异步调用）~~
+- [x] ~~spring-boot-demo-dubbo（集成 dubbo）~~
 - [x] ~~spring-boot-demo-war（打包成war包）~~
 - [x] ~~spring-boot-demo-elasticsearch（集成 ElasticSearch）~~
-- [ ] spring-boot-demo-mongodb（集成 MongoDb）
-- [ ] spring-boot-demo-neo4j（集成 neo4j 图数据库）
+- [x] ~~spring-boot-demo-mongodb（集成 MongoDb）~~
+- [x] ~~spring-boot-demo-neo4j（集成 neo4j 图数据库）~~
 - [x] ~~spring-boot-demo-docker（打包成 docker 镜像）~~
+- [ ] spring-boot-demo-multi-datasource-jpa（集成JPA多数据源）
+- [ ] spring-boot-demo-multi-datasource-mybatis（集成mybatis多数据源）
+- [ ] spring-boot-demo-sharding-jdbc（集成 sharding-jdbc 实现分库分表）
 
 ### 备注
 
