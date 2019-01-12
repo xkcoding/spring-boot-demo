@@ -37,6 +37,7 @@
         <module>spring-boot-demo-rbac-security</module>
         <module>spring-boot-demo-rbac-shiro</module>
         <module>spring-boot-demo-session</module>
+        <module>spring-boot-demo-oauth</module>
         <module>spring-boot-demo-social</module>
         <module>spring-boot-demo-zookeeper</module>
         <module>spring-boot-demo-mq-rabbitmq</module>
