@@ -56,6 +56,8 @@
         <module>spring-boot-demo-mongodb</module>
         <module>spring-boot-demo-neo4j</module>
         <module>spring-boot-demo-docker</module>
+        <module>spring-boot-demo-multi-datasource-jpa</module>
+        <module>spring-boot-demo-multi-datasource-mybatis</module>
     </modules>
     <packaging>pom</packaging>
 

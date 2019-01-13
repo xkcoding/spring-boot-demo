@@ -228,6 +228,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，总共包含 **`5
 | [spring-boot-demo-rbac-security](./spring-boot-demo-rbac-security) | spring-boot 集成 spring security 完成基于RBAC权限模型的权限管理，支持自定义过滤请求，动态权限认证，使用 JWT 安全认证，支持在线人数统计，手动踢出用户等操作 |
 | [spring-boot-demo-rbac-shiro](./spring-boot-demo-rbac-shiro) | <span style="color:pink;">待完成</span>                      |
 | [spring-boot-demo-session](./spring-boot-demo-session)       | spring-boot 集成 Spring Session 实现Session共享、重启程序Session不失效 |
+| [spring-boot-demo-oauth](./spring-boot-demo-oauth)           | <span style="color:pink;">待完成</span>                      |
 | [spring-boot-demo-social](./spring-boot-demo-social)         | <span style="color:pink;">待完成</span>                      |
 | [spring-boot-demo-zookeeper](./spring-boot-demo-zookeeper)   | spring-boot 集成 Zookeeper 结合AOP实现分布式锁               |
 | [spring-boot-demo-mq-rabbitmq](./spring-boot-demo-mq-rabbitmq) | spring-boot 集成 RabbitMQ 实现基于直接队列模式、分列模式、主题模式、延迟队列的消息发送和接收 |
@@ -246,9 +247,9 @@ spring boot demo 是一个用来学习 spring boot 的项目，总共包含 **`5
 | [spring-boot-demo-mongodb](./spring-boot-demo-mongodb)       | spring-boot 集成 MongoDB，使用官方的 starter 实现增删改查    |
 | [spring-boot-demo-neo4j](./spring-boot-demo-neo4j)           | spring-boot 集成 Neo4j 图数据库，实现一个校园人物关系网的demo |
 | [spring-boot-demo-docker](./spring-boot-demo-docker)         | spring-boot 容器化                                           |
-| spring-boot-demo-multi-datasource-jpa                        | spring-boot 使用JPA集成多数据源<span style="color:pink;">待完成</span> |
-| spring-boot-demo-multi-datasource-mybatis                    | spring-boot 使用Mybatis集成多数据源<span style="color:pink;">待完成</span> |
-| spring-boot-demo-sharding-jdbc                               | spring-boot 使用 sharding-jdbc 实现分库分表<span style="color:pink;">待完成</span> |
+| [spring-boot-demo-multi-datasource-jpa](./spring-boot-demo-multi-datasource-jpa) | spring-boot 使用JPA集成多数据源<span style="color:pink;">待完成</span> |
+| [spring-boot-demo-multi-datasource-mybatis](./spring-boot-demo-multi-datasource-mybatis) | spring-boot 使用Mybatis集成多数据源<span style="color:pink;">待完成</span> |
+| [spring-boot-demo-sharding-jdbc](./spring-boot-demo-sharding-jdbc) | spring-boot 使用 sharding-jdbc 实现分库分表<span style="color:pink;">待完成</span> |
 
 # 官方提供的 starter 介绍
 
