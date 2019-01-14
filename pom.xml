@@ -58,6 +58,7 @@
         <module>spring-boot-demo-docker</module>
         <module>spring-boot-demo-multi-datasource-jpa</module>
         <module>spring-boot-demo-multi-datasource-mybatis</module>
+        <module>spring-boot-demo-sharding-jdbc</module>
     </modules>
     <packaging>pom</packaging>
 
