@@ -15,7 +15,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，总共包含 **`5
 
 - **JDK1.8 +**
 - **Maven 3.5 +**
-- **IntelliJ IDEA ULTIMATE 2018.2 +**
+- **IntelliJ IDEA ULTIMATE 2018.2 +** (注意：务必使用 IDEA 开发，同时保证安装 `lombok` 插件)
 - **mysql 5.7 +** (*尽量5.7版本以上，因为5.7版本加了一些新特性，不向下兼容。本demo里会尽量避免这种不兼容的地方，但还是建议尽量保证5.7版本以上*)
 
 ### 运行方式
