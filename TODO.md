@@ -1,5 +1,5 @@
 # spring-boot-demo 项目 todo-list
-## 模块计划(已完成：42 / 51)
+## 模块计划(已完成：42 / 52)
 
 - [x] ~~spring-boot-demo-helloworld（Helloworld 示例）~~
 - [x] ~~spring-boot-demo-properties（读取配置文件信息）~~
@@ -52,6 +52,7 @@
 - [x] ~~spring-boot-demo-multi-datasource-jpa（集成JPA多数据源）~~
 - [x] ~~spring-boot-demo-multi-datasource-mybatis（集成mybatis多数据源）~~
 - [ ] spring-boot-demo-sharding-jdbc（集成 sharding-jdbc 实现分库分表）
+- [ ] spring-boot-demo-tio（集成 tio）
 
 ### 备注
 
