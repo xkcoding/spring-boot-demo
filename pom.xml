@@ -59,6 +59,7 @@
         <module>spring-boot-demo-multi-datasource-jpa</module>
         <module>spring-boot-demo-multi-datasource-mybatis</module>
         <module>spring-boot-demo-sharding-jdbc</module>
+        <module>spring-boot-demo-tio</module>
     </modules>
     <packaging>pom</packaging>
 
