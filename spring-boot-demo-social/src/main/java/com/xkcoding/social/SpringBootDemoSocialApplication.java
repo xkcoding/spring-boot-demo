@@ -1,7 +1,9 @@
 package com.xkcoding.social;
 
+import com.xkcoding.social.config.SocialProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 /**
  * <p>
