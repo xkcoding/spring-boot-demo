@@ -27,7 +27,8 @@
 1. 新建一个名为 `spring-boot-demo` 的数据库，字符集设置为 `utf-8`，如果数据库名不是 `spring-boot-demo` 需要在 `application.yml` 中修改 `spring.datasource.url`
 2. 使用 [`security.sql`](./sql/security.sql) 这个 SQL 文件，创建数据库表和初始化RBAC数据
 3. 运行 `SpringBootDemoRbacSecurityApplication`
-4. enjoy ~​ :kissing_smiling_eyes:
+4. 管理员账号：admin/123456 普通用户：user/123456
+5. enjoy ~​ :kissing_smiling_eyes:
 
 ## 3. 部分关键代码
 
