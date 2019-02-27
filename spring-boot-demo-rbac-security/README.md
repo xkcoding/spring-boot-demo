@@ -28,7 +28,8 @@
 2. 使用 [`security.sql`](./sql/security.sql) 这个 SQL 文件，创建数据库表和初始化RBAC数据
 3. 运行 `SpringBootDemoRbacSecurityApplication`
 4. 管理员账号：admin/123456 普通用户：user/123456
-5. enjoy ~​ :kissing_smiling_eyes:
+5. 登陆成功之后返回token，将获得的token放在具体请求的 Header 里，key 固定是 Authorization ，value 前缀为 Bearer 后面加空格再加token，并加上具体请求的参数，就可以了
+6. enjoy ~​ :kissing_smiling_eyes:
 
 ## 3. 部分关键代码
 
