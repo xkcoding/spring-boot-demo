@@ -1,5 +1,6 @@
 package com.xkcoding.rbac.shiro;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -17,6 +18,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @modified: yangkai.shen
  */
 @SpringBootApplication
+@MapperScan("com.xkcoding.rbac.shiro.mapper")
 public class SpringBootDemoRbacShiroApplication {
 
     public static void main(String[] args) {
