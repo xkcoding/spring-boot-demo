@@ -60,6 +60,7 @@
         <module>spring-boot-demo-multi-datasource-mybatis</module>
         <module>spring-boot-demo-sharding-jdbc</module>
         <module>spring-boot-demo-tio</module>
+        <module>spring-boot-demo-codegen</module>
     </modules>
     <packaging>pom</packaging>
 

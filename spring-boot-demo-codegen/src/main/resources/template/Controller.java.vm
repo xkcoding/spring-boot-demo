@@ -1,0 +1,88 @@
+package ${package}.${moduleName}.controller;
+
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.xkcoding.common.R;
+import com.xkcoding.scaffold.log.annotations.ApiLog;
+import ${package}.${moduleName}.entity.${className};
+import ${package}.${moduleName}.service.${className}Service;
+import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+
+/**
+ * <p>
+ * ${comments}
+ * </p>
+ *
+ * @package:  ${package}.${moduleName}.controller
+ * @description: ${comments}
+ * @author: ${author}
+ * @date: Created in ${datetime}
+ * @copyright: Copyright (c) ${year}
+ * @version: V1.0
+ * @modified: ${author}
+ */
+@RestController
+@AllArgsConstructor
+@RequestMapping("/${pathName}")
+public class ${className}Controller {
+
+    private final ${className}Service ${classname}Service;
+
+    /**
+     * 分页查询${comments}
+     * @param page 分页对象
+     * @param ${classname} ${comments}
+     * @return R
+     */
+    @GetMapping("")
+    public R list${className}(Page page, ${className} ${classname}) {
+      return new R<>(${classname}Service.page(page,Wrappers.query(${classname})));
+    }
+
+
+    /**
+     * 通过id查询${comments}
+     * @param ${pk.lowerAttrName} id
+     * @return R
+     */
+    @GetMapping("/{${pk.lowerAttrName}}")
+    public R get${className}(@PathVariable("${pk.lowerAttrName}") ${pk.attrType} ${pk.lowerAttrName}){
+      return new R<>(${classname}Service.getById(${pk.lowerAttrName}));
+    }
+
+    /**
+     * 新增${comments}
+     * @param ${classname} ${comments}
+     * @return R
+     */
+    @ApiLog("新增${comments}")
+    @PostMapping
+    public R save${className}(@RequestBody ${className} ${classname}){
+      return new R<>(${classname}Service.save(${classname}));
+    }
+
+    /**
+     * 修改${comments}
+     * @param ${pk.lowerAttrName} id
+     * @param ${classname} ${comments}
+     * @return R
+     */
+    @ApiLog("修改${comments}")
+    @PutMapping("/{${pk.lowerAttrName}}")
+    public R update${className}(@PathVariable ${pk.attrType} ${pk.lowerAttrName}, @RequestBody ${className} ${classname}){
+      return new R<>(${classname}Service.updateById(${classname}));
+    }
+
+    /**
+     * 通过id删除${comments}
+     * @param ${pk.lowerAttrName} id
+     * @return R
+     */
+    @ApiLog("删除${comments}")
+    @DeleteMapping("/{${pk.lowerAttrName}}")
+    public R delete${className}(@PathVariable ${pk.attrType} ${pk.lowerAttrName}){
+      return new R<>(${classname}Service.removeById(${pk.lowerAttrName}));
+    }
+
+}
