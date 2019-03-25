@@ -280,7 +280,11 @@
       search(name) {
         this.$refs[name].validate((valid) => {
           if (this.tableRequest.prepend === "") {
-            this.$Message.error("请选择前缀");
+            this.$Message.error("请选择jdbc-url前缀");
+            return
+          }
+          if (this.tableRequest.prepend !== "jdbc:mysql://") {
+            this.$Message.error("暂时只支持 mysql 类型");
             return
           }
           if (valid) {
