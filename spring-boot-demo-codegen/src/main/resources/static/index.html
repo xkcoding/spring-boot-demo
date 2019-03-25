@@ -173,6 +173,7 @@
       showConfigDialog: false,
       genConfig: {
         request: {
+          prepend: "",
           url: "",
           username: "",
           password: "",
@@ -263,6 +264,7 @@
         this.genConfig.tableName = tableName;
         this.genConfig.request.tableName = tableName;
         this.genConfig.request.url = this.tableRequest.url;
+        this.genConfig.request.prepend = this.tableRequest.prepend;
         this.genConfig.request.username = this.tableRequest.username;
         this.genConfig.request.password = this.tableRequest.password;
         this.showConfigDialog = true;
@@ -277,16 +279,13 @@
       },
       search(name) {
         this.$refs[name].validate((valid) => {
+          if (this.tableRequest.prepend === "") {
+            this.$Message.error("请选择前缀");
+            return
+          }
           if (valid) {
-            let param = {
-              currentPage: 1,
-              pageSize: 10
-            };
-
-            Object.assign(param, this.tableRequest);
-
             http.get('/generator/table', {
-                params: param
+                params: this.tableRequest
               })
               .then(response => {
                 const data = response.data;
