@@ -1,6 +1,5 @@
 package com.xkcoding.codegen.utils;
 
-import com.xkcoding.codegen.constants.GenConstants;
 import com.xkcoding.codegen.entity.TableRequest;
 import com.zaxxer.hikari.HikariDataSource;
 import lombok.experimental.UtilityClass;
@@ -24,7 +23,7 @@ import lombok.extern.slf4j.Slf4j;
 public class DbUtil {
     public HikariDataSource buildFromTableRequest(TableRequest request) {
         HikariDataSource dataSource = new HikariDataSource();
-        dataSource.setJdbcUrl(GenConstants.JDBC_URL_PREFIX + request.getUrl());
+        dataSource.setJdbcUrl(request.getPrepend() + request.getUrl());
         dataSource.setUsername(request.getUsername());
         dataSource.setPassword(request.getPassword());
         return dataSource;

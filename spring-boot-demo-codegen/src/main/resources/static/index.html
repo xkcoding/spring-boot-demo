@@ -47,10 +47,14 @@
                 <Row :gutter="16">
                     <i-form ref="formTableRequest" :model="tableRequest" label-position="right" label-width="50"
                             :rules="tableRequestValidate">
-                        <i-col span="7">
+                        <i-col span="9">
                             <form-item label="URL" prop="url" required>
-                                <i-input v-model="tableRequest.url" placeholder="格式为 <host>:<port>/<dbName>">
-                                    <span slot="prepend">jdbc:mysql://</span>
+                                <i-input v-model="tableRequest.url" :placeholder="urlHint">
+                                    <i-select v-model="tableRequest.prepend" slot="prepend" style="width: 150px;">
+                                        <i-option value="jdbc:mysql://">jdbc:mysql://</i-option>
+                                        <i-option value="jdbc:oracle:thin:@">jdbc:oracle:thin:@</i-option>
+                                        <i-option value="jdbc:sqlserver://">jdbc:sqlserver://</i-option>
+                                    </i-select>
                                 </i-input>
                             </form-item>
                         </i-col>
@@ -71,7 +75,7 @@
                             </form-item>
                         </i-col>
 
-                        <i-col span="4" style="text-align: center">
+                        <i-col span="2" style="text-align: center">
                             <i-button type="primary" long icon="ios-search" @click="search('formTableRequest')">查询
                             </i-button>
                         </i-col>
@@ -184,6 +188,7 @@
       tableRequest: {
         currentPage: 1,
         pageSize: 10,
+        prepend: "",
         url: "",
         username: "",
         password: "",
@@ -239,6 +244,19 @@
         }
       ],
       data: []
+    },
+    computed: {
+      urlHint() {
+        if (this.tableRequest.prepend === "jdbc:mysql://") {
+          return "mysql格式为 <host>:<port>/<dbName>";
+        } else if (this.tableRequest.prepend === "jdbc:oracle:thin:@") {
+          return "oracle格式为 <host>:<port>:<SID>";
+        } else if (this.tableRequest.prepend === "jdbc:sqlserver://") {
+          return "sqlserver格式为 <server_name>:<port>";
+        } else {
+          return "请选择 JDBC Url 前缀";
+        }
+      }
     },
     methods: {
       showConfig(tableName) {

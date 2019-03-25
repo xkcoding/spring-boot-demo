@@ -26,6 +26,10 @@ public class TableRequest {
      */
     private Integer pageSize;
     /**
+     * jdbc-前缀
+     */
+    private String prepend;
+    /**
      * jdbc-url
      */
     private String url;

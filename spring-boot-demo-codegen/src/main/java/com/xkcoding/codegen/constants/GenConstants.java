@@ -18,9 +18,4 @@ public interface GenConstants {
      * 签名
      */
     String SIGNATURE = "xkcoding";
-
-    /**
-     * JDBC连接串前缀
-     */
-    String JDBC_URL_PREFIX = "jdbc:mysql://";
 }
