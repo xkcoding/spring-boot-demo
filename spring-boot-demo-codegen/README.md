@@ -405,7 +405,7 @@ public class CodeGenUtil {
 
 <video id="video" controls="" preload="none">
       <source id="mp4" src="https://static.xkcoding.com/code/spring-boot-demo/codegen/codegen.mp4" type="video/mp4">
-      <p>您的浏览器版本过低，不支持播放视频演示</p>
+      <p>您的浏览器版本过低，不支持播放视频演示，可下载演示视频观看，https://static.xkcoding.com/code/spring-boot-demo/codegen/codegen.mp4</p>
     </video>
 
 ## 5. 参考
@@ -413,4 +413,3 @@ public class CodeGenUtil {
 - [基于人人开源 自动构建项目_V1](https://qq343509740.gitee.io/2018/12/20/%E7%AC%94%E8%AE%B0/%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE/%E5%9F%BA%E4%BA%8E%E4%BA%BA%E4%BA%BA%E5%BC%80%E6%BA%90%20%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE_V1/)
 
 - [Mybatis-Plus代码生成器](https://mybatis.plus/guide/generator.html#%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96)
-
