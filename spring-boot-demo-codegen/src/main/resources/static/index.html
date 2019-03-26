@@ -49,11 +49,11 @@
                             :rules="tableRequestValidate">
                         <i-col span="9">
                             <form-item label="URL" prop="url" required>
-                                <i-input v-model="tableRequest.url" :placeholder="urlHint">
+                                <i-input v-model="tableRequest.url" placeholder="<host>:<port>/<dbName>">
                                     <i-select v-model="tableRequest.prepend" slot="prepend" style="width: 150px;">
-                                        <i-option value="jdbc:mysql://">jdbc:mysql://</i-option>
-                                        <i-option value="jdbc:oracle:thin:@">jdbc:oracle:thin:@</i-option>
-                                        <i-option value="jdbc:sqlserver://">jdbc:sqlserver://</i-option>
+                                        <i-option :value="mysqlPrepend">{{mysqlPrepend}}</i-option>
+                                        <i-option :value="oraclePrepend">{{oraclePrepend}}</i-option>
+                                        <i-option :value="mssqlPrepend">{{mssqlPrepend}}</i-option>
                                     </i-select>
                                 </i-input>
                             </form-item>
@@ -167,6 +167,10 @@
     baseURL: '/demo'
   });
 
+  const MYSQL_PREPEND = "jdbc:mysql://";
+  const MSSQL_PREPEND = "jdbc:jtds:sqlserver://";
+  const ORACLE_PREPEND = "jdbc:oracle:thin:@//";
+
   new Vue({
     el: "#app",
     data: {
@@ -247,16 +251,15 @@
       data: []
     },
     computed: {
-      urlHint() {
-        if (this.tableRequest.prepend === "jdbc:mysql://") {
-          return "mysql格式为 <host>:<port>/<dbName>";
-        } else if (this.tableRequest.prepend === "jdbc:oracle:thin:@") {
-          return "oracle格式为 <host>:<port>:<SID>";
-        } else if (this.tableRequest.prepend === "jdbc:sqlserver://") {
-          return "sqlserver格式为 <server_name>:<port>";
-        } else {
-          return "请选择 JDBC Url 前缀";
-        }
+      mysqlPrepend() {
+        return MYSQL_PREPEND;
+      },
+      oraclePrepend() {
+        return ORACLE_PREPEND;
+
+      },
+      mssqlPrepend() {
+        return MSSQL_PREPEND;
       }
     },
     methods: {
