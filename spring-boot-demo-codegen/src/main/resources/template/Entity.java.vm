@@ -7,8 +7,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 .${moduleName}.entity;
-#if(${hasBigDecimal})
-#end
+    #if(${hasBigDecimal})
+    #end
 
 /**
  * <p>
@@ -24,7 +24,8 @@ import lombok.EqualsAndHashCode;
  * @modified: ${author}
  */
 @Data
-@TableName("${tableName}") @ApiModel(description = "${comments}")
+@TableName("${tableName}")
+@ApiModel(description = "${comments}")
 @EqualsAndHashCode(callSuper = true)
 public class ${className} extends Model<${className}> {
     private static final long serialVersionUID = 1L;
@@ -36,7 +37,7 @@ public class ${className} extends Model<${className}> {
     #if($column.columnName == $pk.columnName)
     @TableId
     #end
-  @ApiModelProperty(value = "$column.comments")
+    @ApiModelProperty(value = "$column.comments")
     private $column.attrType $column.lowerAttrName;
   #end
 

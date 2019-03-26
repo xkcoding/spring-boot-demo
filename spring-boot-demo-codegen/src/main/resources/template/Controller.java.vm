@@ -44,7 +44,10 @@ public class ${className}Controller {
      */
     @GetMapping("")
     @ApiOperation(value = "分页查询${comments}", notes = "分页查询${comments}")
-    @ApiImplicitParams({@ApiImplicitParam(name = "page", value = "分页参数", required = true), @ApiImplicitParam(name = "${classname}", value = "查询条件", required = true)})
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "page", value = "分页参数", required = true),
+            @ApiImplicitParam(name = "${classname}", value = "查询条件", required = true)
+    })
     public R list${className}(Page page, ${className} ${classname}) {
       return new R<>(${classname}Service.page(page,Wrappers.query(${classname})));
     }
@@ -57,7 +60,9 @@ public class ${className}Controller {
      */
     @GetMapping("/{${pk.lowerAttrName}}")
     @ApiOperation(value = "通过id查询${comments}", notes = "通过id查询${comments}")
-    @ApiImplicitParams({@ApiImplicitParam(name = "${pk.lowerAttrName}", value = "主键id", required = true)})
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "${pk.lowerAttrName}", value = "主键id", required = true)
+    })
     public R get${className}(@PathVariable("${pk.lowerAttrName}") ${pk.attrType} ${pk.lowerAttrName}){
       return new R<>(${classname}Service.getById(${pk.lowerAttrName}));
     }
@@ -83,7 +88,9 @@ public class ${className}Controller {
     @ApiLog("修改${comments}")
     @PutMapping("/{${pk.lowerAttrName}}")
     @ApiOperation(value = "修改${comments}", notes = "修改${comments}")
-    @ApiImplicitParams({@ApiImplicitParam(name = "${pk.lowerAttrName}", value = "主键id", required = true)})
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "${pk.lowerAttrName}", value = "主键id", required = true)
+    })
     public R update${className}(@PathVariable ${pk.attrType} ${pk.lowerAttrName}, @RequestBody ${className} ${classname}){
       return new R<>(${classname}Service.updateById(${classname}));
     }
@@ -96,7 +103,9 @@ public class ${className}Controller {
     @ApiLog("删除${comments}")
     @DeleteMapping("/{${pk.lowerAttrName}}")
     @ApiOperation(value = "删除${comments}", notes = "删除${comments}")
-    @ApiImplicitParams({@ApiImplicitParam(name = "${pk.lowerAttrName}", value = "主键id", required = true)})
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "${pk.lowerAttrName}", value = "主键id", required = true)
+    })
     public R delete${className}(@PathVariable ${pk.attrType} ${pk.lowerAttrName}){
       return new R<>(${classname}Service.removeById(${pk.lowerAttrName}));
     }
