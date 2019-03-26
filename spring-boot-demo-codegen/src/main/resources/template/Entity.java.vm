@@ -1,15 +1,14 @@
-package ${package}.${moduleName}.entity;
-
-import com.baomidou.mybatisplus.annotation.TableId;
+package ${package}import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+.${moduleName}.entity;
 #if(${hasBigDecimal})
-import java.math.BigDecimal;
 #end
-import java.io.Serializable;
-import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -25,7 +24,7 @@ import java.time.LocalDateTime;
  * @modified: ${author}
  */
 @Data
-@TableName("${tableName}")
+@TableName("${tableName}") @ApiModel(description = "${comments}")
 @EqualsAndHashCode(callSuper = true)
 public class ${className} extends Model<${className}> {
     private static final long serialVersionUID = 1L;
@@ -37,6 +36,7 @@ public class ${className} extends Model<${className}> {
     #if($column.columnName == $pk.columnName)
     @TableId
     #end
+  @ApiModelProperty(value = "$column.comments")
     private $column.attrType $column.lowerAttrName;
   #end
 
