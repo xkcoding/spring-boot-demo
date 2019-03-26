@@ -1,11 +1,13 @@
 package com.xkcoding.sharding.jdbc.config;
 
+import cn.hutool.core.lang.Snowflake;
+import cn.hutool.core.util.IdUtil;
 import com.zaxxer.hikari.HikariDataSource;
 import io.shardingsphere.api.config.rule.ShardingRuleConfiguration;
 import io.shardingsphere.api.config.rule.TableRuleConfiguration;
 import io.shardingsphere.api.config.strategy.InlineShardingStrategyConfiguration;
 import io.shardingsphere.api.config.strategy.NoneShardingStrategyConfiguration;
-import io.shardingsphere.core.keygen.DefaultKeyGenerator;
+import io.shardingsphere.core.keygen.KeyGenerator;
 import io.shardingsphere.shardingjdbc.api.ShardingDataSourceFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -35,6 +37,8 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 @Configuration
 public class DataSourceShardingConfig {
+    private static final Snowflake snowflake = IdUtil.createSnowflake(1, 1);
+
     /**
      * 需要手动配置事务管理器
      */
@@ -69,7 +73,7 @@ public class DataSourceShardingConfig {
         // ds${0..1}.t_order_${0..2} 也可以写成 ds$->{0..1}.t_order_$->{0..1}
         tableRule.setActualDataNodes("ds${0..1}.t_order_${0..2}");
         tableRule.setTableShardingStrategyConfig(new InlineShardingStrategyConfiguration("order_id", "t_order_$->{order_id % 3}"));
-        tableRule.setKeyGenerator(new DefaultKeyGenerator());
+        tableRule.setKeyGenerator(customKeyGenerator());
         tableRule.setKeyGeneratorColumnName("order_id");
         return tableRule;
     }
@@ -94,6 +98,13 @@ public class DataSourceShardingConfig {
         dataSourceMap.put("ds0", ds0);
         dataSourceMap.put("ds1", ds1);
         return dataSourceMap;
+    }
+
+    /**
+     * 自定义主键生成器
+     */
+    private KeyGenerator customKeyGenerator() {
+        return new CustomSnowflakeKeyGenerator(snowflake);
     }
 
 }
