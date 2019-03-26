@@ -75,6 +75,5 @@ public class SpringBootDemoShardingJdbcApplicationTests {
         log.info("【orders】= {}", JSONUtil.toJsonStr(orders));
     }
 
-
 }
 

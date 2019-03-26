@@ -21,9 +21,17 @@ import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * datetime 2018/11/28 10:46
+ * <p>
+ * sharding-jdbc 的数据源配置
+ * </p>
  *
- * @author sin5
+ * @package: com.xkcoding.sharding.jdbc.config
+ * @description: sharding-jdbc 的数据源配置
+ * @author: yangkai.shen
+ * @date: Created in 2019-03-26 16:47
+ * @copyright: Copyright (c) 2019
+ * @version: V1.0
+ * @modified: yangkai.shen
  */
 @Configuration
 public class DataSourceShardingConfig {
