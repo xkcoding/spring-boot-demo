@@ -22,10 +22,17 @@ import java.util.List;
 import java.util.zip.ZipOutputStream;
 
 /**
+ * <p>
  * 代码生成器
+ * </p>
  *
- * @author lengleng
- * @date 2018-07-30
+ * @package: com.xkcoding.codegen.service.impl
+ * @description: 代码生成器
+ * @author: yangkai.shen
+ * @date: Created in 2019-03-22 10:15
+ * @copyright: Copyright (c) 2019
+ * @version: V1.0
+ * @modified: yangkai.shen
  */
 @Service
 @AllArgsConstructor
