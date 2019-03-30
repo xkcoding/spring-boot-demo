@@ -29,14 +29,8 @@
     </dependency>
 
     <dependency>
-      <groupId>org.activiti
-
-      </groupId>
-
-      <artifactId>
-        activiti-spring-boot-starter
-      </artifactId>
-
+      <groupId>org.activiti</groupId>
+      <artifactId>activiti-spring-boot-starter</artifactId>
       <version>7.0.0.Beta2</version>
     </dependency>
 
