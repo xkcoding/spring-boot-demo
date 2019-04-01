@@ -53,8 +53,8 @@
         <!--velocity代码生成使用模板 -->
         <dependency>
             <groupId>org.apache.velocity</groupId>
-            <artifactId>velocity</artifactId>
-            <version>1.7</version>
+            <artifactId>velocity-engine-core</artifactId>
+            <version>2.1</version>
         </dependency>
 
         <dependency>

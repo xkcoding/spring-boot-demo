@@ -43,7 +43,8 @@ public class CodeGenServiceTest {
         TableRequest request = new TableRequest();
         request.setCurrentPage(1);
         request.setPageSize(10);
-        request.setUrl("jdbc:mysql://127.0.0.1:3306/spring-boot-demo");
+        request.setPrepend("jdbc:mysql://");
+        request.setUrl("127.0.0.1:3306/spring-boot-demo");
         request.setUsername("root");
         request.setPassword("root");
         request.setTableName("sec_");
@@ -57,6 +58,7 @@ public class CodeGenServiceTest {
         GenConfig config = new GenConfig();
 
         TableRequest request = new TableRequest();
+        request.setPrepend("jdbc:mysql://");
         request.setUrl("127.0.0.1:3306/spring-boot-demo");
         request.setUsername("root");
         request.setPassword("root");
