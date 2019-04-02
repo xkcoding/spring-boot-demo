@@ -1,0 +1,3 @@
+spring:
+  activiti:
+    check-process-definitions: false
