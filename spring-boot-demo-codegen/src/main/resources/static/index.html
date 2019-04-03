@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>代码生成器</title>
+    <!-- import Vue.js -->
+    <script src="libs/vue/vue.min.js"></script>
+    <!-- import stylesheet -->
+    <link rel="stylesheet" href="libs/iview/iview.css">
+    <!-- import iView -->
+    <script src="libs/iview/iview.min.js"></script>
+    <!-- import axios -->
+    <script src="libs/axios/axios.min.js"></script>
+    <!-- import date -->
+    <script src="libs/datejs/date-zh-CN.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        #app {
+            height: inherit;
+        }
+
+        .xkcoding-layout {
+            height: inherit;
+        }
+
+        .layout-header-center {
+            text-align: center;
+        }
+
+        .layout-footer-center {
+            color: #999999;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <Layout class="xkcoding-layout">
+        <Header class="layout-header-center">
+            <h1>代码生成</h1>
+        </Header>
+        <Content :style="{padding: '0 50px'}">
+            <Card>
+                <Row :gutter="16">
+                    <i-form ref="formTableRequest" :model="tableRequest" label-position="right" label-width="50"
+                            :rules="tableRequestValidate">
+                        <i-col span="9">
+                            <form-item label="URL" prop="url" required>
+                                <i-input v-model="tableRequest.url" placeholder="<host>:<port>/<dbName>">
+                                    <i-select v-model="tableRequest.prepend" slot="prepend" style="width: 150px;">
+                                        <i-option :value="mysqlPrepend">{{mysqlPrepend}}</i-option>
+                                        <i-option :value="oraclePrepend">{{oraclePrepend}}</i-option>
+                                        <i-option :value="mssqlPrepend">{{mssqlPrepend}}</i-option>
+                                    </i-select>
+                                </i-input>
+                            </form-item>
+                        </i-col>
+                        <i-col span="4">
+                            <form-item label="用户名" prop="username" label-width="60" required>
+                                <i-input v-model="tableRequest.username" placeholder="请输入数据库用户名"></i-input>
+                            </form-item>
+                        </i-col>
+                        <i-col span="4">
+                            <form-item label="密码" prop="password" required>
+                                <i-input v-model="tableRequest.password" type="password"
+                                         placeholder="请输入数据库密码"></i-input>
+                            </form-item>
+                        </i-col>
+                        <i-col span="5">
+                            <form-item label="表名" prop="tableName" label-width="40">
+                                <i-input v-model="tableRequest.tableName" placeholder="请输入数据库表名"></i-input>
+                            </form-item>
+                        </i-col>
+
+                        <i-col span="2" style="text-align: center">
+                            <i-button type="primary" long icon="ios-search" @click="search('formTableRequest')">查询
+                            </i-button>
+                        </i-col>
+                    </i-form>
+                </Row>
+                <br>
+                <Row>
+                    <i-col>
+                        <i-table border :columns="columns" :data="data">
+                            <template slot-scope="{ row }" slot="tableName">
+                                <strong>{{ row.tableName }}</strong>
+                            </template>
+                            <template slot-scope="{ row }" slot="action">
+                                <i-button type="primary" icon="md-code-download" @click="showConfig(row.tableName)">生成代码
+                                </i-button>
+                            </template>
+                        </i-table>
+                    </i-col>
+                </Row>
+                <br>
+                <Row>
+                    <i-col>
+                        <Page :total="total"
+                              :current.sync="tableRequest.currentPage"
+                              @on-change="changePage"
+                              @on-page-size-change="changePageSize"
+                              show-sizer
+                              show-elevator
+                              show-total
+                              :page-size-opts="[10, 20, 30]"></Page>
+                    </i-col>
+                </Row>
+            </Card>
+        </Content>
+        <Footer class="layout-footer-center">2019 &copy; xkcoding</Footer>
+    </Layout>
+
+    <Modal v-model="showConfigDialog"
+           :closable="false">
+        <div slot="header" style="text-align:center">
+            <h2>生成配置</h2>
+        </div>
+        <i-form ref="form" :model="genConfig">
+            <Row :gutter="16">
+                <i-col span="12">
+                    <form-item label="表名" prop="tableName" label-width="40">
+                        <i-input v-model="genConfig.tableName" disabled></i-input>
+                    </form-item>
+                </i-col>
+                <i-col span="12">
+                    <form-item label="包名" prop="packageName" label-width="40">
+                        <i-input v-model="genConfig.packageName" placeholder="可为空，加载系统默认配置"></i-input>
+                    </form-item>
+                </i-col>
+            </Row>
+            <Row :gutter="16">
+                <i-col span="12">
+                    <form-item label="作者" prop="author" label-width="40">
+                        <i-input v-model="genConfig.author" placeholder="可为空，加载系统默认配置"></i-input>
+                    </form-item>
+                </i-col>
+                <i-col span="12">
+                    <form-item label="模块" prop="moduleName" label-width="40">
+                        <i-input v-model="genConfig.moduleName" placeholder="可为空，加载系统默认配置"></i-input>
+                    </form-item>
+                </i-col>
+            </Row>
+            <Row :gutter="16">
+                <i-col span="12">
+                    <form-item label="前缀" prop="tablePrefix" label-width="40">
+                        <i-input v-model="genConfig.tablePrefix" placeholder="可为空，加载系统默认配置"></i-input>
+                    </form-item>
+                </i-col>
+                <i-col span="12">
+                    <form-item label="注释" prop="comments" label-width="40">
+                        <i-input v-model="genConfig.comments" placeholder="可为空，加载数据库表注释"></i-input>
+                    </form-item>
+                </i-col>
+            </Row>
+        </i-form>
+        <div slot="footer" style="text-align:center">
+            <i-button icon="md-trash" size="large" @click="cancel">取消</i-button>
+            <i-button type="success" icon="md-cloud-download" size="large" @click="download">生成代码</i-button>
+        </div>
+    </Modal>
+</div>
+<script>
+  const http = axios.create({
+    baseURL: '/demo'
+  });
+
+  const MYSQL_PREPEND = "jdbc:mysql://";
+  const MSSQL_PREPEND = "jdbc:jtds:sqlserver://";
+  const ORACLE_PREPEND = "jdbc:oracle:thin:@//";
+
+  new Vue({
+    el: "#app",
+    data: {
+      showConfigDialog: false,
+      genConfig: {
+        request: {
+          prepend: "",
+          url: "",
+          username: "",
+          password: "",
+          tableName: ""
+        },
+        packageName: "",
+        author: "",
+        moduleName: "",
+        tablePrefix: "",
+        comments: "",
+        tableName: ""
+      },
+      tableRequest: {
+        currentPage: 1,
+        pageSize: 10,
+        prepend: "",
+        url: "",
+        username: "",
+        password: "",
+        tableName: ""
+      },
+      total: 0,
+      tableRequestValidate: {
+        url: [
+          {required: true, message: 'JDBC连接串不能为空', trigger: 'blur'}
+        ],
+        username: [
+          {required: true, message: '用户名不能为空', trigger: 'blur'}
+        ],
+        password: [
+          {required: true, message: '密码不能为空', trigger: 'blur'}
+        ]
+      },
+      columns: [
+        {
+          title: '序号',
+          type: 'index',
+          align: 'center',
+          width: 80
+        },
+        {
+          title: '表名',
+          slot: 'tableName',
+          align: 'center'
+        },
+        {
+          title: '注释',
+          key: 'tableComment',
+          align: 'center'
+        },
+        {
+          title: '索引',
+          key: 'engine',
+          align: 'center'
+        },
+        {
+          title: '创建时间',
+          key: 'createTime',
+          align: 'center',
+          render: (h, params) => {
+            return h('div', Date.parse(params.row.createTime.substring(0, params.row.createTime.indexOf("."))).toString('yyyy-MM-dd HH:mm:ss'));
+          }
+        },
+        {
+          title: '操作',
+          slot: 'action',
+          width: 150,
+          align: 'center'
+        }
+      ],
+      data: []
+    },
+    computed: {
+      mysqlPrepend() {
+        return MYSQL_PREPEND;
+      },
+      oraclePrepend() {
+        return ORACLE_PREPEND;
+
+      },
+      mssqlPrepend() {
+        return MSSQL_PREPEND;
+      }
+    },
+    methods: {
+      showConfig(tableName) {
+        this.genConfig.tableName = tableName;
+        this.genConfig.request.tableName = tableName;
+        this.genConfig.request.url = this.tableRequest.url;
+        this.genConfig.request.prepend = this.tableRequest.prepend;
+        this.genConfig.request.username = this.tableRequest.username;
+        this.genConfig.request.password = this.tableRequest.password;
+        this.showConfigDialog = true;
+      },
+      changePage(currentPage) {
+        this.tableRequest.currentPage = currentPage;
+        this.search("formTableRequest");
+      },
+      changePageSize(pageSize) {
+        this.tableRequest.pageSize = pageSize;
+        this.search("formTableRequest");
+      },
+      search(name) {
+        this.$refs[name].validate((valid) => {
+          if (this.tableRequest.prepend === "") {
+            this.$Message.error("请选择jdbc-url前缀");
+            return
+          }
+          if (this.tableRequest.prepend !== "jdbc:mysql://") {
+            this.$Message.error("暂时只支持 mysql 类型");
+            return
+          }
+          if (valid) {
+            http.get('/generator/table', {
+                params: this.tableRequest
+              })
+              .then(response => {
+                const data = response.data;
+                if (data.code === 200 && data.status) {
+                  this.data = data.data.list;
+                  this.total = data.data.total;
+                }
+              })
+              .catch(() => this.$Message.error("查询失败"));
+          } else {
+            this.$Message.error("请填写查询参数");
+          }
+        });
+      },
+      download() {
+        http({
+          url: '/generator',
+          method: 'post',
+          data: this.genConfig,
+          responseType: 'arraybuffer'
+        }).then((response) => { // 处理返回的文件流
+          let blob = new Blob([response.data], {type: 'application/zip'});
+          let filename = this.genConfig.tableName + '.zip';
+          let link = document.createElement('a');
+          link.href = URL.createObjectURL(blob);
+          link.download = filename;
+          document.body.appendChild(link);
+          link.click();
+          window.setTimeout(function () {
+            URL.revokeObjectURL(blob);
+            document.body.removeChild(link);
+          }, 0)
+        }).catch(() => this.$Message.error("代码生成失败"));
+      },
+      cancel() {
+        this.showConfigDialog = false;
+      }
+    }
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>spring-boot-demo-websocket-socketio</title>
+    <link href="bootstrap.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/layer/2.3/skin/layer.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        #console {
+            height: 400px;
+            overflow: auto;
+        }
+
+        .username-msg {
+            color: orange;
+        }
+
+        .connect-msg {
+            color: green;
+        }
+
+        .disconnect-msg {
+            color: red;
+        }
+
+        .broadcast {
+            color: red;
+        }
+
+        .send-msg {
+            color: #888
+        }
+
+        .sys-msg {
+            color: #888
+        }
+
+    </style>
+
+    <script src="js/socket.io/socket.io.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/jquery-1.10.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+    <script src="https://cdn.bootcss.com/layer/2.3/layer.js"></script>
+    <script>
+        const token = 'user' + Math.floor((Math.random() * 1000) + 1);
+        const url = `http://127.0.0.1:8081?token=${token}`;
+        const socket = io.connect(url);
+        socket.on('connect', function () {
+            output(`<span class="connect-msg">系统通知: ${token}成功连接至websocket服务器</span>`);
+        });
+
+        socket.on('join', function (data) {
+            output(`<span class="sys-msg">${data.groupId} 群通知: 新人 ${data.userId} 请爆照</span>`);
+        });
+
+        socket.on('chat', function (data) {
+            output(`<span class="username-msg">系统通知: 收到来自 ${data.fromUid} 的悄悄话: ${data.message}</span>`);
+        });
+
+        socket.on('group', function (data) {
+            output(`<span class="username-msg">${data.groupId} 群消息: ${data.fromUid} 说: ${data.message}</span>`);
+        });
+
+        socket.on('disconnect', function () {
+            output(`<span class="disconnect-msg">系统通知: ${token}已从websocket服务器断开连接</span>`);
+        });
+
+        socket.on('broadcast', function (data) {
+            output(`<span class="broadcast">${data.message}</span>`);
+        });
+
+        function sendConnect() {
+            socket.connect();
+        }
+
+        function sendDisconnect() {
+            socket.disconnect();
+        }
+
+        function sendBroadcast() {
+            axios.post('/demo/send/broadcast', {
+                message: '系统广播通知: 当前时间 ' + moment().format('YYYY-MM-dd HH:mm:ss.SSS')
+            }).then((response) => {
+                const {flag, message} = response.data;
+                if (flag) {
+                    layer.msg(message, {icon: 6});
+                } else {
+                    layer.msg(message, {icon: 5});
+                }
+            });
+        }
+
+        function sendJoin() {
+            let joinRequest = {
+                userId: token,
+                groupId: "666"
+
+            };
+            socket.emit('join', joinRequest);
+        }
+
+        function sendGroup() {
+            let message = $('#msg').val();
+
+            if (message === '') {
+                layer.msg('你不说点什么嘛?', {icon: 5});
+                return;
+            }
+
+            $('#msg').val('');
+            let groupRequest = {
+                fromUid: token,
+                groupId: "666",
+                message: message
+            };
+            socket.emit('group', groupRequest, function (data) {
+                if (data) {
+                    layer.msg(data, {icon: 5});
+                }
+            });
+        }
+
+        function sendChat() {
+            let toUserId = $('#to').val();
+            let message = $('#msg').val();
+
+            if (toUserId === '') {
+                layer.msg('请输入对方昵称', {icon: 5});
+                return;
+            }
+            if (message === '') {
+                layer.msg('你不说点什么嘛?', {icon: 5});
+                return;
+            }
+            $('#to').val('');
+            $('#msg').val('');
+
+            let singleRequest = {
+                fromUid: token,
+                toUid: toUserId,
+                message: message
+            };
+            socket.emit('chat', singleRequest, function (data) {
+                output(`<span class="username-msg">系统通知: 你刚刚和 ${singleRequest.toUid} 说了句悄悄话</span>`);
+                if (data && data.flag) {
+                    output(`<span class="username-msg">系统通知: 悄悄话, ${data.message}</span>`);
+                } else {
+                    output(`<span class="disconnect-msg">系统通知: 悄悄话, ${data.message}</span>`);
+                }
+            });
+        }
+
+        function output(message) {
+            let currentTime = "<span class='time'>" + moment().format('YYYY-MM-dd HH:mm:ss.SSS') + "</span>";
+            let element = $("<div>" + currentTime + " " + message + "</div>");
+            $('#console').prepend(element);
+        }
+
+    </script>
+</head>
+<body>
+<h1>spring-boot-demo-websocket-socketio</h1>
+<br/>
+<div id="console" class="well">
+</div>
+<form class="well form-inline" onsubmit="return false;">
+    <input id="msg" class="input-xlarge" type="text" placeholder="随便输点啥"/>
+    <input id="to" class="input-xlarge" type="text" placeholder="私聊发给谁"/>
+    <button type="button" onClick="sendJoin()" class="btn" id="join">加入群聊</button>
+    <button type="button" onClick="sendGroup()" class="btn" id="send">群聊</button>
+    <button type="button" onClick="sendChat()" class="btn" id="chat">私聊</button>
+    <button type="button" onClick="sendBroadcast()" class="btn">广播消息</button>
+    <button type="button" onClick="sendConnect()" class="btn">连接</button>
+    <button type="button" onClick="sendDisconnect()" class="btn">断开</button>
+</form>
+</body>
+</html>

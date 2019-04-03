@@ -1,178 +1,259 @@
 # spring-boot-demo-swagger
 
-依赖 [spring-boot-demo-parent](../spring-boot-demo-parent)、[spring-boot-starter-swagger](https://github.com/SpringForAll/spring-boot-starter-swagger) (由大佬[翟永超](http://blog.didispace.com/)开源)
+> 此 demo 主要演示了 Spring Boot 如何集成原生 swagger ，自动生成 API 文档。
+>
+> 启动项目，访问地址：http://localhost:8080/demo/swagger-ui.html#/
 
-### pom.xml
+# pom.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<artifactId>spring-boot-demo-swagger</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+    <artifactId>spring-boot-demo-swagger</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
-	<name>spring-boot-demo-swagger</name>
-	<description>Demo project for Spring Boot</description>
+    <name>spring-boot-demo-swagger</name>
+    <description>Demo project for Spring Boot</description>
 
-	<parent>
-		<groupId>com.xkcoding</groupId>
-		<artifactId>spring-boot-demo-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../spring-boot-demo-parent/pom.xml</relativePath>
-	</parent>
+    <parent>
+        <groupId>com.xkcoding</groupId>
+        <artifactId>spring-boot-demo</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
 
-	<properties>
-		<swagger.version>1.5.1.RELEASE</swagger.version>
-	</properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <swagger.version>2.9.2</swagger.version>
+    </properties>
 
-	<dependencies>
-		<dependency>
-			<groupId>com.spring4all</groupId>
-			<artifactId>spring-boot-starter-swagger</artifactId>
-			<version>${swagger.version}</version>
-		</dependency>
-	</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
 
-	<build>
-		<finalName>spring-boot-demo-swagger</finalName>
-	</build>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>spring-boot-demo-swagger</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
 ```
 
-### application.yml
-
-```yml
-server:
-  port: 8080
-  context-path: /demo
-swagger:
-  # 是否启用swagger，默认：true
-  enabled: true
-  # 标题
-  title: swagger-demo API 管理
-  # 描述
-  description: 这里是 swagger-demo API 管理的描述信息
-  # 版本
-  version: 0.0.1-SNAPSHOT
-  # 许可证
-  license: MIT License
-  # 许可证URL
-  licenseUrl: https://github.com/xkcoding/spring-boot-demo/blob/master/LICENSE
-  # 许可证URL
-  termsOfServiceUrl: https://github.com/xkcoding/spring-boot-demo/blob/master/LICENSE
-  contact:
-      # 维护人
-      name: xkcoding
-      # 维护人URL
-      url: http://xkcoding.com
-      # 维护人URL
-      email: 237497819@qq.com
-  # swagger扫描的基础包，默认：全扫描
-  base-package: com.xkcoding
-  # 需要处理的基础URL规则，默认：/**
-  base-path: /**
-  # 需要排除的URL规则，默认：空
-  exclude-path: /error
-# swagger.host=文档的host信息，默认：空
-# swagger.globalOperationParameters[0].name=参数名
-# swagger.globalOperationParameters[0].description=描述信息
-# swagger.globalOperationParameters[0].modelRef=指定参数类型
-# swagger.globalOperationParameters[0].parameterType=指定参数存放位置,可选header,query,path,body.form
-# swagger.globalOperationParameters[0].required=指定参数是否必传，true,false
-```
-
-### SpringBootDemoSwaggerApplication.java
+## Swagger2Config.java
 
 ```java
-@SpringBootApplication
-@EnableSwagger2Doc // 启用 Swagger
-public class SpringBootDemoSwaggerApplication {
+/**
+ * <p>
+ * Swagger2 配置
+ * </p>
+ *
+ * @package: com.xkcoding.swagger.config
+ * @description: Swagger2 配置
+ * @author: yangkai.shen
+ * @date: Created in 2018-11-29 11:14
+ * @copyright: Copyright (c) 2018
+ * @version: V1.0
+ * @modified: yangkai.shen
+ */
+@Configuration
+@EnableSwagger2
+public class Swagger2Config {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringBootDemoSwaggerApplication.class, args);
-	}
+    @Bean
+    public Docket createRestApi() {
+        return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo())
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.xkcoding.swagger.controller"))
+                .paths(PathSelectors.any())
+                .build();
+    }
+
+    private ApiInfo apiInfo() {
+        return new ApiInfoBuilder().title("spring-boot-demo")
+                .description("这是一个简单的 Swagger API 演示")
+                .contact(new Contact("Yangkai.Shen", "http://xkcoding.com", "237497819@qq.com"))
+                .version("1.0.0-SNAPSHOT")
+                .build();
+    }
+
 }
 ```
 
-### User.java
+## UserController.java
+
+> 主要演示API层的注解。
 
 ```java
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@ApiModel("用户基本信息")
-public class User {
-	private Long id;
-
-	@ApiModelProperty("姓名")
-	@Size(max = 20)
-	private String name;
-
-	@Max(value = 30, message = "年龄小于30岁才可以！")
-	@Min(value = 18, message = "你必须成年才可以！")
-	private Integer age;
-
-	@Pattern(regexp = "^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$", message = "邮箱格式错误！")
-	private String email;
-
-	@Pattern(regexp = "^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\\d{8}$", message = "请输入正确的手机格式！")
-	private String phone;
-}
-```
-
-### UserController.java
-
-```java
-@Api(tags = "用户管理")
+/**
+ * <p>
+ * User Controller
+ * </p>
+ *
+ * @package: com.xkcoding.swagger.controller
+ * @description: User Controller
+ * @author: yangkai.shen
+ * @date: Created in 2018-11-29 11:30
+ * @copyright: Copyright (c) 2018
+ * @version: V1.0
+ * @modified: yangkai.shen
+ */
 @RestController
 @RequestMapping("/user")
+@Api(tags = "1.0.0-SNAPSHOT", description = "用户管理", value = "用户管理")
+@Slf4j
 public class UserController {
+    @GetMapping
+    @ApiOperation(value = "条件查询（DONE）", notes = "备注")
+    @ApiImplicitParams({@ApiImplicitParam(name = "username", value = "用户名", dataType = DataType.STRING, paramType = ParamType.QUERY, defaultValue = "xxx")})
+    public ApiResponse<User> getByUserName(String username) {
+        log.info("多个参数用  @ApiImplicitParams");
+        return ApiResponse.<User>builder().code(200)
+                .message("操作成功")
+                .data(new User(1, username, "JAVA"))
+                .build();
+    }
 
-	@ApiOperation("新增用户")
-	@PostMapping({"", "/"})
-	public User insert(@RequestBody @Valid User user) {
-		return user;
-	}
+    @GetMapping("/{id}")
+    @ApiOperation(value = "主键查询（DONE）", notes = "备注")
+    @ApiImplicitParams({@ApiImplicitParam(name = "id", value = "用户编号", dataType = DataType.INT, paramType = ParamType.PATH)})
+    public ApiResponse<User> get(@PathVariable Integer id) {
+        log.info("单个参数用  @ApiImplicitParam");
+        return ApiResponse.<User>builder().code(200)
+                .message("操作成功")
+                .data(new User(id, "u1", "p1"))
+                .build();
+    }
 
-	@ApiIgnore
-	@DeleteMapping("/{id}")
-	public String deleteById(@PathVariable Long id) {
-		return "已删除用户 --> " + id;
-	}
+    @DeleteMapping("/{id}")
+    @ApiOperation(value = "删除用户（DONE）", notes = "备注")
+    @ApiImplicitParam(name = "id", value = "用户编号", dataType = DataType.INT, paramType = ParamType.PATH)
+    public void delete(@PathVariable Integer id) {
+        log.info("单个参数用 ApiImplicitParam");
+    }
 
-	@ApiOperation("修改用户详情")
-	@PutMapping("/{id}")
-	public User update(@PathVariable Long id, @RequestBody @Valid User user) {
-		user.setId(id);
-		return user;
-	}
+    @PostMapping
+    @ApiOperation(value = "添加用户（DONE）")
+    public User post(@RequestBody User user) {
+        log.info("如果是 POST PUT 这种带 @RequestBody 的可以不用写 @ApiImplicitParam");
+        return user;
+    }
 
-	@ApiOperation("用户详情")
-	@GetMapping("/{id}")
-	public User findById(@PathVariable Long id) {
-		return new User(id, "xkcoding" + id, 21, StrUtil.format("xkcoding{}@163.com", id), StrUtil.fill("186", id.toString().charAt(0), 11, false));
-	}
+    @PostMapping("/multipar")
+    @ApiOperation(value = "添加用户（DONE）")
+    public List<User> multipar(@RequestBody List<User> user) {
+        log.info("如果是 POST PUT 这种带 @RequestBody 的可以不用写 @ApiImplicitParam");
 
-	@ApiOperation("用户列表")
-	@GetMapping({"", "/"})
-	public List<User> index(@ApiParam("第几页") @RequestParam(defaultValue = "1") Integer pageNum, @ApiParam("每页的条目数") @RequestParam(defaultValue = "20") Integer pageSize) {
-		List<User> users = Lists.newArrayList();
-		users.add(new User(0L, "xkcoding0", 18, "xkcoding0@163.com", "18600000000"));
-		users.add(new User(1L, "xkcoding1", 19, "xkcoding1@163.com", "18611111111"));
-		return users;
-	}
+        return user;
+    }
 
+    @PostMapping("/array")
+    @ApiOperation(value = "添加用户（DONE）")
+    public User[] array(@RequestBody User[] user) {
+        log.info("如果是 POST PUT 这种带 @RequestBody 的可以不用写 @ApiImplicitParam");
+        return user;
+    }
+
+    @PutMapping("/{id}")
+    @ApiOperation(value = "修改用户（DONE）")
+    public void put(@PathVariable Long id, @RequestBody User user) {
+        log.info("如果你不想写 @ApiImplicitParam 那么 swagger 也会使用默认的参数名作为描述信息 ");
+    }
+
+    @PostMapping("/{id}/file")
+    @ApiOperation(value = "文件上传（DONE）")
+    public String file(@PathVariable Long id, @RequestParam("file") MultipartFile file) {
+        log.info(file.getContentType());
+        log.info(file.getName());
+        log.info(file.getOriginalFilename());
+        return file.getOriginalFilename();
+    }
 }
 ```
 
-### 启动项目，查看 API 接口信息
+## ApiResponse.java
 
-http://localhost:8080/demo/swagger-ui.html
+> 主要演示了 实体类 的注解。
 
-### 附上大佬(翟永超)博客关于 swagger 的一些文章
+```java
+/**
+ * <p>
+ * 通用API接口返回
+ * </p>
+ *
+ * @package: com.xkcoding.swagger.common
+ * @description: 通用API接口返回
+ * @author: yangkai.shen
+ * @date: Created in 2018-11-29 11:30
+ * @copyright: Copyright (c) 2018
+ * @version: V1.0
+ * @modified: yangkai.shen
+ */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@ApiModel(value = "通用PI接口返回", description = "Common Api Response")
+public class ApiResponse<T> implements Serializable {
+    private static final long serialVersionUID = -8987146499044811408L;
+    /**
+     * 通用返回状态
+     */
+    @ApiModelProperty(value = "通用返回状态", required = true)
+    private Integer code;
+    /**
+     * 通用返回信息
+     */
+    @ApiModelProperty(value = "通用返回信息", required = true)
+    private String message;
+    /**
+     * 通用返回数据
+     */
+    @ApiModelProperty(value = "通用返回数据", required = true)
+    private T data;
+}
+```
 
-http://blog.didispace.com/tags/Swagger/
+## 参考
+
+1. swagger 官方网站：https://swagger.io/
+
+2. swagger 官方文档：https://github.com/swagger-api/swagger-core/wiki/Swagger-2.X---Getting-started
+
+3. swagger 常用注解：https://github.com/swagger-api/swagger-core/wiki/Swagger-2.X---Annotations

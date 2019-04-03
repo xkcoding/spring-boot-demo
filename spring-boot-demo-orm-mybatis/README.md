@@ -1,244 +1,293 @@
 # spring-boot-demo-orm-mybatis
 
-依赖 [spring-boot-demo-parent](../spring-boot-demo-parent)、`mybatis-spring-boot-starter`、`druid-spring-boot-starter`、`mapper-spring-boot-starter`(通用Mapper)、`pagehelper-spring-boot-starter`(分页插件PageHelper)
+> 此 demo 演示了 Spring Boot 如何与原生的 mybatis 整合，使用了 mybatis 官方提供的脚手架 `mybatis-spring-boot-starter `可以很容易的和 Spring Boot 整合。
 
-### pom.xml
+## pom.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<artifactId>spring-boot-demo-orm-mybatis</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+    <artifactId>spring-boot-demo-orm-mybatis</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
-	<name>spring-boot-demo-orm-mybatis</name>
-	<description>Demo project for Spring Boot</description>
+    <name>spring-boot-demo-orm-mybatis</name>
+    <description>Demo project for Spring Boot</description>
 
-	<parent>
-		<groupId>com.xkcoding</groupId>
-		<artifactId>spring-boot-demo-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../spring-boot-demo-parent/pom.xml</relativePath>
-	</parent>
+    <parent>
+        <groupId>com.xkcoding</groupId>
+        <artifactId>spring-boot-demo</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
 
-	<properties>
-		<mybatis.starter.version>1.3.1</mybatis.starter.version>
-		<druid.starter.version>1.1.5</druid.starter.version>
-		<mapper.version>1.1.1</mapper.version>
-		<pagehelper.version>1.1.0</pagehelper.version>
-	</properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <mybatis.version>1.3.2</mybatis.version>
+    </properties>
 
-	<dependencies>
-		<!--mybatis-->
-		<dependency>
-			<groupId>org.mybatis.spring.boot</groupId>
-			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>${mybatis.starter.version}</version>
-		</dependency>
-		<!--druid-->
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>druid-spring-boot-starter</artifactId>
-			<version>${druid.starter.version}</version>
-		</dependency>
-		<!--通用 Mapper-->
-		<dependency>
-			<groupId>tk.mybatis</groupId>
-			<artifactId>mapper-spring-boot-starter</artifactId>
-			<version>${mapper.version}</version>
-		</dependency>
-		<!--PageHelper-->
-		<dependency>
-			<groupId>com.github.pagehelper</groupId>
-			<artifactId>pagehelper-spring-boot-starter</artifactId>
-			<version>${pagehelper.version}</version>
-		</dependency>
-	</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>${mybatis.version}</version>
+        </dependency>
 
-	<build>
-		<finalName>spring-boot-demo-orm-mybatis</finalName>
-	</build>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>spring-boot-demo-orm-mybatis</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
 ```
 
-### application.yml
-
-```yml
-server:
-  port: 8080
-  context-path: /demo
-spring:
-  # json 转化移除 null 字段
-  # jackson:
-  #   default-property-inclusion: non_null
-  datasource:
-    # 启动时自动运行的 SQL 文件
-    schema: classpath:init-sql/schema.sql
-    continue-on-error: true
-    druid:
-      url: jdbc:mysql://localhost:3306/spring-boot-demo?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
-      username: root
-      password: root
-      driver-class-name: com.mysql.jdbc.Driver
-      # 连接池配置
-      # 初始化大小，最小，最大
-      initialSize: 5
-      minIdle: 5
-      maxActive: 20
-      # 配置获取连接等待超时的时间
-      maxWait: 60000
-      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
-      timeBetweenEvictionRunsMillis: 60000
-      # 配置一个连接在池中最小生存的时间，单位是毫秒
-      minEvictableIdleTimeMillis: 300000
-      validationQuery: SELECT 1 FROM DUAL
-      testWhileIdle: true
-      testOnBorrow: false
-      testOnReturn: false
-      # 打开PSCache，并且指定每个连接上PSCache的大小
-      poolPreparedStatements: true
-      maxPoolPreparedStatementPerConnectionSize: 20
-      # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
-      filters: stat,wall,log4j
-      # 监控配置
-      web-stat-filter:
-        enabled: true
-        url-pattern: /*
-        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
-      stat-view-servlet:
-        enabled: true
-        url-pattern: /sys/druid/*
-        reset-enable: fasle
-        login-username: xkcoding
-        login-password: 123456
-      filter:
-        stat:
-          log-slow-sql: true
-          slow-sql-millis: 5000
-          merge-sql: true
-# mybatis 配置
-mybatis:
-  type-aliases-package: com.xkcoding.springbootdemoormmybatistis.model
-  mapper-locations: classpath:mapper/*.xml
-  # 配置项：开启下划线到驼峰的自动转换. 作用：将数据库字段根据驼峰规则自动注入到对象属性
-  configuration:
-    map-underscore-to-camel-case: true
-# 通用 Mapper 配置
-mapper:
-  not-empty: false
-  identity: MYSQL
-  mappers: com.xkcoding.springbootdemoormmybatistis.util.MyMapper
-# PageHelper 配置
-pagehelper:
-  helper-dialect: mysql
-  reasonable: true
-  support-methods-arguments: true
-  params: count=countSql
-```
-
-### schema.sql
-
-```mysql
-SET FOREIGN_KEY_CHECKS=0;
-
--- ----------------------------
--- Table structure for `boot_user`
--- ----------------------------
-DROP TABLE IF EXISTS `mybatis_user`;
-CREATE TABLE `mybatis_user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(32) DEFAULT NULL,
-  `tel` varchar(11) DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of boot_user
--- ----------------------------
-INSERT INTO `mybatis_user` VALUES (1, 'klay', '13799008800', '2017-11-13 16:04:39');
-INSERT INTO `mybatis_user` VALUES (2, 'Tome', '18988991234', '2017-11-13 16:13:28');
-```
-
-### SpringBootDemoOrmMybatisApplication.java
+## SpringBootDemoOrmMybatisApplication.java
 
 ```java
+/**
+ * <p>
+ * 启动类
+ * </p>
+ *
+ * @package: com.xkcoding.orm.mybatis
+ * @description: 启动类
+ * @author: yangkai.shen
+ * @date: Created in 2018/11/8 10:52
+ * @copyright: Copyright (c) 2018
+ * @version: V1.0
+ * @modified: yangkai.shen
+ */
+@MapperScan(basePackages = {"com.xkcoding.orm.mybatis.mapper"})
 @SpringBootApplication
-@MapperScan(basePackages = {"com.xkcoding.springbootdemoormmybatis.mapper"})
 public class SpringBootDemoOrmMybatisApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringBootDemoOrmMybatisApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SpringBootDemoOrmMybatisApplication.class, args);
+    }
 }
 ```
 
-### MybatisUser.java
+## application.yml
 
-```java
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
-@Table(name = "mybatis_user")
-public class MybatisUser {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY,generator = "JDBC")
-	private Long id;
-
-	@Column(name = "name")
-	private String name;
-
-	@Column(name = "tel")
-	private String tel;
-
-	@Column(name = "create_time")
-	private Date createTime;
-}
+```yaml
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/spring-boot-demo?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    initialization-mode: always
+    continue-on-error: true
+    schema:
+    - "classpath:db/schema.sql"
+    data:
+    - "classpath:db/data.sql"
+    hikari:
+      minimum-idle: 5
+      connection-test-query: SELECT 1 FROM DUAL
+      maximum-pool-size: 20
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: SpringBootDemoHikariCP
+      max-lifetime: 60000
+      connection-timeout: 30000
+logging:
+  level:
+    com.xkcoding: debug
+    com.xkcoding.orm.mybatis.mapper: trace
+mybatis:
+  configuration:
+    # 下划线转驼峰
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mappers/*.xml
+  type-aliases-package: com.xkcoding.orm.mybatis.entity
 ```
 
-### MyMapper.java
+## UserMapper.java
 
 ```java
-public interface MyMapper<T> extends Mapper<T>, MySqlMapper<T> {
-}
-```
-
-### MybatisUserMapper.java
-
-```java
+/**
+ * <p>
+ * User Mapper
+ * </p>
+ *
+ * @package: com.xkcoding.orm.mybatis.mapper
+ * @description: User Mapper
+ * @author: yangkai.shen
+ * @date: Created in 2018/11/8 10:54
+ * @copyright: Copyright (c) 2018
+ * @version: V1.0
+ * @modified: yangkai.shen
+ */
+@Mapper
 @Component
-public interface MybatisUserMapper extends MyMapper<MybatisUser> {
-   MybatisUser findByName(@Param("name") String name);
+public interface UserMapper {
+
+    /**
+     * 查询所有用户
+     *
+     * @return 用户列表
+     */
+    @Select("SELECT * FROM orm_user")
+    List<User> selectAllUser();
+
+    /**
+     * 根据id查询用户
+     *
+     * @param id 主键id
+     * @return 当前id的用户，不存在则是 {@code null}
+     */
+    @Select("SELECT * FROM orm_user WHERE id = #{id}")
+    User selectUserById(@Param("id") Long id);
+
+    /**
+     * 保存用户
+     *
+     * @param user 用户
+     * @return 成功 - {@code 1} 失败 - {@code 0}
+     */
+    int saveUser(@Param("user") User user);
+
+    /**
+     * 删除用户
+     *
+     * @param id 主键id
+     * @return 成功 - {@code 1} 失败 - {@code 0}
+     */
+    int deleteById(@Param("id") Long id);
+
 }
 ```
 
-### MybatisUserMapper.xml
+## UserMapper.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xkcoding.springbootdemoormmybatis.mapper.MybatisUserMapper">
-	<resultMap id="mybatisUserMap" type="com.xkcoding.springbootdemoormmybatis.model.MybatisUser">
-		<id property="id" column="id"/>
+<mapper namespace="com.xkcoding.orm.mybatis.mapper.UserMapper">
 
-		<result property="name" column="name"/>
-		<result property="tel" column="tel"/>
-		<result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
-	</resultMap>
+    <insert id="saveUser">
+        INSERT INTO `orm_user` (`name`,
+                                `password`,
+                                `salt`,
+                                `email`,
+                                `phone_number`,
+                                `status`,
+                                `create_time`,
+                                `last_login_time`,
+                                `last_update_time`)
+        VALUES (#{user.name},
+                #{user.password},
+                #{user.salt},
+                #{user.email},
+                #{user.phoneNumber},
+                #{user.status},
+                #{user.createTime},
+                #{user.lastLoginTime},
+                #{user.lastUpdateTime})
+    </insert>
 
-	<select id="findByName" resultMap="mybatisUserMap">
-		SELECT * FROM mybatis_user WHERE name LIKE #{name}
-	</select>
-
+    <delete id="deleteById">
+        DELETE
+        FROM `orm_user`
+        WHERE `id` = #{id}
+    </delete>
 </mapper>
 ```
 
-### 其余代码
+## UserMapperTest.java
 
-详情请参见本demo。
+```java
+/**
+ * <p>
+ * UserMapper 测试类
+ * </p>
+ *
+ * @package: com.xkcoding.orm.mybatis.mapper
+ * @description: UserMapper 测试类
+ * @author: yangkai.shen
+ * @date: Created in 2018/11/8 11:25
+ * @copyright: Copyright (c) 2018
+ * @version: V1.0
+ * @modified: yangkai.shen
+ */
+@Slf4j
+public class UserMapperTest extends SpringBootDemoOrmMybatisApplicationTests {
+    @Autowired
+    private UserMapper userMapper;
+
+    @Test
+    public void selectAllUser() {
+        List<User> userList = userMapper.selectAllUser();
+        Assert.assertTrue(CollUtil.isNotEmpty(userList));
+        log.debug("【userList】= {}", userList);
+    }
+
+    @Test
+    public void selectUserById() {
+        User user = userMapper.selectUserById(1L);
+        Assert.assertNotNull(user);
+        log.debug("【user】= {}", user);
+    }
+
+    @Test
+    public void saveUser() {
+        String salt = IdUtil.fastSimpleUUID();
+        User user = User.builder().name("testSave3").password(SecureUtil.md5("123456" + salt)).salt(salt).email("testSave3@xkcoding.com").phoneNumber("17300000003").status(1).lastLoginTime(new DateTime()).createTime(new DateTime()).lastUpdateTime(new DateTime()).build();
+        int i = userMapper.saveUser(user);
+        Assert.assertEquals(1, i);
+    }
+
+    @Test
+    public void deleteById() {
+        int i = userMapper.deleteById(1L);
+        Assert.assertEquals(1, i);
+    }
+}
+```
+
+## 参考
+
+- Mybatis官方文档：http://www.mybatis.org/mybatis-3/zh/index.html
+
+- Mybatis官方脚手架文档：http://www.mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/
+
+- Mybatis整合Spring Boot官方demo：https://github.com/mybatis/spring-boot-starter/tree/master/mybatis-spring-boot-samples

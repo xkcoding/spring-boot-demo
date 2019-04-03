@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<header th:replace="~{common/head :: header}"></header>
+<body>
+<div id="app" style="margin: 20px 20%">
+	欢迎登录，<span th:text="${user.name}"></span>！
+</div>
+</body>
+</html>

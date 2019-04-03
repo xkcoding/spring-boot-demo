@@ -1,8 +1,8 @@
 # spring-boot-demo-actuator
 
-依赖 [spring-boot-demo-parent](../spring-boot-demo-parent)、spring-boot-starter-actuator
+> 本 demo 主要演示了如何在 Spring Boot 中通过 actuator 检查项目运行情况
 
-### pom.xml
+## pom.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -11,96 +11,104 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>spring-boot-demo-actuator</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
 	<name>spring-boot-demo-actuator</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
 		<groupId>com.xkcoding</groupId>
-		<artifactId>spring-boot-demo-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../spring-boot-demo-parent/pom.xml</relativePath>
+		<artifactId>spring-boot-demo</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
 		<finalName>spring-boot-demo-actuator</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
 	</build>
 
 </project>
 ```
 
-### application.yml
+## application.yml
 
-```yml
+```yaml
 server:
   port: 8080
-  context-path: /demo
-# actuator 配置
-management:
+  servlet:
+    context-path: /demo
+# 若要访问端点信息，需要配置用户名和密码
+spring:
   security:
-    # 关闭 actuator 的身份验证
-    enabled: false
-  # 配置 actuator 的访问路径前缀
-  context-path: /sys
-  # actuator暴露接口使用的端口，为了和api接口使用的端口进行分离
-  port: 1111
-```
-
-### actuator 提供的端点信息
-
-| 端点          | 描述                                       | HTTP 方法 |
-| ----------- | ---------------------------------------- | ------- |
-| autoconfig  | 显示自动配置的信息                                | GET     |
-| beans       | 显示应用程序上下文所有的Spring bean                  | GET     |
-| configprops | 显示所有 `@ConfigurationProperties` 的配置属性列表  | GET     |
-| dump        | 显示线程活动的快照                                | GET     |
-| env         | 显示应用的环境变量                                | GET     |
-| health      | 显示应用程序的健康指标，这些值由HealthIndicator的实现类提供。常见取值：`UP` / `DOWN` / `UNKNOWN` / `OUT_OF_SERVICE` | GET     |
-| info        | 显示应用的信息，可使用 `info.*` 属性自定义info端点公开的数据    | GET     |
-| mappings    | 显示所有的URL路径                               | GET     |
-| metrics     | 显示应用的度量标准信息                              | GET     |
-| shutdown    | 关闭应用（默认情况下不启用，如需启用，需设置`endpoints.shutdown.enabled=true`） | POST    |
-| trace       | 显示跟踪信息（默认情况下为最近100个HTTP请求）               | GET     |
-
-### actuator 的访问权限
-
-#### 方法一：(本 demo 中使用的是这种)
-
-```yml
+    user:
+      name: xkcoding
+      password: 123456
 management:
-  security:
-    enabled: false
+  # 端点信息接口使用的端口，为了和主系统接口使用的端口进行分离
+  server:
+    port: 8090
+    servlet:
+      context-path: /sys
+  # 端点健康情况，默认值"never"，设置为"always"可以显示硬盘使用情况和线程情况
+  endpoint:
+    health:
+      show-details: always
+  # 设置端点暴露的哪些内容，默认["health","info"]，设置"*"代表暴露所有可访问的端点
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 ```
 
-#### 方法二：
+## 端点暴露地址
 
-pom.xml 中添加以下 `spring-boot-starter-security` 依赖：
+将项目运行起来之后，会在**控制台**里查看所有可以访问的端口信息
+1. 打开浏览器，访问：http://localhost:8090/sys/actuator/mappings ，输入用户名(xkcoding)密码(123456)即可看到所有的mapping信息
+2. 访问：http://localhost:8090/sys/actuator/beans ，输入用户名(xkcoding)密码(123456)即可看到所有 Spring 管理的Bean
+3. 其余可访问的路径，参见文档
 
-```xml
-<dependency>
-   <groupId>org.springframework.boot</groupId>
-   <artifactId>spring-boot-starter-security</artifactId>
-</dependency>
-```
+## 参考
 
-并在 `application.yml` 文件中设置访问的密码
-
-```yml
-security:
-  basic:
-    enabled: true
-  user:
-    name: user
-    password: 123
-```
-
-如果不设置，则用户名是 user，密码是一个随机值，在启动时会在控制台打印。
+- actuator文档：https://docs.spring.io/spring-boot/docs/2.0.5.RELEASE/reference/htmlsingle/#production-ready
+- 具体可以访问哪些路径，参考: https://docs.spring.io/spring-boot/docs/2.0.5.RELEASE/reference/htmlsingle/#production-ready-endpoints

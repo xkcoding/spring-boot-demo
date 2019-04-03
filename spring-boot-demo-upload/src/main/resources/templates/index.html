@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>spring-boot-demo-upload</title>
+	<!-- import Vue.js -->
+	<script src="https://cdn.bootcss.com/vue/2.5.17/vue.min.js"></script>
+	<!-- import stylesheet -->
+	<link href="https://cdn.bootcss.com/iview/3.1.4/styles/iview.css" rel="stylesheet">
+	<!-- import iView -->
+	<script src="https://cdn.bootcss.com/iview/3.1.4/iview.min.js"></script>
+</head>
+<body>
+<div id="app">
+	<Row :gutter="16" style="background:#eee;padding:10%">
+		<i-col span="12">
+			<Card style="height: 300px">
+				<p slot="title">
+					<Icon type="ios-cloud-upload"></Icon>
+					本地上传
+				</p>
+				<div style="text-align: center;">
+					<Upload
+							:before-upload="handleLocalUpload"
+							action="/demo/upload/local"
+							ref="localUploadRef"
+							:on-success="handleLocalSuccess"
+							:on-error="handleLocalError"
+					>
+						<i-button icon="ios-cloud-upload-outline">选择文件</i-button>
+					</Upload>
+					<i-button
+							type="primary"
+							@click="localUpload"
+							:loading="local.loadingStatus"
+							:disabled="!local.file">
+						{{ local.loadingStatus ? '本地文件上传中' : '本地上传' }}
+					</i-button>
+				</div>
+				<div>
+					<div v-if="local.log.status != 0">状态：{{local.log.message}}</div>
+					<div v-if="local.log.status === 200">文件名：{{local.log.fileName}}</div>
+					<div v-if="local.log.status === 200">文件路径：{{local.log.filePath}}</div>
+				</div>
+			</Card>
+		</i-col>
+		<i-col span="12">
+			<Card style="height: 300px;">
+				<p slot="title">
+					<Icon type="md-cloud-upload"></Icon>
+					七牛云上传
+				</p>
+				<div style="text-align: center;">
+					<Upload
+							:before-upload="handleYunUpload"
+							action="/demo/upload/yun"
+							ref="yunUploadRef"
+							:on-success="handleYunSuccess"
+							:on-error="handleYunError"
+					>
+						<i-button icon="ios-cloud-upload-outline">选择文件</i-button>
+					</Upload>
+					<i-button
+							type="primary"
+							@click="yunUpload"
+							:loading="yun.loadingStatus"
+							:disabled="!yun.file">
+						{{ yun.loadingStatus ? '七牛云文件上传中' : '七牛云上传' }}
+					</i-button>
+				</div>
+				<div>
+					<div v-if="yun.log.status != 0">状态：{{yun.log.message}}</div>
+					<div v-if="yun.log.status === 200">文件名：{{yun.log.fileName}}</div>
+					<div v-if="yun.log.status === 200">文件路径：{{yun.log.filePath}}</div>
+				</div>
+			</Card>
+		</i-col>
+	</Row>
+</div>
+<script>
+	new Vue({
+		el: '#app',
+		data: {
+			local: {
+				// 选择文件后，将 beforeUpload 返回的 file 保存在这里，后面会用到
+				file: null,
+				// 标记上传状态
+				loadingStatus: false,
+				log: {
+					status: 0,
+					message: "",
+					fileName: "",
+					filePath: ""
+				}
+			},
+			yun: {
+				// 选择文件后，将 beforeUpload 返回的 file 保存在这里，后面会用到
+				file: null,
+				// 标记上传状态
+				loadingStatus: false,
+				log: {
+					status: 0,
+					message: "",
+					fileName: "",
+					filePath: ""
+				}
+			}
+		},
+		methods: {
+			// beforeUpload 在返回 false 或 Promise 时，会停止自动上传，这里我们将选择好的文件 file 保存在 data里，并 return false
+			handleLocalUpload(file) {
+				this.local.file = file;
+				return false;
+			},
+			// 这里是手动上传，通过 $refs 获取到 Upload 实例，然后调用私有方法 .post()，把保存在 data 里的 file 上传。
+			// iView 的 Upload 组件在调用 .post() 方法时，就会继续上传了。
+			localUpload() {
+				this.local.loadingStatus = true;  // 标记上传状态
+				this.$refs.localUploadRef.post(this.local.file);
+			},
+			// 上传成功后，清空 data 里的 file，并修改上传状态
+			handleLocalSuccess(response) {
+				this.local.file = null;
+				this.local.loadingStatus = false;
+				if (response.code === 200) {
+					this.$Message.success(response.message);
+					this.local.log.status = response.code;
+					this.local.log.message = response.message;
+					this.local.log.fileName = response.data.fileName;
+					this.local.log.filePath = response.data.filePath;
+					this.$refs.localUploadRef.clearFiles();
+				} else {
+					this.$Message.error(response.message);
+					this.local.log.status = response.code;
+					this.local.log.message = response.message;
+				}
+			},
+			// 上传失败后，清空 data 里的 file，并修改上传状态
+			handleLocalError() {
+				this.local.file = null;
+				this.local.loadingStatus = false;
+				this.$Message.error('上传失败');
+			},
+			// beforeUpload 在返回 false 或 Promise 时，会停止自动上传，这里我们将选择好的文件 file 保存在 data里，并 return false
+			handleYunUpload(file) {
+				this.yun.file = file;
+				return false;
+			},
+			// 这里是手动上传，通过 $refs 获取到 Upload 实例，然后调用私有方法 .post()，把保存在 data 里的 file 上传。
+			// iView 的 Upload 组件在调用 .post() 方法时，就会继续上传了。
+			yunUpload() {
+				this.yun.loadingStatus = true;  // 标记上传状态
+				this.$refs.yunUploadRef.post(this.yun.file);
+			},
+			// 上传成功后，清空 data 里的 file，并修改上传状态
+			handleYunSuccess(response) {
+				this.yun.file = null;
+				this.yun.loadingStatus = false;
+				if (response.code === 200) {
+					this.$Message.success(response.message);
+					this.yun.log.status = response.code;
+					this.yun.log.message = response.message;
+					this.yun.log.fileName = response.data.fileName;
+					this.yun.log.filePath = response.data.filePath;
+					this.$refs.yunUploadRef.clearFiles();
+				} else {
+					this.$Message.error(response.message);
+					this.yun.log.status = response.code;
+					this.yun.log.message = response.message;
+				}
+			},
+			// 上传失败后，清空 data 里的 file，并修改上传状态
+			handleYunError() {
+				this.yun.file = null;
+				this.yun.loadingStatus = false;
+				this.$Message.error('上传失败');
+			}
+		}
+	})
+</script>
+</body>
+</html>

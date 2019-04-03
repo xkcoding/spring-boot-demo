@@ -1,0 +1,10 @@
+server:
+  port: 9090
+  servlet:
+    context-path: /demo
+
+spring:
+  dubbo:
+    application:
+      name: spring-boot-demo-dubbo-provider
+      registry: zookeeper://localhost:2181

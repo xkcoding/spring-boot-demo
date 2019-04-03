@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>服务器信息</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/element-ui/2.4.11/theme-chalk/index.css" rel="stylesheet">
+    <style>
+        .el-row {
+            margin-bottom: 20px;
+        }
+
+        .el-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .sysFile {
+            margin-bottom: 5px;
+        }
+
+        .sysFile:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <el-container>
+        <el-header>
+            <el-button @click="_initSockJs" type="primary" :disabled="isConnected">手动连接</el-button>
+            <el-button @click="_destroySockJs" type="danger" :disabled="!isConnected">断开连接</el-button>
+        </el-header>
+        <el-main>
+            <el-row :gutter="20">
+                <el-col :span="12">
+                    <el-card>
+                        <div slot="header">
+                            <span>CPU信息</span>
+                        </div>
+                        <el-table size="small" border :data="server.cpu" style="width: 100%">
+                            <el-table-column prop="key" label="属性">
+                            </el-table-column>
+                            <el-table-column prop="value" label="值">
+                            </el-table-column>
+                        </el-table>
+                    </el-card>
+                </el-col>
+                <el-col :span="12">
+                    <el-card>
+                        <div slot="header">
+                            <span>内存信息</span>
+                        </div>
+                        <el-table size="small" border :data="server.mem" style="width: 100%">
+                            <el-table-column prop="key" label="属性">
+                            </el-table-column>
+                            <el-table-column prop="value" label="值">
+                            </el-table-column>
+                        </el-table>
+                    </el-card>
+                </el-col>
+            </el-row>
+            <el-row>
+                <el-col :span="24">
+                    <el-card>
+                        <div slot="header">
+                            <span>服务器信息</span>
+                        </div>
+                        <el-table size="small" border :data="server.sys" style="width: 100%">
+                            <el-table-column prop="key" label="属性">
+                            </el-table-column>
+                            <el-table-column prop="value" label="值">
+                            </el-table-column>
+                        </el-table>
+                    </el-card>
+                </el-col>
+            </el-row>
+            <el-row>
+                <el-col :span="24">
+                    <el-card>
+                        <div slot="header">
+                            <span>Java虚拟机信息</span>
+                        </div>
+                        <el-table size="small" border :data="server.jvm" style="width: 100%">
+                            <el-table-column prop="key" label="属性">
+                            </el-table-column>
+                            <el-table-column prop="value" label="值">
+                            </el-table-column>
+                        </el-table>
+                    </el-card>
+                </el-col>
+            </el-row>
+            <el-row>
+                <el-col :span="24">
+                    <el-card>
+                        <div slot="header">
+                            <span>磁盘状态</span>
+                        </div>
+                        <div class="sysFile" v-for="(item,index) in server.sysFile" :key="index">
+                            <el-table size="small" border :data="item" style="width: 100%">
+                                <el-table-column prop="key" label="属性">
+                                </el-table-column>
+                                <el-table-column prop="value" label="值">
+                                </el-table-column>
+                            </el-table>
+                        </div>
+                    </el-card>
+                </el-col>
+            </el-row>
+        </el-main>
+    </el-container>
+</div>
+</body>
+<script src="js/sockjs.min.js"></script>
+<script src="js/stomp.js"></script>
+<script src="https://cdn.bootcss.com/vue/2.5.21/vue.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/element-ui/2.4.11/index.js"></script>
+<script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+<script>
+    const wsHost = "http://localhost:8080/demo/notification";
+    const wsTopic = "/topic/server";
+
+    const app = new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                isConnected: false,
+                stompClient: {},
+                socket: {},
+                server: {
+                    cpu: [],
+                    mem: [],
+                    jvm: [],
+                    sys: [],
+                    sysFile: []
+                }
+            }
+        },
+        methods: {
+            _getServerInfo() {
+                axios.get('/demo/server')
+                    .then((response) => {
+                        this.server = response.data
+                    });
+            },
+            _initSockJs() {
+                this._getServerInfo();
+                this.socket = new SockJS(wsHost);
+                this.stompClient = Stomp.over(this.socket);
+
+                this.stompClient.connect({}, (frame) => {
+                    console.log('websocket连接成功:' + frame);
+                    this.isConnected = true;
+                    this.$message('websocket服务器连接成功');
+
+                    // 另外再注册一下消息推送
+                    this.stompClient.subscribe(wsTopic, (response) => {
+                        this.server = JSON.parse(response.body);
+                    });
+                });
+            },
+            _destroySockJs() {
+                if (this.stompClient != null) {
+                    this.stompClient.disconnect();
+                    this.socket.onclose;
+                    this.socket.close();
+                    this.stompClient = {};
+                    this.socket = {};
+                    this.isConnected = false;
+                    this.server.cpu = [];
+                    this.server.mem = [];
+                    this.server.jvm = [];
+                    this.server.sys = [];
+                    this.server.sysFile = [];
+                }
+                console.log('websocket断开成功！');
+                this.$message.error('websocket断开成功！');
+            }
+        },
+        mounted() {
+            this._initSockJs();
+        },
+        beforeDestroy() {
+            this._destroySockJs();
+        }
+
+    })
+</script>
+</html>
