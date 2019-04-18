@@ -55,6 +55,7 @@
 - [ ] spring-boot-demo-tio（集成 tio）
 - [ ] spring-boot-demo-grpc（集成grpc，配置tls/ssl）参见[ISSUE#5](https://github.com/xkcoding/spring-boot-demo/issues/5)
 - [x] ~~spring-boot-demo-codegen（集成 velocity 自动生成代码）~~
+- [x] spring-boot-demo-graylog（集成 gralog 日志管理）
 
 ### 备注
 
