@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2019 Yangkai.Shen
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+  ~
+  ~    http://www.apache.org/licenses/LICENSE-2.0
+  ~ Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+  -->
+<configuration scan="true" scanPeriod="60 seconds">
+
+  <!-- 彩色日志依赖的渲染类 -->
+  <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter"/>
+  <conversionRule conversionWord="wex"
+                  converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter"/>
+  <conversionRule conversionWord="wEx"
+                  converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter"/>
+  <!-- 彩色日志格式 -->
+  <property name="CONSOLE_LOG_PATTERN"
+            value="${CONSOLE_LOG_PATTERN:-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{50}){cyan} %clr(:){faint} %file:%line - %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"/>
+  <!-- graylog全日志格式 -->
+  <property name="GRAY_LOG_FULL_PATTERN"
+            value="%n%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%logger{50}] %file:%line%n%-5level: %msg%n"/>
+  <!-- graylog简化日志格式 -->
+  <property name="GRAY_LOG_SHORT_PATTERN"
+            value="%m%nopex"/>
+
+  <!-- 获取服务名 -->
+  <springProperty scope="context" name="APP_NAME" source="spring.application.name"/>
+
+  <!-- 控制台输出 -->
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+      <charset>utf8</charset>
+    </encoder>
+  </appender>
+
+  <!-- graylog 日志收集 -->
+  <appender name="GELF" class="de.siegmar.logbackgelf.GelfUdpAppender">
+    <graylogHost>localhost</graylogHost>
+    <graylogPort>12201</graylogPort>
+    <maxChunkSize>508</maxChunkSize>
+    <useCompression>true</useCompression>
+    <encoder class="de.siegmar.logbackgelf.GelfEncoder">
+      <includeRawMessage>true</includeRawMessage>
+      <includeMarker>true</includeMarker>
+      <includeMdcData>true</includeMdcData>
+      <includeCallerData>false</includeCallerData>
+      <includeRootCauseData>false</includeRootCauseData>
+      <includeLevelName>true</includeLevelName>
+      <shortPatternLayout class="ch.qos.logback.classic.PatternLayout">
+        <pattern>${GRAY_LOG_SHORT_PATTERN}</pattern>
+      </shortPatternLayout>
+      <fullPatternLayout class="ch.qos.logback.classic.PatternLayout">
+        <pattern>${GRAY_LOG_FULL_PATTERN}</pattern>
+      </fullPatternLayout>
+      <staticField>app_name:${APP_NAME}</staticField>
+      <staticField>os_arch:${os.arch}</staticField>
+      <staticField>os_name:${os.name}</staticField>
+      <staticField>os_version:${os.version}</staticField>
+    </encoder>
+  </appender>
+
+  <!-- 日志输出级别 -->
+  <root level="INFO">
+    <appender-ref ref="STDOUT"/>
+    <appender-ref ref="GELF" />
+  </root>
+
+  <logger name="net.sf.ehcache" level="INFO"/>
+  <logger name="druid.sql" level="INFO"/>
+
+
+  <!-- MyBatis log configure -->
+  <logger name="com.apache.ibatis" level="INFO"/>
+  <logger name="org.mybatis.spring" level="DEBUG"/>
+  <logger name="java.sql.Connection" level="DEBUG"/>
+  <logger name="java.sql.Statement" level="DEBUG"/>
+  <logger name="java.sql.PreparedStatement" level="DEBUG"/>
+
+  <!-- 减少部分debug日志 -->
+  <logger name="druid.sql" level="INFO"/>
+  <logger name="org.apache.shiro" level="INFO"/>
+  <logger name="org.mybatis.spring" level="INFO"/>
+  <logger name="org.springframework" level="INFO"/>
+  <logger name="org.springframework.context" level="WARN"/>
+  <logger name="org.springframework.beans" level="WARN"/>
+  <logger name="com.baomidou.mybatisplus" level="INFO"/>
+  <logger name="org.apache.ibatis.io" level="INFO"/>
+  <logger name="org.apache.velocity" level="INFO"/>
+  <logger name="org.eclipse.jetty" level="INFO"/>
+  <logger name="io.undertow" level="INFO"/>
+  <logger name="org.xnio.nio" level="INFO"/>
+  <logger name="org.thymeleaf" level="INFO"/>
+  <logger name="springfox.documentation" level="INFO"/>
+  <logger name="org.hibernate.validator" level="INFO"/>
+  <logger name="com.netflix.loadbalancer" level="INFO"/>
+  <logger name="com.netflix.hystrix" level="INFO"/>
+  <logger name="com.netflix.zuul" level="INFO"/>
+  <logger name="de.codecentric" level="INFO"/>
+  <!-- cache INFO -->
+  <logger name="net.sf.ehcache" level="INFO"/>
+  <logger name="org.springframework.cache" level="INFO"/>
+  <!-- cloud -->
+  <logger name="org.apache.http" level="INFO"/>
+  <logger name="com.netflix.discovery" level="INFO"/>
+  <logger name="com.netflix.eureka" level="INFO"/>
+  <!-- 业务日志 -->
+  <Logger name="com.xkcoding" level="DEBUG"/>
+
+</configuration>
