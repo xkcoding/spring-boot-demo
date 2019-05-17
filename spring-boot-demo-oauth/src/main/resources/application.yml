@@ -1,0 +1,10 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /demo
+
+oauth:
+  github:
+    client-id: 2d25a70d12e3d5f01086
+    client-secret: 5a2919b5fe911567343aea2ccc7a5ad7871306d1
+    redirect-uri: http://oauth.xkcoding.com/demo/oauth/github/callback
