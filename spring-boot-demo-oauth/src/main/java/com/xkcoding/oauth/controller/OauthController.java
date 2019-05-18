@@ -8,6 +8,7 @@ import me.zhyd.oauth.model.AuthResponse;
 import me.zhyd.oauth.model.AuthSource;
 import me.zhyd.oauth.request.AuthGithubRequest;
 import me.zhyd.oauth.request.AuthRequest;
+import me.zhyd.oauth.request.AuthWeChatRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -66,6 +67,8 @@ public class OauthController {
         switch (authSource) {
             case GITHUB:
                 return getGithubAuthRequest();
+            case WECHAT:
+                return getWechatAuthRequest();
             default:
                 throw new RuntimeException("暂不支持的第三方登录");
         }
@@ -73,6 +76,10 @@ public class OauthController {
 
     private AuthRequest getGithubAuthRequest() {
         return new AuthGithubRequest(buildAuthConfig(properties.getGithub()));
+    }
+
+    private AuthRequest getWechatAuthRequest() {
+        return new AuthWeChatRequest(buildAuthConfig(properties.getWechat()));
     }
 
     private AuthConfig buildAuthConfig(CommonProperties properties) {

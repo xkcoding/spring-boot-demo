@@ -26,4 +26,5 @@ public class OAuthProperties {
      * github 配置
      */
     private CommonProperties github;
+    private CommonProperties wechat;
 }

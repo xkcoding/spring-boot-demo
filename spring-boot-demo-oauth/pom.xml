@@ -49,7 +49,7 @@
     <dependency>
       <groupId>me.zhyd.oauth</groupId>
       <artifactId>JustAuth</artifactId>
-      <version>1.0.1</version>
+      <version>1.2.0</version>
     </dependency>
 
     <dependency>
