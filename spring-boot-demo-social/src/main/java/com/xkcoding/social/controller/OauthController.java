@@ -1,7 +1,7 @@
-package com.xkcoding.oauth.controller;
+package com.xkcoding.social.controller;
 
 import cn.hutool.core.lang.Dict;
-import com.xkcoding.oauth.config.props.OAuthProperties;
+import com.xkcoding.social.props.OAuthProperties;
 import lombok.RequiredArgsConstructor;
 import me.zhyd.oauth.model.AuthResponse;
 import me.zhyd.oauth.model.AuthSource;

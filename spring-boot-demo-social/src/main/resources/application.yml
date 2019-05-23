@@ -2,16 +2,21 @@ server:
   port: 8080
   servlet:
     context-path: /demo
-demo:
-  social:
-    filterProcessUrl: /auth
-    qq:
-      providerId: qq
-      clientId:
-      clientSecret:
-spring:
-  datasource:
-    url: jdbc:mysql://127.0.0.1:3306/spring-boot-demo?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8
-    username: root
-    password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
+
+oauth:
+  qq:
+    client-id: 1015*****
+    client-secret: 1f7d08df55766**************
+    redirect-uri: http://oauth.xkcoding.com/demo/oauth/qq/callback
+  github:
+    client-id: 2d25a70**************
+    client-secret: 5a2919b5fe911567343**************
+    redirect-uri: http://oauth.xkcoding.com/demo/oauth/github/callback
+  wechat:
+    client-id: wxdcb31**************
+    client-secret: b4e9dc6841ef7d**************
+    redirect-uri: http://oauth.xkcoding.com/demo/oauth/wechat/callback
+  google:
+    client-id: 716518501517-6dbdkapivhia806vqcjjh9nttj3**************
+    client-secret: 9IBornd7w1A**************
+    redirect-uri: http://oauth.xkcoding.com/demo/oauth/google/callback

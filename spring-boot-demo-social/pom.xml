@@ -29,55 +29,11 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!-- oauth工具类 -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jdbc</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.social</groupId>
-            <artifactId>spring-social-config</artifactId>
-            <version>${spring.social.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.social</groupId>
-            <artifactId>spring-social-core</artifactId>
-            <version>${spring.social.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.social</groupId>
-            <artifactId>spring-social-security</artifactId>
-            <version>${spring.social.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.social</groupId>
-            <artifactId>spring-social-web</artifactId>
-            <version>${spring.social.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
+            <groupId>me.zhyd.oauth</groupId>
+            <artifactId>JustAuth</artifactId>
+            <version>1.3.1</version>
         </dependency>
 
         <dependency>

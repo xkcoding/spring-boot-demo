@@ -1,4 +1,4 @@
-package com.xkcoding.oauth.config.props;
+package com.xkcoding.social.props;
 
 import lombok.Data;
 import me.zhyd.oauth.config.AuthConfig;
