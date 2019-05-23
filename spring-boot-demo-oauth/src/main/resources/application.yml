@@ -2,21 +2,3 @@ server:
   port: 8080
   servlet:
     context-path: /demo
-
-oauth:
-  qq:
-    client-id: 101577785
-    client-secret: 1f7d08df5576671a5b799e73cc2d629e
-    redirect-uri: http://oauth.xkcoding.com/demo/oauth/qq/callback
-  github:
-    client-id: 2d25a70d12e3d5f01086
-    client-secret: 5a2919b5fe911567343aea2ccc7a5ad7871306d1
-    redirect-uri: http://oauth.xkcoding.com/demo/oauth/github/callback
-  wechat:
-    client-id: wxdcb31cd7f1794ff4
-    client-secret: b4e9dc6841ef7d2f520d449bca08ed6d
-    redirect-uri: http://oauth.xkcoding.com/demo/oauth/wechat/callback
-  google:
-    client-id: 716518501517-6dbdkapivhia806vqcjjh9nttj320ie3.apps.googleusercontent.com
-    client-secret: 9IBornd7w1ALXhxZiDwEf7-E
-    redirect-uri: http://oauth.xkcoding.com/demo/oauth/google/callback

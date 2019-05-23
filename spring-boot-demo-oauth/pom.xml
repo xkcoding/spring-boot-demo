@@ -40,28 +40,9 @@
     </dependency>
 
     <dependency>
-      <groupId>com.google.zxing</groupId>
-      <artifactId>core</artifactId>
-      <version>3.3.3</version>
-    </dependency>
-
-    <!-- oauth工具类 -->
-    <dependency>
-      <groupId>me.zhyd.oauth</groupId>
-      <artifactId>JustAuth</artifactId>
-      <version>1.3.2</version>
-    </dependency>
-
-    <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <optional>true</optional>
-    </dependency>
-
-    <dependency>
-      <groupId>net.dreamlu</groupId>
-      <artifactId>mica-auto</artifactId>
-      <version>1.0.2</version>
     </dependency>
   </dependencies>
 
