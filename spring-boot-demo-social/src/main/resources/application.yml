@@ -20,3 +20,7 @@ oauth:
     client-id: 716518501517-6dbdkapivhia806vqcjjh9nttj3**************
     client-secret: 9IBornd7w1A**************
     redirect-uri: http://oauth.xkcoding.com/demo/oauth/google/callback
+  microsoft:
+    client-id: 7bdce818-2c8e-4b**************
+    client-secret: Iu0zZ43RQydo_FkD**************
+    redirect-uri: https://oauth.xkcoding.com/demo/oauth/microsoft/callback

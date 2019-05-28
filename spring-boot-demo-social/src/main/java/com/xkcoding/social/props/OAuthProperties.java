@@ -41,4 +41,9 @@ public class OAuthProperties {
      * Google 配置
      */
     private AuthConfig google;
+
+    /**
+     * Microsoft 配置
+     */
+    private AuthConfig microsoft;
 }
