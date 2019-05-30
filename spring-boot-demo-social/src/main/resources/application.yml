@@ -24,3 +24,7 @@ oauth:
     client-id: 7bdce818-2c8e-4b**************
     client-secret: Iu0zZ43RQydo_FkD**************
     redirect-uri: https://oauth.xkcoding.com/demo/oauth/microsoft/callback
+  mi:
+    client-id: 2882303**************
+    client-secret: nFeTt89Yn**************
+    redirect-uri: http://oauth.xkcoding.com/demo/oauth/mi/callback

@@ -46,4 +46,9 @@ public class OAuthProperties {
      * Microsoft 配置
      */
     private AuthConfig microsoft;
+
+    /**
+     * Mi 配置
+     */
+    private AuthConfig mi;
 }

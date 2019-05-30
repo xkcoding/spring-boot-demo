@@ -44,7 +44,8 @@ public class OauthController {
                 .set("GitHub登录", "http://oauth.xkcoding.com/demo/oauth/login/github")
                 .set("微信登录", "http://oauth.xkcoding.com/demo/oauth/login/wechat")
                 .set("Google登录", "http://oauth.xkcoding.com/demo/oauth/login/google")
-                .set("Microsoft 登录", "http://oauth.xkcoding.com/demo/oauth/login/microsoft");
+                .set("Microsoft 登录", "http://oauth.xkcoding.com/demo/oauth/login/microsoft")
+                .set("小米登录", "http://oauth.xkcoding.com/demo/oauth/login/mi");
     }
 
     /**
@@ -86,6 +87,8 @@ public class OauthController {
                 return getGoogleAuthRequest();
             case MICROSOFT:
                 return getMicrosoftAuthRequest();
+            case MI:
+                return getMiAuthRequest();
             default:
                 throw new RuntimeException("暂不支持的第三方登录");
         }
@@ -109,5 +112,9 @@ public class OauthController {
 
     private AuthRequest getMicrosoftAuthRequest() {
         return new AuthMicrosoftRequest(properties.getMicrosoft());
+    }
+
+    private AuthRequest getMiAuthRequest() {
+        return new AuthMiRequest(properties.getMi());
     }
 }
