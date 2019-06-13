@@ -12,9 +12,21 @@
 
 ### 1.1. 公网服务器准备
 
-
+首先准备一台有公网IP的服务器，可以选用阿里云或者腾讯云，如果选用的是阿里云的，可以使用我的[优惠链接](https://chuangke.aliyun.com/invite?userCode=r8z5amhr)购买。
 
 ### 1.2. 内网穿透frp搭建
+
+> frp 安装程序：https://github.com/fatedier/frp/releases
+
+#### 1.2.1. frp服务端搭建
+
+服务端搭建在上一步准备的公网服务器上，因为服务器是centos7 x64的系统，因此，这里下载安装包版本为amd64的 [frp_0.27.0_linux_amd64.tar.gz](https://github.com/fatedier/frp/releases/download/v0.27.0/frp_0.27.0_linux_amd64.tar.gz) 。
+
+
+
+
+
+#### 1.2.2. frp客户端搭建
 
 
 
@@ -51,12 +63,15 @@
 ## 参考
 
 1. JustAuth 项目地址：https://github.com/zhangyd-c/JustAuth
-2. QQ互联文档：http://wiki.connect.qq.com/%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C_oauth2-0
-3. 微信开放平台文档：https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1419316505&token=&lang=zh_CN
-4. GitHub第三方登录文档：https://developer.github.com/apps/building-oauth-apps/
-5. 谷歌Oauth2文档：https://developers.google.com/identity/protocols/OpenIDConnect
-6. 微软Oauth2文档：https://docs.microsoft.com/zh-cn/graph/auth-v2-user
-7. 小米开放平台账号服务文档：https://dev.mi.com/console/doc/detail?pId=707
+2. frp内网穿透项目地址：https://github.com/fatedier/frp
+3. frp内网穿透官方中文文档：https://github.com/fatedier/frp/blob/master/README_zh.md
+4. Frp实现内网穿透：https://zhuanlan.zhihu.com/p/45445979
+5. QQ互联文档：http://wiki.connect.qq.com/%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C_oauth2-0
+6. 微信开放平台文档：https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1419316505&token=&lang=zh_CN
+7. GitHub第三方登录文档：https://developer.github.com/apps/building-oauth-apps/
+8. 谷歌Oauth2文档：https://developers.google.com/identity/protocols/OpenIDConnect
+9. 微软Oauth2文档：https://docs.microsoft.com/zh-cn/graph/auth-v2-user
+10. 小米开放平台账号服务文档：https://dev.mi.com/console/doc/detail?pId=707
 
 
 
