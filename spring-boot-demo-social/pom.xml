@@ -39,7 +39,7 @@
     <dependency>
       <groupId>me.zhyd.oauth</groupId>
       <artifactId>JustAuth</artifactId>
-      <version>1.5.1</version>
+      <version>1.6.0-beta</version>
     </dependency>
 
     <dependency>
