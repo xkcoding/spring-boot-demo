@@ -1,4 +1,5 @@
 # spring-boot-demo-social
+
 > 此 demo 主要演示 Spring Boot 项目如何使用 **[史上最全的第三方登录工具 - JustAuth](https://github.com/zhangyd-c/JustAuth)** 实现第三方登录。
 >
 > JustAuth，如你所见，它仅仅是一个**第三方授权登录**的**工具类库**，它可以让我们脱离繁琐的第三方登录SDK，让登录变得**So easy!**
@@ -156,27 +157,69 @@ $ nginx -s reload
 
 #### 1.5.1. QQ互联平台申请
 
+1. 前往 https://connect.qq.com/ 
+2. 申请开发者
+3. 应用管理 -> 添加网站应用，等待审核通过即可
 
+![image-20190617144655429](assets/image-20190617144655429.png)
 
 #### 1.5.2. GitHub平台申请
 
+1. 前往 https://github.com/settings/developers
+2. 点击 `New OAuth App` 按钮创建应用
 
+![image-20190617145839851](assets/image-20190617145839851.png)
 
 #### 1.5.3 微信开放平台申请
 
+这里微信开放平台需要用企业的，个人没有资质，所以我在某宝租了一个月的资质，需要的可以 [戳我租赁](https://item.taobao.com/item.htm?spm=2013.1.w4023-5034755838.13.747a61a7ccfHwS&id=554942413474)
 
+> 声明：本人与该店铺无利益相关，纯属个人觉得好用做分享
+>
+> 该店铺有两种方式：
+>
+> 1. 店铺支持帮你过企业资质，这里就用你自己的开放平台号就好了
+> 2. 临时使用可以问店家租一个月进行开发，这里租了之后，店家会把 AppID 和 AppSecret 的信息发给你，你提供回调域就好了
+
+因此这里我就贴出一张授权回调的地址作参考。
+
+![Pasted Graphic 2.tiff](assets/Pasted Graphic 2.tiff)
 
 #### 1.5.4. 谷歌开放平台申请
 
+1. 前往 https://console.developers.google.com/projectcreate 创建项目
+2. 前往 https://console.developers.google.com/apis/credentials ，在第一步创建的项目下，添加应用
 
+![image-20190617151119584](assets/image-20190617151119584.png)
+
+![image-20190617150903039](assets/image-20190617150903039.png)
 
 #### 1.5.5. 微软开放平台申请
 
+1. 前往 https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade 注册应用
+2. 在注册应用的时候就需要填写回调地址，当然后期也可以重新修改
 
+![image-20190617152529449](assets/image-20190617152529449.png)
+
+3. client id 在这里
+
+![image-20190617152805581](assets/image-20190617152805581.png)
+
+4. client secret 需要自己在这里生成
+
+![image-20190617152711938](assets/image-20190617152711938.png)
 
 #### 1.5.6. 小米开放平台申请
 
+1. 申请小米开发者，审核通过
+2. 前往 https://dev.mi.com/passport/oauth2/applist 添加oauth应用，选择 `创建网页应用`
+3. 填写基本信息之后，进入应用信息页面填写 `回调地址`
 
+![image-20190617151502414](assets/image-20190617151502414.png)
+
+4. 应用审核通过之后，可以在应用信息页面的 `应用详情` 查看到 AppKey 和 AppSecret，吐槽下，小米应用的审核速度特别慢，需要耐心等待。。。。
+
+![image-20190617151624603](assets/image-20190617151624603.png)
 
 ## 2. 主要代码
 
