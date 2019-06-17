@@ -236,7 +236,7 @@ spring boot demo 是一个用来学习 spring boot 的项目，总共包含 **`5
 | [spring-boot-demo-rbac-shiro](./spring-boot-demo-rbac-shiro) | <span style="color:pink;">待完成</span>                      |
 | [spring-boot-demo-session](./spring-boot-demo-session)       | spring-boot 集成 Spring Session 实现Session共享、重启程序Session不失效 |
 | [spring-boot-demo-oauth](./spring-boot-demo-oauth)           | <span style="color:pink;">待完成</span>                      |
-| [spring-boot-demo-social](./spring-boot-demo-social)         | spring-boot 集成 JustAuth 实现 GitHub 登录、QQ登录、微信登录、谷歌登录 |
+| [spring-boot-demo-social](./spring-boot-demo-social)         | spring-boot 集成 JustAuth 实现 QQ、微信、GitHub 、谷歌、小米等第三方登录 |
 | [spring-boot-demo-zookeeper](./spring-boot-demo-zookeeper)   | spring-boot 集成 Zookeeper 结合AOP实现分布式锁               |
 | [spring-boot-demo-mq-rabbitmq](./spring-boot-demo-mq-rabbitmq) | spring-boot 集成 RabbitMQ 实现基于直接队列模式、分列模式、主题模式、延迟队列的消息发送和接收 |
 | [spring-boot-demo-mq-rocketmq](./spring-boot-demo-mq-rocketmq) | <span style="color:pink;">待完成</span>                      |
