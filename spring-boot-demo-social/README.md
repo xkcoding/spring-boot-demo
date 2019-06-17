@@ -183,7 +183,7 @@ $ nginx -s reload
 
 因此这里我就贴出一张授权回调的地址作参考。
 
-![Pasted Graphic 2.tiff](assets/Pasted Graphic 2.tiff)
+![image-20190617153552218](assets/image-20190617153552218.png)
 
 #### 1.5.4. 谷歌开放平台申请
 
