@@ -31,7 +31,7 @@
 - [ ] spring-boot-demo-rbac-shiro（实现基于 RBAC 的权限模型 - shiro）
 - [x] ~~spring-boot-demo-session（统一 Session 管理）~~
 - [ ] spring-boot-demo-oauth（OAuth2 认证）
-- [x] ~~spring-boot-demo-social（集成 JustAuth 实现第三方授权验证，实现 QQ、微信、GitHub 、谷歌等第三方登录）~~
+- [x] ~~spring-boot-demo-social（集成 JustAuth 实现第三方授权验证，实现 QQ、微信、GitHub、谷歌、小米等第三方登录）~~
 - [x] ~~spring-boot-demo-zookeeper（使用 zookeeper 结合AOP实现分布式锁）~~
 - [x] ~~spring-boot-demo-mq-rabbitmq（集成消息中间件 - RabbitMQ）~~
 - [ ] spring-boot-demo-mq-rocketmq（集成消息中间件 - RocketMQ）
