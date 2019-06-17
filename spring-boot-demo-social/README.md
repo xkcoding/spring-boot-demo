@@ -225,23 +225,283 @@ $ nginx -s reload
 
 ### 2.1. pom.xml
 
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
+  <artifactId>spring-boot-demo-social</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>spring-boot-demo-social</name>
+  <description>Demo project for Spring Boot</description>
+
+  <parent>
+    <groupId>com.xkcoding</groupId>
+    <artifactId>spring-boot-demo</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <java.version>1.8</java.version>
+    <spring.social.version>1.1.6.RELEASE</spring.social.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- oauth工具类 -->
+    <dependency>
+      <groupId>me.zhyd.oauth</groupId>
+      <artifactId>JustAuth</artifactId>
+      <version>1.6.0-beta</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>cn.hutool</groupId>
+      <artifactId>hutool-all</artifactId>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>spring-boot-demo-social</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
+```
 
 ### 2.2. application.yml
 
+```yaml
+server:
+  port: 8080
+  servlet:
+    context-path: /demo
 
+oauth:
+  qq:
+    client-id: 1015*****
+    client-secret: 1f7d08df55766**************
+    redirect-uri: http://oauth.xkcoding.com/demo/oauth/qq/callback
+  github:
+    client-id: 2d25a70**************
+    client-secret: 5a2919b5fe911567343**************
+    redirect-uri: http://oauth.xkcoding.com/demo/oauth/github/callback
+  wechat:
+    client-id: wxdcb31**************
+    client-secret: b4e9dc6841ef7d**************
+    redirect-uri: http://oauth.xkcoding.com/demo/oauth/wechat/callback
+  google:
+    client-id: 716518501517-6dbdkapivhia806vqcjjh9nttj3**************
+    client-secret: 9IBornd7w1A**************
+    redirect-uri: http://oauth.xkcoding.com/demo/oauth/google/callback
+  microsoft:
+    client-id: 7bdce818-2c8e-4b**************
+    client-secret: Iu0zZ43RQydo_FkD**************
+    redirect-uri: https://oauth.xkcoding.com/demo/oauth/microsoft/callback
+  mi:
+    client-id: 2882303**************
+    client-secret: nFeTt89Yn**************
+    redirect-uri: http://oauth.xkcoding.com/demo/oauth/mi/callback
+```
 
 ### 2.3. OAuthProperties.java
 
+```java
+/**
+ * <p>
+ * 第三方登录配置
+ * </p>
+ *
+ * @package: com.xkcoding.oauth.config.props
+ * @description: 第三方登录配置
+ * @author: yangkai.shen
+ * @date: Created in 2019-05-17 15:33
+ * @copyright: Copyright (c) 2019
+ * @version: V1.0
+ * @modified: yangkai.shen
+ */
+@Data
+@Component
+@ConfigurationProperties(prefix = "oauth")
+public class OAuthProperties {
+    /**
+     * QQ 配置
+     */
+    private AuthConfig qq;
 
+    /**
+     * github 配置
+     */
+    private AuthConfig github;
+
+    /**
+     * 微信 配置
+     */
+    private AuthConfig wechat;
+
+    /**
+     * Google 配置
+     */
+    private AuthConfig google;
+
+    /**
+     * Microsoft 配置
+     */
+    private AuthConfig microsoft;
+
+    /**
+     * Mi 配置
+     */
+    private AuthConfig mi;
+}
+```
 
 ### 2.4. OauthController.java
 
+```java
+/**
+ * <p>
+ * 第三方登录 Controller
+ * </p>
+ *
+ * @package: com.xkcoding.oauth.controller
+ * @description: 第三方登录 Controller
+ * @author: yangkai.shen
+ * @date: Created in 2019-05-17 10:07
+ * @copyright: Copyright (c) 2019
+ * @version: V1.0
+ * @modified: yangkai.shen
+ */
+@RestController
+@RequestMapping("/oauth")
+@RequiredArgsConstructor(onConstructor_ = @Autowired)
+public class OauthController {
+    private final OAuthProperties properties;
 
+    /**
+     * 登录类型
+     */
+    @GetMapping
+    public Dict loginType() {
+        return Dict.create()
+                .set("QQ登录", "http://oauth.xkcoding.com/demo/oauth/login/qq")
+                .set("GitHub登录", "http://oauth.xkcoding.com/demo/oauth/login/github")
+                .set("微信登录", "http://oauth.xkcoding.com/demo/oauth/login/wechat")
+                .set("Google登录", "http://oauth.xkcoding.com/demo/oauth/login/google")
+                .set("Microsoft 登录", "http://oauth.xkcoding.com/demo/oauth/login/microsoft")
+                .set("小米登录", "http://oauth.xkcoding.com/demo/oauth/login/mi");
+    }
+
+    /**
+     * 登录
+     *
+     * @param oauthType 第三方登录类型
+     * @param response  response
+     * @throws IOException
+     */
+    @RequestMapping("/login/{oauthType}")
+    public void renderAuth(@PathVariable String oauthType, HttpServletResponse response) throws IOException {
+        AuthRequest authRequest = getAuthRequest(oauthType);
+        response.sendRedirect(authRequest.authorize());
+    }
+
+    /**
+     * 登录成功后的回调
+     *
+     * @param oauthType 第三方登录类型
+     * @param code      携带的授权码
+     * @return 登录成功后的信息
+     */
+    @RequestMapping("/{oauthType}/callback")
+    public AuthResponse login(@PathVariable String oauthType, String code) {
+        AuthRequest authRequest = getAuthRequest(oauthType);
+        return authRequest.login(code);
+    }
+
+    private AuthRequest getAuthRequest(String oauthType) {
+        AuthSource authSource = AuthSource.valueOf(oauthType.toUpperCase());
+        switch (authSource) {
+            case QQ:
+                return getQqAuthRequest();
+            case GITHUB:
+                return getGithubAuthRequest();
+            case WECHAT:
+                return getWechatAuthRequest();
+            case GOOGLE:
+                return getGoogleAuthRequest();
+            case MICROSOFT:
+                return getMicrosoftAuthRequest();
+            case MI:
+                return getMiAuthRequest();
+            default:
+                throw new RuntimeException("暂不支持的第三方登录");
+        }
+    }
+
+    private AuthRequest getQqAuthRequest() {
+        return new AuthQqRequest(properties.getQq());
+    }
+
+    private AuthRequest getGithubAuthRequest() {
+        return new AuthGithubRequest(properties.getGithub());
+    }
+
+    private AuthRequest getWechatAuthRequest() {
+        return new AuthWeChatRequest(properties.getWechat());
+    }
+
+    private AuthRequest getGoogleAuthRequest() {
+        return new AuthGoogleRequest(properties.getGoogle());
+    }
+
+    private AuthRequest getMicrosoftAuthRequest() {
+        return new AuthMicrosoftRequest(properties.getMicrosoft());
+    }
+
+    private AuthRequest getMiAuthRequest() {
+        return new AuthMiRequest(properties.getMi());
+    }
+}
+```
 
 ## 3. 运行方式
 
+打开浏览器，输入 http://oauth.xkcoding.com/demo/oauth ，点击各个登录方式自行测试。
 
+> `Google 登录，有可能因为祖国的强大导致测试失败，自行解决~` :kissing_smiling_eyes:
+
+![image-20190617154343815](assets/image-20190617154343815.png)
 
 ## 参考
 
