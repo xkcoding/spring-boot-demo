@@ -1,3 +1,5 @@
 spring:
   activiti:
     check-process-definitions: false
+    db-history-used: true
+    history-level: full
