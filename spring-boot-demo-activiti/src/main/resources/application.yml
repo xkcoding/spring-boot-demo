@@ -1,5 +1,13 @@
 spring:
-  activiti:
-    check-process-definitions: false
-    db-history-used: true
-    history-level: full
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring-boot-demo
+    username: root
+    password: root
+    hikari:
+      data-source-properties:
+        useSSL: false
+        serverTimezone: GMT+8
+        useUnicode: true
+        characterEncoding: utf8
+        # 这个必须要加，否则 Activiti 自动建表会失败
+        nullCatalogMeansCurrent: true
