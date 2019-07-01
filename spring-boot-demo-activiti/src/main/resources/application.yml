@@ -11,3 +11,6 @@ spring:
         characterEncoding: utf8
         # 这个必须要加，否则 Activiti 自动建表会失败
         nullCatalogMeansCurrent: true
+  activiti:
+    history-level: full
+    db-history-used: true
