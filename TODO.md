@@ -1,5 +1,5 @@
 # spring-boot-demo 项目 todo-list
-## 模块计划(已完成：46 / 55)
+## 模块计划(已完成：46 / 56)
 
 - [x] ~~spring-boot-demo-helloworld（Helloworld 示例）~~
 - [x] ~~spring-boot-demo-properties（读取配置文件信息）~~
@@ -56,6 +56,7 @@
 - [ ] spring-boot-demo-grpc（集成grpc，配置tls/ssl）参见[ISSUE#5](https://github.com/xkcoding/spring-boot-demo/issues/5)
 - [x] ~~spring-boot-demo-codegen（集成 velocity 自动生成代码）~~
 - [x] ~~spring-boot-demo-graylog（集成 gralog 日志管理）~~
+- [ ] spring-boot-demo-sso（集成单点登录）参见 [ISSUE#12](https://github.com/xkcoding/spring-boot-demo/issues/12)
 
 ### 备注
 
