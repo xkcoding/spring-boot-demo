@@ -2,6 +2,10 @@
 
 > 此 demo 主要演示 Spring Boot 项目如何使用 **[史上最全的第三方登录工具 - JustAuth](https://github.com/zhangyd-c/JustAuth)** 实现第三方登录。
 >
+> 如果技术选型是 `JFinal` 的，请查看此 [**`demo`**](https://github.com/xkcoding/jfinal-justauth-demo)
+>
+> https://github.com/xkcoding/jfinal-justauth-demo
+>
 > JustAuth，如你所见，它仅仅是一个**第三方授权登录**的**工具类库**，它可以让我们脱离繁琐的第三方登录SDK，让登录变得**So easy!**
 >
 > 1. **全**：已集成十多家第三方平台（国内外常用的基本都已包含），后续依然还有扩展计划！
