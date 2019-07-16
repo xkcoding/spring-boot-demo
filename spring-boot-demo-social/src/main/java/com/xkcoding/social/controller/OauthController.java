@@ -3,9 +3,12 @@ package com.xkcoding.social.controller;
 import cn.hutool.core.lang.Dict;
 import com.xkcoding.social.props.OAuthProperties;
 import lombok.RequiredArgsConstructor;
+import me.zhyd.oauth.config.AuthConfig;
+import me.zhyd.oauth.config.AuthSource;
+import me.zhyd.oauth.model.AuthCallback;
 import me.zhyd.oauth.model.AuthResponse;
-import me.zhyd.oauth.model.AuthSource;
 import me.zhyd.oauth.request.*;
+import me.zhyd.oauth.utils.AuthState;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -65,56 +68,72 @@ public class OauthController {
      * 登录成功后的回调
      *
      * @param oauthType 第三方登录类型
-     * @param code      携带的授权码
+     * @param callback  携带返回的信息
      * @return 登录成功后的信息
      */
     @RequestMapping("/{oauthType}/callback")
-    public AuthResponse login(@PathVariable String oauthType, String code) {
+    public AuthResponse login(@PathVariable String oauthType, AuthCallback callback) {
         AuthRequest authRequest = getAuthRequest(oauthType);
-        return authRequest.login(code);
+        AuthResponse response = authRequest.login(callback);
+        // 移除校验通过的state
+        AuthState.delete(oauthType);
+        return response;
     }
 
     private AuthRequest getAuthRequest(String oauthType) {
         AuthSource authSource = AuthSource.valueOf(oauthType.toUpperCase());
+        String state = AuthState.create(oauthType);
         switch (authSource) {
             case QQ:
-                return getQqAuthRequest();
+                return getQqAuthRequest(state);
             case GITHUB:
-                return getGithubAuthRequest();
+                return getGithubAuthRequest(state);
             case WECHAT:
-                return getWechatAuthRequest();
+                return getWechatAuthRequest(state);
             case GOOGLE:
-                return getGoogleAuthRequest();
+                return getGoogleAuthRequest(state);
             case MICROSOFT:
-                return getMicrosoftAuthRequest();
+                return getMicrosoftAuthRequest(state);
             case MI:
-                return getMiAuthRequest();
+                return getMiAuthRequest(state);
             default:
                 throw new RuntimeException("暂不支持的第三方登录");
         }
     }
 
-    private AuthRequest getQqAuthRequest() {
-        return new AuthQqRequest(properties.getQq());
+    private AuthRequest getQqAuthRequest(String state) {
+        AuthConfig authConfig = properties.getQq();
+        authConfig.setState(state);
+        return new AuthQqRequest(authConfig);
     }
 
-    private AuthRequest getGithubAuthRequest() {
-        return new AuthGithubRequest(properties.getGithub());
+    private AuthRequest getGithubAuthRequest(String state) {
+        AuthConfig authConfig = properties.getGithub();
+        authConfig.setState(state);
+        return new AuthGithubRequest(authConfig);
     }
 
-    private AuthRequest getWechatAuthRequest() {
-        return new AuthWeChatRequest(properties.getWechat());
+    private AuthRequest getWechatAuthRequest(String state) {
+        AuthConfig authConfig = properties.getWechat();
+        authConfig.setState(state);
+        return new AuthWeChatRequest(authConfig);
     }
 
-    private AuthRequest getGoogleAuthRequest() {
-        return new AuthGoogleRequest(properties.getGoogle());
+    private AuthRequest getGoogleAuthRequest(String state) {
+        AuthConfig authConfig = properties.getGoogle();
+        authConfig.setState(state);
+        return new AuthGoogleRequest(authConfig);
     }
 
-    private AuthRequest getMicrosoftAuthRequest() {
-        return new AuthMicrosoftRequest(properties.getMicrosoft());
+    private AuthRequest getMicrosoftAuthRequest(String state) {
+        AuthConfig authConfig = properties.getMicrosoft();
+        authConfig.setState(state);
+        return new AuthMicrosoftRequest(authConfig);
     }
 
-    private AuthRequest getMiAuthRequest() {
-        return new AuthMiRequest(properties.getMi());
+    private AuthRequest getMiAuthRequest(String state) {
+        AuthConfig authConfig = properties.getMi();
+        authConfig.setState(state);
+        return new AuthMiRequest(authConfig);
     }
 }
