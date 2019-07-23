@@ -6,6 +6,10 @@
 >
 > https://github.com/xkcoding/jfinal-justauth-demo
 >
+> 如果技术选型是 `ActFramework` 的，请查看此 [**`demo`**](https://github.com/xkcoding/act-justauth-demo)
+>
+> https://github.com/xkcoding/act-justauth-demo
+>
 > JustAuth，如你所见，它仅仅是一个**第三方授权登录**的**工具类库**，它可以让我们脱离繁琐的第三方登录SDK，让登录变得**So easy!**
 >
 > 1. **全**：已集成十多家第三方平台（国内外常用的基本都已包含），后续依然还有扩展计划！
