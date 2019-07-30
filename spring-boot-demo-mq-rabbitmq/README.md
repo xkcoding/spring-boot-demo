@@ -48,9 +48,9 @@
 
 9. 退出容器：`exit`
 
-10. 停止容器：`docker stop rabbitmq:3.7.7-management`
+10. 停止容器：`docker stop rabbit-3.7.7`
 
-11. 启动容器：`docker start rabbitmq:3.7.7-management`
+11. 启动容器：`docker start rabbit-3.7.7`
 
 ## pom.xml
 
