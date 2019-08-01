@@ -1,14 +1,16 @@
 package com.xkcoding.social.controller;
 
 import cn.hutool.core.lang.Dict;
+import cn.hutool.json.JSONUtil;
 import com.xkcoding.social.props.OAuthProperties;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import me.zhyd.oauth.config.AuthConfig;
 import me.zhyd.oauth.config.AuthSource;
 import me.zhyd.oauth.model.AuthCallback;
 import me.zhyd.oauth.model.AuthResponse;
 import me.zhyd.oauth.request.*;
-import me.zhyd.oauth.utils.AuthState;
+import me.zhyd.oauth.utils.AuthStateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,6 +33,7 @@ import java.io.IOException;
  * @version: V1.0
  * @modified: yangkai.shen
  */
+@Slf4j
 @RestController
 @RequestMapping("/oauth")
 @RequiredArgsConstructor(onConstructor_ = @Autowired)
@@ -42,13 +45,7 @@ public class OauthController {
      */
     @GetMapping
     public Dict loginType() {
-        return Dict.create()
-                .set("QQ登录", "http://oauth.xkcoding.com/demo/oauth/login/qq")
-                .set("GitHub登录", "http://oauth.xkcoding.com/demo/oauth/login/github")
-                .set("微信登录", "http://oauth.xkcoding.com/demo/oauth/login/wechat")
-                .set("Google登录", "http://oauth.xkcoding.com/demo/oauth/login/google")
-                .set("Microsoft 登录", "http://oauth.xkcoding.com/demo/oauth/login/microsoft")
-                .set("小米登录", "http://oauth.xkcoding.com/demo/oauth/login/mi");
+        return Dict.create().set("QQ登录", "http://oauth.xkcoding.com/demo/oauth/login/qq").set("GitHub登录", "http://oauth.xkcoding.com/demo/oauth/login/github").set("微信登录", "http://oauth.xkcoding.com/demo/oauth/login/wechat").set("Google登录", "http://oauth.xkcoding.com/demo/oauth/login/google").set("Microsoft 登录", "http://oauth.xkcoding.com/demo/oauth/login/microsoft").set("小米登录", "http://oauth.xkcoding.com/demo/oauth/login/mi");
     }
 
     /**
@@ -61,7 +58,7 @@ public class OauthController {
     @RequestMapping("/login/{oauthType}")
     public void renderAuth(@PathVariable String oauthType, HttpServletResponse response) throws IOException {
         AuthRequest authRequest = getAuthRequest(oauthType);
-        response.sendRedirect(authRequest.authorize());
+        response.sendRedirect(authRequest.authorize(AuthStateUtils.createState()));
     }
 
     /**
@@ -75,65 +72,57 @@ public class OauthController {
     public AuthResponse login(@PathVariable String oauthType, AuthCallback callback) {
         AuthRequest authRequest = getAuthRequest(oauthType);
         AuthResponse response = authRequest.login(callback);
-        // 移除校验通过的state
-        AuthState.delete(oauthType);
+        log.info("【response】= {}", JSONUtil.toJsonStr(response));
         return response;
     }
 
     private AuthRequest getAuthRequest(String oauthType) {
         AuthSource authSource = AuthSource.valueOf(oauthType.toUpperCase());
-        String state = AuthState.create(oauthType);
         switch (authSource) {
             case QQ:
-                return getQqAuthRequest(state);
+                return getQqAuthRequest();
             case GITHUB:
-                return getGithubAuthRequest(state);
+                return getGithubAuthRequest();
             case WECHAT:
-                return getWechatAuthRequest(state);
+                return getWechatAuthRequest();
             case GOOGLE:
-                return getGoogleAuthRequest(state);
+                return getGoogleAuthRequest();
             case MICROSOFT:
-                return getMicrosoftAuthRequest(state);
+                return getMicrosoftAuthRequest();
             case MI:
-                return getMiAuthRequest(state);
+                return getMiAuthRequest();
             default:
                 throw new RuntimeException("暂不支持的第三方登录");
         }
     }
 
-    private AuthRequest getQqAuthRequest(String state) {
+    private AuthRequest getQqAuthRequest() {
         AuthConfig authConfig = properties.getQq();
-        authConfig.setState(state);
         return new AuthQqRequest(authConfig);
     }
 
-    private AuthRequest getGithubAuthRequest(String state) {
+    private AuthRequest getGithubAuthRequest() {
         AuthConfig authConfig = properties.getGithub();
-        authConfig.setState(state);
         return new AuthGithubRequest(authConfig);
     }
 
-    private AuthRequest getWechatAuthRequest(String state) {
+    private AuthRequest getWechatAuthRequest() {
         AuthConfig authConfig = properties.getWechat();
-        authConfig.setState(state);
         return new AuthWeChatRequest(authConfig);
     }
 
-    private AuthRequest getGoogleAuthRequest(String state) {
+    private AuthRequest getGoogleAuthRequest() {
         AuthConfig authConfig = properties.getGoogle();
-        authConfig.setState(state);
         return new AuthGoogleRequest(authConfig);
     }
 
-    private AuthRequest getMicrosoftAuthRequest(String state) {
+    private AuthRequest getMicrosoftAuthRequest() {
         AuthConfig authConfig = properties.getMicrosoft();
-        authConfig.setState(state);
         return new AuthMicrosoftRequest(authConfig);
     }
 
-    private AuthRequest getMiAuthRequest(String state) {
+    private AuthRequest getMiAuthRequest() {
         AuthConfig authConfig = properties.getMi();
-        authConfig.setState(state);
         return new AuthMiRequest(authConfig);
     }
 }
