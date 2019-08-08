@@ -1,5 +1,5 @@
 # spring-boot-demo 项目 todo-list
-## 模块计划(已完成：46 / 56)
+## 模块计划(已完成：47 / 57)
 
 - [x] ~~spring-boot-demo-helloworld（Helloworld 示例）~~
 - [x] ~~spring-boot-demo-properties（读取配置文件信息）~~
@@ -25,6 +25,7 @@
 - [x] ~~spring-boot-demo-email（集成邮件服务）~~
 - [x] ~~spring-boot-demo-task（定时任务 - Task 实现）~~
 - [x] ~~spring-boot-demo-task-quartz（定时任务 - Quartz 实现）~~
+- [x] ~~spring-boot-demo-task-xxl-job（定时任务 - XXL-JOB 实现分布式调度）~~
 - [x] ~~spring-boot-demo-swagger（集成 Swagger 对 API 接口进行测试管理）~~
 - [x] ~~spring-boot-demo-swagger-beauty（集成自定义且更加美观的 Swagger 对 API 接口进行测试管理）~~
 - [x] ~~spring-boot-demo-rbac-security（实现基于 RBAC 的权限模型 - Spring Security）~~
