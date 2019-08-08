@@ -35,11 +35,6 @@
       <optional>true</optional>
     </dependency>
 
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-    </dependency>
-
     <!-- xxl-job-core -->
     <dependency>
       <groupId>com.xuxueli</groupId>
