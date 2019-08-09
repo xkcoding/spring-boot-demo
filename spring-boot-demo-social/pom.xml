@@ -20,7 +20,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
-    <spring.social.version>1.1.6.RELEASE</spring.social.version>
+    <justauth-spring-boot.version>1.0.0</justauth-spring-boot.version>
   </properties>
 
   <dependencies>
@@ -35,11 +35,22 @@
       <scope>test</scope>
     </dependency>
 
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-redis</artifactId>
+    </dependency>
+
+    <!-- 对象池，使用redis时必须引入 -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-pool2</artifactId>
+    </dependency>
+
     <!-- oauth工具类 -->
     <dependency>
-      <groupId>me.zhyd.oauth</groupId>
-      <artifactId>JustAuth</artifactId>
-      <version>1.9.5</version>
+      <groupId>com.xkcoding</groupId>
+      <artifactId>justauth-spring-boot-starter</artifactId>
+      <version>${justauth-spring-boot.version}</version>
     </dependency>
 
     <dependency>
