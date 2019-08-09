@@ -466,7 +466,7 @@ public class OauthController {
 
 > `Google 登录，有可能因为祖国的强大导致测试失败，自行解决~` :kissing_smiling_eyes:
 
-![image-20190617154343815](assets/image-20190617154343815.png)
+![image-20190809161032422](https://static.xkcoding.com/blog/2019-08-09-081033.png)
 
 ## 参考
 
