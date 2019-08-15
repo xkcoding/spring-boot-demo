@@ -14,45 +14,45 @@
 </p>
 
 <p align="center">
-  <span>中文 | <a href="./README.en.md">English</a></span>
+  <span>English | <a href="./README.md">中文</a></span>
 </p>
 
-## 项目简介
+## Introduction
 
-`spring boot demo` 是一个用来深度学习并实战 `spring boot` 的项目，目前总共包含 **`57`** 个集成demo，已经完成 **`47`** 个。
+`spring boot demo `  is a project for learning and practice `spring boot`, with a total of `57` integrated demos, and `47` have been completed.
 
-该项目已成功集成 actuator(`监控`)、admin(`可视化监控`)、logback(`日志`)、aopLog(`通过AOP记录web请求日志`)、统一异常处理(`json级别和页面级别`)、freemarker(`模板引擎`)、thymeleaf(`模板引擎`)、Beetl(`模板引擎`)、Enjoy(`模板引擎`)、JdbcTemplate(`通用JDBC操作数据库`)、JPA(`强大的ORM框架`)、mybatis(`强大的ORM框架`)、通用Mapper(`快速操作Mybatis`)、PageHelper(`通用的Mybatis分页插件`)、mybatis-plus(`快速操作Mybatis`)、BeetlSQL(`强大的ORM框架`)、upload(`本地文件上传和七牛云文件上传`)、redis(`缓存`)、ehcache(`缓存`)、email(`发送各种类型邮件`)、task(`基础定时任务`)、quartz(`动态管理定时任务`)、xxl-job(`分布式定时任务`)、swagger(`API接口管理测试`)、security(`基于RBAC的动态权限认证`)、SpringSession(`Session共享`)、Zookeeper(`结合AOP实现分布式锁`)、RabbitMQ(`消息队列`)、Kafka(`消息队列`)、websocket(`服务端推送监控服务器运行信息`)、socket.io(`聊天室`)、ureport2(`中国式报表`)、打包成`war`文件、集成 ElasticSearch(`基本操作和高级查询`)、Async(`异步任务`)、集成Dubbo(`采用官方的starter`)、MongoDB(`文档数据库`)、neo4j(`图数据库`)、docker(`容器化`)、`JPA多数据源`、`Mybatis多数据源`、`代码生成器`、GrayLog(`日志收集`)、JustAuth(`第三方登录`)。
+The project has successfully integrated actuator (`monitoring`), admin (`visual monitoring`), logback (`log`), aopLog (`recording web request logs through AOP`), global exception handling (`json level and page level` ), freemarker (`template engine`), thymeleaf (`template engine`), Beetl (`template engine`), Enjoy (`template engine`), JdbcTemplate (`general JDBC operate database`), JPA (`powerful ORM framework `), mybatis (`powerful ORM framework`), Generic Mapper (`mybatis quick operation `), PageHelper (`powerful mybatis pagination plugin`), mybatis-plus (`mybatis quick operation`), BeetlSQL (`powerful ORM framework `), upload (`local file upload and qiniu cloud file upload`), redis (`cache`), ehcache (`cache`), email (`send various types of mail`), task (`basic scheduled tasks`), quartz (`dynamic management scheduled tasks`), xxl-job (`distributed scheduled tasks`), swagger (`API interface management and tests`), security (`RBAC-based Dynamic Rights Authentication`), SpringSession (`session sharing`), Zookeeper (`implement distributed locks by AOP`), RabbitMQ (`message queue`), Kafka (`message queue`), websocket (` server pushes the monitoring server status to front end `), socket.io (`chat room`), ureport2 (`Chinese-style report`), packaged into a `war` file, integrates ElasticSearch (`basic operations and advanced queries`), Async ( `asynchronous tasks`), integrated Dubbo (`with official starter`), MongoDB (`document database`), neo4j (`graph database`), docker (`container`), `JPA Multi-Datasource`, `Mybatis Multi-Datasource`, `code generator`', GrayLog (`log collection`), JustAuth (`third-party login`).
 
-> 如果大家还有想要集成的demo，也可在 [issue](https://github.com/xkcoding/spring-boot-demo/issues/new) 里提需求。我会额外添加在 [TODO](./TODO.md) 列表里。✊
+> If you still have a demo that you want to integrate, you can also request it in [issue] (https://github.com/xkcoding/spring-boot-demo/issues/new). I will add it to the [TODO](./TODO.en.md) list.✊
 
-## 分支介绍
+## Branches
 
-- master 分支：基于 Spring Boot 版本 `2.1.0.RELEASE`，每个 Module 的 parent 依赖根目录下的 pom.xml，主要用于管理每个 Module 的通用依赖版本，方便大家学习。
-- v-1.5.x 分支：基于 Spring Boot 版本 `1.5.8.RELEASE`，每个 Module 均依赖 spring-boot-demo-parent，有挺多同学们反映这种方式对新手不是很友好，运行起来有些难度，因此 ***此分支(v-1.5.x)会停止开发维护*** ，所有内容会慢慢以 master 分支的形式同步过去，此分支暂未完成的，也会直接在 master 分支上加，在此分支学习的同学们，仍然可以在此分支学习，但是建议后期切换到master分支，会更加容易，毕竟官方已经将 Spring Boot 升级到 2.x 版本。🙂
+- master: Based on the Spring Boot version `2.1.0.RELEASE`, the parent of each Module depends on the pom.xml in the root directory, which is mainly used to manage the generic dependencies' version of each Module. It's easier to learn this project.
+- v-1.5.x: Based on the Spring Boot version `1.5.8.RELEASE`, each module depends on spring-boot-demo-parent. There are quite a few friends who report that this way is not very friendly to rookies and it is a little difficult to run this project, so ***The branch (v-1.5.x) will stop development and maintenance***, and all the content will be slowly synchronized to the master branch. If this branch is not completed yet in the TODO list, it will be added directly to the master branch. Everyone can still learn in this branch, but still suggest to switch to the master branch in the future. After all, the official has been upgraded to the Spring Boot version `2.x`. 🙂
 
-## 开发环境
+## Environment
 
 - **JDK 1.8 +**
 - **Maven 3.5 +**
-- **IntelliJ IDEA ULTIMATE 2018.2 +** (*注意：务必使用 IDEA 开发，同时保证安装 `lombok` 插件*)
-- **Mysql 5.7 +** (*尽量保证使用 5.7 版本以上，因为 5.7 版本加了一些新特性，同时不向下兼容。本 demo 里会尽量避免这种不兼容的地方，但还是建议尽量保证 5.7 版本以上*)
+- **IntelliJ IDEA ULTIMATE 2018.2 +** (*Note: Be sure to use IDEA and ensure that the `lombok` plugin is installed.*)
+- **Mysql 5.7 +** (*Try to be sure to use version 5.7 or higher, because version 5.7 adds some new features and is not backward compatible. This project will try to avoid this incompatibility, but it is recommended to ensure 5.7 or higher.*)
 
-## 运行方式
+## Getting Started
 
 1. `git clone https://github.com/xkcoding/spring-boot-demo.git`
-2. 使用 IDEA 打开 clone 下来的项目
-3. 在 IDEA 中打开项目
-4. 在 IDEA 中 Maven Projects 的面板导入项目根目录下 的 `pom.xml` 文件
-5. Maven Projects 找不到的童鞋，可以勾上 IDEA 顶部工具栏的 View -> Tool Buttons ，然后 Maven Projects 的面板就会出现在 IDEA 的右侧
+2. Open the cloned project using IDEA
+3. Open the project in IDEA
+4. Import the `pom.xml` file from the root of the project using the `Maven Projects` panel
+5. If you can not find the `Maven Projects` panel, you can try to check `View -> Tool Buttons` on the top toolbar of IDEA and the `Maven Projects` panel will appear on the right side of IDEA.
 6. 找到各个 Module 的 Application 类就可以运行各个 demo 了
-7. **`注意：每个 demo 均有详细的 README 配套，食用 demo 前记得先看看哦~`**
-8. **`注意：运行各个 demo 之前，有些是需要事先初始化数据库数据的，亲们别忘记了哦~`**
+7. **`Note: Each demo has a detailed README file. Remember to check it before running the demo~`**
+8. **`Note: Before running each demo, some need to initialize the database data beforehand, don't forget it~`**
 
-## 开发计划
+## Plan
 
-查看 [TODO](./TODO.md) 文件
+View the [TODO](./TODO.en.md) file
 
-## 各 Module 介绍
+## Introduction of each Module
 
 | Module 名称                                                  | Module 介绍                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -120,13 +120,13 @@
 
 Copyright (c) 2018 Yangkai.Shen
 
-## 项目趋势
+## Stargazers over time
 
 [![Stargazers over time](https://starchart.cc/xkcoding/spring-boot-demo.svg)](https://starchart.cc/xkcoding/spring-boot-demo)
 
-## 附录
+## Appendix
 
-### 根目录下的 pom.xml
+### Pom.xml in the root directory
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -297,38 +297,38 @@ Copyright (c) 2018 Yangkai.Shen
 </project>
 ```
 
-### 官方提供的 starter 介绍
+### Official starter introduction
 
-| Name                                   | Description                                                 |
-| :------------------------------------- | :---------------------------------------------------------- |
-| spring-boot-starter                    | Spring Boot 核心包，包括自动装配，日志，以及YAML文件解析    |
-| spring-boot-starter-actuator           | 帮助在生产环境下监控和管理 Spring Boot 应用                 |
-| spring-boot-starter-amqp               | Spring Boot 快速集成 RabbitMQ                               |
-| spring-boot-starter-aop                | 提供切面编程特性，包含 spring-aop 和 AspectJ 依赖           |
-| spring-boot-starter-batch              | 快速集成 Spring Batch 批处理框架，包括操作  HSQLDB 数据库   |
-| spring-boot-starter-cache              | Support for Spring’s Cache abstraction.                     |
-| spring-boot-starter-data-elasticsearch | Spring Boot 快速集成 ElasticSearch 查询分析引擎             |
-| spring-boot-starter-data-jpa           | Spring Boot 快速集成 JPA 操作数据库                         |
-| spring-boot-starter-data-mongodb       | Spring Boot 快速集成 MongoDB 非关系型数据库                 |
-| spring-boot-starter-data-rest          | Spring Boot 暴露数据库查询端点为 REST 服务                  |
-| spring-boot-starter-data-solr          | Spring Boot 快速集成 Solr 实现全文索引                      |
-| spring-boot-starter-freemarker         | 提供 FreeMarker 模板引擎                                    |
-| spring-boot-starter-groovy-templates   | 提供 Groovy 模板引擎                                        |
-| spring-boot-starter-integration        | 提供通用的集成 spring-integration 模块                      |
-| spring-boot-starter-jdbc               | 快速集成 JDBC 操作数据库                                    |
-| spring-boot-starter-jersey             | 提供 Jersey 提供  RESTful 服务                              |
-| spring-boot-starter-jta-atomikos       | 集成 JTA Atomikos 实现分布式事务                            |
-| spring-boot-starter-jta-bitronix       | 集成 JTA Bitronix 实现分布式事务                            |
-| spring-boot-starter-mail               | 快速邮件集成                                                |
-| spring-boot-starter-mustache           | 提供 Mustache 模板引擎                                      |
-| spring-boot-starter-redis              | Spring Boot 快速集成 Redis                                  |
-| spring-boot-starter-security           | Support for spring-security.                                |
-| spring-boot-starter-social-facebook    | Support for spring-social-facebook.                         |
-| spring-boot-starter-social-linkedin    | Support for spring-social-linkedin.                         |
-| spring-boot-starter-social-twitter     | Support for spring-social-twitter.                          |
-| spring-boot-starter-test               | 提供通用单元测试依赖，包括 JUnit, Hamcrest , Mockito        |
-| spring-boot-starter-thymeleaf          | 提供 Thymeleaf 模板引擎，包括 Thymeleaf 的自动装配等        |
-| spring-boot-starter-velocity           | 提供 Velocity 模板引擎                                      |
-| spring-boot-starter-web                | 提供全栈的 web 开发特性，包括 Spring MVC 依赖和 Tomcat 容器 |
-| spring-boot-starter-websocket          | Spring Boot 集成 WebSocket 功能                             |
-| spring-boot-starter-ws                 | Spring Boot 集成 WebService 功能                            |
+| Name                                   | Description                                                  |
+| :------------------------------------- | :----------------------------------------------------------- |
+| spring-boot-starter                    | The core Spring Boot starter, including auto-configuration support, logging and YAML. |
+| spring-boot-starter-actuator           | Production ready features to help you monitor and manage your application. |
+| spring-boot-starter-amqp               | Support for RabbitMQ messages                                |
+| spring-boot-starter-aop                | Support for aspect-oriented programming including spring-aop and AspectJ. |
+| spring-boot-starter-batch              | Support for “Spring Batch” including HSQLDB database.        |
+| spring-boot-starter-cache              | Support for Spring’s Cache abstraction.                      |
+| spring-boot-starter-data-elasticsearch | Support for the Elasticsearch search and analytics engine including spring-data-elasticsearch. |
+| spring-boot-starter-data-jpa           | Support for the “Java Persistence API” including spring-data-jpa, spring-orm and Hibernate. |
+| spring-boot-starter-data-mongodb       | Support for the MongoDB NoSQL Database, including spring-data-mongodb. |
+| spring-boot-starter-data-rest          | Support for exposing Spring Data repositories over REST via spring-data-rest-webmvc. |
+| spring-boot-starter-data-solr          | Support for the Apache Solr search platform, including spring-data-solr. |
+| spring-boot-starter-freemarker         | Support for the FreeMarker templating engine.                |
+| spring-boot-starter-groovy-templates   | Support for the Groovy templating engine.                    |
+| spring-boot-starter-integration        | Support for common spring-integration modules.               |
+| spring-boot-starter-jdbc               | Support for JDBC databases.                                  |
+| spring-boot-starter-jersey             | Support for the Jersey RESTful Web Services framework.       |
+| spring-boot-starter-jta-atomikos       | Support for JTA distributed transactions via Atomikos.       |
+| spring-boot-starter-jta-bitronix       | Support for JTA distributed transactions via Bitronix.       |
+| spring-boot-starter-mail               | Support for javax.mail.                                      |
+| spring-boot-starter-mustache           | Support for the Mustache templating engine.                  |
+| spring-boot-starter-redis              | Support for the REDIS key-value data store, including spring-redis. |
+| spring-boot-starter-security           | Support for spring-security.                                 |
+| spring-boot-starter-social-facebook    | Support for spring-social-facebook.                          |
+| spring-boot-starter-social-linkedin    | Support for spring-social-linkedin.                          |
+| spring-boot-starter-social-twitter     | Support for spring-social-twitter.                           |
+| spring-boot-starter-test               | Support for common test dependencies, including JUnit, Hamcrest and Mockito along with the spring-test module. |
+| spring-boot-starter-thymeleaf          | Support for the Thymeleaf templating engine, including integration with Spring. |
+| spring-boot-starter-velocity           | Support for the Velocity templating engine.                  |
+| spring-boot-starter-web                | Support for full-stack web development, including Tomcat and spring-webmvc. |
+| spring-boot-starter-websocket          | Support for WebSocket development.                           |
+| spring-boot-starter-ws                 | Support for Spring Web Services.                             |
