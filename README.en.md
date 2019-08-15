@@ -109,10 +109,10 @@ View the [TODO](./TODO.en.md) file
 | [spring-boot-demo-multi-datasource-mybatis](./spring-boot-demo-multi-datasource-mybatis) | a demo to implement Mybatis multi-datasource by using an open source solution from Mybatis-Plus. |
 | [spring-boot-demo-sharding-jdbc](./spring-boot-demo-sharding-jdbc) | a demo to use `sharding-jdbc` to implement sub-database and sub-tables, while ORM uses Mybatis-Plus. |
 | [spring-boot-demo-tio](./spring-boot-demo-tio)               | <span style="color:pink;">NOT FINISHED YET!</span> <br />a demo to integrate t-io(a network programming framework like netty). |
-| [spring-boot-demo-grpc](./spring-boot-demo-grpc)             | <span style="color:pink;">NOT FINISHED YET!</span> <br />a demo to integrate Google grpc, need to be configure tls/ssl, [ISSUE#5](https://github.com/xkcoding/spring-boot-demo/issues/5). |
+| [spring-boot-demo-grpc](./spring-boot-demo-grpc)             | <span style="color:pink;">NOT FINISHED YET!</span> <br />a demo to integrate Google grpc, need to be configure tls/ssl, see [ISSUE#5](https://github.com/xkcoding/spring-boot-demo/issues/5). |
 | [spring-boot-demo-codegen](./spring-boot-demo-codegen)       | a demo to integrate velocity template engine to implement code generator, improve development efficiency. |
 | [spring-boot-demo-graylog](./spring-boot-demo-graylog)       | a demo to integrate graylog for unified log collection.      |
-| spring-boot-demo-sso                                         | <span style="color:pink;">NOT FINISHED YET!</span> <br />a demo to integrate Single Sign On, [ISSUE#12](https://github.com/xkcoding/spring-boot-demo/issues/12). |
+| spring-boot-demo-sso                                         | <span style="color:pink;">NOT FINISHED YET!</span> <br />a demo to integrate Single Sign On, see [ISSUE#12](https://github.com/xkcoding/spring-boot-demo/issues/12). |
 
 ## License
 
