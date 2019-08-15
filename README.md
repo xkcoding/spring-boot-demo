@@ -71,33 +71,33 @@
 | [spring-boot-demo-orm-jdbctemplate](./spring-boot-demo-orm-jdbctemplate) | spring-boot 集成 Jdbc Template 操作数据库，并简易封装通用 Dao 层 |
 | [spring-boot-demo-orm-jpa](./spring-boot-demo-orm-jpa)       | spring-boot 集成 spring-boot-starter-data-jpa 操作数据库     |
 | [spring-boot-demo-orm-mybatis](./spring-boot-demo-orm-mybatis) | spring-boot 集成原生mybatis，使用 [mybatis-spring-boot-starter](https://github.com/mybatis/spring-boot-starter) 集成 |
-| [spring-boot-demo-orm-mybatis-mapper-page](./spring-boot-demo-orm-mybatis-mapper-page) | spring-boot 集成通用Mapper和PageHelper，使用 [mapper-spring-boot-starter](https://github.com/abel533/Mapper/tree/master/spring-boot-starter) 和 [pagehelper-spring-boot-starter](https://github.com/pagehelper/pagehelper-spring-boot) 集成 |
-| [spring-boot-demo-orm-mybatis-plus](./spring-boot-demo-orm-mybatis-plus) | spring-boot 集成 mybatis-plus，使用 [mybatis-plus-boot-starter](http://mp.baomidou.com/) 集成 |
-| [spring-boot-demo-orm-beetlsql](./spring-boot-demo-orm-beetlsql) | spring-boot 集成 beetl sql，使用 [beetl-framework-starter](http://ibeetl.com/guide/#beetlsql) 集成 |
+| [spring-boot-demo-orm-mybatis-mapper-page](./spring-boot-demo-orm-mybatis-mapper-page) | spring-boot 集成[通用Mapper](https://github.com/abel533/Mapper)和[PageHelper](https://github.com/pagehelper/Mybatis-PageHelper)，使用 [mapper-spring-boot-starter](https://github.com/abel533/Mapper/tree/master/spring-boot-starter) 和 [pagehelper-spring-boot-starter](https://github.com/pagehelper/pagehelper-spring-boot) 集成 |
+| [spring-boot-demo-orm-mybatis-plus](./spring-boot-demo-orm-mybatis-plus) | spring-boot 集成 [mybatis-plus](https://mybatis.plus/)，使用 [mybatis-plus-boot-starter](http://mp.baomidou.com/) 集成 |
+| [spring-boot-demo-orm-beetlsql](./spring-boot-demo-orm-beetlsql) | spring-boot 集成 [beetl-sql](http://ibeetl.com/guide/#beetlsql)，使用 [beetl-framework-starter](http://ibeetl.com/guide/#beetlsql) 集成 |
 | [spring-boot-demo-upload](./spring-boot-demo-upload)         | spring-boot 文件上传示例，包含本地文件上传以及七牛云文件上传 |
 | [spring-boot-demo-cache-redis](./spring-boot-demo-cache-redis) | spring-boot 整合 redis，操作redis中的数据，并使用redis缓存数据 |
 | [spring-boot-demo-cache-ehcache](./spring-boot-demo-cache-ehcache) | spring-boot 整合 ehcache，使用 ehcache 缓存数据              |
 | [spring-boot-demo-email](./spring-boot-demo-email)           | spring-boot 整合 email，包括发送简单文本邮件、HTML邮件（包括模板HTML邮件）、附件邮件、静态资源邮件 |
 | [spring-boot-demo-task](./spring-boot-demo-task)             | spring-boot 快速实现定时任务                                 |
 | [spring-boot-demo-task-quartz](./spring-boot-demo-task-quartz) | spring-boot 整合 quartz，并实现对定时任务的管理，包括新增定时任务，删除定时任务，暂停定时任务，恢复定时任务，修改定时任务启动时间，以及定时任务列表查询，`提供前端页面` |
-| [spring-boot-demo-task-xxl-job](./spring-boot-demo-task-xxl-job) | spring-boot 整合 xxl-job，并提供绕过 `xxl-job-admin` 对定时任务的管理的方法，包括定时任务列表，触发器列表，新增定时任务，删除定时任务，停止定时任务，启动定时任务，修改定时任务，手动触发定时任务 |
-| [spring-boot-demo-swagger](./spring-boot-demo-swagger)       | spring-boot 集成原生的 swagger 用于统一管理、测试 API 接口   |
-| [spring-boot-demo-swagger-beauty](./spring-boot-demo-swagger-beauty) | spring-boot 集成第三方 swagger 美化API文档样式，用于统一管理、测试 API 接口 |
+| [spring-boot-demo-task-xxl-job](./spring-boot-demo-task-xxl-job) | spring-boot 整合[xxl-job](http://www.xuxueli.com/xxl-job/en/#/)，并提供绕过 `xxl-job-admin` 对定时任务的管理的方法，包括定时任务列表，触发器列表，新增定时任务，删除定时任务，停止定时任务，启动定时任务，修改定时任务，手动触发定时任务 |
+| [spring-boot-demo-swagger](./spring-boot-demo-swagger)       | spring-boot 集成原生的 `swagger` 用于统一管理、测试 API 接口 |
+| [spring-boot-demo-swagger-beauty](./spring-boot-demo-swagger-beauty) | spring-boot 集成第三方 `swagger` [swagger-bootstrap-ui](https://github.com/xiaoymin/Swagger-Bootstrap-UI) 美化API文档样式，用于统一管理、测试 API 接口 |
 | [spring-boot-demo-rbac-security](./spring-boot-demo-rbac-security) | spring-boot 集成 spring security 完成基于RBAC权限模型的权限管理，支持自定义过滤请求，动态权限认证，使用 JWT 安全认证，支持在线人数统计，手动踢出用户等操作 |
-| [spring-boot-demo-rbac-shiro](./spring-boot-demo-rbac-shiro) | spring-boot 集成 shiro 实现权限管理 <span style="color:pink;">待完成</span> |
+| [spring-boot-demo-rbac-shiro](./spring-boot-demo-rbac-shiro) | spring-boot 集成 shiro 实现权限管理<br /> <span style="color:pink;">待完成</span> |
 | [spring-boot-demo-session](./spring-boot-demo-session)       | spring-boot 集成 Spring Session 实现Session共享、重启程序Session不失效 |
-| [spring-boot-demo-oauth](./spring-boot-demo-oauth)           | spring-boot 实现 oauth 服务器功能，实现授权码机制 <span style="color:pink;">待完成</span> |
+| [spring-boot-demo-oauth](./spring-boot-demo-oauth)           | spring-boot 实现 oauth 服务器功能，实现授权码机制<br /> <span style="color:pink;">待完成</span> |
 | [spring-boot-demo-social](./spring-boot-demo-social)         | spring-boot 集成第三方登录，集成 `justauth-spring-boot-starter` 实现QQ登录、GitHub登录、微信登录、谷歌登录、微软登录、小米登录、企业微信登录。 |
 | [spring-boot-demo-zookeeper](./spring-boot-demo-zookeeper)   | spring-boot 集成 Zookeeper 结合AOP实现分布式锁               |
 | [spring-boot-demo-mq-rabbitmq](./spring-boot-demo-mq-rabbitmq) | spring-boot 集成 RabbitMQ 实现基于直接队列模式、分列模式、主题模式、延迟队列的消息发送和接收 |
-| [spring-boot-demo-mq-rocketmq](./spring-boot-demo-mq-rocketmq) | spring-boot 集成 RocketMQ，实现消息的发送和接收 <span style="color:pink;">待完成</span> |
+| [spring-boot-demo-mq-rocketmq](./spring-boot-demo-mq-rocketmq) | spring-boot 集成 RocketMQ，实现消息的发送和接收<br /> <span style="color:pink;">待完成</span> |
 | [spring-boot-demo-mq-kafka](./spring-boot-demo-mq-kafka)     | spring-boot 集成 kafka，实现消息的发送和接收                 |
 | [spring-boot-demo-websocket](./spring-boot-demo-websocket)   | spring-boot 集成 websocket，后端主动推送前端服务器运行信息   |
 | [spring-boot-demo-websocket-socketio](./spring-boot-demo-websocket-socketio) | spring-boot 使用 netty-socketio 集成 websocket，实现一个简单的聊天室 |
-| [spring-boot-demo-ureport2](./spring-boot-demo-ureport2)     | spring-boot 集成 ureport2 实现复杂的自定义的中国式报表 <span style="color:pink;">待完成</span> |
-| [spring-boot-demo-uflo](./spring-boot-demo-uflo)             | spring-boot 集成 uflo 快速实现轻量级流程引擎 <span style="color:pink;">待完成</span> |
-| [spring-boot-demo-urule](./spring-boot-demo-urule)           | spring-boot 集成 urule 快速实现规则引擎 <span style="color:pink;">待完成</span> |
-| [spring-boot-demo-activiti](./spring-boot-demo-activiti)     | spring-boot 集成 activiti 7  流程引擎 <span style="color:pink;">待完成</span> |
+| [spring-boot-demo-ureport2](./spring-boot-demo-ureport2)     | spring-boot 集成 ureport2 实现复杂的自定义的中国式报表<br /> <span style="color:pink;">待完成</span> |
+| [spring-boot-demo-uflo](./spring-boot-demo-uflo)             | spring-boot 集成 uflo 快速实现轻量级流程引擎<br /> <span style="color:pink;">待完成</span> |
+| [spring-boot-demo-urule](./spring-boot-demo-urule)           | spring-boot 集成 urule 快速实现规则引擎<br /> <span style="color:pink;">待完成</span> |
+| [spring-boot-demo-activiti](./spring-boot-demo-activiti)     | spring-boot 集成 activiti 7  流程引擎<br /> <span style="color:pink;">待完成</span> |
 | [spring-boot-demo-async](./spring-boot-demo-async)           | spring-boot 使用原生提供的异步任务支持，实现异步执行任务     |
 | [spring-boot-demo-war](./spring-boot-demo-war)               | spring-boot 打成 war 包的配置                                |
 | [spring-boot-demo-elasticsearch](./spring-boot-demo-elasticsearch) | spring-boot 集成 ElasticSearch，集成 `spring-boot-starter-data-elasticsearch` 完成对 ElasticSearch 的高级使用技巧，包括创建索引、配置映射、删除索引、增删改查基本操作、复杂查询、高级查询、聚合查询等 |
@@ -108,11 +108,11 @@
 | [spring-boot-demo-multi-datasource-jpa](./spring-boot-demo-multi-datasource-jpa) | spring-boot 使用JPA集成多数据源                              |
 | [spring-boot-demo-multi-datasource-mybatis](./spring-boot-demo-multi-datasource-mybatis) | spring-boot 使用Mybatis集成多数据源，使用 Mybatis-Plus 提供的开源解决方案实现 |
 | [spring-boot-demo-sharding-jdbc](./spring-boot-demo-sharding-jdbc) | spring-boot 使用 `sharding-jdbc` 实现分库分表，同时ORM采用 Mybatis-Plus |
-| [spring-boot-demo-tio](./spring-boot-demo-tio)               | spring-boot 集成 tio 网络编程框架 <span style="color:pink;">待完成</span> |
-| [spring-boot-demo-grpc](./spring-boot-demo-grpc)             | spring-boot 集成grpc，配置tls/ssl，参见[ISSUE#5](https://github.com/xkcoding/spring-boot-demo/issues/5) <span style="color:pink;">待完成</span> |
+| [spring-boot-demo-tio](./spring-boot-demo-tio)               | spring-boot 集成 tio 网络编程框架<br /> <span style="color:pink;">待完成</span> |
+| [spring-boot-demo-grpc](./spring-boot-demo-grpc)             | spring-boot 集成grpc，配置tls/ssl，参见[ISSUE#5](https://github.com/xkcoding/spring-boot-demo/issues/5)<br /> <span style="color:pink;">待完成</span> |
 | [spring-boot-demo-codegen](./spring-boot-demo-codegen)       | spring-boot 集成 velocity 模板技术实现的代码生成器，简化开发 |
 | [spring-boot-demo-graylog](./spring-boot-demo-graylog)       | spring-boot 集成 graylog 实现日志统一收集                    |
-| spring-boot-demo-sso                                         | spring-boot 集成 SSO 单点登录，参见 [ISSUE#12](https://github.com/xkcoding/spring-boot-demo/issues/12) <span style="color:pink;">待完成</span> |
+| spring-boot-demo-sso                                         | spring-boot 集成 SSO 单点登录，参见 [ISSUE#12](https://github.com/xkcoding/spring-boot-demo/issues/12)<br /> <span style="color:pink;">待完成</span> |
 
 ## License
 
@@ -299,7 +299,7 @@ Copyright (c) 2018 Yangkai.Shen
 
 ### 官方提供的 starter 介绍
 
-| Name                                   | Description                                                 |
+| 名称                                   | 描述                                                        |
 | :------------------------------------- | :---------------------------------------------------------- |
 | spring-boot-starter                    | Spring Boot 核心包，包括自动装配，日志，以及YAML文件解析    |
 | spring-boot-starter-actuator           | 帮助在生产环境下监控和管理 Spring Boot 应用                 |
