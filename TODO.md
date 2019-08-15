@@ -1,4 +1,5 @@
-# spring-boot-demo 项目 todo-list
+# spring-boot-demo 项目待办列表
+
 ## 模块计划(已完成：47 / 57)
 
 - [x] ~~spring-boot-demo-helloworld（Helloworld 示例）~~
@@ -59,6 +60,6 @@
 - [x] ~~spring-boot-demo-graylog（集成 gralog 日志管理）~~
 - [ ] spring-boot-demo-sso（集成单点登录）参见 [ISSUE#12](https://github.com/xkcoding/spring-boot-demo/issues/12)
 
-### 备注
+## 备注
 
 尽量保证按照上面的顺序集成相应的 demo。
