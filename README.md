@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <span>中文 | <a href="./README.en.md">英文</a></span>
+  <span>中文 | <a href="./README.en.md">English</a></span>
 </p>
 
 ## 项目简介
