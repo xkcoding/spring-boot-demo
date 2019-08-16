@@ -64,6 +64,7 @@
 		<module>spring-boot-demo-tio</module>
 		<module>spring-boot-demo-codegen</module>
 		<module>spring-boot-demo-graylog</module>
+		<module>spring-boot-demo-nutz</module>
 	</modules>
 	<packaging>pom</packaging>
 

@@ -1,0 +1,86 @@
+server:
+  port: 8888
+management:
+  info:
+    git:
+      mode: full
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include:
+          - '*'
+swagger:
+  base-package: org.nutz.demo
+  title: spring-boot-nutz-starter-demo
+  description: spring-boot-nutz-starter-demo swagger 接口手册示例
+  authorization:
+    key-name: Authorization
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 50MB
+  application:
+    name: spring-boot-nutz-starter-demo
+  datasource:
+    druid:
+      url:  jdbc:h2:file:~/.data/nutz-demo;MODE=MYSQL;DATABASE_TO_UPPER=false
+      username: root
+      password: G00dl^ck
+      driver-class-name: org.h2.Driver
+      filters: stat,wall,log4j2
+      initial-size: 10
+      min-idle:  1
+      max-active:  50
+      max-wait:  60000
+      time-between-eviction-runs-millis:  60000
+      min-evictable-idle-time-millis:  300000
+      validation-query:  SELECT 'china'
+      test-while-idle:  true
+      test-on-borrow:  true
+      test-on-return:  false
+      pool-prepared-statements:  true
+      max-pool-prepared-statement-per-connection-size: 20
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: /druid/*,*.js,*.gif,*.jpg,*.png,*.css,*.ico
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        reset-enable: true
+  config:
+    location: null
+logging:
+  file: ${user.home}/log/${spring.application.name}.log
+  level:
+    org.nutz: debug
+    com.chinare: debug
+    springfox: off
+    io.swagger: off
+nutz:
+#  ngrok:    
+#    token: abcdef
+  dao:
+    runtime:
+      add-column: true
+      basepackage:
+        - org.nutz.demo.bean
+#        - BOOT-INF.classes.demo.bean # 生成环境如果需要的话需要加上BOOT-INF.classes.
+      check-index: true
+      create: true
+      delete-column: true
+      foce-create: false
+      migration: true
+    sqlmanager:
+      paths:
+        - sqls
+  json:
+    enabled: true
+    mode: full
+auth:
+  without-authentication-url-regulars:
+    - /user/login
