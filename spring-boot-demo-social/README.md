@@ -385,7 +385,7 @@ justauth:
       client-id: ww58******f3************fbc
       client-secret: 8G6PCr00j************************rgk************AyzaPc78
       redirect-uri: http://oauth.xkcoding.com/demo/oauth/wechat_enterprise/callback
-      agent-id: 1000002
+      agent-id: 1*******2
 ```
 
 ### 2.3. OauthController.java
