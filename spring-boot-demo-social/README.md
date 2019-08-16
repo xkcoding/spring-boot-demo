@@ -354,36 +354,38 @@ spring:
     # 一般来说是不用配置的，Spring Cache 会根据依赖的包自行装配
     type: redis
 
-oauth:
-  qq:
-    client-id: 1015*****
-    client-secret: 1f7d08df55766**************
-    redirect-uri: http://oauth.xkcoding.com/demo/oauth/qq/callback
-  github:
-    client-id: 2d25a70**************
-    client-secret: 5a2919b5fe911567343**************
-    redirect-uri: http://oauth.xkcoding.com/demo/oauth/github/callback
-  wechat:
-    client-id: wxdcb31**************
-    client-secret: b4e9dc6841ef7d**************
-    redirect-uri: http://oauth.xkcoding.com/demo/oauth/wechat/callback
-  google:
-    client-id: 716518501517-6dbdkapivhia806vqcjjh9nttj3**************
-    client-secret: 9IBornd7w1A**************
-    redirect-uri: http://oauth.xkcoding.com/demo/oauth/google/callback
-  microsoft:
-    client-id: 7bdce818-2c8e-4b**************
-    client-secret: Iu0zZ43RQydo_FkD**************
-    redirect-uri: https://oauth.xkcoding.com/demo/oauth/microsoft/callback
-  mi:
-    client-id: 2882303**************
-    client-secret: nFeTt89Yn**************
-    redirect-uri: http://oauth.xkcoding.com/demo/oauth/mi/callback
-  wechat_enterprise:
-    client-id: ww58**********6fbc
-    client-secret: 8G6PCr0****************************yzaPc78
-    redirect-uri: http://oauth.xkcoding.com/demo/oauth/wechat_enterprise/callback
-    agent-id: 10*******02
+justauth:
+  enabled: true
+  type:
+    qq:
+      client-id: 10******85
+      client-secret: 1f7d************************d629e
+      redirect-uri: http://oauth.xkcoding.com/demo/oauth/qq/callback
+    github:
+      client-id: 2d25******d5f01086
+      client-secret: 5a2919b************************d7871306d1
+      redirect-uri: http://oauth.xkcoding.com/demo/oauth/github/callback
+    wechat:
+      client-id: wxdcb******4ff4
+      client-secret: b4e9dc************************a08ed6d
+      redirect-uri: http://oauth.xkcoding.com/demo/oauth/wechat/callback
+    google:
+      client-id: 716******17-6db******vh******ttj320i******userco******t.com
+      client-secret: 9IBorn************7-E
+      redirect-uri: http://oauth.xkcoding.com/demo/oauth/google/callback
+    microsoft:
+      client-id: 7bdce8******************e194ad76c1b
+      client-secret: Iu0zZ4************************tl9PWan_.
+      redirect-uri: https://oauth.xkcoding.com/demo/oauth/microsoft/callback
+    mi:
+      client-id: 288************2994
+      client-secret: nFeTt89************************==
+      redirect-uri: http://oauth.xkcoding.com/demo/oauth/mi/callback
+    wechat_enterprise:
+      client-id: ww58******f3************fbc
+      client-secret: 8G6PCr00j************************rgk************AyzaPc78
+      redirect-uri: http://oauth.xkcoding.com/demo/oauth/wechat_enterprise/callback
+      agent-id: 1000002
 ```
 
 ### 2.3. OauthController.java
