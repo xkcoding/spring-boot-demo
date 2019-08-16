@@ -1,18 +1,18 @@
 package com.xkcoding.upload.service.impl;
 
+import java.io.File;
+
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
 import com.qiniu.common.QiniuException;
 import com.qiniu.http.Response;
 import com.qiniu.storage.UploadManager;
 import com.qiniu.util.Auth;
 import com.qiniu.util.StringMap;
 import com.xkcoding.upload.service.IQiNiuService;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.InitializingBean;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
-
-import java.io.File;
 
 /**
  * <p>
@@ -28,7 +28,6 @@ import java.io.File;
  * @modified: yangkai.shen
  */
 @Service
-@Slf4j
 public class QiNiuServiceImpl implements IQiNiuService, InitializingBean {
 	private final UploadManager uploadManager;
 
@@ -66,7 +65,8 @@ public class QiNiuServiceImpl implements IQiNiuService, InitializingBean {
 	@Override
 	public void afterPropertiesSet() {
 		this.putPolicy = new StringMap();
-		putPolicy.put("returnBody", "{\"key\":\"$(key)\",\"hash\":\"$(etag)\",\"bucket\":\"$(bucket)\",\"width\":$(imageInfo.width), \"height\":${imageInfo.height}}");
+		putPolicy.put("returnBody",
+				"{\"key\":\"$(key)\",\"hash\":\"$(etag)\",\"bucket\":\"$(bucket)\",\"width\":$(imageInfo.width), \"height\":${imageInfo.height}}");
 	}
 
 	/**

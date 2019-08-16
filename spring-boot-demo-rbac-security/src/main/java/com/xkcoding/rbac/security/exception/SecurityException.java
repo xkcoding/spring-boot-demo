@@ -21,7 +21,12 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class SecurityException extends BaseException {
-    public SecurityException(Status status) {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public SecurityException(Status status) {
         super(status);
     }
 

@@ -1,7 +1,5 @@
 package com.xkcoding.orm.jdbctemplate;
 
-import cn.hutool.core.util.IdUtil;
-import cn.hutool.crypto.SecureUtil;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

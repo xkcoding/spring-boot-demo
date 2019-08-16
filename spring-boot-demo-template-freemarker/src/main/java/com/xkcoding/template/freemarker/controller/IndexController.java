@@ -1,13 +1,14 @@
 package com.xkcoding.template.freemarker.controller;
 
-import cn.hutool.core.util.ObjectUtil;
-import com.xkcoding.template.freemarker.model.User;
-import lombok.extern.slf4j.Slf4j;
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
+import com.xkcoding.template.freemarker.model.User;
+
+import cn.hutool.core.util.ObjectUtil;
 
 /**
  * <p>
@@ -23,10 +24,9 @@ import javax.servlet.http.HttpServletRequest;
  * @modified: yangkai.shen
  */
 @Controller
-@Slf4j
 public class IndexController {
 
-	@GetMapping(value = {"", "/"})
+	@GetMapping(value = { "", "/" })
 	public ModelAndView index(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView();
 

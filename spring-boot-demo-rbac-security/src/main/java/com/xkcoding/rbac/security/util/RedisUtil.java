@@ -1,8 +1,8 @@
 package com.xkcoding.rbac.security.util;
 
-import com.google.common.collect.Lists;
-import com.xkcoding.rbac.security.common.PageResult;
-import lombok.extern.slf4j.Slf4j;
+import java.util.Collection;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -12,8 +12,10 @@ import org.springframework.data.redis.core.ScanOptions;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
-import java.util.Collection;
-import java.util.List;
+import com.google.common.collect.Lists;
+import com.xkcoding.rbac.security.common.PageResult;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * <p>
@@ -42,7 +44,8 @@ public class RedisUtil {
      * @param pageSize    每页条数
      * @return 分页获取指定格式key
      */
-    public PageResult<String> findKeysForPage(String patternKey, int currentPage, int pageSize) {
+    @SuppressWarnings("deprecation")
+	public PageResult<String> findKeysForPage(String patternKey, int currentPage, int pageSize) {
         ScanOptions options = ScanOptions.scanOptions()
                 .match(patternKey)
                 .build();

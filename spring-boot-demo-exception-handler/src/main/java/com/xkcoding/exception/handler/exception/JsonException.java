@@ -19,6 +19,11 @@ import lombok.Getter;
 @Getter
 public class JsonException extends BaseException {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public JsonException(Status status) {
 		super(status);
 	}

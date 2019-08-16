@@ -1,19 +1,19 @@
 package com.xkcoding.email.service;
 
-import cn.hutool.core.io.resource.ResourceUtil;
-import com.xkcoding.email.SpringBootDemoEmailApplicationTests;
+import java.net.URL;
+
+import javax.mail.MessagingException;
+
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
-import org.thymeleaf.templatemode.TemplateMode;
-import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
-import org.thymeleaf.templateresolver.FileTemplateResolver;
 
-import javax.mail.MessagingException;
-import java.net.URL;
+import com.xkcoding.email.SpringBootDemoEmailApplicationTests;
+
+import cn.hutool.core.io.resource.ResourceUtil;
 
 /**
  * <p>

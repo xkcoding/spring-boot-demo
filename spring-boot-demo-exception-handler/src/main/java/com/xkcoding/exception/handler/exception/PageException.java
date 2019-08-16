@@ -19,6 +19,11 @@ import lombok.Getter;
 @Getter
 public class PageException extends BaseException {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public PageException(Status status) {
 		super(status);
 	}

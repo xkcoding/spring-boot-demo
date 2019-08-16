@@ -31,6 +31,11 @@ import java.util.Date;
 @ToString(callSuper = true)
 public class User extends AbstractAuditModel {
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
      * 用户名
      */
     private String name;

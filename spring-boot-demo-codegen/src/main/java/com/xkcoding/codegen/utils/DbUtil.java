@@ -2,8 +2,8 @@ package com.xkcoding.codegen.utils;
 
 import com.xkcoding.codegen.entity.TableRequest;
 import com.zaxxer.hikari.HikariDataSource;
+
 import lombok.experimental.UtilityClass;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * <p>
@@ -18,7 +18,6 @@ import lombok.extern.slf4j.Slf4j;
  * @version: V1.0
  * @modified: yangkai.shen
  */
-@Slf4j
 @UtilityClass
 public class DbUtil {
     public HikariDataSource buildFromTableRequest(TableRequest request) {

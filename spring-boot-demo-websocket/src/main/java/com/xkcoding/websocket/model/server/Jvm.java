@@ -1,10 +1,10 @@
 package com.xkcoding.websocket.model.server;
 
-import cn.hutool.core.date.DateUtil;
-import cn.hutool.core.util.NumberUtil;
-
 import java.lang.management.ManagementFactory;
 import java.util.Date;
+
+import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.util.NumberUtil;
 
 /**
  * <p>
@@ -20,114 +20,110 @@ import java.util.Date;
  * @modified: yangkai.shen
  */
 public class Jvm {
-    /**
-     * 当前JVM占用的内存总数(M)
-     */
-    private double total;
+	/**
+	 * 当前JVM占用的内存总数(M)
+	 */
+	private double total;
 
-    /**
-     * JVM最大可用内存总数(M)
-     */
-    private double max;
+	/**
+	 * JVM最大可用内存总数(M)
+	 */
+	private double max;
 
-    /**
-     * JVM空闲内存(M)
-     */
-    private double free;
+	/**
+	 * JVM空闲内存(M)
+	 */
+	private double free;
 
-    /**
-     * JDK版本
-     */
-    private String version;
+	/**
+	 * JDK版本
+	 */
+	private String version;
 
-    /**
-     * JDK路径
-     */
-    private String home;
+	/**
+	 * JDK路径
+	 */
+	private String home;
 
-    /**
-     * JDK启动时间
-     */
-    private String startTime;
+	/**
+	 * JDK启动时间
+	 */
+	protected String startTime;
 
-    /**
-     * JDK运行时间
-     */
-    private String runTime;
+	/**
+	 * JDK运行时间
+	 */
+	protected String runTime;
 
-    public double getTotal() {
-        return NumberUtil.div(total, (1024 * 1024), 2);
-    }
+	public double getTotal() {
+		return NumberUtil.div(total, (1024 * 1024), 2);
+	}
 
-    public void setTotal(double total) {
-        this.total = total;
-    }
+	public void setTotal(double total) {
+		this.total = total;
+	}
 
-    public double getMax() {
-        return NumberUtil.div(max, (1024 * 1024), 2);
-    }
+	public double getMax() {
+		return NumberUtil.div(max, (1024 * 1024), 2);
+	}
 
-    public void setMax(double max) {
-        this.max = max;
-    }
+	public void setMax(double max) {
+		this.max = max;
+	}
 
-    public double getFree() {
-        return NumberUtil.div(free, (1024 * 1024), 2);
-    }
+	public double getFree() {
+		return NumberUtil.div(free, (1024 * 1024), 2);
+	}
 
-    public void setFree(double free) {
-        this.free = free;
-    }
+	public void setFree(double free) {
+		this.free = free;
+	}
 
-    public double getUsed() {
-        return NumberUtil.div(total - free, (1024 * 1024), 2);
-    }
+	public double getUsed() {
+		return NumberUtil.div(total - free, (1024 * 1024), 2);
+	}
 
-    public double getUsage() {
-        return NumberUtil.mul(NumberUtil.div(total - free, total, 4), 100);
-    }
+	public double getUsage() {
+		return NumberUtil.mul(NumberUtil.div(total - free, total, 4), 100);
+	}
 
-    /**
-     * 获取JDK名称
-     */
-    public String getName() {
-        return ManagementFactory.getRuntimeMXBean()
-                .getVmName();
-    }
+	/**
+	 * 获取JDK名称
+	 */
+	public String getName() {
+		return ManagementFactory.getRuntimeMXBean().getVmName();
+	}
 
-    public String getVersion() {
-        return version;
-    }
+	public String getVersion() {
+		return version;
+	}
 
-    public void setVersion(String version) {
-        this.version = version;
-    }
+	public void setVersion(String version) {
+		this.version = version;
+	}
 
-    public String getHome() {
-        return home;
-    }
+	public String getHome() {
+		return home;
+	}
 
-    public void setHome(String home) {
-        this.home = home;
-    }
+	public void setHome(String home) {
+		this.home = home;
+	}
 
-    public void setStartTime(String startTime) {
-        this.startTime = startTime;
-    }
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
 
-    public String getStartTime() {
-        return DateUtil.formatDateTime(new Date(ManagementFactory.getRuntimeMXBean()
-                .getStartTime()));
-    }
+	public String getStartTime() {
+		return DateUtil.formatDateTime(new Date(ManagementFactory.getRuntimeMXBean().getStartTime()));
+	}
 
+	public void setRunTime(String runTime) {
+		this.runTime = runTime;
+	}
 
-    public void setRunTime(String runTime) {
-        this.runTime = runTime;
-    }
-
-    public String getRunTime() {
-        long startTime = ManagementFactory.getRuntimeMXBean()
-                .getStartTime();
-        return DateUtil.formatBetween(DateUtil.current(false) - startTime);
-    }
+	public String getRunTime() {
+		long startTime = ManagementFactory.getRuntimeMXBean().getStartTime();
+		return DateUtil.formatBetween(DateUtil.current(false) - startTime);
+	}
 }
