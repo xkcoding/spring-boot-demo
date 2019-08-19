@@ -19,36 +19,34 @@
 
 ## Introduction
 
-`spring boot demo `  is a project for learning and practice `spring boot`, with a total of `57` integrated demos, and `47` have been completed.
+`spring boot demo` is a project for learning and practicing `spring boot`, including 57 demos, and 47 of them have been done.
 
-The project has successfully integrated actuator (`monitoring`), admin (`visual monitoring`), logback (`log`), aopLog (`recording web request logs through AOP`), global exception handling (`json level and page level` ), freemarker (`template engine`), thymeleaf (`template engine`), Beetl (`template engine`), Enjoy (`template engine`), JdbcTemplate (`general JDBC operate database`), JPA (`powerful ORM framework `), mybatis (`powerful ORM framework`), Generic Mapper (`mybatis quick operation `), PageHelper (`powerful mybatis pagination plugin`), mybatis-plus (`mybatis quick operation`), BeetlSQL (`powerful ORM framework `), upload (`local file upload and qiniu cloud file upload`), redis (`cache`), ehcache (`cache`), email (`send various types of mail`), task (`basic scheduled tasks`), quartz (`dynamic management scheduled tasks`), xxl-job (`distributed scheduled tasks`), swagger (`API interface management and tests`), security (`RBAC-based Dynamic Rights Authentication`), SpringSession (`session sharing`), Zookeeper (`implement distributed locks by AOP`), RabbitMQ (`message queue`), Kafka (`message queue`), websocket (` server pushes the monitoring server status to front end `), socket.io (`chat room`), ureport2 (`Chinese-style report`), packaged into a `war` file, integrates ElasticSearch (`basic operations and advanced queries`), Async ( `asynchronous tasks`), integrated Dubbo (`with official starter`), MongoDB (`document database`), neo4j (`graph database`), docker (`container`), `JPA Multi-Datasource`, `Mybatis Multi-Datasource`, `code generator`', GrayLog (`log collection`), JustAuth (`third-party login`).
+This project has integrated actuator (`monitoring`), admin (`visual monitoring`), logback (`log`), aopLog (`recording web request logs through AOP`), global exception handling (`json level and page level` ), freemarker (`template engine`), thymeleaf (`template engine`), Beetl (`template engine`), Enjoy (`template engine`), JdbcTemplate (`general JDBC operate database`), JPA (`powerful ORM framework `), mybatis (`powerful ORM framework`), Generic Mapper (`mybatis quick operation `), PageHelper (`powerful mybatis pagination plugin`), mybatis-plus (`mybatis quick operation`), BeetlSQL (`powerful ORM framework `), upload (`local file upload and qiniu cloud file upload`), redis (`cache`), ehcache (`cache`), email (`send various types of mail`), task (`basic scheduled tasks`), quartz (`dynamic management scheduled tasks`), xxl-job (`distributed scheduled tasks`), swagger (`API interface management and tests`), security (`RBAC-based Dynamic Rights Authentication`), SpringSession (`session sharing`), Zookeeper (`implement distributed locks by AOP`), RabbitMQ (`message queue`), Kafka (`message queue`), websocket (` server pushes the monitoring server status to front end `), socket.io (`chat room`), ureport2 (`Chinese-style report`), packaged into a `war` file, integrates ElasticSearch (`basic operations and advanced queries`), Async ( `asynchronous tasks`), integrated Dubbo (`with official starter`), MongoDB (`document database`), neo4j (`graph database`), docker (`container`), `JPA Multi-Datasource`, `Mybatis Multi-Datasource`, `code generator`', GrayLog (`log collection`), JustAuth (`third-party login`).
 
-> If you still have a demo that you want to integrate, you can also request it in [issue](https://github.com/xkcoding/spring-boot-demo/issues/new). I will add it to the [TODO](./TODO.en.md) list.✊
+> If you have demos to contribute or needs to meet, it is very welcome to submit a [issue](https://github.com/xkcoding/spring-boot-demo/issues/new) and I will add it to my [TODO](./TODO.en.md) list.
 
-## Branches
-
-- master: Based on the Spring Boot version `2.1.0.RELEASE`, the parent of each Module depends on the pom.xml in the root directory, which is mainly used to manage the generic dependencies' version of each Module. It's easier to learn this project.
-- v-1.5.x: Based on the Spring Boot version `1.5.8.RELEASE`, each module depends on spring-boot-demo-parent. There are quite a few friends who report that this way is not very friendly to rookies and it is a little difficult to run this project, so ***The branch (v-1.5.x) will stop development and maintenance***, and all the content will be slowly synchronized to the master branch. If this branch is not completed yet in the TODO list, it will be added directly to the master branch. Everyone can still learn in this branch, but still suggest to switch to the master branch in the future. After all, the official has been upgraded to the Spring Boot version `2.x`. 🙂
+## Branch Introduction
+- branch master: Based on Spring Boot version `2.1.0.RELEASE`. Every module's parent dependency is the pom.xml at root directory in convenience of managing common dependencies and learning spring boot.
+- branch v-1.5.x: Based on Spring Boot version `1.5.8.RELEASE`. Every module's parent dependency is spring-boot-demo-parent. But since the feedback shows that it is not much friendly to many new learners, this branch will not be mantained any more. All of the demos will be moved to branch master. Everyone could still study at this branch but it's suggested to study at branch master while Spring Boot has much new content over version `2.x`.
 
 ## Environment
 
 - **JDK 1.8 +**
 - **Maven 3.5 +**
-- **IntelliJ IDEA ULTIMATE 2018.2 +** (*Note: Be sure to use IDEA and ensure that the `lombok` plugin is installed.*)
-- **Mysql 5.7 +** (*Try to be sure to use version 5.7 or higher, because version 5.7 adds some new features and is not backward compatible. This project will try to avoid this incompatibility, but it is recommended to ensure 5.7 or higher.*)
+- **IntelliJ IDEA ULTIMATE 2018.2 +** (*Note: Please use IDEA and make sure plugin `lombok` installed.*)
+- **Mysql 5.7 +** (*Please use version 5.7 or higher because mysql has some new features and is not backward compatible at version 5.7. Althought this project will try to avoid this incompatibility*)
 
 ## Getting Started
 
 1. `git clone https://github.com/xkcoding/spring-boot-demo.git`
-2. Open the cloned project using IDEA
-3. Open the project in IDEA
-4. Import the `pom.xml` file from the root of the project using the `Maven Projects` panel
-5. If you can not find the `Maven Projects` panel, you can try to check `View -> Tool Buttons` on the top toolbar of IDEA and the `Maven Projects` panel will appear on the right side of IDEA.
-6. 找到各个 Module 的 Application 类就可以运行各个 demo 了
-7. **`Note: Each demo has a detailed README file. Remember to check it before running the demo~`**
-8. **`Note: Before running each demo, some need to initialize the database data beforehand, don't forget it~`**
+2. Open the cloned project in IDEA
+3. Import the `pom.xml` file from the root directory using `Maven Projects` panel
+4. If you can not find `Maven Projects` panel, try to tick `View -> Tool Buttons` on and the `Maven Projects` panel will appear on the right side of IDEA.
+5. Find each Application class to run each module.
+6. **`Note: Each demo has a detailed README file. Remember to check it before running the demo~`**
+7. **`Note: In some condition you have to execute sql to prepare data before running demo, don't forget it~`**
 
-## Plan
+## TODO
 
 View the [TODO](./TODO.en.md) file
 
@@ -57,13 +55,13 @@ View the [TODO](./TODO.en.md) file
 | Module Name                                                  | Module Description                                           |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [spring-boot-demo-helloworld](./spring-boot-demo-helloworld) | a helloworld demo.                                           |
-| [spring-boot-demo-properties](./spring-boot-demo-properties) | a demo to read the contents of the configuration file.       |
-| [spring-boot-demo-actuator](./spring-boot-demo-actuator)     | a demo to integrate spring-boot-starter-actuator for monitoring the startup and run status of Spring Boot. |
-| [spring-boot-demo-admin-client](./spring-boot-demo-admin-client) | a client demo to  integrate spring-boot-admin for visually monitoring the running status of the spring-boot program, it can be used with spring-boot-starter-actuator. |
+| [spring-boot-demo-properties](./spring-boot-demo-properties) | a demo to read the contents of configuration file.       |
+| [spring-boot-demo-actuator](./spring-boot-demo-actuator)     | a demo to integrate spring-boot-starter-actuator for monitoring the starting status and the running status of application. |
+| [spring-boot-demo-admin-client](./spring-boot-demo-admin-client) | a client demo to  integrate spring-boot-admin for visually monitoring the running status of application, it can be used with spring-boot-starter-actuator. |
 | [spring-boot-demo-admin-server](./spring-boot-demo-admin-server) | a server demo to  integrate spring-boot-admin for visually monitoring the running status of the spring-boot program, it can be used with spring-boot-starter-actuator. |
 | [spring-boot-demo-logback](./spring-boot-demo-logback)       | a demo to integrate the logback for logging.                 |
 | [spring-boot-demo-log-aop](./spring-boot-demo-log-aop)       | a demo to record web request logs using AOP aspect.          |
-| [spring-boot-demo-exception-handler](./spring-boot-demo-exception-handler) | a demo to demonstrate global exception handling, including 2 types, the first one returns a  json structure, and the second one jumps to the exception page. |
+| [spring-boot-demo-exception-handler](./spring-boot-demo-exception-handler) | a demo to demonstrate global exception handling, including 2 types, the first one returns  json data, and the second one jumps to error page. |
 | [spring-boot-demo-template-freemarker](./spring-boot-demo-template-freemarker) | a demo to integrate Freemarker template engine.              |
 | [spring-boot-demo-template-thymeleaf](./spring-boot-demo-template-thymeleaf) | a demo to integrate Thymeleaf template engine.               |
 | [spring-boot-demo-template-beetl](./spring-boot-demo-template-beetl) | a demo to integrate Beetl template engine.                   |
@@ -80,9 +78,9 @@ View the [TODO](./TODO.en.md) file
 | [spring-boot-demo-email](./spring-boot-demo-email)           | a demo to integrate email, including sending simple text email, HTML email (including template HTML email), attachment email, and static resource email. |
 | [spring-boot-demo-task](./spring-boot-demo-task)             | a demo to show easy to use scheduled task.                   |
 | [spring-boot-demo-task-quartz](./spring-boot-demo-task-quartz) | a demo to integrate quartz for managing scheduled tasks, including adding new scheduled tasks, deleting scheduled tasks, suspending scheduled tasks, restoring scheduled tasks, modifying scheduled task startup times, and timing task list queries, and `providing front-end pages`. |
-| [spring-boot-demo-task-xxl-job](./spring-boot-demo-task-xxl-job) | a demo to integrate [xxl-job](http://www.xuxueli.com/xxl-job/en/#/) for distributed scheduled tasks and provide methods to bypass the management of scheduled tasks by `xxl-job-admin`, including scheduled task lists, trigger lists, new scheduled tasks, deleted scheduled tasks, stopped scheduled tasks, and started scheduled tasks. Modify the scheduled task and manually trigger the scheduled task. |
-| [spring-boot-demo-swagger](./spring-boot-demo-swagger)       | a demo to integrate native `swagger` to manage and test API interfaces globally. |
-| [spring-boot-demo-swagger-beauty](./spring-boot-demo-swagger-beauty) | a demo to integrate third part of swagger dependency [swagger-bootstrap-ui](https://github.com/xiaoymin/Swagger-Bootstrap-UI) to beauty document style and  manage and test API interfaces globally. |
+| [spring-boot-demo-task-xxl-job](./spring-boot-demo-task-xxl-job) | a demo to integrate [xxl-job](http://www.xuxueli.com/xxl-job/en/#/) for distributed scheduled tasks and provide methods to manage scheduled tasks bypass `xxl-job-admin`, including scheduled task lists, trigger lists, new scheduled tasks, deleted scheduled tasks, stopped scheduled tasks, and started scheduled tasks. Modify the scheduled task and manually trigger the scheduled task. |
+| [spring-boot-demo-swagger](./spring-boot-demo-swagger)       | a demo to integrate native `swagger` to manage and test API interfaces. |
+| [spring-boot-demo-swagger-beauty](./spring-boot-demo-swagger-beauty) | a demo to integrate third part of swagger dependency [swagger-bootstrap-ui](https://github.com/xiaoymin/Swagger-Bootstrap-UI) to beautify document style and manage and test API interfaces. |
 | [spring-boot-demo-rbac-security](./spring-boot-demo-rbac-security) | a demo to integrate spring security implement privilege management based on RBAC privilege model, supports custom filtering request, dynamic privilege authentication, uses JWT security authentication, supports online population statistics, manually kicks out users, etc. |
 | [spring-boot-demo-rbac-shiro](./spring-boot-demo-rbac-shiro) | <span style="color:pink;">NOT FINISHED YET!</span> <br />a demo to integrate shiro for authentication management. |
 | [spring-boot-demo-session](./spring-boot-demo-session)       | a demo to integrate Spring Session to implement Session sharing, restart program Session does not expire. |
