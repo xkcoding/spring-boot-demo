@@ -55,10 +55,10 @@ View the [TODO](./TODO.en.md) file
 | Module Name                                                  | Module Description                                           |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [spring-boot-demo-helloworld](./spring-boot-demo-helloworld) | a helloworld demo.                                           |
-| [spring-boot-demo-properties](./spring-boot-demo-properties) | a demo to read the contents of configuration file.       |
+| [spring-boot-demo-properties](./spring-boot-demo-properties) | a demo to read the contents of configuration file.           |
 | [spring-boot-demo-actuator](./spring-boot-demo-actuator)     | a demo to integrate spring-boot-starter-actuator for monitoring the starting status and the running status of application. |
-| [spring-boot-demo-admin-client](./spring-boot-demo-admin-client) | a client demo to  integrate spring-boot-admin for visually monitoring the running status of application, it can be used with spring-boot-starter-actuator. |
-| [spring-boot-demo-admin-server](./spring-boot-demo-admin-server) | a server demo to  integrate spring-boot-admin for visually monitoring the running status of the spring-boot program, it can be used with spring-boot-starter-actuator. |
+| [spring-boot-demo-admin-client](./spring-boot-demo-admin/spring-boot-demo-admin-client) | a client demo to  integrate spring-boot-admin for visually monitoring the running status of application, it can be used with spring-boot-starter-actuator. |
+| [spring-boot-demo-admin-server](./spring-boot-demo-admin/spring-boot-demo-admin-server) | a server demo to  integrate spring-boot-admin for visually monitoring the running status of the spring-boot program, it can be used with spring-boot-starter-actuator. |
 | [spring-boot-demo-logback](./spring-boot-demo-logback)       | a demo to integrate the logback for logging.                 |
 | [spring-boot-demo-log-aop](./spring-boot-demo-log-aop)       | a demo to record web request logs using AOP aspect.          |
 | [spring-boot-demo-exception-handler](./spring-boot-demo-exception-handler) | a demo to demonstrate global exception handling, including 2 types, the first one returns  json data, and the second one jumps to error page. |
