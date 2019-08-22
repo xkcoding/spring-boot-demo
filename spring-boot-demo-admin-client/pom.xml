@@ -20,7 +20,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<spring-boot-admin.version>2.0.3</spring-boot-admin.version>
+		<spring-boot-admin.version>2.1.0</spring-boot-admin.version>
 	</properties>
 
 	<dependencies>

@@ -1,7 +1,9 @@
 server:
   port: 8000
+  servlet:
+    context-path: /admin
 spring:
   boot:
     admin:
       # 管控台上下文路径
-      context-path: /admin
+      context-path: /
