@@ -11,8 +11,7 @@
     <module>spring-boot-demo-helloworld</module>
     <module>spring-boot-demo-properties</module>
     <module>spring-boot-demo-actuator</module>
-    <module>spring-boot-demo-admin-client</module>
-    <module>spring-boot-demo-admin-server</module>
+    <module>spring-boot-demo-admin</module>
     <module>spring-boot-demo-logback</module>
     <module>spring-boot-demo-log-aop</module>
     <module>spring-boot-demo-exception-handler</module>
