@@ -1,4 +1,4 @@
-package com.xkcoding.social;
+package com.xkcoding.task.xxl.job;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,14 +9,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019-08-09 13:51
+ * @date Created in 2019-08-07 10:13
  */
 @SpringBootApplication
-public class SpringBootDemoSocialApplication {
+public class SpringBootDemoTaskXxlJobApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootDemoSocialApplication.class, args);
+        SpringApplication.run(SpringBootDemoTaskXxlJobApplication.class, args);
     }
-
 }
-

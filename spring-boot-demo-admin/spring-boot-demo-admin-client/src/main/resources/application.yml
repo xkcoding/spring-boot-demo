@@ -10,7 +10,7 @@ spring:
     admin:
       client:
         # Spring Boot Admin 服务端地址
-        url: "http://localhost:8000/admin"
+        url: "http://localhost:8000/"
         instance:
           metadata:
             # 客户端端点信息的安全认证信息

@@ -1,7 +1,0 @@
-server:
-  port: 8000
-spring:
-  boot:
-    admin:
-      # 管控台上下文路径
-      context-path: /admin

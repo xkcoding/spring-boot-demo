@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>spring-boot-demo-social</artifactId>
+  <artifactId>spring-boot-demo-task-xxl-job</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>spring-boot-demo-social</name>
+  <name>spring-boot-demo-task-xxl-job</name>
   <description>Demo project for Spring Boot</description>
 
   <parent>
@@ -20,7 +20,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
-    <justauth-spring-boot.version>1.0.0</justauth-spring-boot.version>
+    <xxl-job.version>2.1.0</xxl-job.version>
   </properties>
 
   <dependencies>
@@ -31,32 +31,26 @@
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-configuration-processor</artifactId>
+      <optional>true</optional>
+    </dependency>
+
+    <!-- xxl-job-core -->
+    <dependency>
+      <groupId>com.xuxueli</groupId>
+      <artifactId>xxl-job-core</artifactId>
+      <version>${xxl-job.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-data-redis</artifactId>
-    </dependency>
-
-    <!-- 对象池，使用redis时必须引入 -->
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-pool2</artifactId>
-    </dependency>
-
-    <!-- oauth工具类 -->
-    <dependency>
-      <groupId>com.xkcoding</groupId>
-      <artifactId>justauth-spring-boot-starter</artifactId>
-      <version>${justauth-spring-boot.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <optional>true</optional>
+      <groupId>cn.hutool</groupId>
+      <artifactId>hutool-all</artifactId>
     </dependency>
 
     <dependency>
@@ -65,13 +59,14 @@
     </dependency>
 
     <dependency>
-      <groupId>cn.hutool</groupId>
-      <artifactId>hutool-all</artifactId>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <optional>true</optional>
     </dependency>
   </dependencies>
 
   <build>
-    <finalName>spring-boot-demo-social</finalName>
+    <finalName>spring-boot-demo-task-xxl-job</finalName>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>

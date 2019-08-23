@@ -1,18 +1,25 @@
+# spring-boot-demo-admin-server
+
+> 本 demo 主要演示了如何搭建一个 Spring Boot Admin 的服务端项目，可视化展示自己客户端项目的运行状态。
+
+## pom.xml
+
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>spring-boot-demo-social</artifactId>
+  <artifactId>spring-boot-demo-admin-server</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>spring-boot-demo-social</name>
+  <name>spring-boot-demo-admin-server</name>
   <description>Demo project for Spring Boot</description>
 
   <parent>
     <groupId>com.xkcoding</groupId>
-    <artifactId>spring-boot-demo</artifactId>
+    <artifactId>spring-boot-demo-admin</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
@@ -20,7 +27,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
-    <justauth-spring-boot.version>1.0.0</justauth-spring-boot.version>
   </properties>
 
   <dependencies>
@@ -30,48 +36,19 @@
     </dependency>
 
     <dependency>
+      <groupId>de.codecentric</groupId>
+      <artifactId>spring-boot-admin-starter-server</artifactId>
+    </dependency>
+
+    <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
-
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-data-redis</artifactId>
-    </dependency>
-
-    <!-- 对象池，使用redis时必须引入 -->
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-pool2</artifactId>
-    </dependency>
-
-    <!-- oauth工具类 -->
-    <dependency>
-      <groupId>com.xkcoding</groupId>
-      <artifactId>justauth-spring-boot-starter</artifactId>
-      <version>${justauth-spring-boot.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <optional>true</optional>
-    </dependency>
-
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>cn.hutool</groupId>
-      <artifactId>hutool-all</artifactId>
-    </dependency>
   </dependencies>
 
   <build>
-    <finalName>spring-boot-demo-social</finalName>
+    <finalName>spring-boot-demo-admin-server</finalName>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
@@ -81,3 +58,38 @@
   </build>
 
 </project>
+```
+
+## SpringBootDemoAdminServerApplication.java
+
+```java
+/**
+ * <p>
+ * 启动类
+ * </p>
+ *
+ * @package: com.xkcoding.admin.server
+ * @description: 启动类
+ * @author: yangkai.shen
+ * @date: Created in 2018/10/8 2:08 PM
+ * @copyright: Copyright (c) 2018
+ * @version: V1.0
+ * @modified: yangkai.shen
+ */
+@EnableAdminServer
+@SpringBootApplication
+public class SpringBootDemoAdminServerApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringBootDemoAdminServerApplication.class, args);
+	}
+}
+```
+
+## application.yml
+
+```yaml
+server:
+  port: 8000
+```
+
