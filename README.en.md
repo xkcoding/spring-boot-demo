@@ -29,6 +29,10 @@ This project has integrated actuator (`monitoring`), admin (`visual monitoring`)
 - branch master: Based on Spring Boot version `2.1.0.RELEASE`. Every module's parent dependency is the pom.xml at root directory in convenience of managing common dependencies and learning spring boot.
 - branch v-1.5.x: Based on Spring Boot version `1.5.8.RELEASE`. Every module's parent dependency is spring-boot-demo-parent. But since the feedback shows that it is not much friendly to many new learners, this branch will not be mantained any more. All of the demos will be moved to branch master. Everyone could still study at this branch but it's suggested to study at branch master while Spring Boot has much new content over version `2.x`.
 
+## Sponsers
+
+<a href="https://www.jetbrains.com/?from=spring-boot-demo"><img src="assets/jetbrains.png" width="100px" alt="jetbrains"></a>
+
 ## Environment
 
 - **JDK 1.8 +**
