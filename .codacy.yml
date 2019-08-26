@@ -1,0 +1,5 @@
+exclude_paths:
+  - '**/src/main/resources/static/libs/**'
+  - '*.md'
+  - '*.min.js'
+  - '**/tests/**'
