@@ -1,7 +1,7 @@
 package com.xkcoding.ldap;
 
+import com.xkcoding.ldap.api.Result;
 import com.xkcoding.ldap.entity.Person;
-import com.xkcoding.ldap.entity.Result;
 import com.xkcoding.ldap.request.LoginRequest;
 import com.xkcoding.ldap.service.PersonService;
 import org.junit.Test;
@@ -29,6 +29,9 @@ public class LdapDemoApplicationTests {
     public void contextLoads() {
     }
 
+    /**
+     * 测试查询单个
+     */
     @Test
     public void loginTest() {
         LoginRequest loginRequest = LoginRequest.builder().username("wangwu").password("123456").build();
@@ -36,12 +39,18 @@ public class LdapDemoApplicationTests {
         System.out.println(login);
     }
 
+    /**
+     * 测试查询列表
+     */
     @Test
     public void listAllPersonTest() {
         Result result = personService.listAllPerson();
         System.out.println(result);
     }
 
+    /**
+     * 测试保存
+     */
     @Test
     public void saveTest() {
         Person person = new Person();
@@ -62,7 +71,9 @@ public class LdapDemoApplicationTests {
         personService.save(person);
     }
 
-
+    /**
+     * 测试删除
+     */
     @Test
     public void deleteTest() {
         Person person = new Person();
@@ -70,8 +81,5 @@ public class LdapDemoApplicationTests {
 
         personService.delete(person);
     }
-
-
-
 
 }

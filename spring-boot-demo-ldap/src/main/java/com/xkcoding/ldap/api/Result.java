@@ -1,4 +1,4 @@
-package com.xkcoding.ldap.entity;
+package com.xkcoding.ldap.api;
 
 import lombok.Data;
 import org.springframework.lang.Nullable;

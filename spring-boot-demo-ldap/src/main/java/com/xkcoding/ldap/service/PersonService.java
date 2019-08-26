@@ -1,7 +1,7 @@
 package com.xkcoding.ldap.service;
 
+import com.xkcoding.ldap.api.Result;
 import com.xkcoding.ldap.entity.Person;
-import com.xkcoding.ldap.entity.Result;
 import com.xkcoding.ldap.request.LoginRequest;
 
 /**
@@ -15,26 +15,30 @@ public interface PersonService {
 
     /**
      * 登录
-     * @param request com.xkcoding.ldap.request.LoginRequest
-     * @return com.xkcoding.ldap.entity.Result
+     *
+     * @param request {@link LoginRequest}
+     * @return {@link Result}
      */
     Result login(LoginRequest request);
 
     /**
      * 查询全部
-     * @return com.xkcoding.ldap.entity.Result
+     *
+     * @return {@link Result}
      */
     Result listAllPerson();
 
     /**
      * 保存
-     * @param person com.xkcoding.ldap.entity.Person
+     *
+     * @param person {@link Person}
      */
     void save(Person person);
 
     /**
      * 删除
-     * @param person com.xkcoding.ldap.entity.Person
+     *
+     * @param person {@link Person}
      */
     void delete(Person person);
 

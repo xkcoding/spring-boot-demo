@@ -23,27 +23,4 @@ public interface PersonRepository extends CrudRepository<Person, Name> {
      * @return com.xkcoding.ldap.entity.Person
      */
     Person findByUid(String uid);
-
-    /**
-     * 查询全部
-     * @return
-     */
-    @Override
-    Iterable<Person> findAll();
-
-    /**
-     * 保存
-     * @param s
-     * @param <S>
-     * @return
-     */
-    @Override
-    <S extends Person> S save(S s);
-
-    /**
-     * 删除
-     * @param person
-     */
-    @Override
-    void delete(Person person);
 }

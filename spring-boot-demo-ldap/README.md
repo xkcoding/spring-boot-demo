@@ -1,6 +1,6 @@
 # spring-boot-demo-ldap
 
-> 此 demo 主要演示了 Spring Boot 如何集成 `spring-boot-starter-data-ldap` 完成对 Ldap 的基本CURD操作, 并给出以登录为实战的api 示例
+> 此 demo 主要演示了 Spring Boot 如何集成 `spring-boot-starter-data-ldap` 完成对 Ldap 的基本 CURD操作, 并给出以登录为实战的 API 示例
 
 ## docker openldap 安装步骤
 
@@ -18,7 +18,7 @@
 
 ## pom.xml
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -68,25 +68,24 @@
   </dependencies>
 
 </project>
+```
 
+## application.yml
+
+```yaml
+spring:
+  ldap:
+    urls: ldap://localhost:389
+    base: dc=example,dc=org
+    username: cn=admin,dc=example,dc=org
+    password: admin
 ```
 
 ## Person.java
 
 > 实体类
 > @Entry 注解 映射ldap对象关系 
-```
-package com.xkcoding.ldap.entity;
-
-import lombok.Data;
-import org.springframework.ldap.odm.annotations.Attribute;
-import org.springframework.ldap.odm.annotations.DnAttribute;
-import org.springframework.ldap.odm.annotations.Entry;
-import org.springframework.ldap.odm.annotations.Id;
-
-import javax.naming.Name;
-import java.io.Serializable;
-
+```java
 /**
  * People
  *
@@ -158,20 +157,11 @@ public class Person implements Serializable {
      */
     private String loginShell;
 }
-
 ```
 
 ## PersonRepository.java
 > person 数据持久层
-```
-package com.xkcoding.ldap.repository;
-
-import com.xkcoding.ldap.entity.Person;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
-
-import javax.naming.Name;
-
+```java
 /**
  * PersonRepository
  *
@@ -189,42 +179,12 @@ public interface PersonRepository extends CrudRepository<Person, Name> {
      * @return com.xkcoding.ldap.entity.Person
      */
     Person findByUid(String uid);
-
-    /**
-     * 查询全部
-     * @return
-     */
-    @Override
-    Iterable<Person> findAll();
-
-    /**
-     * 保存
-     * @param s
-     * @param <S>
-     * @return
-     */
-    @Override
-    <S extends Person> S save(S s);
-
-    /**
-     * 删除
-     * @param person
-     */
-    @Override
-    void delete(Person person);
 }
-
 ```
 
 ## PersonService.java
 > 数据操作服务
-```
-package com.xkcoding.ldap.service;
-
-import com.xkcoding.ldap.entity.Person;
-import com.xkcoding.ldap.entity.Result;
-import com.xkcoding.ldap.request.LoginRequest;
-
+```java
 /**
  * PersonService
  *
@@ -236,54 +196,40 @@ public interface PersonService {
 
     /**
      * 登录
-     * @param request com.xkcoding.ldap.request.LoginRequest
-     * @return com.xkcoding.ldap.entity.Result
+     *
+     * @param request {@link LoginRequest}
+     * @return {@link Result}
      */
     Result login(LoginRequest request);
 
     /**
      * 查询全部
-     * @return com.xkcoding.ldap.entity.Result
+     *
+     * @return {@link Result}
      */
     Result listAllPerson();
 
     /**
      * 保存
-     * @param person com.xkcoding.ldap.entity.Person
+     *
+     * @param person {@link Person}
      */
     void save(Person person);
 
     /**
      * 删除
-     * @param person com.xkcoding.ldap.entity.Person
+     *
+     * @param person {@link Person}
      */
     void delete(Person person);
-}
 
+}
 ```
 
 ## PersonServiceImpl.java 
 > person数据操作服务具体逻辑实现类
 
-```
-package com.xkcoding.ldap.service.impl;
-
-import com.xkcoding.ldap.entity.Person;
-import com.xkcoding.ldap.entity.Result;
-import com.xkcoding.ldap.exception.ServiceException;
-import com.xkcoding.ldap.repository.PersonRepository;
-import com.xkcoding.ldap.request.LoginRequest;
-import com.xkcoding.ldap.service.PersonService;
-import com.xkcoding.ldap.util.LdapUtils;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
-import org.springframework.util.ObjectUtils;
-import org.springframework.util.StringUtils;
-
-import javax.annotation.Resource;
-import java.security.NoSuchAlgorithmException;
-import java.util.List;
-
+```java
 /**
  * PersonServiceImpl
  *
@@ -293,20 +239,24 @@ import java.util.List;
  */
 @Slf4j
 @Service
+@RequiredArgsConstructor(onConstructor_ = @Autowired)
 public class PersonServiceImpl implements PersonService {
+    private final PersonRepository personRepository;
 
-    @Resource
-    private PersonRepository personRepository;
-
+    /**
+     * 登录
+     *
+     * @param request {@link LoginRequest}
+     * @return {@link Result}
+     */
     @Override
     public Result login(LoginRequest request) {
-
         log.info("IN LDAP auth");
 
         Person user = personRepository.findByUid(request.getUsername());
 
         try {
-            if(ObjectUtils.isEmpty(user)) {
+            if (ObjectUtils.isEmpty(user)) {
                 throw new ServiceException("用户名或密码错误，请重新尝试");
             } else {
                 user.setUserPassword(LdapUtils.asciiToString(user.getUserPassword()));
@@ -322,46 +272,46 @@ public class PersonServiceImpl implements PersonService {
         return Result.success(user);
     }
 
+    /**
+     * 查询全部
+     *
+     * @return {@link Result}
+     */
     @Override
     public Result listAllPerson() {
         Iterable<Person> personList = personRepository.findAll();
-        personList.forEach(person -> {
-            person.setUserPassword(LdapUtils.asciiToString(person.getUserPassword()));
-        });
+        personList.forEach(person -> person.setUserPassword(LdapUtils.asciiToString(person.getUserPassword())));
         return Result.success(personList);
     }
 
+    /**
+     * 保存
+     *
+     * @param person {@link Person}
+     */
     @Override
     public void save(Person person) {
         Person p = personRepository.save(person);
         log.info("用户{}保存成功", p.getUid());
     }
 
+    /**
+     * 删除
+     *
+     * @param person {@link Person}
+     */
     @Override
     public void delete(Person person) {
         personRepository.delete(person);
         log.info("删除用户{}成功", person.getUid());
     }
+    
 }
-
 ```
 
 ## LdapDemoApplicationTests.java
 > 测试
-```
-package com.xkcoding.ldap;
-
-import com.xkcoding.ldap.entity.Person;
-import com.xkcoding.ldap.entity.Result;
-import com.xkcoding.ldap.request.LoginRequest;
-import com.xkcoding.ldap.service.PersonService;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
-
-import javax.annotation.Resource;
-
+```java
 /**
  * LdapDemoApplicationTest
  *
@@ -380,6 +330,9 @@ public class LdapDemoApplicationTests {
     public void contextLoads() {
     }
 
+    /**
+     * 测试查询单个
+     */
     @Test
     public void loginTest() {
         LoginRequest loginRequest = LoginRequest.builder().username("wangwu").password("123456").build();
@@ -387,12 +340,18 @@ public class LdapDemoApplicationTests {
         System.out.println(login);
     }
 
+    /**
+     * 测试查询列表
+     */
     @Test
     public void listAllPersonTest() {
         Result result = personService.listAllPerson();
         System.out.println(result);
     }
 
+    /**
+     * 测试保存
+     */
     @Test
     public void saveTest() {
         Person person = new Person();
@@ -413,7 +372,9 @@ public class LdapDemoApplicationTests {
         personService.save(person);
     }
 
-
+    /**
+     * 测试删除
+     */
     @Test
     public void deleteTest() {
         Person person = new Person();
@@ -421,8 +382,12 @@ public class LdapDemoApplicationTests {
 
         personService.delete(person);
     }
+
 }
 ```
 
+## 其余代码参见本 demo
+
 ## 参考
+
 spring-data-ldap 官方文档: https://docs.spring.io/spring-data/ldap/docs/2.1.10.RELEASE/reference/html/

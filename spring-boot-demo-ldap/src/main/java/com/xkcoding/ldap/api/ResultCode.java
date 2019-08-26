@@ -1,4 +1,4 @@
-package com.xkcoding.ldap.entity;
+package com.xkcoding.ldap.api;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

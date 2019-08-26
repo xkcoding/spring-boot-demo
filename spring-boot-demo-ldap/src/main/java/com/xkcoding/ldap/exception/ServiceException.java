@@ -1,6 +1,6 @@
 package com.xkcoding.ldap.exception;
 
-import com.xkcoding.ldap.entity.ResultCode;
+import com.xkcoding.ldap.api.ResultCode;
 import lombok.Getter;
 
 /**
@@ -15,7 +15,6 @@ public class ServiceException extends RuntimeException {
     @Getter
     private int errcode;
 
-    @SuppressWarnings("NullableProblems")
     @Getter
     private String errmsg;
 
