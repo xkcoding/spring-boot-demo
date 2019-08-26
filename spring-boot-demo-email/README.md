@@ -8,76 +8,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+  <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-boot-demo-email</artifactId>
+  <artifactId>spring-boot-demo-email</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>spring-boot-demo-email</name>
+  <description>Demo project for Spring Boot</description>
+
+  <parent>
+    <groupId>com.xkcoding</groupId>
+    <artifactId>spring-boot-demo</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+  </parent>
 
-    <name>spring-boot-demo-email</name>
-    <description>Demo project for Spring Boot</description>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <java.version>1.8</java.version>
+    <jasypt.version>2.1.1</jasypt.version>
+  </properties>
 
-    <parent>
-        <groupId>com.xkcoding</groupId>
-        <artifactId>spring-boot-demo</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
-    </parent>
+  <dependencies>
+    <!-- Spring Boot 邮件依赖 -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-mail</artifactId>
+    </dependency>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-    </properties>
+    <!--jasypt配置文件加解密-->
+    <dependency>
+      <groupId>com.github.ulisesbocchio</groupId>
+      <artifactId>jasypt-spring-boot-starter</artifactId>
+      <version>${jasypt.version}</version>
+    </dependency>
 
-    <dependencies>
-        <!-- Spring Boot 邮件依赖 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-mail</artifactId>
-        </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
+    <dependency>
+      <groupId>cn.hutool</groupId>
+      <artifactId>hutool-all</artifactId>
+    </dependency>
 
-        <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-        </dependency>
+    <!-- Spring Boot 模板依赖 -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+  </dependencies>
 
-        <!-- Spring Boot 模板依赖 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
-    </dependencies>
-
-    <build>
-        <finalName>spring-boot-demo-email</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+  <build>
+    <finalName>spring-boot-demo-email</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
 ```
 
 ## application.yml
 
-> 此处特别感谢 **路神**([@路小磊](https://github.com/looly)) 的开源工具集 [Hutool](https://github.com/looly/hutool) ，此处邮箱使用 Hutool 提供的公共邮箱做为测试邮箱，请童鞋们不要违规使用。
-
 ```yaml
 spring:
   mail:
-    host: smtp.yeah.net
-    port: 994
-    username: hutool@yeah.net
-    password: q1w2e3
+    host: smtp.mxhichina.com
+    port: 465
+    username: spring-boot-demo@xkcoding.com
+    # 使用 jasypt 加密密码
+    password: ENC(6XYNBOJrcmAOiNqZiVaqw/ff8rjusN2H)
     protocol: smtp
     test-connection: true
     default-encoding: UTF-8
@@ -86,7 +93,11 @@ spring:
       mail.smtp.starttls.enable: true
       mail.smtp.starttls.required: true
       mail.smtp.ssl.enable: true
-      mail.display.sendmail: xkcoding
+      mail.display.sendmail: spring-boot-demo
+# 为 jasypt 配置解密秘钥
+jasypt:
+  encryptor:
+    password: spring-boot-demo
 ```
 
 ## MailService.java
@@ -303,6 +314,8 @@ public class MailServiceTest extends SpringBootDemoEmailApplicationTests {
     private MailService mailService;
     @Autowired
     private TemplateEngine templateEngine;
+    @Autowired
+    private ApplicationContext context;
 
     /**
      * 测试简单邮件
@@ -321,10 +334,35 @@ public class MailServiceTest extends SpringBootDemoEmailApplicationTests {
     public void sendHtmlMail() throws MessagingException {
         Context context = new Context();
         context.setVariable("project", "Spring Boot Demo");
-        context.setVariable("author", "yangkai.shen");
+        context.setVariable("author", "Yangkai.Shen");
         context.setVariable("url", "https://github.com/xkcoding/spring-boot-demo");
 
         String emailTemplate = templateEngine.process("welcome", context);
+        mailService.sendHtmlMail("237497819@qq.com", "这是一封模板HTML邮件", emailTemplate);
+    }
+
+    /**
+     * 测试HTML邮件，自定义模板目录
+     *
+     * @throws MessagingException 邮件异常
+     */
+    @Test
+    public void sendHtmlMail2() throws MessagingException {
+
+        SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
+        templateResolver.setApplicationContext(context);
+        templateResolver.setCacheable(false);
+        templateResolver.setPrefix("classpath:/email/");
+        templateResolver.setSuffix(".html");
+
+        templateEngine.setTemplateResolver(templateResolver);
+
+        Context context = new Context();
+        context.setVariable("project", "Spring Boot Demo");
+        context.setVariable("author", "Yangkai.Shen");
+        context.setVariable("url", "https://github.com/xkcoding/spring-boot-demo");
+
+        String emailTemplate = templateEngine.process("test", context);
         mailService.sendHtmlMail("237497819@qq.com", "这是一封模板HTML邮件", emailTemplate);
     }
 
