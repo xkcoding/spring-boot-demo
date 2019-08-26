@@ -126,6 +126,7 @@ Copyright (c) 2018 Yangkai.Shen
 
 ## 项目趋势
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7249024341124ef880c598726fa10701)](https://app.codacy.com/app/xkcoding/spring-boot-demo?utm_source=github.com&utm_medium=referral&utm_content=xkcoding/spring-boot-demo&utm_campaign=Badge_Grade_Settings)
 [![Stargazers over time](https://starchart.cc/xkcoding/spring-boot-demo.svg)](https://starchart.cc/xkcoding/spring-boot-demo)
 
 ## 附录
