@@ -83,8 +83,8 @@ spring:
     host: smtp.mxhichina.com
     port: 465
     username: spring-boot-demo@xkcoding.com
-    # 使用 jasypt 加密密码
-    password: ENC(6XYNBOJrcmAOiNqZiVaqw/ff8rjusN2H)
+    # 使用 jasypt 加密密码，使用com.xkcoding.email.PasswordTest.testGeneratePassword 生成加密密码，替换 ENC(加密密码)  
+    password: ENC(OT0qGOpXrr1Iog1W+fjOiIDCJdBjHyhy)
     protocol: smtp
     test-connection: true
     default-encoding: UTF-8
@@ -98,6 +98,7 @@ spring:
 jasypt:
   encryptor:
     password: spring-boot-demo
+
 ```
 
 ## MailService.java
