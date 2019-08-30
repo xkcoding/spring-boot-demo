@@ -59,24 +59,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(customUserDetailsService)
-                .passwordEncoder(encoder());
+        auth.userDetailsService(customUserDetailsService).passwordEncoder(encoder());
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+
+        // @formatter:off
         http.cors()
-
                 // 关闭 CSRF
-                .and()
-                .csrf()
-                .disable()
-
+                .and().csrf().disable()
                 // 登录行为由自己实现，参考 AuthController#login
-                .formLogin()
-                .disable()
-                .httpBasic()
-                .disable()
+                .formLogin().disable()
+                .httpBasic().disable()
 
                 // 认证请求
                 .authorizeRequests()
@@ -88,19 +83,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .access("@rbacAuthorityService.hasPermission(request,authentication)")
 
                 // 登出行为由自己实现，参考 AuthController#logout
-                .and()
-                .logout()
-                .disable()
-
+                .and().logout().disable()
                 // Session 管理
                 .sessionManagement()
                 // 因为使用了JWT，所以这里不管理Session
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 
                 // 异常处理
-                .and()
-                .exceptionHandling()
-                .accessDeniedHandler(accessDeniedHandler);
+                .and().exceptionHandling().accessDeniedHandler(accessDeniedHandler);
+        // @formatter:on
 
         // 添加自定义 JWT 过滤器
         http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
@@ -113,62 +104,34 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Override
     public void configure(WebSecurity web) {
-        WebSecurity and = web.ignoring()
-                .and();
+        WebSecurity and = web.ignoring().and();
 
         // 忽略 GET
-        customConfig.getIgnores()
-                .getGet()
-                .forEach(url -> and.ignoring()
-                        .antMatchers(HttpMethod.GET, url));
+        customConfig.getIgnores().getGet().forEach(url -> and.ignoring().antMatchers(HttpMethod.GET, url));
 
         // 忽略 POST
-        customConfig.getIgnores()
-                .getPost()
-                .forEach(url -> and.ignoring()
-                        .antMatchers(HttpMethod.POST, url));
+        customConfig.getIgnores().getPost().forEach(url -> and.ignoring().antMatchers(HttpMethod.POST, url));
 
         // 忽略 DELETE
-        customConfig.getIgnores()
-                .getDelete()
-                .forEach(url -> and.ignoring()
-                        .antMatchers(HttpMethod.DELETE, url));
+        customConfig.getIgnores().getDelete().forEach(url -> and.ignoring().antMatchers(HttpMethod.DELETE, url));
 
         // 忽略 PUT
-        customConfig.getIgnores()
-                .getPut()
-                .forEach(url -> and.ignoring()
-                        .antMatchers(HttpMethod.PUT, url));
+        customConfig.getIgnores().getPut().forEach(url -> and.ignoring().antMatchers(HttpMethod.PUT, url));
 
         // 忽略 HEAD
-        customConfig.getIgnores()
-                .getHead()
-                .forEach(url -> and.ignoring()
-                        .antMatchers(HttpMethod.HEAD, url));
+        customConfig.getIgnores().getHead().forEach(url -> and.ignoring().antMatchers(HttpMethod.HEAD, url));
 
         // 忽略 PATCH
-        customConfig.getIgnores()
-                .getPatch()
-                .forEach(url -> and.ignoring()
-                        .antMatchers(HttpMethod.PATCH, url));
+        customConfig.getIgnores().getPatch().forEach(url -> and.ignoring().antMatchers(HttpMethod.PATCH, url));
 
         // 忽略 OPTIONS
-        customConfig.getIgnores()
-                .getOptions()
-                .forEach(url -> and.ignoring()
-                        .antMatchers(HttpMethod.OPTIONS, url));
+        customConfig.getIgnores().getOptions().forEach(url -> and.ignoring().antMatchers(HttpMethod.OPTIONS, url));
 
         // 忽略 TRACE
-        customConfig.getIgnores()
-                .getTrace()
-                .forEach(url -> and.ignoring()
-                        .antMatchers(HttpMethod.TRACE, url));
+        customConfig.getIgnores().getTrace().forEach(url -> and.ignoring().antMatchers(HttpMethod.TRACE, url));
 
         // 按照请求格式忽略
-        customConfig.getIgnores()
-                .getPattern()
-                .forEach(url -> and.ignoring()
-                        .antMatchers(url));
+        customConfig.getIgnores().getPattern().forEach(url -> and.ignoring().antMatchers(url));
 
     }
 }

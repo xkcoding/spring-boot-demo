@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="${package}.${moduleName}.mapper.${className}Mapper">
+  <resultMap id="${classname}Map" type="${package}.${moduleName}.entity.${className}">
+    #foreach($column in $columns)
+    #if($column.lowerAttrName==$pk.lowerAttrName)
+    <id property="${pk.lowerAttrName}" jdbcType="${pk.dataType}" column="${pk.columnName}"/>
+    #else
+    <result property="${column.lowerAttrName}" jdbcType="${column.dataType}" column="${column.columnName}"/>
+    #end
+    #end
+  </resultMap>
+</mapper>

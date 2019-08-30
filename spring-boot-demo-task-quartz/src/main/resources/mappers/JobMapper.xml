@@ -2,22 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xkcoding.task.quartz.mapper.JobMapper">
 
-    <select id="list" resultType="com.xkcoding.task.quartz.entity.domain.JobAndTrigger">
-        SELECT
-            qrtz_job_details.JOB_NAME          AS jobName,
-            qrtz_job_details.JOB_GROUP         AS jobGroup,
-            qrtz_job_details.JOB_CLASS_NAME    AS jobClassName,
-            qrtz_triggers.TRIGGER_NAME         AS triggerName,
-            qrtz_triggers.TRIGGER_GROUP        AS triggerGroup,
-            qrtz_triggers.TRIGGER_STATE       AS triggerState,
-            qrtz_cron_triggers.CRON_EXPRESSION AS cronExpression,
-            qrtz_cron_triggers.TIME_ZONE_ID    AS timeZoneId
-        FROM
-            qrtz_job_details
-                JOIN qrtz_triggers
-                JOIN qrtz_cron_triggers
-                     ON qrtz_job_details.JOB_NAME = qrtz_triggers.JOB_NAME
-                         AND qrtz_triggers.TRIGGER_NAME = qrtz_cron_triggers.TRIGGER_NAME
-                         AND qrtz_triggers.TRIGGER_GROUP = qrtz_cron_triggers.TRIGGER_GROUP
+  <select id="list" resultType="com.xkcoding.task.quartz.entity.domain.JobAndTrigger">
+	SELECT
+		job_details.`JOB_NAME`,
+		job_details.`JOB_GROUP`,
+		job_details.`JOB_CLASS_NAME`,
+		cron_triggers.`CRON_EXPRESSION`,
+		cron_triggers.`TIME_ZONE_ID`,
+		qrtz_triggers.`TRIGGER_NAME`,
+		qrtz_triggers.`TRIGGER_GROUP`,
+		qrtz_triggers.`TRIGGER_STATE`
+	FROM
+		`QRTZ_JOB_DETAILS` job_details
+		LEFT JOIN `QRTZ_CRON_TRIGGERS` cron_triggers ON job_details.`JOB_NAME` = cron_triggers.`TRIGGER_NAME`
+		AND job_details.`JOB_GROUP` = cron_triggers.`TRIGGER_GROUP`
+		LEFT JOIN `QRTZ_TRIGGERS` qrtz_triggers ON qrtz_triggers.`TRIGGER_NAME` = job_details.`JOB_NAME`
+		AND qrtz_triggers.`TRIGGER_GROUP` = job_details.`JOB_GROUP`
     </select>
 </mapper>

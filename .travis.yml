@@ -1,0 +1,15 @@
+# 语言
+language: java
+# 执行脚本
+script: "mvn clean package -DskipTests=true -Dmaven.javadoc.skip=true -B -V"
+# 通知
+notifications:
+  email:
+    recipients:
+      - 237497819@qq.com
+    on_success: always # default: change
+    on_failure: always # default: always
+# 缓存
+cache:
+  directories:
+    - '$HOME/.m2/repository'

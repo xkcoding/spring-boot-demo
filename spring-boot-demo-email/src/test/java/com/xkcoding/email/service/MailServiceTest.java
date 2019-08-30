@@ -4,8 +4,10 @@ import cn.hutool.core.io.resource.ResourceUtil;
 import com.xkcoding.email.SpringBootDemoEmailApplicationTests;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
+import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 
 import javax.mail.MessagingException;
 import java.net.URL;
@@ -28,6 +30,8 @@ public class MailServiceTest extends SpringBootDemoEmailApplicationTests {
     private MailService mailService;
     @Autowired
     private TemplateEngine templateEngine;
+    @Autowired
+    private ApplicationContext context;
 
     /**
      * 测试简单邮件
@@ -50,6 +54,31 @@ public class MailServiceTest extends SpringBootDemoEmailApplicationTests {
         context.setVariable("url", "https://github.com/xkcoding/spring-boot-demo");
 
         String emailTemplate = templateEngine.process("welcome", context);
+        mailService.sendHtmlMail("237497819@qq.com", "这是一封模板HTML邮件", emailTemplate);
+    }
+
+    /**
+     * 测试HTML邮件，自定义模板目录
+     *
+     * @throws MessagingException 邮件异常
+     */
+    @Test
+    public void sendHtmlMail2() throws MessagingException {
+
+        SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
+        templateResolver.setApplicationContext(context);
+        templateResolver.setCacheable(false);
+        templateResolver.setPrefix("classpath:/email/");
+        templateResolver.setSuffix(".html");
+
+        templateEngine.setTemplateResolver(templateResolver);
+
+        Context context = new Context();
+        context.setVariable("project", "Spring Boot Demo");
+        context.setVariable("author", "Yangkai.Shen");
+        context.setVariable("url", "https://github.com/xkcoding/spring-boot-demo");
+
+        String emailTemplate = templateEngine.process("test", context);
         mailService.sendHtmlMail("237497819@qq.com", "这是一封模板HTML邮件", emailTemplate);
     }
 

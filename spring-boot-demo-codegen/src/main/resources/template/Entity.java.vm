@@ -1,0 +1,45 @@
+package ${package}.${moduleName}.entity;
+
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+#if(${hasBigDecimal})
+import java.math.BigDecimal;
+#end
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
+/**
+ * <p>
+ * ${comments}
+ * </p>
+ *
+ * @package:  ${package}.${moduleName}.entity
+ * @description: ${comments}
+ * @author: ${author}
+ * @date: Created in ${datetime}
+ * @copyright: Copyright (c) ${year}
+ * @version: V1.0
+ * @modified: ${author}
+ */
+@Data
+@TableName("${tableName}")
+@ApiModel(description = "${comments}")
+@EqualsAndHashCode(callSuper = true)
+public class ${className} extends Model<${className}> {
+    private static final long serialVersionUID = 1L;
+
+  #foreach ($column in $columns)
+    /**
+     * $column.comments
+     */
+    #if($column.columnName == $pk.columnName)
+    @TableId
+    #end
+    @ApiModelProperty(value = "$column.comments")
+    private $column.attrType $column.lowerAttrName;
+  #end
+
+}
