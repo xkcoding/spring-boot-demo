@@ -1,6 +1,9 @@
 ---
 name: 报告缺陷
 about: 报告缺陷以帮助我们改进
+title: "[BUG]"
+labels: bug
+assignees: xkcoding
 ---
 
 **请先看[《提问的智慧》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md?utm_source=hacpai.com)**，并尝试到 **[issue 列表](https://github.com/xkcoding/spring-boot-demo/issues)** 搜寻是否已经有人遇到过同样的问题。
