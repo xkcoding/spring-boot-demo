@@ -44,6 +44,8 @@ This project has integrated actuator (`monitoring`), admin (`visual monitoring`)
 
 ## Getting Started
 
+> Note: If you has been forked this project, need to sync the project's code, please see: https://xkcoding.com/2018/09/18/how-to-update-the-fork-project.html
+
 1. `git clone https://github.com/xkcoding/spring-boot-demo.git`
 2. Open the cloned project in IDEA
 3. Import the `pom.xml` file from the root directory using `Maven Projects` panel

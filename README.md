@@ -44,6 +44,8 @@
 
 ## 运行方式
 
+> 提示：如果是 fork 的朋友，同步代码的请参考：https://xkcoding.com/2018/09/18/how-to-update-the-fork-project.html
+
 1. `git clone https://github.com/xkcoding/spring-boot-demo.git`
 2. 使用 IDEA 打开 clone 下来的项目
 3. 在 IDEA 中 Maven Projects 的面板导入项目根目录下 的 `pom.xml` 文件
