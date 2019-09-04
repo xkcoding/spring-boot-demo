@@ -1,6 +1,6 @@
 # spring-boot-demo Project TODO List
 
-## Module plan (completed: 48 / 58)
+## Module plan (completed: 49 / 59)
 
 - [x] ~~spring-boot-demo-helloworld(helloworld example)~~
 - [x] ~~spring-boot-demo-properties (read configuration file information)~~
@@ -60,6 +60,7 @@
 - [x] ~~spring-boot-demo-graylog (integrated gralog log management)~~
 - [ ] spring-boot-demo-sso (integrated single sign on) see [ISSUE#12](https://github.com/xkcoding/spring-boot-demo/issues/12)
 - [x] ~~spring-boot-demo-ldap （integrated ldap）see [ISSUE#23](https://github.com/xkcoding/spring-boot-demo/issues/23)~~
+- [x] ~~spring-boot-demo-dynamic-datasource（add datasource dynamically, switch datasource dynamically）~~
 
 ## Remarks
 
