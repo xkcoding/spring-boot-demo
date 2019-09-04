@@ -63,6 +63,7 @@
     <module>spring-boot-demo-codegen</module>
     <module>spring-boot-demo-graylog</module>
     <module>spring-boot-demo-ldap</module>
+    <module>spring-boot-demo-dynamic-datasource</module>
   </modules>
   <packaging>pom</packaging>
 
