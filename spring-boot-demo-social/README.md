@@ -241,8 +241,8 @@ $ nginx -s reload
 >
 > ```yaml
 > justauth:
-> 	cache:
-> 		type: default
+>   cache:
+>     type: default
 > ```
 
 ### 2.1. pom.xml
