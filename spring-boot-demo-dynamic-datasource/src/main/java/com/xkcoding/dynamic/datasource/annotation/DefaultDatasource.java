@@ -4,7 +4,7 @@ import java.lang.annotation.*;
 
 /**
  * <p>
- * 默认数据源
+ * 用户标识仅可以使用默认数据源
  * </p>
  *
  * @author yangkai.shen

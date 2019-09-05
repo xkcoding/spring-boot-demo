@@ -37,7 +37,7 @@ public class DatasourceSelectorAspect {
     }
 
     /**
-     * 前置通知 用于拦截操作
+     * 前置操作，拦截具体请求，获取header里的数据源id，设置线程变量里，用于后续切换数据源
      */
     @Before("datasourcePointcut()")
     public void doBefore(JoinPoint joinPoint) {
@@ -45,6 +45,7 @@ public class DatasourceSelectorAspect {
         MethodSignature methodSignature = (MethodSignature) signature;
         Method method = methodSignature.getMethod();
 
+        // 排除不可切换数据源的方法
         DefaultDatasource annotation = method.getAnnotation(DefaultDatasource.class);
         if (null != annotation) {
             DatasourceConfigContextHolder.setDefaultDatasource();
@@ -62,6 +63,9 @@ public class DatasourceSelectorAspect {
         }
     }
 
+    /**
+     * 后置操作，设置回默认的数据源id
+     */
     @AfterReturning("datasourcePointcut()")
     public void doAfter() {
         DatasourceConfigContextHolder.setDefaultDatasource();

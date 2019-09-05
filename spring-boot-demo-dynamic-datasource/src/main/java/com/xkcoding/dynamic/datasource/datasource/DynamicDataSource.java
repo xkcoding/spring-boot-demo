@@ -33,17 +33,24 @@ public class DynamicDataSource extends HikariDataSource {
         return datasource.getConnection();
     }
 
+    /**
+     * 初始化数据源
+     * @param id 数据源id
+     * @return 数据源
+     */
     private HikariDataSource initDatasource(Long id) {
         HikariDataSource dataSource = new HikariDataSource();
 
+        // 判断是否是默认数据源
         if (DatasourceHolder.DEFAULT_ID.equals(id)) {
+            // 默认数据源根据 application.yml 配置的生成
             DataSourceProperties properties = SpringUtil.getBean(DataSourceProperties.class);
             dataSource.setJdbcUrl(properties.getUrl());
             dataSource.setUsername(properties.getUsername());
             dataSource.setPassword(properties.getPassword());
             dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         } else {
-            // 获取数据库的配置
+            // 不是默认数据源，通过缓存获取对应id的数据源的配置
             DatasourceConfig datasourceConfig = DatasourceConfigCache.INSTANCE.getConfig(id);
 
             if (datasourceConfig == null) {
@@ -55,6 +62,7 @@ public class DynamicDataSource extends HikariDataSource {
             dataSource.setPassword(datasourceConfig.getPassword());
             dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         }
+        // 将创建的数据源添加到数据源管理器中，绑定当前线程
         DatasourceHolder.INSTANCE.addDatasource(id, dataSource);
         return dataSource;
     }
