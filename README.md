@@ -341,3 +341,11 @@ Copyright (c) 2018 Yangkai.Shen
 | spring-boot-starter-web                | 提供全栈的 web 开发特性，包括 Spring MVC 依赖和 Tomcat 容器 |
 | spring-boot-starter-websocket          | Spring Boot 集成 WebSocket 功能                             |
 | spring-boot-starter-ws                 | Spring Boot 集成 WebService 功能                            |
+
+### 开源推荐
+
+- `Mica`：SpringBoot 微服务高效开发工具集，https://github.com/lets-mica/mica
+- `awesome-collector`：https://github.com/P-P-X/awesome-collector
+- `SpringBlade`：完整的线上解决方案(企业开发必备)，https://github.com/chillzhuang/SpringBlade
+- `Pig`：宇宙最强微服务认证授权脚手架(架构师必备)，https://github.com/pigxcloud/pig
+- `JustAuth`：史上最全的整合第三方登录的开源库，https://github.com/justauth/JustAuth
