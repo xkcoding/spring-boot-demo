@@ -344,8 +344,8 @@ Copyright (c) 2018 Yangkai.Shen
 
 ### Recommended  Open source
 
+- `JustAuth`：The most comprehensive open source library for third-party logins in history，https://github.com/justauth/JustAuth
 - `Mica`：Spring Boot microservices efficient development toolset，https://github.com/lets-mica/mica
 - `awesome-collector`：https://github.com/P-P-X/awesome-collector
 - `SpringBlade`：Complete micro-service online solution (required for enterprise development)，https://github.com/chillzhuang/SpringBlade
 - `Pig`：The universe's strongest micro-service certification authorized scaffolding (architect necessary)，https://github.com/pigxcloud/pig
-- `JustAuth`：The most comprehensive open source library for third-party logins in history，https://github.com/justauth/JustAuth
