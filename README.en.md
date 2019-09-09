@@ -341,3 +341,11 @@ Copyright (c) 2018 Yangkai.Shen
 | spring-boot-starter-web                | Support for full-stack web development, including Tomcat and spring-webmvc. |
 | spring-boot-starter-websocket          | Support for WebSocket development.                           |
 | spring-boot-starter-ws                 | Support for Spring Web Services.                             |
+
+### Recommended  Open source
+
+- `Mica`：Spring Boot microservices efficient development toolset，https://github.com/lets-mica/mica
+- `awesome-collector`：https://github.com/P-P-X/awesome-collector
+- `SpringBlade`：Complete micro-service online solution (required for enterprise development)，https://github.com/chillzhuang/SpringBlade
+- `Pig`：The universe's strongest micro-service certification authorized scaffolding (architect necessary)，https://github.com/pigxcloud/pig
+- `JustAuth`：The most comprehensive open source library for third-party logins in history，https://github.com/justauth/JustAuth
