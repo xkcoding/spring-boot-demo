@@ -79,7 +79,7 @@
     <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
     <mysql.version>8.0.12</mysql.version>
     <hutool.version>4.6.3</hutool.version>
-    <guava.version>28.0-jre</guava.version>
+    <guava.version>28.1-jre</guava.version>
     <user.agent.version>1.20</user.agent.version>
   </properties>
 
