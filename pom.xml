@@ -64,6 +64,7 @@
     <module>spring-boot-demo-graylog</module>
     <module>spring-boot-demo-ldap</module>
     <module>spring-boot-demo-dynamic-datasource</module>
+    <module>spring-boot-demo-ratelimit-guava</module>
   </modules>
   <packaging>pom</packaging>
 
