@@ -1,6 +1,6 @@
 # spring-boot-demo 项目待办列表
 
-## 模块计划(已完成：49 / 59)
+## 模块计划(已完成：50 / 62)
 
 - [x] ~~spring-boot-demo-helloworld（Helloworld 示例）~~
 - [x] ~~spring-boot-demo-properties（读取配置文件信息）~~
@@ -61,6 +61,9 @@
 - [ ] spring-boot-demo-sso（集成单点登录）参见 [ISSUE#12](https://github.com/xkcoding/spring-boot-demo/issues/12)
 - [x] ~~spring-boot-demo-ldap （集成 ldap）参见 [ISSUE#23](https://github.com/xkcoding/spring-boot-demo/issues/23)~~
 - [x] ~~spring-boot-demo-dynamic-datasource（动态添加数据源，切换数据源）~~
+- [x] ~~spring-boot-demo-ratelimit-guava（限流保护API，集成Guava的RateLimiter）~~
+- [ ] spring-boot-demo-ratelimit-redis（限流保护API，使用 Redis 令牌桶）
+- [ ] spring-boot-demo-https（集成 HTTPS）
 
 ## 备注
 
