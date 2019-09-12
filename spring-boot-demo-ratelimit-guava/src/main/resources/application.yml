@@ -2,3 +2,6 @@ server:
   port: 8080
   servlet:
     context-path: /demo
+logging:
+  level:
+    com.xkcoding: debug
