@@ -61,8 +61,8 @@
 - [ ] spring-boot-demo-sso (integrated single sign on) see [ISSUE#12](https://github.com/xkcoding/spring-boot-demo/issues/12)
 - [x] ~~spring-boot-demo-ldap （integrated ldap）see [ISSUE#23](https://github.com/xkcoding/spring-boot-demo/issues/23)~~
 - [x] ~~spring-boot-demo-dynamic-datasource（add datasource dynamically, switch datasource dynamically）~~
-- [x] ~~spring-boot-demo-ratelimit-guava（use Guava RateLimiter to protect API by rate limiting）~~
-- [ ] spring-boot-demo-ratelimit-redis（use Redis Token bucket to protect API by rate limiting）
+- [x] ~~spring-boot-demo-ratelimit-guava（use Guava RateLimiter to protect API by standalone rate limiting）~~
+- [ ] spring-boot-demo-ratelimit-redis（use Redis Token bucket to protect API by cluster rate limiting）
 - [ ] spring-boot-demo-https（integrated HTTPS）
 
 ## Remarks

@@ -61,8 +61,8 @@
 - [ ] spring-boot-demo-sso（集成单点登录）参见 [ISSUE#12](https://github.com/xkcoding/spring-boot-demo/issues/12)
 - [x] ~~spring-boot-demo-ldap （集成 ldap）参见 [ISSUE#23](https://github.com/xkcoding/spring-boot-demo/issues/23)~~
 - [x] ~~spring-boot-demo-dynamic-datasource（动态添加数据源，切换数据源）~~
-- [x] ~~spring-boot-demo-ratelimit-guava（限流保护API，集成Guava的RateLimiter）~~
-- [ ] spring-boot-demo-ratelimit-redis（限流保护API，使用 Redis 令牌桶）
+- [x] ~~spring-boot-demo-ratelimit-guava（单机限流保护API，集成Guava的RateLimiter）~~
+- [ ] spring-boot-demo-ratelimit-redis（集群限流保护API，使用 Redis 令牌桶）
 - [ ] spring-boot-demo-https（集成 HTTPS）
 
 ## 备注
