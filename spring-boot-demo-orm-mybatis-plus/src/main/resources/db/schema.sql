@@ -11,3 +11,9 @@ CREATE TABLE `orm_user` (
   `last_login_time` DATETIME DEFAULT NULL COMMENT '上次登录时间',
   `last_update_time` DATETIME NOT NULL DEFAULT NOW() COMMENT '上次更新时间'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Spring Boot Demo Orm 系列示例表';
+
+DROP TABLE IF EXISTS  `orm_role`;
+CREATE TABLE `orm_role` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT '主键',
+  `name` VARCHAR(32) NOT NULL UNIQUE COMMENT '角色名'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Spring Boot Demo Orm 系列示例表';
