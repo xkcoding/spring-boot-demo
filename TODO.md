@@ -19,7 +19,7 @@
 - [x] ~~spring-boot-demo-orm-jpa（操作 SQL 关系型数据库 - JPA）~~
 - [x] ~~spring-boot-demo-orm-mybatis（操作 SQL 关系型数据库 - mybatis）~~
 - [x] ~~spring-boot-demo-orm-mybatis-mapper-page（操作 SQL 关系型数据库 - 集成mybatis通用Mapper,PageHelper）~~
-- [x] ~~spring-boot-demo-orm-mybatis-plus（操作 SQL 关系型数据库 - 集成mybatis-plus）~~
+- [x] ~~spring-boot-demo-orm-mybatis-plus（操作 SQL 关系型数据库 - 集成mybatis-plus，Mapper操作、ActiveRecord操作）~~
 - [x] ~~spring-boot-demo-orm-beetlsql（操作 SQL 关系型数据库 - beetlSQL）~~
 - [x] ~~spring-boot-demo-cache-redis（使用 redis 进行缓存）~~
 - [x] ~~spring-boot-demo-cache-ehcache（使用 Ehcache 进行缓存）~~

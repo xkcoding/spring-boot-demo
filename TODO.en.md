@@ -19,7 +19,7 @@
 - [x] ~~spring-boot-demo-orm-jpa (operating SQL Relational Database - JPA)~~
 - [x] ~~spring-boot-demo-orm-mybatis (operating SQL relational database - mybatis)~~
 - [x] ~~spring-boot-demo-orm-mybatis-mapper-page (operating SQL relational database - integrating mybatis generic Mapper, PageHelper)~~
-- [x] ~~spring-boot-demo-orm-mybatis-plus (operating SQL relational database - integrating mybatis-plus)~~
+- [x] ~~spring-boot-demo-orm-mybatis-plus (operating SQL relational database - integrating mybatis-plus, Mapper, ActiveRecord)~~
 - [x] ~~spring-boot-demo-orm-beetlsql (operating SQL relational database - beetlSQL)~~
 - [x] ~~spring-boot-demo-cache-redis (using redis for caching)~~
 - [x] ~~spring-boot-demo-cache-ehcache (using Ehcache for caching)~~
