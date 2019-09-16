@@ -65,6 +65,7 @@
     <module>spring-boot-demo-ldap</module>
     <module>spring-boot-demo-dynamic-datasource</module>
     <module>spring-boot-demo-ratelimit-guava</module>
+    <module>spring-boot-demo-elasticsearch-rest-high-level-client</module>
   </modules>
   <packaging>pom</packaging>
 
