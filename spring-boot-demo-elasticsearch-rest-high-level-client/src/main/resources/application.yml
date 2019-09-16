@@ -1,0 +1,5 @@
+demo:
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 20.20.0.27:9201
