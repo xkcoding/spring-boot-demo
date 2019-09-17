@@ -64,6 +64,7 @@
 - [x] ~~spring-boot-demo-ratelimit-guava（use Guava RateLimiter to protect API by standalone rate limiting）~~
 - [ ] spring-boot-demo-ratelimit-redis（use Redis Token bucket to protect API by cluster rate limiting）
 - [ ] spring-boot-demo-https（integrated HTTPS）
+- [x] ~~spring-boot-demo-elasticsearch-rest-high-level-client（integrated Elasticsearch 7.x version，use official Rest High Level Client to operate ES data）~~
 
 ## Remarks
 
