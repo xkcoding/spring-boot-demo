@@ -1,4 +1,4 @@
-package com.xlcoding.elasticsearch.contants;
+package com.xkcoding.elasticsearch.contants;
 
 /**
  * ElasticsearchConstant

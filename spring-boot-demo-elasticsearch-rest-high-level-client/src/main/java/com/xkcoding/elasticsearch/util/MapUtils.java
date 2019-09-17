@@ -1,4 +1,4 @@
-package com.xlcoding.elasticsearch.util;
+package com.xkcoding.elasticsearch.util;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;

@@ -1,4 +1,4 @@
-package com.xlcoding.elasticsearch;
+package com.xkcoding.elasticsearch;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -49,10 +49,24 @@
       <artifactId>spring-boot-configuration-processor</artifactId>
     </dependency>
 
+    <!-- 工具类 -->
+    <dependency>
+      <groupId>cn.hutool</groupId>
+      <artifactId>hutool-all</artifactId>
+      <version>4.6.6</version>
+    </dependency>
+
     <!-- elasticsearch -->
     <dependency>
       <groupId>org.elasticsearch</groupId>
       <artifactId>elasticsearch</artifactId>
+      <version>7.3.0</version>
+    </dependency>
+
+    <!-- elasticsearch-rest-client -->
+    <dependency>
+      <groupId>org.elasticsearch.client</groupId>
+      <artifactId>elasticsearch-rest-client</artifactId>
       <version>7.3.0</version>
     </dependency>
 
@@ -62,10 +76,10 @@
       <artifactId>elasticsearch-rest-high-level-client</artifactId>
       <version>7.3.0</version>
       <exclusions>
-<!--        <exclusion>-->
-<!--          <groupId>org.elasticsearch.client</groupId>-->
-<!--          <artifactId>elasticsearch-rest-client</artifactId>-->
-<!--        </exclusion>-->
+        <exclusion>
+          <groupId>org.elasticsearch.client</groupId>
+          <artifactId>elasticsearch-rest-client</artifactId>
+        </exclusion>
         <exclusion>
           <groupId>org.elasticsearch</groupId>
           <artifactId>elasticsearch</artifactId>

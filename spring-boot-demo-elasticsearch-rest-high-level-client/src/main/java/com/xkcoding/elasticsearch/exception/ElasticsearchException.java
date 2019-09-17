@@ -1,6 +1,6 @@
-package com.xlcoding.elasticsearch.exception;
+package com.xkcoding.elasticsearch.exception;
 
-import com.xlcoding.elasticsearch.model.ResultCode;
+import com.xkcoding.elasticsearch.model.ResultCode;
 import lombok.Getter;
 
 /**
