@@ -4,14 +4,12 @@ import com.xkcoding.elasticsearch.exception.ElasticsearchException;
 import com.xkcoding.elasticsearch.autoconfigure.ElasticsearchProperties;
 import com.xkcoding.elasticsearch.util.BeanUtils;
 import lombok.extern.slf4j.Slf4j;
-import org.elasticsearch.action.ActionListener;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
 import org.elasticsearch.action.delete.DeleteRequest;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.update.UpdateRequest;
-import org.elasticsearch.action.update.UpdateResponse;
 import org.elasticsearch.client.HttpAsyncResponseConsumerFactory;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
@@ -19,7 +17,6 @@ import org.elasticsearch.client.indices.CreateIndexRequest;
 import org.elasticsearch.client.indices.CreateIndexResponse;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.xcontent.XContentType;
-import org.elasticsearch.index.engine.Engine;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 
@@ -151,6 +148,8 @@ public abstract class BaseElasticsearchService {
 
     /**
      * search all
+     *
+     * @author fxbin
      * @param index elasticsearch index name
      * @return {@link SearchResponse}
      */
