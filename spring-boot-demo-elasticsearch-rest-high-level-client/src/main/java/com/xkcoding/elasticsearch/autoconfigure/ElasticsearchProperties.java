@@ -1,9 +1,6 @@
-package com.xlcoding.elasticsearch.autoconfigure;
+package com.xkcoding.elasticsearch.autoconfigure;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -70,21 +67,40 @@ public class ElasticsearchProperties {
     /**
      * 索引配置信息
      */
-    private Index index;
+    private Index index = new Index();
+
+    /**
+     * 认证账户
+     */
+    private Account account = new Account();
 
     @Data
-    @Builder
     public static class Index {
 
         /**
          * 分片数量
          */
-        protected Integer numberOfShards = 3;
+        private Integer numberOfShards = 3;
 
         /**
          * 副本数量
          */
-        protected Integer numberOfReplicas = 2;
+        private Integer numberOfReplicas = 2;
+
+    }
+
+    @Data
+    public static class Account {
+
+        /**
+         * 认证用户
+         */
+        private String username;
+
+        /**
+         * 认证密码
+         */
+        private String password;
 
     }
 

@@ -1,6 +1,10 @@
-package com.xlcoding.elasticsearch.autoconfigure;
+package com.xkcoding.elasticsearch.autoconfigure;
 
 import org.apache.http.HttpHost;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.client.CredentialsProvider;
+import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestClientBuilder;
 import org.elasticsearch.client.RestHighLevelClient;
@@ -78,6 +82,15 @@ public class ElasticsearchAutoConfiguration {
             httpClientBuilder.setMaxConnPerRoute(elasticsearchProperties.getMaxConnectPerRoute());
             return httpClientBuilder;
         });
+
+        // Callback used the basic credential auth
+        ElasticsearchProperties.Account account = elasticsearchProperties.getAccount();
+        if (!StringUtils.isEmpty(account.getUsername()) && !StringUtils.isEmpty(account.getUsername())) {
+            final CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+
+            credentialsProvider.setCredentials(AuthScope.ANY,
+                new UsernamePasswordCredentials(account.getUsername(), account.getPassword()));
+        }
         return new RestHighLevelClient(builder);
     }
 

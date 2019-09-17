@@ -1,4 +1,4 @@
-package com.xlcoding.elasticsearch.model;
+package com.xkcoding.elasticsearch.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
