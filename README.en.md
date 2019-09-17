@@ -20,9 +20,9 @@
 
 ## Introduction
 
-`spring boot demo` is a project for learning and practicing `spring boot`, including `59` demos, and `49` of them have been done.
+`spring boot demo` is a project for learning and practicing `spring boot`, including `63` demos, and `51` of them have been done.
 
-This project has integrated actuator (`monitoring`), admin (`visual monitoring`), logback (`log`), aopLog (`recording web request logs through AOP`), global exception handling (`json level and page level` ), freemarker (`template engine`), thymeleaf (`template engine`), Beetl (`template engine`), Enjoy (`template engine`), JdbcTemplate (`general JDBC operate database`), JPA (`powerful ORM framework `), mybatis (`powerful ORM framework`), Generic Mapper (`mybatis quick operation `), PageHelper (`powerful mybatis pagination plugin`), mybatis-plus (`mybatis quick operation`), BeetlSQL (`powerful ORM framework `), upload (`local file upload and qiniu cloud file upload`), redis (`cache`), ehcache (`cache`), email (`send various types of mail`), task (`basic scheduled tasks`), quartz (`dynamic management scheduled tasks`), xxl-job (`distributed scheduled tasks`), swagger (`API interface management and tests`), security (`RBAC-based Dynamic Rights Authentication`), SpringSession (`session sharing`), Zookeeper (`implement distributed locks by AOP`), RabbitMQ (`message queue`), Kafka (`message queue`), websocket (` server pushes the monitoring server status to front end `), socket.io (`chat room`), ureport2 (`Chinese-style report`), packaged into a `war` file, integrates ElasticSearch (`basic operations and advanced queries`), Async ( `asynchronous tasks`), integrated Dubbo (`with official starter`), MongoDB (`document database`), neo4j (`graph database`), docker (`container`), `JPA Multi-Datasource`, `Mybatis Multi-Datasource`, `code generator`', GrayLog (`log collection`), JustAuth (`third-party login`), LDAP(`CURD`), `Dynamically add/switch datasources`, Standalone RateLimiting(`AOP + Guava RateLimiter`).
+This project has integrated actuator (`monitoring`), admin (`visual monitoring`), logback (`log`), aopLog (`recording web request logs through AOP`), global exception handling (`json level and page level` ), freemarker (`template engine`), thymeleaf (`template engine`), Beetl (`template engine`), Enjoy (`template engine`), JdbcTemplate (`general JDBC operate database`), JPA (`powerful ORM framework `), mybatis (`powerful ORM framework`), Generic Mapper (`mybatis quick operation `), PageHelper (`powerful mybatis pagination plugin`), mybatis-plus (`mybatis quick operation`), BeetlSQL (`powerful ORM framework `), upload (`local file upload and qiniu cloud file upload`), redis (`cache`), ehcache (`cache`), email (`send various types of mail`), task (`basic scheduled tasks`), quartz (`dynamic management scheduled tasks`), xxl-job (`distributed scheduled tasks`), swagger (`API interface management and tests`), security (`RBAC-based Dynamic Rights Authentication`), SpringSession (`session sharing`), Zookeeper (`implement distributed locks by AOP`), RabbitMQ (`message queue`), Kafka (`message queue`), websocket (` server pushes the monitoring server status to front end `), socket.io (`chat room`), ureport2 (`Chinese-style report`), packaged into a `war` file, integrate ElasticSearch (`basic operations and advanced queries`), Async ( `asynchronous tasks`), integrated Dubbo (`with official starter`), MongoDB (`document database`), neo4j (`graph database`), docker (`container`), `JPA Multi-Datasource`, `Mybatis Multi-Datasource`, `code generator`', GrayLog (`log collection`), JustAuth (`third-party login`), LDAP(`CURD`), `Dynamically add/switch datasources`, Standalone RateLimiting(`AOP + Guava RateLimiter`), ElasticSearch 7.x(`use official Rest High Level Client`).
 
 > If you have demos to contribute or needs to meet, it is very welcome to submit a [issue](https://github.com/xkcoding/spring-boot-demo/issues/new) and I will add it to my [TODO](./TODO.en.md) list.
 
@@ -124,6 +124,7 @@ View the [TODO](./TODO.en.md) file
 | [spring-boot-demo-ratelimit-guava](./spring-boot-demo-ratelimit-guava) | a demo to use use Guava RateLimiter to protect API  by standalone rate limiting. |
 | spring-boot-demo-ratelimit-redis                             | <span style="color:pink;">NOT FINISHED YET!</span> <br />a demo to use use Redis Token Bucket to protect API  by cluster rate limiting. |
 | spring-boot-demo-https                                       | <span style="color:pink;">NOT FINISHED YET!</span> <br />a demo to integrate HTTPS. |
+| [spring-boot-demo-elasticsearch-rest-high-level-client](./spring-boot-demo-elasticsearch-rest-high-level-client) | a demo to integrate ElasticSearch 7.x version by using official Rest High Level Client to operate ES data. |
 
 ## License
 
@@ -207,6 +208,7 @@ Copyright (c) 2018 Yangkai.Shen
     <module>spring-boot-demo-ldap</module>
     <module>spring-boot-demo-dynamic-datasource</module>
     <module>spring-boot-demo-ratelimit-guava</module>
+    <module>spring-boot-demo-elasticsearch-rest-high-level-client</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -221,7 +223,7 @@ Copyright (c) 2018 Yangkai.Shen
     <maven.compiler.target>1.8</maven.compiler.target>
     <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
     <mysql.version>8.0.12</mysql.version>
-    <hutool.version>4.6.5</hutool.version>
+    <hutool.version>4.6.6</hutool.version>
     <guava.version>28.1-jre</guava.version>
     <user.agent.version>1.20</user.agent.version>
   </properties>
