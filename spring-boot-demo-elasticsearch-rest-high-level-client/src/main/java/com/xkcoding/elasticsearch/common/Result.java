@@ -1,4 +1,4 @@
-package com.xkcoding.elasticsearch.model;
+package com.xkcoding.elasticsearch.common;
 
 import lombok.Data;
 import org.springframework.lang.Nullable;

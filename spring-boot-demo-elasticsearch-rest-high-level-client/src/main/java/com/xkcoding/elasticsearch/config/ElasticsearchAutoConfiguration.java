@@ -1,5 +1,6 @@
-package com.xkcoding.elasticsearch.autoconfigure;
+package com.xkcoding.elasticsearch.config;
 
+import lombok.RequiredArgsConstructor;
 import org.apache.http.HttpHost;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
@@ -8,14 +9,14 @@ import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestClientBuilder;
 import org.elasticsearch.client.RestHighLevelClient;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
 
-import javax.annotation.Resource;
-import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,13 +27,12 @@ import java.util.List;
  * @version v1.0
  * @since 2019/9/15 22:59
  */
+@Configuration
+@RequiredArgsConstructor(onConstructor_ = @Autowired)
 @EnableConfigurationProperties(ElasticsearchProperties.class)
 public class ElasticsearchAutoConfiguration {
 
-    @SuppressWarnings("NullableProblems")
-    @NotNull
-    @Resource
-    private ElasticsearchProperties elasticsearchProperties;
+    private final ElasticsearchProperties elasticsearchProperties;
 
     private List<HttpHost> httpHosts = new ArrayList<>();
 
@@ -48,8 +48,7 @@ public class ElasticsearchAutoConfiguration {
                 Assert.state(parts.length == 2, "Must be defined as 'host:port'");
                 httpHosts.add(new HttpHost(parts[0], Integer.parseInt(parts[1]), elasticsearchProperties.getSchema()));
             } catch (Exception e) {
-                throw new IllegalStateException(
-                    "Invalid ES nodes " + "property '" + node + "'", e);
+                throw new IllegalStateException("Invalid ES nodes " + "property '" + node + "'", e);
             }
         });
         RestClientBuilder builder = RestClient.builder(httpHosts.toArray(new HttpHost[0]));
@@ -61,10 +60,10 @@ public class ElasticsearchAutoConfiguration {
     /**
      * get restHistLevelClient
      *
-     * @author fxbin
-     * @param builder RestClientBuilder
+     * @param builder                 RestClientBuilder
      * @param elasticsearchProperties elasticsearch default properties
      * @return {@link org.elasticsearch.client.RestHighLevelClient}
+     * @author fxbin
      */
     private static RestHighLevelClient getRestHighLevelClient(RestClientBuilder builder, ElasticsearchProperties elasticsearchProperties) {
 
@@ -88,11 +87,9 @@ public class ElasticsearchAutoConfiguration {
         if (!StringUtils.isEmpty(account.getUsername()) && !StringUtils.isEmpty(account.getUsername())) {
             final CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
 
-            credentialsProvider.setCredentials(AuthScope.ANY,
-                new UsernamePasswordCredentials(account.getUsername(), account.getPassword()));
+            credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials(account.getUsername(), account.getPassword()));
         }
         return new RestHighLevelClient(builder);
     }
-
 
 }

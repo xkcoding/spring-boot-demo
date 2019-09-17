@@ -1,6 +1,6 @@
 package com.xkcoding.elasticsearch.exception;
 
-import com.xkcoding.elasticsearch.model.ResultCode;
+import com.xkcoding.elasticsearch.common.ResultCode;
 import lombok.Getter;
 
 /**

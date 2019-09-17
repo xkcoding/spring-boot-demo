@@ -1,8 +1,8 @@
 # spring-boot-demo-elasticsearch-rest-high-level-client
 
-> 此 demo 主要演示了 Spring Boot 如何集成 `elasticsearch-rest-high-level-client` 完成对 ElasticSearch 的基本CURD 操作 
+> 此 demo 主要演示了 Spring Boot 如何集成 `elasticsearch-rest-high-level-client` 完成对 `ElasticSearch 7.x` 版本的基本 CURD 操作 
 
-## elasticsearch 升级
+## Elasticsearch 升级
 
 先升级到 6.8，索引创建，设置 mapping 等操作加参数：include_type_name=true，然后滚动升级到 7，旧索引可以用 type 访问。具体可以参考：
 
@@ -12,17 +12,18 @@ https://www.elastic.co/guide/en/elasticsearch/reference/7.0/removal-of-types.htm
 
 ## 注意
 
-作者编写本demo时，ElasticSearch版本为 `7.3.0`，使用 docker 运行，下面是所有步骤：
+作者编写本 demo 时，ElasticSearch 版本为 `7.3.0`，使用 docker 运行，下面是所有步骤：
 
-1. 下载镜像：`docker pull elasticsearch:7.3.0`
+1.下载镜像：`docker pull elasticsearch:7.3.0`
 
-2. 下载安装 `docker-compose`
-```
+2.下载安装 `docker-compose`，参考文档： https://docs.docker.com/compose/install/
+
+```bash
 sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-参考文档： https://docs.docker.com/compose/install/
 ```
 
-2. 编写docker-compose 文件
+3.编写docker-compose 文件
+
 ```yaml
 version: "3"
 
@@ -47,8 +48,7 @@ services:
         max-size: "50m"
 
 ```
-3. 启动: `docker-compose -f elasticsearch.yaml up -d`
-
+4.启动: `docker-compose -f elasticsearch.yaml up -d`
 
 ## pom.xml
 
@@ -108,7 +108,6 @@ services:
     <dependency>
       <groupId>cn.hutool</groupId>
       <artifactId>hutool-all</artifactId>
-      <version>4.6.6</version>
     </dependency>
 
     <!-- elasticsearch -->
@@ -151,8 +150,17 @@ services:
 
   </dependencies>
 
-</project>
+  <build>
+    <finalName>spring-boot-demo-elasticsearch-rest-high-level-client</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
 
+</project>
 ```
 
 ## Person.java
@@ -217,7 +225,6 @@ public class Person implements Serializable {
     private String remark;
 
 }
-
 ```
 
 ## PersonService.java
@@ -291,7 +298,6 @@ public interface PersonService {
     List<Person> searchList(String index);
 
 }
-
 ```
 
 ## PersonServiceImpl.java
@@ -303,7 +309,7 @@ package com.xkcoding.elasticsearch.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.xkcoding.elasticsearch.model.Person;
-import com.xkcoding.elasticsearch.service.BaseElasticsearchService;
+import com.xkcoding.elasticsearch.service.base.BaseElasticsearchService;
 import com.xkcoding.elasticsearch.service.PersonService;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchResponse;
@@ -326,7 +332,6 @@ import java.util.Map;
  */
 @Service
 public class PersonServiceImpl extends BaseElasticsearchService implements PersonService {
-
 
     @Override
     public void createIndex(String index) {
@@ -390,7 +395,6 @@ public class PersonServiceImpl extends BaseElasticsearchService implements Perso
         return personList;
     }
 }
-
 ```
 
 
@@ -406,10 +410,10 @@ import com.xkcoding.elasticsearch.model.Person;
 import com.xkcoding.elasticsearch.service.PersonService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -418,22 +422,30 @@ import java.util.List;
 @SpringBootTest
 public class ElasticsearchApplicationTests {
 
-    @Resource
+    @Autowired
     private PersonService personService;
 
+    /**
+     * 测试删除索引
+     */
     @Test
     public void deleteIndexTest() {
         personService.deleteIndex(ElasticsearchConstant.INDEX_NAME);
     }
 
+    /**
+     * 测试创建索引
+     */
     @Test
     public void createIndexTest() {
         personService.createIndex(ElasticsearchConstant.INDEX_NAME);
     }
 
+    /**
+     * 测试新增
+     */
     @Test
     public void insertTest() {
-
         List<Person> list = new ArrayList<>();
         list.add(Person.builder().age(11).birthday(new Date()).country("CN").id(1L).name("哈哈").remark("test1").build());
         list.add(Person.builder().age(22).birthday(new Date()).country("US").id(2L).name("hiahia").remark("test2").build());
@@ -442,6 +454,9 @@ public class ElasticsearchApplicationTests {
         personService.insert(ElasticsearchConstant.INDEX_NAME, list);
     }
 
+    /**
+     * 测试更新
+     */
     @Test
     public void updateTest() {
         Person person = Person.builder().age(33).birthday(new Date()).country("ID_update").id(3L).name("呵呵update").remark("test3_update").build();
@@ -450,24 +465,29 @@ public class ElasticsearchApplicationTests {
         personService.update(ElasticsearchConstant.INDEX_NAME, list);
     }
 
+    /**
+     * 测试删除
+     */
     @Test
     public void deleteTest() {
         personService.delete(ElasticsearchConstant.INDEX_NAME, Person.builder().id(1L).build());
     }
 
+    /**
+     * 测试查询
+     */
     @Test
     public void searchListTest() {
         List<Person> personList = personService.searchList(ElasticsearchConstant.INDEX_NAME);
         System.out.println(personList);
     }
 
-
 }
-
 ```
 
 ## 参考
 
-1. ElasticSearch 官方文档：https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
-2. Java High Level REST Client：https://www.elastic.co/guide/en/elasticsearch/client/java-rest/7.3/java-rest-high.html
+- ElasticSearch 官方文档：https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
+
+- Java High Level REST Client：https://www.elastic.co/guide/en/elasticsearch/client/java-rest/7.3/java-rest-high.html
 

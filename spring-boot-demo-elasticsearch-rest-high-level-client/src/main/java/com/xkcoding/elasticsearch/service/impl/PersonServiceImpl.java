@@ -2,7 +2,7 @@ package com.xkcoding.elasticsearch.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.xkcoding.elasticsearch.model.Person;
-import com.xkcoding.elasticsearch.service.BaseElasticsearchService;
+import com.xkcoding.elasticsearch.service.base.BaseElasticsearchService;
 import com.xkcoding.elasticsearch.service.PersonService;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchResponse;
@@ -25,7 +25,6 @@ import java.util.Map;
  */
 @Service
 public class PersonServiceImpl extends BaseElasticsearchService implements PersonService {
-
 
     @Override
     public void createIndex(String index) {

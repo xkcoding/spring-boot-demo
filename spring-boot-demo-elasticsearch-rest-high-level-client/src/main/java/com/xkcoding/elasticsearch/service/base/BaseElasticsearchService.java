@@ -1,8 +1,8 @@
-package com.xkcoding.elasticsearch.service;
+package com.xkcoding.elasticsearch.service.base;
 
+import cn.hutool.core.bean.BeanUtil;
+import com.xkcoding.elasticsearch.config.ElasticsearchProperties;
 import com.xkcoding.elasticsearch.exception.ElasticsearchException;
-import com.xkcoding.elasticsearch.autoconfigure.ElasticsearchProperties;
-import com.xkcoding.elasticsearch.util.BeanUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
 import org.elasticsearch.action.delete.DeleteRequest;
@@ -45,31 +45,26 @@ public abstract class BaseElasticsearchService {
         RequestOptions.Builder builder = RequestOptions.DEFAULT.toBuilder();
 
         // 默认缓冲限制为100MB，此处修改为30MB。
-        builder.setHttpAsyncResponseConsumerFactory(
-            new HttpAsyncResponseConsumerFactory
-                .HeapBufferedResponseConsumerFactory(30 * 1024 * 1024));
+        builder.setHttpAsyncResponseConsumerFactory(new HttpAsyncResponseConsumerFactory.HeapBufferedResponseConsumerFactory(30 * 1024 * 1024));
         COMMON_OPTIONS = builder.build();
     }
 
     /**
      * create elasticsearch index (asyc)
      *
-     * @author fxbin
      * @param index elasticsearch index
+     * @author fxbin
      */
     protected void createIndexRequest(String index) {
         try {
             CreateIndexRequest request = new CreateIndexRequest(index);
             // Settings for this index
-            request.settings(Settings.builder()
-                .put("index.number_of_shards", elasticsearchProperties.getIndex().getNumberOfShards())
-                .put("index.number_of_replicas", elasticsearchProperties.getIndex().getNumberOfReplicas()));
+            request.settings(Settings.builder().put("index.number_of_shards", elasticsearchProperties.getIndex().getNumberOfShards()).put("index.number_of_replicas", elasticsearchProperties.getIndex().getNumberOfReplicas()));
 
             CreateIndexResponse createIndexResponse = client.indices().create(request, COMMON_OPTIONS);
 
             log.info(" whether all of the nodes have acknowledged the request : {}", createIndexResponse.isAcknowledged());
-            log.info(" Indicates whether the requisite number of shard copies were started for each shard in the index before timing out :{}",
-                    createIndexResponse.isShardsAcknowledged());
+            log.info(" Indicates whether the requisite number of shard copies were started for each shard in the index before timing out :{}", createIndexResponse.isShardsAcknowledged());
         } catch (IOException e) {
             throw new ElasticsearchException("创建索引 {" + index + "} 失败");
         }
@@ -78,8 +73,8 @@ public abstract class BaseElasticsearchService {
     /**
      * delete elasticsearch index
      *
-     * @author fxbin
      * @param index elasticsearch index name
+     * @author fxbin
      */
     protected void deleteIndexRequest(String index) {
         DeleteIndexRequest deleteIndexRequest = buildDeleteIndexRequest(index);
@@ -93,37 +88,37 @@ public abstract class BaseElasticsearchService {
     /**
      * build DeleteIndexRequest
      *
-     * @author fxbin
      * @param index elasticsearch index name
+     * @author fxbin
      */
-    private static DeleteIndexRequest buildDeleteIndexRequest (String index) {
+    private static DeleteIndexRequest buildDeleteIndexRequest(String index) {
         return new DeleteIndexRequest(index);
     }
 
     /**
      * build IndexRequest
      *
-     * @author fxbin
-     * @param index elasticsearch index name
-     * @param id request object id
+     * @param index  elasticsearch index name
+     * @param id     request object id
      * @param object request object
      * @return {@link org.elasticsearch.action.index.IndexRequest}
+     * @author fxbin
      */
     protected static IndexRequest buildIndexRequest(String index, String id, Object object) {
-        return new IndexRequest(index).id(id).source(BeanUtils.toMap(object), XContentType.JSON);
+        return new IndexRequest(index).id(id).source(BeanUtil.beanToMap(object), XContentType.JSON);
     }
 
     /**
      * exec updateRequest
      *
-     * @author fxbin
-     * @param index elasticsearch index name
-     * @param id Document id
+     * @param index  elasticsearch index name
+     * @param id     Document id
      * @param object request object
+     * @author fxbin
      */
     protected void updateRequest(String index, String id, Object object) {
         try {
-            UpdateRequest updateRequest = new UpdateRequest(index, id).doc(BeanUtils.toMap(object), XContentType.JSON);
+            UpdateRequest updateRequest = new UpdateRequest(index, id).doc(BeanUtil.beanToMap(object), XContentType.JSON);
             client.update(updateRequest, COMMON_OPTIONS);
         } catch (IOException e) {
             throw new ElasticsearchException("更新索引 {" + index + "} 数据 {" + object + "} 失败");
@@ -133,9 +128,9 @@ public abstract class BaseElasticsearchService {
     /**
      * exec deleteRequest
      *
-     * @author fxbin
      * @param index elasticsearch index name
-     * @param id Document id
+     * @param id    Document id
+     * @author fxbin
      */
     protected void deleteRequest(String index, String id) {
         try {
@@ -149,9 +144,9 @@ public abstract class BaseElasticsearchService {
     /**
      * search all
      *
-     * @author fxbin
      * @param index elasticsearch index name
      * @return {@link SearchResponse}
+     * @author fxbin
      */
     protected SearchResponse search(String index) {
         SearchRequest searchRequest = new SearchRequest(index);

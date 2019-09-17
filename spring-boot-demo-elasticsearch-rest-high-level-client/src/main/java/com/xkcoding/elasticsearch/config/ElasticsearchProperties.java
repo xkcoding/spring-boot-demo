@@ -1,4 +1,4 @@
-package com.xkcoding.elasticsearch.autoconfigure;
+package com.xkcoding.elasticsearch.config;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -77,6 +77,9 @@ public class ElasticsearchProperties {
      */
     private Account account = new Account();
 
+    /**
+     * 索引配置信息
+     */
     @Data
     public static class Index {
 
@@ -92,6 +95,9 @@ public class ElasticsearchProperties {
 
     }
 
+    /**
+     * 认证账户
+     */
     @Data
     public static class Account {
 

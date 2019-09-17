@@ -53,7 +53,6 @@
     <dependency>
       <groupId>cn.hutool</groupId>
       <artifactId>hutool-all</artifactId>
-      <version>4.6.6</version>
     </dependency>
 
     <!-- elasticsearch -->
@@ -95,5 +94,15 @@
     </dependency>
 
   </dependencies>
+
+  <build>
+    <finalName>spring-boot-demo-elasticsearch-rest-high-level-client</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
