@@ -1,6 +1,6 @@
 # spring-boot-demo-ratelimit-redis
 
-> 此 demo 主要演示了 Spring Boot 项目如何通过 AOP 结合 Redis 实现分布式限流，旨在保护 API 被恶意频繁访问的问题，是 `spring-boot-demo-ratelimit-guava` 的升级版。
+> 此 demo 主要演示了 Spring Boot 项目如何通过 AOP 结合 Redis + Lua 脚本实现分布式限流，旨在保护 API 被恶意频繁访问的问题，是 `spring-boot-demo-ratelimit-guava` 的升级版。
 
 ## 1. 主要代码
 
