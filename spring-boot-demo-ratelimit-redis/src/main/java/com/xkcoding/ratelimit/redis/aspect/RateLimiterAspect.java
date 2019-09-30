@@ -52,9 +52,9 @@ public class RateLimiterAspect {
         RateLimiter rateLimiter = AnnotationUtils.findAnnotation(method, RateLimiter.class);
         if (rateLimiter != null) {
             String key = rateLimiter.key();
-            // 默认用方法名做限流的 key 前缀
+            // 默认用类名+方法名做限流的 key 前缀
             if (StrUtil.isBlank(key)) {
-                key = method.getName();
+                key = method.getDeclaringClass().getName()+StrUtil.DOT+method.getName();
             }
             // 最终限流的 key 为 前缀 + IP地址
             // TODO: 此时需要考虑局域网多用户访问的情况，因此 key 后续需要加上方法参数更加合理
