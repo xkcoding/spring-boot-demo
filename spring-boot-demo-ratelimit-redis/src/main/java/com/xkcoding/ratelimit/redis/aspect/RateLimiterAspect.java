@@ -75,7 +75,7 @@ public class RateLimiterAspect {
     private boolean shouldLimited(String key, long max, long timeout, TimeUnit timeUnit) {
         // 最终的 key 格式为：
         // limit:自定义key:IP
-        // limit:方法名:IP
+        // limit:类名.方法名:IP
         key = REDIS_LIMIT_KEY_PREFIX + key;
         // 统一使用单位毫秒
         long ttl = timeUnit.toMillis(timeout);
