@@ -10,11 +10,11 @@ local max = tonumber(ARGV[4])
 -- 移除指定分数区间内的所有元素，expired 即已经过期的 score
 -- 根据当前时间毫秒数 - 超时毫秒数，得到过期时间 expired
 redis.call('zremrangebyscore', key, 0, expired)
--- 获取 zset 中的元素个数
-local current = tonumber(redis.call('zcard', key))
 
---
+-- 获取 zset 中的当前元素个数
+local current = tonumber(redis.call('zcard', key))
 local next = current + 1
+
 if next > max then
   -- 达到限流大小 返回 0
   return 0;
