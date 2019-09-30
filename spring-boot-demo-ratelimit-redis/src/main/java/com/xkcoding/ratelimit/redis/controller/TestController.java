@@ -31,7 +31,7 @@ public class TestController {
         return Dict.create().set("msg", "hello,world!").set("description", "我一直都在，卟离卟弃");
     }
 
-    @RateLimiter(value = 2)
+    @RateLimiter(value = 2, key = "测试自定义key")
     @GetMapping("/test3")
     public Dict test3() {
         log.info("【test3】被执行了。。。。。");
