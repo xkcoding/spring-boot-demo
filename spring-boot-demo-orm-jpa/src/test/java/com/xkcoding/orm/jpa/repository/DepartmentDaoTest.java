@@ -67,7 +67,7 @@ public class DepartmentDaoTest extends SpringBootDemoOrmJpaApplicationTests {
 
         departmentDao.findById(2L).ifPresent(dept -> {
             Collection<User> userlist = dept.getUserList();
-            //关联关系由user维护中间表，department userlist不会发生变化，可以增加查询方法来处理
+            //关联关系由user维护中间表，department userlist不会发生变化，可以增加查询方法来处理  重写getUserList方法
             log.debug("部门下用户={}", JSONArray.toJSONString((List)userlist));
         });
 

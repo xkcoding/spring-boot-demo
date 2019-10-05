@@ -51,13 +51,16 @@ public class Department extends AbstractAuditModel {
      */
     @Column(name = "orderno", columnDefinition = "int not null default 0")
     private Integer orderno;
-
+    /**
+     * 子部门集合
+     */
     @OneToMany(cascade={CascadeType.REFRESH, CascadeType.REMOVE}, fetch = FetchType.EAGER,mappedBy="superior")
     private Collection<Department> children;
 
-
+    /**
+     * 部门下用户集合
+     */
     @ManyToMany(mappedBy = "departmentList")
     private Collection<User> userList;
-
 
 }
