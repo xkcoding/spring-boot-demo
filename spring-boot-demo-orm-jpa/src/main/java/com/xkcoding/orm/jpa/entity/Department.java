@@ -38,8 +38,8 @@ public class Department extends AbstractAuditModel {
     /**
      * 上级部门id
      */
-    @ManyToOne(cascade = {CascadeType.REFRESH},optional = true)
-    @JoinColumn(name = "superior",referencedColumnName = "id")
+    @ManyToOne(cascade = {CascadeType.REFRESH}, optional = true)
+    @JoinColumn(name = "superior", referencedColumnName = "id")
     private Department superior;
     /**
      * 所属层级
@@ -49,12 +49,12 @@ public class Department extends AbstractAuditModel {
     /**
      * 排序
      */
-    @Column(name = "orderno", columnDefinition = "int not null default 0")
-    private Integer orderno;
+    @Column(name = "order_no", columnDefinition = "int not null default 0")
+    private Integer orderNo;
     /**
      * 子部门集合
      */
-    @OneToMany(cascade={CascadeType.REFRESH, CascadeType.REMOVE}, fetch = FetchType.EAGER,mappedBy="superior")
+    @OneToMany(cascade = {CascadeType.REFRESH, CascadeType.REMOVE}, fetch = FetchType.EAGER, mappedBy = "superior")
     private Collection<Department> children;
 
     /**

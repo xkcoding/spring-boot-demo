@@ -4,7 +4,7 @@ import com.xkcoding.orm.jpa.entity.Department;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Collection;
+import java.util.List;
 
 
 /**
@@ -22,5 +22,11 @@ import java.util.Collection;
  */
 @Repository
 public interface DepartmentDao extends JpaRepository<Department, Long> {
-    public Collection<Department> findDepartmentsByLevels(Integer level);
+    /**
+     * 根据层级查询部门
+     *
+     * @param level 层级
+     * @return 部门列表
+     */
+    List<Department> findDepartmentsByLevels(Integer level);
 }
