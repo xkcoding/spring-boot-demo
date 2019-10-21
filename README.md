@@ -26,9 +26,9 @@
 
 > 如果大家还有想要集成的demo，也可在 [issue](https://github.com/xkcoding/spring-boot-demo/issues/new) 里提需求。我会额外添加在 [TODO](./TODO.md) 列表里。✊
 
-## 赞助
+## 感谢
 
-<a href="https://www.jetbrains.com/?from=spring-boot-demo"><img src="assets/jetbrains.png" width="100px" alt="jetbrains"></a>
+<a href="https://www.jetbrains.com/?from=spring-boot-demo"><img src="assets/jetbrains.png" width="100px" alt="jetbrains">**感谢 JetBrains 提供的免费开源 License**</a>
 
 ## 分支介绍
 
@@ -356,3 +356,7 @@ Copyright (c) 2018 Yangkai.Shen
 - `awesome-collector`：https://github.com/P-P-X/awesome-collector
 - `SpringBlade`：完整的线上解决方案(企业开发必备)，https://github.com/chillzhuang/SpringBlade
 - `Pig`：宇宙最强微服务认证授权脚手架(架构师必备)，https://github.com/pigxcloud/pig
+
+### 广告
+
+[![京东云主机](assets/jdcloud.jpg)](https://re.jdcloud.com/cps?returnUrl=aHR0cHM6Ly93d3cuamRjbG91ZC5jb20vY24vYWN0aXZpdHkveWVhci1lbmQ_bUlkPTE4JmNwc0tleT1iMjg2Y2Q0ZmExMWM0ODZhODU2NmUwNjc5MGQ0MzY4MA==)

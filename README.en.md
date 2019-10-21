@@ -26,9 +26,9 @@ This project has integrated actuator (`monitoring`), admin (`visual monitoring`)
 
 > If you have demos to contribute or needs to meet, it is very welcome to submit a [issue](https://github.com/xkcoding/spring-boot-demo/issues/new) and I will add it to my [TODO](./TODO.en.md) list.
 
-## Sponsers
+## Thanks
 
-<a href="https://www.jetbrains.com/?from=spring-boot-demo"><img src="assets/jetbrains.png" width="100px" alt="jetbrains"></a>
+<a href="https://www.jetbrains.com/?from=spring-boot-demo"><img src="assets/jetbrains.png" width="100px" alt="jetbrains">**Thanks JetBrains Offer Open Source Free License**</a>
 
 ## Branch Introduction
 
@@ -356,3 +356,7 @@ Copyright (c) 2018 Yangkai.Shen
 - `awesome-collector`：https://github.com/P-P-X/awesome-collector
 - `SpringBlade`：Complete micro-service online solution (required for enterprise development)，https://github.com/chillzhuang/SpringBlade
 - `Pig`：The universe's strongest micro-service certification authorized scaffolding (architect necessary)，https://github.com/pigxcloud/pig
+
+### Advertisement
+
+[![JD_CLOUD](assets/jdcloud.jpg)](https://re.jdcloud.com/cps?returnUrl=aHR0cHM6Ly93d3cuamRjbG91ZC5jb20vY24vYWN0aXZpdHkveWVhci1lbmQ_bUlkPTE4JmNwc0tleT1iMjg2Y2Q0ZmExMWM0ODZhODU2NmUwNjc5MGQ0MzY4MA==)
