@@ -1,6 +1,6 @@
 # spring-boot-demo 项目待办列表
 
-## 模块计划(已完成：52 / 63)
+## 模块计划(已完成：52 / 65)
 
 - [x] ~~spring-boot-demo-helloworld（Helloworld 示例）~~
 - [x] ~~spring-boot-demo-properties（读取配置文件信息）~~
@@ -65,6 +65,8 @@
 - [x] ~~spring-boot-demo-ratelimit-redis（分布式限流保护API，使用 Redis + lua 脚本实现）~~
 - [ ] spring-boot-demo-https（集成 HTTPS）
 - [x] ~~spring-boot-demo-elasticsearch-rest-high-level-client（集成 Elasticsearch 7.x 版本，使用官方 rest high level client操作 ES 数据）~~
+- [ ] spring-boot-demo-springbatch（数据处理）
+- [ ] spring-boot-demo-security-justauth（使用 JustAuth 登录 GitHub，使用 Security 管理登录状态）
 
 ## 备注
 
