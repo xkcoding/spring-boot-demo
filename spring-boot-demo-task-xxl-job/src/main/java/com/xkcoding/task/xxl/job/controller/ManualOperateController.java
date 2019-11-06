@@ -44,6 +44,7 @@ public class ManualOperateController {
 
     /**
      * 分页任务列表
+     *
      * @param page 当前页，第一页 -> 0
      * @param size 每页条数，默认10
      * @return 分页任务列表
@@ -123,7 +124,7 @@ public class ManualOperateController {
     }
 
     /**
-     * 测试手动停止任务
+     * 测试手动启动任务
      */
     @GetMapping("/start")
     public String xxlJobStart() {
