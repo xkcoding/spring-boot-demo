@@ -79,16 +79,17 @@ public class ElasticsearchAutoConfiguration {
         builder.setHttpClientConfigCallback(httpClientBuilder -> {
             httpClientBuilder.setMaxConnTotal(elasticsearchProperties.getMaxConnectTotal());
             httpClientBuilder.setMaxConnPerRoute(elasticsearchProperties.getMaxConnectPerRoute());
+
+            // Callback used the basic credential auth
+            ElasticsearchProperties.Account account = elasticsearchProperties.getAccount();
+            if (!StringUtils.isEmpty(account.getUsername()) && !StringUtils.isEmpty(account.getUsername())) {
+                final CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+                credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials(account.getUsername(), account.getPassword()));
+                httpClientBuilder.setDefaultCredentialsProvider(credentialsProvider);
+            }
             return httpClientBuilder;
         });
 
-        // Callback used the basic credential auth
-        ElasticsearchProperties.Account account = elasticsearchProperties.getAccount();
-        if (!StringUtils.isEmpty(account.getUsername()) && !StringUtils.isEmpty(account.getUsername())) {
-            final CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
-
-            credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials(account.getUsername(), account.getPassword()));
-        }
         return new RestHighLevelClient(builder);
     }
 
