@@ -26,7 +26,7 @@
 
 > 如果大家还有想要集成的demo，也可在 [issue](https://github.com/xkcoding/spring-boot-demo/issues/new) 里提需求。我会额外添加在 [TODO](./TODO.md) 列表里。✊
 
-## 感谢
+## 感谢 鸿枫
 
 <a href="https://www.jetbrains.com/?from=spring-boot-demo"><img src="assets/jetbrains.png" width="100px" alt="jetbrains">**感谢 JetBrains 提供的免费开源 License**</a>
 
