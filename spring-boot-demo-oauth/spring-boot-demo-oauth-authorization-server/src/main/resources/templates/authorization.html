@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/common::_header">
+  <title>确认您的授权信息</title>
+</head>
+<body>
+<div id="app">
+  <v-app>
+    <v-content>
+      <v-row class="fill-height align-sm-center" justify="center">
+        <v-col class="pa-0">
+          <v-card id="form-card" class="px-6 pb-7 px-sm-10 pb-sm-9 mx-auto" outlined>
+            <v-form ref="auth" id="auth" th:action="@{/oauth/authorize}" method="post">
+              <v-spacer class="pt-6 pt-sm-12"></v-spacer>
+              <v-card-title class="justify-center headline">
+                确认应用的授权信息
+              </v-card-title>
+              <div class="text-center" style="height:44px">
+                <v-btn outlined rounded th:text="'客户端:' + ${#strings.toUpperCase(clientId)}"></v-btn>
+              </div>
+              <v-spacer></v-spacer>
+              <v-list shaped>
+                <v-subheader>当前应用将会获取您的以下权限：</v-subheader>
+                <v-list-item-group color="primary">
+                  <v-list-item th:each="scope : ${scopes}">
+                    <v-list-item-content>
+                      <input type="hidden" th:name="'scope.' + ${scope}" value="true">
+                      <v-list-item-title th:text="${#strings.toUpperCase(scope)}"></v-list-item-title>
+                    </v-list-item-content>
+                  </v-list-item>
+                </v-list-item-group>
+              </v-list>
+              <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
+              <input type="hidden" name="user_oauth_approval" value="true">
+              <v-card-actions class="mt-6">
+                <v-spacer></v-spacer>
+                <v-btn color="info" type="submit">确认授权</v-btn>
+              </v-card-actions>
+            </v-form>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-content>
+  </v-app>
+</div>
+
+<div th:include="common/common::_footer"></div>
+<script>
+  new Vue({
+    el: '#app',
+    vuetify: new Vuetify(),
+  })
+</script>
+</body>
+</html>

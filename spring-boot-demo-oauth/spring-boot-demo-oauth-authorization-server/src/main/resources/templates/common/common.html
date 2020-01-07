@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="_header">
+    <!--/*@thymesVar id="title" type="java.lang.String"*/-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <style>
+      #form-card {
+        width: 30rem;
+      }
+      @media screen and (max-width: 450px) {
+        #form-card{
+          width: 100%;
+          height: 100%;
+          padding: 2rem !important;
+        }
+      }
+      .fill-height {
+        height: 100%;
+      }
+    </style>
+</head>
+<body>
+
+<footer th:fragment="_footer">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+</footer>
+</body>
+</html>
