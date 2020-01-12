@@ -1,0 +1,12 @@
+server:
+  ssl:
+    # 证书路径
+    key-store: spring-boot-demo-https\src\main\resources\server.keystore
+    key-alias: tomcat
+    enabled: true
+    key-store-type: JKS
+    #与申请时输入一致
+    key-store-password: 123456
+    # 浏览器默认端口 和 80 类似
+  port: 443
+#debug: true
