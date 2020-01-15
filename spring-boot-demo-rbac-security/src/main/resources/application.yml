@@ -6,10 +6,9 @@ spring:
   datasource:
     hikari:
       username: root
-      password: 5678
+      password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/spring-boot-demo?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8
-    #url: jdbc:mysql:///spring-boot-demo?userSSL=true&useUnicode=true&characterEncoding=UTF8&serverTimezone=Asia/Shanghai
   jpa:
     show-sql: true
     generate-ddl: false
@@ -24,7 +23,7 @@ spring:
   mvc:
     throw-exception-if-no-handler-found: true
   redis:
-    host: 172.17.41.73
+    host: localhost
     port: 6379
     # 连接超时时间（记得添加单位，Duration）
     timeout: 10000ms
