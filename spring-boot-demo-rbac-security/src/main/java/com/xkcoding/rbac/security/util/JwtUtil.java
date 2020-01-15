@@ -2,6 +2,7 @@ package com.xkcoding.rbac.security.util;
 
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.StrUtil;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.xkcoding.rbac.security.common.Consts;
 import com.xkcoding.rbac.security.common.Status;
 import com.xkcoding.rbac.security.config.JwtConfig;
@@ -17,10 +18,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Collection;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -56,7 +54,7 @@ public class JwtUtil {
      * @param authorities 用户权限
      * @return JWT
      */
-    public String createJWT(Boolean rememberMe, Long id, String subject, List<String> roles, Collection<? extends GrantedAuthority> authorities) {
+    public String createJWT(Boolean isRefresh, Boolean rememberMe, Long id, String subject, List<String> roles, Collection<? extends GrantedAuthority> authorities) {
         Date now = new Date();
         JwtBuilder builder = Jwts.builder()
                 .setId(id.toString())
@@ -68,6 +66,13 @@ public class JwtUtil {
 
         // 设置过期时间
         Long ttl = rememberMe ? jwtConfig.getRemember() : jwtConfig.getTtl();
+        String redisKey;
+        if (isRefresh){
+            ttl *= 3;
+            redisKey = Consts.REDIS_JWT_REFRESH_KEY_PREFIX + subject;
+        }else{
+            redisKey = Consts.REDIS_JWT_KEY_PREFIX + subject;
+        }
         if (ttl > 0) {
             builder.setExpiration(DateUtil.offsetMillisecond(now, ttl.intValue()));
         }
@@ -75,7 +80,7 @@ public class JwtUtil {
         String jwt = builder.compact();
         // 将生成的JWT保存至Redis
         stringRedisTemplate.opsForValue()
-                .set(Consts.REDIS_JWT_KEY_PREFIX + subject, jwt, ttl, TimeUnit.MILLISECONDS);
+                .set(redisKey, jwt, ttl, TimeUnit.MILLISECONDS);
         return jwt;
     }
 
@@ -86,9 +91,9 @@ public class JwtUtil {
      * @param rememberMe     记住我
      * @return JWT
      */
-    public String createJWT(Authentication authentication, Boolean rememberMe) {
+    public String createJWT(Authentication authentication, Boolean rememberMe, Boolean isRefresh) {
         UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
-        return createJWT(rememberMe, userPrincipal.getId(), userPrincipal.getUsername(), userPrincipal.getRoles(), userPrincipal.getAuthorities());
+        return createJWT(isRefresh, rememberMe, userPrincipal.getId(), userPrincipal.getUsername(), userPrincipal.getRoles(), userPrincipal.getAuthorities());
     }
 
     /**
@@ -97,7 +102,7 @@ public class JwtUtil {
      * @param jwt JWT
      * @return {@link Claims}
      */
-    public Claims parseJWT(String jwt) {
+    public Claims parseJWT(String jwt, Boolean isRefresh) {
         try {
             Claims claims = Jwts.parser()
                     .setSigningKey(jwtConfig.getKey())
@@ -105,7 +110,7 @@ public class JwtUtil {
                     .getBody();
 
             String username = claims.getSubject();
-            String redisKey = Consts.REDIS_JWT_KEY_PREFIX + username;
+            String redisKey = (isRefresh ? Consts.REDIS_JWT_REFRESH_KEY_PREFIX : Consts.REDIS_JWT_KEY_PREFIX) + username;
 
             // 校验redis中的JWT是否存在
             Long expire = stringRedisTemplate.getExpire(redisKey, TimeUnit.MILLISECONDS);
@@ -145,7 +150,7 @@ public class JwtUtil {
      */
     public void invalidateJWT(HttpServletRequest request) {
         String jwt = getJwtFromRequest(request);
-        String username = getUsernameFromJWT(jwt);
+        String username = getUsernameFromJWT(jwt, false);
         // 从redis中清除JWT
         stringRedisTemplate.delete(Consts.REDIS_JWT_KEY_PREFIX + username);
     }
@@ -156,8 +161,8 @@ public class JwtUtil {
      * @param jwt JWT
      * @return 用户名
      */
-    public String getUsernameFromJWT(String jwt) {
-        Claims claims = parseJWT(jwt);
+    public String getUsernameFromJWT(String jwt, Boolean isRefresh) {
+        Claims claims = parseJWT(jwt, isRefresh);
         return claims.getSubject();
     }
 
@@ -174,5 +179,33 @@ public class JwtUtil {
         }
         return null;
     }
+
+    /**
+     * 刷新 JWT
+     * @param token
+     * @param isRefresh
+     * @return
+     */
+    public Map<String, String> refreshJWT(String token, Boolean isRefresh) {
+        Claims claims = parseJWT(token, isRefresh);
+        // 获取签发时间
+        Date lastTime = claims.getExpiration();
+        // 1. 判断refreshToken是否过期
+        if (!new Date().before(lastTime)){
+            throw new SecurityException(Status.TOKEN_EXPIRED);
+        }
+        // 2. 在redis中删除之前的token和refreshToken
+        String username = claims.getSubject();
+        // 3. 创建新的token和refreshToken并存入redis
+        String jwtToken = createJWT(false, false, Long.parseLong(claims.getId()),
+            username, (List<String>) claims.get("roles"), (Collection<? extends GrantedAuthority>)claims.get("authorities"));
+        String refreshJwtToken = createJWT(true, false, Long.parseLong(claims.getId()), username,
+            (List<String>) claims.get("roles"), (Collection<? extends GrantedAuthority>) claims.get("authorities"));
+        Map<String, String> map = new HashMap<>();
+        map.put("token", jwtToken);
+        map.put("refreshToken", refreshJwtToken);
+        return map;
+    }
+
 
 }
