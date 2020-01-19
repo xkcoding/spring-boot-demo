@@ -67,6 +67,7 @@
     <module>spring-boot-demo-ratelimit-guava</module>
     <module>spring-boot-demo-ratelimit-redis</module>
     <module>spring-boot-demo-elasticsearch-rest-high-level-client</module>
+    <module>spring-boot-demo-https</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -85,6 +86,20 @@
     <guava.version>28.1-jre</guava.version>
     <user.agent.version>1.20</user.agent.version>
   </properties>
+
+  <repositories>
+    <repository>
+      <id>aliyun</id>
+      <name>aliyun</name>
+      <url>https://maven.aliyun.com/repository/public</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
 
   <dependencyManagement>
     <dependencies>

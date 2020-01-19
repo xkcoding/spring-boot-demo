@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/common::_header">
+  <title>确认退出吗？</title>
+</head>
+<body>
+<div id="app">
+  <v-app>
+    <v-content>
+      <v-row class="fill-height align-sm-center" justify="center">
+        <v-col class="pa-0">
+          <v-card id="form-card" class="px-6 pb-7 px-sm-10 pb-sm-9 mx-auto" outlined>
+            <v-form ref="auth" id="auth" th:action="@{/oauth/logout}" method="post">
+              <v-spacer class="pt-6 pt-sm-12"></v-spacer>
+              <v-card-title class="justify-center headline">
+                确认退出当前应用吗？
+              </v-card-title>
+              <div class="text-center" style="height:44px">
+                <v-btn outlined rounded th:text="'用户:' + ${#strings.toUpperCase(user)}"></v-btn>
+              </div>
+              <v-spacer></v-spacer>
+              <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
+              <input type="hidden" name="redirectUrl" th:value="${redirectUrl}"/>
+              <v-card-actions class="mt-6">
+                <v-spacer></v-spacer>
+                <v-btn color="info" type="submit">确认退出</v-btn>
+              </v-card-actions>
+            </v-form>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-content>
+  </v-app>
+</div>
+
+<div th:include="common/common::_footer"></div>
+<script>
+  new Vue({
+    el: '#app',
+    vuetify: new Vuetify(),
+  })
+</script>
+</body>
+</html>
