@@ -43,7 +43,7 @@
                 <v-btn outlined color="info" @click="previous">{{previousText}}</v-btn>
                 <v-spacer></v-spacer>
                 <v-btn color="info" type="button" @click="next" v-show="window === 0">下一步</v-btn>
-                <v-btn color="info" type="submit" v-show="window === 1">登录</v-btn>
+                <v-btn color="info" type="submit" @click="next" v-show="window === 1">登录</v-btn>
               </v-card-actions>
           </v-form>
         </v-card>
