@@ -84,7 +84,7 @@
 
         function sendBroadcast() {
             axios.post('/demo/send/broadcast', {
-                message: '系统广播通知: 当前时间 ' + moment().format('YYYY-MM-dd HH:mm:ss.SSS')
+                message: '系统广播通知: 当前时间 ' + moment().format('YYYY-MM-DD HH:mm:ss.SSS')
             }).then((response) => {
                 const {flag, message} = response.data;
                 if (flag) {
@@ -156,7 +156,7 @@
         }
 
         function output(message) {
-            let currentTime = "<span class='time'>" + moment().format('YYYY-MM-dd HH:mm:ss.SSS') + "</span>";
+            let currentTime = "<span class='time'>" + moment().format('YYYY-MM-DD HH:mm:ss.SSS') + "</span>";
             let element = $("<div>" + currentTime + " " + message + "</div>");
             $('#console').prepend(element);
         }
