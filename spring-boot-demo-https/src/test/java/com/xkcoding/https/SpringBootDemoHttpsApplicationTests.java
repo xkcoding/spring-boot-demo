@@ -1,4 +1,4 @@
-package com.xkcoding.springbootdemohttps;
+package com.xkcoding.https;
 
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
