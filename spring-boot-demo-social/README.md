@@ -237,6 +237,14 @@ $ nginx -s reload
 
 ## 2. 主要代码
 
+> 本 demo 采用 Redis 缓存 state，所以请准备 Redis 环境，如果没有 Redis 环境，可以将配置文件的缓存配置为 
+>
+> ```yaml
+> justauth:
+>   cache:
+>     type: default
+> ```
+
 ### 2.1. pom.xml
 
 ```xml
@@ -262,7 +270,7 @@ $ nginx -s reload
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
-    <justauth-spring-boot.version>1.0.0</justauth-spring-boot.version>
+    <justauth-spring-boot.version>1.1.0</justauth-spring-boot.version>
   </properties>
 
   <dependencies>
@@ -386,6 +394,10 @@ justauth:
       client-secret: 8G6PCr00j************************rgk************AyzaPc78
       redirect-uri: http://oauth.xkcoding.com/demo/oauth/wechat_enterprise/callback
       agent-id: 1*******2
+  cache:
+    type: redis
+    prefix: 'SOCIAL::STATE::'
+    timeout: 1h
 ```
 
 ### 2.3. OauthController.java
@@ -460,7 +472,7 @@ public class OauthController {
 
 ### 2.4. 如果想要自定义 state 缓存
 
-请看👉[这里](https://github.com/xkcoding/spring-boot-demo/tree/master/spring-boot-demo-social/src/main/java/com/xkcoding/social/config/justauth)
+请看👉[这里](https://github.com/justauth/justauth-spring-boot-starter#2-%E7%BC%93%E5%AD%98%E9%85%8D%E7%BD%AE)
 
 ## 3. 运行方式
 

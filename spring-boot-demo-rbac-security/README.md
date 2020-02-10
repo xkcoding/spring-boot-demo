@@ -6,7 +6,7 @@
 
 - [x] 基于 `RBAC` 权限模型设计，详情参考数据库表结构设计 [`security.sql`](./sql/security.sql)
 - [x] 支持**动态权限管理**，详情参考 [`RbacAuthorityService.java`](./src/main/java/com/xkcoding/rbac/security/config/RbacAuthorityService.java)
-- [x] **登录 / 登出**部分均使用自定义 Controller 实现，未使用 `Spring Security` 内部实现部分，适用于前后端分离项目，详情参考 [`SecurityConfig.java`](./src/main/java/com/xkcoding/rbac/security/config/SecurityConfig.java) 和 [`AuthController.java`](./src/main/java/com/xkcoding/rbac/security/controller/AuthController.java)
+- [x] **登录 / 登出**部分均使用自定义 Controller 实现，未使用 `Spring Security` 内部默认的实现，适用于前后端分离项目，详情参考 [`SecurityConfig.java`](./src/main/java/com/xkcoding/rbac/security/config/SecurityConfig.java) 和 [`AuthController.java`](./src/main/java/com/xkcoding/rbac/security/controller/AuthController.java)
 - [x] 持久化技术使用 `spring-data-jpa` 完成
 - [x] 使用 `JWT` 实现安全验证，同时引入 `Redis` 解决 `JWT` 无法手动设置过期的弊端，并且保证同一用户在同一时间仅支持同一设备登录，不同设备登录会将，详情参考 [`JwtUtil.java`](./src/main/java/com/xkcoding/rbac/security/util/JwtUtil.java)
 - [x] 在线人数统计，详情参考 [`MonitorService.java`](./src/main/java/com/xkcoding/rbac/security/service/MonitorService.java) 和 [`RedisUtil.java`](./src/main/java/com/xkcoding/rbac/security/util/RedisUtil.java)
@@ -28,7 +28,7 @@
 2. 使用 [`security.sql`](./sql/security.sql) 这个 SQL 文件，创建数据库表和初始化RBAC数据
 3. 运行 `SpringBootDemoRbacSecurityApplication`
 4. 管理员账号：admin/123456 普通用户：user/123456
-5. 登陆成功之后返回token，将获得的token放在具体请求的 Header 里，key 固定是 Authorization ，value 前缀为 Bearer 后面加空格再加token，并加上具体请求的参数，就可以了
+5. 使用 `POST` 请求访问 `/${contextPath}/api/auth/login` 端点，输入账号密码，登陆成功之后返回token，将获得的 token 放在具体请求的 Header 里，key 固定是 `Authorization` ，value 前缀为 `Bearer 后面加空格`再加token，并加上具体请求的参数，就可以了
 6. enjoy ~​ :kissing_smiling_eyes:
 
 ## 3. 部分关键代码

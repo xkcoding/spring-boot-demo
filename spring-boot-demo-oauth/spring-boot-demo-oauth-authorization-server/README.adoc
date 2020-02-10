@@ -1,0 +1,273 @@
+= spring-boot-demo-oauth-authorization-server
+Doc Writer <lzy@echocow.cn>
+v1.0, 2019-01-07
+:toc:
+
+spring boot oauth2 授权服务器，
+
+- 授权码模式、密码模式、刷新令牌
+- 自定义 UserDetailService
+- 自定义 ClientDetailService
+- jwt 非对称加密
+- 自定义登录授权页面
+
+> SQL 语句
+>
+> - DDL： `src/test/resources/schema.sql`
+> - DML： `src/test/resources/import.sql`
+
+测试用例使用 h2 数据库，测试数据如下：
+
+.测试客户端
+|===
+|客户端 id |客户端密钥 |资源服务器名称 |授权类型 |  scopes| 回调地址
+
+|oauth2
+|oauth2
+|oauth2
+|authorization_code,password,refresh_token
+|READ,WRITE
+|http://example.com
+
+|test
+|oauth2
+|oauth2
+|authorization_code,password,refresh_token
+|READ
+|http://example.com
+
+
+|error
+|oauth2
+|test
+|authorization_code,password,refresh_token
+|READ
+|http://example.com
+|===
+
+.测试用户
+|===
+|用户名 |密码 |角色
+
+|admin
+|123456
+|ROLE_ADMIN
+
+|test
+|123456
+|ROLE_TEST
+
+|===
+
+== 授权码模式
+
+> 测试用例：`com.xkcoding.oauth.oauth.AuthorizationCodeGrantTests`
+
+=== 获取授权码
+
+- 请求地址： http://localhost:8080/oauth/authorize?response_type=code&client_id=oauth2&redirect_uri=http://example.com&scope=READ
+- 用户名：admin
+- 密码：123456
+
+image::image/Login.png[login]
+
+=== 确认授权
+
+登录成功以后，进入确认授权页面。已经确认过的用户，不会再次要求确认。
+
+image::image/Confirm.png[confirm]
+
+确认授权后，获取授权码
+
+image::image/Code.png[code]
+
+=== 请求 token
+
+使用以下代码可以直接请求 token
+
+[shell]
+----
+curl --location --request POST 'http://127.0.0.1:8080/oauth/token' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--header 'Authorization: Basic b2F1dGgyOm9hdXRoMg==' \
+--data-urlencode 'grant_type=authorization_code' \
+--data-urlencode 'code=GgX6QD' \
+--data-urlencode 'redirect_uri=http://example.com' \
+--data-urlencode 'client_id=oauth2' \
+--data-urlencode 'scope=READ WRITE'
+----
+
+得到 token
+
+[token]
+----
+{
+    "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsib2F1dGgyIl0sInVzZXJfbmFtZSI6ImFkbWluIiwic2NvcGUiOlsiUkVBRCJdLCJleHAiOjE1NzgzODY4MTYsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iXSwianRpIjoiZjAyMDhiNTUtYTJjYS00NjI4LTg5YjEtNzI5MzY4MzAxOWNhIiwiY2xpZW50X2lkIjoib2F1dGgyIn0.RqJpsin6bMnwI57cGpODTplLeW_gtNWHo_l4SimyRLsnxpCWm5oY1EOb4qVHpXvCbhNsUj69D462P7le13OOmexysZIQhaoGZ_CbIlEp63XsCnr5nSKeX3dgQlyTUDjOUL0WUtY2lKqLCGMeX_rpVhfmSh3b7MC0Ntxq5ao-943QMXGRIeRvJgSkvfY2HBN6-zx1H6rE0wxnUfBC1M08kUkFYlSmsFchiz-E_oTzJvE2D8lA9g-eEFU6cZ_els4Q77Vvc_O6SXUZ7o65vFyLyUjLvh9QF1825SGIUUdXTUYSZjnSAXChhRIAT5pLRHK-gthIzpOaWrgj6ebUoG02Eg",
+    "token_type": "bearer",
+    "refresh_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsib2F1dGgyIl0sInVzZXJfbmFtZSI6ImFkbWluIiwic2NvcGUiOlsiUkVBRCJdLCJhdGkiOiJmMDIwOGI1NS1hMmNhLTQ2MjgtODliMS03MjkzNjgzMDE5Y2EiLCJleHAiOjE1NzgzODY4MTYsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iXSwianRpIjoiMGViNTU2MTQtYjgxYS00MTFmLTg1MTAtZThkMjZmODJmMjJhIiwiY2xpZW50X2lkIjoib2F1dGgyIn0.CBGcjirkf-3187SgbZr0ikauiCS8U9YLaoR4sNlRQjd-gaIeF5PChnIs_yAmG_VpqPFlPRdSl8DA05S2QnFpT3TkRjyP-LPDZgsVAPfczMAdVywU1zOKYZeq-gM6p9bmGEabbZoBlIxOImsjeyFSCui6UtRTZjNlj3AhGIzvs52T8bDqC796iHPDZvJ97MMgsEiRyu-mxDm1o1LMuBX9RHCx9rAkBVf52q36bqWMcYAlDOu1wYjpmhalSLZyWcmraQvClEitXGJI4eTFapTnuXQuWFIL-973V_5Shw98-bk65zZQOEheazHrUf-n4h-sYT4akehnYSVxX2UIg9XsCw",
+    "expires_in": 5999,
+    "scope": "READ",
+    "jti": "f0208b55-a2ca-4628-89b1-7293683019ca"
+}
+----
+
+== 密码模式
+
+> 测试用例：`com.xkcoding.oauth.oauth.ResourceOwnerPasswordGrantTests`
+
+`test` 用户进行授权
+
+[source]
+----
+curl --location --request POST 'http://127.0.0.1:8080/oauth/token' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--header 'Authorization: Basic b2F1dGgyOm9hdXRoMg==' \
+--data-urlencode 'password=123456' \
+--data-urlencode 'username=test' \
+--data-urlencode 'grant_type=password' \
+--data-urlencode 'scope=READ WRITE'
+----
+
+== 刷新令牌
+
+携带 `refresh_token` 去请求
+
+[source]
+----
+curl --location --request POST 'http://127.0.0.1:8080/oauth/token' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--header 'Authorization: Basic b2F1dGgyOm9hdXRoMg==' \
+--data-urlencode 'grant_type=refresh_token' \
+--data-urlencode 'refresh_token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsib2F1dGgyIl0sInVzZXJfbmFtZSI6ImFkbWluIiwic2NvcGUiOlsiUkVBRCJdLCJhdGkiOiJmMDIwOGI1NS1hMmNhLTQ2MjgtODliMS03MjkzNjgzMDE5Y2EiLCJleHAiOjE1NzgzODY4MTYsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iXSwianRpIjoiMGViNTU2MTQtYjgxYS00MTFmLTg1MTAtZThkMjZmODJmMjJhIiwiY2xpZW50X2lkIjoib2F1dGgyIn0.CBGcjirkf-3187SgbZr0ikauiCS8U9YLaoR4sNlRQjd-gaIeF5PChnIs_yAmG_VpqPFlPRdSl8DA05S2QnFpT3TkRjyP-LPDZgsVAPfczMAdVywU1zOKYZeq-gM6p9bmGEabbZoBlIxOImsjeyFSCui6UtRTZjNlj3AhGIzvs52T8bDqC796iHPDZvJ97MMgsEiRyu-mxDm1o1LMuBX9RHCx9rAkBVf52q36bqWMcYAlDOu1wYjpmhalSLZyWcmraQvClEitXGJI4eTFapTnuXQuWFIL-973V_5Shw98-bk65zZQOEheazHrUf-n4h-sYT4akehnYSVxX2UIg9XsCw'
+----
+
+== 解析令牌
+
+携带令牌解析
+
+[source]
+----
+curl --location --request POST 'http://127.0.0.1:8080/oauth/check_token' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--header 'Authorization: Basic b2F1dGgyOm9hdXRoMg==' \
+--data-urlencode 'token='
+----
+
+解析结果
+
+[source]
+----
+{
+    "aud": [
+        "oauth2"
+    ],
+    "user_name": "admin",
+    "scope": [
+        "READ",
+        "WRITE"
+    ],
+    "active": true,
+    "exp": 1578389936,
+    "authorities": [
+        "ROLE_ADMIN"
+    ],
+    "jti": "fe59fce9-6764-435e-8fa7-7320e11af811",
+    "client_id": "oauth2"
+}
+----
+
+== 退出登录
+
+授权码模式登陆是在授权服务器上登录的，所以退出也要在授权服务器上退出。
+
+携带回调地址进行退出，退出完成后跳转到回调地址：
+
+image::image/Logout.png[logout]
+
+退出以后自动跳转到回调地址（要加 `http` 或 `https`）
+
+== 获取公钥
+
+通过访问 '/oauth/token_key' 获取 JWT 公钥
+
+[source]
+----
+curl --location --request GET 'http://127.0.0.1:8080/oauth/token_key' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--header 'Authorization: Basic b2F1dGgyOm9hdXRoMg=='
+----
+
+获取后
+
+[source]
+----
+{
+    "alg": "SHA256withRSA",
+    "value": "-----BEGIN PUBLIC KEY-----\n......\n-----END PUBLIC KEY-----"
+}
+----
+
+== 核心配置
+
+=== 授权服务器配置
+
+[Oauth2AuthorizationServerConfig]
+----
+@Override
+public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
+    endpoints.authenticationManager(authenticationManager)
+        // 自定义用户
+        .userDetailsService(sysUserService)
+        // 内存存储
+        .tokenStore(tokenStore)
+        // jwt 令牌转换
+        .accessTokenConverter(jwtAccessTokenConverter);
+}
+
+@Override
+public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+    // 从数据库读取我们自定义的客户端信息
+    clients.withClientDetails(sysClientDetailsService);
+}
+
+@Override
+public void configure(AuthorizationServerSecurityConfigurer security) {
+    security
+        // 获取 token key 需要进行 basic 认证客户端信息
+        .tokenKeyAccess("isAuthenticated()")
+        // 获取 token 信息同样需要 basic 认证客户端信息
+        .checkTokenAccess("isAuthenticated()");
+}
+----
+
+=== 安全配置
+
+[WebSecurityConfig]
+----
+@Override
+protected void configure(HttpSecurity http) throws Exception {
+    http
+        // 开启表单登录，授权码模式的时候进行登录
+        .formLogin()
+        // 路径等
+        .loginPage("/oauth/login")
+        .loginProcessingUrl("/authorization/form")
+        // 失败以后携带错误信息进行再次跳转登录页面
+        .failureHandler(clientLoginFailureHandler)
+        .and()
+        // 退出登录相关
+        .logout()
+        .logoutUrl("/oauth/logout")
+        .logoutSuccessHandler(clientLogoutSuccessHandler)
+        .and()
+        // 授权服务器安全配置
+        .authorizeRequests()
+        .antMatchers("/oauth/**").permitAll()
+        .anyRequest()
+        .authenticated();
+}
+----
+
+== 参考
+
+- https://echocow.cn/articles/2019/07/14/1563096109754.html[Spring Security Oauth2 从零到一完整实践（三）授权服务器 ]

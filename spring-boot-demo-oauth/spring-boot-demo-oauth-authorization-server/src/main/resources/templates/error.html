@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/common::_header">
+  <title>发送了点小错误</title>
+</head>
+<body>
+<div id="app">
+  <v-app>
+    <v-content>
+      <v-responsive class="fill-height">
+        <v-container class="fill-height">
+          <v-layout align-center justify-center>
+            <v-flex class="text-center">
+              <!--/*@thymesVar id="status" type="java.lang.String"*/-->
+              <!--/*@thymesVar id="message" type="java.lang.String"*/-->
+              <h1 class="display-1 blue--text" th:text="${status} + '  ' + ${message}">404 找不到页面</h1>
+              <p class="mt-2">~~~</p>
+              <v-btn outlined color="info" @click="handleBack">点击返回</v-btn>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-responsive>
+    </v-content>
+  </v-app>
+</div>
+
+
+<div th:include="common/common::_footer"></div>
+<script>
+  new Vue({
+    el: '#app',
+    vuetify: new Vuetify(),
+    data: () => ({
+      text: '未知错误',
+      code: 500
+    }),
+    methods: {
+      handleBack () {
+        window.history.go(-1)
+      }
+    }
+  })
+</script>
+</body>
+</html>

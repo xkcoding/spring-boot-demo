@@ -1,6 +1,8 @@
 # spring-boot-demo-orm-mybatis-plus
 
 > 此 demo 演示了 Spring Boot 如何集成 mybatis-plus，简化Mybatis开发，带给你难以置信的开发体验。
+>
+> - 2019-09-14 新增：ActiveRecord 模式操作
 
 ## pom.xml
 
@@ -417,6 +419,121 @@ public class UserServiceTest extends SpringBootDemoOrmMybatisPlusApplicationTest
         testSaveList();
     }
 
+}
+```
+
+## 2019-09-14新增
+
+### ActiveRecord 模式
+
+- Role.java
+
+```java
+/**
+ * <p>
+ * 角色实体类
+ * </p>
+ *
+ * @author yangkai.shen
+ * @date Created in 2019/9/16 14:04
+ */
+@Data
+@TableName("orm_role")
+@Accessors(chain = true)
+@EqualsAndHashCode(callSuper = true)
+public class Role extends Model<Role> {
+    /**
+     * 主键
+     */
+    private Long id;
+
+    /**
+     * 角色名
+     */
+    private String name;
+
+    /**
+     * 主键值，ActiveRecord 模式这个必须有，否则 xxById 的方法都将失效！
+     * 即使使用 ActiveRecord 不会用到 RoleMapper，RoleMapper 这个接口也必须创建
+     */
+    @Override
+    protected Serializable pkVal() {
+
+        return this.id;
+    }
+}
+```
+
+- RoleMapper.java
+
+```java
+/**
+ * <p>
+ * RoleMapper
+ * </p>
+ *
+ * @author yangkai.shen
+ * @date Created in 2019/9/16 14:06
+ */
+public interface RoleMapper extends BaseMapper<Role> {
+}
+```
+
+- ActiveRecordTest.java
+
+```java
+/**
+ * <p>
+ * Role
+ * </p>
+ *
+ * @author yangkai.shen
+ * @date Created in 2019/9/16 14:19
+ */
+@Slf4j
+public class ActiveRecordTest extends SpringBootDemoOrmMybatisPlusApplicationTests {
+    /**
+     * 测试 ActiveRecord 插入数据
+     */
+    @Test
+    public void testActiveRecordInsert() {
+        Role role = new Role();
+        role.setName("VIP");
+        Assert.assertTrue(role.insert());
+        // 成功直接拿会写的 ID
+        log.debug("【role】= {}", role);
+    }
+
+    /**
+     * 测试 ActiveRecord 更新数据
+     */
+    @Test
+    public void testActiveRecordUpdate() {
+        Assert.assertTrue(new Role().setId(1L).setName("管理员-1").updateById());
+        Assert.assertTrue(new Role().update(new UpdateWrapper<Role>().lambda().set(Role::getName, "普通用户-1").eq(Role::getId, 2)));
+    }
+
+    /**
+     * 测试 ActiveRecord 查询数据
+     */
+    @Test
+    public void testActiveRecordSelect() {
+        Assert.assertEquals("管理员", new Role().setId(1L).selectById().getName());
+        Role role = new Role().selectOne(new QueryWrapper<Role>().lambda().eq(Role::getId, 2));
+        Assert.assertEquals("普通用户", role.getName());
+        List<Role> roles = new Role().selectAll();
+        Assert.assertTrue(roles.size() > 0);
+        log.debug("【roles】= {}", roles);
+    }
+
+    /**
+     * 测试 ActiveRecord 删除数据
+     */
+    @Test
+    public void testActiveRecordDelete() {
+        Assert.assertTrue(new Role().setId(1L).deleteById());
+        Assert.assertTrue(new Role().delete(new QueryWrapper<Role>().lambda().eq(Role::getName, "普通用户")));
+    }
 }
 ```
 

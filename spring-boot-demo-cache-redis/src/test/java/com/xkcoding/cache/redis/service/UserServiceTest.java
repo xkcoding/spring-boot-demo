@@ -44,7 +44,7 @@ public class UserServiceTest extends SpringBootDemoCacheRedisApplicationTests {
      */
     @Test
     public void getAfterSave() {
-        userService.saveOrUpdate(new User(4L, "user4"));
+        userService.saveOrUpdate(new User(4L, "测试中文"));
 
         User user = userService.get(4L);
         log.debug("【user】= {}", user);

@@ -6,6 +6,7 @@ spring:
   swagger:
     enabled: true
     title: spring-boot-demo
+    base-package: com.xkcoding.swagger.beauty.controller
     description: 这是一个简单的 Swagger API 演示
     version: 1.0.0-SNAPSHOT
     contact:
