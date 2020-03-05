@@ -1,6 +1,6 @@
 # spring-boot-demo Project TODO List
 
-## Module plan (completed: 53 / 65)
+## Module plan (completed: 54 / 66)
 
 - [x] ~~spring-boot-demo-helloworld(helloworld example)~~
 - [x] ~~spring-boot-demo-properties (read configuration file information)~~
@@ -67,6 +67,7 @@
 - [x] ~~spring-boot-demo-elasticsearch-rest-high-level-client（integrated Elasticsearch 7.x version，use official Rest High Level Client to operate ES data）~~
 - [ ] spring-boot-demo-springbatch（data process）
 - [ ] spring-boot-demo-security-justauth（use JustAuth to login GitHub，and use Spring-Security to manage login state）
+- [x] ~~spring-boot-demo-flyway（integrated Flyway to initialize tables and data in database, Flyway also support the sql script version control）~~
 
 ## Remarks
 
