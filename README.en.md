@@ -20,9 +20,9 @@
 
 ## Introduction
 
-`spring boot demo` is a project for learning and practicing `spring boot`, including `65` demos, and `53` of them have been done.
+`spring boot demo` is a project for learning and practicing `spring boot`, including `66` demos, and `54` of them have been done.
 
-This project has integrated actuator (`monitoring`), admin (`visual monitoring`), logback (`log`), aopLog (`recording web request logs through AOP`), global exception handling (`json level and page level` ), freemarker (`template engine`), thymeleaf (`template engine`), Beetl (`template engine`), Enjoy (`template engine`), JdbcTemplate (`general JDBC operate database`), JPA (`powerful ORM framework `), mybatis (`powerful ORM framework`), Generic Mapper (`mybatis quick operation `), PageHelper (`powerful mybatis pagination plugin`), mybatis-plus (`mybatis quick operation`), BeetlSQL (`powerful ORM framework `), upload (`local file upload and qiniu cloud file upload`), redis (`cache`), ehcache (`cache`), email (`send various types of mail`), task (`basic scheduled tasks`), quartz (`dynamic management scheduled tasks`), xxl-job (`distributed scheduled tasks`), swagger (`API interface management and tests`), security (`RBAC-based Dynamic Rights Authentication`), SpringSession (`session sharing`), Zookeeper (`implement distributed locks by AOP`), RabbitMQ (`message queue`), Kafka (`message queue`), websocket (` server pushes the monitoring server status to front end `), socket.io (`chat room`), ureport2 (`Chinese-style report`), packaged into a `war` file, integrate ElasticSearch (`basic operations and advanced queries`), Async ( `asynchronous tasks`), integrated Dubbo (`with official starter`), MongoDB (`document database`), neo4j (`graph database`), docker (`container`), `JPA Multi-Datasource`, `Mybatis Multi-Datasource`, `code generator`', GrayLog (`log collection`), JustAuth (`third-party login`), LDAP(`CURD`), `Dynamically add/switch datasources`, Standalone RateLimiting(`AOP + Guava RateLimiter`), Distributed Ratelimiting(`AOP + Redis + Lua`), ElasticSearch 7.x(`use official Rest High Level Client`), HTTPS.
+This project has integrated actuator (`monitoring`), admin (`visual monitoring`), logback (`log`), aopLog (`recording web request logs through AOP`), global exception handling (`json level and page level` ), freemarker (`template engine`), thymeleaf (`template engine`), Beetl (`template engine`), Enjoy (`template engine`), JdbcTemplate (`general JDBC operate database`), JPA (`powerful ORM framework `), mybatis (`powerful ORM framework`), Generic Mapper (`mybatis quick operation `), PageHelper (`powerful mybatis pagination plugin`), mybatis-plus (`mybatis quick operation`), BeetlSQL (`powerful ORM framework `), upload (`local file upload and qiniu cloud file upload`), redis (`cache`), ehcache (`cache`), email (`send various types of mail`), task (`basic scheduled tasks`), quartz (`dynamic management scheduled tasks`), xxl-job (`distributed scheduled tasks`), swagger (`API interface management and tests`), security (`RBAC-based Dynamic Rights Authentication`), SpringSession (`session sharing`), Zookeeper (`implement distributed locks by AOP`), RabbitMQ (`message queue`), Kafka (`message queue`), websocket (` server pushes the monitoring server status to front end `), socket.io (`chat room`), ureport2 (`Chinese-style report`), packaged into a `war` file, integrate ElasticSearch (`basic operations and advanced queries`), Async ( `asynchronous tasks`), integrated Dubbo (`with official starter`), MongoDB (`document database`), neo4j (`graph database`), docker (`container`), `JPA Multi-Datasource`, `Mybatis Multi-Datasource`, `code generator`', GrayLog (`log collection`), JustAuth (`third-party login`), LDAP(`CURD`), `Dynamically add/switch datasources`, Standalone RateLimiting(`AOP + Guava RateLimiter`), Distributed Ratelimiting(`AOP + Redis + Lua`), ElasticSearch 7.x(`use official Rest High Level Client`), HTTPS, Flyway(`initialize databases`).
 
 > If you have demos to contribute or needs to meet, it is very welcome to submit a [issue](https://github.com/xkcoding/spring-boot-demo/issues/new) and I will add it to my [TODO](./TODO.en.md) list.
 
@@ -125,6 +125,7 @@ View the [TODO](./TODO.en.md) file
 | [spring-boot-demo-ratelimit-redis](./spring-boot-demo-ratelimit-redis) | a demo to use Redis and Lua script implementation to protect API by distributed rate limiting. |
 | [spring-boot-demo-https](./spring-boot-demo-https)           | a demo to integrate HTTPS.                                   |
 | [spring-boot-demo-elasticsearch-rest-high-level-client](./spring-boot-demo-elasticsearch-rest-high-level-client) | a demo to integrate ElasticSearch 7.x version by using official Rest High Level Client to operate ES data. |
+| [spring-boot-demo-flyway](./spring-boot-flyway)              | a demo to integrate Flyway to initialize tables and data in database, Flyway also support the sql script version control. |
 
 ## License
 
@@ -211,6 +212,7 @@ Copyright (c) 2018 Yangkai.Shen
     <module>spring-boot-demo-ratelimit-redis</module>
     <module>spring-boot-demo-elasticsearch-rest-high-level-client</module>
     <module>spring-boot-demo-https</module>
+    <module>spring-boot-demo-flyway</module>
   </modules>
   <packaging>pom</packaging>
 
