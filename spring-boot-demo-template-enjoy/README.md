@@ -10,11 +10,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>spring-boot-demo-template-beetl</artifactId>
+	<artifactId>spring-boot-demo-template-enjoy</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>spring-boot-demo-template-beetl</name>
+	<name>spring-boot-demo-template-enjoy</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -27,16 +27,10 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<ibeetl.version>1.1.63.RELEASE</ibeetl.version>
+		<enjoy.version>3.5</enjoy.version>
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>com.ibeetl</groupId>
-			<artifactId>beetl-framework-starter</artifactId>
-			<version>${ibeetl.version}</version>
-		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -46,6 +40,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jfinal</groupId>
+			<artifactId>enjoy</artifactId>
+			<version>${enjoy.version}</version>
 		</dependency>
 
 		<dependency>
@@ -61,7 +61,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>spring-boot-demo-template-beetl</finalName>
+		<finalName>spring-boot-demo-template-enjoy</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

@@ -1,0 +1,14 @@
+spring:
+  flyway:
+    enabled: true
+    # 迁移前校验 SQL 文件是否存在问题
+    validate-on-migrate: true
+    # 生产环境一定要关闭
+    clean-disabled: true
+    # 校验路径下是否存在 SQL 文件
+    check-location: false
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/flyway-test?useSSL=false
+    username: root
+    password: root
+    type: com.zaxxer.hikari.HikariDataSource

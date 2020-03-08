@@ -1,0 +1,59 @@
+= spring-boot-demo-oauth-resource-server
+Doc Writer <lzy@echocow.cn>
+v1.0, 2019-01-09
+:toc:
+
+spring boot oauth2 资源服务器，同 授权服务器 一起使用。
+
+> 使用 `spring security oauth`
+
+- JWT 解密，远程公钥获取
+- 基于角色访问控制
+- 基于应用授权域访问控制
+
+== jwt 解密
+
+要先获取 jwt 公钥
+
+[source,java]
+.OauthResourceTokenConfig
+----
+public class OauthResourceTokenConfig {
+    // ......
+    private String getPubKey() {
+        // 如果本地没有密钥，就从授权服务器中获取
+        return StringUtils.isEmpty(resourceServerProperties.getJwt().getKeyValue())
+            ? getKeyFromAuthorizationServer()
+            : resourceServerProperties.getJwt().getKeyValue();
+    }
+    // ......
+}
+----
+
+然后配置进去
+
+[source, java]
+.OauthResourceServerConfig
+----
+public class OauthResourceServerConfig extends ResourceServerConfigurerAdapter {
+    @Override
+    public void configure(ResourceServerSecurityConfigurer resources) {
+        resources
+            .tokenStore(tokenStore)
+            .resourceId(resourceServerProperties.getResourceId());
+    }
+}
+----
+
+== 访问控制
+
+通过 `@EnableGlobalMethodSecurity(prePostEnabled = true)` 注解开启 `spring security` 的全局方法安全控制
+
+- `@PreAuthorize("hasRole('ADMIN')")` 校验角色
+- `@PreAuthorize("#oauth2.hasScope('READ')")` 校验令牌授权域
+
+== 测试
+
+测试用例： `com.xkcoding.oauth.controller.TestControllerTest`
+
+先获取 `token`，携带 `token` 去访问资源即可。
