@@ -57,6 +57,10 @@ spring:
     clean-disabled: true
     # 校验路径下是否存在 SQL 文件
     check-location: false
+    # 最开始已经存在表结构，且不存在 flyway_schema_history 表时，需要设置为 true
+    baseline-on-migrate: true
+    # 基础版本 0
+    baseline-version: 0
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/flyway-test?useSSL=false
     username: root
