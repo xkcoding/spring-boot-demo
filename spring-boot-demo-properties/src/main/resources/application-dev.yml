@@ -1,6 +1,6 @@
 application:
-  name: dev环境 @artifactId@
-  version: dev环境 @version@
+  name: dev环境 @project.artifactId@
+  version: dev环境 @project.version@
 developer:
   name: dev环境 xkcoding
   website: dev环境 http://xkcoding.com

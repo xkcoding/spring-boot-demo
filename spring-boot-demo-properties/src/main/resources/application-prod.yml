@@ -1,6 +1,6 @@
 application:
-  name: prod环境 @artifactId@
-  version: prod环境 @version@
+  name: prod环境 @project.artifactId@
+  version: prod环境 @project.version@
 developer:
   name: prod环境 xkcoding
   website: prod环境 http://xkcoding.com
