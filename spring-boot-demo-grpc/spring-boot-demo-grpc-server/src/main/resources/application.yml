@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: demo-grpc-server
+grpc:
+  server:
+    port: 9090
+  # 开启TLS相关配置
+    security:
+      enabled: true
+      certificateChain: classpath:certificates/server.crt
+      privateKey: classpath:certificates/server.key
+      #如果需要指定受信任客户端证书 直接把client.crt复制到该文件即可
+      trustCertCollection: classpath:certificates/trusted-clients.crt.list
+      #REQUIRE：客户端证书必须通过认证 OPTIONAL：对客户端的证书进行身份验证，但不会强制这么做。
+      clientAuth: REQUIRE

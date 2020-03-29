@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.xkcoding.grpc.protocol";
+option java_outer_classname = "DemoProto";
+
+
+//
+service DemoService {
+    rpc hello (DemoRequest) returns (DemoResponse) {
+    }
+}
+
+// 响应实体类
+message DemoResponse {
+    string msg = 1;
+}
+
+// 请求实体类
+message DemoRequest {
+}

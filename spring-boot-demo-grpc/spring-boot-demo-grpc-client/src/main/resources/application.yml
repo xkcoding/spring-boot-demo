@@ -1,0 +1,23 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: demo-grpc-client
+grpc:
+  client:
+    demo-grpc-server:
+      address: 'static://localhost:9090'
+      # 禁用传输图层安全 请勿在生产环境中这样做
+      #negotiationType: plaintext
+      # gRPC 默认使用 TLS 连接服务端 该配置启用传输图层安全
+      negotiationType: TLS
+      security:
+        #如果您信任的证书不在常规信任存储区， 或者您想要限制您信任的 证书。您可以使用以下属性
+        trustCertCollection: classpath:certificates/trusted-server.crt.list
+        #要指定证书对哪个名字有效：
+        authorityOverride: localhost
+        #如果需要双向证书认证配置如下属性
+        clientAuthEnabled: true
+        certificateChain: classpath:certificates/client.crt
+        privateKey: classpath:certificates/client.key
+
