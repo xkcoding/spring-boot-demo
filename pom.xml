@@ -68,6 +68,7 @@
     <module>spring-boot-demo-ratelimit-redis</module>
     <module>spring-boot-demo-elasticsearch-rest-high-level-client</module>
     <module>spring-boot-demo-https</module>
+    <module>spring-boot-demo-flyway</module>
   </modules>
   <packaging>pom</packaging>
 

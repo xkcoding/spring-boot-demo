@@ -1,6 +1,6 @@
 # spring-boot-demo 项目待办列表
 
-## 模块计划(已完成：52 / 65)
+## 模块计划(已完成：54 / 66)
 
 - [x] ~~spring-boot-demo-helloworld（Helloworld 示例）~~
 - [x] ~~spring-boot-demo-properties（读取配置文件信息）~~
@@ -63,10 +63,11 @@
 - [x] ~~spring-boot-demo-dynamic-datasource（动态添加数据源，切换数据源）~~
 - [x] ~~spring-boot-demo-ratelimit-guava（单机限流保护API，集成 Guava 的 RateLimiter）~~
 - [x] ~~spring-boot-demo-ratelimit-redis（分布式限流保护API，使用 Redis + lua 脚本实现）~~
-- [ ] spring-boot-demo-https（集成 HTTPS）
+- [x] ~~spring-boot-demo-https（集成 HTTPS）~~
 - [x] ~~spring-boot-demo-elasticsearch-rest-high-level-client（集成 Elasticsearch 7.x 版本，使用官方 rest high level client操作 ES 数据）~~
 - [ ] spring-boot-demo-springbatch（数据处理）
 - [ ] spring-boot-demo-security-justauth（使用 JustAuth 登录 GitHub，使用 Security 管理登录状态）
+- [x] ~~spring-boot-demo-flyway（集成 Flyway，项目启动时初始化数据库表结构，同时支持数据库脚本版本控制）~~
 
 ## 备注
 

@@ -1,7 +1,5 @@
-# Created by .ignore support plugin (hsz.mobi)
-### xkcoding-后端 template
-### Spring Boot ###
-target/
+HELP.md
+/target/
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
@@ -18,23 +16,14 @@ target/
 *.iws
 *.iml
 *.ipr
-out/
-gen/
 
 ### NetBeans ###
 /nbproject/private/
-/build/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
+/build/
 
-### LOGS ###
-logs/
-*.log
-
-### Mac OS ###
-.DS_Store
-
-### VS CODE ###
+### VS Code ###
 .vscode/

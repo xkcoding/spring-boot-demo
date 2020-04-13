@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/oauth
+    url: jdbc:mysql://localhost:3306/oauth?allowPublicKeyRetrieval=true
     username: root
     password: 123456
     hikari:
