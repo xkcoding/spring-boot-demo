@@ -1,6 +1,7 @@
 package com.xkcoding.sharding.jdbc.model;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,7 +25,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @TableName(value = "t_order")
-public class Order {
+public class Order extends Model<Order> {
     /**
      * 主键
      */
