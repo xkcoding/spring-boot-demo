@@ -92,6 +92,7 @@ public class SpringBootDemoShardingJdbcApplicationTests {
         page.setRecords(orderPageList);
         log.info("【orderIPage】= {}", JSONUtil.toJsonStr(page));
 
+
         //orderMapper.selectList(new QueryWrapper<Order>().in("order_id",2));
         //orderMapper.selectById(1);
        // orderMapper.selectCount(new QueryWrapper<>());
