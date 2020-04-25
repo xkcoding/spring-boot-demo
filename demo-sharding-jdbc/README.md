@@ -187,14 +187,14 @@ public class DataSourceShardingConfig {
         // 配置第一个数据源
         HikariDataSource ds0 = new HikariDataSource();
         ds0.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        ds0.setJdbcUrl("jdbc:mysql://127.0.0.1:3306/spring-boot-demo?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8");
+        ds0.setJdbcUrl("jdbc:mysql://193.112.94.161:3306/spring-boot-demo?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8");
         ds0.setUsername("root");
         ds0.setPassword("root");
 
         // 配置第二个数据源
         HikariDataSource ds1 = new HikariDataSource();
         ds1.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        ds1.setJdbcUrl("jdbc:mysql://127.0.0.1:3306/spring-boot-demo-2?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8");
+        ds1.setJdbcUrl("jdbc:mysql://193.112.94.161:3306/spring-boot-demo-2?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8");
         ds1.setUsername("root");
         ds1.setPassword("root");
 
