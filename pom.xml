@@ -69,6 +69,9 @@
     <module>spring-boot-demo-elasticsearch-rest-high-level-client</module>
     <module>spring-boot-demo-https</module>
     <module>spring-boot-demo-flyway</module>
+    <module>spring-boot-demo-sso-server</module>
+    <module>spring-boot-demo-sso-client1</module>
+    <module>spring-boot-demo-sso-client2</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -133,6 +136,13 @@
         <groupId>eu.bitwalker</groupId>
         <artifactId>UserAgentUtils</artifactId>
         <version>${user.agent.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>Greenwich.SR1</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
