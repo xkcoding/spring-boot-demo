@@ -13,11 +13,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(classes = SpringBootDemoActivitiApplication.class)
 public class SpringBootDemoActivitiApplicationTests {
 
   @Autowired
-  private ProcessRuntime processRuntime;
+  private ProcessRuntime processRuntime ;
   @Autowired
   private SecurityUtil securityUtil;
 
@@ -26,10 +26,8 @@ public class SpringBootDemoActivitiApplicationTests {
     System.out.println("SpringBootDemoActivitiApplicationTests.contextLoads======================");
     securityUtil.logInAs("salaboy");
     Page<ProcessDefinition> processDefinitionPage = processRuntime.processDefinitions(Pageable.of(0, 10));
-    processDefinitionPage.getContent().forEach(elt -> System.out.println(JSONValue.toJSONString(elt))
-    );
+    processDefinitionPage.getContent().forEach(elt -> System.out.println(JSONValue.toJSONString(elt)));
     System.out.println("SpringBootDemoActivitiApplicationTests.contextLoads========================");
   }
-
 }
 
