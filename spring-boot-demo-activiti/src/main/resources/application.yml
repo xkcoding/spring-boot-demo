@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/spring-boot-demo
     username: root
-    password: root
+    password: 123456
     hikari:
       data-source-properties:
         useSSL: false
