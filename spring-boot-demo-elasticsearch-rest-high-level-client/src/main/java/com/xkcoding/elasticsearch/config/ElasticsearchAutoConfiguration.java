@@ -86,8 +86,15 @@ public class ElasticsearchAutoConfiguration {
         ElasticsearchProperties.Account account = elasticsearchProperties.getAccount();
         if (!StringUtils.isEmpty(account.getUsername()) && !StringUtils.isEmpty(account.getUsername())) {
             final CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+            credentialsProvider.setCredentials(AuthScope.ANY,
+                new UsernamePasswordCredentials(account.getUsername(), account.getPassword()));
 
-            credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials(account.getUsername(), account.getPassword()));
+            // https://www.elastic.co/guide/en/elasticsearch/client/java-rest/7.6/_basic_authentication.html
+            builder.setHttpClientConfigCallback(httpClientBuilder -> {
+                httpClientBuilder.disableAuthCaching();
+                return httpClientBuilder
+                    .setDefaultCredentialsProvider(credentialsProvider);
+            });
         }
         return new RestHighLevelClient(builder);
     }
