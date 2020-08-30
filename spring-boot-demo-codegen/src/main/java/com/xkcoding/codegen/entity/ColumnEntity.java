@@ -42,6 +42,10 @@ public class ColumnEntity {
      */
     private String attrType;
     /**
+     * jdbc类型
+     */
+    private String jdbcType;
+    /**
      * 其他信息
      */
     private String extra;

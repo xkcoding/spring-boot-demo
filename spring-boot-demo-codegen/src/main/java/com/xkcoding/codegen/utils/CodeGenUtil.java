@@ -69,7 +69,9 @@ public class CodeGenUtil {
      */
     public void generatorCode(GenConfig genConfig, Entity table, List<Entity> columns, ZipOutputStream zip) {
         //配置信息
-        Props props = getConfig();
+        Props propsDB2Java = getConfig("generator.properties");
+        Props propsDB2Jdbc = getConfig("jdbc_type.properties");
+
         boolean hasBigDecimal = false;
         //表信息
         TableEntity tableEntity = new TableEntity();
@@ -85,7 +87,7 @@ public class CodeGenUtil {
         if (StrUtil.isNotBlank(genConfig.getTablePrefix())) {
             tablePrefix = genConfig.getTablePrefix();
         } else {
-            tablePrefix = props.getStr("tablePrefix");
+            tablePrefix = propsDB2Java.getStr("tablePrefix");
         }
 
         //表名转换成Java类名
@@ -108,8 +110,10 @@ public class CodeGenUtil {
             columnEntity.setLowerAttrName(StrUtil.lowerFirst(attrName));
 
             //列的数据类型，转换成Java类型
-            String attrType = props.getStr(columnEntity.getDataType(), "unknownType");
+            String attrType = propsDB2Java.getStr(columnEntity.getDataType(), "unknownType");
             columnEntity.setAttrType(attrType);
+            String jdbcType = propsDB2Jdbc.getStr(columnEntity.getDataType(), "unknownType");
+            columnEntity.setJdbcType(jdbcType);
             if (!hasBigDecimal && "BigDecimal".equals(attrType)) {
                 hasBigDecimal = true;
             }
@@ -152,21 +156,21 @@ public class CodeGenUtil {
         if (StrUtil.isNotBlank(genConfig.getAuthor())) {
             map.put("author", genConfig.getAuthor());
         } else {
-            map.put("author", props.getStr("author"));
+            map.put("author", propsDB2Java.getStr("author"));
         }
 
         if (StrUtil.isNotBlank(genConfig.getModuleName())) {
             map.put("moduleName", genConfig.getModuleName());
         } else {
-            map.put("moduleName", props.getStr("moduleName"));
+            map.put("moduleName", propsDB2Java.getStr("moduleName"));
         }
 
         if (StrUtil.isNotBlank(genConfig.getPackageName())) {
             map.put("package", genConfig.getPackageName());
             map.put("mainPath", genConfig.getPackageName());
         } else {
-            map.put("package", props.getStr("package"));
-            map.put("mainPath", props.getStr("mainPath"));
+            map.put("package", propsDB2Java.getStr("package"));
+            map.put("mainPath", propsDB2Java.getStr("mainPath"));
         }
         VelocityContext context = new VelocityContext(map);
 
@@ -213,8 +217,8 @@ public class CodeGenUtil {
     /**
      * 获取配置信息
      */
-    private Props getConfig() {
-        Props props = new Props("generator.properties");
+    private Props getConfig(String fileName) {
+        Props props = new Props(fileName);
         props.autoLoad(true);
         return props;
     }
