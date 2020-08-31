@@ -4,9 +4,9 @@
   <resultMap id="${classname}Map" type="${package}.${moduleName}.entity.${className}">
     #foreach($column in $columns)
     #if($column.lowerAttrName==$pk.lowerAttrName)
-    <id property="${pk.lowerAttrName}" jdbcType="${pk.dataType}" column="${pk.columnName}"/>
+    <id property="${pk.lowerAttrName}" jdbcType="${pk.jdbcType}" column="${pk.columnName}"/>
     #else
-    <result property="${column.lowerAttrName}" jdbcType="${column.dataType}" column="${column.columnName}"/>
+    <result property="${column.lowerAttrName}" jdbcType="${column.jdbcType}" column="${column.columnName}"/>
     #end
     #end
   </resultMap>

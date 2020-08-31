@@ -2,17 +2,16 @@ package ${package}.${moduleName}.controller;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.xkcoding.common.R;
-import com.xkcoding.scaffold.log.annotations.ApiLog;
+import ${package}.${moduleName}.common.R;
 import ${package}.${moduleName}.entity.${className};
 import ${package}.${moduleName}.service.${className}Service;
-import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
-
+import lombok.extern.slf4j.Slf4j;
 /**
  * <p>
  * ${comments}
@@ -26,13 +25,13 @@ import io.swagger.annotations.ApiImplicitParams;
  * @version: V1.0
  * @modified: ${author}
  */
+@Slf4j
 @RestController
-@AllArgsConstructor
 @RequestMapping("/${pathName}")
 @Api(description = "${className}Controller", tags = {"${comments}"})
 public class ${className}Controller {
-
-    private final ${className}Service ${classname}Service;
+    @Autowired
+    private  ${className}Service ${classname}Service;
 
     /**
      * 分页查询${comments}
@@ -47,7 +46,7 @@ public class ${className}Controller {
             @ApiImplicitParam(name = "${classname}", value = "查询条件", required = true)
     })
     public R list${className}(Page page, ${className} ${classname}) {
-      return new R<>(${classname}Service.page(page,Wrappers.query(${classname})));
+      return R.success(${classname}Service.page(page,Wrappers.query(${classname})));
     }
 
 
@@ -62,7 +61,7 @@ public class ${className}Controller {
             @ApiImplicitParam(name = "${pk.lowerAttrName}", value = "主键id", required = true)
     })
     public R get${className}(@PathVariable("${pk.lowerAttrName}") ${pk.attrType} ${pk.lowerAttrName}){
-      return new R<>(${classname}Service.getById(${pk.lowerAttrName}));
+      return R.success(${classname}Service.getById(${pk.lowerAttrName}));
     }
 
     /**
@@ -70,11 +69,10 @@ public class ${className}Controller {
      * @param ${classname} ${comments}
      * @return R
      */
-    @ApiLog("新增${comments}")
     @PostMapping
     @ApiOperation(value = "新增${comments}", notes = "新增${comments}")
     public R save${className}(@RequestBody ${className} ${classname}){
-      return new R<>(${classname}Service.save(${classname}));
+      return R.success(${classname}Service.save(${classname}));
     }
 
     /**
@@ -83,14 +81,13 @@ public class ${className}Controller {
      * @param ${classname} ${comments}
      * @return R
      */
-    @ApiLog("修改${comments}")
     @PutMapping("/{${pk.lowerAttrName}}")
     @ApiOperation(value = "修改${comments}", notes = "修改${comments}")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "${pk.lowerAttrName}", value = "主键id", required = true)
     })
     public R update${className}(@PathVariable ${pk.attrType} ${pk.lowerAttrName}, @RequestBody ${className} ${classname}){
-      return new R<>(${classname}Service.updateById(${classname}));
+      return R.success(${classname}Service.updateById(${classname}));
     }
 
     /**
@@ -98,14 +95,13 @@ public class ${className}Controller {
      * @param ${pk.lowerAttrName} id
      * @return R
      */
-    @ApiLog("删除${comments}")
     @DeleteMapping("/{${pk.lowerAttrName}}")
     @ApiOperation(value = "删除${comments}", notes = "删除${comments}")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "${pk.lowerAttrName}", value = "主键id", required = true)
     })
     public R delete${className}(@PathVariable ${pk.attrType} ${pk.lowerAttrName}){
-      return new R<>(${classname}Service.removeById(${pk.lowerAttrName}));
+      return R.success(${classname}Service.removeById(${pk.lowerAttrName}));
     }
 
 }
