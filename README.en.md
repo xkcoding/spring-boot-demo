@@ -119,7 +119,7 @@ View the [TODO](./TODO.en.md) file
 | [spring-boot-demo-codegen](./spring-boot-demo-codegen)       | a demo to integrate velocity template engine to implement code generator, improve development efficiency. |
 | [spring-boot-demo-graylog](./spring-boot-demo-graylog)       | a demo to integrate graylog for unified log collection.      |
 | spring-boot-demo-sso                                         | <span style="color:pink;">NOT FINISHED YET!</span> <br />a demo to integrate Single Sign On, see [ISSUE#12](https://github.com/xkcoding/spring-boot-demo/issues/12). |
-| [spring-boot-demo-ldap](./spring-boot-demo-ldap)             | a demo to integrate LADP to use `spring-boot-starter-data-ldap` to implement  CURD operations and give the login demo, see [ISSUE#23](https://github.com/xkcoding/spring-boot-demo/issues/23), thanks [@fxbin](https://github.com/fxbin). |
+| [spring-boot-demo-ldap](./spring-boot-demo-ldap)             | a demo to integrate LDAP to use `spring-boot-starter-data-ldap` to implement  CURD operations and give the login demo, see [ISSUE#23](https://github.com/xkcoding/spring-boot-demo/issues/23), thanks [@fxbin](https://github.com/fxbin). |
 | [spring-boot-demo-dynamic-datasource](./spring-boot-demo-dynamic-datasource) | a demo to add datasource dynamically, switch datasource dynamically. |
 | [spring-boot-demo-ratelimit-guava](./spring-boot-demo-ratelimit-guava) | a demo to use use Guava RateLimiter to protect API  by standalone rate limiting. |
 | [spring-boot-demo-ratelimit-redis](./spring-boot-demo-ratelimit-redis) | a demo to use Redis and Lua script implementation to protect API by distributed rate limiting. |

@@ -119,7 +119,7 @@
 | [spring-boot-demo-codegen](./spring-boot-demo-codegen)       | spring-boot 集成 velocity 模板技术实现的代码生成器，简化开发 |
 | [spring-boot-demo-graylog](./spring-boot-demo-graylog)       | spring-boot 集成 graylog 实现日志统一收集                    |
 | spring-boot-demo-sso                                         | spring-boot 集成 SSO 单点登录，参见 [ISSUE#12](https://github.com/xkcoding/spring-boot-demo/issues/12)<br /> <span style="color:pink;">待完成</span> |
-| [spring-boot-demo-ldap](./spring-boot-demo-ldap)             | spring-boot 集成 LADP，集成 `spring-boot-starter-data-ldap` 完成对 Ldap 的基本 CURD操作, 并给出以登录为实战的 API 示例，参见 [ISSUE#23](https://github.com/xkcoding/spring-boot-demo/issues/23)，感谢 [@fxbin](https://github.com/fxbin) |
+| [spring-boot-demo-ldap](./spring-boot-demo-ldap)             | spring-boot 集成 LDAP，集成 `spring-boot-starter-data-ldap` 完成对 Ldap 的基本 CURD操作, 并给出以登录为实战的 API 示例，参见 [ISSUE#23](https://github.com/xkcoding/spring-boot-demo/issues/23)，感谢 [@fxbin](https://github.com/fxbin) |
 | [spring-boot-demo-dynamic-datasource](./spring-boot-demo-dynamic-datasource) | spring-boot 动态添加数据源、动态切换数据源                   |
 | [spring-boot-demo-ratelimit-guava](./spring-boot-demo-ratelimit-guava) | spring-boot 使用 Guava RateLimiter 实现单机版限流，保护 API  |
 | [spring-boot-demo-ratelimit-redis](./spring-boot-demo-ratelimit-redis) | spring-boot 使用 Redis + Lua 脚本实现分布式限流，保护 API    |
