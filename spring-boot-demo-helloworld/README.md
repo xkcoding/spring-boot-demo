@@ -1,8 +1,14 @@
 # spring-boot-demo-helloworld
 
+## Runing spring boot demo helloworld
+
+```sh
+ $ mvn spring-boot:run
+```
+##
 > 本 demo 演示如何使用 Spring Boot 写一个hello world
 
-## pom.xml
+### pom.xml
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -59,7 +65,7 @@
 </project>
 ```
 
-## SpringBootDemoHelloworldApplication.java
+### SpringBootDemoHelloworldApplication.java
 
 ```java
 /**
@@ -99,7 +105,7 @@ public class SpringBootDemoHelloworldApplication {
 }
 ```
 
-## application.yml
+### application.yml
 
 ```yaml
 server:
