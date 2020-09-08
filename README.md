@@ -28,7 +28,9 @@
 
 ## 感谢
 
-<a href="https://www.jetbrains.com/?from=spring-boot-demo"><img src="assets/jetbrains.png" width="100px" alt="jetbrains">**感谢 JetBrains 提供的免费开源 License**</a>
+- <a href="https://www.jetbrains.com/?from=spring-boot-demo"><img src="assets/jetbrains.png" width="100px" alt="jetbrains">**感谢 JetBrains 提供的免费开源 License**</a>
+
+-  [感谢史上最牛的代码生成插件 MyBatisCodeHelper-Pro 提供的永久激活码](https://gejun123456.github.io/MyBatisCodeHelper-Pro/#/?id=mybatiscodehelper-pro)
 
 ## 分支介绍
 
