@@ -1,0 +1,17 @@
+
+server:
+  port: 9900
+  servlet:
+    context-path: /uac
+
+
+
+sso.client:
+  # 以下信息需要与客户端对应 同时uri 版本默认是附带login,有些版本不填将出现无效请求 有些版本则可以不填uri
+  - client-name: client1
+    client-password: client1
+    uri: http://localhost:9901/login
+  - client-name: client2
+    client-password: client2
+    uri: http://localhost:9902/login
+
