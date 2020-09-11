@@ -1,5 +1,6 @@
 package com.xkcoding.exception.handler.exception;
 
+import cn.hutool.core.lang.Dict;
 import com.xkcoding.exception.handler.constant.Status;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -19,19 +20,49 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class BaseException extends RuntimeException {
-	private Integer code;
-	private String message;
+public class BaseException extends RuntimeException implements IDataType {
 
-	public BaseException(Status status) {
-		super(status.getMessage());
-		this.code = status.getCode();
-		this.message = status.getMessage();
-	}
+    private Integer code;
 
-	public BaseException(Integer code, String message) {
-		super(message);
-		this.code = code;
-		this.message = message;
-	}
+    private String message;
+
+    private Object data;
+
+    /**
+     * request.setAttribute所虚，一般为视图携带属性
+     */
+    private Dict attributes;
+
+    public BaseException(Status status) {
+        super(status.getMessage());
+        this.code = status.getCode();
+        this.message = status.getMessage();
+    }
+
+    public BaseException(Status status, Dict attributes) {
+        super(status.getMessage());
+        this.code = status.getCode();
+        this.message = status.getMessage();
+        this.attributes = attributes;
+    }
+
+    public BaseException(Integer code, String message) {
+        super(message);
+        this.code = code;
+        this.message = message;
+    }
+
+    public BaseException(Integer code, String message, Object data) {
+        super(message);
+        this.message = message;
+        this.data = data;
+    }
+
+    public BaseException(Integer code, String message, Object data, Dict attributes) {
+        super(message);
+        this.message = message;
+        this.data = data;
+        this.attributes = attributes;
+    }
+
 }

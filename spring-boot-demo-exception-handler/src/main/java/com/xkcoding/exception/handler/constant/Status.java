@@ -21,15 +21,22 @@ public enum Status {
 	 * 操作成功
 	 */
 	OK(200, "操作成功"),
-	
+
 	/**
 	 * 未知异常
 	 */
-	UNKNOWN_ERROR(500, "服务器出错啦");
+	UNKNOWN_ERROR(500, "服务器出错啦"),
+
+    /**
+     * 请求资源未找到
+     */
+	NOT_FOUND(404, "请求资源未找到");
+
 	/**
 	 * 状态码
 	 */
 	private Integer code;
+
 	/**
 	 * 内容
 	 */

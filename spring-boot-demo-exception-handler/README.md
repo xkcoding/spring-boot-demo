@@ -1,6 +1,6 @@
 # spring-boot-demo-exception-handler
 
-> 此 demo 演示了如何在Spring Boot中进行统一的异常处理，包括了两种方式的处理：第一种对常见API形式的接口进行异常处理，统一封装返回格式；第二种是对模板页面请求的异常处理，统一处理错误页面。
+> 此 demo 演示了如何在Spring Boot中进行统一的异常处理，包括了两种方式的处理：第一种对常见API形式的接口进行异常处理，统一封装返回格式；第二种是对模板页面请求的异常处理，统一处理错误页面；第三种是针对同一接口对接浏览器和移动端的情况，可以自适应输出模板或者json格式。
 
 ## pom.xml
 
@@ -30,6 +30,11 @@
 	</properties>
 
 	<dependencies>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -196,6 +201,17 @@ public class ApiResponse {
 	public static <T extends BaseException> ApiResponse ofException(T t) {
 		return ofException(t, null);
 	}
+
+   /**
+     * 重写toString
+     *
+     * @return jackson序列化
+     */
+    @SneakyThrows
+    @Override
+    public String toString() {
+        return new ObjectMapper().writeValueAsString(this);
+    }
 }
 ```
 
@@ -216,6 +232,7 @@ public class ApiResponse {
  * @modified: yangkai.shen
  */
 @ControllerAdvice
+@Order(value = Ordered.HIGHEST_PRECEDENCE)
 @Slf4j
 public class DemoExceptionHandler {
 	private static final String DEFAULT_ERROR_VIEW = "error";
@@ -247,7 +264,121 @@ public class DemoExceptionHandler {
 		view.setViewName(DEFAULT_ERROR_VIEW);
 		return view;
 	}
+
+    /**
+     * 定义状态码和模板路径对应关系
+     */
+    private final Map<Integer, String> errorPageMap = new HashMap<>();
+
+    @PostConstruct
+    public void init() {
+        errorPageMap.put(404, "/4xx");
+        errorPageMap.put(500, "/5xx");
+    }
+
+    /**
+     * 自适应返回 异常处理
+     *
+     * @param exception BizException
+     * @param request   request
+     * @param response  response
+     * @throws IOException
+     * @throws ServletException
+     */
+    @ExceptionHandler(value = {BizException.class})
+    public void autoHandler(BizException exception, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        log.error("【BizException】: {}", exception.getMessage());
+        UserAgent userAgent = UserAgentUtil.parse(request.getHeader("User-Agent"));
+
+        boolean showJson = (userAgent.isMobile() && exception.isJson()) || (!userAgent.isMobile() && !exception.isView());
+
+        if (showJson) {
+            write(exception, response);
+        } else {
+            write(exception, request, response);
+        }
+
+    }
+
+    /**
+     * 输出json到客户端
+     *
+     * @param exception {@link BaseException}的子类
+     * @param response  response
+     * @throws IOException
+     */
+    private void write(BaseException exception, HttpServletResponse response) throws IOException {
+        response.reset();
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json;charset=UTF-8");
+
+        PrintWriter writer = response.getWriter();
+        writer.write(ApiResponse.ofException(exception, exception.getData()).toString());
+        writer.flush();
+        writer.close();
+    }
+
+    /**
+     * 输出视图到客户端
+     *
+     * @param exception {@link BaseException}的子类
+     * @param response  response
+     * @throws IOException
+     * @throws ServletException
+     */
+    private void write(BaseException exception, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        exception.getAttributes().forEach(request::setAttribute);
+        request.getRequestDispatcher(getErrorPage(exception.getCode())).forward(request, response);
+    }
+
+    /**
+     * 根据抛出状态码定位到视图路径，若未匹配到，则使用统一异常页面
+     *
+     * @param code 状态码
+     * @return 视图路径
+     */
+    private String getErrorPage(Integer code) {
+        return errorPageMap.getOrDefault(code, "/error");
+    }
+
 }
+```
+
+## 4xx.html
+
+> 位于 `src/main/resources/template` 目录下
+
+```html
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+	<meta charset="UTF-8"/>
+	<title>4xx 统一页面异常处理</title>
+</head>
+<body>
+<h1>404 统一页面异常处理</h1>
+<div th:text="'默认值: ' + ${default}"></div>
+<div th:text="'提示信息: ' + ${message}"></div>
+</body>
+</html>
+```
+
+## 5xx.html
+
+> 位于 `src/main/resources/template` 目录下
+
+```html
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+	<meta charset="UTF-8"/>
+	<title>5xx 统一页面异常处理</title>
+</head>
+<body>
+<h1>500 统一页面异常处理</h1>
+<div th:text="'提示信息: ' + ${message}"></div>
+</body>
+</html>
 ```
 
 ## error.html
@@ -263,8 +394,128 @@ public class DemoExceptionHandler {
 </head>
 <body>
 <h1>统一页面异常处理</h1>
-<div th:text="${message}"></div>
+<div th:text="'提示信息: ' + ${message}"></div>
 </body>
 </html>
 ```
 
+## 针对同一接口自适应输出的说明
+
+### 1. 定义数据传输方式
+
+#### IDataType.java
+
+```java
+/**
+ * 定义顶级数据传输方式为json或视图
+ *
+ * @author FYT
+ * @since 2020/4/7
+ */
+public interface IDataType {
+
+    /**
+     * 控制移动端返回格式是否为json
+     *
+     * @return true / false
+     */
+    default boolean isJson() {
+        return true;
+    }
+
+    /**
+     * 控制非移动端返回格式是否为视图
+     *
+     * @return true / false
+     */
+    default boolean isView() {
+        return true;
+    }
+
+}
+```
+
+### 2. BaseException实现接口
+
+由于`IDataType`接口有默认实现，所以BaseException在实现接口之后，各子类异常可根据各自业务重写，来达到灵活返回。
+
+### 3. 自定义异常
+
+#### BizException.java
+
+```java
+/**
+ * 自定义业务异常
+ *
+ * @author FYT
+ * @since 2020/4/7
+ */
+public class BizException extends BaseException {
+
+    public BizException(Status status) {
+        super(status);
+    }
+
+    public BizException(Status status, Dict attributes) {
+        super(status, attributes);
+    }
+
+    public BizException(Integer code, String message) {
+        super(code, message);
+    }
+
+    public BizException(Integer code, String message, Object data) {
+        super(code, message, data);
+    }
+
+    /**
+     * 移动端使用json
+     *
+     * @return json
+     */
+    @Override
+    public boolean isJson() {
+        return true;
+    }
+
+    /**
+     * 浏览器使用 视图
+     *
+     * @return 视图
+     */
+    @Override
+    public boolean isView() {
+        return true;
+    }
+}
+```
+
+### 4. 错误页面路由
+
+#### ErrorPageController.java
+
+```java
+/**
+ * 错误页面路由
+ *
+ * @author FYT
+ * @since 2020/4/7
+ */
+@Controller
+public class ErrorPageController {
+
+    @GetMapping(value = "/4xx")
+    public String resourcesNotFound(Model model) {
+        model.addAttribute("default", "4xx 页面默认值");
+        return "4xx";
+    }
+
+    @GetMapping(value = "/5xx")
+    public String internalError() {
+        return "5xx";
+    }
+
+}
+```
+
+自适应返回视图采用的是`request.getRequestDispatcher().forward(request, response);`。个性化的数据可直接在业务controller方法中直接使用`request.setAttribute()`进行赋值。`BaseException`中也提供了`Dict`字段。当然你也可以在`ErrorPageController`中直接赋默认值。
