@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <groupId>com.xkcoding</groupId>
+    <artifactId>spring-boot-demo</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>spring-boot-demo-grpc</artifactId>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>spring-boot-demo-grpc-server</module>
+    <module>spring-boot-demo-grpc-client</module>
+    <module>spring-boot-demo-grpc-protocol</module>
+  </modules>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <java.version>1.8</java.version>
+    <grpc.version>1.27.1</grpc.version>
+    <os-maven-plugin.version>1.6.2</os-maven-plugin.version>
+    <protobuf-maven-plugin.version>0.6.1</protobuf-maven-plugin.version>
+    <com.google.protobuf.protoc.version>3.11.0</com.google.protobuf.protoc.version>
+    <protoc-gen-grpc-java.version>1.27.1</protoc-gen-grpc-java.version>
+    <net-devh-grpc.version>2.7.0.RELEASE</net-devh-grpc.version>
+    <netty-tcnative-boringssl-static.version>2.0.25.Final</netty-tcnative-boringssl-static.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>net.devh</groupId>
+        <artifactId>grpc-client-spring-boot-starter</artifactId>
+        <version>${net-devh-grpc.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>net.devh</groupId>
+        <artifactId>grpc-server-spring-boot-starter</artifactId>
+        <version>${net-devh-grpc.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+</project>
