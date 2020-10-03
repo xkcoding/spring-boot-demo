@@ -1,0 +1,7 @@
+wxpay:
+  appId: 应用编号
+  # appSecret: appSecret 是 appId 对应的接口密码，微信公众号授权获取用户 openId 时使用
+  mchId: 微信支付商户号
+  partnerKey: API 密钥，微信商户后台配置
+  certPath: apiclient_cert.p12 证书绝对路径，在微信商户后台下载
+  domain: 外网访问项目的域名，支付通知、回调中会使用
