@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * <p>
@@ -55,8 +57,13 @@ public class AuthController {
         SecurityContextHolder.getContext()
                 .setAuthentication(authentication);
 
-        String jwt = jwtUtil.createJWT(authentication,loginRequest.getRememberMe());
-        return ApiResponse.ofSuccess(new JwtResponse(jwt));
+        String jwt = jwtUtil.createJWT(authentication,loginRequest.getRememberMe(), false);
+        String refresh_jwt = jwtUtil.createJWT(authentication, loginRequest.getRememberMe(), true);
+        Map<String, String> map = new HashMap<>();
+        map.put("tokenType", new JwtResponse(jwt).getTokenType());
+        map.put("token", jwt);
+        map.put("refreshToken", refresh_jwt);
+        return ApiResponse.ofSuccess(map);
     }
 
     @PostMapping("/logout")
@@ -69,4 +76,22 @@ public class AuthController {
         }
         return ApiResponse.ofStatus(Status.LOGOUT);
     }
+
+    /**
+     * token过期之后使用refresh_token获取新的token
+     * @param refreshToken
+     * @return
+     */
+    @PostMapping("/refresh/token")
+    public ApiResponse refreshToken(String refreshToken) {
+        Map<String, String> map;
+        try {
+            // 刷新
+            map = jwtUtil.refreshJWT(refreshToken, true);
+        } catch (SecurityException e) {
+            throw new SecurityException(Status.TOKEN_EXPIRED);
+        }
+        return ApiResponse.ofSuccess(map);
+    }
+
 }

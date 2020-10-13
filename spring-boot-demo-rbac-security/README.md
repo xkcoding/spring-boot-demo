@@ -28,8 +28,9 @@
 2. 使用 [`security.sql`](./sql/security.sql) 这个 SQL 文件，创建数据库表和初始化RBAC数据
 3. 运行 `SpringBootDemoRbacSecurityApplication`
 4. 管理员账号：admin/123456 普通用户：user/123456
-5. 使用 `POST` 请求访问 `/${contextPath}/api/auth/login` 端点，输入账号密码，登陆成功之后返回token，将获得的 token 放在具体请求的 Header 里，key 固定是 `Authorization` ，value 前缀为 `Bearer 后面加空格`再加token，并加上具体请求的参数，就可以了
-6. enjoy ~​ :kissing_smiling_eyes:
+5. 使用 `POST` 请求访问 `/${contextPath}/api/auth/login` 端点，输入账号密码，登陆成功之后返回 token 和 refresh_token，将获得的 token 放在具体请求的 Header 里，key 固定是 `Authorization` ，value 前缀为 `Bearer 后面加空格`再加token，并加上具体请求的参数，就可以了
+6. 使用 `POST` 请求访问 `/${contextPath}/api/auth/refresh/token` 进行刷新token, 参数 `refreshToken` 为登录时候返回的 refresh_token, 此刷新请求将再次获得 token 和 refresh_token, 注意：refresh_token 只是用来刷新 token 和 refresh_token 的，这样只要 token 过期，就能使用 refresh_token 进行刷新，实现用户无感知情况下刷新 token.
+7. enjoy ~​ :kissing_smiling_eyes:
 
 ## 3. 部分关键代码
 

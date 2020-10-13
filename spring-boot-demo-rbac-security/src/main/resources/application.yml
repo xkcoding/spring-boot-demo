@@ -54,6 +54,7 @@ custom:
       post:
         - "/api/auth/login"
         - "/api/auth/logout"
+        - "/api/auth/refresh/token"
       # 需要过滤的请求，不限方法
       pattern:
         - "/test/*"

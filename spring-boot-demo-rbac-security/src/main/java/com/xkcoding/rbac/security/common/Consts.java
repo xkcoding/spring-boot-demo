@@ -39,6 +39,11 @@ public interface Consts {
     String REDIS_JWT_KEY_PREFIX = "security:jwt:";
 
     /**
+     * 用来刷新 JWT 的 refresh_token 在 redis 中保存的 key 前缀
+     */
+    String REDIS_JWT_REFRESH_KEY_PREFIX = "security:refresh:jwt:";
+
+    /**
      * 星号
      */
     String SYMBOL_STAR = "*";
