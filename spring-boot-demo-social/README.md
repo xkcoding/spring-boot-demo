@@ -110,7 +110,7 @@ https://github.com/xkcoding/act-justauth-demo
 
 前往阿里云DNS解析，将域名解析到我们的公网服务器上，比如我的就是将 `oauth.xkcoding.com -> 120.92.169.103`
 
-![image-20190615165843639](assets/image-20190615165843639.png)
+![image-20190615165843639](http://static.xkcoding.com/spring-boot-demo/social/063923.jpg)
 
 ### 1.4. nginx代理
 
@@ -171,14 +171,14 @@ $ nginx -s reload
 2. 申请开发者
 3. 应用管理 -> 添加网站应用，等待审核通过即可
 
-![image-20190617144655429](assets/image-20190617144655429.png)
+![image-20190617144655429](http://static.xkcoding.com/spring-boot-demo/social/063921-1.jpg)
 
 #### 1.5.2. GitHub平台申请
 
 1. 前往 https://github.com/settings/developers
 2. 点击 `New OAuth App` 按钮创建应用
 
-![image-20190617145839851](assets/image-20190617145839851.png)
+![image-20190617145839851](http://static.xkcoding.com/spring-boot-demo/social/063919.jpg)
 
 #### 1.5.3 微信开放平台申请
 
@@ -193,31 +193,31 @@ $ nginx -s reload
 
 因此这里我就贴出一张授权回调的地址作参考。
 
-![image-20190617153552218](assets/image-20190617153552218.png)
+![image-20190617153552218](http://static.xkcoding.com/spring-boot-demo/social/063927-1.jpg)
 
 #### 1.5.4. 谷歌开放平台申请
 
 1. 前往 https://console.developers.google.com/projectcreate 创建项目
 2. 前往 https://console.developers.google.com/apis/credentials ，在第一步创建的项目下，添加应用
 
-![image-20190617151119584](assets/image-20190617151119584.png)
+![image-20190617151119584](http://static.xkcoding.com/spring-boot-demo/social/063920.jpg)
 
-![image-20190617150903039](assets/image-20190617150903039.png)
+![image-20190617150903039](http://static.xkcoding.com/spring-boot-demo/social/063922.jpg)
 
 #### 1.5.5. 微软开放平台申请
 
 1. 前往 https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade 注册应用
 2. 在注册应用的时候就需要填写回调地址，当然后期也可以重新修改
 
-![image-20190617152529449](assets/image-20190617152529449.png)
+![image-20190617152529449](http://static.xkcoding.com/spring-boot-demo/social/063921.jpg)
 
 3. client id 在这里
 
-![image-20190617152805581](assets/image-20190617152805581.png)
+![image-20190617152805581](http://static.xkcoding.com/spring-boot-demo/social/063927.jpg)
 
 4. client secret 需要自己在这里生成
 
-![image-20190617152711938](assets/image-20190617152711938.png)
+![image-20190617152711938](http://static.xkcoding.com/spring-boot-demo/social/063924.jpg)
 
 #### 1.5.6. 小米开放平台申请
 
@@ -225,11 +225,11 @@ $ nginx -s reload
 2. 前往 https://dev.mi.com/passport/oauth2/applist 添加oauth应用，选择 `创建网页应用`
 3. 填写基本信息之后，进入应用信息页面填写 `回调地址`
 
-![image-20190617151502414](assets/image-20190617151502414.png)
+![image-20190617151502414](http://static.xkcoding.com/spring-boot-demo/social/063924-1.jpg)
 
 4. 应用审核通过之后，可以在应用信息页面的 `应用详情` 查看到 AppKey 和 AppSecret，吐槽下，小米应用的审核速度特别慢，需要耐心等待。。。。
 
-![image-20190617151624603](assets/image-20190617151624603.png)
+![image-20190617151624603](http://static.xkcoding.com/spring-boot-demo/social/063926.jpg)
 
 #### 1.5.7. 企业微信平台申请
 

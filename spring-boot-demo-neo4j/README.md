@@ -329,7 +329,7 @@ public class Neo4jTest extends SpringBootDemoNeo4jApplicationTests {
 
 运行测试类之后，可以通过访问 http://localhost:7474 ，查看neo里所有节点和关系
 
-![image-20181225150513101](assets/image-20181225150513101-5721513.png)
+![image-20181225150513101](http://static.xkcoding.com/spring-boot-demo/neo4j/063605.jpg)
 
 
 
