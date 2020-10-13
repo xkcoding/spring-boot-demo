@@ -549,21 +549,21 @@ public class SpringBootDemoDynamicDatasourceApplication implements CommandLineRu
 
 启动项目，可以看到控制台读取到数据库已配置的数据源信息
 
-![image-20190905164824155](assets/image-20190905164824155.png)
+![image-20190905164824155](http://static.xkcoding.com/spring-boot-demo/dynamic-datasource/062351.png)
 
 通过 PostMan 等工具测试
 
 - 默认数据源查询
 
-![image-20190905165240373](assets/image-20190905165240373.png)
+![image-20190905165240373](http://static.xkcoding.com/spring-boot-demo/dynamic-datasource/062353.png)
 
 - 根据数据源id为1的数据源查询
 
-![image-20190905165323097](assets/image-20190905165323097.png)
+![image-20190905165323097](http://static.xkcoding.com/spring-boot-demo/dynamic-datasource/062354.png)
 
 - 根据数据源id为2的数据源查询
 
-![image-20190905165350355](assets/image-20190905165350355.png)
+![image-20190905165350355](http://static.xkcoding.com/spring-boot-demo/dynamic-datasource/062355.png)
 
 - 可以通过测试数据源的`增加/删除`，再去查询对应数据源的数据
 

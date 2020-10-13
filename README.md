@@ -28,7 +28,7 @@
 
 ## 感谢
 
-- <a href="https://www.jetbrains.com/?from=spring-boot-demo"><img src="assets/jetbrains.png" width="100px" alt="jetbrains">**感谢 JetBrains 提供的免费开源 License**</a>
+- <a href="https://www.jetbrains.com/?from=spring-boot-demo"><img src="http://static.xkcoding.com/spring-boot-demo/064312.jpg" width="100px" alt="jetbrains">**感谢 JetBrains 提供的免费开源 License**</a>
 
 -  [感谢史上最牛的代码生成插件 MyBatisCodeHelper-Pro 提供的永久激活码](https://gejun123456.github.io/MyBatisCodeHelper-Pro/#/?id=mybatiscodehelper-pro)
 
@@ -375,7 +375,3 @@ Copyright (c) 2018 Yangkai.Shen
 - `awesome-collector`：https://github.com/P-P-X/awesome-collector
 - `SpringBlade`：完整的线上解决方案(企业开发必备)，https://github.com/chillzhuang/SpringBlade
 - `Pig`：宇宙最强微服务认证授权脚手架(架构师必备)，https://github.com/pigxcloud/pig
-
-### 广告
-
-[![京东云主机](assets/jdcloud.jpg)](https://re.jdcloud.com/cps?returnUrl=aHR0cHM6Ly93d3cuamRjbG91ZC5jb20vY24vYWN0aXZpdHkveWVhci1lbmQ_bUlkPTE4JmNwc0tleT1iMjg2Y2Q0ZmExMWM0ODZhODU2NmUwNjc5MGQ0MzY4MA==)

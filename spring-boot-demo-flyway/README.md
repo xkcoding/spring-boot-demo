@@ -111,11 +111,11 @@ CREATE TABLE `t_user` (
 
 检查数据库，发现创建了 2 张表，一张是 Flyway 依赖的历史表，另一张就是我们的 `t_user` 表
 
-<img src="assets/image-20200305105632047.png" alt="image-20200305105632047" style="zoom:50%;" />
+<img src="http://static.xkcoding.com/spring-boot-demo/flyway/062903.jpg" alt="image-20200305105632047" style="zoom:50%;" />
 
 查看下 `flyway-schema-history` 表
 
-<img src="assets/image-20200305110147176.png" alt="image-20200305110147176" style="zoom:50%;" />
+<img src="http://static.xkcoding.com/spring-boot-demo/flyway/062901.jpg" alt="image-20200305110147176" style="zoom:50%;" />
 
 ### 4.2. 测试 1.1 版本的 SQL 脚本
 
@@ -140,11 +140,11 @@ ALTER TABLE t_user COMMENT = '用户 v1.1';
 
 检查数据库，可以发现 `t_user` 表的注释已经更新
 
-<img src="assets/image-20200305105958181.png" alt="image-20200305105958181" style="zoom:50%;" />
+<img src="http://static.xkcoding.com/spring-boot-demo/flyway/062851.jpg" alt="image-20200305105958181" style="zoom:50%;" />
 
 查看下 `flyway-schema-history` 表
 
-<img src="assets/image-20200305110057768.png" alt="image-20200305110057768" style="zoom:50%;" />
+<img src="http://static.xkcoding.com/spring-boot-demo/flyway/062908.jpg" alt="image-20200305110057768" style="zoom:50%;" />
 
 ## 参考
 

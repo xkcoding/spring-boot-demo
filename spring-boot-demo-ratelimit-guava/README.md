@@ -200,15 +200,15 @@ public class TestController {
 
 - test1 接口未被限流的时候
 
-<img src="assets/image-20190912155209716.png" alt="image-20190912155209716" style="zoom:50%;" />
+<img src="http://static.xkcoding.com/spring-boot-demo/ratelimit/guava/063719.jpg" alt="image-20190912155209716" style="zoom:50%;" />
 
 - test1 接口频繁刷新，触发限流的时候
 
-<img src="assets/image-20190912155229745.png" alt="image-20190912155229745" style="zoom:50%;" />
+<img src="http://static.xkcoding.com/spring-boot-demo/ratelimit/guava/063718-1.jpg" alt="image-20190912155229745" style="zoom:50%;" />
 
 - test2 接口不做限流，可以一直刷新
 
-<img src="assets/image-20190912155146012.png" alt="image-20190912155146012" style="zoom:50%;" />
+<img src="http://static.xkcoding.com/spring-boot-demo/ratelimit/guava/063718.jpg" alt="image-20190912155146012" style="zoom:50%;" />
 
 ## 3. 参考
 

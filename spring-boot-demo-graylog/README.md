@@ -256,23 +256,23 @@ spring:
 
    输入 `docker-compose.yml` 里配置的 `用户名/密码` 信息
 
-   ![登录graylog](assets/image-20190423164322865.png)
+   ![登录graylog](http://static.xkcoding.com/spring-boot-demo/graylog/063124.jpg)
 
 2. 设置来源信息
 
-   ![设置Inputs](assets/image-20190423164633440.png)
+   ![设置Inputs](http://static.xkcoding.com/spring-boot-demo/graylog/063125.jpg)
 
-   ![image-20190423164748993](assets/image-20190423164748993.png)
+   ![image-20190423164748993](http://static.xkcoding.com/spring-boot-demo/graylog/063121-1.jpg)
 
-   ![image-20190423164932488](assets/image-20190423164932488.png)
+   ![image-20190423164932488](http://static.xkcoding.com/spring-boot-demo/graylog/063121.jpg)
 
-   ![image-20190423165120586](assets/image-20190423165120586.png)
+   ![image-20190423165120586](http://static.xkcoding.com/spring-boot-demo/graylog/063122.jpg)
 
 ## 6. 启动 Spring Boot 项目
 
 启动成功后，返回graylog页面查看日志信息
 
-![image-20190423165936711](assets/image-20190423165936711.png)
+![image-20190423165936711](http://static.xkcoding.com/spring-boot-demo/graylog/063123.jpg)
 
 ## 参考
 

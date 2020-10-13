@@ -284,11 +284,11 @@ public class TestController {
 
 - 触发限流时控制台打印
 
-![image-20190930155856711](assets/image-20190930155856711.png)
+![image-20190930155856711](http://static.xkcoding.com/spring-boot-demo/ratelimit/redis/063812.jpg)
 
 - 触发限流的时候 Redis 的数据
 
-![image-20190930155735300](assets/image-20190930155735300.png)
+![image-20190930155735300](http://static.xkcoding.com/spring-boot-demo/ratelimit/redis/063813.jpg)
 
 ## 3. 参考
 

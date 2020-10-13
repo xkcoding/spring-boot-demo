@@ -518,29 +518,29 @@ public class SpringBootDemoMqRabbitmqApplicationTests {
 
 ### 直接模式
 
-![image-20190107103229408](assets/image-20190107103229408-6828349.png)
+![image-20190107103229408](http://static.xkcoding.com/spring-boot-demo/mq/rabbitmq/063315-1.jpg)
 
 ### 分列模式
 
-![image-20190107103258291](assets/image-20190107103258291-6828378.png)
+![image-20190107103258291](http://static.xkcoding.com/spring-boot-demo/mq/rabbitmq/063315.jpg)
 
 ### 主题模式
 
 #### RoutingKey：`queue.#`
 
-![image-20190107103358744](assets/image-20190107103358744-6828438.png)
+![image-20190107103358744](http://static.xkcoding.com/spring-boot-demo/mq/rabbitmq/063316.jpg)
 
 #### RoutingKey：`*.queue`
 
-![image-20190107103429430](assets/image-20190107103429430-6828469.png)
+![image-20190107103429430](http://static.xkcoding.com/spring-boot-demo/mq/rabbitmq/063312.jpg)
 
 #### RoutingKey：`3.queue`
 
-![image-20190107103451240](assets/image-20190107103451240-6828491.png)
+![image-20190107103451240](http://static.xkcoding.com/spring-boot-demo/mq/rabbitmq/063313.jpg)
 
 ### 延迟队列
 
-![image-20190107103509943](assets/image-20190107103509943-6828509.png)
+![image-20190107103509943](http://static.xkcoding.com/spring-boot-demo/mq/rabbitmq/063314.jpg)
 
 ## 参考
 

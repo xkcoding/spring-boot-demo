@@ -315,9 +315,9 @@ public class ServerRunner implements CommandLineRunner {
 
 ## 3. 运行效果
 
-**浏览器1：**![image-20181219152318079](assets/image-20181219152318079-5204198.png)
+**浏览器1：**![image-20181219152318079](http://static.xkcoding.com/spring-boot-demo/websocket/socketio/064155.jpg)
 
-**浏览器2：**![image-20181219152330156](assets/image-20181219152330156-5204210.png)
+**浏览器2：**![image-20181219152330156](http://static.xkcoding.com/spring-boot-demo/websocket/socketio/064154.jpg)
 
 ## 4. 参考
 
