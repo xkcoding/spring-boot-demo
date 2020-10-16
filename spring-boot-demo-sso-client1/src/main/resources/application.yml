@@ -1,0 +1,23 @@
+
+
+# sso-server地址
+auth-server: http://localhost:9900/uac
+
+server:
+  port: 9901
+security:
+  oauth2:
+    client:
+      client-id: client1
+      client-secret: client1
+      #请求认证的地址
+      user-authorization-uri: ${auth-server}/oauth/authorize
+      #请求令牌的地址
+      access-token-uri: ${auth-server}/oauth/token
+    resource:
+      jwt:
+        #解析jwt令牌所需要密钥的地址
+        key-uri: ${auth-server}/oauth/token_key
+
+debug: true
+
