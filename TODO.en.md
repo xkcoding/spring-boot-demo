@@ -1,6 +1,6 @@
 # spring-boot-demo Project TODO List
 
-## Module plan (completed: 48 / 58)
+## Module plan (completed: 54 / 66)
 
 - [x] ~~spring-boot-demo-helloworld(helloworld example)~~
 - [x] ~~spring-boot-demo-properties (read configuration file information)~~
@@ -19,7 +19,7 @@
 - [x] ~~spring-boot-demo-orm-jpa (operating SQL Relational Database - JPA)~~
 - [x] ~~spring-boot-demo-orm-mybatis (operating SQL relational database - mybatis)~~
 - [x] ~~spring-boot-demo-orm-mybatis-mapper-page (operating SQL relational database - integrating mybatis generic Mapper, PageHelper)~~
-- [x] ~~spring-boot-demo-orm-mybatis-plus (operating SQL relational database - integrating mybatis-plus)~~
+- [x] ~~spring-boot-demo-orm-mybatis-plus (operating SQL relational database - integrating mybatis-plus, Mapper, ActiveRecord)~~
 - [x] ~~spring-boot-demo-orm-beetlsql (operating SQL relational database - beetlSQL)~~
 - [x] ~~spring-boot-demo-cache-redis (using redis for caching)~~
 - [x] ~~spring-boot-demo-cache-ehcache (using Ehcache for caching)~~
@@ -60,7 +60,16 @@
 - [x] ~~spring-boot-demo-graylog (integrated gralog log management)~~
 - [ ] spring-boot-demo-sso (integrated single sign on) see [ISSUE#12](https://github.com/xkcoding/spring-boot-demo/issues/12)
 - [x] ~~spring-boot-demo-ldap （integrated ldap）see [ISSUE#23](https://github.com/xkcoding/spring-boot-demo/issues/23)~~
+- [x] ~~spring-boot-demo-dynamic-datasource（add datasource dynamically, switch datasource dynamically）~~
+- [x] ~~spring-boot-demo-ratelimit-guava（use Guava RateLimiter to protect API by standalone rate limiting）~~
+- [x] ~~spring-boot-demo-ratelimit-redis（use Redis and Lua script implementation to protect API by distributed rate limiting）~~
+- [x] ~~spring-boot-demo-https（integrated HTTPS）~~
+- [x] ~~spring-boot-demo-elasticsearch-rest-high-level-client（integrated Elasticsearch 7.x version，use official Rest High Level Client to operate ES data）~~
+- [ ] spring-boot-demo-springbatch（data process）
+- [ ] spring-boot-demo-security-justauth（use JustAuth to login GitHub，and use Spring-Security to manage login state）
+- [x] ~~spring-boot-demo-flyway（integrated Flyway to initialize tables and data in database, Flyway also support the sql script version control）~~
 
 ## Remarks
 
 Try to ensure that the corresponding demos are integrated in the order above.
+

@@ -63,6 +63,12 @@
     <module>spring-boot-demo-codegen</module>
     <module>spring-boot-demo-graylog</module>
     <module>spring-boot-demo-ldap</module>
+    <module>spring-boot-demo-dynamic-datasource</module>
+    <module>spring-boot-demo-ratelimit-guava</module>
+    <module>spring-boot-demo-ratelimit-redis</module>
+    <module>spring-boot-demo-elasticsearch-rest-high-level-client</module>
+    <module>spring-boot-demo-https</module>
+    <module>spring-boot-demo-flyway</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -76,11 +82,25 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
-    <mysql.version>8.0.12</mysql.version>
-    <hutool.version>4.6.3</hutool.version>
-    <guava.version>28.0-jre</guava.version>
+    <mysql.version>8.0.21</mysql.version>
+    <hutool.version>5.4.1</hutool.version>
+    <guava.version>29.0-jre</guava.version>
     <user.agent.version>1.20</user.agent.version>
   </properties>
+
+  <repositories>
+    <repository>
+      <id>aliyun</id>
+      <name>aliyun</name>
+      <url>https://maven.aliyun.com/repository/public</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
 
   <dependencyManagement>
     <dependencies>

@@ -8,9 +8,10 @@ import lombok.EqualsAndHashCode;
 #if(${hasBigDecimal})
 import java.math.BigDecimal;
 #end
-import java.io.Serializable;
 import java.time.LocalDateTime;
-
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.NoArgsConstructor;
 /**
  * <p>
  * ${comments}
@@ -25,6 +26,7 @@ import java.time.LocalDateTime;
  * @modified: ${author}
  */
 @Data
+@NoArgsConstructor
 @TableName("${tableName}")
 @ApiModel(description = "${comments}")
 @EqualsAndHashCode(callSuper = true)

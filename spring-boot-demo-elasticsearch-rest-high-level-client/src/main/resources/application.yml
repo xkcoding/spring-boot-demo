@@ -1,0 +1,8 @@
+demo:
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 20.20.0.27:9200
+      index:
+        number-of-replicas: 0
+        number-of-shards: 3

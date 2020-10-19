@@ -145,15 +145,15 @@ spring:
 3. 启动 `SpringBootDemoTaskQuartzApplication.java`
 4. 打开浏览器，查看 http://localhost:8080/demo/job.html 
 
-![image-20181126214007372](assets/image-20181126214007372-3239607.png)
+![image-20181126214007372](http://static.xkcoding.com/spring-boot-demo/task/quartz/064006-1.jpg)
 
-![image-20181126214109926](assets/image-20181126214109926-3239669.png)
+![image-20181126214109926](http://static.xkcoding.com/spring-boot-demo/task/quartz/064008.jpg)
 
-![image-20181126214212905](assets/image-20181126214212905-3239732.png)
+![image-20181126214212905](http://static.xkcoding.com/spring-boot-demo/task/quartz/064009-1.jpg)
 
-![image-20181126214138641](assets/image-20181126214138641-3239698.png)
+![image-20181126214138641](http://static.xkcoding.com/spring-boot-demo/task/quartz/064009.jpg)
 
-![image-20181126214250757](assets/image-20181126214250757-3239770.png)
+![image-20181126214250757](http://static.xkcoding.com/spring-boot-demo/task/quartz/064007.jpg)
 
 ## 参考
 
@@ -165,7 +165,7 @@ spring:
 
 - 关于Quartz定时任务状态 (在 `QRTZ_TRIGGERS` 表中的 `TRIGGER_STATE` 字段)
 
-  ![image-20181126171110378](assets/image-20181126171110378-3223470.png)
+  ![image-20181126171110378](http://static.xkcoding.com/spring-boot-demo/task/quartz/064006.jpg)
 
 - Vue.js 官方文档：https://cn.vuejs.org/v2/guide/
 

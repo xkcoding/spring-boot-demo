@@ -368,11 +368,11 @@ public class UserServiceImplTest extends SpringBootDemoMultiDatasourceMybatisApp
 
 **主**库 **建议** 只执行 **INSERT** **UPDATE** **DELETE** 操作
 
-![image-20190121153211509](assets/image-20190121153211509.png)
+![image-20190121153211509](http://static.xkcoding.com/spring-boot-demo/multi-datasource/mybatis/063506.jpg)
 
 **从**库 **建议** 只执行 **SELECT** 操作
 
-![image-20190121152825859](assets/image-20190121152825859.png)
+![image-20190121152825859](http://static.xkcoding.com/spring-boot-demo/multi-datasource/mybatis/063505.jpg)
 
 > 生产环境需要搭建 **主从复制**
 

@@ -13,3 +13,7 @@ notifications:
 cache:
   directories:
     - '$HOME/.m2/repository'
+
+branches:
+  only:
+    - master

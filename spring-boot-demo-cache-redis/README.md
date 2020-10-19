@@ -148,6 +148,18 @@ public class RedisConfig {
         template.setConnectionFactory(redisConnectionFactory);
         return template;
     }
+
+    /**
+     * 配置使用注解的时候缓存配置，默认是序列化反序列化的形式，加上此配置则为 json 形式
+     */
+    @Bean
+    public CacheManager cacheManager(RedisConnectionFactory factory) {
+        // 配置序列化
+        RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig();
+        RedisCacheConfiguration redisCacheConfiguration = config.serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(new StringRedisSerializer())).serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer()));
+
+        return RedisCacheManager.builder(factory).cacheDefaults(redisCacheConfiguration).build();
+    }
 }
 ```
 
@@ -327,7 +339,7 @@ public class UserServiceTest extends SpringBootDemoCacheRedisApplicationTests {
      */
     @Test
     public void getAfterSave() {
-        userService.saveOrUpdate(new User(4L, "user4"));
+        userService.saveOrUpdate(new User(4L, "测试中文"));
 
         User user = userService.get(4L);
         log.debug("【user】= {}", user);

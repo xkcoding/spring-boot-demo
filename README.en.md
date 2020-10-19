@@ -1,7 +1,7 @@
 <h1 align="center"><a href="https://github.com/xkcoding" target="_blank">Spring Boot Demo</a></h1>
 <p align="center">
   <a href="https://travis-ci.com/xkcoding/spring-boot-demo"><img alt="Travis-CI" src="https://travis-ci.com/xkcoding/spring-boot-demo.svg?branch=master"/></a>
-  <a href="https://app.codacy.com/app/xkcoding/spring-boot-demo?utm_source=github.com&utm_medium=referral&utm_content=xkcoding/spring-boot-demo&utm_campaign=Badge_Grade_Settings"><img alt="Codacy" src="https://api.codacy.com/project/badge/Grade/7249024341124ef880c598726fa10701"/></a>
+  <a href="https://www.codacy.com/app/xkcoding/spring-boot-demo?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=xkcoding/spring-boot-demo&amp;utm_campaign=Badge_Grade"><img alt="Codacy" src="https://api.codacy.com/project/badge/Grade/1f2e3d437b174bfc943dae1600332ec1"/></a>
   <a href="https://xkcoding.com"><img alt="author" src="https://img.shields.io/badge/author-Yangkai.Shen-blue.svg"/></a>
   <a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html"><img alt="JDK" src="https://img.shields.io/badge/JDK-1.8.0_162-orange.svg"/></a>
   <a href="https://docs.spring.io/spring-boot/docs/2.1.0.RELEASE/reference/html/"><img alt="Spring Boot" src="https://img.shields.io/badge/Spring Boot-2.1.0.RELEASE-brightgreen.svg"/></a>
@@ -20,15 +20,16 @@
 
 ## Introduction
 
-`spring boot demo` is a project for learning and practicing `spring boot`, including `58` demos, and `48` of them have been done.
+`spring boot demo` is a project for learning and practicing `spring boot`, including `66` demos, and `54` of them have been done.
 
-This project has integrated actuator (`monitoring`), admin (`visual monitoring`), logback (`log`), aopLog (`recording web request logs through AOP`), global exception handling (`json level and page level` ), freemarker (`template engine`), thymeleaf (`template engine`), Beetl (`template engine`), Enjoy (`template engine`), JdbcTemplate (`general JDBC operate database`), JPA (`powerful ORM framework `), mybatis (`powerful ORM framework`), Generic Mapper (`mybatis quick operation `), PageHelper (`powerful mybatis pagination plugin`), mybatis-plus (`mybatis quick operation`), BeetlSQL (`powerful ORM framework `), upload (`local file upload and qiniu cloud file upload`), redis (`cache`), ehcache (`cache`), email (`send various types of mail`), task (`basic scheduled tasks`), quartz (`dynamic management scheduled tasks`), xxl-job (`distributed scheduled tasks`), swagger (`API interface management and tests`), security (`RBAC-based Dynamic Rights Authentication`), SpringSession (`session sharing`), Zookeeper (`implement distributed locks by AOP`), RabbitMQ (`message queue`), Kafka (`message queue`), websocket (` server pushes the monitoring server status to front end `), socket.io (`chat room`), ureport2 (`Chinese-style report`), packaged into a `war` file, integrates ElasticSearch (`basic operations and advanced queries`), Async ( `asynchronous tasks`), integrated Dubbo (`with official starter`), MongoDB (`document database`), neo4j (`graph database`), docker (`container`), `JPA Multi-Datasource`, `Mybatis Multi-Datasource`, `code generator`', GrayLog (`log collection`), JustAuth (`third-party login`), LDAP(`CURD`).
+This project has integrated actuator (`monitoring`), admin (`visual monitoring`), logback (`log`), aopLog (`recording web request logs through AOP`), global exception handling (`json level and page level` ), freemarker (`template engine`), thymeleaf (`template engine`), Beetl (`template engine`), Enjoy (`template engine`), JdbcTemplate (`general JDBC operate database`), JPA (`powerful ORM framework `), mybatis (`powerful ORM framework`), Generic Mapper (`mybatis quick operation `), PageHelper (`powerful mybatis pagination plugin`), mybatis-plus (`mybatis quick operation`), BeetlSQL (`powerful ORM framework `), upload (`local file upload and qiniu cloud file upload`), redis (`cache`), ehcache (`cache`), email (`send various types of mail`), task (`basic scheduled tasks`), quartz (`dynamic management scheduled tasks`), xxl-job (`distributed scheduled tasks`), swagger (`API interface management and tests`), security (`RBAC-based Dynamic Rights Authentication`), SpringSession (`session sharing`), Zookeeper (`implement distributed locks by AOP`), RabbitMQ (`message queue`), Kafka (`message queue`), websocket (` server pushes the monitoring server status to front end `), socket.io (`chat room`), ureport2 (`Chinese-style report`), packaged into a `war` file, integrate ElasticSearch (`basic operations and advanced queries`), Async ( `asynchronous tasks`), integrated Dubbo (`with official starter`), MongoDB (`document database`), neo4j (`graph database`), docker (`container`), `JPA Multi-Datasource`, `Mybatis Multi-Datasource`, `code generator`', GrayLog (`log collection`), JustAuth (`third-party login`), LDAP(`CURD`), `Dynamically add/switch datasources`, Standalone RateLimiting(`AOP + Guava RateLimiter`), Distributed Ratelimiting(`AOP + Redis + Lua`), ElasticSearch 7.x(`use official Rest High Level Client`), HTTPS, Flyway(`initialize databases`).
 
 > If you have demos to contribute or needs to meet, it is very welcome to submit a [issue](https://github.com/xkcoding/spring-boot-demo/issues/new) and I will add it to my [TODO](./TODO.en.md) list.
 
-## Sponsers
+## Thanks
 
-<a href="https://www.jetbrains.com/?from=spring-boot-demo"><img src="assets/jetbrains.png" width="100px" alt="jetbrains"></a>
+- <a href="https://www.jetbrains.com/?from=spring-boot-demo"><img src="http://static.xkcoding.com/spring-boot-demo/064312.jpg" width="100px" alt="jetbrains">**Thanks JetBrains Offer Open Source Free License**</a>
+-  [Thanks MyBatisCodeHelper-Pro(The Best Code Generator Plugin) Offer Permanent Activation Code](https://gejun123456.github.io/MyBatisCodeHelper-Pro/#/?id=mybatiscodehelper-pro)
 
 ## Branch Introduction
 
@@ -43,6 +44,8 @@ This project has integrated actuator (`monitoring`), admin (`visual monitoring`)
 - **Mysql 5.7 +** (*Please use version 5.7 or higher because mysql has some new features and is not backward compatible at version 5.7. Althought this project will try to avoid this incompatibility*)
 
 ## Getting Started
+
+> Note: If you has been forked this project, need to sync the project's code, please see: https://xkcoding.com/2018/09/18/how-to-update-the-fork-project.html
 
 1. `git clone https://github.com/xkcoding/spring-boot-demo.git`
 2. Open the cloned project in IDEA
@@ -76,7 +79,7 @@ View the [TODO](./TODO.en.md) file
 | [spring-boot-demo-orm-jpa](./spring-boot-demo-orm-jpa)       | a demo to integrate spring-boot-starter-data-jpa for operating database. |
 | [spring-boot-demo-orm-mybatis](./spring-boot-demo-orm-mybatis) | a demo to integrate native mybatis by using [mybatis-spring-boot-starter](https://github.com/mybatis/spring-boot-starter) dependency. |
 | [spring-boot-demo-orm-mybatis-mapper-page](./spring-boot-demo-orm-mybatis-mapper-page) | a demo to integrate [Mapper](https://github.com/abel533/Mapper) and [PageHelper](https://github.com/pagehelper/Mybatis-PageHelper) by using [mapper-spring-boot-starter](https://github.com/abel533/Mapper/tree/master/spring-boot-starter) and [pagehelper-spring-boot-starter](https://github.com/pagehelper/pagehelper-spring-boot) dependencies. |
-| [spring-boot-demo-orm-mybatis-plus](./spring-boot-demo-orm-mybatis-plus) | a demo to integrate [mybatis-plus](https://mybatis.plus/en/) by using [mybatis-plus-boot-starter](http://mp.baomidou.com/) dependency. |
+| [spring-boot-demo-orm-mybatis-plus](./spring-boot-demo-orm-mybatis-plus) | a demo to integrate [mybatis-plus](https://mybatis.plus/en/) by using [mybatis-plus-boot-starter](http://mp.baomidou.com/) dependency, integrate BaseMapper / BaseService / ActiveRecord to operate database. |
 | [spring-boot-demo-orm-beetlsql](./spring-boot-demo-orm-beetlsql) | a demo to integrate [beetl-sql](http://ibeetl.com/guide/#beetlsql) by using [beetl-framework-starter](http://ibeetl.com/guide/#beetlsql) dependency. |
 | [spring-boot-demo-upload](./spring-boot-demo-upload)         | a file upload demo, including local file upload and qiniu cloud file upload. |
 | [spring-boot-demo-cache-redis](./spring-boot-demo-cache-redis) | a demo to integrate redis, operate data in redis, and use redis to cache data. |
@@ -109,7 +112,7 @@ View the [TODO](./TODO.en.md) file
 | [spring-boot-demo-mongodb](./spring-boot-demo-mongodb)       | a demo to integrate MongoDB and use the official starter to CRUD. |
 | [spring-boot-demo-neo4j](./spring-boot-demo-neo4j)           | a demo to integrate Neo4j graph database to implement a campus character relationship network. |
 | [spring-boot-demo-docker](./spring-boot-demo-docker)         | docker container.                                            |
-| [spring-boot-demo-multi-datasource-jpa](./spring-boot-demo-multi-datasource-jpa) | spring-boot 使用JPA集成多数据源                              |
+| [spring-boot-demo-multi-datasource-jpa](./spring-boot-demo-multi-datasource-jpa) | a demo to implement JPA multi-datasource.                    |
 | [spring-boot-demo-multi-datasource-mybatis](./spring-boot-demo-multi-datasource-mybatis) | a demo to implement Mybatis multi-datasource by using an open source solution from Mybatis-Plus. |
 | [spring-boot-demo-sharding-jdbc](./spring-boot-demo-sharding-jdbc) | a demo to use `sharding-jdbc` to implement sub-database and sub-tables, while ORM uses Mybatis-Plus. |
 | [spring-boot-demo-tio](./spring-boot-demo-tio)               | <span style="color:pink;">NOT FINISHED YET!</span> <br />a demo to integrate t-io(a network programming framework like netty). |
@@ -117,7 +120,13 @@ View the [TODO](./TODO.en.md) file
 | [spring-boot-demo-codegen](./spring-boot-demo-codegen)       | a demo to integrate velocity template engine to implement code generator, improve development efficiency. |
 | [spring-boot-demo-graylog](./spring-boot-demo-graylog)       | a demo to integrate graylog for unified log collection.      |
 | spring-boot-demo-sso                                         | <span style="color:pink;">NOT FINISHED YET!</span> <br />a demo to integrate Single Sign On, see [ISSUE#12](https://github.com/xkcoding/spring-boot-demo/issues/12). |
-| [spring-boot-demo-ldap](./spring-boot-demo-ldap)             | spring-boot 集成 LADP，集成 `spring-boot-starter-data-ldap` 完成对 LADP 的基本 CURD操作, 并给出以登录为实战的 API 示例，a demo to integrate LADP to use `spring-boot-starter-data-ldap` to implement  CURD operations and give the login demo, see [ISSUE#23](https://github.com/xkcoding/spring-boot-demo/issues/23), thanks [@fxbin](https://github.com/fxbin). |
+| [spring-boot-demo-ldap](./spring-boot-demo-ldap)             | a demo to integrate LDAP to use `spring-boot-starter-data-ldap` to implement  CURD operations and give the login demo, see [ISSUE#23](https://github.com/xkcoding/spring-boot-demo/issues/23), thanks [@fxbin](https://github.com/fxbin). |
+| [spring-boot-demo-dynamic-datasource](./spring-boot-demo-dynamic-datasource) | a demo to add datasource dynamically, switch datasource dynamically. |
+| [spring-boot-demo-ratelimit-guava](./spring-boot-demo-ratelimit-guava) | a demo to use use Guava RateLimiter to protect API  by standalone rate limiting. |
+| [spring-boot-demo-ratelimit-redis](./spring-boot-demo-ratelimit-redis) | a demo to use Redis and Lua script implementation to protect API by distributed rate limiting. |
+| [spring-boot-demo-https](./spring-boot-demo-https)           | a demo to integrate HTTPS.                                   |
+| [spring-boot-demo-elasticsearch-rest-high-level-client](./spring-boot-demo-elasticsearch-rest-high-level-client) | a demo to integrate ElasticSearch 7.x version by using official Rest High Level Client to operate ES data. |
+| [spring-boot-demo-flyway](./spring-boot-flyway)              | a demo to integrate Flyway to initialize tables and data in database, Flyway also support the sql script version control. |
 
 ## License
 
@@ -199,6 +208,12 @@ Copyright (c) 2018 Yangkai.Shen
     <module>spring-boot-demo-codegen</module>
     <module>spring-boot-demo-graylog</module>
     <module>spring-boot-demo-ldap</module>
+    <module>spring-boot-demo-dynamic-datasource</module>
+    <module>spring-boot-demo-ratelimit-guava</module>
+    <module>spring-boot-demo-ratelimit-redis</module>
+    <module>spring-boot-demo-elasticsearch-rest-high-level-client</module>
+    <module>spring-boot-demo-https</module>
+    <module>spring-boot-demo-flyway</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -213,10 +228,24 @@ Copyright (c) 2018 Yangkai.Shen
     <maven.compiler.target>1.8</maven.compiler.target>
     <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
     <mysql.version>8.0.12</mysql.version>
-    <hutool.version>4.6.3</hutool.version>
-    <guava.version>28.0-jre</guava.version>
+    <hutool.version>5.0.0</hutool.version>
+    <guava.version>28.1-jre</guava.version>
     <user.agent.version>1.20</user.agent.version>
   </properties>
+
+  <repositories>
+    <repository>
+      <id>aliyun</id>
+      <name>aliyun</name>
+      <url>https://maven.aliyun.com/repository/public</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
 
   <dependencyManagement>
     <dependencies>
@@ -337,3 +366,15 @@ Copyright (c) 2018 Yangkai.Shen
 | spring-boot-starter-web                | Support for full-stack web development, including Tomcat and spring-webmvc. |
 | spring-boot-starter-websocket          | Support for WebSocket development.                           |
 | spring-boot-starter-ws                 | Support for Spring Web Services.                             |
+
+### Recommended  Open source
+
+- `JustAuth`：The most comprehensive open source library for third-party logins in history，https://github.com/justauth/JustAuth
+- `Mica`：Spring Boot microservices efficient development toolset，https://github.com/lets-mica/mica
+- `awesome-collector`：https://github.com/P-P-X/awesome-collector
+- `SpringBlade`：Complete micro-service online solution (required for enterprise development)，https://github.com/chillzhuang/SpringBlade
+- `Pig`：The universe's strongest micro-service certification authorized scaffolding (architect necessary)，https://github.com/pigxcloud/pig
+
+### Advertisement
+
+[![JD_CLOUD](assets/jdcloud.jpg)](https://re.jdcloud.com/cps?returnUrl=aHR0cHM6Ly93d3cuamRjbG91ZC5jb20vY24vYWN0aXZpdHkveWVhci1lbmQ_bUlkPTE4JmNwc0tleT1iMjg2Y2Q0ZmExMWM0ODZhODU2NmUwNjc5MGQ0MzY4MA==)

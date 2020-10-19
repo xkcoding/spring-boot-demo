@@ -1,7 +1,10 @@
 # spring-boot-demo-orm-jpa
-> 此 demo 主要演示了 Spring Boot 如何使用 JPA 操作数据库。
+> 此 demo 主要演示了 Spring Boot 如何使用 JPA 操作数据库，包含简单使用以及级联使用。
 
-## pom.xml
+## 主要代码
+
+### pom.xml
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -78,7 +81,7 @@
 
 </project>
 ```
-##  JpaConfig.java
+###  JpaConfig.java
 ```java
 /**
  * <p>
@@ -123,7 +126,7 @@ public class JpaConfig {
     }
 }
 ```
-## User.java
+###  User.java
 ```java
 /**
  * <p>
@@ -136,12 +139,12 @@ public class JpaConfig {
  * @date: Created in 2018/11/7 14:06
  * @copyright: Copyright (c)
  * @version: V1.0
- * @modified: yangkai.shen
+ * @modified: 76peter
  */
 @EqualsAndHashCode(callSuper = true)
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 @Builder
 @Entity
 @Table(name = "orm_user")
@@ -183,9 +186,86 @@ public class User extends AbstractAuditModel {
      */
     @Column(name = "last_login_time")
     private Date lastLoginTime;
+
+    /**
+     * 关联部门表
+     * 1、关系维护端，负责多对多关系的绑定和解除
+     * 2、@JoinTable注解的name属性指定关联表的名字，joinColumns指定外键的名字，关联到关系维护端(User)
+     * 3、inverseJoinColumns指定外键的名字，要关联的关系被维护端(Department)
+     * 4、其实可以不使用@JoinTable注解，默认生成的关联表名称为主表表名+下划线+从表表名，
+     * 即表名为user_department
+     * 关联到主表的外键名：主表名+下划线+主表中的主键列名,即user_id,这里使用referencedColumnName指定
+     * 关联到从表的外键名：主表中用于关联的属性名+下划线+从表的主键列名,department_id
+     * 主表就是关系维护端对应的表，从表就是关系被维护端对应的表
+     */
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(name = "orm_user_dept", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "dept_id", referencedColumnName = "id"))
+    private Collection<Department> departmentList;
+
 }
 ```
-## AbstractAuditModel.java
+### Department.java
+```java
+/**
+ * <p>
+ * 部门实体类
+ * </p>
+ *
+ * @package: com.xkcoding.orm.jpa.entity
+ * @description: 部门实体类
+ * @author: 76peter
+ * @date: Created in 2019/10/1 18:07
+ * @copyright: Copyright (c) 2019
+ * @version: V1.0
+ * @modified: 76peter
+ */
+@EqualsAndHashCode(callSuper = true)
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Entity
+@Table(name = "orm_department")
+@ToString(callSuper = true)
+public class Department extends AbstractAuditModel {
+
+    /**
+     * 部门名
+     */
+    @Column(name = "name", columnDefinition = "varchar(255) not null")
+    private String name;
+
+    /**
+     * 上级部门id
+     */
+    @ManyToOne(cascade = {CascadeType.REFRESH}, optional = true)
+    @JoinColumn(name = "superior", referencedColumnName = "id")
+    private Department superior;
+    /**
+     * 所属层级
+     */
+    @Column(name = "levels", columnDefinition = "int not null default 0")
+    private Integer levels;
+    /**
+     * 排序
+     */
+    @Column(name = "order_no", columnDefinition = "int not null default 0")
+    private Integer orderNo;
+    /**
+     * 子部门集合
+     */
+    @OneToMany(cascade = {CascadeType.REFRESH, CascadeType.REMOVE}, fetch = FetchType.EAGER, mappedBy = "superior")
+    private Collection<Department> children;
+
+    /**
+     * 部门下用户集合
+     */
+    @ManyToMany(mappedBy = "departmentList")
+    private Collection<User> userList;
+
+}
+```
+### AbstractAuditModel.java
 ```java
 /**
  * <p>
@@ -228,7 +308,7 @@ public abstract class AbstractAuditModel implements Serializable {
     private Date lastUpdateTime;
 }
 ```
-## UserDao.java
+### UserDao.java
 ```java
 /**
  * <p>
@@ -248,7 +328,33 @@ public interface UserDao extends JpaRepository<User, Long> {
 
 }
 ```
-## application.yml
+### DepartmentDao.java
+```java
+/**
+ * <p>
+ * User Dao
+ * </p>
+ *
+ * @package: com.xkcoding.orm.jpa.repository
+ * @description: Department Dao
+ * @author: 76peter
+ * @date: Created in 2019/10/1 18:07
+ * @copyright: Copyright (c) 2019
+ * @version: V1.0
+ * @modified: 76peter
+ */
+@Repository
+public interface DepartmentDao extends JpaRepository<Department, Long> {
+    /**
+     * 根据层级查询部门
+     *
+     * @param level 层级
+     * @return 部门列表
+     */
+    List<Department> findDepartmentsByLevels(Integer level);
+}
+```
+### application.yml
 ```yaml
 server:
   port: 8080
@@ -290,7 +396,7 @@ logging:
     org.hibernate.SQL: debug
     org.hibernate.type: trace
 ```
-## UserDaoTest.java
+### UserDaoTest.java
 ```java
 /**
  * <p>
@@ -403,7 +509,82 @@ public class UserDaoTest extends SpringBootDemoOrmJpaApplicationTests {
 
 }
 ```
+### DepartmentDaoTest.java
+```java
+/**
+ * <p>
+ * jpa 测试类
+ * </p>
+ *
+ * @package: com.xkcoding.orm.jpa.repository
+ * @description: jpa 测试类
+ * @author: 76peter
+ * @date: Created in 2018/11/7 14:09
+ * @copyright: Copyright (c) 2018
+ * @version: V1.0
+ * @modified: 76peter
+ */
+@Slf4j
+public class DepartmentDaoTest extends SpringBootDemoOrmJpaApplicationTests {
+    @Autowired
+    private DepartmentDao departmentDao;
+    @Autowired
+    private UserDao userDao;
+
+    /**
+     * 测试保存 ,根节点
+     */
+    @Test
+    @Transactional
+    public void testSave() {
+        Collection<Department> departmentList = departmentDao.findDepartmentsByLevels(0);
+
+        if (departmentList.size() == 0) {
+            Department testSave1 = Department.builder().name("testSave1").orderNo(0).levels(0).superior(null).build();
+            Department testSave1_1 = Department.builder().name("testSave1_1").orderNo(0).levels(1).superior(testSave1).build();
+            Department testSave1_2 = Department.builder().name("testSave1_2").orderNo(0).levels(1).superior(testSave1).build();
+            Department testSave1_1_1 = Department.builder().name("testSave1_1_1").orderNo(0).levels(2).superior(testSave1_1).build();
+            departmentList.add(testSave1);
+            departmentList.add(testSave1_1);
+            departmentList.add(testSave1_2);
+            departmentList.add(testSave1_1_1);
+            departmentDao.saveAll(departmentList);
+
+            Collection<Department> deptall = departmentDao.findAll();
+            log.debug("【部门】= {}", JSONArray.toJSONString((List) deptall));
+        }
+
+
+        userDao.findById(1L).ifPresent(user -> {
+            user.setName("添加部门");
+            Department dept = departmentDao.findById(2L).get();
+            user.setDepartmentList(departmentList);
+            userDao.save(user);
+        });
+
+        log.debug("用户部门={}", JSONUtil.toJsonStr(userDao.findById(1L).get().getDepartmentList()));
+
+
+        departmentDao.findById(2L).ifPresent(dept -> {
+            Collection<User> userlist = dept.getUserList();
+            //关联关系由user维护中间表，department userlist不会发生变化，可以增加查询方法来处理  重写getUserList方法
+            log.debug("部门下用户={}", JSONUtil.toJsonStr(userlist));
+        });
+
+
+        userDao.findById(1L).ifPresent(user -> {
+            user.setName("清空部门");
+            user.setDepartmentList(null);
+            userDao.save(user);
+        });
+        log.debug("用户部门={}", userDao.findById(1L).get().getDepartmentList());
+
+    }
+}
+```
+
+### 其余代码及 SQL 参见本 demo
 
 ## 参考
 
-Spring Data JPA 官方文档：https://docs.spring.io/spring-data/jpa/docs/current/reference/html/ 
+- Spring Data JPA 官方文档：https://docs.spring.io/spring-data/jpa/docs/current/reference/html/ 

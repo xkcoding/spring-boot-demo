@@ -365,13 +365,13 @@ public class ServerTask {
 
 ## 3. 运行效果
 
-![image-20181217110240322](assets/image-20181217110240322-5015760.png)
+![image-20181217110240322](http://static.xkcoding.com/spring-boot-demo/websocket/064107.jpg)
 
-![image-20181217110304065](assets/image-20181217110304065-5015784.png)
+![image-20181217110304065](http://static.xkcoding.com/spring-boot-demo/websocket/064108.jpg)
 
-![image-20181217110328810](assets/image-20181217110328810-5015808.png)
+![image-20181217110328810](http://static.xkcoding.com/spring-boot-demo/websocket/064109.jpg)
 
-![image-20181217110336017](assets/image-20181217110336017-5015816.png)
+![image-20181217110336017](http://static.xkcoding.com/spring-boot-demo/websocket/064109-1.jpg)
 
 ## 4. 参考
 
