@@ -8,13 +8,8 @@ import com.xkcoding.orm.mybatis.plus.entity.User;
  * User Service
  * </p>
  *
- * @package: com.xkcoding.orm.mybatis.plus.service
- * @description: User Service
- * @author: yangkai.shen
- * @date: Created in 2018/11/8 18:10
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-08 18:10
  */
 public interface UserService extends IService<User> {
 }

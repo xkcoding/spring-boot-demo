@@ -7,13 +7,8 @@ import com.xkcoding.cache.ehcache.entity.User;
  * UserService
  * </p>
  *
- * @package: com.xkcoding.cache.ehcache.service
- * @description: UserService
- * @author: yangkai.shen
- * @date: Created in 2018/11/16 16:53
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-16 16:53
  */
 public interface UserService {
     /**

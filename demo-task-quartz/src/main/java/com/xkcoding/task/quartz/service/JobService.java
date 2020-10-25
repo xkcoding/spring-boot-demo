@@ -3,7 +3,6 @@ package com.xkcoding.task.quartz.service;
 import com.github.pagehelper.PageInfo;
 import com.xkcoding.task.quartz.entity.domain.JobAndTrigger;
 import com.xkcoding.task.quartz.entity.form.JobForm;
-import org.quartz.JobDetail;
 import org.quartz.SchedulerException;
 
 /**
@@ -11,13 +10,8 @@ import org.quartz.SchedulerException;
  * Job Service
  * </p>
  *
- * @package: com.xkcoding.task.quartz.service
- * @description: Job Service
- * @author: yangkai.shen
- * @date: Created in 2018-11-26 13:24
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-26 13:24
  */
 public interface JobService {
     /**

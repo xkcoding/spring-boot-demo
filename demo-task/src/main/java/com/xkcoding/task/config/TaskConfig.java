@@ -16,13 +16,8 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
  * 定时任务配置，配置线程池，使用不同线程执行任务，提升效率
  * </p>
  *
- * @package: com.xkcoding.task.config
- * @description: 定时任务配置，配置线程池，使用不同线程执行任务，提升效率
- * @author: yangkai.shen
- * @date: Created in 2018/11/22 19:02
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-22 19:02
  */
 @Configuration
 @EnableScheduling

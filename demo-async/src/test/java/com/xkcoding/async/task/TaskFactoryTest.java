@@ -13,13 +13,8 @@ import java.util.concurrent.Future;
  * 测试任务
  * </p>
  *
- * @package: com.xkcoding.async.task
- * @description: 测试任务
- * @author: yangkai.shen
- * @date: Created in 2018-12-29 10:49
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-29 10:49
  */
 @Slf4j
 public class TaskFactoryTest extends SpringBootDemoAsyncApplicationTests {

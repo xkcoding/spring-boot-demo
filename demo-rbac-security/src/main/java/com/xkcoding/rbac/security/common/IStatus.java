@@ -5,13 +5,8 @@ package com.xkcoding.rbac.security.common;
  * REST API 错误码接口
  * </p>
  *
- * @package: com.xkcoding.rbac.security.common
- * @description: REST API 错误码接口
- * @author: yangkai.shen
- * @date: Created in 2018-12-07 14:35
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-07 14:35
  */
 public interface IStatus {
 

@@ -20,13 +20,8 @@ import java.util.List;
  * User Service Implement
  * </p>
  *
- * @package: com.xkcoding.orm.jdbctemplate.service.impl
- * @description: User Service Implement
- * @author: yangkai.shen
- * @date: Created in 2018/10/15 1:53 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-15 13:53
  */
 @Service
 public class UserServiceImpl implements IUserService {

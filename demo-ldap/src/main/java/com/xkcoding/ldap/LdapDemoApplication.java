@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  * @author fxbin
  * @version v1.0
- * @since 2019/8/26 0:37
+ * @since 2019-08-26 0:37
  */
 @SpringBootApplication
 public class LdapDemoApplication {

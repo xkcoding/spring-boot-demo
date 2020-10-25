@@ -13,13 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
  * 测试RedisUtil
  * </p>
  *
- * @package: com.xkcoding.rbac.security.util
- * @description: 测试RedisUtil
- * @author: yangkai.shen
- * @date: Created in 2018-12-11 20:44
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-11 20:44
  */
 @Slf4j
 public class RedisUtilTest extends SpringBootDemoRbacSecurityApplicationTests {

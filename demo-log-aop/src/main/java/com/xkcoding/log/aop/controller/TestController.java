@@ -10,13 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
  * 测试 Controller
  * </p>
  *
- * @package: com.xkcoding.log.aop.controller
- * @description: 测试 Controller
- * @author: yangkai.shen
- * @date: Created in 2018/10/1 10:10 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-01 22:10
  */
 @RestController
 public class TestController {

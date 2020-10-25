@@ -11,13 +11,8 @@ import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
  * 测试 ElasticTemplate 的创建/删除
  * </p>
  *
- * @package: com.xkcoding.elasticsearch.template
- * @description: 测试 ElasticTemplate 的创建/删除
- * @author: yangkai.shen
- * @date: Created in 2018-12-20 17:46
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-20 17:46
  */
 public class TemplateTest extends SpringBootDemoElasticsearchApplicationTests {
     @Autowired

@@ -10,7 +10,7 @@ import tk.mybatis.mapper.common.MySqlMapper;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/4 16:23
+ * @date Created in 2019-09-04 16:23
  */
 @RegisterMapper
 public interface MyMapper<T> extends Mapper<T>, MySqlMapper<T> {

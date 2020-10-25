@@ -110,13 +110,8 @@ import io.shardingsphere.core.keygen.KeyGenerator;
  * 自定义雪花算法，替换 DefaultKeyGenerator，避免DefaultKeyGenerator生成的id大几率是偶数
  * </p>
  *
- * @package: com.xkcoding.sharding.jdbc.config
- * @description: 自定义雪花算法，替换 DefaultKeyGenerator，避免DefaultKeyGenerator生成的id大几率是偶数
- * @author: yangkai.shen
- * @date: Created in 2019-03-26 17:07
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-03-26 17:07
  */
 public class CustomSnowflakeKeyGenerator implements KeyGenerator {
     private Snowflake snowflake;
@@ -124,7 +119,7 @@ public class CustomSnowflakeKeyGenerator implements KeyGenerator {
     public CustomSnowflakeKeyGenerator(Snowflake snowflake) {
         this.snowflake = snowflake;
     }
-    
+
     @Override
     public Number generateKey() {
         return snowflake.nextId();
@@ -140,13 +135,8 @@ public class CustomSnowflakeKeyGenerator implements KeyGenerator {
  * sharding-jdbc 的数据源配置
  * </p>
  *
- * @package: com.xkcoding.sharding.jdbc.config
- * @description: sharding-jdbc 的数据源配置
- * @author: yangkai.shen
- * @date: Created in 2019-03-26 16:47
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-03-26 16:47
  */
 @Configuration
 public class DataSourceShardingConfig {
@@ -231,13 +221,8 @@ public class DataSourceShardingConfig {
  * 测试sharding-jdbc分库分表
  * </p>
  *
- * @package: com.xkcoding.sharding.jdbc
- * @description: 测试sharding-jdbc分库分表
- * @author: yangkai.shen
- * @date: Created in 2019-03-26 13:44
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-03-26 13:44
  */
 @Slf4j
 @RunWith(SpringRunner.class)
@@ -285,7 +270,7 @@ public class SpringBootDemoShardingJdbcApplicationTests {
         List<Order> orders = orderMapper.selectList(Wrappers.<Order>query().lambda().in(Order::getOrderId, 1, 2));
         log.info("【orders】= {}", JSONUtil.toJsonStr(orders));
     }
-    
+
 }
 ```
 

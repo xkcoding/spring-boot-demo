@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
  * </p>
  *
  * @author Chen.Chao
- * @date Created in 2020/1/12 10:31
+ * @date Created in 2020-01-12 10:31
  */
 @Configuration
 public class HttpsConfig {

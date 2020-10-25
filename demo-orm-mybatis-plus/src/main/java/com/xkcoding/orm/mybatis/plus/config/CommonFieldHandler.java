@@ -12,13 +12,8 @@ import java.util.Date;
  * 通用字段填充
  * </p>
  *
- * @package: com.xkcoding.orm.mybatis.plus.config
- * @description: 通用字段填充
- * @author: yangkai.shen
- * @date: Created in 2018/11/8 17:40
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-08 17:40
  */
 @Slf4j
 @Component

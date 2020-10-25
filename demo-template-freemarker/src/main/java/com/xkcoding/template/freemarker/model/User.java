@@ -7,13 +7,8 @@ import lombok.Data;
  * 用户 model
  * </p>
  *
- * @package: com.xkcoding.template.freemarker.model
- * @description: 用户 model
- * @author: yangkai.shen
- * @date: Created in 2018/10/9 3:06 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-19 15:06
  */
 @Data
 public class User {

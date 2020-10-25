@@ -24,13 +24,8 @@ import javax.validation.ConstraintViolationException;
  * 全局统一异常处理
  * </p>
  *
- * @package: com.xkcoding.rbac.security.exception.handler
- * @description: 全局统一异常处理
- * @author: yangkai.shen
- * @date: Created in 2018-12-10 17:00
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-10 17:00
  */
 @ControllerAdvice
 @Slf4j

@@ -13,13 +13,8 @@ import java.util.List;
  * User Mapper
  * </p>
  *
- * @package: com.xkcoding.orm.mybatis.mapper
- * @description: User Mapper
- * @author: yangkai.shen
- * @date: Created in 2018/11/8 10:54
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-08 10:54
  */
 @Mapper
 @Component

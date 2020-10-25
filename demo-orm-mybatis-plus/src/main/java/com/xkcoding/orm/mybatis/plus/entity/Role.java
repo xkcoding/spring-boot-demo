@@ -14,7 +14,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/14 14:04
+ * @date Created in 2019-09-14 14:04
  */
 @Data
 @TableName("orm_role")

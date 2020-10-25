@@ -27,13 +27,8 @@ import java.util.concurrent.ConcurrentHashMap;
  * sharding-jdbc 的数据源配置
  * </p>
  *
- * @package: com.xkcoding.sharding.jdbc.config
- * @description: sharding-jdbc 的数据源配置
- * @author: yangkai.shen
- * @date: Created in 2019-03-26 16:47
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-03-26 16:47
  */
 @Configuration
 public class DataSourceShardingConfig {

@@ -17,7 +17,7 @@ import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenCo
  * .
  *
  * @author <a href="https://echocow.cn">EchoCow</a>
- * @date 2020/1/6 下午1:32
+ * @date 2020-01-06 13:32
  */
 @Configuration
 @RequiredArgsConstructor

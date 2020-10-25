@@ -21,13 +21,8 @@ import java.util.stream.Collectors;
  * 自定义UserDetails查询
  * </p>
  *
- * @package: com.xkcoding.rbac.security.service
- * @description: 自定义UserDetails查询
- * @author: yangkai.shen
- * @date: Created in 2018-12-10 10:29
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-10 10:29
  */
 @Service
 public class CustomUserDetailsService implements UserDetailsService {

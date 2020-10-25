@@ -90,13 +90,8 @@ spring:
  * 启动器
  * </p>
  *
- * @package: com.xkcoding.async
- * @description: 启动器
- * @author: yangkai.shen
- * @date: Created in 2018-12-29 10:28
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-29 10:28
  */
 @EnableAsync
 @SpringBootApplication
@@ -117,13 +112,8 @@ public class SpringBootDemoAsyncApplication {
  * 任务工厂
  * </p>
  *
- * @package: com.xkcoding.async.task
- * @description: 任务工厂
- * @author: yangkai.shen
- * @date: Created in 2018-12-29 10:37
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-29 10:37
  */
 @Component
 @Slf4j
@@ -193,13 +183,8 @@ public class TaskFactory {
  * 测试任务
  * </p>
  *
- * @package: com.xkcoding.async.task
- * @description: 测试任务
- * @author: yangkai.shen
- * @date: Created in 2018-12-29 10:49
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-29 10:49
  */
 @Slf4j
 public class TaskFactoryTest extends SpringBootDemoAsyncApplicationTests {

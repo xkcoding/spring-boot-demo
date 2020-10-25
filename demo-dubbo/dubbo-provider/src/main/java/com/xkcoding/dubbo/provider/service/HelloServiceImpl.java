@@ -10,13 +10,8 @@ import org.springframework.stereotype.Component;
  * Hello服务实现
  * </p>
  *
- * @package: com.xkcoding.dubbo.provider.service
- * @description: Hello服务实现
- * @author: yangkai.shen
- * @date: Created in 2018-12-25 16:58
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-25 16:58
  */
 @Service
 @Component

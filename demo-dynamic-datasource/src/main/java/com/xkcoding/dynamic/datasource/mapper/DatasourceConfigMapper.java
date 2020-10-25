@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Mapper;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/4 16:20
+ * @date Created in 2019-09-04 16:20
  */
 @Mapper
 public interface DatasourceConfigMapper extends MyMapper<DatasourceConfig> {

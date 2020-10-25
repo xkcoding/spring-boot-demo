@@ -9,13 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 启动器
  * </p>
  *
- * @package: com.xkcoding.dubbo.consumer
- * @description: 启动器
- * @author: yangkai.shen
- * @date: Created in 2018-12-25 16:49
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-25 16:49
  */
 @SpringBootApplication
 @EnableDubboConfiguration

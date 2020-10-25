@@ -15,13 +15,8 @@ import java.util.List;
  * MP3 配置
  * </p>
  *
- * @package: com.xkcoding.rbac.shiro.config
- * @description: MP3 配置
- * @author: yangkai.shen
- * @date: Created in 2019-03-21 17:06
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-03-21 17:06
  */
 @Configuration
 public class MybatisPlusConfig {

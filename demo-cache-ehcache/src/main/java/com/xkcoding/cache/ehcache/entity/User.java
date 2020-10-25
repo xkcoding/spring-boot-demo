@@ -11,13 +11,8 @@ import java.io.Serializable;
  * 用户实体
  * </p>
  *
- * @package: com.xkcoding.cache.ehcache.entity
- * @description: 用户实体
- * @author: yangkai.shen
- * @date: Created in 2018/11/16 16:53
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-16 16:53
  */
 @Data
 @AllArgsConstructor

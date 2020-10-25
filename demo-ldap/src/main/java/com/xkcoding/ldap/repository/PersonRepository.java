@@ -11,7 +11,7 @@ import javax.naming.Name;
  *
  * @author fxbin
  * @version v1.0
- * @since 2019/8/26 1:02
+ * @since 2019-08-26 1:02
  */
 @Repository
 public interface PersonRepository extends CrudRepository<Person, Name> {

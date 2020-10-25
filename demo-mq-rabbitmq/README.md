@@ -42,7 +42,7 @@
    Applying plugin configuration to rabbit@f72ac937f2be...
    The following plugins have been enabled:
      rabbitmq_delayed_message_exchange
-   
+
    started 1 plugins.
    ```
 
@@ -156,13 +156,8 @@ spring:
  * RabbitMQ常量池
  * </p>
  *
- * @package: com.xkcoding.mq.rabbitmq.constants
- * @description: RabbitMQ常量池
- * @author: yangkai.shen
- * @date: Created in 2018-12-29 17:08
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-29 17:08
  */
 public interface RabbitConsts {
     /**
@@ -231,13 +226,8 @@ public interface RabbitConsts {
  * RabbitMQ配置，主要是配置队列，如果提前存在该队列，可以省略本配置类
  * </p>
  *
- * @package: com.xkcoding.mq.rabbitmq.config
- * @description: RabbitMQ配置，主要是配置队列，如果提前存在该队列，可以省略本配置类
- * @author: yangkai.shen
- * @date: Created in 2018-12-29 17:03
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-29 17:03
  */
 @Slf4j
 @Configuration
@@ -399,13 +389,8 @@ public class RabbitMqConfig {
  * 直接队列1 处理器
  * </p>
  *
- * @package: com.xkcoding.mq.rabbitmq.handler
- * @description: 直接队列1 处理器
- * @author: yangkai.shen
- * @date: Created in 2019-01-04 15:42
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-01-04 15:42
  */
 @Slf4j
 @RabbitListener(queues = RabbitConsts.DIRECT_MODE_QUEUE_ONE)
@@ -544,6 +529,6 @@ public class SpringBootDemoMqRabbitmqApplicationTests {
 
 ## 参考
 
-1. Spring AMQP 官方文档：https://docs.spring.io/spring-amqp/docs/2.1.0.RELEASE/reference/html/
+1. SpringQP 官方文档：https://docs.spring.io/spring-amqp/docs/2.1.0.RELEASE/reference/html/
 2. RabbitMQ 官网：http://www.rabbitmq.com/
 3. RabbitMQ延迟队列：https://www.cnblogs.com/vipstone/p/9967649.html

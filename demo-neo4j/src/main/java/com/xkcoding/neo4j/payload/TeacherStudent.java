@@ -11,13 +11,8 @@ import java.util.List;
  * 师生关系
  * </p>
  *
- * @package: com.xkcoding.neo4j.payload
- * @description: 师生关系
- * @author: yangkai.shen
- * @date: Created in 2018-12-24 19:18
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-24 19:18
  */
 @Data
 @QueryResult

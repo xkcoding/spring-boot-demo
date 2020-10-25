@@ -9,7 +9,7 @@ import com.xkcoding.orm.mybatis.plus.entity.Role;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/14 14:06
+ * @date Created in 2019-09-14 14:06
  */
 public interface RoleMapper extends BaseMapper<Role> {
 }

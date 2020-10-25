@@ -16,13 +16,8 @@ import org.springframework.kafka.listener.ContainerProperties;
  * kafka配置类
  * </p>
  *
- * @package: com.xkcoding.mq.kafka.config
- * @description: kafka配置类
- * @author: yangkai.shen
- * @date: Created in 2019-01-07 14:49
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-01-07 14:49
  */
 @Configuration
 @EnableConfigurationProperties({KafkaProperties.class})

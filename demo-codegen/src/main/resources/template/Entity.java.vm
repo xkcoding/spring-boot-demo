@@ -17,13 +17,8 @@ import lombok.NoArgsConstructor;
  * ${comments}
  * </p>
  *
- * @package:  ${package}.${moduleName}.entity
- * @description: ${comments}
- * @author: ${author}
- * @date: Created in ${datetime}
- * @copyright: Copyright (c) ${year}
- * @version: V1.0
- * @modified: ${author}
+ * @author ${author}
+ * @date Created in ${datetime}
  */
 @Data
 @NoArgsConstructor

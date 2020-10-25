@@ -10,13 +10,8 @@ import java.util.Optional;
  * 班级节点Repository
  * </p>
  *
- * @package: com.xkcoding.neo4j.repository
- * @description: 班级节点Repository
- * @author: yangkai.shen
- * @date: Created in 2018-12-24 15:05
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-24 15:05
  */
 public interface ClassRepository extends Neo4jRepository<Class, String> {
     /**

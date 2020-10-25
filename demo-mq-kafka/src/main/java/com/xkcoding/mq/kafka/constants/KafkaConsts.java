@@ -5,13 +5,8 @@ package com.xkcoding.mq.kafka.constants;
  * kafka 常量池
  * </p>
  *
- * @package: com.xkcoding.mq.kafka.constants
- * @description: kafka 常量池
- * @author: yangkai.shen
- * @date: Created in 2019-01-07 14:52
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-01-07 14:52
  */
 public interface KafkaConsts {
     /**

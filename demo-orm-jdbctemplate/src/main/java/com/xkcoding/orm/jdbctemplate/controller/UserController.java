@@ -14,13 +14,8 @@ import java.util.List;
  * User Controller
  * </p>
  *
- * @package: com.xkcoding.orm.jdbctemplate.controller
- * @description: User Controller
- * @author: yangkai.shen
- * @date: Created in 2018/10/15 1:58 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-15 13:58
  */
 @RestController
 @Slf4j

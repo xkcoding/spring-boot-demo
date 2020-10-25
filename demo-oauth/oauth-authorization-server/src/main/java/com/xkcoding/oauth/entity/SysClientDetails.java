@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
  * 另一种方式是写一个方法将它转化为默认实现 {@link BaseClientDetails} 比较好一点并且简单很多
  *
  * @author <a href="https://echocow.cn">EchoCow</a>
- * @date 2020/1/6 下午12:54
+ * @date 2020-01-06 12:54
  */
 @Data
 @Table

@@ -11,13 +11,8 @@ import org.neo4j.ogm.annotation.NodeEntity;
  * 教师节点
  * </p>
  *
- * @package: com.xkcoding.neo4j.model
- * @description: 教师节点
- * @author: yangkai.shen
- * @date: Created in 2018-12-24 14:54
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-24 14:54
  */
 @Data
 @NoArgsConstructor

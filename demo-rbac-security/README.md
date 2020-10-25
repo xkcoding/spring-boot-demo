@@ -10,7 +10,7 @@
 - [x] 持久化技术使用 `spring-data-jpa` 完成
 - [x] 使用 `JWT` 实现安全验证，同时引入 `Redis` 解决 `JWT` 无法手动设置过期的弊端，并且保证同一用户在同一时间仅支持同一设备登录，不同设备登录会将，详情参考 [`JwtUtil.java`](./src/main/java/com/xkcoding/rbac/security/util/JwtUtil.java)
 - [x] 在线人数统计，详情参考 [`MonitorService.java`](./src/main/java/com/xkcoding/rbac/security/service/MonitorService.java) 和 [`RedisUtil.java`](./src/main/java/com/xkcoding/rbac/security/util/RedisUtil.java)
-- [x] 手动踢出用户，详情参考 [`MonitorService.java`](./src/main/java/com/xkcoding/rbac/security/service/MonitorService.java) 
+- [x] 手动踢出用户，详情参考 [`MonitorService.java`](./src/main/java/com/xkcoding/rbac/security/service/MonitorService.java)
 - [x] 自定义配置不需要进行拦截的请求，详情参考 [`CustomConfig.java`](./src/main/java/com/xkcoding/rbac/security/config/CustomConfig.java) 和 [`application.yml`](./src/main/resources/application.yml)
 
 ## 2. 运行
@@ -146,13 +146,8 @@
  * JWT 工具类
  * </p>
  *
- * @package: com.xkcoding.rbac.security.util
- * @description: JWT 工具类
- * @author: yangkai.shen
- * @date: Created in 2018-12-07 13:42
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-07 13:42
  */
 @EnableConfigurationProperties(JwtConfig.class)
 @Configuration
@@ -306,13 +301,8 @@ public class JwtUtil {
  * Security 配置
  * </p>
  *
- * @package: com.xkcoding.rbac.security.config
- * @description: Security 配置
- * @author: yangkai.shen
- * @date: Created in 2018-12-07 16:46
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-07 16:46
  */
 @Configuration
 @EnableWebSecurity
@@ -471,13 +461,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
  * 动态路由认证
  * </p>
  *
- * @package: com.xkcoding.rbac.security.config
- * @description: 动态路由认证
- * @author: yangkai.shen
- * @date: Created in 2018-12-10 17:17
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-10 17:17
  */
 @Component
 public class RbacAuthorityService {
@@ -601,13 +586,8 @@ public class RbacAuthorityService {
  * Jwt 认证过滤器
  * </p>
  *
- * @package: com.xkcoding.rbac.security.config
- * @description: Jwt 认证过滤器
- * @author: yangkai.shen
- * @date: Created in 2018-12-10 15:15
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-10 15:15
  */
 @Component
 @Slf4j
@@ -732,13 +712,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
  * 自定义UserDetails查询
  * </p>
  *
- * @package: com.xkcoding.rbac.security.service
- * @description: 自定义UserDetails查询
- * @author: yangkai.shen
- * @date: Created in 2018-12-10 10:29
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-10 10:29
  */
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
@@ -775,13 +750,8 @@ public class CustomUserDetailsService implements UserDetailsService {
  * Redis工具类
  * </p>
  *
- * @package: com.xkcoding.rbac.security.util
- * @description: Redis工具类
- * @author: yangkai.shen
- * @date: Created in 2018-12-11 20:24
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-11 20:24
  */
 @Component
 @Slf4j
@@ -856,13 +826,8 @@ import java.util.stream.Collectors;
  * 监控 Service
  * </p>
  *
- * @package: com.xkcoding.rbac.security.service
- * @description: 监控 Service
- * @author: yangkai.shen
- * @date: Created in 2018-12-12 00:55
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-12 00:55
  */
 @Service
 public class MonitorService {

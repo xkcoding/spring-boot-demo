@@ -71,13 +71,8 @@
  * 启动器
  * </p>
  *
- * @package: com.xkcoding.war
- * @description: 启动器
- * @author: shenyangkai
- * @date: Created in 2018/10/30 19:37
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: shenyangkai
+ * @author yangkai.shen
+ * @date Created in 2018-10-30 19:37
  */
 @SpringBootApplication
 public class SpringBootDemoWarApplication extends SpringBootServletInitializer {
@@ -87,7 +82,7 @@ public class SpringBootDemoWarApplication extends SpringBootServletInitializer {
     }
 
     /**
-     * 若需要打成 war 包，则需要写一个类继承 {@link SpringBootServletInitializer} 并重写 {@link SpringBootServletInitializer#configure(SpringApplicationBuilder)} 
+     * 若需要打成 war 包，则需要写一个类继承 {@link SpringBootServletInitializer} 并重写 {@link SpringBootServletInitializer#configure(SpringApplicationBuilder)}
      */
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {

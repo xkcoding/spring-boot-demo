@@ -20,13 +20,8 @@ import java.util.List;
  * Redis工具类
  * </p>
  *
- * @package: com.xkcoding.rbac.security.util
- * @description: Redis工具类
- * @author: yangkai.shen
- * @date: Created in 2018-12-11 20:24
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-11 20:24
  */
 @Component
 @Slf4j

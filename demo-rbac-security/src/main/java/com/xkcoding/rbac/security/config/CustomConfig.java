@@ -8,13 +8,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * 自定义配置
  * </p>
  *
- * @package: com.xkcoding.rbac.security.config
- * @description: 自定义配置
- * @author: yangkai.shen
- * @date: Created in 2018-12-13 10:56
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-13 10:56
  */
 @ConfigurationProperties(prefix = "custom.config")
 @Data

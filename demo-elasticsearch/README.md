@@ -10,7 +10,7 @@
 
 2. 运行容器：`docker run -d -p 9200:9200 -p 9300:9300 --name elasticsearch-6.5.3 elasticsearch:6.5.3`
 
-3. 进入容器：`docker exec -it elasticsearch-6.5.3 /bin/bash` 
+3. 进入容器：`docker exec -it elasticsearch-6.5.3 /bin/bash`
 
 4. 安装 ik 分词器：`./bin/elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.5.3/elasticsearch-analysis-ik-6.5.3.zip`
 
@@ -19,12 +19,12 @@
    ```yaml
    cluster.name: "docker-cluster"
    network.host: 0.0.0.0
-   
+
    # minimum_master_nodes need to be explicitly set when bound on a public IP
    # set to 1 to allow single node clusters
    # Details: https://github.com/elastic/elasticsearch/pull/17288
    discovery.zen.minimum_master_nodes: 1
-   
+
    # just for elasticsearch-head plugin
    http.cors.enabled: true
    http.cors.allow-origin: "*"
@@ -124,13 +124,8 @@
  * 用户实体类
  * </p>
  *
- * @package: com.xkcoding.elasticsearch.model
- * @description: 用户实体类
- * @author: yangkai.shen
- * @date: Created in 2018-12-20 17:29
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-20 17:29
  */
 @Document(indexName = EsConsts.INDEX_NAME, type = EsConsts.TYPE_NAME, shards = 1, replicas = 0)
 @Data
@@ -183,13 +178,8 @@ public class Person {
  * 用户持久层
  * </p>
  *
- * @package: com.xkcoding.elasticsearch.repository
- * @description: 用户持久层
- * @author: yangkai.shen
- * @date: Created in 2018-12-20 19:00
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-20 19:00
  */
 public interface PersonRepository extends ElasticsearchRepository<Person, Long> {
 
@@ -214,13 +204,8 @@ public interface PersonRepository extends ElasticsearchRepository<Person, Long> 
  * 测试 ElasticTemplate 的创建/删除
  * </p>
  *
- * @package: com.xkcoding.elasticsearch.template
- * @description: 测试 ElasticTemplate 的创建/删除
- * @author: yangkai.shen
- * @date: Created in 2018-12-20 17:46
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-20 17:46
  */
 public class TemplateTest extends SpringBootDemoElasticsearchApplicationTests {
     @Autowired
@@ -258,13 +243,8 @@ public class TemplateTest extends SpringBootDemoElasticsearchApplicationTests {
  * 测试 Repository 操作ES
  * </p>
  *
- * @package: com.xkcoding.elasticsearch.repository
- * @description: 测试 Repository 操作ES
- * @author: yangkai.shen
- * @date: Created in 2018-12-20 19:03
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-20 19:03
  */
 @Slf4j
 public class PersonRepositoryTest extends SpringBootDemoElasticsearchApplicationTests {

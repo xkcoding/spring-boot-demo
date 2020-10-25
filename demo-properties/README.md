@@ -84,13 +84,8 @@
  * 项目配置
  * </p>
  *
- * @package: com.xkcoding.properties.property
- * @description: 项目配置
- * @author: yangkai.shen
- * @date: Created in 2018/9/29 10:50 AM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-09-29 10:50
  */
 @Data
 @Component
@@ -110,13 +105,8 @@ public class ApplicationProperty {
  * 开发人员配置信息
  * </p>
  *
- * @package: com.xkcoding.properties.property
- * @description: 开发人员配置信息
- * @author: yangkai.shen
- * @date: Created in 2018/9/29 10:51 AM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-09-29 10:51
  */
 @Data
 @ConfigurationProperties(prefix = "developer")
@@ -137,13 +127,8 @@ public class DeveloperProperty {
  * 测试Controller
  * </p>
  *
- * @package: com.xkcoding.properties.controller
- * @description: 测试Controller
- * @author: yangkai.shen
- * @date: Created in 2018/9/29 10:49 AM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-09-29 10:49
  */
 @RestController
 public class PropertyController {

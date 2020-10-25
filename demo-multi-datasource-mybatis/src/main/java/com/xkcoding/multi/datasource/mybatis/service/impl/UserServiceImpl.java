@@ -12,13 +12,8 @@ import org.springframework.stereotype.Service;
  * 数据服务层 实现
  * </p>
  *
- * @package: com.xkcoding.multi.datasource.mybatis.service.impl
- * @description: 数据服务层 实现
- * @author: yangkai.shen
- * @date: Created in 2019-01-21 14:37
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-01-21 14:37
  */
 @Service
 @DS("slave")

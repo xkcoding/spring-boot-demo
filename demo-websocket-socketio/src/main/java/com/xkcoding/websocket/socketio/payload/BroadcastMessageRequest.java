@@ -7,13 +7,8 @@ import lombok.Data;
  * 广播消息载荷
  * </p>
  *
- * @package: com.xkcoding.websocket.socketio.payload
- * @description: 广播消息载荷
- * @author: yangkai.shen
- * @date: Created in 2018-12-18 20:01
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-18 20:01
  */
 @Data
 public class BroadcastMessageRequest {

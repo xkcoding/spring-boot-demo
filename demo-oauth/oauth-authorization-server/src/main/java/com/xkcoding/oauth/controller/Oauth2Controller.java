@@ -15,7 +15,7 @@ import java.util.Objects;
  * 页面控制器.
  *
  * @author <a href="https://echocow.cn">EchoCow</a>
- * @date 2020/1/6 下午4:30
+ * @date 2020-01-06 16:30
  */
 @Controller
 @RequestMapping("/oauth")

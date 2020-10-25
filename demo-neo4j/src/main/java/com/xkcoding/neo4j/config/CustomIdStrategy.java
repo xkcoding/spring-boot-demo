@@ -8,13 +8,8 @@ import org.neo4j.ogm.id.IdStrategy;
  * 自定义主键策略
  * </p>
  *
- * @package: com.xkcoding.neo4j.config
- * @description: 自定义主键策略
- * @author: yangkai.shen
- * @date: Created in 2018-12-24 14:40
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-24 14:40
  */
 public class CustomIdStrategy implements IdStrategy {
     @Override

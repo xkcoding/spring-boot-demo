@@ -17,13 +17,8 @@ import java.util.stream.IntStream;
  * Redis测试
  * </p>
  *
- * @package: com.xkcoding.cache.redis
- * @description: Redis测试
- * @author: yangkai.shen
- * @date: Created in 2018/11/15 17:17
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-15 17:17
  */
 @Slf4j
 public class RedisTest extends SpringBootDemoCacheRedisApplicationTests {

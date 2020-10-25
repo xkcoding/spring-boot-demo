@@ -16,7 +16,7 @@ import java.net.HttpURLConnection;
  * 授权服务器工具类.
  *
  * @author <a href="https://echocow.cn">EchoCow</a>
- * @date 2020/1/6 下午8:44
+ * @date 2020-01-06 20:44
  */
 @SuppressWarnings("all")
 public class AuthorizationServerInfo {

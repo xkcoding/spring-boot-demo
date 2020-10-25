@@ -10,7 +10,7 @@ import java.util.List;
  * .
  *
  * @author <a href="https://echocow.cn">EchoCow</a>
- * @date 2020/1/6 下午3:44
+ * @date 2020-01-06 15:44
  */
 public interface SysUserService extends UserDetailsService {
     /**

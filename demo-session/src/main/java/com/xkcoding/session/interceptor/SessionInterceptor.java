@@ -13,13 +13,8 @@ import javax.servlet.http.HttpSession;
  * 校验Session的拦截器
  * </p>
  *
- * @package: com.xkcoding.session.interceptor
- * @description: 校验Session的拦截器
- * @author: yangkai.shen
- * @date: Created in 2018-12-19 19:40
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-19 19:40
  */
 @Component
 public class SessionInterceptor extends HandlerInterceptorAdapter {

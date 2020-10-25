@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/12 14:06
+ * @date Created in 2019-09-12 14:06
  */
 @SpringBootApplication
 public class SpringBootDemoRatelimitGuavaApplication {

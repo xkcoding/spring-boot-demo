@@ -12,13 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
  * 测试Controller
  * </p>
  *
- * @package: com.xkcoding.properties.controller
- * @description: 测试Controller
- * @author: yangkai.shen
- * @date: Created in 2018/9/29 10:49 AM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-09-29 10:49
  */
 @RestController
 public class PropertyController {

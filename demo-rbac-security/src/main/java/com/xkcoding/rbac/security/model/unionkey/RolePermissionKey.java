@@ -11,13 +11,8 @@ import java.io.Serializable;
  * 角色-权限联合主键
  * </p>
  *
- * @package: com.xkcoding.rbac.security.model.unionkey
- * @description: 角色-权限联合主键
- * @author: yangkai.shen
- * @date: Created in 2018-12-10 13:47
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-10 13:47
  */
 @Data
 @Embeddable

@@ -13,13 +13,8 @@ import java.util.concurrent.ConcurrentHashMap;
  * 模拟数据库
  * </p>
  *
- * @package: com.xkcoding.websocket.socketio.config
- * @description: 模拟数据库
- * @author: yangkai.shen
- * @date: Created in 2018-12-18 19:12
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-18 19:12
  */
 @Component
 public class DbTemplate {

@@ -13,13 +13,8 @@ import java.util.concurrent.TimeUnit;
  * 任务工厂
  * </p>
  *
- * @package: com.xkcoding.async.task
- * @description: 任务工厂
- * @author: yangkai.shen
- * @date: Created in 2018-12-29 10:37
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-29 10:37
  */
 @Component
 @Slf4j

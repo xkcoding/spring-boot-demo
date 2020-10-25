@@ -8,13 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 启动类
  * </p>
  *
- * @package: com.xkcoding.exception.handler
- * @description: 启动类
- * @author: yangkai.shen
- * @date: Created in 2018/10/2 8:49 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-02 20:49
  */
 @SpringBootApplication
 public class SpringBootDemoExceptionHandlerApplication {

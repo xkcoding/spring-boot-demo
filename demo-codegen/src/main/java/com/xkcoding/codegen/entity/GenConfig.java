@@ -7,13 +7,8 @@ import lombok.Data;
  * 生成配置
  * </p>
  *
- * @package: com.xkcoding.codegen.entity
- * @description: 生成配置
- * @author: yangkai.shen
- * @date: Created in 2019-03-22 09:47
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-03-22 09:47
  */
 @Data
 public class GenConfig {

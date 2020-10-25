@@ -88,13 +88,8 @@
  * JPA配置类
  * </p>
  *
- * @package: com.xkcoding.orm.jpa.config
- * @description: JPA配置类
- * @author: yangkai.shen
- * @date: Created in 2018/11/7 11:05
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-07 11:05
  */
 @Configuration
 @EnableTransactionManagement
@@ -133,13 +128,8 @@ public class JpaConfig {
  * 用户实体类
  * </p>
  *
- * @package: com.xkcoding.orm.jpa.entity
- * @description: 用户实体类
- * @author: yangkai.shen
- * @date: Created in 2018/11/7 14:06
- * @copyright: Copyright (c)
- * @version: V1.0
- * @modified: 76peter
+ * @author yangkai.shen
+ * @date Created in 2018-11-07 14:06
  */
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
@@ -211,13 +201,8 @@ public class User extends AbstractAuditModel {
  * 部门实体类
  * </p>
  *
- * @package: com.xkcoding.orm.jpa.entity
- * @description: 部门实体类
- * @author: 76peter
- * @date: Created in 2019/10/1 18:07
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: 76peter
+ * @author 76peter
+ * @date Created in 2019-10-01 18:07
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -272,13 +257,8 @@ public class Department extends AbstractAuditModel {
  * 实体通用父类
  * </p>
  *
- * @package: com.xkcoding.orm.jpa.entity.base
- * @description: 实体通用父类
- * @author: yangkai.shen
- * @date: Created in 2018/11/7 14:01
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-07 14:01
  */
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
@@ -315,13 +295,8 @@ public abstract class AbstractAuditModel implements Serializable {
  * User Dao
  * </p>
  *
- * @package: com.xkcoding.orm.jpa.repository
- * @description: User Dao
- * @author: yangkai.shen
- * @date: Created in 2018/11/7 14:07
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-07 14:07
  */
 @Repository
 public interface UserDao extends JpaRepository<User, Long> {
@@ -335,13 +310,8 @@ public interface UserDao extends JpaRepository<User, Long> {
  * User Dao
  * </p>
  *
- * @package: com.xkcoding.orm.jpa.repository
- * @description: Department Dao
- * @author: 76peter
- * @date: Created in 2019/10/1 18:07
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: 76peter
+ * @author 76peter
+ * @date Created in 2019-10-01 18:07
  */
 @Repository
 public interface DepartmentDao extends JpaRepository<Department, Long> {
@@ -403,13 +373,8 @@ logging:
  * jpa 测试类
  * </p>
  *
- * @package: com.xkcoding.orm.jpa.repository
- * @description: jpa 测试类
- * @author: yangkai.shen
- * @date: Created in 2018/11/7 14:09
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-07 14:09
  */
 @Slf4j
 public class UserDaoTest extends SpringBootDemoOrmJpaApplicationTests {
@@ -516,13 +481,8 @@ public class UserDaoTest extends SpringBootDemoOrmJpaApplicationTests {
  * jpa 测试类
  * </p>
  *
- * @package: com.xkcoding.orm.jpa.repository
- * @description: jpa 测试类
- * @author: 76peter
- * @date: Created in 2018/11/7 14:09
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: 76peter
+ * @author 76peter
+ * @date Created in 2018-11-07 14:09
  */
 @Slf4j
 public class DepartmentDaoTest extends SpringBootDemoOrmJpaApplicationTests {
@@ -587,4 +547,4 @@ public class DepartmentDaoTest extends SpringBootDemoOrmJpaApplicationTests {
 
 ## 参考
 
-- Spring Data JPA 官方文档：https://docs.spring.io/spring-data/jpa/docs/current/reference/html/ 
+- Spring Data JPA 官方文档：https://docs.spring.io/spring-data/jpa/docs/current/reference/html/

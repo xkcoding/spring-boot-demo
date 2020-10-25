@@ -10,13 +10,8 @@ import java.util.List;
  * 忽略配置
  * </p>
  *
- * @package: com.xkcoding.rbac.security.config
- * @description: 忽略配置
- * @author: yangkai.shen
- * @date: Created in 2018-12-17 17:37
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-17 17:37
  */
 @Data
 public class IgnoreConfig {

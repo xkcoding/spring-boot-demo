@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/4 14:42
+ * @date Created in 2019-09-04 14:42
  */
 public enum DatasourceScheduler {
     /**

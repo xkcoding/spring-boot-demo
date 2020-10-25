@@ -9,20 +9,14 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * <p>
  * UserDao 测试
  * </p>
  *
- * @package: com.xkcoding.rbac.security.repository
- * @description: UserDao 测试
- * @author: yangkai.shen
- * @date: Created in 2018-12-12 01:10
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-12 01:10
  */
 @Slf4j
 public class UserDaoTest extends SpringBootDemoRbacSecurityApplicationTests {

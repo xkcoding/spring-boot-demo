@@ -23,13 +23,8 @@ import java.util.stream.Collectors;
  * jpa 测试类
  * </p>
  *
- * @package: com.xkcoding.orm.jpa.repository
- * @description: jpa 测试类
- * @author: yangkai.shen
- * @date: Created in 2018/11/7 14:09
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-07 14:09
  */
 @Slf4j
 public class UserDaoTest extends SpringBootDemoOrmJpaApplicationTests {

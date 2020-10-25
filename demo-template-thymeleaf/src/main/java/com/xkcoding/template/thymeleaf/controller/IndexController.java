@@ -14,13 +14,8 @@ import javax.servlet.http.HttpServletRequest;
  * 主页
  * </p>
  *
- * @package: com.xkcoding.template.thymeleaf.controller
- * @description: 主页
- * @author: yangkai.shen
- * @date: Created in 2018/10/10 10:12 AM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-10 10:12
  */
 @Controller
 @Slf4j

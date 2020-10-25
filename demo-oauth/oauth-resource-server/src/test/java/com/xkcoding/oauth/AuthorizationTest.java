@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
  * .
  *
  * @author <a href="https://echocow.cn">EchoCow</a>
- * @date 2020/1/9 下午3:44
+ * @date 2020-01-09  15:44
  */
 public class AuthorizationTest {
     public static final String AUTHORIZATION_SERVER = "http://127.0.0.1:8080";

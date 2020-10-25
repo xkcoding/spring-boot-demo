@@ -11,13 +11,8 @@ import org.springframework.data.domain.PageRequest;
  * 分页工具类
  * </p>
  *
- * @package: com.xkcoding.rbac.security.util
- * @description: 分页工具类
- * @author: yangkai.shen
- * @date: Created in 2018-12-12 18:09
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-12 18:09
  */
 public class PageUtil {
     /**

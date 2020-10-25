@@ -9,13 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 启动类
  * </p>
  *
- * @package: com.xkcoding.orm.mybatis
- * @description: 启动类
- * @author: yangkai.shen
- * @date: Created in 2018/11/8 10:52
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-08 10:52
  */
 @MapperScan(basePackages = {"com.xkcoding.orm.mybatis.mapper"})
 @SpringBootApplication

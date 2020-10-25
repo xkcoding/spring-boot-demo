@@ -19,13 +19,8 @@ import java.util.List;
  * User Controller
  * </p>
  *
- * @package: com.xkcoding.swagger.controller
- * @description: User Controller
- * @author: yangkai.shen
- * @date: Created in 2018-11-29 11:30
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-29 11:30
  */
 @RestController
 @RequestMapping("/user")

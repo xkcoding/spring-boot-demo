@@ -11,13 +11,8 @@ import java.util.Collection;
  * 部门实体类
  * </p>
  *
- * @package: com.xkcoding.orm.jpa.entity
- * @description: 部门实体类
- * @author: 76peter
- * @date: Created in 2019/10/1 18:07
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: 76peter
+ * @author 76peter
+ * @date Created in 2019-10-01 18:07
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

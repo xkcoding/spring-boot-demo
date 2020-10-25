@@ -7,13 +7,8 @@ import lombok.Data;
  * 列属性： https://blog.csdn.net/lkforce/article/details/79557482
  * </p>
  *
- * @package: com.xkcoding.codegen.entity
- * @description: 列属性： https://blog.csdn.net/lkforce/article/details/79557482
- * @author: yangkai.shen
- * @date: Created in 2019-03-22 09:46
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-03-22 09:46
  */
 @Data
 public class ColumnEntity {

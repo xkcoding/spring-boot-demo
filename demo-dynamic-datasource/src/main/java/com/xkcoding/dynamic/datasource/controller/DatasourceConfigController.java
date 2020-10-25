@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/4 17:31
+ * @date Created in 2019-09-04 17:31
  */
 @RestController
 @RequiredArgsConstructor(onConstructor_ = @Autowired)

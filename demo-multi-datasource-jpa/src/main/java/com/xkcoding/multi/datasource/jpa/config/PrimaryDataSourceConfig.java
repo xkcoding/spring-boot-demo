@@ -15,13 +15,8 @@ import javax.sql.DataSource;
  * JPA多数据源配置 - 主数据源
  * </p>
  *
- * @package: com.xkcoding.multi.datasource.jpa.config
- * @description: JPA多数据源配置 - 主数据源
- * @author: yangkai.shen
- * @date: Created in 2019-01-17 15:58
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-01-17 15:58
  */
 @Configuration
 public class PrimaryDataSourceConfig {

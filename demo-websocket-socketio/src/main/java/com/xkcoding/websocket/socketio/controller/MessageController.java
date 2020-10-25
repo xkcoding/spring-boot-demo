@@ -19,13 +19,8 @@ import java.lang.reflect.Field;
  * 消息发送Controller
  * </p>
  *
- * @package: com.xkcoding.websocket.socketio.controller
- * @description: 消息发送Controller
- * @author: yangkai.shen
- * @date: Created in 2018-12-18 19:50
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-18 19:50
  */
 @RestController
 @RequestMapping("/send")

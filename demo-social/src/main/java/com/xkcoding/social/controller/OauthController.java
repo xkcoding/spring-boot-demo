@@ -27,13 +27,8 @@ import java.util.stream.Collectors;
  * 第三方登录 Controller
  * </p>
  *
- * @package: com.xkcoding.oauth.controller
- * @description: 第三方登录 Controller
- * @author: yangkai.shen
- * @date: Created in 2019-05-17 10:07
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-05-17 10:07
  */
 @Slf4j
 @RestController

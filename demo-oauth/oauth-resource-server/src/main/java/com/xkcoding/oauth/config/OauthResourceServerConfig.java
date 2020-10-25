@@ -15,7 +15,7 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
  * 我们自己实现了它的配置，所以它的自动装配不会生效
  *
  * @author <a href="https://echocow.cn">EchoCow</a>
- * @date 2020/1/9 下午2:20
+ * @date 2020-01-09  14:20
  */
 @Configuration
 @AllArgsConstructor

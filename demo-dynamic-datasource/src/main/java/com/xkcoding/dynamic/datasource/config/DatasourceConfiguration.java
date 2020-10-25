@@ -14,7 +14,7 @@ import javax.sql.DataSource;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/4 10:27
+ * @date Created in 2019-09-04 10:27
  */
 @Configuration
 public class DatasourceConfiguration {

@@ -11,13 +11,8 @@ import org.springframework.context.annotation.Bean;
  * 启动器
  * </p>
  *
- * @package: com.xkcoding.mongodb
- * @description: 启动器
- * @author: yangkai.shen
- * @date: Created in 2018-12-28 16:14
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-28 16:14
  */
 @SpringBootApplication
 public class SpringBootDemoMongodbApplication {

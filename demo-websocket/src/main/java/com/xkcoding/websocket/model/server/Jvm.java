@@ -11,13 +11,8 @@ import java.util.Date;
  * JVM相关信息实体
  * </p>
  *
- * @package: com.xkcoding.websocket.model.server
- * @description: JVM相关信息实体
- * @author: yangkai.shen
- * @date: Created in 2018-12-14 16:09
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-14 16:09
  */
 public class Jvm {
     /**

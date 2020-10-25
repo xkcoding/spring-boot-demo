@@ -21,13 +21,8 @@ import java.util.stream.Collectors;
  * 安全配置类
  * </p>
  *
- * @package: com.xkcoding.activiti.config
- * @description: 安全配置类
- * @author: yangkai.shen
- * @date: Created in 2019-07-01 18:40
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-07-01 18:40
  */
 @Slf4j
 @Configuration

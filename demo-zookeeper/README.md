@@ -93,13 +93,8 @@
  * Zookeeper 配置项
  * </p>
  *
- * @package: com.xkcoding.zookeeper.config.props
- * @description: Zookeeper 配置项
- * @author: yangkai.shen
- * @date: Created in 2018-12-27 14:47
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-27 14:47
  */
 @Data
 @ConfigurationProperties(prefix = "zk")
@@ -143,13 +138,8 @@ zk:
  * Zookeeper配置类
  * </p>
  *
- * @package: com.xkcoding.zookeeper.config
- * @description: Zookeeper配置类
- * @author: yangkai.shen
- * @date: Created in 2018-12-27 14:45
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-27 14:45
  */
 @Configuration
 @EnableConfigurationProperties(ZkProps.class)
@@ -182,13 +172,8 @@ public class ZkConfig {
  * 在需要加锁的方法上打上该注解后，AOP会帮助你统一管理这个方法的锁
  * </p>
  *
- * @package: com.xkcoding.zookeeper.annotation
- * @description: 基于Zookeeper的分布式锁注解，在需要加锁的方法上打上该注解后，AOP会帮助你统一管理这个方法的锁
- * @author: yangkai.shen
- * @date: Created in 2018-12-27 14:11
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-27 14:11
  */
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
@@ -222,13 +207,8 @@ public @interface ZooLock {
  * 分布式锁动态key注解，配置之后key的值会动态获取参数内容
  * </p>
  *
- * @package: com.xkcoding.zookeeper.annotation
- * @description: 分布式锁动态key注解，配置之后key的值会动态获取参数内容
- * @author: yangkai.shen
- * @date: Created in 2018-12-27 14:17
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-27 14:17
  */
 @Target({ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
@@ -255,13 +235,8 @@ public @interface LockKeyParam {
  * 使用 aop 切面记录请求日志信息
  * </p>
  *
- * @package: com.xkcoding.log.aop.aspectj
- * @description: 使用 aop 切面记录请求日志信息
- * @author: yangkai.shen
- * @date: Created in 2018/10/1 10:05 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-01 22:05
  */
 @Aspect
 @Component

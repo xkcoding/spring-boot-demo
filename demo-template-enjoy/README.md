@@ -81,13 +81,8 @@
  * Enjoy 模板配置类
  * </p>
  *
- * @package: com.xkcoding.template.enjoy.config
- * @description: Enjoy 模板配置类
- * @author: yangkai.shen
- * @date: Created in 2018/10/11 2:06 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-11 14:06
  */
 @Configuration
 public class EnjoyConfig {
@@ -119,13 +114,8 @@ public class EnjoyConfig {
  * 主页
  * </p>
  *
- * @package: com.xkcoding.template.enjoy.controller
- * @description: 主页
- * @author: yangkai.shen
- * @date: Created in 2018/10/11 2:22 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-11 14:22
  */
 @Controller
 @Slf4j
@@ -156,13 +146,8 @@ public class IndexController {
  * 用户页面
  * </p>
  *
- * @package: com.xkcoding.template.enjoy.controller
- * @description: 用户页面
- * @author: yangkai.shen
- * @date: Created in 2018/10/11 2:24 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-11 14:24
  */
 @Controller
 @RequestMapping("/user")

@@ -19,13 +19,8 @@ import java.util.Objects;
  * 使用 aop 切面记录请求日志信息
  * </p>
  *
- * @package: com.xkcoding.log.aop.aspectj
- * @description: 使用 aop 切面记录请求日志信息
- * @author: yangkai.shen
- * @date: Created in 2018/10/1 10:05 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-01 22:05
  */
 @Aspect
 @Component

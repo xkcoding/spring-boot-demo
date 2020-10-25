@@ -5,13 +5,8 @@ package com.xkcoding.rbac.security.common;
  * 常量池
  * </p>
  *
- * @package: com.xkcoding.rbac.security.common
- * @description: 常量池
- * @author: yangkai.shen
- * @date: Created in 2018-12-10 15:03
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-10 15:03
  */
 public interface Consts {
     /**

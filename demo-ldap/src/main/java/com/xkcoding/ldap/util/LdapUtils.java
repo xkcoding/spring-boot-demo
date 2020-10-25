@@ -10,7 +10,7 @@ import java.security.NoSuchAlgorithmException;
  *
  * @author fxbin
  * @version v1.0
- * @since 2019/8/26 1:03
+ * @since 2019-08-26 1:03
  */
 public class LdapUtils {
 

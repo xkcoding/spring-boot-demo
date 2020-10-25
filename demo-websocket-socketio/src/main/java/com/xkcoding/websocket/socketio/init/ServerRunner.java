@@ -11,13 +11,8 @@ import org.springframework.stereotype.Component;
  * websocket服务器启动
  * </p>
  *
- * @package: com.xkcoding.websocket.socketio.init
- * @description: websocket服务器启动
- * @author: yangkai.shen
- * @date: Created in 2018-12-18 17:07
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-18 17:07
  */
 @Component
 @Slf4j

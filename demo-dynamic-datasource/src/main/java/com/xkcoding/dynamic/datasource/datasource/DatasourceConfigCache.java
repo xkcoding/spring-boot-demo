@@ -11,7 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/4 17:13
+ * @date Created in 2019-09-04 17:13
  */
 public enum DatasourceConfigCache {
     /**

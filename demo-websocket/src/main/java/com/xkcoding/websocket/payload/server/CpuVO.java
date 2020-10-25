@@ -12,13 +12,8 @@ import java.util.List;
  * CPU相关信息实体VO
  * </p>
  *
- * @package: com.xkcoding.websocket.payload.server
- * @description: CPU相关信息实体VO
- * @author: yangkai.shen
- * @date: Created in 2018-12-14 17:27
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-14 17:27
  */
 @Data
 public class CpuVO {

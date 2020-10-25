@@ -9,13 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
  * Hello Controller
  * </p>
  *
- * @package: com.xkcoding.docker.controller
- * @description: Hello Controller
- * @author: yangkai.shen
- * @date: Created in 2018-11-29 14:58
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-29 14:58
  */
 @RestController
 @RequestMapping

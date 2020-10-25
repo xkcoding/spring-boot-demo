@@ -12,13 +12,8 @@ import java.util.Date;
  * 定时任务
  * </p>
  *
- * @package: com.xkcoding.task.job
- * @description: 定时任务
- * @author: yangkai.shen
- * @date: Created in 2018/11/22 19:09
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-22 19:09
  */
 @Component
 @Slf4j

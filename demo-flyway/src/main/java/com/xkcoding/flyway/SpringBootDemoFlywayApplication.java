@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2020/3/4 18:30
+ * @date Created in 2020-03-04 18:30
  */
 @SpringBootApplication
 public class SpringBootDemoFlywayApplication {

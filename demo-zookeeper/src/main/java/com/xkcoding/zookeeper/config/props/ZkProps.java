@@ -8,13 +8,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * Zookeeper 配置项
  * </p>
  *
- * @package: com.xkcoding.zookeeper.config.props
- * @description: Zookeeper 配置项
- * @author: yangkai.shen
- * @date: Created in 2018-12-27 14:47
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-27 14:47
  */
 @Data
 @ConfigurationProperties(prefix = "zk")

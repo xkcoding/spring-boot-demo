@@ -15,7 +15,7 @@ import java.sql.SQLException;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/4 10:41
+ * @date Created in 2019-09-04 10:41
  */
 @Slf4j
 public class DynamicDataSource extends HikariDataSource {

@@ -13,13 +13,8 @@ import java.util.List;
  * User Dao
  * </p>
  *
- * @package: com.xkcoding.orm.jdbctemplate.dao
- * @description: User Dao
- * @author: yangkai.shen
- * @date: Created in 2018/10/15 11:15 AM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-15 11:15
  */
 @Repository
 public class UserDao extends BaseDao<User, Long> {

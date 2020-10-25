@@ -15,7 +15,7 @@ import java.net.URLEncoder;
  * 登录失败处理器，失败后携带失败信息重定向到登录地址重新登录.
  *
  * @author <a href="https://echocow.cn">EchoCow</a>
- * @date 2020/1/7 下午1:01
+ * @date 2020-01-07 13:01
  */
 @Slf4j
 @Component

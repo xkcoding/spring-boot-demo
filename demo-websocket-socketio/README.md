@@ -91,13 +91,8 @@
  * websocket服务器配置
  * </p>
  *
- * @package: com.xkcoding.websocket.socketio.config
- * @description: websocket服务器配置
- * @author: yangkai.shen
- * @date: Created in 2018-12-18 16:42
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-18 16:42
  */
 @Configuration
 @EnableConfigurationProperties({WsConfig.class})
@@ -142,13 +137,8 @@ public class ServerConfig {
  * 消息事件处理
  * </p>
  *
- * @package: com.xkcoding.websocket.socketio.handler
- * @description: 消息事件处理
- * @author: yangkai.shen
- * @date: Created in 2018-12-18 18:57
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-18 18:57
  */
 @Component
 @Slf4j
@@ -286,13 +276,8 @@ public class MessageEventHandler {
  * websocket服务器启动
  * </p>
  *
- * @package: com.xkcoding.websocket.socketio.init
- * @description: websocket服务器启动
- * @author: yangkai.shen
- * @date: Created in 2018-12-18 17:07
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-18 17:07
  */
 @Component
 @Slf4j

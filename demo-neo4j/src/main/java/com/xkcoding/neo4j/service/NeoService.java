@@ -30,13 +30,8 @@ import java.util.Set;
  * NeoService
  * </p>
  *
- * @package: com.xkcoding.neo4j.service
- * @description: NeoService
- * @author: yangkai.shen
- * @date: Created in 2018-12-24 15:19
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-24 15:19
  */
 @Service
 public class NeoService {

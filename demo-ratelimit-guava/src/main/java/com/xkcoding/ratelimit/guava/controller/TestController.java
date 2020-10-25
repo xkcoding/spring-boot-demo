@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/12 14:22
+ * @date Created in 2019-09-12 14:22
  */
 @Slf4j
 @RestController

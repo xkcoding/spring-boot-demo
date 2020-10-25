@@ -91,13 +91,8 @@ spring:
  * 启动器
  * </p>
  *
- * @package: com.xkcoding.dubbo.provider
- * @description: 启动器
- * @author: yangkai.shen
- * @date: Created in 2018-12-25 16:49
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-25 16:49
  */
 @EnableDubboConfiguration
 @SpringBootApplication
@@ -117,13 +112,8 @@ public class SpringBootDemoDubboProviderApplication {
  * Hello服务实现
  * </p>
  *
- * @package: com.xkcoding.dubbo.provider.service
- * @description: Hello服务实现
- * @author: yangkai.shen
- * @date: Created in 2018-12-25 16:58
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-25 16:58
  */
 @Service
 @Component

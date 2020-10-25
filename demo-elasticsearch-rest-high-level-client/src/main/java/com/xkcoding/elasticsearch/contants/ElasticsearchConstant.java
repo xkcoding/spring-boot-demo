@@ -5,7 +5,7 @@ package com.xkcoding.elasticsearch.contants;
  *
  * @author fxbin
  * @version v1.0
- * @since 2019/9/15 23:03
+ * @since 2019-09-15 23:03
  */
 public interface ElasticsearchConstant {
 

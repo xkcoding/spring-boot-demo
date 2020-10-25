@@ -9,7 +9,7 @@ import java.util.Optional;
  * 用户信息仓库.
  *
  * @author <a href="https://echocow.cn">EchoCow</a>
- * @date 2020/1/6 下午1:08
+ * @date 2020-01-06 13:08
  */
 public interface SysUserRepository extends JpaRepository<SysUser, Long> {
 

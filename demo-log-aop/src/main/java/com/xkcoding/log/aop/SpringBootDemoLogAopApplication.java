@@ -8,13 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 启动类
  * </p>
  *
- * @package: com.xkcoding.log.aop
- * @description: 启动类
- * @author: yangkai.shen
- * @date: Created in 2018/10/1 10:05 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-01 22:05
  */
 @SpringBootApplication
 public class SpringBootDemoLogAopApplication {

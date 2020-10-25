@@ -93,13 +93,8 @@
  * mybatis-plus 配置
  * </p>
  *
- * @package: com.xkcoding.orm.mybatis.plus.config
- * @description: mybatis-plus 配置
- * @author: yangkai.shen
- * @date: Created in 2018/11/8 17:29
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-08 17:29
  */
 @Configuration
 @MapperScan(basePackages = {"com.xkcoding.orm.mybatis.plus.mapper"})
@@ -140,13 +135,8 @@ import java.util.Date;
  * 通用字段填充
  * </p>
  *
- * @package: com.xkcoding.orm.mybatis.plus.config
- * @description: 通用字段填充
- * @author: yangkai.shen
- * @date: Created in 2018/11/8 17:40
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-08 17:40
  */
 @Slf4j
 @Component
@@ -231,13 +221,8 @@ mybatis-plus:
  * UserMapper
  * </p>
  *
- * @package: com.xkcoding.orm.mybatis.plus.mapper
- * @description: UserMapper
- * @author: yangkai.shen
- * @date: Created in 2018/11/8 16:57
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-08 16:57
  */
 @Component
 public interface UserMapper extends BaseMapper<User> {
@@ -252,13 +237,8 @@ public interface UserMapper extends BaseMapper<User> {
  * User Service
  * </p>
  *
- * @package: com.xkcoding.orm.mybatis.plus.service
- * @description: User Service
- * @author: yangkai.shen
- * @date: Created in 2018/11/8 18:10
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-08 18:10
  */
 public interface UserService extends IService<User> {
 }
@@ -272,13 +252,8 @@ public interface UserService extends IService<User> {
  * User Service
  * </p>
  *
- * @package: com.xkcoding.orm.mybatis.plus.service.impl
- * @description: User Service
- * @author: yangkai.shen
- * @date: Created in 2018/11/8 18:10
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-08 18:10
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
@@ -293,13 +268,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
  * User Service 测试
  * </p>
  *
- * @package: com.xkcoding.orm.mybatis.plus.service
- * @description: User Service 测试
- * @author: yangkai.shen
- * @date: Created in 2018/11/8 18:13
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-08 18:13
  */
 @Slf4j
 public class UserServiceTest extends SpringBootDemoOrmMybatisPlusApplicationTests {
@@ -435,7 +405,7 @@ public class UserServiceTest extends SpringBootDemoOrmMybatisPlusApplicationTest
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/16 14:04
+ * @date Created in 2019-09-16 14:04
  */
 @Data
 @TableName("orm_role")
@@ -473,7 +443,7 @@ public class Role extends Model<Role> {
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/16 14:06
+ * @date Created in 2019-09-16 14:06
  */
 public interface RoleMapper extends BaseMapper<Role> {
 }
@@ -488,7 +458,7 @@ public interface RoleMapper extends BaseMapper<Role> {
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/16 14:19
+ * @date Created in 2019-09-16 14:19
  */
 @Slf4j
 public class ActiveRecordTest extends SpringBootDemoOrmMybatisPlusApplicationTests {

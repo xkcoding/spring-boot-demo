@@ -10,13 +10,8 @@ import org.springframework.context.annotation.Configuration;
  * 雪花算法生成器
  * </p>
  *
- * @package: com.xkcoding.multi.datasource.jpa.config
- * @description: 雪花算法生成器
- * @author: yangkai.shen
- * @date: Created in 2019-01-18 15:50
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-01-18 15:50
  */
 @Configuration
 public class SnowflakeConfig {

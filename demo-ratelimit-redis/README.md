@@ -93,7 +93,7 @@
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/30 10:31
+ * @date Created in 2019-09-30 10:31
  * @see AnnotationUtils
  */
 @Target(ElementType.METHOD)
@@ -138,7 +138,7 @@ public @interface RateLimiter {
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/30 10:30
+ * @date Created in 2019-09-30 10:30
  */
 @Slf4j
 @Aspect
@@ -250,7 +250,7 @@ end
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/30 10:30
+ * @date Created in 2019-09-30 10:30
  */
 @Slf4j
 @RestController

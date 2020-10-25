@@ -11,13 +11,8 @@ import org.springframework.security.web.access.AccessDeniedHandler;
  * Security 结果处理配置
  * </p>
  *
- * @package: com.xkcoding.rbac.security.config
- * @description: Security 结果处理配置
- * @author: yangkai.shen
- * @date: Created in 2018-12-07 17:31
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-07 17:31
  */
 @Configuration
 public class SecurityHandlerConfig {

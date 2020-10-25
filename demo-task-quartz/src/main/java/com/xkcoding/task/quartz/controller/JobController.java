@@ -22,13 +22,8 @@ import javax.validation.Valid;
  * Job Controller
  * </p>
  *
- * @package: com.xkcoding.task.quartz.controller
- * @description: Job Controller
- * @author: yangkai.shen
- * @date: Created in 2018-11-26 13:23
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-26 13:23
  */
 @RestController
 @RequestMapping("/job")

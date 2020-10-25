@@ -83,7 +83,7 @@ spring:
     host: smtp.mxhichina.com
     port: 465
     username: spring-boot-demo@xkcoding.com
-    # 使用 jasypt 加密密码，使用com.xkcoding.email.PasswordTest.testGeneratePassword 生成加密密码，替换 ENC(加密密码)  
+    # 使用 jasypt 加密密码，使用com.xkcoding.email.PasswordTest.testGeneratePassword 生成加密密码，替换 ENC(加密密码)
     password: ENC(OT0qGOpXrr1Iog1W+fjOiIDCJdBjHyhy)
     protocol: smtp
     test-connection: true
@@ -109,13 +109,8 @@ jasypt:
  * 邮件接口
  * </p>
  *
- * @package: com.xkcoding.email.service
- * @description: 邮件接口
- * @author: yangkai.shen
- * @date: Created in 2018/11/21 11:16
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-21 11:16
  */
 public interface MailService {
     /**
@@ -164,7 +159,7 @@ public interface MailService {
      */
     void sendResourceMail(String to, String subject, String content, String rscPath, String rscId, String... cc) throws MessagingException;
 
-} 
+}
 ```
 
 ## MailServiceImpl.java
@@ -175,13 +170,8 @@ public interface MailService {
  * 邮件接口
  * </p>
  *
- * @package: com.xkcoding.email.service.impl
- * @description: 邮件接口
- * @author: yangkai.shen
- * @date: Created in 2018/11/21 13:49
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-21 13:49
  */
 @Service
 public class MailServiceImpl implements MailService {
@@ -302,13 +292,8 @@ public class MailServiceImpl implements MailService {
  * 邮件测试
  * </p>
  *
- * @package: com.xkcoding.email.service
- * @description: 邮件测试
- * @author: yangkai.shen
- * @date: Created in 2018/11/21 13:49
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-21 13:49
  */
 public class MailServiceTest extends SpringBootDemoEmailApplicationTests {
     @Autowired

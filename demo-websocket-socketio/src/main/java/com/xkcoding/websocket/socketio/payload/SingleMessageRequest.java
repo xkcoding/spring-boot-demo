@@ -7,13 +7,8 @@ import lombok.Data;
  * 私聊消息载荷
  * </p>
  *
- * @package: com.xkcoding.websocket.socketio.payload
- * @description: 私聊消息载荷
- * @author: yangkai.shen
- * @date: Created in 2018-12-18 17:02
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-18 17:02
  */
 @Data
 public class SingleMessageRequest {

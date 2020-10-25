@@ -26,7 +26,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * 授权码模式测试.
  *
  * @author <a href="https://echocow.cn">EchoCow</a>
- * @date 2020/1/6 下午8:43
+ * @date 2020-01-06 20:43
  */
 public class AuthorizationCodeGrantTests {
 

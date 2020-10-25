@@ -9,13 +9,8 @@ import ${package}.${moduleName}.entity.${className};
  * ${comments}
  * </p>
  *
- * @package:  ${package}.${moduleName}.mapper
- * @description: ${comments}
- * @author: ${author}
- * @date: Created in ${datetime}
- * @copyright: Copyright (c) ${year}
- * @version: V1.0
- * @modified: ${author}
+ * @author ${author}
+ * @date Created in ${datetime}
  */
 @Component
 public interface ${className}Mapper extends BaseMapper<${className}> {

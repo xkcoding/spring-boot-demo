@@ -84,13 +84,8 @@
  * 启动类
  * </p>
  *
- * @package: com.xkcoding.cache.ehcache
- * @description: 启动类
- * @author: yangkai.shen
- * @date: Created in 2018/11/16 17:02
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-16 17:02
  */
 @SpringBootApplication
 @EnableCaching
@@ -165,13 +160,8 @@ logging:
  * UserService
  * </p>
  *
- * @package: com.xkcoding.cache.ehcache.service.impl
- * @description: UserService
- * @author: yangkai.shen
- * @date: Created in 2018/11/16 16:54
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-16 16:54
  */
 @Service
 @Slf4j
@@ -240,13 +230,8 @@ public class UserServiceImpl implements UserService {
  * ehcache缓存测试
  * </p>
  *
- * @package: com.xkcoding.cache.ehcache.service
- * @description: ehcache缓存测试
- * @author: yangkai.shen
- * @date: Created in 2018/11/16 16:58
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-16 16:58
  */
 @Slf4j
 public class UserServiceTest extends SpringBootDemoCacheEhcacheApplicationTests {

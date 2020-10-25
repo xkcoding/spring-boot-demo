@@ -8,13 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 启动器
  * </p>
  *
- * @package: com.xkcoding.activiti
- * @description: 启动器
- * @author: yangkai.shen
- * @date: Created in 2019-03-31 22:24
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-03-31 22:24
  */
 @SpringBootApplication
 public class SpringBootDemoActivitiApplication {

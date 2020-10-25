@@ -17,7 +17,7 @@ import java.util.Set;
  * 实现接口的方式可以参考 {@link SysClientDetails}
  *
  * @author <a href="https://echocow.cn">EchoCow</a>
- * @date 2020/1/6 下午12:41
+ * @date 2020-01-06 12:41
  */
 @Data
 @Table

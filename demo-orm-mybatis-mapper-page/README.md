@@ -100,13 +100,8 @@
  * 启动器
  * </p>
  *
- * @package: com.xkcoding.orm.mybatis.MapperAndPage
- * @description: 启动器
- * @author: yangkai.shen
- * @date: Created in 2018/11/8 13:43
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-08 13:43
  */
 @SpringBootApplication
 @MapperScan(basePackages = {"com.xkcoding.orm.mybatis.MapperAndPage.mapper"}) // 注意：这里的 MapperScan 是 tk.mybatis.spring.annotation.MapperScan 这个包下的
@@ -177,13 +172,8 @@ pagehelper:
  * UserMapper
  * </p>
  *
- * @package: com.xkcoding.orm.mybatis.MapperAndPage.mapper
- * @description: UserMapper
- * @author: yangkai.shen
- * @date: Created in 2018/11/8 14:15
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-08 14:15
  */
 @Component
 // 注意：这里的Mapper是tk.mybatis.mapper.common.Mapper包下的
@@ -199,13 +189,8 @@ public interface UserMapper extends Mapper<User>, MySqlMapper<User> {
  * UserMapper 测试
  * </p>
  *
- * @package: com.xkcoding.orm.mybatis.MapperAndPage.mapper
- * @description: UserMapper 测试
- * @author: yangkai.shen
- * @date: Created in 2018/11/8 14:25
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-08 14:25
  */
 @Slf4j
 public class UserMapperTest extends SpringBootDemoOrmMybatisMapperPageApplicationTests {

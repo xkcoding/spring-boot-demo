@@ -7,13 +7,8 @@ import lombok.Data;
  * 加群载荷
  * </p>
  *
- * @package: com.xkcoding.websocket.socketio.payload
- * @description: 加群载荷
- * @author: yangkai.shen
- * @date: Created in 2018-12-19 13:36
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-19 13:36
  */
 @Data
 public class JoinRequest {

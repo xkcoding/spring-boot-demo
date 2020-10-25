@@ -18,13 +18,8 @@ import java.util.stream.Collectors;
  * 测试Neo4j
  * </p>
  *
- * @package: com.xkcoding.neo4j
- * @description: 测试Neo4j
- * @author: yangkai.shen
- * @date: Created in 2018-12-24 15:17
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-24 15:17
  */
 @Slf4j
 public class Neo4jTest extends SpringBootDemoNeo4jApplicationTests {

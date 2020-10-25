@@ -8,13 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 启动类
  * </p>
  *
- * @package: com.xkcoding.actuator
- * @description: 启动类
- * @author: yangkai.shen
- * @date: Created in 2018/9/29 2:27 PM
- * @copyright: Copyright (c)2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-9-29 14:27
  */
 @SpringBootApplication
 public class SpringBootDemoActuatorApplication {

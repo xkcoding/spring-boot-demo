@@ -26,13 +26,8 @@ import java.util.stream.Collectors;
  * 测试操作 MongoDb
  * </p>
  *
- * @package: com.xkcoding.mongodb.repository
- * @description: 测试操作 MongoDb
- * @author: yangkai.shen
- * @date: Created in 2018-12-28 16:35
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-28 16:35
  */
 @Slf4j
 public class ArticleRepositoryTest extends SpringBootDemoMongodbApplicationTests {

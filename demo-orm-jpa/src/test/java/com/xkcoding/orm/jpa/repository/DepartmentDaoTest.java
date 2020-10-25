@@ -18,13 +18,8 @@ import java.util.List;
  * jpa 测试类
  * </p>
  *
- * @package: com.xkcoding.orm.jpa.repository
- * @description: jpa 测试类
- * @author: 76peter
- * @date: Created in 2018/11/7 14:09
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: 76peter
+ * @author 76peter
+ * @date Created in 2018-11-07 14:09
  */
 @Slf4j
 public class DepartmentDaoTest extends SpringBootDemoOrmJpaApplicationTests {

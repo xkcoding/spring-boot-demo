@@ -8,13 +8,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * WebSocket配置类
  * </p>
  *
- * @package: com.xkcoding.websocket.socketio.config
- * @description: WebSocket配置类
- * @author: yangkai.shen
- * @date: Created in 2018-12-18 16:41
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-18 16:41
  */
 @ConfigurationProperties(prefix = "ws.server")
 @Data

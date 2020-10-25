@@ -9,13 +9,8 @@ import java.util.concurrent.TimeUnit;
  * 在需要加锁的方法上打上该注解后，AOP会帮助你统一管理这个方法的锁
  * </p>
  *
- * @package: com.xkcoding.zookeeper.annotation
- * @description: 基于Zookeeper的分布式锁注解，在需要加锁的方法上打上该注解后，AOP会帮助你统一管理这个方法的锁
- * @author: yangkai.shen
- * @date: Created in 2018-12-27 14:11
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-27 14:11
  */
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)

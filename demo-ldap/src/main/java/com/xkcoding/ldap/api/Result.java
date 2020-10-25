@@ -10,7 +10,7 @@ import java.io.Serializable;
  *
  * @author fxbin
  * @version v1.0
- * @since 2019/8/26 1:44
+ * @since 2019-08-26 1:44
  */
 @Data
 public class Result<T> implements Serializable {

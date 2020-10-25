@@ -9,13 +9,8 @@ import com.xkcoding.websocket.payload.ServerVO;
  * 服务器转换工具类
  * </p>
  *
- * @package: com.xkcoding.websocket.util
- * @description: 服务器转换工具类
- * @author: yangkai.shen
- * @date: Created in 2018-12-17 10:24
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-17 10:24
  */
 public class ServerUtil {
     /**

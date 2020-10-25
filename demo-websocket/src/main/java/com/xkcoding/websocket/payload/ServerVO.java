@@ -12,13 +12,8 @@ import java.util.List;
  * 服务器信息VO
  * </p>
  *
- * @package: com.xkcoding.websocket.payload
- * @description: 服务器信息VO
- * @author: yangkai.shen
- * @date: Created in 2018-12-14 17:25
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-14 17:25
  */
 @Data
 public class ServerVO {

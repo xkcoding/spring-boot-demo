@@ -9,13 +9,8 @@ import org.springframework.web.bind.annotation.*;
  * 测试Controller
  * </p>
  *
- * @package: com.xkcoding.rbac.security.controller
- * @description: 测试Controller
- * @author: yangkai.shen
- * @date: Created in 2018-12-10 15:44
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-10 15:44
  */
 @Slf4j
 @RestController

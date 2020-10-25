@@ -10,13 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
  * 测试Controller
  * </p>
  *
- * @package: com.xkcoding.rbac.shiro.controller
- * @description: 测试Controller
- * @author: yangkai.shen
- * @date: Created in 2019-03-21 16:13
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-03-21 16:13
  */
 @RestController
 @RequestMapping("/test")

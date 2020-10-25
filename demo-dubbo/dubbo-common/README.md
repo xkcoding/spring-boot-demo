@@ -27,7 +27,7 @@
     <build>
         <finalName>spring-boot-demo-dubbo-common</finalName>
     </build>
-    
+
 </project>
 ```
 
@@ -39,13 +39,8 @@
  * Hello服务接口
  * </p>
  *
- * @package: com.xkcoding.dubbo.common.service
- * @description: Hello服务接口
- * @author: yangkai.shen
- * @date: Created in 2018-12-25 16:56
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-25 16:56
  */
 public interface HelloService {
     /**

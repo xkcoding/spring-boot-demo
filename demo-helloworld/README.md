@@ -73,13 +73,8 @@
  * SpringBoot启动类
  * </p>
  *
- * @package: com.xkcoding.helloworld
- * @description: SpringBoot启动类
- * @author: yangkai.shen
- * @date: Created in 2018/9/28 2:49 PM
- * @copyright: Copyright (c)
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-09-28 14:49
  */
 @SpringBootApplication
 @RestController

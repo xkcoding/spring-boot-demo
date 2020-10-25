@@ -10,13 +10,8 @@ import java.io.Serializable;
  * 通用Api封装
  * </p>
  *
- * @package: com.xkcoding.task.quartz.common
- * @description: 通用Api封装
- * @author: yangkai.shen
- * @date: Created in 2018-11-26 13:59
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-26 13:59
  */
 @Data
 public class ApiResponse implements Serializable {

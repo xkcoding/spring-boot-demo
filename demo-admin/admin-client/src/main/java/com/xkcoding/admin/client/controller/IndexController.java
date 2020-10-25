@@ -8,13 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
  * 首页
  * </p>
  *
- * @package: com.xkcoding.admin.client.controller
- * @description: 首页
- * @author: yangkai.shen
- * @date: Created in 2018/10/8 2:15 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-08 14:15
  */
 @RestController
 public class IndexController {

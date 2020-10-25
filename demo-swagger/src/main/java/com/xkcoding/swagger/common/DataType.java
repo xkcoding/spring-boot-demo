@@ -5,13 +5,8 @@ package com.xkcoding.swagger.common;
  * 方便在 @ApiImplicitParam 的 dataType 属性使用
  * </p>
  *
- * @package: com.xkcoding.swagger.common
- * @description: 方便在 @ApiImplicitParam 的 dataType 属性使用
- * @author: yangkai.shen
- * @date: Created in 2018-11-29 13:23
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-29 13:23
  */
 public final class DataType {
 

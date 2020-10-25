@@ -4,14 +4,14 @@
 # .. known to work with DB2 7.1 and the JDBC driver "COM.ibm.db2.jdbc.net.DB2Driver"
 # .. likely to work with others...
 #
-# In your Quartz properties file, you'll need to set 
+# In your Quartz properties file, you'll need to set
 # org.quartz.jobStore.driverDelegateClass = org.quartz.impl.jdbcjobstore.StdJDBCDelegate
 #
 # If you're using DB2 6.x you'll want to set this property to
 # org.quartz.jobStore.driverDelegateClass = org.quartz.impl.jdbcjobstore.DB2v6Delegate
 #
-# Note that the blob column size (e.g. blob(2000)) dictates the amount of data that can be stored in 
-# that blob - i.e. limits the amount of data you can put into your JobDataMap 
+# Note that the blob column size (e.g. blob(2000)) dictates theount of data that can be stored in
+# that blob - i.e. limits theount of data you can put into your JobDataMap
 #
 
 
@@ -72,7 +72,7 @@ create table qrtz_cron_triggers(
 )
 
 CREATE TABLE qrtz_simprop_triggers
-  (          
+  (
     sched_name varchar(120) not null,
     TRIGGER_NAME VARCHAR(200) NOT NULL,
     TRIGGER_GROUP VARCHAR(200) NOT NULL,
@@ -88,7 +88,7 @@ CREATE TABLE qrtz_simprop_triggers
     BOOL_PROP_1 VARCHAR(1) NULL,
     BOOL_PROP_2 VARCHAR(1) NULL,
     PRIMARY KEY (sched_name,TRIGGER_NAME,TRIGGER_GROUP),
-    FOREIGN KEY (sched_name,TRIGGER_NAME,TRIGGER_GROUP) 
+    FOREIGN KEY (sched_name,TRIGGER_NAME,TRIGGER_GROUP)
     REFERENCES QRTZ_TRIGGERS(sched_name,TRIGGER_NAME,TRIGGER_GROUP)
 )
 
@@ -128,7 +128,7 @@ create table qrtz_fired_triggers(
 
 create table qrtz_paused_trigger_grps(
   sched_name varchar(120) not null,
-  trigger_group  varchar(80) not null, 
+  trigger_group  varchar(80) not null,
     primary key (sched_name,trigger_group)
 );
 
@@ -143,6 +143,6 @@ create table qrtz_scheduler_state (
 create table qrtz_locks
   (
   sched_name varchar(120) not null,
-    lock_name  varchar(40) not null, 
+    lock_name  varchar(40) not null,
       primary key (sched_name,lock_name)
 );

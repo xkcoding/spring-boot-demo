@@ -11,13 +11,8 @@ import java.io.Serializable;
  * 用户实体
  * </p>
  *
- * @package: com.xkcoding.cache.redis.entity
- * @description: 用户实体
- * @author: yangkai.shen
- * @date: Created in 2018/11/15 16:39
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-15 16:39
  */
 @Data
 @AllArgsConstructor

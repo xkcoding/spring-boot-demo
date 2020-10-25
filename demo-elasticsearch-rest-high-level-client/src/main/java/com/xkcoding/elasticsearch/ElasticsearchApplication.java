@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  * @author fxbin
  * @version v1.0
- * @since 2019/9/15 23:10
+ * @since 2019-09-15 23:10
  */
 @SpringBootApplication
 public class ElasticsearchApplication {

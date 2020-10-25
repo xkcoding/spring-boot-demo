@@ -13,13 +13,8 @@ import org.neo4j.ogm.annotation.Relationship;
  * 课程节点
  * </p>
  *
- * @package: com.xkcoding.neo4j.model
- * @description: 课程节点
- * @author: yangkai.shen
- * @date: Created in 2018-12-24 14:55
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-24 14:55
  */
 @Data
 @NoArgsConstructor

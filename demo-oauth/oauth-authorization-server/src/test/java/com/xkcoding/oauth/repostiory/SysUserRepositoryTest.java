@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * .
  *
  * @author <a href="https://echocow.cn">EchoCow</a>
- * @date 2020/1/6 下午1:25
+ * @date 2020-01-06 13:25
  */
 @DataJpaTest
 public class SysUserRepositoryTest {

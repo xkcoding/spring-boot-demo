@@ -69,13 +69,8 @@
  * 启动类
  * </p>
  *
- * @package: com.xkcoding.logback
- * @description: 启动类
- * @author: yangkai.shen
- * @date: Created in 2018/9/30 11:16 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-09-30 23:16
  */
 @SpringBootApplication
 @Slf4j

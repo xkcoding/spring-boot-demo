@@ -14,13 +14,8 @@ import java.util.Date;
  * 实体通用父类
  * </p>
  *
- * @package: com.xkcoding.orm.jpa.entity.base
- * @description: 实体通用父类
- * @author: yangkai.shen
- * @date: Created in 2018/11/7 14:01
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-07 14:01
  */
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)

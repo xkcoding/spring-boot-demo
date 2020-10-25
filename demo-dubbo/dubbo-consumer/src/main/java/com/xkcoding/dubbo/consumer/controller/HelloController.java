@@ -12,13 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
  * Hello服务API
  * </p>
  *
- * @package: com.xkcoding.dubbo.consumer.controller
- * @description: Hello服务API
- * @author: yangkai.shen
- * @date: Created in 2018-12-25 17:22
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-25 17:22
  */
 @RestController
 @Slf4j

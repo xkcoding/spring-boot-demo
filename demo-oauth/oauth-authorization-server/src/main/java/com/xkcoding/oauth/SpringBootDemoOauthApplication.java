@@ -8,15 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 启动器
  * </p>
  *
- * @package: com.xkcoding.oauth
- * @description: 启动器
- * @author: yangkai.shen
- * @date: Created in 2019-02-17 23:52
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
- * @modified: EchoCow
- * @date: Modified in 2020-01-6 21:12
+ * @author yangkai.shen
+ * @date Created in 2019-02-17 23:52
  */
 @SpringBootApplication
 public class SpringBootDemoOauthApplication {

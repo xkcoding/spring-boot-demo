@@ -1,6 +1,6 @@
 # spring-boot-demo-elasticsearch-rest-high-level-client
 
-> 此 demo 主要演示了 Spring Boot 如何集成 `elasticsearch-rest-high-level-client` 完成对 `ElasticSearch 7.x` 版本的基本 CURD 操作 
+> 此 demo 主要演示了 Spring Boot 如何集成 `elasticsearch-rest-high-level-client` 完成对 `ElasticSearch 7.x` 版本的基本 CURD 操作
 
 ## Elasticsearch 升级
 
@@ -36,7 +36,7 @@ services:
       - "/data/es7/logs:/usr/share/es7/logs:rw"
       - "/data/es7/data:/usr/share/es7/data:rw"
     restart: on-failure
-    ports: 
+    ports:
       - "9200:9200"
       - "9300:9300"
     environment:
@@ -184,7 +184,7 @@ import java.util.Date;
  *
  * @author fxbin
  * @version v1.0
- * @since 2019/9/15 23:04
+ * @since 2019-09-15 23:04
  */
 @Data
 @Builder
@@ -242,7 +242,7 @@ import java.util.List;
  *
  * @author fxbin
  * @version v1.0
- * @since 2019/9/15 23:07
+ * @since 2019-09-15 23:07
  */
 public interface PersonService {
 
@@ -328,7 +328,7 @@ import java.util.Map;
  *
  * @author fxbin
  * @version v1.0
- * @since 2019/9/15 23:08
+ * @since 2019-09-15 23:08
  */
 @Service
 public class PersonServiceImpl extends BaseElasticsearchService implements PersonService {

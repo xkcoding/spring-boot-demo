@@ -8,13 +8,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * JWT 配置
  * </p>
  *
- * @package: com.xkcoding.rbac.security.config
- * @description: JWT 配置
- * @author: yangkai.shen
- * @date: Created in 2018-12-07 13:42
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-07 13:42
  */
 @ConfigurationProperties(prefix = "jwt.config")
 @Data

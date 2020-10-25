@@ -8,13 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 启动器
  * </p>
  *
- * @package: com.xkcoding.task
- * @description: 启动器
- * @author: yangkai.shen
- * @date: Created in 2018/11/22 19:00
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-22 19:00
  */
 @SpringBootApplication
 public class SpringBootDemoTaskApplication {

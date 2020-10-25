@@ -10,13 +10,8 @@ import org.springframework.context.annotation.Configuration;
  * Enjoy 模板配置类
  * </p>
  *
- * @package: com.xkcoding.template.enjoy.config
- * @description: Enjoy 模板配置类
- * @author: yangkai.shen
- * @date: Created in 2018/10/11 2:06 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-11 14:06
  */
 @Configuration
 public class EnjoyConfig {

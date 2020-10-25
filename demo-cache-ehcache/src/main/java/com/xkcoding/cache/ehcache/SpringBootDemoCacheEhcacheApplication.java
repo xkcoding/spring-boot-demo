@@ -9,13 +9,8 @@ import org.springframework.cache.annotation.EnableCaching;
  * 启动类
  * </p>
  *
- * @package: com.xkcoding.cache.ehcache
- * @description: 启动类
- * @author: yangkai.shen
- * @date: Created in 2018/11/16 17:02
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-16 17:02
  */
 @SpringBootApplication
 @EnableCaching

@@ -7,13 +7,8 @@ import com.xkcoding.task.quartz.job.base.BaseJob;
  * 定时任务反射工具类
  * </p>
  *
- * @package: com.xkcoding.task.quartz.util
- * @description: 定时任务反射工具类
- * @author: yangkai.shen
- * @date: Created in 2018-11-26 13:33
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-26 13:33
  */
 public class JobUtil {
     /**

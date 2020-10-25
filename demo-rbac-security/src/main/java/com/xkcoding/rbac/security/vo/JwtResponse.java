@@ -9,13 +9,8 @@ import lombok.NoArgsConstructor;
  * JWT 响应返回
  * </p>
  *
- * @package: com.xkcoding.rbac.security.vo
- * @description: JWT 响应返回
- * @author: yangkai.shen
- * @date: Created in 2018-12-10 16:01
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-10 16:01
  */
 @Data
 @NoArgsConstructor

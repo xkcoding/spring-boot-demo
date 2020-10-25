@@ -14,7 +14,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/4 10:58
+ * @date Created in 2019-09-04 10:58
  */
 @Data
 @Table(name = "datasource_config")

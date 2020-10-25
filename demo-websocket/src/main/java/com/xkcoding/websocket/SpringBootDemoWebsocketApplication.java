@@ -9,13 +9,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  * 启动器
  * </p>
  *
- * @package: com.xkcoding.websocket
- * @description: 启动器
- * @author: yangkai.shen
- * @date: Created in 2018-12-14 14:58
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-14 14:58
  */
 @SpringBootApplication
 @EnableScheduling

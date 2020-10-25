@@ -15,13 +15,8 @@ import javax.servlet.http.HttpServletRequest;
  * 用户页面
  * </p>
  *
- * @package: com.xkcoding.template.enjoy.controller
- * @description: 用户页面
- * @author: yangkai.shen
- * @date: Created in 2018/10/11 2:24 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-11 14:24
  */
 @Controller
 @RequestMapping("/user")

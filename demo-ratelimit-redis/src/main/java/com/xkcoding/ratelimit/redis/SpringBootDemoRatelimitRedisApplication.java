@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/30 09:32
+ * @date Created in 2019-09-30 09:32
  */
 @SpringBootApplication
 public class SpringBootDemoRatelimitRedisApplication {

@@ -11,13 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
  * Redis - 缓存测试
  * </p>
  *
- * @package: com.xkcoding.cache.redis.service
- * @description: Redis - 缓存测试
- * @author: yangkai.shen
- * @date: Created in 2018/11/15 16:53
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-15 16:53
  */
 @Slf4j
 public class UserServiceTest extends SpringBootDemoCacheRedisApplicationTests {

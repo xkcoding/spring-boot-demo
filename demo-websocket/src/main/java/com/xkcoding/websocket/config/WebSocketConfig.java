@@ -12,13 +12,8 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
  * WebSocket配置
  * </p>
  *
- * @package: com.xkcoding.websocket.config
- * @description: WebSocket配置
- * @author: yangkai.shen
- * @date: Created in 2018-12-14 15:58
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-14 15:58
  */
 @Configuration
 @EnableWebSocket

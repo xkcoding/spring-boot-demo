@@ -12,13 +12,8 @@ import javax.persistence.Table;
  * 角色
  * </p>
  *
- * @package: com.xkcoding.rbac.security.model
- * @description: 角色
- * @author: yangkai.shen
- * @date: Created in 2018-12-07 15:45
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-07 15:45
  */
 @Data
 @Entity

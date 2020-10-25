@@ -14,13 +14,8 @@ import java.io.Serializable;
  * 通用API接口返回
  * </p>
  *
- * @package: com.xkcoding.swagger.beauty.common
- * @description: 通用API接口返回
- * @author: yangkai.shen
- * @date: Created in 2018-11-28 14:18
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-28 14:18
  */
 @Data
 @Builder

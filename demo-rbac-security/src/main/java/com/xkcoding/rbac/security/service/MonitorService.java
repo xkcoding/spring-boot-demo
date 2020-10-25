@@ -22,13 +22,8 @@ import java.util.stream.Collectors;
  * 监控 Service
  * </p>
  *
- * @package: com.xkcoding.rbac.security.service
- * @description: 监控 Service
- * @author: yangkai.shen
- * @date: Created in 2018-12-12 00:55
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-12 00:55
  */
 @Slf4j
 @Service

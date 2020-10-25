@@ -5,13 +5,8 @@ package com.xkcoding.websocket.common;
  * WebSocket常量
  * </p>
  *
- * @package: com.xkcoding.websocket.common
- * @description: WebSocket常量
- * @author: yangkai.shen
- * @date: Created in 2018-12-14 16:01
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-14 16:01
  */
 public interface WebSocketConsts {
     String PUSH_SERVER = "/topic/server";

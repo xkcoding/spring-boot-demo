@@ -8,7 +8,7 @@
  * 或者退出的时候携带什么标识，都可以。
  *
  * @author <a href="https://echocow.cn">EchoCow</a>
- * @date 2020/1/7 上午11:25
+ * @date 2020-01-07 11:25
  * @see org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint
  */
 package com.xkcoding.oauth.controller;

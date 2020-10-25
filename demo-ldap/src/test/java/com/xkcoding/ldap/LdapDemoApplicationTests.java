@@ -16,7 +16,7 @@ import javax.annotation.Resource;
  *
  * @author fxbin
  * @version v1.0
- * @since 2019/8/26 1:06
+ * @since 2019-08-26 1:06
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest

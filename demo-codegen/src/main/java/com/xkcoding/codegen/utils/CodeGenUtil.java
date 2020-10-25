@@ -31,13 +31,8 @@ import java.util.zip.ZipOutputStream;
  * 代码生成器   工具类
  * </p>
  *
- * @package: com.xkcoding.codegen.utils
- * @description: 代码生成器   工具类
- * @author: yangkai.shen
- * @date: Created in 2019-03-22 09:27
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-03-22 09:27
  */
 @Slf4j
 @UtilityClass

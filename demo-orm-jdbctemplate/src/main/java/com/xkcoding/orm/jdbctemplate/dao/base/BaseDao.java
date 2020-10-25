@@ -30,13 +30,8 @@ import java.util.stream.Stream;
  * Dao基类
  * </p>
  *
- * @package: com.xkcoding.orm.jdbctemplate.dao.base
- * @description: Dao基类
- * @author: yangkai.shen
- * @date: Created in 2018/10/15 11:28 AM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-15 11:28
  */
 @Slf4j
 public class BaseDao<T, P> {

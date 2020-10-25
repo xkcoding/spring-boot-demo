@@ -27,13 +27,8 @@ import java.util.UUID;
  * 消息事件处理
  * </p>
  *
- * @package: com.xkcoding.websocket.socketio.handler
- * @description: 消息事件处理
- * @author: yangkai.shen
- * @date: Created in 2018-12-18 18:57
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-18 18:57
  */
 @Component
 @Slf4j

@@ -23,13 +23,8 @@ import java.util.Properties;
  * 服务器相关信息实体
  * </p>
  *
- * @package: com.xkcoding.websocket.model
- * @description: 服务器相关信息实体
- * @author: yangkai.shen
- * @date: Created in 2018-12-14 16:09
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-14 16:09
  */
 public class Server {
 

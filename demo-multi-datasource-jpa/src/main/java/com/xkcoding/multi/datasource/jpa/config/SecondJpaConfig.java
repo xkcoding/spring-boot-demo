@@ -21,13 +21,8 @@ import javax.sql.DataSource;
  * JPA多数据源配置 - 次 JPA 配置
  * </p>
  *
- * @package: com.xkcoding.multi.datasource.jpa.config
- * @description: JPA多数据源配置 - 次 JPA 配置
- * @author: yangkai.shen
- * @date: Created in 2019-01-17 16:54
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-01-17 16:54
  */
 @Configuration
 @EnableTransactionManagement

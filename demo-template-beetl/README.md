@@ -81,13 +81,8 @@
  * 主页
  * </p>
  *
- * @package: com.xkcoding.template.beetl.controller
- * @description: 主页
- * @author: yangkai.shen
- * @date: Created in 2018/10/10 11:17 AM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-10 11:17
  */
 @Controller
 @Slf4j
@@ -118,13 +113,8 @@ public class IndexController {
  * 用户页面
  * </p>
  *
- * @package: com.xkcoding.template.beetl.controller
- * @description: 用户页面
- * @author: yangkai.shen
- * @date: Created in 2018/10/10 11:17 AM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-10 11:17
  */
 @Controller
 @RequestMapping("/user")

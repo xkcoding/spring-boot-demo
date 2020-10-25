@@ -15,13 +15,8 @@ import java.io.IOException;
  * Response 通用工具类
  * </p>
  *
- * @package: com.xkcoding.rbac.security.util
- * @description: Response 通用工具类
- * @author: yangkai.shen
- * @date: Created in 2018-12-07 17:37
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-07 17:37
  */
 @Slf4j
 public class ResponseUtil {

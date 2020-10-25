@@ -8,13 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 启动器
  * </p>
  *
- * @package: com.xkcoding.neo4j
- * @description: 启动器
- * @author: yangkai.shen
- * @date: Created in 2018-12-22 23:50
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-22 23:50
  */
 @SpringBootApplication
 public class SpringBootDemoNeo4jApplication {

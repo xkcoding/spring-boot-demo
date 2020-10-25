@@ -15,13 +15,8 @@ import java.io.Serializable;
  * User实体类
  * </p>
  *
- * @package: com.xkcoding.multi.datasource.mybatis.model
- * @description: User实体类
- * @author: yangkai.shen
- * @date: Created in 2019-01-21 14:19
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-01-21 14:19
  */
 @Data
 @TableName("multi_user")

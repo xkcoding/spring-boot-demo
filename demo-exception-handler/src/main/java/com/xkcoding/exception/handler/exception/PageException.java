@@ -8,13 +8,8 @@ import lombok.Getter;
  * 页面异常
  * </p>
  *
- * @package: com.xkcoding.exception.handler.exception
- * @description: 页面异常
- * @author: yangkai.shen
- * @date: Created in 2018/10/2 9:18 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-02 21:18
  */
 @Getter
 public class PageException extends BaseException {

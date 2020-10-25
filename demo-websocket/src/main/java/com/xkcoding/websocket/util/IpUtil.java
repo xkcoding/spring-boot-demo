@@ -9,13 +9,8 @@ import java.net.UnknownHostException;
  * IP 工具类
  * </p>
  *
- * @package: com.xkcoding.websocket.util
- * @description: IP 工具类
- * @author: yangkai.shen
- * @date: Created in 2018-12-14 16:08
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-14 16:08
  */
 public class IpUtil {
     public static String getIpAddr(HttpServletRequest request) {

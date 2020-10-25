@@ -7,13 +7,8 @@ import lombok.Getter;
  * 通用状态枚举
  * </p>
  *
- * @package: com.xkcoding.codegen.common
- * @description: 通用状态枚举
- * @author: yangkai.shen
- * @date: Created in 2019-03-22 10:13
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-03-22 10:13
  */
 @Getter
 public enum ResultCode implements IResultCode {

@@ -15,13 +15,8 @@ import java.util.List;
  * 学生节点
  * </p>
  *
- * @package: com.xkcoding.neo4j.model
- * @description: 学生节点
- * @author: yangkai.shen
- * @date: Created in 2018-12-24 14:38
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-24 14:38
  */
 @Data
 @NoArgsConstructor

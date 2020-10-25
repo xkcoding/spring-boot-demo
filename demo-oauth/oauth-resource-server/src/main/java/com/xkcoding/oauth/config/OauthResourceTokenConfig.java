@@ -22,7 +22,7 @@ import java.util.Base64;
  * token 相关配置，jwt 相关.
  *
  * @author <a href="https://echocow.cn">EchoCow</a>
- * @date 2020/1/9 下午2:39
+ * @date 2020-01-09  14:39
  */
 @Slf4j
 @Configuration

@@ -16,7 +16,7 @@ import javax.sql.DataSource;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/4 16:20
+ * @date Created in 2019-09-04 16:20
  */
 @Configuration
 @MapperScan(basePackages = "com.xkcoding.dynamic.datasource.mapper", sqlSessionFactoryRef = "sqlSessionFactory")

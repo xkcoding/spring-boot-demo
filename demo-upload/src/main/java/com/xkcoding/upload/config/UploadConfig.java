@@ -25,13 +25,8 @@ import javax.servlet.Servlet;
  * 上传配置
  * </p>
  *
- * @package: com.xkcoding.upload.config
- * @description: 上传配置
- * @author: yangkai.shen
- * @date: Created in 2018/10/23 14:09
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-23 14:09
  */
 @Configuration
 @ConditionalOnClass({Servlet.class, StandardServletMultipartResolver.class, MultipartConfigElement.class})

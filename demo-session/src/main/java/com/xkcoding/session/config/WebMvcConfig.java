@@ -12,13 +12,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * WebMvc 配置类
  * </p>
  *
- * @package: com.xkcoding.session.config
- * @description: WebMvc 配置类
- * @author: yangkai.shen
- * @date: Created in 2018-12-19 19:50
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-19 19:50
  */
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {

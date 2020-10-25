@@ -10,13 +10,8 @@ import tk.mybatis.mapper.common.MySqlMapper;
  * UserMapper
  * </p>
  *
- * @package: com.xkcoding.orm.mybatis.MapperAndPage.mapper
- * @description: UserMapper
- * @author: yangkai.shen
- * @date: Created in 2018/11/8 14:15
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-08 14:15
  */
 @Component
 public interface UserMapper extends Mapper<User>, MySqlMapper<User> {

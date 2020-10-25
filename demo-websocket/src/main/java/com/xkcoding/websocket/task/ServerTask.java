@@ -20,13 +20,8 @@ import java.util.Date;
  * 服务器定时推送任务
  * </p>
  *
- * @package: com.xkcoding.websocket.task
- * @description: 服务器定时推送任务
- * @author: yangkai.shen
- * @date: Created in 2018-12-14 16:04
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-14 16:04
  */
 @Slf4j
 @Component

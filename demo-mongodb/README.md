@@ -107,13 +107,8 @@ logging:
  * 文章实体类
  * </p>
  *
- * @package: com.xkcoding.mongodb.model
- * @description: 文章实体类
- * @author: yangkai.shen
- * @date: Created in 2018-12-28 16:21
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-28 16:21
  */
 @Data
 @Builder
@@ -167,13 +162,8 @@ public class Article {
  * 文章 Dao
  * </p>
  *
- * @package: com.xkcoding.mongodb.repository
- * @description: 文章 Dao
- * @author: yangkai.shen
- * @date: Created in 2018-12-28 16:30
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-28 16:30
  */
 public interface ArticleRepository extends MongoRepository<Article, Long> {
     /**
@@ -194,13 +184,8 @@ public interface ArticleRepository extends MongoRepository<Article, Long> {
  * 测试操作 MongoDb
  * </p>
  *
- * @package: com.xkcoding.mongodb.repository
- * @description: 测试操作 MongoDb
- * @author: yangkai.shen
- * @date: Created in 2018-12-28 16:35
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-28 16:35
  */
 @Slf4j
 public class ArticleRepositoryTest extends SpringBootDemoMongodbApplicationTests {

@@ -16,13 +16,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
  * 数据初始化测试
  * </p>
  *
- * @package: com.xkcoding.rbac.security.repository
- * @description: 数据初始化测试
- * @author: yangkai.shen
- * @date: Created in 2018-12-10 11:26
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-10 11:26
  */
 public class DataInitTest extends SpringBootDemoRbacSecurityApplicationTests {
     @Autowired

@@ -19,13 +19,8 @@ import java.util.List;
  * Job Service
  * </p>
  *
- * @package: com.xkcoding.task.quartz.service.impl
- * @description: Job Service
- * @author: yangkai.shen
- * @date: Created in 2018-11-26 13:25
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-26 13:25
  */
 @Service
 @Slf4j

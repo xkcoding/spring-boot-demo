@@ -12,13 +12,8 @@ import org.springframework.context.annotation.Configuration;
  * websocket服务器配置
  * </p>
  *
- * @package: com.xkcoding.websocket.socketio.config
- * @description: websocket服务器配置
- * @author: yangkai.shen
- * @date: Created in 2018-12-18 16:42
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-18 16:42
  */
 @Configuration
 @EnableConfigurationProperties({WsConfig.class})

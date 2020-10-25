@@ -9,13 +9,8 @@ import java.util.List;
  * User Service
  * </p>
  *
- * @package: com.xkcoding.orm.jdbctemplate.service
- * @description: User Service
- * @author: yangkai.shen
- * @date: Created in 2018/10/15 1:51 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-15 13:51
  */
 public interface IUserService {
 	/**

@@ -8,13 +8,8 @@ import lombok.NoArgsConstructor;
  * 统一API对象返回
  * </p>
  *
- * @package: com.xkcoding.codegen.common
- * @description: 统一API对象返回
- * @author: yangkai.shen
- * @date: Created in 2019-03-22 10:13
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-03-22 10:13
  */
 @Data
 @NoArgsConstructor

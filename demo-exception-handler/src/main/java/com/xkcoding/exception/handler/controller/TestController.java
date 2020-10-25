@@ -14,13 +14,8 @@ import org.springframework.web.servlet.ModelAndView;
  * 测试Controller
  * </p>
  *
- * @package: com.xkcoding.exception.handler.controller
- * @description: 测试Controller
- * @author: yangkai.shen
- * @date: Created in 2018/10/2 8:49 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-02 20:49
  */
 @Controller
 public class TestController {

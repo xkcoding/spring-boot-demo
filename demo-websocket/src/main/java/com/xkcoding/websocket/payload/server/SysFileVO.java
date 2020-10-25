@@ -12,13 +12,8 @@ import java.util.List;
  * 系统文件相关信息实体VO
  * </p>
  *
- * @package: com.xkcoding.websocket.payload.server
- * @description: 系统文件相关信息实体VO
- * @author: yangkai.shen
- * @date: Created in 2018-12-14 17:30
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-14 17:30
  */
 @Data
 public class SysFileVO {

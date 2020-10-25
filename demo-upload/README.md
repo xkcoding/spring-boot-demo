@@ -85,13 +85,8 @@
  * 上传配置
  * </p>
  *
- * @package: com.xkcoding.upload.config
- * @description: 上传配置
- * @author: yangkai.shen
- * @date: Created in 2018/10/23 14:09
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-23 14:09
  */
 @Configuration
 @ConditionalOnClass({Servlet.class, StandardServletMultipartResolver.class, MultipartConfigElement.class})
@@ -173,13 +168,8 @@ public class UploadConfig {
  * 文件上传 Controller
  * </p>
  *
- * @package: com.xkcoding.upload.controller
- * @description: 文件上传 Controller
- * @author: yangkai.shen
- * @date: Created in 2018/11/6 16:33
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-06 16:33
  */
 @RestController
 @Slf4j
@@ -261,13 +251,8 @@ public class UploadController {
  * 七牛云上传Service
  * </p>
  *
- * @package: com.xkcoding.upload.service.impl
- * @description: 七牛云上传Service
- * @author: yangkai.shen
- * @date: Created in 2018/11/6 17:22
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-06 17:22
  */
 @Service
 @Slf4j

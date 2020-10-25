@@ -9,7 +9,6 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xkcoding.orm.mybatis.plus.SpringBootDemoOrmMybatisPlusApplicationTests;
 import com.xkcoding.orm.mybatis.plus.entity.User;
-import com.xkcoding.orm.mybatis.plus.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.util.Lists;
 import org.junit.Assert;
@@ -24,13 +23,8 @@ import java.util.stream.Collectors;
  * User Service 测试
  * </p>
  *
- * @package: com.xkcoding.orm.mybatis.plus.service
- * @description: User Service 测试
- * @author: yangkai.shen
- * @date: Created in 2018/11/8 18:13
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-08 18:13
  */
 @Slf4j
 public class UserServiceTest extends SpringBootDemoOrmMybatisPlusApplicationTests {

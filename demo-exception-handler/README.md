@@ -76,13 +76,8 @@
  * 通用的 API 接口封装
  * </p>
  *
- * @package: com.xkcoding.exception.handler.model
- * @description: 通用的 API 接口封装
- * @author: yangkai.shen
- * @date: Created in 2018/10/2 8:57 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-02 20:57
  */
 @Data
 public class ApiResponse {
@@ -207,13 +202,8 @@ public class ApiResponse {
  * 统一异常处理
  * </p>
  *
- * @package: com.xkcoding.exception.handler.handler
- * @description: 统一异常处理
- * @author: yangkai.shen
- * @date: Created in 2018/10/2 9:26 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-02 21:26
  */
 @ControllerAdvice
 @Slf4j

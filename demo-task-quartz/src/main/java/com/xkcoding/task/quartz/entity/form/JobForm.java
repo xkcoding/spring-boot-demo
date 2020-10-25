@@ -10,13 +10,8 @@ import javax.validation.constraints.NotBlank;
  * 定时任务详情
  * </p>
  *
- * @package: com.xkcoding.task.quartz.entity.form
- * @description: 定时任务详情
- * @author: yangkai.shen
- * @date: Created in 2018-11-26 13:42
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-26 13:42
  */
 @Data
 @Accessors(chain = true)

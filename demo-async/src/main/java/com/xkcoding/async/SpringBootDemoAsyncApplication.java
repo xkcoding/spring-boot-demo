@@ -9,13 +9,8 @@ import org.springframework.scheduling.annotation.EnableAsync;
  * 启动器
  * </p>
  *
- * @package: com.xkcoding.async
- * @description: 启动器
- * @author: yangkai.shen
- * @date: Created in 2018-12-29 10:28
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-29 10:28
  */
 @EnableAsync
 @SpringBootApplication

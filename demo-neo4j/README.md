@@ -106,13 +106,8 @@ spring:
  * 自定义主键策略
  * </p>
  *
- * @package: com.xkcoding.neo4j.config
- * @description: 自定义主键策略
- * @author: yangkai.shen
- * @date: Created in 2018-12-24 14:40
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-24 14:40
  */
 public class CustomIdStrategy implements IdStrategy {
     @Override
@@ -132,13 +127,8 @@ public class CustomIdStrategy implements IdStrategy {
  * 学生节点
  * </p>
  *
- * @package: com.xkcoding.neo4j.model
- * @description: 学生节点
- * @author: yangkai.shen
- * @date: Created in 2018-12-24 14:38
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-24 14:38
  */
 @Data
 @NoArgsConstructor
@@ -187,13 +177,8 @@ public class Student {
  * 学生节点Repository
  * </p>
  *
- * @package: com.xkcoding.neo4j.repository
- * @description: 学生节点Repository
- * @author: yangkai.shen
- * @date: Created in 2018-12-24 15:05
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-24 15:05
  */
 public interface StudentRepository extends Neo4jRepository<Student, String> {
     /**
@@ -249,13 +234,8 @@ public interface StudentRepository extends Neo4jRepository<Student, String> {
  * 测试Neo4j
  * </p>
  *
- * @package: com.xkcoding.neo4j
- * @description: 测试Neo4j
- * @author: yangkai.shen
- * @date: Created in 2018-12-24 15:17
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-24 15:17
  */
 @Slf4j
 public class Neo4jTest extends SpringBootDemoNeo4jApplicationTests {

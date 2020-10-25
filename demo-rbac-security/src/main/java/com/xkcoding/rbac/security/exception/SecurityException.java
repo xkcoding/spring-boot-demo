@@ -10,13 +10,8 @@ import lombok.EqualsAndHashCode;
  * 全局异常
  * </p>
  *
- * @package: com.xkcoding.rbac.security.exception
- * @description: 全局异常
- * @author: yangkai.shen
- * @date: Created in 2018-12-10 17:24
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-10 17:24
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

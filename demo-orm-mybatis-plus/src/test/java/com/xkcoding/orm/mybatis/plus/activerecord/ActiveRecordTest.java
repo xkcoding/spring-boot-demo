@@ -16,7 +16,7 @@ import java.util.List;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/14 14:19
+ * @date Created in 2019-09-14 14:19
  */
 @Slf4j
 public class ActiveRecordTest extends SpringBootDemoOrmMybatisPlusApplicationTests {

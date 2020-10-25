@@ -14,13 +14,8 @@ import org.springframework.web.servlet.ModelAndView;
  * 统一异常处理
  * </p>
  *
- * @package: com.xkcoding.exception.handler.handler
- * @description: 统一异常处理
- * @author: yangkai.shen
- * @date: Created in 2018/10/2 9:26 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-02 21:26
  */
 @ControllerAdvice
 @Slf4j

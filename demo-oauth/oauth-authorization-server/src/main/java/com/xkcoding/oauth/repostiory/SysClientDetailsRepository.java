@@ -10,7 +10,7 @@ import java.util.Optional;
  * 客户端信息.
  *
  * @author <a href="https://echocow.cn">EchoCow</a>
- * @date 2020/1/6 下午1:09
+ * @date 2020-01-06 13:09
  */
 public interface SysClientDetailsRepository extends JpaRepository<SysClientDetails, Long> {
 

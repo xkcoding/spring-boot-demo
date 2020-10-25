@@ -29,13 +29,8 @@ import java.util.List;
  * 测试 Repository 操作ES
  * </p>
  *
- * @package: com.xkcoding.elasticsearch.repository
- * @description: 测试 Repository 操作ES
- * @author: yangkai.shen
- * @date: Created in 2018-12-20 19:03
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-20 19:03
  */
 @Slf4j
 public class PersonRepositoryTest extends SpringBootDemoElasticsearchApplicationTests {

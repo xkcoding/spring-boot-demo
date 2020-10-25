@@ -17,13 +17,8 @@ import java.net.URL;
  * 邮件测试
  * </p>
  *
- * @package: com.xkcoding.email.service
- * @description: 邮件测试
- * @author: yangkai.shen
- * @date: Created in 2018/11/21 13:49
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-21 13:49
  */
 public class MailServiceTest extends SpringBootDemoEmailApplicationTests {
     @Autowired

@@ -7,13 +7,8 @@ import lombok.Getter;
  * 状态码封装
  * </p>
  *
- * @package: com.xkcoding.exception.handler.constant
- * @description: 状态码封装
- * @author: yangkai.shen
- * @date: Created in 2018/10/2 9:02 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-02 21:02
  */
 @Getter
 public enum Status {
@@ -21,7 +16,7 @@ public enum Status {
 	 * 操作成功
 	 */
 	OK(200, "操作成功"),
-	
+
 	/**
 	 * 未知异常
 	 */

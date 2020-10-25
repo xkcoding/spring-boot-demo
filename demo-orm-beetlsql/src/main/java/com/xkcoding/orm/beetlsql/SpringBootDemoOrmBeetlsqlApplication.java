@@ -8,13 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 启动类
  * </p>
  *
- * @package: com.xkcoding.orm.beetlsql
- * @description: 启动类
- * @author: yangkai.shen
- * @date: Created in 2018/11/14 15:47
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-14 15:47
  */
 @SpringBootApplication
 public class SpringBootDemoOrmBeetlsqlApplication {

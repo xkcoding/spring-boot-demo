@@ -9,13 +9,8 @@ import java.math.BigInteger;
  * 实体类
  * </p>
  *
- * @package: com.xkcoding.task.quartz.entity.domain
- * @description: 实体类
- * @author: yangkai.shen
- * @date: Created in 2018-11-26 15:05
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-26 15:05
  */
 @Data
 public class JobAndTrigger {

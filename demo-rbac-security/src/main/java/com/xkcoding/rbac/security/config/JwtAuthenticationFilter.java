@@ -32,13 +32,8 @@ import java.util.Set;
  * Jwt 认证过滤器
  * </p>
  *
- * @package: com.xkcoding.rbac.security.config
- * @description: Jwt 认证过滤器
- * @author: yangkai.shen
- * @date: Created in 2018-12-10 15:15
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-10 15:15
  */
 @Component
 @Slf4j

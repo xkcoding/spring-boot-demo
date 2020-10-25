@@ -3,7 +3,6 @@ package com.xkcoding.oauth.entity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import org.codehaus.jackson.annotate.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -14,7 +13,7 @@ import java.util.Set;
  * 角色信息.
  *
  * @author <a href="https://echocow.cn">EchoCow</a>
- * @date 2020/1/6 下午12:44
+ * @date 2020-01-06 12:44
  */
 @Data
 @Table

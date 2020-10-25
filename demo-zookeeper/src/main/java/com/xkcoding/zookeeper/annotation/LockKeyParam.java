@@ -7,13 +7,8 @@ import java.lang.annotation.*;
  * 分布式锁动态key注解，配置之后key的值会动态获取参数内容
  * </p>
  *
- * @package: com.xkcoding.zookeeper.annotation
- * @description: 分布式锁动态key注解，配置之后key的值会动态获取参数内容
- * @author: yangkai.shen
- * @date: Created in 2018-12-27 14:17
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-27 14:17
  */
 @Target({ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)

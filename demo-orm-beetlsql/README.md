@@ -88,7 +88,7 @@
 </project>
 ```
 
-## application.yml 
+## application.yml
 
 > 注意下方注释的地方，**不能解开注释，并且需要通过JavaConfig的方式手动配置数据源**，否则，会导致beetl启动失败，因此，初始化数据库的数据，只能手动在数据库使用 resources/db 下的建表语句和数据库初始化数据。
 
@@ -141,13 +141,8 @@ beet-beetlsql:
  * Beetl数据源配置
  * </p>
  *
- * @package: com.xkcoding.orm.beetlsql.config
- * @description: Beetl数据源配置
- * @author: yangkai.shen
- * @date: Created in 2018/11/14 17:15
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-14 17:15
  */
 @Configuration
 public class BeetlConfig {
@@ -175,13 +170,8 @@ public class BeetlConfig {
  * UserDao
  * </p>
  *
- * @package: com.xkcoding.orm.beetlsql.dao
- * @description: UserDao
- * @author: yangkai.shen
- * @date: Created in 2018/11/14 16:18
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-14 16:18
  */
 @Component
 public interface UserDao extends BaseMapper<User> {
@@ -197,13 +187,8 @@ public interface UserDao extends BaseMapper<User> {
  * User Service
  * </p>
  *
- * @package: com.xkcoding.orm.beetlsql.service.impl
- * @description: User Service
- * @author: yangkai.shen
- * @date: Created in 2018/11/14 16:28
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-14 16:28
  */
 @Service
 @Slf4j
@@ -305,13 +290,8 @@ public class UserServiceImpl implements UserService {
  * User Service测试
  * </p>
  *
- * @package: com.xkcoding.orm.beetlsql.service
- * @description: User Service测试
- * @author: yangkai.shen
- * @date: Created in 2018/11/14 16:30
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-14 16:30
  */
 @Slf4j
 public class UserServiceTest extends SpringBootDemoOrmBeetlsqlApplicationTests {

@@ -15,13 +15,8 @@ import org.springframework.context.annotation.Configuration;
  * Zookeeper配置类
  * </p>
  *
- * @package: com.xkcoding.zookeeper.config
- * @description: Zookeeper配置类
- * @author: yangkai.shen
- * @date: Created in 2018-12-27 14:45
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-27 14:45
  */
 @Configuration
 @EnableConfigurationProperties(ZkProps.class)

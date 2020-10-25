@@ -7,13 +7,8 @@ import lombok.Getter;
  * 通用状态码
  * </p>
  *
- * @package: com.xkcoding.rbac.security.common
- * @description: 通用状态码
- * @author: yangkai.shen
- * @date: Created in 2018-12-07 14:31
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-07 14:31
  */
 @Getter
 public enum Status implements IStatus {

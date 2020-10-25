@@ -8,13 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 启动类
  * </p>
  *
- * @package: com.xkcoding.template.thymeleaf
- * @description: 启动类
- * @author: yangkai.shen
- * @date: Created in 2018/10/10 10:10 AM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-10 10:10
  */
 @SpringBootApplication
 public class SpringBootDemoTemplateThymeleafApplication {

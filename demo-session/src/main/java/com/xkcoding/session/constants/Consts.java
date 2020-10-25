@@ -5,13 +5,8 @@ package com.xkcoding.session.constants;
  * 常量池
  * </p>
  *
- * @package: com.xkcoding.session.constants
- * @description: 常量池
- * @author: yangkai.shen
- * @date: Created in 2018-12-19 19:42
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-19 19:42
  */
 public interface Consts {
     /**

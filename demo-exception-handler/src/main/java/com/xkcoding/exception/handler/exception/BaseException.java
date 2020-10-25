@@ -9,13 +9,8 @@ import lombok.EqualsAndHashCode;
  * 异常基类
  * </p>
  *
- * @package: com.xkcoding.exception.handler.exception
- * @description: 异常基类
- * @author: yangkai.shen
- * @date: Created in 2018/10/2 9:31 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-02 21:31
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

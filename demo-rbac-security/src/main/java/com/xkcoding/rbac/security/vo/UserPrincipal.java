@@ -23,13 +23,8 @@ import java.util.stream.Collectors;
  * 自定义User
  * </p>
  *
- * @package: com.xkcoding.rbac.security.vo
- * @description: 自定义User
- * @author: yangkai.shen
- * @date: Created in 2018-12-10 15:09
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-10 15:09
  */
 @Data
 @NoArgsConstructor

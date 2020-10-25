@@ -33,13 +33,8 @@ import java.util.stream.Collectors;
  * 动态路由认证
  * </p>
  *
- * @package: com.xkcoding.rbac.security.config
- * @description: 动态路由认证
- * @author: yangkai.shen
- * @date: Created in 2018-12-10 17:17
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-10 17:17
  */
 @Component
 public class RbacAuthorityService {

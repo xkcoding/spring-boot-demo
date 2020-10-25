@@ -17,13 +17,8 @@ import java.util.Collection;
  * 认证工具
  * </p>
  *
- * @package: com.xkcoding.activiti.util
- * @description: 认证工具
- * @author: yangkai.shen
- * @date: Created in 2019-07-01 18:38
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-07-01 18:38
  */
 @Component
 @RequiredArgsConstructor(onConstructor_ = @Autowired)

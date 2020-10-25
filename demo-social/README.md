@@ -8,7 +8,7 @@
 >
 > 1. **全**：已集成十多家第三方平台（国内外常用的基本都已包含），后续依然还有扩展计划！
 >2. **简**：API就是奔着最简单去设计的（见后面[`快速开始`](https://github.com/zhangyd-c/JustAuth#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B)），尽量让您用起来没有障碍感！
-> 
+>
 >PS: 本人十分幸运的参与到了这个SDK的开发，主要开发了**QQ登录、微信登录、小米登录、微软登录、谷歌登录**这 **`5`** 个第三方登录，以及一些BUG的修复工作。再次感谢 [@母狼](https://github.com/zhangyd-c) 开源这个又好用又全面的第三方登录SDK。
 
 如果技术选型是 `JFinal` 的，请查看此 [**`demo`**](https://github.com/xkcoding/jfinal-justauth-demo)
@@ -50,9 +50,9 @@ https://github.com/xkcoding/act-justauth-demo
    ```shell
    $ cd frp_0.27.0_linux_amd64
    $ vim frps.ini
-   
-   [common]                                                                                                                  
-   bind_port = 7100                                                                                                          
+
+   [common]
+   bind_port = 7100
    vhost_http_port = 7200
    ```
 
@@ -86,11 +86,11 @@ https://github.com/xkcoding/act-justauth-demo
    ```shell
    $ cd frp_0.27.0_darwin_amd64
    $ vim frpc.ini
-   
+
    [common]
    server_addr = 120.92.169.103
    server_port = 7100
-   
+
    [web]
    type = http
    local_port = 8080
@@ -119,25 +119,25 @@ nginx 的搭建就不在此赘述了，只说配置
 ```nginx
 server {
     listen       80;
-    server_name  oauth.xkcoding.com;         
-                                                                        
+    server_name  oauth.xkcoding.com;
+
     location / {
         proxy_pass http://127.0.0.1:7200;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $http_host;
         proxy_set_header X-Forwarded-Proto $scheme;
-        proxy_set_header   X-Real-IP        $remote_addr;                                                                 
-        proxy_buffering off;                                                                                              
-        sendfile off;                                                                                                     
-        proxy_max_temp_file_size 0;                                                                                       
-        client_max_body_size       10m;                                                                                   
-        client_body_buffer_size    128k;                                                                                  
-        proxy_connect_timeout      90;                                                                                    
-        proxy_send_timeout         90;                                                                                    
-        proxy_read_timeout         90;                                                                                    
-        proxy_temp_file_write_size 64k;                                                                                   
-        proxy_http_version 1.1;                                                                                           
-        proxy_request_buffering off; 
+        proxy_set_header   X-Real-IP        $remote_addr;
+        proxy_buffering off;
+        sendfile off;
+        proxy_max_temp_file_size 0;
+        client_max_body_size       10m;
+        client_body_buffer_size    128k;
+        proxy_connect_timeout      90;
+        proxy_send_timeout         90;
+        proxy_read_timeout         90;
+        proxy_temp_file_write_size 64k;
+        proxy_http_version 1.1;
+        proxy_request_buffering off;
     }
 }
 ```
@@ -167,7 +167,7 @@ $ nginx -s reload
 
 #### 1.5.1. QQ互联平台申请
 
-1. 前往 https://connect.qq.com/ 
+1. 前往 https://connect.qq.com/
 2. 申请开发者
 3. 应用管理 -> 添加网站应用，等待审核通过即可
 
@@ -237,7 +237,7 @@ $ nginx -s reload
 
 ## 2. 主要代码
 
-> 本 demo 采用 Redis 缓存 state，所以请准备 Redis 环境，如果没有 Redis 环境，可以将配置文件的缓存配置为 
+> 本 demo 采用 Redis 缓存 state，所以请准备 Redis 环境，如果没有 Redis 环境，可以将配置文件的缓存配置为
 >
 > ```yaml
 > justauth:
@@ -408,13 +408,8 @@ justauth:
  * 第三方登录 Controller
  * </p>
  *
- * @package: com.xkcoding.oauth.controller
- * @description: 第三方登录 Controller
- * @author: yangkai.shen
- * @date: Created in 2019-05-17 10:07
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-05-17 10:07
  */
 @Slf4j
 @RestController

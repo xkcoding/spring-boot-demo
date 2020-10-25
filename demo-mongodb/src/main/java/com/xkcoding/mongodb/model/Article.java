@@ -13,13 +13,8 @@ import java.util.Date;
  * 文章实体类
  * </p>
  *
- * @package: com.xkcoding.mongodb.model
- * @description: 文章实体类
- * @author: yangkai.shen
- * @date: Created in 2018-12-28 16:21
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-28 16:21
  */
 @Data
 @Builder

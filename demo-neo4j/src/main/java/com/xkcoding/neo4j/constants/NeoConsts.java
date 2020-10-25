@@ -5,13 +5,8 @@ package com.xkcoding.neo4j.constants;
  * 常量池
  * </p>
  *
- * @package: com.xkcoding.neo4j.constants
- * @description: 常量池
- * @author: yangkai.shen
- * @date: Created in 2018-12-24 14:45
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-24 14:45
  */
 public interface NeoConsts {
     /**

@@ -9,13 +9,8 @@ import org.springframework.stereotype.Component;
  * 项目配置
  * </p>
  *
- * @package: com.xkcoding.properties.property
- * @description: 项目配置
- * @author: yangkai.shen
- * @date: Created in 2018/9/29 10:50 AM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-09-29 10:50
  */
 @Data
 @Component

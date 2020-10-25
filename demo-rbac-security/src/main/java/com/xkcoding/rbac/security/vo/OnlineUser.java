@@ -11,13 +11,8 @@ import lombok.Data;
  * 在线用户 VO
  * </p>
  *
- * @package: com.xkcoding.rbac.security.vo
- * @description: 在线用户 VO
- * @author: yangkai.shen
- * @date: Created in 2018-12-12 00:58
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-12 00:58
  */
 @Data
 public class OnlineUser {

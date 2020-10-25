@@ -8,13 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 启动器
  * </p>
  *
- * @package: com.xkcoding.mq.kafka
- * @description: 启动器
- * @author: yangkai.shen
- * @date: Created in 2019-01-07 14:43
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-01-07 14:43
  */
 @SpringBootApplication
 public class SpringBootDemoMqKafkaApplication {

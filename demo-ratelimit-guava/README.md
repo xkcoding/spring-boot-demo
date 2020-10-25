@@ -88,7 +88,7 @@
  * 限流注解，添加了 {@link AliasFor} 必须通过 {@link AnnotationUtils} 获取，才会生效
  *
  * @author yangkai.shen
- * @date Created in 2019/9/12 14:14
+ * @date Created in 2019-09-12 14:14
  * @see AnnotationUtils
  * </p>
  */
@@ -129,7 +129,7 @@ public @interface RateLimiter {
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/12 14:27
+ * @date Created in 2019-09-12 14:27
  */
 @Slf4j
 @Aspect
@@ -175,7 +175,7 @@ public class RateLimiterAspect {
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/12 14:22
+ * @date Created in 2019-09-12 14:22
  */
 @Slf4j
 @RestController

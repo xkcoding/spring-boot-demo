@@ -23,13 +23,8 @@ import java.util.stream.Collectors;
  * UserMapper 测试
  * </p>
  *
- * @package: com.xkcoding.orm.mybatis.MapperAndPage.mapper
- * @description: UserMapper 测试
- * @author: yangkai.shen
- * @date: Created in 2018/11/8 14:25
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-08 14:25
  */
 @Slf4j
 public class UserMapperTest extends SpringBootDemoOrmMybatisMapperPageApplicationTests {

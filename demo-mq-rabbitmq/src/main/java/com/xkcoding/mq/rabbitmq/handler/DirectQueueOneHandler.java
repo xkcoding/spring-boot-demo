@@ -17,13 +17,8 @@ import java.io.IOException;
  * 直接队列1 处理器
  * </p>
  *
- * @package: com.xkcoding.mq.rabbitmq.handler
- * @description: 直接队列1 处理器
- * @author: yangkai.shen
- * @date: Created in 2019-01-04 15:42
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-01-04 15:42
  */
 @Slf4j
 @RabbitListener(queues = RabbitConsts.DIRECT_MODE_QUEUE_ONE)

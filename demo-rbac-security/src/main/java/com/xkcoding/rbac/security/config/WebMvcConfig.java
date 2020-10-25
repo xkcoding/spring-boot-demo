@@ -9,13 +9,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * MVC配置
  * </p>
  *
- * @package: com.xkcoding.rbac.security.config
- * @description: MVC配置
- * @author: yangkai.shen
- * @date: Created in 2018-12-10 16:09
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-10 16:09
  */
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {

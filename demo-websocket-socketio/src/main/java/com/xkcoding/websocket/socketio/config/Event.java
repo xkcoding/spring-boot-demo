@@ -5,13 +5,8 @@ package com.xkcoding.websocket.socketio.config;
  * 事件常量
  * </p>
  *
- * @package: com.xkcoding.websocket.socketio.config
- * @description: 事件常量
- * @author: yangkai.shen
- * @date: Created in 2018-12-18 19:36
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-18 19:36
  */
 public interface Event {
     /**

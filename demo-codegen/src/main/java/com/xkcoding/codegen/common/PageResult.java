@@ -10,13 +10,8 @@ import java.util.List;
  * 分页结果集
  * </p>
  *
- * @package: com.xkcoding.codegen.common
- * @description: 分页结果集
- * @author: yangkai.shen
- * @date: Created in 2019-03-22 11:24
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-03-22 11:24
  */
 @Data
 @AllArgsConstructor

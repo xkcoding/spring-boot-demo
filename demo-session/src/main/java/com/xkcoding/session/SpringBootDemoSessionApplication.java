@@ -8,13 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 启动类
  * </p>
  *
- * @package: com.xkcoding.session
- * @description: 启动类
- * @author: yangkai.shen
- * @date: Created in 2018-12-19 19:35
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-19 19:35
  */
 @SpringBootApplication
 public class SpringBootDemoSessionApplication {

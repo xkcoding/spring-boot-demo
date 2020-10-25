@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
  * 测试接口.
  *
  * @author <a href="https://echocow.cn">EchoCow</a>
- * @date 2020/1/9 下午2:37
+ * @date 2020-01-09  14:37
  */
 @RestController
 public class TestController {

@@ -9,15 +9,10 @@ import org.springframework.stereotype.Repository;
  * User Dao
  * </p>
  *
- * @package: com.xkcoding.orm.jpa.repository
- * @description: User Dao
- * @author: yangkai.shen
- * @date: Created in 2018/11/7 14:07
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-07 14:07
  */
 @Repository
 public interface UserDao extends JpaRepository<User, Long> {
-    
+
 }

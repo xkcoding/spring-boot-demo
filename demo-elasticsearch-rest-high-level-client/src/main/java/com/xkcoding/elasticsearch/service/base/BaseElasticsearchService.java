@@ -28,7 +28,7 @@ import java.io.IOException;
  *
  * @author fxbin
  * @version 1.0v
- * @since 2019/9/16 15:44
+ * @since 2019-09-16 15:44
  */
 @Slf4j
 public abstract class BaseElasticsearchService {

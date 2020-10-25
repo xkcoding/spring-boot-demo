@@ -6,7 +6,7 @@ package com.xkcoding.dynamic.datasource.datasource;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/4 14:16
+ * @date Created in 2019-09-04 14:16
  */
 public class DatasourceConfigContextHolder {
     private static final ThreadLocal<Long> DATASOURCE_HOLDER = ThreadLocal.withInitial(() -> DatasourceHolder.DEFAULT_ID);

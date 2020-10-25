@@ -16,13 +16,8 @@ import javax.servlet.http.HttpSession;
  * 页面跳转 Controller
  * </p>
  *
- * @package: com.xkcoding.session.controller
- * @description: 页面跳转 Controller
- * @author: yangkai.shen
- * @date: Created in 2018-12-19 19:57
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-19 19:57
  */
 @Controller
 @RequestMapping("/page")

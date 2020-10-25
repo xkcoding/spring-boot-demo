@@ -13,13 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
  * 服务器监控Controller
  * </p>
  *
- * @package: com.xkcoding.websocket.controller
- * @description: 服务器监控Controller
- * @author: yangkai.shen
- * @date: Created in 2018-12-17 10:22
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-17 10:22
  */
 @RestController
 @RequestMapping("/server")

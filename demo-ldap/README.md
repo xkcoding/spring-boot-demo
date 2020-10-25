@@ -84,14 +84,14 @@ spring:
 ## Person.java
 
 > 实体类
-> @Entry 注解 映射ldap对象关系 
+> @Entry 注解 映射ldap对象关系
 ```java
 /**
  * People
  *
  * @author fxbin
  * @version v1.0
- * @since 2019/8/26 0:51
+ * @since 2019-08-26 0:51
  */
 @Data
 @Entry(
@@ -167,7 +167,7 @@ public class Person implements Serializable {
  *
  * @author fxbin
  * @version v1.0
- * @since 2019/8/26 1:02
+ * @since 2019-08-26 1:02
  */
 @Repository
 public interface PersonRepository extends CrudRepository<Person, Name> {
@@ -190,7 +190,7 @@ public interface PersonRepository extends CrudRepository<Person, Name> {
  *
  * @author fxbin
  * @version v1.0
- * @since 2019/8/26 1:05
+ * @since 2019-08-26 1:05
  */
 public interface PersonService {
 
@@ -226,7 +226,7 @@ public interface PersonService {
 }
 ```
 
-## PersonServiceImpl.java 
+## PersonServiceImpl.java
 > person数据操作服务具体逻辑实现类
 
 ```java
@@ -235,7 +235,7 @@ public interface PersonService {
  *
  * @author fxbin
  * @version v1.0
- * @since 2019/8/26 1:05
+ * @since 2019-08-26 1:05
  */
 @Slf4j
 @Service
@@ -305,7 +305,7 @@ public class PersonServiceImpl implements PersonService {
         personRepository.delete(person);
         log.info("删除用户{}成功", person.getUid());
     }
-    
+
 }
 ```
 
@@ -317,7 +317,7 @@ public class PersonServiceImpl implements PersonService {
  *
  * @author fxbin
  * @version v1.0
- * @since 2019/8/26 1:06
+ * @since 2019-08-26 1:06
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest

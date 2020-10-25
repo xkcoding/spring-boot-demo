@@ -15,7 +15,7 @@ import java.util.Map;
  * 我们只是在中途修改了它确认的一些信息而已。
  *
  * @author <a href="https://echocow.cn">EchoCow</a>
- * @date 2020/1/6 下午4:42
+ * @date 2020-01-06 16:42
  */
 @Controller
 @SessionAttributes("authorizationRequest")

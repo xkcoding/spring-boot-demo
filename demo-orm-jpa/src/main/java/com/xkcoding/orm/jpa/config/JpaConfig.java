@@ -20,13 +20,8 @@ import javax.sql.DataSource;
  * JPA配置类
  * </p>
  *
- * @package: com.xkcoding.orm.jpa.config
- * @description: JPA配置类
- * @author: yangkai.shen
- * @date: Created in 2018/11/7 11:05
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-07 11:05
  */
 @Configuration
 @EnableTransactionManagement

@@ -18,7 +18,7 @@ import java.security.KeyPair;
  * token 相关配置.
  *
  * @author <a href="https://echocow.cn">EchoCow</a>
- * @date 2020/1/6 下午1:33
+ * @date 2020-01-06 13:33
  */
 @Configuration
 @RequiredArgsConstructor

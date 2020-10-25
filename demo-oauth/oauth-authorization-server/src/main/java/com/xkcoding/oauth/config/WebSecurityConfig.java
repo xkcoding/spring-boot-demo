@@ -12,7 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  * 安全配置.
  *
  * @author <a href="https://echocow.cn">EchoCow</a>
- * @date 2020/1/6 下午1:27
+ * @date 2020-01-06 13:27
  */
 @EnableWebSecurity
 @RequiredArgsConstructor

@@ -10,13 +10,8 @@ import java.util.List;
  * 文章 Dao
  * </p>
  *
- * @package: com.xkcoding.mongodb.repository
- * @description: 文章 Dao
- * @author: yangkai.shen
- * @date: Created in 2018-12-28 16:30
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-28 16:30
  */
 public interface ArticleRepository extends MongoRepository<Article, Long> {
     /**

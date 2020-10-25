@@ -12,13 +12,8 @@ import javax.sql.DataSource;
  * Beetl数据源配置
  * </p>
  *
- * @package: com.xkcoding.orm.beetlsql.config
- * @description: Beetl数据源配置
- * @author: yangkai.shen
- * @date: Created in 2018/11/14 17:15
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-14 17:15
  */
 @Configuration
 public class BeetlConfig {

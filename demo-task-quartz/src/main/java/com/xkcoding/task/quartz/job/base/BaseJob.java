@@ -7,13 +7,8 @@ import org.quartz.*;
  * Job 基类，主要是在 {@link org.quartz.Job} 上再封装一层，只让我们自己项目里的Job去实现
  * </p>
  *
- * @package: com.xkcoding.task.quartz.job.base
- * @description: Job 基类，主要是在 {@link org.quartz.Job} 上再封装一层，只让我们自己项目里的Job去实现
- * @author: yangkai.shen
- * @date: Created in 2018-11-26 13:27
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-26 13:27
  */
 public interface BaseJob extends Job {
     /**

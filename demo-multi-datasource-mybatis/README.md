@@ -119,13 +119,8 @@ CREATE TABLE `multi_user`(
  * User实体类
  * </p>
  *
- * @package: com.xkcoding.multi.datasource.mybatis.model
- * @description: User实体类
- * @author: yangkai.shen
- * @date: Created in 2019-01-21 14:19
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-01-21 14:19
  */
 @Data
 @TableName("multi_user")
@@ -165,13 +160,8 @@ public class User implements Serializable {
  * 数据访问层
  * </p>
  *
- * @package: com.xkcoding.multi.datasource.mybatis.mapper
- * @description: 数据访问层
- * @author: yangkai.shen
- * @date: Created in 2019-01-21 14:28
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-01-21 14:28
  */
 public interface UserMapper extends BaseMapper<User> {
 }
@@ -189,13 +179,8 @@ public interface UserMapper extends BaseMapper<User> {
  * 数据服务层
  * </p>
  *
- * @package: com.xkcoding.multi.datasource.mybatis.service
- * @description: 数据服务层
- * @author: yangkai.shen
- * @date: Created in 2019-01-21 14:31
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-01-21 14:31
  */
 public interface UserService extends IService<User> {
 
@@ -222,13 +207,8 @@ public interface UserService extends IService<User> {
  * 数据服务层 实现
  * </p>
  *
- * @package: com.xkcoding.multi.datasource.mybatis.service.impl
- * @description: 数据服务层 实现
- * @author: yangkai.shen
- * @date: Created in 2019-01-21 14:37
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-01-21 14:37
  */
 @Service
 @DS("slave")
@@ -259,13 +239,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
  * 启动器
  * </p>
  *
- * @package: com.xkcoding.multi.datasource.mybatis
- * @description: 启动器
- * @author: yangkai.shen
- * @date: Created in 2019-01-21 14:19
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-01-21 14:19
  */
 @SpringBootApplication
 @MapperScan(basePackages = "com.xkcoding.multi.datasource.mybatis.mapper")
@@ -311,13 +286,8 @@ logging:
  * 测试主从数据源
  * </p>
  *
- * @package: com.xkcoding.multi.datasource.mybatis.service.impl
- * @description: 测试主从数据源
- * @author: yangkai.shen
- * @date: Created in 2019-01-21 14:45
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-01-21 14:45
  */
 @Slf4j
 public class UserServiceImplTest extends SpringBootDemoMultiDatasourceMybatisApplicationTests {
@@ -360,10 +330,10 @@ public class UserServiceImplTest extends SpringBootDemoMultiDatasourceMybatisApp
 2019-01-21 14:55:41.313  INFO 7239 --- [           main] c.b.d.d.DynamicRoutingDataSource         : 动态数据源-加载 slave 成功
 2019-01-21 14:55:41.313  INFO 7239 --- [           main] c.b.d.d.DynamicRoutingDataSource         : 动态数据源-加载 master 成功
 2019-01-21 14:55:41.313  INFO 7239 --- [           main] c.b.d.d.DynamicRoutingDataSource         : 当前的默认数据源是单数据源，数据源名为 master
- _ _   |_  _ _|_. ___ _ |    _ 
-| | |\/|_)(_| | |_\  |_)||_|_\ 
-     /               |         
-                        3.0.7.1 
+ _ _   |_  _ _|_. ___ _ |    _
+| | |\/|_)(_| | |_\  |_)||_|_\
+     /               |
+                        3.0.7.1
 ```
 
 **主**库 **建议** 只执行 **INSERT** **UPDATE** **DELETE** 操作

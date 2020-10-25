@@ -99,7 +99,7 @@
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/4 10:27
+ * @date Created in 2019-09-04 10:27
  */
 @Configuration
 public class DatasourceConfiguration {
@@ -125,7 +125,7 @@ public class DatasourceConfiguration {
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/4 16:20
+ * @date Created in 2019-09-04 16:20
  */
 @Configuration
 @MapperScan(basePackages = "com.xkcoding.dynamicdatasource.mapper", sqlSessionFactoryRef = "sqlSessionFactory")
@@ -159,7 +159,7 @@ public class MybatisConfiguration {
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/4 14:16
+ * @date Created in 2019-09-04 14:16
  */
 public class DatasourceConfigContextHolder {
     private static final ThreadLocal<Long> DATASOURCE_HOLDER = ThreadLocal.withInitial(() -> DatasourceHolder.DEFAULT_ID);
@@ -204,7 +204,7 @@ public class DatasourceConfigContextHolder {
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/4 10:41
+ * @date Created in 2019-09-04 10:41
  */
 @Slf4j
 public class DynamicDataSource extends HikariDataSource {
@@ -269,7 +269,7 @@ public class DynamicDataSource extends HikariDataSource {
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/4 14:42
+ * @date Created in 2019-09-04 14:42
  */
 public enum DatasourceScheduler {
     /**
@@ -313,7 +313,7 @@ public enum DatasourceScheduler {
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/4 14:27
+ * @date Created in 2019-09-04 14:27
  */
 public class DatasourceManager {
     /**
@@ -370,7 +370,7 @@ public class DatasourceManager {
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/4 14:23
+ * @date Created in 2019-09-04 14:23
  */
 public enum DatasourceHolder {
     /**
@@ -461,7 +461,7 @@ public enum DatasourceHolder {
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/4 17:13
+ * @date Created in 2019-09-04 17:13
  */
 public enum DatasourceConfigCache {
     /**
@@ -519,7 +519,7 @@ public enum DatasourceConfigCache {
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/4 17:57
+ * @date Created in 2019-09-04 17:57
  */
 @SpringBootApplication
 @RequiredArgsConstructor(onConstructor_ = @Autowired)
@@ -571,7 +571,7 @@ public class SpringBootDemoDynamicDatasourceApplication implements CommandLineRu
 >
 > - DELETE http://localhost:8080/config/{id}
 >
-> 新增数据源: 
+> 新增数据源:
 >
 > - POST http://localhost:8080/config
 >
@@ -600,7 +600,7 @@ public class SpringBootDemoDynamicDatasourceApplication implements CommandLineRu
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/4 16:52
+ * @date Created in 2019-09-04 16:52
  */
 @Aspect
 @Component
@@ -657,7 +657,7 @@ public class DatasourceSelectorAspect {
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/4 17:37
+ * @date Created in 2019-09-04 17:37
  */
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)

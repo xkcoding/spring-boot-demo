@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
  * .
  *
  * @author <a href="https://echocow.cn">EchoCow</a>
- * @date 2020/1/6 下午1:10
+ * @date 2020-01-06 13:10
  */
 @DataJpaTest
 public class SysClientDetailsTest {

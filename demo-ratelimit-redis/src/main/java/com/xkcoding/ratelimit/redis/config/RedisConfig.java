@@ -13,7 +13,7 @@ import org.springframework.scripting.support.ResourceScriptSource;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/9/30 11:37
+ * @date Created in 2019-09-30 11:37
  */
 @Configuration
 public class RedisConfig {

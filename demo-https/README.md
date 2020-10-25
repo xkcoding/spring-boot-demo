@@ -37,7 +37,7 @@ server:
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2020/1/19 10:31
+ * @date Created in 2020-01-19 10:31
  */
 @Configuration
 public class HttpsConfig {

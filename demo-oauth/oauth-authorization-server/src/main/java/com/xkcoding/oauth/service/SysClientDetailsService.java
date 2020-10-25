@@ -13,7 +13,7 @@ import java.util.List;
  * 参见 {@link ClientRegistrationService}
  *
  * @author <a href="https://echocow.cn">EchoCow</a>
- * @date 2020/1/6 下午1:39
+ * @date 2020-01-06 13:39
  */
 public interface SysClientDetailsService extends ClientDetailsService {
 

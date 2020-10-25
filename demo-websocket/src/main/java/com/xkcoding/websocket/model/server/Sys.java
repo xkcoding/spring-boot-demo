@@ -5,13 +5,8 @@ package com.xkcoding.websocket.model.server;
  * 系统相关信息实体
  * </p>
  *
- * @package: com.xkcoding.websocket.model.server
- * @description: 系统相关信息实体
- * @author: yangkai.shen
- * @date: Created in 2018-12-14 16:10
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-14 16:10
  */
 public class Sys {
     /**

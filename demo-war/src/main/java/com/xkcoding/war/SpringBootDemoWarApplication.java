@@ -10,13 +10,8 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
  * 启动器
  * </p>
  *
- * @package: com.xkcoding.war
- * @description: 启动器
- * @author: shenyangkai
- * @date: Created in 2018/10/30 19:37
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: shenyangkai
+ * @author yangkai.shen
+ * @date Created in 2018-10-30 19:37
  */
 @SpringBootApplication
 public class SpringBootDemoWarApplication extends SpringBootServletInitializer {

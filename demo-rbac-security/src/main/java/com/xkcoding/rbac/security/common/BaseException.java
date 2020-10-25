@@ -8,13 +8,8 @@ import lombok.EqualsAndHashCode;
  * 异常基类
  * </p>
  *
- * @package: com.xkcoding.rbac.security.common
- * @description: 异常基类
- * @author: yangkai.shen
- * @date: Created in 2018-12-07 14:57
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-07 14:57
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

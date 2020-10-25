@@ -8,13 +8,8 @@ import ${package}.${moduleName}.entity.${className};
  * ${comments}
  * </p>
  *
- * @package:  ${package}.${moduleName}.service
- * @description: ${comments}
- * @author: ${author}
- * @date: Created in ${datetime}
- * @copyright: Copyright (c) ${year}
- * @version: V1.0
- * @modified: ${author}
+ * @author ${author}
+ * @date Created in ${datetime}
  */
 public interface ${className}Service extends IService<${className}> {
 

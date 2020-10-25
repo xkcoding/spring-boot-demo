@@ -19,13 +19,8 @@ import java.io.File;
  * 邮件接口
  * </p>
  *
- * @package: com.xkcoding.email.service.impl
- * @description: 邮件接口
- * @author: yangkai.shen
- * @date: Created in 2018/11/21 13:49
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-21 13:49
  */
 @Service
 public class MailServiceImpl implements MailService {

@@ -5,13 +5,8 @@ package com.xkcoding.elasticsearch.constants;
  * ES常量池
  * </p>
  *
- * @package: com.xkcoding.elasticsearch.constants
- * @description: ES常量池
- * @author: yangkai.shen
- * @date: Created in 2018-12-20 17:30
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-20 17:30
  */
 public interface EsConsts {
     /**

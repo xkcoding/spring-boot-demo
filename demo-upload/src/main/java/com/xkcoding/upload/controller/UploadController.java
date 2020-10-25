@@ -26,13 +26,8 @@ import java.io.IOException;
  * 文件上传 Controller
  * </p>
  *
- * @package: com.xkcoding.upload.controller
- * @description: 文件上传 Controller
- * @author: yangkai.shen
- * @date: Created in 2018/11/6 16:33
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-06 16:33
  */
 @RestController
 @Slf4j

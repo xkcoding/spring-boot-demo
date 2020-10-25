@@ -9,13 +9,8 @@ import java.util.List;
  * 表属性： https://blog.csdn.net/lkforce/article/details/79557482
  * </p>
  *
- * @package: com.xkcoding.codegen.entity
- * @description: 表属性： https://blog.csdn.net/lkforce/article/details/79557482
- * @author: yangkai.shen
- * @date: Created in 2019-03-22 09:47
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-03-22 09:47
  */
 @Data
 public class TableEntity {

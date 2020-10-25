@@ -20,13 +20,8 @@ import java.util.List;
  * 测试sharding-jdbc分库分表
  * </p>
  *
- * @package: com.xkcoding.sharding.jdbc
- * @description: 测试sharding-jdbc分库分表
- * @author: yangkai.shen
- * @date: Created in 2019-03-26 13:44
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-03-26 13:44
  */
 @Slf4j
 @RunWith(SpringRunner.class)

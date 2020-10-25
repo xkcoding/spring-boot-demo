@@ -10,13 +10,8 @@ import lombok.extern.slf4j.Slf4j;
  * 数据库工具类
  * </p>
  *
- * @package: com.xkcoding.codegen.utils
- * @description: 数据库工具类
- * @author: yangkai.shen
- * @date: Created in 2019-03-22 10:26
- * @copyright: Copyright (c) 2019
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2019-03-22 10:26
  */
 @Slf4j
 @UtilityClass

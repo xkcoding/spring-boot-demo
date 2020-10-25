@@ -8,7 +8,6 @@ import cn.hutool.crypto.SecureUtil;
 import cn.hutool.json.JSONUtil;
 import com.xkcoding.orm.beetlsql.SpringBootDemoOrmBeetlsqlApplicationTests;
 import com.xkcoding.orm.beetlsql.entity.User;
-import com.xkcoding.orm.beetlsql.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.util.Lists;
 import org.beetl.sql.core.engine.PageQuery;
@@ -23,13 +22,8 @@ import java.util.List;
  * User Service测试
  * </p>
  *
- * @package: com.xkcoding.orm.beetlsql.service
- * @description: User Service测试
- * @author: yangkai.shen
- * @date: Created in 2018/11/14 16:30
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-14 16:30
  */
 @Slf4j
 public class UserServiceTest extends SpringBootDemoOrmBeetlsqlApplicationTests {

@@ -79,13 +79,8 @@
  * 主页
  * </p>
  *
- * @package: com.xkcoding.template.freemarker.controller
- * @description: 主页
- * @author: yangkai.shen
- * @date: Created in 2018/10/9 3:07 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-019 15:07
  */
 @Controller
 @Slf4j
@@ -116,13 +111,8 @@ public class IndexController {
  * 用户页面
  * </p>
  *
- * @package: com.xkcoding.template.freemarker.controller
- * @description: 用户页面
- * @author: yangkai.shen
- * @date: Created in 2018/10/9 3:11 PM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-019 15:11
  */
 @Controller
 @RequestMapping("/user")

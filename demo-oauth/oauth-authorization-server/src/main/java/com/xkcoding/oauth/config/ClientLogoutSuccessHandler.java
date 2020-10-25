@@ -14,7 +14,7 @@ import java.io.IOException;
  * 客户团退出登录成功处理器.
  *
  * @author <a href="https://echocow.cn">EchoCow</a>
- * @date 2020/1/6 下午22:11
+ * @date 2020-01-06 22:11
  */
 @Slf4j
 @Component

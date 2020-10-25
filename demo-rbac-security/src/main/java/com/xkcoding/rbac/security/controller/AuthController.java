@@ -8,7 +8,6 @@ import com.xkcoding.rbac.security.util.JwtUtil;
 import com.xkcoding.rbac.security.vo.JwtResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -26,13 +25,8 @@ import javax.validation.Valid;
  * 认证 Controller，包括用户注册，用户登录请求
  * </p>
  *
- * @package: com.xkcoding.rbac.security.controller
- * @description: 认证 Controller，包括用户注册，用户登录请求
- * @author: yangkai.shen
- * @date: Created in 2018-12-07 17:23
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-07 17:23
  */
 @Slf4j
 @RestController

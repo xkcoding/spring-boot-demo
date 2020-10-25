@@ -9,13 +9,8 @@ import org.springframework.stereotype.Component;
  * UserDao
  * </p>
  *
- * @package: com.xkcoding.orm.beetlsql.dao
- * @description: UserDao
- * @author: yangkai.shen
- * @date: Created in 2018/11/14 16:18
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-14 16:18
  */
 @Component
 public interface UserDao extends BaseMapper<User> {

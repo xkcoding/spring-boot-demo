@@ -10,13 +10,8 @@ import org.quartz.JobExecutionContext;
  * Hello Job
  * </p>
  *
- * @package: com.xkcoding.task.quartz.job
- * @description: Hello Job
- * @author: yangkai.shen
- * @date: Created in 2018-11-26 13:22
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-11-26 13:22
  */
 @Slf4j
 public class HelloJob implements BaseJob {

@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019/8/27 16:15
+ * @date Created in 2019-08-27 16:15
  */
 public class PasswordTest extends SpringBootDemoEmailApplicationTests {
     @Autowired

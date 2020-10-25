@@ -12,13 +12,8 @@ import javax.persistence.Table;
  * 用户角色关联
  * </p>
  *
- * @package: com.xkcoding.rbac.security.model
- * @description: 用户角色关联
- * @author: yangkai.shen
- * @date: Created in 2018-12-10 11:18
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-12-10 11:18
  */
 @Data
 @Entity

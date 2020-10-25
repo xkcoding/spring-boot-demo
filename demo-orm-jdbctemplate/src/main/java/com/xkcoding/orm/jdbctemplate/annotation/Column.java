@@ -10,13 +10,8 @@ import java.lang.annotation.Target;
  * 列注解
  * </p>
  *
- * @package: com.xkcoding.orm.jdbctemplate.annotation
- * @description: 列注解
- * @author: yangkai.shen
- * @date: Created in 2018/10/15 11:23 AM
- * @copyright: Copyright (c) 2018
- * @version: V1.0
- * @modified: yangkai.shen
+ * @author yangkai.shen
+ * @date Created in 2018-10-15 11:23
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD})
