@@ -16,10 +16,10 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD})
 public @interface Pk {
-	/**
-	 * 自增
-	 *
-	 * @return 自增主键
-	 */
-	boolean auto() default true;
+    /**
+     * 自增
+     *
+     * @return 自增主键
+     */
+    boolean auto() default true;
 }

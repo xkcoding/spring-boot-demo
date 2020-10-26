@@ -17,10 +17,7 @@ import java.io.Serializable;
  * @since 2019-08-26 0:51
  */
 @Data
-@Entry(
-    base = "ou=people",
-    objectClasses = {"posixAccount", "inetOrgPerson", "top"}
-)
+@Entry(base = "ou=people", objectClasses = {"posixAccount", "inetOrgPerson", "top"})
 public class Person implements Serializable {
 
     private static final long serialVersionUID = -7946768337975852352L;

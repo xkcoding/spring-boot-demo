@@ -46,15 +46,13 @@ public class AuthorizationCodeGrantTests {
     @Test
     void testCannotConnectWithoutToken() {
         OAuth2RestTemplate template = new OAuth2RestTemplate(resource);
-        assertThrows(UserRedirectRequiredException.class,
-            () -> template.getForObject(getUrl("/oauth/me"), String.class));
+        assertThrows(UserRedirectRequiredException.class, () -> template.getForObject(getUrl("/oauth/me"), String.class));
     }
 
     @Test
     void testAttemptedTokenAcquisitionWithNoRedirect() {
         AuthorizationCodeAccessTokenProvider provider = new AuthorizationCodeAccessTokenProvider();
-        assertThrows(UserRedirectRequiredException.class,
-            () -> provider.obtainAccessToken(resource, new DefaultAccessTokenRequest()));
+        assertThrows(UserRedirectRequiredException.class, () -> provider.obtainAccessToken(resource, new DefaultAccessTokenRequest()));
     }
 
     /**
@@ -80,8 +78,7 @@ public class AuthorizationCodeGrantTests {
         form.add("_csrf", matcher.group(1));
 
         // 3. 登录授权并获取登录成功的 cookie
-        ResponseEntity<Void> response = authorizationServerInfo
-            .postForStatus("/authorization/form", headers, form);
+        ResponseEntity<Void> response = authorizationServerInfo.postForStatus("/authorization/form", headers, form);
         assertNotNull(response);
         cookie = response.getHeaders().getFirst("Set-Cookie");
         headers = new HttpHeaders();
@@ -89,8 +86,7 @@ public class AuthorizationCodeGrantTests {
         headers.setAccept(Collections.singletonList(MediaType.ALL));
 
         // 4. 请求到 确认授权页面 ，获取确认授权页面的 _csrf 的 value
-        ResponseEntity<String> confirm = authorizationServerInfo
-            .getForString("/oauth/authorize?response_type=code&client_id=oauth2&redirect_uri=http://example.com&scope=READ", headers);
+        ResponseEntity<String> confirm = authorizationServerInfo.getForString("/oauth/authorize?response_type=code&client_id=oauth2&redirect_uri=http://example.com&scope=READ", headers);
 
         headers = confirm.getHeaders();
         // 确认过一次后，后面都会自动确认了，这里判断下是不是重定向请求

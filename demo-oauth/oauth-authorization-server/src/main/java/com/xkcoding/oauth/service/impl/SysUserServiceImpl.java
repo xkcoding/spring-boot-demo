@@ -29,11 +29,8 @@ public class SysUserServiceImpl implements SysUserService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        SysUser sysUser = sysUserRepository.findFirstByUsername(username)
-            .orElseThrow(() -> new UsernameNotFoundException("User not found!"));
-        List<SimpleGrantedAuthority> roles = sysUser.getRoles().stream()
-            .map(sysRole -> new SimpleGrantedAuthority(sysRole.getName()))
-            .collect(Collectors.toList());
+        SysUser sysUser = sysUserRepository.findFirstByUsername(username).orElseThrow(() -> new UsernameNotFoundException("User not found!"));
+        List<SimpleGrantedAuthority> roles = sysUser.getRoles().stream().map(sysRole -> new SimpleGrantedAuthority(sysRole.getName())).collect(Collectors.toList());
         // 在这里手动构建 UserDetails 的默认实现
         return new User(sysUser.getUsername(), sysUser.getPassword(), roles);
     }
@@ -45,8 +42,7 @@ public class SysUserServiceImpl implements SysUserService {
 
     @Override
     public SysUser findById(Long id) {
-        return sysUserRepository.findById(id)
-            .orElseThrow(() -> new RuntimeException("找不到用户"));
+        return sysUserRepository.findById(id).orElseThrow(() -> new RuntimeException("找不到用户"));
     }
 
     @Override

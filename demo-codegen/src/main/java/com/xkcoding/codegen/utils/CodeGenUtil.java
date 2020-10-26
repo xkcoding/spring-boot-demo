@@ -179,9 +179,7 @@ public class CodeGenUtil {
 
             try {
                 //添加到zip
-                zip.putNextEntry(new ZipEntry(Objects.requireNonNull(getFileName(template, tableEntity.getCaseClassName(), map
-                        .get("package")
-                        .toString(), map.get("moduleName").toString()))));
+                zip.putNextEntry(new ZipEntry(Objects.requireNonNull(getFileName(template, tableEntity.getCaseClassName(), map.get("package").toString(), map.get("moduleName").toString()))));
                 IoUtil.write(zip, StandardCharsets.UTF_8, false, sw.toString());
                 IoUtil.close(sw);
                 zip.closeEntry();

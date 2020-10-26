@@ -33,68 +33,68 @@ import javax.servlet.Servlet;
 @ConditionalOnProperty(prefix = "spring.http.multipart", name = "enabled", matchIfMissing = true)
 @EnableConfigurationProperties(MultipartProperties.class)
 public class UploadConfig {
-	@Value("${qiniu.accessKey}")
-	private String accessKey;
+    @Value("${qiniu.accessKey}")
+    private String accessKey;
 
-	@Value("${qiniu.secretKey}")
-	private String secretKey;
+    @Value("${qiniu.secretKey}")
+    private String secretKey;
 
-	private final MultipartProperties multipartProperties;
+    private final MultipartProperties multipartProperties;
 
-	@Autowired
-	public UploadConfig(MultipartProperties multipartProperties) {
-		this.multipartProperties = multipartProperties;
-	}
+    @Autowired
+    public UploadConfig(MultipartProperties multipartProperties) {
+        this.multipartProperties = multipartProperties;
+    }
 
-	/**
-	 * 上传配置
-	 */
-	@Bean
-	@ConditionalOnMissingBean
-	public MultipartConfigElement multipartConfigElement() {
-		return this.multipartProperties.createMultipartConfig();
-	}
+    /**
+     * 上传配置
+     */
+    @Bean
+    @ConditionalOnMissingBean
+    public MultipartConfigElement multipartConfigElement() {
+        return this.multipartProperties.createMultipartConfig();
+    }
 
-	/**
-	 * 注册解析器
-	 */
-	@Bean(name = DispatcherServlet.MULTIPART_RESOLVER_BEAN_NAME)
-	@ConditionalOnMissingBean(MultipartResolver.class)
-	public StandardServletMultipartResolver multipartResolver() {
-		StandardServletMultipartResolver multipartResolver = new StandardServletMultipartResolver();
-		multipartResolver.setResolveLazily(this.multipartProperties.isResolveLazily());
-		return multipartResolver;
-	}
+    /**
+     * 注册解析器
+     */
+    @Bean(name = DispatcherServlet.MULTIPART_RESOLVER_BEAN_NAME)
+    @ConditionalOnMissingBean(MultipartResolver.class)
+    public StandardServletMultipartResolver multipartResolver() {
+        StandardServletMultipartResolver multipartResolver = new StandardServletMultipartResolver();
+        multipartResolver.setResolveLazily(this.multipartProperties.isResolveLazily());
+        return multipartResolver;
+    }
 
-	/**
-	 * 华东机房
-	 */
-	@Bean
-	public com.qiniu.storage.Configuration qiniuConfig() {
-		return new com.qiniu.storage.Configuration(Zone.zone0());
-	}
+    /**
+     * 华东机房
+     */
+    @Bean
+    public com.qiniu.storage.Configuration qiniuConfig() {
+        return new com.qiniu.storage.Configuration(Zone.zone0());
+    }
 
-	/**
-	 * 构建一个七牛上传工具实例
-	 */
-	@Bean
-	public UploadManager uploadManager() {
-		return new UploadManager(qiniuConfig());
-	}
+    /**
+     * 构建一个七牛上传工具实例
+     */
+    @Bean
+    public UploadManager uploadManager() {
+        return new UploadManager(qiniuConfig());
+    }
 
-	/**
-	 * 认证信息实例
-	 */
-	@Bean
-	public Auth auth() {
-		return Auth.create(accessKey, secretKey);
-	}
+    /**
+     * 认证信息实例
+     */
+    @Bean
+    public Auth auth() {
+        return Auth.create(accessKey, secretKey);
+    }
 
-	/**
-	 * 构建七牛空间管理实例
-	 */
-	@Bean
-	public BucketManager bucketManager() {
-		return new BucketManager(auth(), qiniuConfig());
-	}
+    /**
+     * 构建七牛空间管理实例
+     */
+    @Bean
+    public BucketManager bucketManager() {
+        return new BucketManager(auth(), qiniuConfig());
+    }
 }

@@ -110,8 +110,7 @@ public enum Status implements IStatus {
     public static Status fromCode(Integer code) {
         Status[] statuses = Status.values();
         for (Status status : statuses) {
-            if (status.getCode()
-                    .equals(code)) {
+            if (status.getCode().equals(code)) {
                 return status;
             }
         }

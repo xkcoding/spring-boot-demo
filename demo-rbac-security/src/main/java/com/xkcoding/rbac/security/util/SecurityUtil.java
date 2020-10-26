@@ -31,9 +31,7 @@ public class SecurityUtil {
      * @return 当前登录用户信息，匿名登录时，为null
      */
     public static UserPrincipal getCurrentUser() {
-        Object userInfo = SecurityContextHolder.getContext()
-                .getAuthentication()
-                .getPrincipal();
+        Object userInfo = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (userInfo instanceof UserDetails) {
             return (UserPrincipal) userInfo;
         }

@@ -47,9 +47,6 @@ public class SysUser {
      * 当前用户所有角色.
      */
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "sys_user_role",
-        joinColumns = @JoinColumn(name = "user_id"),
-        inverseJoinColumns = @JoinColumn(name = "role_id")
-    )
+    @JoinTable(name = "sys_user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<SysRole> roles;
 }

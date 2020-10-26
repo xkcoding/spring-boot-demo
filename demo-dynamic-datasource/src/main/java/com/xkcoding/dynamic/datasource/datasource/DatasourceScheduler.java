@@ -37,7 +37,7 @@ public enum DatasourceScheduler {
         }
     }
 
-    public void schedule(Runnable task,long delay){
+    public void schedule(Runnable task, long delay) {
         this.scheduler.scheduleAtFixedRate(task, delay, delay, TimeUnit.MILLISECONDS);
     }
 

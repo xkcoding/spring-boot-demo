@@ -8,8 +8,8 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
  * 启动器.
  *
  * @author <a href="https://echocow.cn">EchoCow</a>
- * @date 2020-01-09 11:38
  * @version V1.0
+ * @date 2020-01-09 11:38
  */
 @EnableResourceServer
 @SpringBootApplication

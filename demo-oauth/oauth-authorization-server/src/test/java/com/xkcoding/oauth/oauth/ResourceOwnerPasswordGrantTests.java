@@ -8,7 +8,7 @@ import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import java.util.Arrays;
 
 import static com.xkcoding.oauth.oauth.AuthorizationServerInfo.getUrl;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
  * .

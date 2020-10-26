@@ -32,8 +32,7 @@ public class TestControllerTest extends AuthorizationTest {
         ResponseEntity<String> response = template.exchange(URL + "/admin", GET, null, String.class);
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals("ADMIN", response.getBody());
-        assertThrows(OAuth2AccessDeniedException.class,
-            () -> template.exchange(URL + "/test", GET, null, String.class));
+        assertThrows(OAuth2AccessDeniedException.class, () -> template.exchange(URL + "/test", GET, null, String.class));
     }
 
     @Test
@@ -43,8 +42,7 @@ public class TestControllerTest extends AuthorizationTest {
         ResponseEntity<String> response = template.exchange(URL + "/test", GET, null, String.class);
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals("TEST", response.getBody());
-        assertThrows(OAuth2AccessDeniedException.class,
-            () -> template.exchange(URL + "/admin", GET, null, String.class));
+        assertThrows(OAuth2AccessDeniedException.class, () -> template.exchange(URL + "/admin", GET, null, String.class));
     }
 
     @Test
@@ -54,8 +52,7 @@ public class TestControllerTest extends AuthorizationTest {
         ResponseEntity<String> response = template.exchange(URL + "/read", GET, null, String.class);
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals("READ", response.getBody());
-        assertThrows(OAuth2AccessDeniedException.class,
-            () -> template.exchange(URL + "/write", GET, null, String.class));
+        assertThrows(OAuth2AccessDeniedException.class, () -> template.exchange(URL + "/write", GET, null, String.class));
     }
 
     @Test
@@ -65,8 +62,7 @@ public class TestControllerTest extends AuthorizationTest {
         ResponseEntity<String> response = template.exchange(URL + "/write", GET, null, String.class);
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals("WRITE", response.getBody());
-        assertThrows(OAuth2AccessDeniedException.class,
-            () -> template.exchange(URL + "/read", GET, null, String.class));
+        assertThrows(OAuth2AccessDeniedException.class, () -> template.exchange(URL + "/read", GET, null, String.class));
     }
 
     @Test

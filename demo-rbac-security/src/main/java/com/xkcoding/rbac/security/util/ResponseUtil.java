@@ -37,8 +37,7 @@ public class ResponseUtil {
 
             // FIXME: hutool 的 BUG：JSONUtil.toJsonStr()
             //  将JSON转为String的时候，忽略null值的时候转成的String存在错误
-            response.getWriter()
-                    .write(JSONUtil.toJsonStr(new JSONObject(ApiResponse.ofStatus(status, data), false)));
+            response.getWriter().write(JSONUtil.toJsonStr(new JSONObject(ApiResponse.ofStatus(status, data), false)));
         } catch (IOException e) {
             log.error("Response写出JSON异常，", e);
         }
@@ -59,8 +58,7 @@ public class ResponseUtil {
 
             // FIXME: hutool 的 BUG：JSONUtil.toJsonStr()
             //  将JSON转为String的时候，忽略null值的时候转成的String存在错误
-            response.getWriter()
-                    .write(JSONUtil.toJsonStr(new JSONObject(ApiResponse.ofException(exception), false)));
+            response.getWriter().write(JSONUtil.toJsonStr(new JSONObject(ApiResponse.ofException(exception), false)));
         } catch (IOException e) {
             log.error("Response写出JSON异常，", e);
         }

@@ -78,6 +78,7 @@ public enum DatasourceHolder {
 
     /**
      * 清除动态数据源
+     *
      * @param id 数据源id
      */
     public synchronized void removeDatasource(Long id) {

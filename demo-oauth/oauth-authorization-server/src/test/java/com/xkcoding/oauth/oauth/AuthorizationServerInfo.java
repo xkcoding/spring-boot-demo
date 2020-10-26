@@ -55,8 +55,7 @@ public class AuthorizationServerInfo {
         HttpHeaders actualHeaders = new HttpHeaders();
         actualHeaders.putAll(headers);
         actualHeaders.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
-        return client.exchange(getUrl(path), HttpMethod.POST,
-            new HttpEntity<>(formData, actualHeaders), (Class<Void>) null);
+        return client.exchange(getUrl(path), HttpMethod.POST, new HttpEntity<>(formData, actualHeaders), (Class<Void>) null);
     }
 
 
@@ -83,8 +82,7 @@ public class AuthorizationServerInfo {
         }
         builder.deleteCharAt(builder.length() - 1);
 
-        return client.execute(builder.toString(), HttpMethod.POST, requestCallback,
-            HttpMessage::getHeaders);
+        return client.execute(builder.toString(), HttpMethod.POST, requestCallback, HttpMessage::getHeaders);
     }
 
     private static final class NullRequestCallback implements RequestCallback {

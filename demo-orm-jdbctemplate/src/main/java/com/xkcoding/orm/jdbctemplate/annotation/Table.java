@@ -16,10 +16,10 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE})
 public @interface Table {
-	/**
-	 * 表名
-	 *
-	 * @return 表名
-	 */
-	String name();
+    /**
+     * 表名
+     *
+     * @return 表名
+     */
+    String name();
 }

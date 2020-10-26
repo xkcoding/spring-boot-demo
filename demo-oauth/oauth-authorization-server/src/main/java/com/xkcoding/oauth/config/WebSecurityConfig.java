@@ -24,20 +24,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-            .formLogin()
-            .loginPage("/oauth/login")
-            .failureHandler(clientLoginFailureHandler)
-            .loginProcessingUrl("/authorization/form")
-            .and()
-            .logout()
-            .logoutUrl("/oauth/logout")
-            .logoutSuccessHandler(clientLogoutSuccessHandler)
-            .and()
-            .authorizeRequests()
-            .antMatchers("/oauth/**").permitAll()
-            .anyRequest()
-            .authenticated();
+        http.formLogin().loginPage("/oauth/login").failureHandler(clientLoginFailureHandler).loginProcessingUrl("/authorization/form").and().logout().logoutUrl("/oauth/logout").logoutSuccessHandler(clientLogoutSuccessHandler).and().authorizeRequests().antMatchers("/oauth/**").permitAll().anyRequest().authenticated();
     }
 
     /**

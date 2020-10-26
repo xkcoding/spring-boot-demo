@@ -32,7 +32,6 @@ public class AuthorizationTest {
 
     @Test
     void testAccessTokenWhenPassed() {
-        assertNotNull(oauth2RestTemplate("admin", "123456", Collections.singletonList("READ"))
-            .getAccessToken());
+        assertNotNull(oauth2RestTemplate("admin", "123456", Collections.singletonList("READ")).getAccessToken());
     }
 }

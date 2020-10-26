@@ -54,7 +54,6 @@ public class Result<T> implements Serializable {
     }
 
 
-
     /**
      * 返回成功
      *
@@ -70,15 +69,12 @@ public class Result<T> implements Serializable {
      * 返回成功-携带数据
      *
      * @param data 响应数据
-     * @param <T> 泛型标记
+     * @param <T>  泛型标记
      * @return 响应信息 {@code Result}
      */
     public static <T> Result<T> success(@Nullable T data) {
         return new Result<>(ResultCode.SUCCESS, data);
     }
-
-
-
 
 
 }

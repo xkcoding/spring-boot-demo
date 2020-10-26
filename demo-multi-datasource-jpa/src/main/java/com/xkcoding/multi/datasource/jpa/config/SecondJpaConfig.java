@@ -27,12 +27,12 @@ import javax.sql.DataSource;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        // repository包名
-        basePackages = SecondJpaConfig.REPOSITORY_PACKAGE,
-        // 实体管理bean名称
-        entityManagerFactoryRef = "secondEntityManagerFactory",
-        // 事务管理bean名称
-        transactionManagerRef = "secondTransactionManager")
+    // repository包名
+    basePackages = SecondJpaConfig.REPOSITORY_PACKAGE,
+    // 实体管理bean名称
+    entityManagerFactoryRef = "secondEntityManagerFactory",
+    // 事务管理bean名称
+    transactionManagerRef = "secondTransactionManager")
 public class SecondJpaConfig {
     static final String REPOSITORY_PACKAGE = "com.xkcoding.multi.datasource.jpa.repository.second";
     private static final String ENTITY_PACKAGE = "com.xkcoding.multi.datasource.jpa.entity.second";
@@ -60,14 +60,14 @@ public class SecondJpaConfig {
     @Bean(name = "secondEntityManagerFactory")
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(@Qualifier("secondDataSource") DataSource secondDataSource, @Qualifier("secondJpaProperties") JpaProperties jpaProperties, EntityManagerFactoryBuilder builder) {
         return builder
-                // 设置数据源
-                .dataSource(secondDataSource)
-                // 设置jpa配置
-                .properties(jpaProperties.getProperties())
-                // 设置实体包名
-                .packages(ENTITY_PACKAGE)
-                // 设置持久化单元名，用于@PersistenceContext注解获取EntityManager时指定数据源
-                .persistenceUnit("secondPersistenceUnit").build();
+            // 设置数据源
+            .dataSource(secondDataSource)
+            // 设置jpa配置
+            .properties(jpaProperties.getProperties())
+            // 设置实体包名
+            .packages(ENTITY_PACKAGE)
+            // 设置持久化单元名，用于@PersistenceContext注解获取EntityManager时指定数据源
+            .persistenceUnit("secondPersistenceUnit").build();
     }
 
     /**

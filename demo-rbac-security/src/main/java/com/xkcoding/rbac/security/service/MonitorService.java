@@ -46,9 +46,7 @@ public class MonitorService {
         Long total = keys.getTotal();
 
         // 根据 redis 中键获取用户名列表
-        List<String> usernameList = rows.stream()
-                .map(s -> StrUtil.subAfter(s, Consts.REDIS_JWT_KEY_PREFIX, true))
-                .collect(Collectors.toList());
+        List<String> usernameList = rows.stream().map(s -> StrUtil.subAfter(s, Consts.REDIS_JWT_KEY_PREFIX, true)).collect(Collectors.toList());
         // 根据用户名查询用户信息
         List<User> userList = userDao.findByUsernameIn(usernameList);
 
@@ -66,19 +64,16 @@ public class MonitorService {
      */
     public void kickout(List<String> names) {
         // 清除 Redis 中的 JWT 信息
-        List<String> redisKeys = names.parallelStream()
-                .map(s -> Consts.REDIS_JWT_KEY_PREFIX + s)
-                .collect(Collectors.toList());
+        List<String> redisKeys = names.parallelStream().map(s -> Consts.REDIS_JWT_KEY_PREFIX + s).collect(Collectors.toList());
         redisUtil.delete(redisKeys);
 
         // 获取当前用户名
         String currentUsername = SecurityUtil.getCurrentUsername();
-        names.parallelStream()
-                .forEach(name -> {
-                    // TODO: 通知被踢出的用户已被当前登录用户踢出，
-                    //  后期考虑使用 websocket 实现，具体伪代码实现如下。
-                    //  String message = "您已被用户【" + currentUsername + "】手动下线！";
-                    log.debug("用户【{}】被用户【{}】手动下线！", name, currentUsername);
-                });
+        names.parallelStream().forEach(name -> {
+            // TODO: 通知被踢出的用户已被当前登录用户踢出，
+            //  后期考虑使用 websocket 实现，具体伪代码实现如下。
+            //  String message = "您已被用户【" + currentUsername + "】手动下线！";
+            log.debug("用户【{}】被用户【{}】手动下线！", name, currentUsername);
+        });
     }
 }

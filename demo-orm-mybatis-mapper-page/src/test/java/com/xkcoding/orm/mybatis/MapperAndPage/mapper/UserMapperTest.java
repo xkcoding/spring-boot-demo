@@ -93,7 +93,7 @@ public class UserMapperTest extends SpringBootDemoOrmMybatisMapperPageApplicatio
      * 测试通用Mapper - 查询单个
      */
     @Test
-    public void testQueryOne(){
+    public void testQueryOne() {
         User user = userMapper.selectByPrimaryKey(1L);
         Assert.assertNotNull(user);
         log.debug("【user】= {}", user);

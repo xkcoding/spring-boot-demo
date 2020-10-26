@@ -86,8 +86,7 @@ public class Jvm {
      * 获取JDK名称
      */
     public String getName() {
-        return ManagementFactory.getRuntimeMXBean()
-                .getVmName();
+        return ManagementFactory.getRuntimeMXBean().getVmName();
     }
 
     public String getVersion() {
@@ -111,8 +110,7 @@ public class Jvm {
     }
 
     public String getStartTime() {
-        return DateUtil.formatDateTime(new Date(ManagementFactory.getRuntimeMXBean()
-                .getStartTime()));
+        return DateUtil.formatDateTime(new Date(ManagementFactory.getRuntimeMXBean().getStartTime()));
     }
 
 
@@ -121,8 +119,7 @@ public class Jvm {
     }
 
     public String getRunTime() {
-        long startTime = ManagementFactory.getRuntimeMXBean()
-                .getStartTime();
+        long startTime = ManagementFactory.getRuntimeMXBean().getStartTime();
         return DateUtil.formatBetween(DateUtil.current(false) - startTime);
     }
 }

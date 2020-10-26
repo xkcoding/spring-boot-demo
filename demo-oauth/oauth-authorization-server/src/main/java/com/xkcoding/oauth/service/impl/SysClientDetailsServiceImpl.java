@@ -5,7 +5,10 @@ import com.xkcoding.oauth.repostiory.SysClientDetailsRepository;
 import com.xkcoding.oauth.service.SysClientDetailsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.oauth2.provider.*;
+import org.springframework.security.oauth2.provider.ClientAlreadyExistsException;
+import org.springframework.security.oauth2.provider.ClientDetails;
+import org.springframework.security.oauth2.provider.ClientRegistrationException;
+import org.springframework.security.oauth2.provider.NoSuchClientException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,14 +28,12 @@ public class SysClientDetailsServiceImpl implements SysClientDetailsService {
 
     @Override
     public ClientDetails loadClientByClientId(String id) throws ClientRegistrationException {
-        return sysClientDetailsRepository.findFirstByClientId(id)
-            .orElseThrow(() -> new ClientRegistrationException("Loading client exception."));
+        return sysClientDetailsRepository.findFirstByClientId(id).orElseThrow(() -> new ClientRegistrationException("Loading client exception."));
     }
 
     @Override
     public SysClientDetails findByClientId(String clientId) {
-        return sysClientDetailsRepository.findFirstByClientId(clientId)
-            .orElseThrow(() -> new ClientRegistrationException("Loading client exception."));
+        return sysClientDetailsRepository.findFirstByClientId(clientId).orElseThrow(() -> new ClientRegistrationException("Loading client exception."));
     }
 
     @Override
@@ -46,16 +47,14 @@ public class SysClientDetailsServiceImpl implements SysClientDetailsService {
 
     @Override
     public void updateClientDetails(SysClientDetails clientDetails) throws NoSuchClientException {
-        SysClientDetails exist = sysClientDetailsRepository.findFirstByClientId(clientDetails.getClientId())
-            .orElseThrow(() -> new NoSuchClientException("No such client!"));
+        SysClientDetails exist = sysClientDetailsRepository.findFirstByClientId(clientDetails.getClientId()).orElseThrow(() -> new NoSuchClientException("No such client!"));
         clientDetails.setClientSecret(exist.getClientSecret());
         sysClientDetailsRepository.save(clientDetails);
     }
 
     @Override
     public void updateClientSecret(String clientId, String clientSecret) throws NoSuchClientException {
-        SysClientDetails exist = sysClientDetailsRepository.findFirstByClientId(clientId)
-            .orElseThrow(() -> new NoSuchClientException("No such client!"));
+        SysClientDetails exist = sysClientDetailsRepository.findFirstByClientId(clientId).orElseThrow(() -> new NoSuchClientException("No such client!"));
         exist.setClientSecret(passwordEncoder.encode(clientSecret));
         sysClientDetailsRepository.save(exist);
     }

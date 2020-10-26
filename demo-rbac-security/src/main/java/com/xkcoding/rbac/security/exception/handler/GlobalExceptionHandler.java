@@ -42,14 +42,10 @@ public class GlobalExceptionHandler {
             return ApiResponse.ofStatus(Status.HTTP_BAD_METHOD);
         } else if (e instanceof MethodArgumentNotValidException) {
             log.error("【全局异常拦截】MethodArgumentNotValidException", e);
-            return ApiResponse.of(Status.BAD_REQUEST.getCode(), ((MethodArgumentNotValidException) e).getBindingResult()
-                    .getAllErrors()
-                    .get(0)
-                    .getDefaultMessage(), null);
+            return ApiResponse.of(Status.BAD_REQUEST.getCode(), ((MethodArgumentNotValidException) e).getBindingResult().getAllErrors().get(0).getDefaultMessage(), null);
         } else if (e instanceof ConstraintViolationException) {
             log.error("【全局异常拦截】ConstraintViolationException", e);
-            return ApiResponse.of(Status.BAD_REQUEST.getCode(), CollUtil.getFirst(((ConstraintViolationException) e).getConstraintViolations())
-                    .getMessage(), null);
+            return ApiResponse.of(Status.BAD_REQUEST.getCode(), CollUtil.getFirst(((ConstraintViolationException) e).getConstraintViolations()).getMessage(), null);
         } else if (e instanceof MethodArgumentTypeMismatchException) {
             log.error("【全局异常拦截】MethodArgumentTypeMismatchException: 参数名 {}, 异常信息 {}", ((MethodArgumentTypeMismatchException) e).getName(), ((MethodArgumentTypeMismatchException) e).getMessage());
             return ApiResponse.ofStatus(Status.PARAM_NOT_MATCH);

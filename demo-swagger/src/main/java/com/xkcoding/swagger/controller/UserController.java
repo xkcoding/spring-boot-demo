@@ -32,10 +32,7 @@ public class UserController {
     @ApiImplicitParams({@ApiImplicitParam(name = "username", value = "用户名", dataType = DataType.STRING, paramType = ParamType.QUERY, defaultValue = "xxx")})
     public ApiResponse<User> getByUserName(String username) {
         log.info("多个参数用  @ApiImplicitParams");
-        return ApiResponse.<User>builder().code(200)
-                .message("操作成功")
-                .data(new User(1, username, "JAVA"))
-                .build();
+        return ApiResponse.<User>builder().code(200).message("操作成功").data(new User(1, username, "JAVA")).build();
     }
 
     @GetMapping("/{id}")
@@ -43,10 +40,7 @@ public class UserController {
     @ApiImplicitParams({@ApiImplicitParam(name = "id", value = "用户编号", dataType = DataType.INT, paramType = ParamType.PATH)})
     public ApiResponse<User> get(@PathVariable Integer id) {
         log.info("单个参数用  @ApiImplicitParam");
-        return ApiResponse.<User>builder().code(200)
-                .message("操作成功")
-                .data(new User(id, "u1", "p1"))
-                .build();
+        return ApiResponse.<User>builder().code(200).message("操作成功").data(new User(id, "u1", "p1")).build();
     }
 
     @DeleteMapping("/{id}")

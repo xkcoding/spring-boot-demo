@@ -2,8 +2,8 @@ package com.xkcoding.elasticsearch.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.xkcoding.elasticsearch.model.Person;
-import com.xkcoding.elasticsearch.service.base.BaseElasticsearchService;
 import com.xkcoding.elasticsearch.service.PersonService;
+import com.xkcoding.elasticsearch.service.base.BaseElasticsearchService;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.search.SearchHit;

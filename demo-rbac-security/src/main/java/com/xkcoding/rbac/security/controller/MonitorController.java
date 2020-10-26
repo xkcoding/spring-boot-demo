@@ -53,7 +53,7 @@ public class MonitorController {
         if (CollUtil.isEmpty(names)) {
             throw new SecurityException(Status.PARAM_NOT_NULL);
         }
-        if (names.contains(SecurityUtil.getCurrentUsername())){
+        if (names.contains(SecurityUtil.getCurrentUsername())) {
             throw new SecurityException(Status.KICKOUT_SELF);
         }
         monitorService.kickout(names);

@@ -104,9 +104,7 @@ public class MessageEventHandler {
             sendToSingle(toUser.get(), data);
             request.sendAckData(Dict.create().set("flag", true).set("message", "发送成功"));
         } else {
-            request.sendAckData(Dict.create()
-                    .set("flag", false)
-                    .set("message", "发送失败，对方不想理你(" + data.getToUid() + "不在线)"));
+            request.sendAckData(Dict.create().set("flag", false).set("message", "发送失败，对方不想理你(" + data.getToUid() + "不在线)"));
         }
     }
 

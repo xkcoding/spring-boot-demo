@@ -21,11 +21,9 @@ import java.net.URLEncoder;
 @Component
 public class ClientLoginFailureHandler implements AuthenticationFailureHandler {
     @Override
-    public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response,
-                                        AuthenticationException exception) throws IOException {
+    public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException {
         log.debug("Login failed!");
         response.setStatus(HttpStatus.UNAUTHORIZED.value());
-        response.sendRedirect("/oauth/login?error="
-            + URLEncoder.encode(exception.getLocalizedMessage(), "UTF-8"));
+        response.sendRedirect("/oauth/login?error=" + URLEncoder.encode(exception.getLocalizedMessage(), "UTF-8"));
     }
 }

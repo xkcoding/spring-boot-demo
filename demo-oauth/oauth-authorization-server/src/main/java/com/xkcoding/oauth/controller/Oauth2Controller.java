@@ -36,12 +36,11 @@ public class Oauth2Controller {
      * 退出登录
      *
      * @param redirectUrl 退出完成后的回调地址
-     * @param principal 用户信息
+     * @param principal   用户信息
      * @return 结果
      */
     @GetMapping("/logout")
-    public ModelAndView logoutView(
-        @RequestParam("redirect_url") String redirectUrl, Principal principal) {
+    public ModelAndView logoutView(@RequestParam("redirect_url") String redirectUrl, Principal principal) {
         if (Objects.isNull(principal)) {
             throw new ResourceAccessException("请求错误，用户尚未登录");
         }

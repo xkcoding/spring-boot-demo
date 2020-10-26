@@ -62,9 +62,7 @@ public class OauthResourceTokenConfig {
      */
     private String getPubKey() {
         // 如果本地没有密钥，就从授权服务器中获取
-        return StringUtils.isEmpty(resourceServerProperties.getJwt().getKeyValue())
-            ? getKeyFromAuthorizationServer()
-            : resourceServerProperties.getJwt().getKeyValue();
+        return StringUtils.isEmpty(resourceServerProperties.getJwt().getKeyValue()) ? getKeyFromAuthorizationServer() : resourceServerProperties.getJwt().getKeyValue();
     }
 
     /**
@@ -78,8 +76,7 @@ public class OauthResourceTokenConfig {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add(HttpHeaders.AUTHORIZATION, encodeClient());
         HttpEntity<String> requestEntity = new HttpEntity<>(null, httpHeaders);
-        String pubKey = new RestTemplate()
-            .getForObject(resourceServerProperties.getJwt().getKeyUri(), String.class, requestEntity);
+        String pubKey = new RestTemplate().getForObject(resourceServerProperties.getJwt().getKeyUri(), String.class, requestEntity);
         try {
             JSONObject body = objectMapper.readValue(pubKey, JSONObject.class);
             log.info("Get Key From Authorization Server.");
@@ -96,7 +93,6 @@ public class OauthResourceTokenConfig {
      * @return basic
      */
     private String encodeClient() {
-        return "Basic " + Base64.getEncoder().encodeToString((resourceServerProperties.getClientId()
-            + ":" + resourceServerProperties.getClientSecret()).getBytes());
+        return "Basic " + Base64.getEncoder().encodeToString((resourceServerProperties.getClientId() + ":" + resourceServerProperties.getClientSecret()).getBytes());
     }
 }

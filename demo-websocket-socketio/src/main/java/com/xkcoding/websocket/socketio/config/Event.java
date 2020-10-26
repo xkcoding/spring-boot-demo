@@ -12,21 +12,21 @@ public interface Event {
     /**
      * 聊天事件
      */
-    String CHAT = "chat" ;
+    String CHAT = "chat";
 
     /**
      * 广播消息
      */
-    String BROADCAST = "broadcast" ;
+    String BROADCAST = "broadcast";
 
     /**
      * 群聊
      */
-    String GROUP = "group" ;
+    String GROUP = "group";
 
     /**
      * 加入群聊
      */
-    String JOIN = "join" ;
+    String JOIN = "join";
 
 }

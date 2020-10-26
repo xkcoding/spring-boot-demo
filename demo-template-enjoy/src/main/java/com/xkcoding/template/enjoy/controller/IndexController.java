@@ -21,18 +21,18 @@ import javax.servlet.http.HttpServletRequest;
 @Slf4j
 public class IndexController {
 
-	@GetMapping(value = {"", "/"})
-	public ModelAndView index(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView();
+    @GetMapping(value = {"", "/"})
+    public ModelAndView index(HttpServletRequest request) {
+        ModelAndView mv = new ModelAndView();
 
-		User user = (User) request.getSession().getAttribute("user");
-		if (ObjectUtil.isNull(user)) {
-			mv.setViewName("redirect:/user/login");
-		} else {
-			mv.setViewName("page/index");
-			mv.addObject(user);
-		}
+        User user = (User) request.getSession().getAttribute("user");
+        if (ObjectUtil.isNull(user)) {
+            mv.setViewName("redirect:/user/login");
+        } else {
+            mv.setViewName("page/index");
+            mv.addObject(user);
+        }
 
-		return mv;
-	}
+        return mv;
+    }
 }

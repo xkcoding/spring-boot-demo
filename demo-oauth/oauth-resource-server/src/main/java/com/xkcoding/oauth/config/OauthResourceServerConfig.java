@@ -28,9 +28,7 @@ public class OauthResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) {
-        resources
-            .tokenStore(tokenStore)
-            .resourceId(resourceServerProperties.getResourceId());
+        resources.tokenStore(tokenStore).resourceId(resourceServerProperties.getResourceId());
     }
 
     @Override

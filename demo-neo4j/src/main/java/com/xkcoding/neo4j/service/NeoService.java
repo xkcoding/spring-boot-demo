@@ -90,10 +90,8 @@ public class NeoService {
         classRepo.save(seven);
 
         // 初始化学生
-        List<Student> threeClass = Lists.newArrayList(Student.of("漩涡鸣人", Lists.newArrayList(tishu, shoulijian, luoxuanwan, xianshu), seven), Student
-                .of("宇智波佐助", Lists.newArrayList(huanshu, zhouyin, shoulijian), seven), Student.of("春野樱", Lists.newArrayList(tishu, yiliao, shoulijian), seven));
-        List<Student> sevenClass = Lists.newArrayList(Student.of("李洛克", Lists.newArrayList(tishu), three), Student.of("日向宁次", Lists
-                .newArrayList(tishu), three), Student.of("天天", Lists.newArrayList(tishu), three));
+        List<Student> threeClass = Lists.newArrayList(Student.of("漩涡鸣人", Lists.newArrayList(tishu, shoulijian, luoxuanwan, xianshu), seven), Student.of("宇智波佐助", Lists.newArrayList(huanshu, zhouyin, shoulijian), seven), Student.of("春野樱", Lists.newArrayList(tishu, yiliao, shoulijian), seven));
+        List<Student> sevenClass = Lists.newArrayList(Student.of("李洛克", Lists.newArrayList(tishu), three), Student.of("日向宁次", Lists.newArrayList(tishu), three), Student.of("天天", Lists.newArrayList(tishu), three));
 
         studentRepo.saveAll(threeClass);
         studentRepo.saveAll(sevenClass);
@@ -155,8 +153,7 @@ public class NeoService {
         List<ClassmateInfoGroupByLesson> groupByLesson = studentRepo.findByClassmateGroupByLesson();
         Map<String, List<Student>> result = Maps.newHashMap();
 
-        groupByLesson.forEach(classmateInfoGroupByLesson -> result.put(classmateInfoGroupByLesson.getLessonName(), classmateInfoGroupByLesson
-                .getStudents()));
+        groupByLesson.forEach(classmateInfoGroupByLesson -> result.put(classmateInfoGroupByLesson.getLessonName(), classmateInfoGroupByLesson.getStudents()));
 
         return result;
     }
@@ -171,11 +168,9 @@ public class NeoService {
         List<TeacherStudent> teacherStudentByLesson = studentRepo.findTeacherStudentByLesson();
         Map<String, Set<Student>> result = Maps.newHashMap();
 
-        teacherStudentByClass.forEach(teacherStudent -> result.put(teacherStudent.getTeacherName(), Sets.newHashSet(teacherStudent
-                .getStudents())));
+        teacherStudentByClass.forEach(teacherStudent -> result.put(teacherStudent.getTeacherName(), Sets.newHashSet(teacherStudent.getStudents())));
 
-        teacherStudentByLesson.forEach(teacherStudent -> result.put(teacherStudent.getTeacherName(), Sets.newHashSet(teacherStudent
-                .getStudents())));
+        teacherStudentByLesson.forEach(teacherStudent -> result.put(teacherStudent.getTeacherName(), Sets.newHashSet(teacherStudent.getStudents())));
 
         return result;
     }

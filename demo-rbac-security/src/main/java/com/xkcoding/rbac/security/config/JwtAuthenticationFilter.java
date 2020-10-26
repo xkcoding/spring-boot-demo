@@ -65,8 +65,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                 authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
-                SecurityContextHolder.getContext()
-                        .setAuthentication(authentication);
+                SecurityContextHolder.getContext().setAuthentication(authentication);
                 filterChain.doFilter(request, response);
             } catch (SecurityException e) {
                 ResponseUtil.renderJson(response, e);
@@ -95,43 +94,34 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         switch (httpMethod) {
             case GET:
-                ignores.addAll(customConfig.getIgnores()
-                        .getGet());
+                ignores.addAll(customConfig.getIgnores().getGet());
                 break;
             case PUT:
-                ignores.addAll(customConfig.getIgnores()
-                        .getPut());
+                ignores.addAll(customConfig.getIgnores().getPut());
                 break;
             case HEAD:
-                ignores.addAll(customConfig.getIgnores()
-                        .getHead());
+                ignores.addAll(customConfig.getIgnores().getHead());
                 break;
             case POST:
-                ignores.addAll(customConfig.getIgnores()
-                        .getPost());
+                ignores.addAll(customConfig.getIgnores().getPost());
                 break;
             case PATCH:
-                ignores.addAll(customConfig.getIgnores()
-                        .getPatch());
+                ignores.addAll(customConfig.getIgnores().getPatch());
                 break;
             case TRACE:
-                ignores.addAll(customConfig.getIgnores()
-                        .getTrace());
+                ignores.addAll(customConfig.getIgnores().getTrace());
                 break;
             case DELETE:
-                ignores.addAll(customConfig.getIgnores()
-                        .getDelete());
+                ignores.addAll(customConfig.getIgnores().getDelete());
                 break;
             case OPTIONS:
-                ignores.addAll(customConfig.getIgnores()
-                        .getOptions());
+                ignores.addAll(customConfig.getIgnores().getOptions());
                 break;
             default:
                 break;
         }
 
-        ignores.addAll(customConfig.getIgnores()
-                .getPattern());
+        ignores.addAll(customConfig.getIgnores().getPattern());
 
         if (CollUtil.isNotEmpty(ignores)) {
             for (String ignore : ignores) {

@@ -50,8 +50,7 @@ public class Cpu {
     }
 
     public double getTotal() {
-        return NumberUtil.round(NumberUtil.mul(total, 100), 2)
-                .doubleValue();
+        return NumberUtil.round(NumberUtil.mul(total, 100), 2).doubleValue();
     }
 
     public void setTotal(double total) {
@@ -59,8 +58,7 @@ public class Cpu {
     }
 
     public double getSys() {
-        return NumberUtil.round(NumberUtil.mul(sys / total, 100), 2)
-                .doubleValue();
+        return NumberUtil.round(NumberUtil.mul(sys / total, 100), 2).doubleValue();
     }
 
     public void setSys(double sys) {
@@ -68,8 +66,7 @@ public class Cpu {
     }
 
     public double getUsed() {
-        return NumberUtil.round(NumberUtil.mul(used / total, 100), 2)
-                .doubleValue();
+        return NumberUtil.round(NumberUtil.mul(used / total, 100), 2).doubleValue();
     }
 
     public void setUsed(double used) {
@@ -77,8 +74,7 @@ public class Cpu {
     }
 
     public double getWait() {
-        return NumberUtil.round(NumberUtil.mul(wait / total, 100), 2)
-                .doubleValue();
+        return NumberUtil.round(NumberUtil.mul(wait / total, 100), 2).doubleValue();
     }
 
     public void setWait(double wait) {
@@ -86,8 +82,7 @@ public class Cpu {
     }
 
     public double getFree() {
-        return NumberUtil.round(NumberUtil.mul(free / total, 100), 2)
-                .doubleValue();
+        return NumberUtil.round(NumberUtil.mul(free / total, 100), 2).doubleValue();
     }
 
     public void setFree(double free) {

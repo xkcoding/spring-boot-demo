@@ -28,7 +28,7 @@ public class SpringBootDemoMultiDatasourceJpaApplicationTests {
 
     @Test
     public void testInsert() {
-        PrimaryMultiTable primary = new PrimaryMultiTable(snowflake.nextId(),"测试名称-1");
+        PrimaryMultiTable primary = new PrimaryMultiTable(snowflake.nextId(), "测试名称-1");
         primaryRepo.save(primary);
 
         SecondMultiTable second = new SecondMultiTable();
@@ -39,7 +39,7 @@ public class SpringBootDemoMultiDatasourceJpaApplicationTests {
     @Test
     public void testUpdate() {
         primaryRepo.findAll().forEach(primary -> {
-            primary.setName("修改后的"+primary.getName());
+            primary.setName("修改后的" + primary.getName());
             primaryRepo.save(primary);
 
             SecondMultiTable second = new SecondMultiTable();

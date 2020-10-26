@@ -92,8 +92,7 @@ public class PersonRepositoryTest extends SpringBootDemoElasticsearchApplication
      */
     @Test
     public void select() {
-        repo.findAll(Sort.by(Sort.Direction.DESC, "birthday"))
-                .forEach(person -> log.info("{} 生日: {}", person.getName(), DateUtil.formatDateTime(person.getBirthday())));
+        repo.findAll(Sort.by(Sort.Direction.DESC, "birthday")).forEach(person -> log.info("{} 生日: {}", person.getName(), DateUtil.formatDateTime(person.getBirthday())));
     }
 
     /**
@@ -167,8 +166,8 @@ public class PersonRepositoryTest extends SpringBootDemoElasticsearchApplication
 
         // 1. 添加一个新的聚合，聚合类型为terms，聚合名称为country，聚合字段为age
         queryBuilder.addAggregation(AggregationBuilders.terms("country").field("country")
-                // 2. 在国家聚合桶内进行嵌套聚合，求平均年龄
-                .subAggregation(AggregationBuilders.avg("avg").field("age")));
+            // 2. 在国家聚合桶内进行嵌套聚合，求平均年龄
+            .subAggregation(AggregationBuilders.avg("avg").field("age")));
 
         log.info("【queryBuilder】= {}", JSONUtil.toJsonStr(queryBuilder.build()));
 

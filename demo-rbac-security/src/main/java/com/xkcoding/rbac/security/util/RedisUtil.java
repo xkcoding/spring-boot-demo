@@ -38,9 +38,7 @@ public class RedisUtil {
      * @return 分页获取指定格式key
      */
     public PageResult<String> findKeysForPage(String patternKey, int currentPage, int pageSize) {
-        ScanOptions options = ScanOptions.scanOptions()
-                .match(patternKey)
-                .build();
+        ScanOptions options = ScanOptions.scanOptions().match(patternKey).build();
         RedisConnectionFactory factory = stringRedisTemplate.getConnectionFactory();
         RedisConnection rc = factory.getConnection();
         Cursor<byte[]> cursor = rc.scan(options);
