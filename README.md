@@ -56,6 +56,10 @@
 
 ## 其他
 
+###  团队纳新
+
+组内招人啦，HC 巨多，Base 杭州，感兴趣的小伙伴，查看 [岗位详情](./jd.md)
+
 ### 开源推荐
 
 - `JustAuth`：史上最全的整合第三方登录的开源库，https://github.com/justauth/JustAuth
