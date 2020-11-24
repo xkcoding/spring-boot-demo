@@ -246,7 +246,25 @@ oss:
 
 Ureport2 最新版本是 `2.2.9`，挺久没更新了，存在一个坑：在报表设计页打开一个已存在的报表设计文件时，可能会出现无法预览的情况，参考 ISSUE:https://github.com/youseries/ureport/issues/393
 
-注意：该可能性出现在报表设计文件中使用了条件属性的情况下，修复方法就是打开文件之后，重新配置条件属性，此处是坑，小伙伴使用时注意下就好，最好的方法就是避免使用条件属性。
+![无法预览](http://static.xkcoding.com/spring-boot-demo/ureport2/084852.png)
+
+解决办法：
+
+![image-20201124164953947](http://static.xkcoding.com/spring-boot-demo/ureport2/084954.png)
+
+条件表达式变成 `undefined`，这里需要注意的是，我们的 xml 文件是正常的，只不过是 ureport 解析的时候出错了。
+
+![条件表达式](http://static.xkcoding.com/spring-boot-demo/ureport2/085114.png)
+
+点击编辑，重新选择表达式即可解决
+
+![image-20201124165202295](http://static.xkcoding.com/spring-boot-demo/ureport2/085202.png)
+
+再次尝试预览
+
+![斑马纹预览数据](http://static.xkcoding.com/spring-boot-demo/ureport2/085228.png)
+
+> 注意：该可能性出现在报表设计文件中使用了条件属性的情况下，修复方法就是打开文件之后，重新配置条件属性，此处是坑，小伙伴使用时注意下就好，最好的方法就是避免使用条件属性。
 
 ## 3. 感谢
 
