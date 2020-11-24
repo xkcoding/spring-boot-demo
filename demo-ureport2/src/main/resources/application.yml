@@ -12,5 +12,10 @@ ureport:
   debug: false
   disableFileProvider: false
   disableHttpSessionReportCache: true
-  # 单机模式，路径需要提前创建
-  fileStoreDir: '/Users/yangkai.shen/Desktop/ureport2'
+  # 单机模式，本地路径需要提前创建
+  fileStoreDir: '/Users/yk.shen/Desktop/ureport2'
+#oss:
+#  access-key: lengleng
+#  secret-key: lengleng
+#  bucket-name: lengleng
+#  endpoint: http://minio.pig4cloud.com
