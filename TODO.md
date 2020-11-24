@@ -1,6 +1,6 @@
 # spring-boot-demo 项目待办列表
 
-## 模块计划(已完成：54 / 66)
+## 模块计划(已完成：55 / 66)
 
 - [x] ~~demo-helloworld（Helloworld 示例）~~
 - [x] ~~demo-properties（读取配置文件信息）~~
@@ -40,7 +40,7 @@
 - [x] ~~demo-mq-kafka（集成消息中间件 - Kafka）~~
 - [x] ~~demo-websocket（集成 websocket 服务）~~
 - [x] ~~demo-websocket-socketio（集成 socketio 实现 websocket 服务）~~
-- [ ] demo-ureport2 （集成 ureport2 实现自定义的复杂中国式报表引擎）
+- [x] ~~demo-ureport2 （集成 ureport2 实现自定义的复杂中国式报表引擎）~~
 - [ ] demo-uflo（集成  uflo 实现流程控制引擎）
 - [ ] demo-urule（集成  urule 实现规则引擎）
 - [ ] demo-activiti（集成 Activiti 实现流程控制引擎）

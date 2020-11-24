@@ -1,6 +1,6 @@
 # spring-boot-demo Project TODO List
 
-## Module plan (completed: 54 / 66)
+## Module plan (completed: 55 / 66)
 
 - [x] ~~demo-helloworld(helloworld example)~~
 - [x] ~~demo-properties (read configuration file information)~~
@@ -40,7 +40,7 @@
 - [x] ~~demo-mq-kafka (integrated message middleware - Kafka)~~
 - [x] ~~demo-websocket (integrated websocket service)~~
 - [x] ~~demo-websocket-socketio (integrated socketio implements websocket service)~~
-- [ ] demo-ureport2 (integrated ureport2 implements a custom complex Chinese-style reporting engine)
+- [x] ~~demo-ureport2 (integrated ureport2 implements a custom complex Chinese-style reporting engine)~~
 - [ ] demo-uflo (integrated uflo implementation process control engine)
 - [ ] demo-urule (integrated urule implementation rules engine)
 - [ ] demo-activiti (integrated of Activiti to implement process control engine)
