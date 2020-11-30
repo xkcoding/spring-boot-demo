@@ -1,0 +1,10 @@
+v3:
+  appId: 应用编号
+  keyPath: apiclient_key.pem 商户 key 绝对路径
+  certPath: capiclient_cert.pem 商户证书绝对路径
+  certP12Path:  apiclient_cert.p12 备用参数 v3 暂未使用到
+  platformCertPath: 微信平台证书绝对路径，证书需要通过接口获取，请参考 v3 文档
+  mchId: 微信商户号
+  apiKey3: Api-v3 密钥，商户后台配置
+  apiKey: Api 密钥，商户后台配置 备用参数 v3 暂未使用到
+  domain: 外网访问项目的域名，支付通知、回调中会使用
