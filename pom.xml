@@ -70,6 +70,8 @@
     <module>demo-https</module>
     <module>demo-flyway</module>
     <module>demo-pay</module>
+    <module>self-email</module>
+      <module>demo-nacos</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -87,6 +89,7 @@
     <hutool.version>5.4.5</hutool.version>
     <guava.version>29.0-jre</guava.version>
     <user.agent.version>1.20</user.agent.version>
+    <nacos.version>0.2.4</nacos.version>
   </properties>
 
   <repositories>
