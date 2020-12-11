@@ -70,8 +70,7 @@
     <module>demo-https</module>
     <module>demo-flyway</module>
     <module>demo-pay</module>
-    <module>self-email</module>
-      <module>demo-nacos</module>
+    <module>demo-nacos</module>
   </modules>
   <packaging>pom</packaging>
 
