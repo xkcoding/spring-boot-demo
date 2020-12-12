@@ -11,6 +11,10 @@
 
   <artifactId>demo-nacos</artifactId>
 
+  <properties>
+    <nacos.version>0.2.7</nacos.version>
+  </properties>
+
   <dependencies>
 
     <dependency>
