@@ -1,9 +1,11 @@
 package com.xkcoding.codegen.service.impl;
 
 import cn.hutool.core.io.IoUtil;
+import cn.hutool.core.util.PageUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.db.Db;
 import cn.hutool.db.Entity;
+import cn.hutool.db.GlobalDbConfig;
 import cn.hutool.db.Page;
 import com.xkcoding.codegen.common.PageResult;
 import com.xkcoding.codegen.entity.GenConfig;
@@ -39,6 +41,13 @@ public class CodeGenServiceImpl implements CodeGenService {
     private final String COUNT_SQL_TEMPLATE = "select count(1) from (%s)tmp";
 
     private final String PAGE_SQL_TEMPLATE = " limit ?,?";
+
+    static {
+        //设置大小写敏感
+        GlobalDbConfig.setCaseInsensitive(false);
+        //页码1表示第一页，开始位置为0
+        PageUtil.setOneAsFirstPageNo();
+    }
 
     /**
      * 分页查询表信息
