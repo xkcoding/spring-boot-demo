@@ -130,7 +130,7 @@ server:
     context-path: /demo
 
 zk:
-  url: 127.0.0.1:2181
+  url: 193.112.94.161:2181
   timeout: 1000
   retry: 3
 ```

@@ -69,6 +69,7 @@
     <module>spring-boot-demo-elasticsearch-rest-high-level-client</module>
     <module>spring-boot-demo-https</module>
     <module>spring-boot-demo-flyway</module>
+    <module>spring-boot-demo-swagger-Knife4j</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -81,7 +82,7 @@
     <java.version>1.8</java.version>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
+    <spring.boot.version>2.3.5.RELEASE</spring.boot.version>
     <mysql.version>8.0.12</mysql.version>
     <hutool.version>5.0.0</hutool.version>
     <guava.version>28.1-jre</guava.version>
@@ -111,6 +112,7 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+
       <dependency>
         <groupId>mysql</groupId>
         <artifactId>mysql-connector-java</artifactId>

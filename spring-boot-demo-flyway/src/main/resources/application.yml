@@ -12,7 +12,7 @@ spring:
     # 基础版本 0
     baseline-version: 0
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/flyway-test?useSSL=false
+    url: jdbc:mysql://193.112.94.161:3306/flyway-test?useSSL=false
     username: root
-    password: root
+    password: JiangKai@Password123
     type: com.zaxxer.hikari.HikariDataSource

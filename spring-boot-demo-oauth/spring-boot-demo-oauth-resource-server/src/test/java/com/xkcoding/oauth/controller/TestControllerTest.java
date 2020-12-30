@@ -23,7 +23,7 @@ import static org.springframework.http.HttpMethod.GET;
  */
 public class TestControllerTest extends AuthorizationTest {
 
-    private static final String URL = "http://127.0.0.1:8081";
+    private static final String URL = "http://193.112.94.161:8081";
 
     @Test
     @DisplayName("ROLE_ADMIN 角色测试")

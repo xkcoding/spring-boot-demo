@@ -28,7 +28,7 @@ import java.util.Map;
 @RequestMapping("/xxl-job")
 @RequiredArgsConstructor(onConstructor_ = @Autowired)
 public class ManualOperateController {
-    private final static String baseUri = "http://127.0.0.1:18080/xxl-job-admin";
+    private final static String baseUri = "http://193.112.94.161:18080/xxl-job-admin";
     private final static String JOB_INFO_URI = "/jobinfo";
     private final static String JOB_GROUP_URI = "/jobgroup";
 
