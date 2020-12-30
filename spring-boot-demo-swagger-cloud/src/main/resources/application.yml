@@ -1,0 +1,22 @@
+server:
+  port: 9988
+  servlet:
+    context-path: /
+knife4j:
+  enableAggregation: true
+  cloud:
+    enable: true
+    routes:
+      - name: demo
+        uri: localhost:8080/demo
+        location: /v2/api-docs?group=2.test
+        swaggerVersion: 2.0
+        servicePath: /
+        routeAuth:
+          enable: true
+          username: test
+          password: 12313
+    routeAuth:
+      enable: true
+      username: test
+      password: 12313

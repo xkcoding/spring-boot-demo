@@ -43,7 +43,7 @@ services:
       # 设置密码，此为密码进过SHA256加密后的字符串
       # 加密方式，执行 echo -n "Enter Password: " && head -1 </dev/stdin | tr -d '\n' | sha256sum | cut -d" " -f1
       - GRAYLOG_ROOT_PASSWORD_SHA2=8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
-      - GRAYLOG_HTTP_EXTERNAL_URI=http://127.0.0.1:9000/
+      - GRAYLOG_HTTP_EXTERNAL_URI=http://193.112.94.161:9000/
       # 设置时区
       - GRAYLOG_ROOT_TIMEZONE=Asia/Shanghai
     links:

@@ -80,7 +80,7 @@ spring:
   dubbo:
     application:
       name: spring-boot-demo-dubbo-consumer
-      registry: zookeeper://127.0.0.1:2181
+      registry: zookeeper://193.112.94.161:2181
 ```
 
 ## SpringBootDemoDubboConsumerApplication.java

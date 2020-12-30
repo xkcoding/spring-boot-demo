@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <meta charset="utf-8"/>
+    <style type="text/css">
+        .lesson body {
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            font-family: Verdana, Arial, Helvetica, sans-serif, serif;
+            font-size: 14px;
+            line-height: 24px;
+        }
+
+        .lesson div, .lesson p, .lesson span, .lesson img {
+            margin: 0;
+            padding: 0;
+        }
+
+        .lesson img {
+            border: none;
+        }
+
+        .lesson .container {
+            margin: 0 auto;
+        }
+
+        .lesson .title {
+            margin: 0 auto;
+            background: #efefef repeat-x;
+            height: 30px;
+            text-align: center;
+            font-weight: bold;
+            padding-top: 12px;
+            font-size: 16px;
+            color: #2d2d2d;
+        }
+
+        .lesson .content {
+            margin: 4px;
+        }
+
+        .lesson .headline {
+            padding: 6px;
+            color: #2d2d2d;
+        }
+
+        .lesson .top, .lesson .bottom {
+            display: block;
+            font-size: 1px;
+        }
+
+        .lesson .xb1, .lesson .xb2, .lesson .xb3, .lesson .xb4 {
+            display: block;
+            overflow: hidden;
+        }
+
+        .lesson .xb1, .lesson .xb2, .lesson .xb3 {
+            height: 1px;
+        }
+
+        .lesson .xb2, .lesson .xb3, .lesson .xb4 {
+            border-left: 1px solid #BCBCBC;
+            border-right: 1px solid #BCBCBC;
+        }
+
+        .lesson .xb1 {
+            margin: 0 5px;
+            background: #BCBCBC;
+        }
+
+        .lesson .xb2 {
+            margin: 0 3px;
+            border-width: 0 2px;
+        }
+
+        .lesson .xb3 {
+            margin: 0 2px;
+        }
+
+        .lesson .xb4 {
+            height: 2px;
+            margin: 0 1px;
+        }
+
+        .lesson .lesson-content {
+            display: block;
+        }
+
+        .lesson .line {
+            margin-top: 6px;
+            border-top: 1px dashed #B9B9B9;
+            padding: 4px;
+        }
+
+        .lesson .content {
+            padding: 6px;
+            color: #666666;
+        }
+
+        .lesson .foot {
+            padding: 6px;
+            color: #777;
+        }
+
+        .lesson .font-darkblue {
+            color: #006699;
+            font-weight: bold;
+        }
+
+        .lesson .font-lightblue {
+            color: #008BD1;
+            font-weight: bold;
+        }
+
+        .lesson .font-gray {
+            color: #888;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+<div class="lesson">
+    <div class="container">
+        <div class="title">云课程考试平台</div>
+        <div class="content">
+            <p class="headline"><b>亲爱的用户，你好！</b></p>
+            <b class="top"><b class="xb1"></b><b class="xb2"></b><b class="xb3"></b><b class="xb4"></b></b>
+            <div class="lesson-content">
+                <div class="content">
+                    <p><!--/*@thymesVar id="type" type="java.lang.String"*/-->
+                        <b th:text="'欢迎您' + ${type}">欢迎您注册</b><span id="userName" class="font-darkblue"> 云课程考试平台</span>
+                    </p>
+                    <p><b><!--/*@thymesVar id="type" type="java.lang.String"*/-->
+                        <b th:text="${type}">你的邮件</b>的验证码：</b><span class="font-lightblue"><span style="border-bottom: 1px dashed rgb(204, 204, 204); z-index: 1; position: static;"> <!--/*@thymesVar id="code" type="java.lang.String"*/-->
+                                                                                                 <b th:text="${code}">验证码</b></span></span><br><span
+                            class="font-gray">(请输入该验证码完成 <span></span> 验证，验证码
+                        <!--/*@thymesVar id="time" type="java.lang.Integer"*/-->
+                            <b th:text="${time}">10</b> 分钟内有效！)</span></p>
+                    <div class="line">如果您未申请云课程学习平台 <!--/*@thymesVar id="type" type="java.lang.String"*/-->
+                        <span th:text="${type}">$(type)</span> 服务，请忽略该邮件。
+                    </div>
+                </div>
+            </div>
+            <b class="bottom"><b class="xb4"></b><b class="xb3"></b><b class="xb2"></b><b class="xb1"></b></b>
+            <p class="foot">如果仍有问题，请联系我们的管理员: <span
+                    style="border-bottom: 1px dashed rgb(204, 204, 204); z-index: 1; position: static;">000-00000000
+</span></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

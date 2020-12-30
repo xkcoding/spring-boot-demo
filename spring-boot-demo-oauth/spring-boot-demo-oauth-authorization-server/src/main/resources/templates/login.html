@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/common::_header">
+  <title>欢迎登录</title>
+</head>
+<body>
+<div id="app">
+  <v-app>
+    <v-content>
+      <v-row class="fill-height align-sm-center" justify="center">
+        <v-col class="pa-0">
+          <v-card id="form-card" class="px-6 pb-7 px-sm-10 pb-sm-9 mx-auto" outlined>
+            <v-form ref="login" id="login" th:action="@{/authorization/form}" method="post" @submit.native.prevent>
+              <v-spacer class="pt-6 pt-sm-12"></v-spacer>
+              <v-card-title class="justify-center headline">
+                欢迎登录
+              </v-card-title>
+              <div class="login-user pb-2 text-center" style="height:44px">
+                <v-btn outlined rounded>{{nameText}}</v-btn>
+              </div>
+              <v-spacer></v-spacer>
+              <v-card-subtitle class="text-center subtitle-1 pt-0">
+                <p th:if="${param.error == null}">{{infoText}}</p>
+                <p th:unless="${param.error == null}" th:text="${param.error}" style="color: red;"></p>
+              </v-card-subtitle>
+              <v-spacer></v-spacer>
+              <v-card-text>
+                <v-window v-model="window" style="min-height:180px">
+                  <v-window-item :key="0">
+                    <v-text-field label="用户名/手机号/邮箱" name="username" type="text" clearable :rules="usernameRules"
+                                  outlined v-model='user.username' @keyup.enter="next" ref="username" autofocus :counter="55">
+                    </v-text-field>
+                    <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
+                  </v-window-item>
+                  <v-window-item :key="1">
+                    <v-text-field label="账户密码" name="password" type="password" required clearable
+                                  outlined v-model='user.password' @keyup.enter="next" ref="password" autofocus>
+                    </v-text-field>
+                  </v-window-item>
+                </v-window>
+              </v-card-text>
+              <v-card-actions>
+                <v-btn outlined color="info" @click="previous">{{previousText}}</v-btn>
+                <v-spacer></v-spacer>
+                <v-btn color="info" type="button" @click="next" v-show="window === 0">下一步</v-btn>
+                <v-btn color="info" type="submit" @click="next" v-show="window === 1">登录</v-btn>
+              </v-card-actions>
+          </v-form>
+        </v-card>
+        </v-col>
+      </v-row>
+    </v-content>
+  </v-app>
+</div>
+
+<div th:include="common/common::_footer"></div>
+<script >
+  new Vue({
+    el: '#app',
+    vuetify: new Vuetify(),
+    data: function () {
+      return {
+        window: 0,
+        previousText: '忘记密码',
+        infoText: '使用您的帐号进行登录',
+        nameText: 'DEMO',
+        user: {
+          username: null,
+          password: null
+        },
+        usernameRules:[
+          v => !!v || '请输入用户名/手机号/邮箱',
+          v => !!v && v.length <= 55 || '长度不合法'
+        ],
+        passwordRules:[ v => !!v || '请输入密码' ]
+      }
+    },
+    watch: {
+      window: function (val) {
+        if (val === 0) {
+          this.infoText = '使用您的帐号进行登录'
+          this.previousText = '忘记密码'
+          this.nameText = 'DEMO'
+        } else if (val === 1) {
+          this.infoText = '要继续操作，请首先验证登录者是您本人'
+          this.previousText = '上一步'
+          this.nameText = this.user.username
+        }
+      }
+    },
+    created () {
+      this.window = 0
+    },
+    methods: {
+      previous() {
+        if (this.window === 0) {
+
+        } else {
+          this.window -= 1
+        }
+      },
+      next () {
+        if (this.window === 0) this.$refs.username.validate(true) && (this.window += 1)
+        else this.$refs.password.validate(true) && document.getElementById("login").submit()
+      }
+    }
+  })
+</script>
+</body>
+</html>

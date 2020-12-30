@@ -26,8 +26,8 @@ import java.io.IOException;
  * @modified: yangkai.shen
  */
 @Slf4j
-@Component
-@RabbitListener(queues = RabbitConsts.DELAY_QUEUE)
+/*@Component
+@RabbitListener(queues = RabbitConsts.DELAY_QUEUE)*/
 public class DelayQueueHandler {
 
     @RabbitHandler

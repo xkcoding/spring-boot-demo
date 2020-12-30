@@ -1,0 +1,21 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /demo
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:oauth2?options=DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+logging:
+  level:
+    org.springframework.security: debug

@@ -1,0 +1,30 @@
+server:
+  port: 8081
+security:
+  oauth2:
+    resource:
+      token-info-uri: http://localhost:8080/oauth/check_token
+      jwt:
+        key-alias: oauth2
+        # 如果没有此项会去请求授权服务器获取
+        key-value: |
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkF9SyMHeGAsLMwbPsKj/
+          xpEtS0iCe8vTSBnIGBDZKmB3ma20Ry0Uzn3m+f40RwCXlxnUcvTw7ipoz0tMQERQ
+          b3X4DkYCJXPK6pAD+R9/J5odEwrO2eysByWfcbMjsZw2u5pH5hleMS0YqkrGQOxJ
+          pzlEcKxMePU5KYTbKUJkhOYPY+gQr61g6lF97WggSPtuQn1srT+Ptvfw6yRC4bdI
+          0zV5emfXjmoLUwaQTRoGYhOFrm97vpoKiltSNIDFW01J1Lr+l77ddDFC6cdiAC0H
+          5/eENWBBBTFWya8RlBTzHuikfFS1gP49PZ6MYJIVRs8p9YnnKTy7TVcGKY3XZMCA
+          mwIDAQAB
+          -----END PUBLIC KEY-----
+        key-uri: http://localhost:8080/oauth/token_key
+      id: oauth2
+    client:
+      client-id: oauth2
+      client-secret: oauth2
+      access-token-uri: http://localhost:8080/oauth/token
+      scope: READ
+
+logging:
+  level:
+    org.springframework.security: debug
