@@ -8,21 +8,21 @@
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>spring-boot-demo-swagger-Knife4j</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
-  <name>spring-boot-demo-swagger-Knife4j</name>
+  <artifactId>spring-boot-demo-swagger-cloud</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>spring-boot-demo-swagger-cloud</name>
   <description>Demo project for Spring Boot</description>
 
-
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
-    <knife4j.version>2.0.8</knife4j.version>
+    <knife4j.aggregation.version>2.0.8</knife4j.aggregation.version>
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+    </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -37,13 +37,9 @@
 
     <dependency>
       <groupId>com.github.xiaoymin</groupId>
-      <artifactId>knife4j-spring-boot-starter</artifactId>
-      <version>${knife4j.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-autoconfigure</artifactId>
+      <artifactId>knife4j-aggregation-spring-boot-starter</artifactId>
+      <!--在引用时请在maven中央仓库搜索aggregation最新版本号-->
+      <version>${knife4j.aggregation.version}</version>
     </dependency>
 
   </dependencies>
