@@ -62,9 +62,9 @@ spring:
     # 基础版本 0
     baseline-version: 0
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/flyway-test?useSSL=false
+    url: jdbc:mysql://193.112.94.161:3306/flyway-test?useSSL=false
     username: root
-    password: root
+    password: JiangKai@Password123
     type: com.zaxxer.hikari.HikariDataSource
 ```
 
@@ -100,7 +100,7 @@ CREATE TABLE `t_user` (
 2020-03-05 10:48:37.799  INFO 3351 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 5.2.1 by Boxfuse
 2020-03-05 10:48:37.802  INFO 3351 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
 2020-03-05 10:48:37.971  INFO 3351 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-03-05 10:48:37.974  INFO 3351 --- [           main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:mysql://127.0.0.1:3306/flyway-test (MySQL 5.7)
+2020-03-05 10:48:37.974  INFO 3351 --- [           main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:mysql://193.112.94.161:3306/flyway-test (MySQL 5.7)
 2020-03-05 10:48:38.039  INFO 3351 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.015s)
 2020-03-05 10:48:38.083  INFO 3351 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table: `flyway-test`.`flyway_schema_history`
 2020-03-05 10:48:38.143  INFO 3351 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema `flyway-test`: << Empty Schema >>
@@ -131,7 +131,7 @@ ALTER TABLE t_user COMMENT = '用户 v1.1';
 2020-03-05 10:59:02.279  INFO 3536 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 5.2.1 by Boxfuse
 2020-03-05 10:59:02.282  INFO 3536 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
 2020-03-05 10:59:02.442  INFO 3536 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-03-05 10:59:02.445  INFO 3536 --- [           main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:mysql://127.0.0.1:3306/flyway-test (MySQL 5.7)
+2020-03-05 10:59:02.445  INFO 3536 --- [           main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:mysql://193.112.94.161:3306/flyway-test (MySQL 5.7)
 2020-03-05 10:59:02.530  INFO 3536 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.018s)
 2020-03-05 10:59:02.538  INFO 3536 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema `flyway-test`: 1.0
 2020-03-05 10:59:02.538  INFO 3536 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `flyway-test` to version 1.1 - ALTER

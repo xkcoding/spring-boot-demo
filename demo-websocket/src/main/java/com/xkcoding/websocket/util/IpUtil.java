@@ -35,12 +35,12 @@ public class IpUtil {
             ip = request.getRemoteAddr();
         }
 
-        return "0:0:0:0:0:0:0:1".equals(ip) ? "127.0.0.1" : ip;
+        return "0:0:0:0:0:0:0:1".equals(ip) ? "193.112.94.161" : ip;
     }
 
     public static boolean internalIp(String ip) {
         byte[] addr = textToNumericFormatV4(ip);
-        return internalIp(addr) || "127.0.0.1".equals(ip);
+        return internalIp(addr) || "193.112.94.161".equals(ip);
     }
 
     private static boolean internalIp(byte[] addr) {
@@ -151,7 +151,7 @@ public class IpUtil {
             return InetAddress.getLocalHost().getHostAddress();
         } catch (UnknownHostException e) {
         }
-        return "127.0.0.1";
+        return "193.112.94.161";
     }
 
     public static String getHostName() {

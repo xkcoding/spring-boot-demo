@@ -87,7 +87,7 @@ image::image/Code.png[code]
 
 [shell]
 ----
-curl --location --request POST 'http://127.0.0.1:8080/oauth/token' \
+curl --location --request POST 'http://193.112.94.161:8080/oauth/token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --header 'Authorization: Basic b2F1dGgyOm9hdXRoMg==' \
 --data-urlencode 'grant_type=authorization_code' \
@@ -119,7 +119,7 @@ curl --location --request POST 'http://127.0.0.1:8080/oauth/token' \
 
 [source]
 ----
-curl --location --request POST 'http://127.0.0.1:8080/oauth/token' \
+curl --location --request POST 'http://193.112.94.161:8080/oauth/token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --header 'Authorization: Basic b2F1dGgyOm9hdXRoMg==' \
 --data-urlencode 'password=123456' \
@@ -134,7 +134,7 @@ curl --location --request POST 'http://127.0.0.1:8080/oauth/token' \
 
 [source]
 ----
-curl --location --request POST 'http://127.0.0.1:8080/oauth/token' \
+curl --location --request POST 'http://193.112.94.161:8080/oauth/token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --header 'Authorization: Basic b2F1dGgyOm9hdXRoMg==' \
 --data-urlencode 'grant_type=refresh_token' \
@@ -147,7 +147,7 @@ curl --location --request POST 'http://127.0.0.1:8080/oauth/token' \
 
 [source]
 ----
-curl --location --request POST 'http://127.0.0.1:8080/oauth/check_token' \
+curl --location --request POST 'http://193.112.94.161:8080/oauth/check_token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --header 'Authorization: Basic b2F1dGgyOm9hdXRoMg==' \
 --data-urlencode 'token='
@@ -192,7 +192,7 @@ image::image/Logout.png[logout]
 
 [source]
 ----
-curl --location --request GET 'http://127.0.0.1:8080/oauth/token_key' \
+curl --location --request GET 'http://193.112.94.161:8080/oauth/token_key' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --header 'Authorization: Basic b2F1dGgyOm9hdXRoMg=='
 ----

@@ -78,4 +78,6 @@ public class User implements Serializable {
      * 上次更新时间
      */
     private Date lastUpdateTime;
+
+    private int test;
 }

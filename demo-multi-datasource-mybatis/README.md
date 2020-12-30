@@ -264,13 +264,13 @@ spring:
       datasource:
         master:
           username: root
-          password: root
-          url: jdbc:mysql://127.0.0.1:3306/spring-boot-demo?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8
+          password: JiangKai@Password123
+          url: jdbc:mysql://193.112.94.161:3306/spring-boot-demo?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8
           driver-class-name: com.mysql.cj.jdbc.Driver
         slave:
           username: root
-          password: root
-          url: jdbc:mysql://127.0.0.1:3306/spring-boot-demo-2?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8
+          password: JiangKai@Password123
+          url: jdbc:mysql://193.112.94.161:3306/spring-boot-demo-2?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8
           driver-class-name: com.mysql.cj.jdbc.Driver
       mp-enabled: true
 logging:

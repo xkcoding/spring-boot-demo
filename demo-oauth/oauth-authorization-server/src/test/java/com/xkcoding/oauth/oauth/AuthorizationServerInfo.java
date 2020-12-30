@@ -20,7 +20,7 @@ import java.net.HttpURLConnection;
  */
 @SuppressWarnings("all")
 public class AuthorizationServerInfo {
-    public static final String HOST = "http://127.0.0.1:8080";
+    public static final String HOST = "http://193.112.94.161:8080";
 
     private RestTemplate client;
 

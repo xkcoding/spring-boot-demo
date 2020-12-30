@@ -1,5 +1,7 @@
 package com.xkcoding.orm.mybatis.plus.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
@@ -35,9 +37,9 @@ public class Role extends Model<Role> {
      * 主键值，ActiveRecord 模式这个必须有，否则 xxById 的方法都将失效！
      * 即使使用 ActiveRecord 不会用到 RoleMapper，RoleMapper 这个接口也必须创建
      */
-    @Override
+   /* @Override
     protected Serializable pkVal() {
 
         return this.id;
-    }
+    }*/
 }

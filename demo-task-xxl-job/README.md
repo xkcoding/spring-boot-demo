@@ -21,7 +21,7 @@ $ git clone https://github.com/xuxueli/xxl-job.git
 ```properties
 server.port=18080
 
-spring.datasource.url=jdbc:mysql://127.0.0.1:3306/xxl_job?Unicode=true&characterEncoding=UTF-8&useSSL=false
+spring.datasource.url=jdbc:mysql://193.112.94.161:3306/xxl_job?Unicode=true&characterEncoding=UTF-8&useSSL=false
 spring.datasource.username=root
 spring.datasource.password=root
 ```
@@ -370,7 +370,7 @@ public ReturnT<List<XxlJobGroup>> list(){
 @RequestMapping("/xxl-job")
 @RequiredArgsConstructor(onConstructor_ = @Autowired)
 public class ManualOperateController {
-    private final static String baseUri = "http://127.0.0.1:18080/xxl-job-admin";
+    private final static String baseUri = "http://193.112.94.161:18080/xxl-job-admin";
     private final static String JOB_INFO_URI = "/jobinfo";
     private final static String JOB_GROUP_URI = "/jobgroup";
 

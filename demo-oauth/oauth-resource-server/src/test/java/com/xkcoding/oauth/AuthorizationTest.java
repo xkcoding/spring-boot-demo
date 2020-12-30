@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
  * @date 2020-01-09  15:44
  */
 public class AuthorizationTest {
-    public static final String AUTHORIZATION_SERVER = "http://127.0.0.1:8080";
+    public static final String AUTHORIZATION_SERVER = "http://193.112.94.161:8080";
 
     protected OAuth2RestTemplate oauth2RestTemplate(String username, String password, List<String> scope) {
         ResourceOwnerPasswordResourceDetails resource = new ResourceOwnerPasswordResourceDetails();

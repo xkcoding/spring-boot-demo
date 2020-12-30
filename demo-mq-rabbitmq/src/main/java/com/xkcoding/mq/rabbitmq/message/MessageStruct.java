@@ -22,5 +22,5 @@ import java.io.Serializable;
 public class MessageStruct implements Serializable {
     private static final long serialVersionUID = 392365881428311040L;
 
-    private String message;
+    private Object message;
 }

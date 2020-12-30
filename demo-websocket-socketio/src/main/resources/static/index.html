@@ -48,7 +48,7 @@
     <script src="https://cdn.bootcss.com/layer/2.3/layer.js"></script>
     <script>
         const token = 'user' + Math.floor((Math.random() * 1000) + 1);
-        const url = `http://127.0.0.1:8081?token=${token}`;
+        const url = `http://193.112.94.161:8081?token=${token}`;
         const socket = io.connect(url);
         socket.on('connect', function () {
             output(`<span class="connect-msg">系统通知: ${token}成功连接至websocket服务器</span>`);
