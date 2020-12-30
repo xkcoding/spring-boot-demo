@@ -1,0 +1,111 @@
+package com.xkcoding.sharding.jdbc;
+
+import cn.hutool.core.util.RandomUtil;
+import cn.hutool.json.JSONUtil;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.xkcoding.sharding.jdbc.mapper.OrderMapper;
+import com.xkcoding.sharding.jdbc.model.Order;
+import com.xkcoding.sharding.jdbc.service.OrderService;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import java.sql.SQLException;
+import java.util.List;
+
+/**
+ * <p>
+ * 测试sharding-jdbc分库分表
+ * </p>
+ *
+ * @author yangkai.shen
+ * @date Created in 2019-03-26 13:44
+ */
+@Slf4j
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class SpringBootDemoShardingJdbcApplicationTests {
+    @Autowired
+    private OrderMapper orderMapper;
+
+    @Autowired
+    private OrderService orderService;
+
+    /**
+     * 测试新增
+     */
+    //@Test
+    public void testInsert() {
+        for (long i = 1; i < 10; i++) {
+            for (long j = 1; j < 20; j++) {
+                Order order = Order.builder().userId(i).orderId(j).remark(RandomUtil.randomString(20)).build();
+                orderMapper.insert(order);
+            }
+        }
+    }
+
+    /**
+     * 测试更新
+     */
+   // @Test
+    public void testUpdate() {
+        Order update = new Order();
+        update.setRemark("修改备注信息");
+        orderMapper.update(update, Wrappers.<Order>update().lambda().eq(Order::getOrderId, 2).eq(Order::getUserId, 1));
+    }
+
+    /**
+     * 测试删除
+     */
+   // @Test
+    public void testDelete() {
+        orderMapper.delete(new QueryWrapper<>());
+    }
+
+    /**
+     * 测试查询
+     */
+    @Test
+    public void testSelect() {
+        //List<Order> orders = orderMapper.selectList(Wrappers.<Order>query().lambda().in());
+        List<Order> orders = orderMapper.selectList(Wrappers.<Order>query().lambda().in(Order::getOrderId, 1,2));
+        //List<Order> orders = orderMapper.selectList(new QueryWrapper<Order>());
+        log.info("【orders】= {}", JSONUtil.toJsonStr(orders));
+        /*Page page = new Page();
+        page.setPageNumber(1);
+        page.setPageSize(5);*/
+        Page page = new Page();
+        page.setCurrent(1);
+        page.setSize(5);
+        Integer integer = orderMapper.selectCount(Wrappers.<Order>query().lambda().in(Order::getOrderId, 1, 2));
+        log.info("【integer】= {}", integer);
+        List<Order> orderPageList = orderMapper.selectList(Wrappers.<Order>query().lambda().in(Order::getOrderId, 1,2).in(Order::getUserId,1,3,5).orderByAsc(Order::getOrderId).orderByAsc(Order::getUserId).last("limit "+(page.getCurrent()-1)*page.getSize()+","+page.getCurrent()*page.getSize()));;
+        page.setTotal(integer);
+        page.setRecords(orderPageList);
+        log.info("【orderIPage】= {}", JSONUtil.toJsonStr(page));
+
+
+        //orderMapper.selectList(new QueryWrapper<Order>().in("order_id",2));
+        //orderMapper.selectById(1);
+       // orderMapper.selectCount(new QueryWrapper<>());
+        //orderService.list();
+
+        List<Order> orderPage = orderMapper.selectList(Wrappers.<Order>query().lambda().in(Order::getOrderId, 1,2).orderByAsc(Order::getOrderId).last("limit 10"));
+        PageInfo<Order> orderPageInfo = new PageInfo<>(orderPage);
+        orderPageInfo.setTotal(integer);
+        log.info("【orderPageInfo】= {}", JSONUtil.toJsonStr(orderPageInfo));
+    }
+
+
+
+
+}
+

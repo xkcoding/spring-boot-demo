@@ -8,6 +8,7 @@
   <artifactId>spring-boot-demo</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <modules>
+<<<<<<< HEAD
     <module>spring-boot-demo-helloworld</module>
     <module>spring-boot-demo-properties</module>
     <module>spring-boot-demo-actuator</module>
@@ -70,6 +71,70 @@
     <module>spring-boot-demo-https</module>
     <module>spring-boot-demo-flyway</module>
     <module>spring-boot-demo-swagger-Knife4j</module>
+=======
+    <module>demo-helloworld</module>
+    <module>demo-properties</module>
+    <module>demo-actuator</module>
+    <module>demo-admin</module>
+    <module>demo-logback</module>
+    <module>demo-log-aop</module>
+    <module>demo-exception-handler</module>
+    <module>demo-template-freemarker</module>
+    <module>demo-template-thymeleaf</module>
+    <module>demo-template-beetl</module>
+    <module>demo-template-enjoy</module>
+    <module>demo-orm-jdbctemplate</module>
+    <module>demo-orm-jpa</module>
+    <module>demo-orm-mybatis</module>
+    <module>demo-orm-mybatis-mapper-page</module>
+    <module>demo-orm-mybatis-plus</module>
+    <module>demo-orm-beetlsql</module>
+    <module>demo-upload</module>
+    <module>demo-cache-redis</module>
+    <module>demo-cache-ehcache</module>
+    <module>demo-email</module>
+    <module>demo-task</module>
+    <module>demo-task-quartz</module>
+    <module>demo-task-xxl-job</module>
+    <module>demo-swagger</module>
+    <module>demo-swagger-beauty</module>
+    <module>demo-rbac-security</module>
+    <module>demo-rbac-shiro</module>
+    <module>demo-session</module>
+    <module>demo-oauth</module>
+    <module>demo-social</module>
+    <module>demo-zookeeper</module>
+    <module>demo-mq-rabbitmq</module>
+    <module>demo-mq-rocketmq</module>
+    <module>demo-mq-kafka</module>
+    <module>demo-websocket</module>
+    <module>demo-websocket-socketio</module>
+    <module>demo-ureport2</module>
+    <module>demo-uflo</module>
+    <module>demo-urule</module>
+    <module>demo-activiti</module>
+    <module>demo-async</module>
+    <module>demo-dubbo</module>
+    <module>demo-war</module>
+    <module>demo-elasticsearch</module>
+    <module>demo-mongodb</module>
+    <module>demo-neo4j</module>
+    <module>demo-docker</module>
+    <module>demo-multi-datasource-jpa</module>
+    <module>demo-multi-datasource-mybatis</module>
+    <module>demo-sharding-jdbc</module>
+    <module>demo-tio</module>
+    <module>demo-codegen</module>
+    <module>demo-graylog</module>
+    <module>demo-ldap</module>
+    <module>demo-dynamic-datasource</module>
+    <module>demo-ratelimit-guava</module>
+    <module>demo-ratelimit-redis</module>
+    <module>demo-elasticsearch-rest-high-level-client</module>
+    <module>demo-https</module>
+    <module>demo-flyway</module>
+    <module>demo-pay</module>
+>>>>>>> master
   </modules>
   <packaging>pom</packaging>
 
@@ -82,10 +147,17 @@
     <java.version>1.8</java.version>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+<<<<<<< HEAD
     <spring.boot.version>2.3.5.RELEASE</spring.boot.version>
     <mysql.version>8.0.12</mysql.version>
     <hutool.version>5.0.0</hutool.version>
     <guava.version>28.1-jre</guava.version>
+=======
+    <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
+    <mysql.version>8.0.21</mysql.version>
+    <hutool.version>5.4.5</hutool.version>
+    <guava.version>29.0-jre</guava.version>
+>>>>>>> master
     <user.agent.version>1.20</user.agent.version>
   </properties>
 

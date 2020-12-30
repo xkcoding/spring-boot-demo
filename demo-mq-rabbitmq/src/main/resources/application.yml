@@ -1,0 +1,17 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /demo
+spring:
+  rabbitmq:
+    host: 106.53.246.202
+    port: 5672
+    username: Administrator
+    password: JiangKai@Password123
+    virtual-host: /
+    # 手动提交消息
+#    listener:
+#      simple:
+#        acknowledge-mode: manual
+#      direct:
+#        acknowledge-mode: manual
