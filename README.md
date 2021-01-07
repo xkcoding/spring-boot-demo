@@ -47,7 +47,7 @@
 3. 在 IDEA 中 Maven Projects 的面板导入项目根目录下 的 `pom.xml` 文件
 4. Maven Projects 找不到的童鞋，可以勾上 IDEA 顶部工具栏的 View -> Tool Buttons ，然后 Maven Projects 的面板就会出现在 IDEA 的右侧
 5. 找到各个 Module 的 Application 类就可以运行各个 demo 了
-6. **`注意：每个 demo 均有详细的 README 配套，食用 demo 前记得先看看哦~`**
+6. **`注意：每个 demo 均有详细的 README 配套，使用 demo 前记得先看看哦~`**
 7. **`注意：运行各个 demo 之前，有些是需要事先初始化数据库数据的，亲们别忘记了哦~`**
 
 ## 项目趋势
@@ -62,7 +62,7 @@
 
 ### 开源推荐
 
-- `JustAuth`：史上最全的整合第三方登录的开源库，https://github.com/justauth/JustAuth
+- `JustAuth`：开箱即用的整合第三方登录的开源组件，已集成国内外数十家平台，是实现第三方 OAuth 登录的不二之选。https://github.com/justauth/JustAuth
 - `Mica`：SpringBoot 微服务高效开发工具集，https://github.com/lets-mica/mica
 - `awesome-collector`：https://github.com/P-P-X/awesome-collector
 - `SpringBlade`：完整的线上解决方案(企业开发必备)，https://github.com/chillzhuang/SpringBlade
