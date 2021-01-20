@@ -1,0 +1,16 @@
+package ${package}.${moduleName}.service;
+
+import com.baomidou.mybatisplus.extension.service.IService;
+import ${package}.${moduleName}.entity.${className};
+
+/**
+ * <p>
+ * ${comments}
+ * </p>
+ *
+ * @author ${author}
+ * @date Created in ${datetime}
+ */
+public interface ${className}Service extends IService<${className}> {
+
+}

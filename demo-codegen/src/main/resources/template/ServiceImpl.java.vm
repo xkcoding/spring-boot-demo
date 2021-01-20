@@ -1,0 +1,21 @@
+package ${package}.${moduleName}.service.impl;
+
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import ${package}.${moduleName}.entity.${className};
+import ${package}.${moduleName}.mapper.${className}Mapper;
+import ${package}.${moduleName}.service.${className}Service;
+import org.springframework.stereotype.Service;
+import lombok.extern.slf4j.Slf4j;
+/**
+ * <p>
+ * ${comments}
+ * </p>
+ *
+ * @author ${author}
+ * @date Created in ${datetime}
+ */
+@Service
+@Slf4j
+public class ${className}ServiceImpl extends ServiceImpl<${className}Mapper, ${className}> implements ${className}Service {
+
+}
