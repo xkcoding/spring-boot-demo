@@ -110,7 +110,7 @@ View the [TODO](./TODO.en.md) file
 | [demo-mq-kafka](./demo-mq-kafka)                             | a demo to integrate Kafka implementation for message delivery and reception. |
 | [demo-websocket](./demo-websocket)                           | a demo to integrate websocket, the backend actively pushes the server running status to front end. |
 | [demo-websocket-socketio](./demo-websocket-socketio)         | a demo to integrate websocket by using `netty-socketio`, implement a simple chat room. |
-| [demo-ureport2](./demo-ureport2)                             | <span style="color:pink;">NOT FINISHED YET!</span> <br />a demo to integrate [ureport2](https://github.com/youseries/ureport) to implement complex, customized Chinese-style reports. |
+| [demo-ureport2](./demo-ureport2)                             | a demo to integrate [ureport2](https://github.com/youseries/ureport) to implement complex, customized Chinese-style reports. |
 | [demo-uflo](./demo-uflo)                                     | <span style="color:pink;">NOT FINISHED YET!</span> <br />a demo to integrate [uflo](https://github.com/youseries/uflo)(process engine like Activiti and Flowable) to quickly implement a lightweight process engine. |
 | [demo-urule](./demo-urule)                                   | <span style="color:pink;">NOT FINISHED YET!</span> <br />a demo to integrate [urule](https://github.com/youseries/urule)(rule engine like drools) fast implementation rule engine. |
 | [demo-activiti](./demo-activiti)                             | <span style="color:pink;">NOT FINISHED YET!</span> <br />a demo to integrate Activiti 7 process engine. |
@@ -136,7 +136,6 @@ View the [TODO](./TODO.en.md) file
 | [demo-https](./demo-https)                                   | a demo to integrate HTTPS.                                   |
 | [demo-elasticsearch-rest-high-level-client](./demo-elasticsearch-rest-high-level-client) | a demo to integrate ElasticSearch 7.x version by using official Rest High Level Client to operate ES data. |
 | [demo-flyway](./demo-flyway)                                 | a demo to integrate Flyway to initialize tables and data in database, Flyway also support the sql script version control. |
-| [demo-ureport2](./demo-ureport2)                             | a demo to integrate Ureport2 to design the Chinese complex report file. |
 
 ### Thanks
 
