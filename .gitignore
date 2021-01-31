@@ -24,6 +24,7 @@ gen/
 ### NetBeans ###
 /nbproject/private/
 /build/
+/build2/
 /nbbuild/
 /dist/
 /nbdist/
