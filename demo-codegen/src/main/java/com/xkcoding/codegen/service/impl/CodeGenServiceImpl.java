@@ -51,8 +51,9 @@ public class CodeGenServiceImpl implements CodeGenService {
     public PageResult<Entity> listTables(TableRequest request) {
         HikariDataSource dataSource = DbUtil.buildFromTableRequest(request);
         Db db = new Db(dataSource);
+        db.setCaseInsensitive(false);
 
-        Page page = new Page(request.getCurrentPage(), request.getPageSize());
+        Page page = new Page(request.getCurrentPage() - 1, request.getPageSize());
         int start = page.getStartPosition();
         int pageSize = page.getPageSize();
 
@@ -73,7 +74,7 @@ public class CodeGenServiceImpl implements CodeGenService {
             count = (BigDecimal) db.queryNumber(countSql);
         }
 
-        PageResult<Entity> pageResult = new PageResult<>(count.longValue(), page.getPageNumber(), page.getPageSize(), query);
+        PageResult<Entity> pageResult = new PageResult<>(count.longValue(), page.getPageNumber() + 1, page.getPageSize(), query);
 
         dataSource.close();
         return pageResult;
@@ -104,6 +105,7 @@ public class CodeGenServiceImpl implements CodeGenService {
     private Entity queryTable(TableRequest request) {
         HikariDataSource dataSource = DbUtil.buildFromTableRequest(request);
         Db db = new Db(dataSource);
+        db.setCaseInsensitive(false);
 
         String paramSql = StrUtil.EMPTY;
         if (StrUtil.isNotBlank(request.getTableName())) {
@@ -120,6 +122,7 @@ public class CodeGenServiceImpl implements CodeGenService {
     private List<Entity> queryColumns(TableRequest request) {
         HikariDataSource dataSource = DbUtil.buildFromTableRequest(request);
         Db db = new Db(dataSource);
+        db.setCaseInsensitive(false);
 
         List<Entity> query = db.query(COLUMN_SQL_TEMPLATE, request.getTableName());
 
