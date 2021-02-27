@@ -1,7 +1,11 @@
 package com.xkcoding.zookeeper;
 
+import com.xkcoding.zookeeper.annotation.LockKeyParam;
 import com.xkcoding.zookeeper.annotation.ZooLock;
 import com.xkcoding.zookeeper.aspectj.ZooLockAspect;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.recipes.locks.InterProcessMutex;
@@ -38,7 +42,8 @@ public class SpringBootDemoZookeeperApplicationTests {
     @Test
     public void test() throws InterruptedException {
         IntStream.range(0, 10000).forEach(i -> executorService.execute(this::doBuy));
-        TimeUnit.MINUTES.sleep(1);
+        executorService.shutdown();
+        executorService.awaitTermination(10, TimeUnit.MINUTES);
         log.error("count值为{}", count);
     }
 
@@ -54,7 +59,25 @@ public class SpringBootDemoZookeeperApplicationTests {
         factory.addAspect(aspect);
         SpringBootDemoZookeeperApplicationTests proxy = factory.getProxy();
         IntStream.range(0, 10000).forEach(i -> executorService.execute(() -> proxy.aopBuy(i)));
-        TimeUnit.MINUTES.sleep(1);
+        executorService.shutdown();
+        executorService.awaitTermination(10, TimeUnit.MINUTES);
+        log.error("count值为{}", proxy.getCount());
+    }
+
+    /**
+     * 测试AOP分布式锁-动态key
+     */
+    @Test
+    public void testAopLockDynamicKey() throws InterruptedException {
+        // 测试类中使用AOP需要手动代理
+        SpringBootDemoZookeeperApplicationTests target = new SpringBootDemoZookeeperApplicationTests();
+        AspectJProxyFactory factory = new AspectJProxyFactory(target);
+        ZooLockAspect aspect = new ZooLockAspect(zkClient);
+        factory.addAspect(aspect);
+        SpringBootDemoZookeeperApplicationTests proxy = factory.getProxy();
+        IntStream.range(0, 10000).forEach(i -> executorService.execute(() -> proxy.aopBuy(new Goods("asdfasdf"))));
+        executorService.shutdown();
+        executorService.awaitTermination(10, TimeUnit.MINUTES);
         log.error("count值为{}", proxy.getCount());
     }
 
@@ -64,7 +87,8 @@ public class SpringBootDemoZookeeperApplicationTests {
     @Test
     public void testManualLock() throws InterruptedException {
         IntStream.range(0, 10000).forEach(i -> executorService.execute(this::manualBuy));
-        TimeUnit.MINUTES.sleep(1);
+        executorService.shutdown();
+        executorService.awaitTermination(10, TimeUnit.MINUTES);
         log.error("count值为{}", count);
     }
 
@@ -73,6 +97,14 @@ public class SpringBootDemoZookeeperApplicationTests {
         log.info("{} 正在出库。。。", userId);
         doBuy();
         log.info("{} 扣库存成功。。。", userId);
+    }
+
+    @ZooLock(key = "buy", timeout = 1, timeUnit = TimeUnit.MINUTES)
+    public void aopBuy(@LockKeyParam(fields = "skuId") Goods goods) {
+        String skuId = goods.getSkuId();
+        log.info("{} 正在出库。。。", skuId);
+        doBuy();
+        log.info("{} 扣库存成功。。。", skuId);
     }
 
     public void manualBuy() {
@@ -98,5 +130,11 @@ public class SpringBootDemoZookeeperApplicationTests {
         log.info("count值为{}", count);
     }
 
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    private static class Goods {
+        private String skuId;
+    }
 }
 
