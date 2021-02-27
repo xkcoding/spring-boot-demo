@@ -101,7 +101,7 @@ public class ZooLockAspect {
             // 循环该参数全部注解
             for (Annotation annotation : parameterAnnotations[i]) {
                 // 注解不是 @LockKeyParam
-                if (!annotation.annotationType().isInstance(LockKeyParam.class)) {
+                if (!LockKeyParam.class.isAssignableFrom(annotation.annotationType())) {
                     continue;
                 }
 
@@ -119,7 +119,7 @@ public class ZooLockAspect {
                         Class<?> clazz = args[i].getClass();
                         Field declaredField = clazz.getDeclaredField(field);
                         declaredField.setAccessible(true);
-                        Object value = declaredField.get(clazz);
+                        Object value = declaredField.get(args[i]);
                         key.append(KEY_SEPARATOR).append(value);
                     }
                 }
