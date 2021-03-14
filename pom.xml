@@ -70,6 +70,7 @@
     <module>demo-https</module>
     <module>demo-flyway</module>
     <module>demo-pay</module>
+    <module>demo-nacos</module>
   </modules>
   <packaging>pom</packaging>
 

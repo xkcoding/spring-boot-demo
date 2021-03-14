@@ -20,9 +20,9 @@
 
 ## Introduction
 
-`spring boot demo` is a project for learning and practicing `spring boot`, including `66` demos, and `55` of them have been done.
+`spring boot demo` is a project for learning and practicing `Spring Boot`, the latest and most complete actual combat tutorial, including `66` demos, and `55` of them have been done.
 
-This project has integrated actuator (`monitoring`), admin (`visual monitoring`), logback (`log`), aopLog (`recording web request logs through AOP`), global exception handling (`json level and page level` ), freemarker (`template engine`), thymeleaf (`template engine`), Beetl (`template engine`), Enjoy (`template engine`), JdbcTemplate (`general JDBC operate database`), JPA (`powerful ORM framework `), mybatis (`powerful ORM framework`), Generic Mapper (`mybatis quick operation `), PageHelper (`powerful mybatis pagination plugin`), mybatis-plus (`mybatis quick operation`), BeetlSQL (`powerful ORM framework `), upload (`local file upload and qiniu cloud file upload`), redis (`cache`), ehcache (`cache`), email (`send various types of mail`), task (`basic scheduled tasks`), quartz (`dynamic management scheduled tasks`), xxl-job (`distributed scheduled tasks`), swagger (`API interface management and tests`), security (`RBAC-based Dynamic Rights Authentication`), SpringSession (`session sharing`), Zookeeper (`implement distributed locks by AOP`), RabbitMQ (`message queue`), Kafka (`message queue`), websocket (` server pushes the monitoring server status to front end `), socket.io (`chat room`), ureport2 (`Chinese-style report`), packaged into a `war` file, integrate ElasticSearch (`basic operations and advanced queries`), Async ( `asynchronous tasks`), integrated Dubbo (`with official starter`), MongoDB (`document database`), neo4j (`graph database`), docker (`container`), `JPA Multi-Datasource`, `Mybatis Multi-Datasource`, `code generator`', GrayLog (`log collection`), JustAuth (`third-party login`), LDAP(`CURD`), `Dynamically add/switch datasources`, Standalone RateLimiting(`AOP + Guava RateLimiter`), Distributed Ratelimiting(`AOP + Redis + Lua`), ElasticSearch 7.x(`use official Rest High Level Client`), HTTPS, Flyway(`initialize databases`),UReport2(`Chinese complex report `).
+It covers the template engine, ORM framework, distributed technology, authorization and authentication and other enterprise-level practical solutions, and the specific modules included are shown in the following [table](#introduction-of-each-module).
 
 > If you have demos to contribute or needs to meet, it is very welcome to submit a [issue](https://github.com/xkcoding/spring-boot-demo/issues/new) and I will add it to my [TODO](./TODO.en.md) list.
 
@@ -110,7 +110,7 @@ View the [TODO](./TODO.en.md) file
 | [demo-mq-kafka](./demo-mq-kafka)                             | a demo to integrate Kafka implementation for message delivery and reception. |
 | [demo-websocket](./demo-websocket)                           | a demo to integrate websocket, the backend actively pushes the server running status to front end. |
 | [demo-websocket-socketio](./demo-websocket-socketio)         | a demo to integrate websocket by using `netty-socketio`, implement a simple chat room. |
-| [demo-ureport2](./demo-ureport2)                             | <span style="color:pink;">NOT FINISHED YET!</span> <br />a demo to integrate [ureport2](https://github.com/youseries/ureport) to implement complex, customized Chinese-style reports. |
+| [demo-ureport2](./demo-ureport2)                             | a demo to integrate [ureport2](https://github.com/youseries/ureport) to implement complex, customized Chinese-style reports. |
 | [demo-uflo](./demo-uflo)                                     | <span style="color:pink;">NOT FINISHED YET!</span> <br />a demo to integrate [uflo](https://github.com/youseries/uflo)(process engine like Activiti and Flowable) to quickly implement a lightweight process engine. |
 | [demo-urule](./demo-urule)                                   | <span style="color:pink;">NOT FINISHED YET!</span> <br />a demo to integrate [urule](https://github.com/youseries/urule)(rule engine like drools) fast implementation rule engine. |
 | [demo-activiti](./demo-activiti)                             | <span style="color:pink;">NOT FINISHED YET!</span> <br />a demo to integrate Activiti 7 process engine. |
@@ -136,7 +136,6 @@ View the [TODO](./TODO.en.md) file
 | [demo-https](./demo-https)                                   | a demo to integrate HTTPS.                                   |
 | [demo-elasticsearch-rest-high-level-client](./demo-elasticsearch-rest-high-level-client) | a demo to integrate ElasticSearch 7.x version by using official Rest High Level Client to operate ES data. |
 | [demo-flyway](./demo-flyway)                                 | a demo to integrate Flyway to initialize tables and data in database, Flyway also support the sql script version control. |
-| [demo-ureport2](./demo-ureport2)                             | a demo to integrate Ureport2 to design the Chinese complex report file. |
 
 ### Thanks
 
