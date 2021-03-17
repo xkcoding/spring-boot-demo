@@ -3,6 +3,10 @@ package com.xkcoding.cache.ehcache.service;
 import com.xkcoding.cache.ehcache.SpringBootDemoCacheEhcacheApplicationTests;
 import com.xkcoding.cache.ehcache.entity.User;
 import lombok.extern.slf4j.Slf4j;
+import net.sf.ehcache.Cache;
+import net.sf.ehcache.CacheManager;
+import net.sf.ehcache.Element;
+import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -48,13 +52,28 @@ public class UserServiceTest extends SpringBootDemoCacheEhcacheApplicationTests 
     }
 
     /**
-     * 测试删除，查看redis是否存在缓存数据
+     * 测试删除，查看ehcache是否存在缓存数据
      */
     @Test
     public void deleteUser() {
-        // 查询一次，使ehcache中存在缓存数据
-        userService.get(1L);
+        // 获取cache，用以验证缓存存在情况
+        CacheManager cacheManager = CacheManager.create();
+        Cache cache = cacheManager.getCache("user");
+
+        long id = 1L;
+        // ehcache中不存在缓存数据
+        Assert.assertNull(cache.get(id));
+
+        // 查询一次，使
+        User user = userService.get(id);
+        // ehcache中存在缓存数据
+        Element element = cache.get(id);
+        Assert.assertNotNull(element);
+        Assert.assertEquals(user, element.getObjectValue());
+
         // 删除，查看ehcache是否存在缓存数据
-        userService.delete(1L);
+        userService.delete(id);
+        // ehcache中不存在缓存数据
+        Assert.assertNull(cache.get(id));
     }
 }
