@@ -44,7 +44,7 @@
         <dependency>
             <groupId>org.apache.curator</groupId>
             <artifactId>curator-recipes</artifactId>
-            <version>4.1.0</version>
+            <version>5.1.0</version>
         </dependency>
 
         <dependency>

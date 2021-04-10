@@ -1,6 +1,7 @@
 package com.xkcoding.zookeeper.config;
 
 import com.xkcoding.zookeeper.config.props.ZkProps;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.curator.RetryPolicy;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
@@ -18,6 +19,7 @@ import org.springframework.context.annotation.Configuration;
  * @author yangkai.shen
  * @date Created in 2018-12-27 14:45
  */
+@Slf4j
 @Configuration
 @EnableConfigurationProperties(ZkProps.class)
 public class ZkConfig {
@@ -28,7 +30,7 @@ public class ZkConfig {
         this.zkProps = zkProps;
     }
 
-    @Bean
+    @Bean(destroyMethod = "close")
     public CuratorFramework curatorFramework() {
         RetryPolicy retryPolicy = new ExponentialBackoffRetry(zkProps.getTimeout(), zkProps.getRetry());
         CuratorFramework client = CuratorFrameworkFactory.newClient(zkProps.getUrl(), retryPolicy);

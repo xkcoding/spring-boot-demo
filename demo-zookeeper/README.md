@@ -433,4 +433,4 @@ public class SpringBootDemoZookeeperApplicationTests {
 ## 参考
 
 1. [如何在测试类中使用 AOP](https://stackoverflow.com/questions/11436600/unit-testing-spring-around-aop-methods)
-2. zookeeper 实现分布式锁：《Spring Boot 2精髓 从构建小系统到架构分布式大系统》李家智 - 第16章 - Spring Boot 和 Zoo Keeper - 16.3 实现分布式锁
+2. zookeeper 实现分布式锁：《Spring Boot 2精髓 从构建小系统到架构分布式大系统》李家智 - 第16章 - Spring Boot 和 ZooKeeper - 16.3 实现分布式锁

@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  zoo1:
+    image: zookeeper:3.7.0
+    hostname: zoo1
+    ports:
+      - 2181:2181
