@@ -71,6 +71,7 @@
     <module>demo-flyway</module>
     <module>demo-pay</module>
     <module>demo-nacos</module>
+    <module>demo-validation</module>
   </modules>
   <packaging>pom</packaging>
 
