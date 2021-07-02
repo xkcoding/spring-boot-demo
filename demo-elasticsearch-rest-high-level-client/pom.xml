@@ -59,7 +59,7 @@
     <dependency>
       <groupId>org.elasticsearch</groupId>
       <artifactId>elasticsearch</artifactId>
-      <version>7.3.0</version>
+      <version>7.11.2</version>
     </dependency>
 
     <!-- elasticsearch-rest-client -->
