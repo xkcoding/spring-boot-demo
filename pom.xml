@@ -22,6 +22,7 @@
     <module>demo-orm-jdbctemplate</module>
     <module>demo-orm-jpa</module>
     <module>demo-orm-mybatis</module>
+    <module>demo-orm-mybatis-generator</module>
     <module>demo-orm-mybatis-mapper-page</module>
     <module>demo-orm-mybatis-plus</module>
     <module>demo-orm-beetlsql</module>
