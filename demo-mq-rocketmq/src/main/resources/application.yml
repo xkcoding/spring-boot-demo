@@ -1,0 +1,9 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /demo
+rocketmq:
+  name-server: 192.168.1.18:9876 # Rocketmq name-server地址
+  producer:
+    group: service-producer-group #生产者
+
