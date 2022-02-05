@@ -67,11 +67,11 @@ public class UploadConfig {
     }
 
     /**
-     * 华东机房
+     * 配置机房
      */
     @Bean
     public com.qiniu.storage.Configuration qiniuConfig() {
-        return new com.qiniu.storage.Configuration(Zone.zone0());
+        return new com.qiniu.storage.Configuration(Region.autoRegion());
     }
 
     /**
