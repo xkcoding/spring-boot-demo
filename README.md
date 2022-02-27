@@ -62,6 +62,8 @@
 
 ### 开源推荐
 
+![11628591293_.pic_hd](https://static.aliyun.xkcoding.com/2021/08/14/11628591293pichd.jpg?x-oss-process=style/tag_compress)
+
 - `JustAuth`：史上最全的整合第三方登录的开源库，https://github.com/justauth/JustAuth
 - `Mica`：SpringBoot 微服务高效开发工具集，https://github.com/lets-mica/mica
 - `awesome-collector`：https://github.com/P-P-X/awesome-collector
