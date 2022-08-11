@@ -8,100 +8,79 @@
   <artifactId>spring-boot-demo</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <modules>
-    <module>demo-helloworld</module>
-    <module>demo-properties</module>
-    <module>demo-actuator</module>
-    <module>demo-admin</module>
-    <module>demo-logback</module>
-    <module>demo-log-aop</module>
-    <module>demo-exception-handler</module>
-    <module>demo-template-freemarker</module>
-    <module>demo-template-thymeleaf</module>
-    <module>demo-template-beetl</module>
-    <module>demo-template-enjoy</module>
-    <module>demo-orm-jdbctemplate</module>
-    <module>demo-orm-jpa</module>
-    <module>demo-orm-mybatis</module>
-    <module>demo-orm-mybatis-mapper-page</module>
-    <module>demo-orm-mybatis-plus</module>
-    <module>demo-orm-beetlsql</module>
-    <module>demo-upload</module>
-    <module>demo-cache-redis</module>
-    <module>demo-cache-ehcache</module>
-    <module>demo-email</module>
-    <module>demo-task</module>
-    <module>demo-task-quartz</module>
-    <module>demo-task-xxl-job</module>
-    <module>demo-swagger</module>
-    <module>demo-swagger-beauty</module>
-    <module>demo-rbac-security</module>
-    <module>demo-rbac-shiro</module>
-    <module>demo-session</module>
-    <module>demo-oauth</module>
-    <module>demo-social</module>
-    <module>demo-zookeeper</module>
-    <module>demo-mq-rabbitmq</module>
-    <module>demo-mq-rocketmq</module>
-    <module>demo-mq-kafka</module>
-    <module>demo-websocket</module>
-    <module>demo-websocket-socketio</module>
-    <module>demo-ureport2</module>
-    <module>demo-uflo</module>
-    <module>demo-urule</module>
-    <module>demo-activiti</module>
-    <module>demo-async</module>
-    <module>demo-dubbo</module>
-    <module>demo-war</module>
-    <module>demo-elasticsearch</module>
-    <module>demo-mongodb</module>
-    <module>demo-neo4j</module>
-    <module>demo-docker</module>
-    <module>demo-multi-datasource-jpa</module>
-    <module>demo-multi-datasource-mybatis</module>
-    <module>demo-sharding-jdbc</module>
-    <module>demo-tio</module>
-    <module>demo-codegen</module>
-    <module>demo-graylog</module>
-    <module>demo-ldap</module>
-    <module>demo-dynamic-datasource</module>
-    <module>demo-ratelimit-guava</module>
-    <module>demo-ratelimit-redis</module>
-    <module>demo-elasticsearch-rest-high-level-client</module>
-    <module>demo-https</module>
-    <module>demo-flyway</module>
-    <module>demo-pay</module>
+    <!--    <module>demo-helloworld</module>-->
+    <!--    <module>demo-properties</module>-->
+    <!--    <module>demo-actuator</module>-->
+    <!--    <module>demo-admin</module>-->
+    <!--    <module>demo-logback</module>-->
+    <!--    <module>demo-log-aop</module>-->
+    <!--    <module>demo-exception-handler</module>-->
+    <!--    <module>demo-template-freemarker</module>-->
+    <!--    <module>demo-template-thymeleaf</module>-->
+    <!--    <module>demo-template-beetl</module>-->
+    <!--    <module>demo-template-enjoy</module>-->
+    <!--    <module>demo-orm-jdbctemplate</module>-->
+    <!--    <module>demo-orm-jpa</module>-->
+    <!--    <module>demo-orm-mybatis</module>-->
+    <!--    <module>demo-orm-mybatis-mapper-page</module>-->
+    <!--    <module>demo-orm-mybatis-plus</module>-->
+    <!--    <module>demo-orm-beetlsql</module>-->
+    <!--    <module>demo-upload</module>-->
+    <!--    <module>demo-cache-redis</module>-->
+    <!--    <module>demo-cache-ehcache</module>-->
+    <!--    <module>demo-email</module>-->
+    <!--    <module>demo-task</module>-->
+    <!--    <module>demo-task-quartz</module>-->
+    <!--    <module>demo-task-xxl-job</module>-->
+    <!--    <module>demo-swagger</module>-->
+    <!--    <module>demo-swagger-beauty</module>-->
+    <!--    <module>demo-rbac-security</module>-->
+    <!--    <module>demo-rbac-shiro</module>-->
+    <!--    <module>demo-session</module>-->
+    <!--    <module>demo-oauth</module>-->
+    <!--    <module>demo-social</module>-->
+    <!--    <module>demo-zookeeper</module>-->
+    <!--    <module>demo-mq-rabbitmq</module>-->
+    <!--    <module>demo-mq-rocketmq</module>-->
+    <!--    <module>demo-mq-kafka</module>-->
+    <!--    <module>demo-websocket</module>-->
+    <!--    <module>demo-websocket-socketio</module>-->
+    <!--    <module>demo-ureport2</module>-->
+    <!--    <module>demo-uflo</module>-->
+    <!--    <module>demo-urule</module>-->
+    <!--    <module>demo-activiti</module>-->
+    <!--    <module>demo-async</module>-->
+    <!--    <module>demo-dubbo</module>-->
+    <!--    <module>demo-war</module>-->
+    <!--    <module>demo-elasticsearch</module>-->
+    <!--    <module>demo-mongodb</module>-->
+    <!--    <module>demo-neo4j</module>-->
+    <!--    <module>demo-docker</module>-->
+    <!--    <module>demo-multi-datasource-jpa</module>-->
+    <!--    <module>demo-multi-datasource-mybatis</module>-->
+    <!--    <module>demo-sharding-jdbc</module>-->
+    <!--    <module>demo-tio</module>-->
+    <!--    <module>demo-codegen</module>-->
+    <!--    <module>demo-graylog</module>-->
+    <!--    <module>demo-ldap</module>-->
+    <!--    <module>demo-dynamic-datasource</module>-->
+    <!--    <module>demo-ratelimit-guava</module>-->
+    <!--    <module>demo-ratelimit-redis</module>-->
+    <!--    <module>demo-elasticsearch-rest-high-level-client</module>-->
+    <!--    <module>demo-https</module>-->
+    <!--    <module>demo-flyway</module>-->
+    <!--    <module>demo-pay</module>-->
   </modules>
   <packaging>pom</packaging>
 
   <name>spring-boot-demo</name>
-  <url>http://xkcoding.com</url>
+  <url>https://github.com/xkcoding/spring-boot-demo</url>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <java.version>1.8</java.version>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
-    <mysql.version>8.0.21</mysql.version>
-    <hutool.version>5.4.5</hutool.version>
-    <guava.version>29.0-jre</guava.version>
-    <user.agent.version>1.20</user.agent.version>
+    <java.version>11</java.version>
+    <!--    <spring.boot.version>3.0.0-M4</spring.boot.version>-->
+    <spring.boot.version>2.7.2</spring.boot.version>
   </properties>
-
-  <repositories>
-    <repository>
-      <id>aliyun</id>
-      <name>aliyun</name>
-      <url>https://maven.aliyun.com/repository/public</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
 
   <dependencyManagement>
     <dependencies>
@@ -112,63 +91,12 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-      <dependency>
-        <groupId>mysql</groupId>
-        <artifactId>mysql-connector-java</artifactId>
-        <version>${mysql.version}</version>
-      </dependency>
-      <!-- hutool工具类 -->
-      <dependency>
-        <groupId>cn.hutool</groupId>
-        <artifactId>hutool-all</artifactId>
-        <version>${hutool.version}</version>
-      </dependency>
-      <!-- guava工具类 -->
-      <dependency>
-        <groupId>com.google.guava</groupId>
-        <artifactId>guava</artifactId>
-        <version>${guava.version}</version>
-      </dependency>
-      <!-- 解析 UserAgent 信息 -->
-      <dependency>
-        <groupId>eu.bitwalker</groupId>
-        <artifactId>UserAgentUtils</artifactId>
-        <version>${user.agent.version}</version>
-      </dependency>
     </dependencies>
   </dependencyManagement>
 
   <build>
     <pluginManagement>
       <plugins>
-        <plugin>
-          <artifactId>maven-clean-plugin</artifactId>
-          <version>3.0.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>3.0.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.7.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.20.1</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>3.0.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-install-plugin</artifactId>
-          <version>2.5.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>2.8.2</version>
-        </plugin>
         <plugin>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-maven-plugin</artifactId>
@@ -184,4 +112,29 @@
       </plugins>
     </pluginManagement>
   </build>
+
+  <!-- (you do not need this if you are using a .RELEASE version) -->
+  <repositories>
+    <repository>
+      <id>spring-snapshots</id>
+      <url>https://repo.spring.io/snapshot</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>spring-milestones</id>
+      <url>https://repo.spring.io/milestone</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>spring-snapshots</id>
+      <url>https://repo.spring.io/snapshot</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>spring-milestones</id>
+      <url>https://repo.spring.io/milestone</url>
+    </pluginRepository>
+  </pluginRepositories>
 </project>
