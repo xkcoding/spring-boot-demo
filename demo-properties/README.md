@@ -94,7 +94,7 @@ developer:
   email: prod环境 237497819@qq.com
 ```
 
-#### 1.5. 其他
+#### 1.5.其他
 
 编写配置提示，`additional-spring-configuration-metadata.json`
 
