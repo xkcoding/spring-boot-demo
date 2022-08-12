@@ -1,14 +1,20 @@
-name: GitHub CI
-on:
-  push:
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
+
+name: 自动化编译检查
+
+on: [ push ]
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: 设置 jdk 版本
-        uses: actions/setup-java@v1
+      - uses: actions/checkout@v3
+      - name: 设置 JDK 版本
+        uses: actions/setup-java@v3
         with:
-          java-version: 17
-      - name: 编译
-        run: mvn clean package -DskipTests -Dmaven.javadoc.skip=true -B -V
+          java-version: '17'
+          distribution: 'corretto'
+          cache: maven
+      - name: 编译检查
+        run: mvn clean compile -DskipTests -Dmaven.javadoc.skip=true -B -V
