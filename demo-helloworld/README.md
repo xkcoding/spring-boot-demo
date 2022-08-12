@@ -25,15 +25,15 @@
 </dependencies>
 ```
 
-#### 1.2.启动类 Application.java
+#### 1.2.启动类 HelloworldApplication.java
 
 ```java
 @SpringBootApplication
 @RestController
-public class Application {
+public class HelloworldApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(Application.class, args);
+    SpringApplication.run(HelloworldApplication.class, args);
   }
 
   /**
