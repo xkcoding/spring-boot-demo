@@ -10,7 +10,7 @@
   <modules>
     <module>common-tools</module>
     <module>demo-helloworld</module>
-    <!--    <module>demo-properties</module>-->
+    <module>demo-properties</module>
     <!--    <module>demo-actuator</module>-->
     <!--    <module>demo-admin</module>-->
     <!--    <module>demo-logback</module>-->

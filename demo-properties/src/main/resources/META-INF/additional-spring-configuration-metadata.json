@@ -1,34 +1,29 @@
 {
-	"properties": [
-		{
-			"name": "application.name",
-			"description": "Default value is artifactId in pom.xml.",
-			"type": "java.lang.String"
-		},
-		{
-			"name": "application.version",
-			"description": "Default value is version in pom.xml.",
-			"type": "java.lang.String"
-		},
-		{
-			"name": "developer.name",
-			"description": "The Developer Name.",
-			"type": "java.lang.String"
-		},
-		{
-			"name": "developer.website",
-			"description": "The Developer Website.",
-			"type": "java.lang.String"
-		},
-		{
-			"name": "developer.qq",
-			"description": "The Developer QQ Number.",
-			"type": "java.lang.String"
-		},
-		{
-			"name": "developer.phone-number",
-			"description": "The Developer Phone Number.",
-			"type": "java.lang.String"
-		}
-	]
+  "properties": [
+    {
+      "name": "application.name",
+      "description": "Default value is artifactId in pom.xml.",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "application.version",
+      "description": "Default value is version in pom.xml.",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "developer.name",
+      "description": "The Developer Name.",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "developer.website",
+      "description": "The Developer Website.",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "developer.email",
+      "description": "The Developer QQ Number.",
+      "type": "java.lang.String"
+    }
+  ]
 }

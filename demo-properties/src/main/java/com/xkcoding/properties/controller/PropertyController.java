@@ -1,19 +1,19 @@
 package com.xkcoding.properties.controller;
 
 import cn.hutool.core.lang.Dict;
-import com.xkcoding.properties.property.ApplicationProperty;
-import com.xkcoding.properties.property.DeveloperProperty;
+import com.xkcoding.properties.config.ApplicationProperty;
+import com.xkcoding.properties.config.DeveloperProperty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
- * 测试Controller
+ * 测试端点
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2018-09-29 10:49
+ * @date Created in 2022-08-12 21:12
  */
 @RestController
 public class PropertyController {

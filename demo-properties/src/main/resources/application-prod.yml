@@ -3,6 +3,5 @@ application:
   version: prod环境 @version@
 developer:
   name: prod环境 xkcoding
-  website: prod环境 http://xkcoding.com
-  qq: prod环境 237497819
-  phone-number: prod环境 17326075631
+  website: prod环境 https://xkcoding.com
+  email: prod环境 237497819@qq.com

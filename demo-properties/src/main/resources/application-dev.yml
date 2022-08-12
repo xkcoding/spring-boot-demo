@@ -3,6 +3,5 @@ application:
   version: dev环境 @version@
 developer:
   name: dev环境 xkcoding
-  website: dev环境 http://xkcoding.com
-  qq: dev环境 237497819
-  phone-number: dev环境 17326075631
+  website: dev环境 https://xkcoding.com
+  email: dev环境 237497819@qq.com
