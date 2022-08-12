@@ -8,7 +8,8 @@
   <artifactId>spring-boot-demo</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <modules>
-    <!--    <module>demo-helloworld</module>-->
+    <module>common-tools</module>
+<!--    <module>demo-helloworld</module>-->
     <!--    <module>demo-properties</module>-->
     <!--    <module>demo-actuator</module>-->
     <!--    <module>demo-admin</module>-->
@@ -78,6 +79,10 @@
 
   <properties>
     <java.version>11</java.version>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
     <spring.boot.version>3.0.0-M4</spring.boot.version>
   </properties>
 
@@ -89,6 +94,11 @@
         <version>${spring.boot.version}</version>
         <type>pom</type>
         <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.xkcoding</groupId>
+        <artifactId>common-tools</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
