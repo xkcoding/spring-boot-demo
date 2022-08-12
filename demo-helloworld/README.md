@@ -4,7 +4,7 @@
 
 ### 1.开发步骤
 
-#### 1.1.引入关键依赖
+#### 1.1.添加依赖
 ```xml
 <dependencies>
   <dependency>
@@ -62,6 +62,6 @@ server:
 ```
 ### 2.测试
 
-启动 `Application.java` 打开任意浏览器：
+启动 `HelloworldApplication.java` 打开任意浏览器：
 - 输入 `http://localhost:8080/demo/hello` ，输出 `Hello, World!`；
 - 输入 `http://localhost:8080/demo/hello?who=xkcoding` ，输出 `Hello, xkcoding!`。
