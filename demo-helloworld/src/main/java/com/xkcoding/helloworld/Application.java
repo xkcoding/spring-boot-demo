@@ -9,18 +9,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
- * SpringBoot启动类
+ * 启动类
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2018-09-28 14:49
+ * @date Created in 2022-08-12 20:10
  */
 @SpringBootApplication
 @RestController
-public class SpringBootDemoHelloworldApplication {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootDemoHelloworldApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
     /**

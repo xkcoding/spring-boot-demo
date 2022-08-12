@@ -9,7 +9,7 @@
   <version>1.0.0-SNAPSHOT</version>
   <modules>
     <module>common-tools</module>
-    <!--    <module>demo-helloworld</module>-->
+    <module>demo-helloworld</module>
     <!--    <module>demo-properties</module>-->
     <!--    <module>demo-actuator</module>-->
     <!--    <module>demo-admin</module>-->
