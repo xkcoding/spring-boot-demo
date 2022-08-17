@@ -12,7 +12,6 @@
     <module>common-tools</module>
     <module>demo-base</module>
     <module>demo-monitor</module>
-    <module>demo-actuator</module>
     <module>demo-admin</module>
     <!--    <module>demo-logback</module>-->
     <!--    <module>demo-log-aop</module>-->

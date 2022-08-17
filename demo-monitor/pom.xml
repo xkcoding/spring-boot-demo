@@ -18,4 +18,8 @@
     <java.version>17</java.version>
   </properties>
 
+  <modules>
+    <module>demo-monitor-actuator</module>
+  </modules>
+
 </project>
