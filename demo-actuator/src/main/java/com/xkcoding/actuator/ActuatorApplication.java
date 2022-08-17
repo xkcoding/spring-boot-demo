@@ -9,12 +9,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2018-9-29 14:27
+ * @date Created in 2022-08-12 23:02
  */
 @SpringBootApplication
-public class SpringBootDemoActuatorApplication {
+public class ActuatorApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootDemoActuatorApplication.class, args);
+        SpringApplication.run(ActuatorApplication.class, args);
     }
 }

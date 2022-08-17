@@ -1,77 +1,42 @@
-# spring-boot-demo-actuator
+## spring-boot-demo-actuator
 
 > 本 demo 主要演示了如何在 Spring Boot 中通过 actuator 检查项目运行情况
 
-## pom.xml
+### 1.开发步骤
+
+#### 1.1.添加依赖
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+<dependencies>
+  <dependency>
+    <groupId>com.xkcoding</groupId>
+    <artifactId>common-tools</artifactId>
+  </dependency>
 
-	<artifactId>spring-boot-demo-actuator</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
-	<packaging>jar</packaging>
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-actuator</artifactId>
+  </dependency>
 
-	<name>spring-boot-demo-actuator</name>
-	<description>Demo project for Spring Boot</description>
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-security</artifactId>
+  </dependency>
 
-	<parent>
-		<groupId>com.xkcoding</groupId>
-		<artifactId>spring-boot-demo</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
-	</parent>
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+  </dependency>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
-	</properties>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
-
-	<build>
-		<finalName>spring-boot-demo-actuator</finalName>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
-
-</project>
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-test</artifactId>
+    <scope>test</scope>
+  </dependency>
+</dependencies>
 ```
 
-## application.yml
+#### 1.2.配置文件 application.yml
 
 ```yaml
 server:
@@ -88,8 +53,7 @@ management:
   # 端点信息接口使用的端口，为了和主系统接口使用的端口进行分离
   server:
     port: 8090
-    servlet:
-      context-path: /sys
+    base-path: /sys
   # 端点健康情况，默认值"never"，设置为"always"可以显示硬盘使用情况和线程情况
   endpoint:
     health:
@@ -101,7 +65,7 @@ management:
         include: '*'
 ```
 
-## 端点暴露地址
+### 2.测试
 
 将项目运行起来之后，会在**控制台**里查看所有可以访问的端口信息
 1. 打开浏览器，访问：http://localhost:8090/sys/actuator/mappings ，输入用户名(xkcoding)密码(123456)即可看到所有的mapping信息
@@ -110,5 +74,5 @@ management:
 
 ## 参考
 
-- actuator文档：https://docs.spring.io/spring-boot/docs/2.0.5.RELEASE/reference/htmlsingle/#production-ready
-- 具体可以访问哪些路径，参考: https://docs.spring.io/spring-boot/docs/2.0.5.RELEASE/reference/htmlsingle/#production-ready-endpoints
+- actuator文档：https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#actuator
+- 具体可以访问哪些路径，参考: https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#actuator.endpoints

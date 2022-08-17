@@ -12,7 +12,7 @@
     <module>common-tools</module>
     <module>demo-helloworld</module>
     <module>demo-properties</module>
-    <!--    <module>demo-actuator</module>-->
+    <module>demo-actuator</module>
     <!--    <module>demo-admin</module>-->
     <!--    <module>demo-logback</module>-->
     <!--    <module>demo-log-aop</module>-->
