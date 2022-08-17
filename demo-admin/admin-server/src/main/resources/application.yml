@@ -1,2 +1,16 @@
 server:
   port: 8000
+spring:
+  application:
+    name: spring-boot-demo-admin-server
+  boot:
+    admin:
+      instance-auth:
+        enabled: true
+        default-user-name: xkcoding
+        default-password: 123456
+      ui:
+        external-views:
+          - label: "xkcoding 🚀"
+            url: https://xkcoding.com
+            order: 2000

@@ -2,24 +2,28 @@ server:
   port: 8080
   servlet:
     context-path: /demo
+
 spring:
   application:
     # Spring Boot Admin展示的客户端项目名，不设置，会使用自动生成的随机id
     name: spring-boot-demo-admin-client
+  security:
+    user:
+      name: xkcoding
+      password: 123456
   boot:
     admin:
       client:
         # Spring Boot Admin 服务端地址
         url: "http://localhost:8000/"
+        username: ${spring.security.user.name}
+        password: ${spring.security.user.password}
         instance:
+          service-host-type: ip
           metadata:
             # 客户端端点信息的安全认证信息
             user.name: ${spring.security.user.name}
             user.password: ${spring.security.user.password}
-  security:
-    user:
-      name: xkcoding
-      password: 123456
 management:
   endpoint:
     health:
@@ -30,3 +34,12 @@ management:
       exposure:
         # 设置端点暴露的哪些内容，默认["health","info"]，设置"*"代表暴露所有可访问的端点
         include: "*"
+  info:
+    env:
+      enabled: true
+# 增加日志配置，为了展示 Spring Boot Admin 的观察在线日志的能力
+logging:
+  file:
+    name: logs/${spring.application.name}.log
+  pattern:
+    file: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(${PID}){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wEx"

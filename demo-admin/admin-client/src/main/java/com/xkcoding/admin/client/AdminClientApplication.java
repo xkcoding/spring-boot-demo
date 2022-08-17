@@ -5,16 +5,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * <p>
- * 启动类
+ * Spring Boot Admin Client 启动类
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2018-10-8 14:16
+ * @date Created in 2022-08-17 16:42
  */
 @SpringBootApplication
-public class SpringBootDemoAdminClientApplication {
+public class AdminClientApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootDemoAdminClientApplication.class, args);
+        SpringApplication.run(AdminClientApplication.class, args);
     }
 }

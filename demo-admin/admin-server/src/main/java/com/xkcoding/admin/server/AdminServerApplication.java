@@ -6,17 +6,17 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * <p>
- * 启动类
+ * Spring Boot Admin Server 启动类
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2018-10-08 14:08
+ * @date Created in 2022-08-17 16:41
  */
 @EnableAdminServer
 @SpringBootApplication
-public class SpringBootDemoAdminServerApplication {
+public class AdminServerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootDemoAdminServerApplication.class, args);
+        SpringApplication.run(AdminServerApplication.class, args);
     }
 }
