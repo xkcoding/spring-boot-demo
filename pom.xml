@@ -13,6 +13,7 @@
     <module>demo-base</module>
     <module>demo-log</module>
     <module>demo-template</module>
+    <module>demo-orm</module>
     <module>demo-monitor</module>
     <!--    <module>demo-logback</module>-->
     <!--    <module>demo-log-aop</module>-->
