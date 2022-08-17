@@ -17,6 +17,7 @@
     <module>demo-multi-datasource</module>
     <module>demo-cache</module>
     <module>demo-nosql</module>
+    <module>demo-mq</module>
     <module>demo-monitor</module>
     <!--    <module>demo-logback</module>-->
     <!--    <module>demo-log-aop</module>-->
