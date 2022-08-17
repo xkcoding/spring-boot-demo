@@ -10,6 +10,7 @@
 
   <modules>
     <module>common-tools</module>
+    <module>demo-base</module>
     <module>demo-helloworld</module>
     <module>demo-properties</module>
     <module>demo-actuator</module>
