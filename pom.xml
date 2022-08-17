@@ -25,6 +25,7 @@
     <module>demo-monitor</module>
     <module>demo-rate-limit</module>
     <module>demo-idempotent</module>
+    <module>demo-workflow</module>
     <!--    <module>demo-logback</module>-->
     <!--    <module>demo-log-aop</module>-->
     <!--    <module>demo-exception-handler</module>-->
