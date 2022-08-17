@@ -108,7 +108,7 @@ View the [TODO](./TODO.en.md) file
 | [demo-mq-rabbitmq](./demo-mq-rabbitmq)                       | a demo to integrate RabbitMQ implementation for message delivery and reception based on direct queue mode, fanout mode, topic mode, delay queue. |
 | [demo-mq-rocketmq](./demo-mq-rocketmq)                       | <span style="color:pink;">NOT FINISHED YET!</span> <br />a demo to integrate RocketMQ implementation for message delivery and reception. |
 | [demo-mq-kafka](./demo-mq-kafka)                             | a demo to integrate Kafka implementation for message delivery and reception. |
-| [demo-websocket](./demo-websocket)                           | a demo to integrate websocket, the backend actively pushes the server running status to front end. |
+| [demo-websocket](./demo-websocket-spring)                           | a demo to integrate websocket, the backend actively pushes the server running status to front end. |
 | [demo-websocket-socketio](./demo-websocket-socketio)         | a demo to integrate websocket by using `netty-socketio`, implement a simple chat room. |
 | [demo-ureport2](./demo-ureport2)                             | <span style="color:pink;">NOT FINISHED YET!</span> <br />a demo to integrate [ureport2](https://github.com/youseries/ureport) to implement complex, customized Chinese-style reports. |
 | [demo-uflo](./demo-uflo)                                     | <span style="color:pink;">NOT FINISHED YET!</span> <br />a demo to integrate [uflo](https://github.com/youseries/uflo)(process engine like Activiti and Flowable) to quickly implement a lightweight process engine. |
