@@ -20,6 +20,7 @@
     <module>demo-mq</module>
     <module>demo-task</module>
     <module>demo-websocket</module>
+    <module>demo-auth</module>
     <module>demo-monitor</module>
     <!--    <module>demo-logback</module>-->
     <!--    <module>demo-log-aop</module>-->
