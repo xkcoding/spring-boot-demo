@@ -20,6 +20,7 @@
 
   <modules>
     <module>demo-monitor-actuator</module>
+    <module>demo-monitor-admin</module>
   </modules>
 
 </project>

@@ -10,30 +10,15 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>demo-admin</artifactId>
+  <artifactId>demo-template</artifactId>
   <version>1.0.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
 
   <properties>
     <java.version>17</java.version>
-    <spring-boot-admin.version>3.0.0-M4</spring-boot-admin.version>
   </properties>
 
   <modules>
-    <module>admin-server</module>
-    <module>admin-client</module>
+    <module>dem</module>
   </modules>
-
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>de.codecentric</groupId>
-        <artifactId>spring-boot-admin-dependencies</artifactId>
-        <version>${spring-boot-admin.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
 
 </project>
