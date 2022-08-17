@@ -17,11 +17,4 @@ jobs:
           distribution: 'corretto'
           cache: maven
       - name: 编译检查
-        id: compile
         run: mvn clean compile -DskipTests -Dmaven.javadoc.skip=true -B -V
-      - name: 通知
-        uses: yakumioto/serverchan-action@v2
-        with:
-          key: ${{ secrets.sckey }}
-          text: "[CI-BOT] - $GITHUB_REPOSITORY"
-          desp: "仓库名称：$GITHUB_REPOSITORY\nCI任务：$GITHUB_WORKFLOW\n运行结果："+${{join(steps.compile.outputs.*, '\n')}}
