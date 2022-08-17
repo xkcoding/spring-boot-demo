@@ -16,5 +16,5 @@ jobs:
           java-version: '17'
           distribution: 'corretto'
           cache: maven
-      - name: 编译检查
+      - name: 编译打包
         run: mvn clean package -DskipTests -Dmaven.javadoc.skip=true -B -V
