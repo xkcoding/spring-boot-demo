@@ -17,4 +17,4 @@ jobs:
           distribution: 'corretto'
           cache: maven
       - name: 编译检查
-        run: mvn clean compile -DskipTests -Dmaven.javadoc.skip=true -B -V
+        run: mvn clean package -DskipTests -Dmaven.javadoc.skip=true -B -V
