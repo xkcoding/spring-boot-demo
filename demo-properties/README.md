@@ -6,15 +6,40 @@
 #### 1.1.添加依赖
 
 ```xml
- <!--
-   在 META-INF/additional-spring-configuration-metadata.json 中配置
-   可以去除 application.yml 中自定义配置的红线警告，并且为自定义配置添加 hint 提醒
-    -->
-<dependency>
-  <groupId>org.springframework.boot</groupId>
-  <artifactId>spring-boot-configuration-processor</artifactId>
-  <optional>true</optional>
-</dependency>
+ <dependencies>
+  <dependency>
+    <groupId>com.xkcoding</groupId>
+    <artifactId>common-tools</artifactId>
+  </dependency>
+
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+  </dependency>
+
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-test</artifactId>
+    <scope>test</scope>
+  </dependency>
+
+  <!--
+ 在 META-INF/additional-spring-configuration-metadata.json 中配置
+ 可以去除 application.yml 中自定义配置的红线警告，并且为自定义配置添加 hint 提醒
+  -->
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-configuration-processor</artifactId>
+    <optional>true</optional>
+  </dependency>
+
+  <dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <optional>true</optional>
+  </dependency>
+
+</dependencies>
 ```
 
 #### 1.2.配置类
