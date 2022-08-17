@@ -23,6 +23,7 @@
     <module>demo-auth</module>
     <module>demo-api-doc</module>
     <module>demo-monitor</module>
+    <module>demo-rate-limit</module>
     <!--    <module>demo-logback</module>-->
     <!--    <module>demo-log-aop</module>-->
     <!--    <module>demo-exception-handler</module>-->
