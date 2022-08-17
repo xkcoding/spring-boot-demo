@@ -15,6 +15,7 @@
     <module>demo-template</module>
     <module>demo-orm</module>
     <module>demo-multi-datasource</module>
+    <module>demo-cache</module>
     <module>demo-monitor</module>
     <!--    <module>demo-logback</module>-->
     <!--    <module>demo-log-aop</module>-->
