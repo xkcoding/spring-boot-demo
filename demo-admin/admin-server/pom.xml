@@ -8,7 +8,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>demo-admin-server</artifactId>
+  <artifactId>admin-server</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
