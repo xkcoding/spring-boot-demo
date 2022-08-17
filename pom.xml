@@ -21,6 +21,7 @@
     <module>demo-task</module>
     <module>demo-websocket</module>
     <module>demo-auth</module>
+    <module>demo-api-doc</module>
     <module>demo-monitor</module>
     <!--    <module>demo-logback</module>-->
     <!--    <module>demo-log-aop</module>-->
