@@ -20,6 +20,7 @@
 
   <modules>
     <module>demo-base-helloworld</module>
+    <module>demo-base-properties</module>
   </modules>
 
 </project>
