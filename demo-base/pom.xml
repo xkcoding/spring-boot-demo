@@ -12,9 +12,14 @@
 
   <artifactId>demo-base</artifactId>
   <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
 
   <properties>
     <java.version>17</java.version>
   </properties>
+
+  <modules>
+    <module>demo-base-helloworld</module>
+  </modules>
 
 </project>
