@@ -72,7 +72,7 @@ management:
 2. 访问：http://localhost:8090/sys/actuator/beans ，输入用户名(xkcoding)密码(123456)即可看到所有 Spring 管理的Bean
 3. 其余可访问的路径，参见文档
 
-## 参考
+### 3.参考
 
 - actuator文档：https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#actuator
 - 具体可以访问哪些路径，参考: https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#actuator.endpoints
