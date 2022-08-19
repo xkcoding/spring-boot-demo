@@ -18,7 +18,7 @@ steps:
       key:
         from_secret: sc_key
       text: "[CI通知]-[${DRONE_REPO_NAME}]✅"
-      desp: "⚙ 仓库名：${DRONE_REPO}\n\n💬 状态：第 **${DRONE_BUILD_NUMBER}** 次编译成功\n\n📄 分支：${DRONE_COMMIT_BRANCH}\n\n🌐 详情：[CI地址](${DRONE_BUILD_LINK})\n\n✉️ 提交内容：*${DRONE_COMMIT_MESSAGE}*\n\n🔀 查看详情：[DIFF内容](${DRONE_COMMIT_LINK})"
+      desp: "⚙ 仓库名：${DRONE_REPO}\n\n💬 状态：第 **${DRONE_BUILD_NUMBER}** 次编译成功\n\n📄 分支：${DRONE_COMMIT_BRANCH}\n\n🌐 详情：[CI地址](${DRONE_BUILD_LINK})\n\n✉️ 提交内容：**${DRONE_COMMIT_MESSAGE}**\n\n🔀 查看详情：[DIFF内容](${DRONE_COMMIT_LINK})"
     when:
       status:
         - success
@@ -29,7 +29,7 @@ steps:
       key:
         from_secret: sc_key
       text: "[CI通知]-[${DRONE_REPO_NAME}]❌"
-      desp: "⚙ 仓库名：${DRONE_REPO}\n\n💬 状态：第 **${DRONE_BUILD_NUMBER}** 次编译失败\n\n📄 分支：${DRONE_COMMIT_BRANCH}\n\n🌐 详情：[CI地址](${DRONE_BUILD_LINK})\n\n✉️ 提交内容：*${DRONE_COMMIT_MESSAGE}*\n\n🔀 查看详情：[DIFF内容](${DRONE_COMMIT_LINK})"
+      desp: "⚙ 仓库名：${DRONE_REPO}\n\n💬 状态：第 **${DRONE_BUILD_NUMBER}** 次编译失败\n\n📄 分支：${DRONE_COMMIT_BRANCH}\n\n🌐 详情：[CI地址](${DRONE_BUILD_LINK})\n\n✉️ 提交内容：**${DRONE_COMMIT_MESSAGE}**\n\n🔀 查看详情：[DIFF内容](${DRONE_COMMIT_LINK})"
     when:
       status:
         - failure
