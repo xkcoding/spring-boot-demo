@@ -12,9 +12,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date Created in 2018-10-02 20:49
  */
 @SpringBootApplication
-public class SpringBootDemoExceptionHandlerApplication {
+public class ExceptionHandlerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootDemoExceptionHandlerApplication.class, args);
+        SpringApplication.run(ExceptionHandlerApplication.class, args);
     }
 }

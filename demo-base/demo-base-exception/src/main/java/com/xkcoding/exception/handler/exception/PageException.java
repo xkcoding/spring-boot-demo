@@ -1,6 +1,7 @@
 package com.xkcoding.exception.handler.exception;
 
-import com.xkcoding.exception.handler.constant.Status;
+import com.xkcoding.common.enums.base.IStatus;
+import com.xkcoding.common.exception.CommonBizException;
 import lombok.Getter;
 
 /**
@@ -9,12 +10,12 @@ import lombok.Getter;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2018-10-02 21:18
+ * @date Created in 2022-08-20 02:09
  */
 @Getter
-public class PageException extends BaseException {
+public class PageException extends CommonBizException {
 
-    public PageException(Status status) {
+    public PageException(IStatus status) {
         super(status);
     }
 

@@ -22,6 +22,7 @@
     <module>demo-base-helloworld</module>
     <module>demo-base-properties</module>
     <module>demo-base-async</module>
+    <module>demo-base-exception</module>
   </modules>
 
 </project>

@@ -1,6 +1,7 @@
 package com.xkcoding.exception.handler.exception;
 
-import com.xkcoding.exception.handler.constant.Status;
+import com.xkcoding.common.enums.base.IStatus;
+import com.xkcoding.common.exception.CommonBizException;
 import lombok.Getter;
 
 /**
@@ -9,12 +10,12 @@ import lombok.Getter;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2018-10-02 21:18
+ * @date Created in 2022-08-20 02:08
  */
 @Getter
-public class JsonException extends BaseException {
+public class JsonException extends CommonBizException {
 
-    public JsonException(Status status) {
+    public JsonException(IStatus status) {
         super(status);
     }
 

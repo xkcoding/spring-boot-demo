@@ -1,8 +1,8 @@
 package com.xkcoding.exception.handler.handler;
 
+import com.xkcoding.common.model.viewmodel.Response;
 import com.xkcoding.exception.handler.exception.JsonException;
 import com.xkcoding.exception.handler.exception.PageException;
-import com.xkcoding.exception.handler.model.ApiResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -11,14 +11,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 /**
  * <p>
- * 统一异常处理
+ * 异常拦截
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2018-10-02 21:26
+ * @date Created in 2022-08-20 02:11
  */
-@ControllerAdvice
 @Slf4j
+@ControllerAdvice
 public class DemoExceptionHandler {
     private static final String DEFAULT_ERROR_VIEW = "error";
 
@@ -30,9 +30,9 @@ public class DemoExceptionHandler {
      */
     @ExceptionHandler(value = JsonException.class)
     @ResponseBody
-    public ApiResponse jsonErrorHandler(JsonException exception) {
+    public Response<Void> jsonErrorHandler(JsonException exception) {
         log.error("【JsonException】:{}", exception.getMessage());
-        return ApiResponse.ofException(exception);
+        return Response.ofError(exception);
     }
 
     /**
@@ -43,7 +43,7 @@ public class DemoExceptionHandler {
      */
     @ExceptionHandler(value = PageException.class)
     public ModelAndView pageErrorHandler(PageException exception) {
-        log.error("【DemoPageException】:{}", exception.getMessage());
+        log.error("【PageException】:{}", exception.getMessage());
         ModelAndView view = new ModelAndView();
         view.addObject("message", exception.getMessage());
         view.setViewName(DEFAULT_ERROR_VIEW);
