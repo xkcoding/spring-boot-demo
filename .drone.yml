@@ -3,21 +3,42 @@ type: docker
 name: build
 
 steps:
-  - name: compile
-    image: maven:3.8.6-amazoncorretto-17
-    pull: if-not-exists
-    volumes:
-      - name: mvn_cache
-        path: /root/.m2
-    commands:
-      - mvn clean package -DskipTests -Dmaven.javadoc.skip=true -B -V
+- name: compile
+  image: maven:3.8.6-amazoncorretto-17
+  pull: if-not-exists
+  volumes:
+  - name: mvn_cache
+    path: /root/.m2
+  commands:
+  - mvn clean package -DskipTests -Dmaven.javadoc.skip=true -B -V
 
+- name: notification-success
+  image: yakumioto/drone-serverchan:2.0.0
+  settings:
+    key:
+      from_secret: sc_key
+    text: "[CI通知]-[${DRONE_REPO_NAME}]✅"
+    desp: "⚙ 仓库名：${DRONE_REPO}\n\n💬 状态：第 **${DRONE_BUILD_NUMBER}** 次编译成功\n\n📄 分支：${DRONE_COMMIT_BRANCH}\n\n🌐 详情：[CI地址](${DRONE_BUILD_LINK})\n\n✉️ 提交内容：${DRONE_COMMIT_MESSAGE}\n\n🔀 查看详情：[DIFF内容](${DRONE_COMMIT_LINK})"
+  when:
+    status:
+    - success
+
+#  - name: notification-failure
+#    image: yakumioto/drone-serverchan:2.0.0
+#    settings:
+#      key:
+#        from_secret: sc_key
+#      text: "[CI通知]-[${DRONE_REPO_NAME}]❌"
+#      desp: "⚙ 仓库名：${DRONE_REPO}\n\n💬 状态：第 **${DRONE_BUILD_NUMBER}** 次编译失败\n\n📄 分支：${DRONE_COMMIT_BRANCH}\n\n🌐 详情：[CI地址](${DRONE_BUILD_LINK})\n\n✉️ 提交内容：${DRONE_COMMIT_MESSAGE}\n\n🔀 查看详情：[DIFF内容](${DRONE_COMMIT_LINK})"
+#    when:
+#      status:
+#        - failure
 
 trigger:
   event:
-    - push
+  - push
 
 volumes:
-  - name: mvn_cache # The name use in this pipeline,
-    host:
-      path: /root/.m2 # The path be used in the host.
+- name: mvn_cache # The name use in this pipeline,
+  host:
+    path: /root/.m2 # The path be used in the host.
