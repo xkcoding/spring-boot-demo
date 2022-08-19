@@ -1,40 +1,43 @@
 package com.xkcoding.async.task;
 
-import com.xkcoding.async.SpringBootDemoAsyncApplicationTests;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 
 /**
  * <p>
- * 测试任务
+ * 异步任务单元测试
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2018-12-29 10:49
+ * @date Created in 2022-08-19 21:21
  */
 @Slf4j
-public class TaskFactoryTest extends SpringBootDemoAsyncApplicationTests {
+@SpringBootTest
+@DisplayName("异步化测试")
+public class MockTaskFactoryTest {
     @Autowired
-    private TaskFactory task;
+    private MockTaskFactory task;
 
     /**
      * 测试异步任务
      */
     @Test
+    @DisplayName("异步任务")
     public void asyncTaskTest() throws InterruptedException, ExecutionException {
         long start = System.currentTimeMillis();
-        Future<Boolean> asyncTask1 = task.asyncTask1();
-        Future<Boolean> asyncTask2 = task.asyncTask2();
-        Future<Boolean> asyncTask3 = task.asyncTask3();
+        CompletableFuture<Boolean> asyncResult1 = task.asyncTask1();
+        CompletableFuture<Boolean> asyncResult2 = task.asyncTask2();
+        CompletableFuture<Boolean> asyncResult3 = task.asyncTask3();
 
+        CompletableFuture<Void> allResult = CompletableFuture.allOf(asyncResult1, asyncResult2, asyncResult3);
         // 调用 get() 阻塞主线程
-        asyncTask1.get();
-        asyncTask2.get();
-        asyncTask3.get();
+        allResult.get();
         long end = System.currentTimeMillis();
 
         log.info("异步任务全部执行结束，总耗时：{} 毫秒", (end - start));
@@ -44,6 +47,7 @@ public class TaskFactoryTest extends SpringBootDemoAsyncApplicationTests {
      * 测试同步任务
      */
     @Test
+    @DisplayName("同步任务")
     public void taskTest() throws InterruptedException {
         long start = System.currentTimeMillis();
         task.task1();

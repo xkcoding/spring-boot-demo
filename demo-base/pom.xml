@@ -21,6 +21,7 @@
   <modules>
     <module>demo-base-helloworld</module>
     <module>demo-base-properties</module>
+    <module>demo-base-async</module>
   </modules>
 
 </project>

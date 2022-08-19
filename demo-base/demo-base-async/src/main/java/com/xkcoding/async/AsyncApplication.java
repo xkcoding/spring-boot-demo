@@ -10,14 +10,14 @@ import org.springframework.scheduling.annotation.EnableAsync;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2018-12-29 10:28
+ * @date Created in 2022-08-19 21:19
  */
 @EnableAsync
 @SpringBootApplication
-public class SpringBootDemoAsyncApplication {
+public class AsyncApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootDemoAsyncApplication.class, args);
+        SpringApplication.run(AsyncApplication.class, args);
     }
 
 }

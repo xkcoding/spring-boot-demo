@@ -2,49 +2,48 @@ package com.xkcoding.async.task;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
-import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.stereotype.Component;
 
-import java.util.concurrent.Future;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 
 /**
  * <p>
- * 任务工厂
+ * 模拟任务工厂
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2018-12-29 10:37
+ * @date Created in 2022-08-19 21:19
  */
 @Component
 @Slf4j
-public class TaskFactory {
+public class MockTaskFactory {
 
     /**
      * 模拟5秒的异步任务
      */
     @Async
-    public Future<Boolean> asyncTask1() throws InterruptedException {
+    public CompletableFuture<Boolean> asyncTask1() throws InterruptedException {
         doTask("asyncTask1", 5);
-        return new AsyncResult<>(Boolean.TRUE);
+        return CompletableFuture.completedFuture(Boolean.TRUE);
     }
 
     /**
      * 模拟2秒的异步任务
      */
     @Async
-    public Future<Boolean> asyncTask2() throws InterruptedException {
+    public CompletableFuture<Boolean> asyncTask2() throws InterruptedException {
         doTask("asyncTask2", 2);
-        return new AsyncResult<>(Boolean.TRUE);
+        return CompletableFuture.completedFuture(Boolean.TRUE);
     }
 
     /**
      * 模拟3秒的异步任务
      */
     @Async
-    public Future<Boolean> asyncTask3() throws InterruptedException {
+    public CompletableFuture<Boolean> asyncTask3() throws InterruptedException {
         doTask("asyncTask3", 3);
-        return new AsyncResult<>(Boolean.TRUE);
+        return CompletableFuture.completedFuture(Boolean.TRUE);
     }
 
     /**
