@@ -180,6 +180,8 @@ public class MockTaskFactoryTest {
 
 #### 2.2运行结果
 
+运行 `MockTaskFactoryTest`，查看日志
+
 - 异步任务
 
 ```bash
