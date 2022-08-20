@@ -127,6 +127,6 @@ developer:
 
 ### 2.测试
 
-1. 启动 `PropertiesApplication.java` ；
+1. 启动 `PropertiesApplication` ；
 2. 打开任意浏览器，输入 `http://localhost:8080/demo/property` ，检查输出结果；
 3. 将 `application.yml` 配置文件中的 `spring.profiles.active` 参数从 `prod` 修改为 `dev` ，重新启动，观察输出结果变化。
