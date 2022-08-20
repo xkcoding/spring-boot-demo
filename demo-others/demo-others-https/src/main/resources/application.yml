@@ -1,0 +1,13 @@
+server:
+  ssl:
+    # 证书路径
+    key-store: classpath:spring-boot-demo.key
+    key-alias: spring-boot-demo
+    enabled: true
+    key-store-type: JKS
+    # 与申请时输入一致
+    key-store-password: 123456
+    # 浏览器默认端口 和 80 类似
+  port: 8443
+  servlet:
+    context-path: /demo

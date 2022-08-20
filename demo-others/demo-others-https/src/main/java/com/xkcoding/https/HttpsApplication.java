@@ -12,10 +12,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date Created in 2020-01-12 10:31
  */
 @SpringBootApplication
-public class SpringBootDemoHttpsApplication {
+public class HttpsApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootDemoHttpsApplication.class, args);
+        SpringApplication.run(HttpsApplication.class, args);
     }
 
 }

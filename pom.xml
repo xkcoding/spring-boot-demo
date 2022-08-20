@@ -81,7 +81,6 @@
     <!--    <module>demo-ratelimit-guava</module>-->
     <!--    <module>demo-ratelimit-redis</module>-->
     <!--    <module>demo-elasticsearch-rest-high-level-client</module>-->
-    <!--    <module>demo-https</module>-->
     <!--    <module>demo-flyway</module>-->
     <!--    <module>demo-pay</module>-->
   </modules>
