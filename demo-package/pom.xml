@@ -20,6 +20,7 @@
 
   <modules>
     <module>demo-package-docker</module>
+    <module>demo-package-war</module>
   </modules>
 
 </project>

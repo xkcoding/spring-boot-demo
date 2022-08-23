@@ -11,13 +11,13 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2018-10-30 19:37
+ * @date Created in 2022-08-23 14:50
  */
 @SpringBootApplication
-public class SpringBootDemoWarApplication extends SpringBootServletInitializer {
+public class WarApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootDemoWarApplication.class, args);
+        SpringApplication.run(WarApplication.class, args);
     }
 
     /**
@@ -25,6 +25,6 @@ public class SpringBootDemoWarApplication extends SpringBootServletInitializer {
      */
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(SpringBootDemoWarApplication.class);
+        return application.sources(WarApplication.class);
     }
 }
