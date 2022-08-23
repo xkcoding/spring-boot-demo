@@ -4,11 +4,11 @@ import jakarta.mail.MessagingException;
 
 /**
  * <p>
- * 邮件接口
+ * 邮件逻辑抽象
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2018-11-21 11:16
+ * @date Created in 2022-08-23 14:52
  */
 public interface MailService {
     /**

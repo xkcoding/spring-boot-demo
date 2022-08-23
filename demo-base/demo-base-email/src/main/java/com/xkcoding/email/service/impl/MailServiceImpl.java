@@ -16,11 +16,11 @@ import java.io.File;
 
 /**
  * <p>
- * 邮件接口
+ * 邮件逻辑实现
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2018-11-21 13:49
+ * @date Created in 2022-08-23 14:52
  */
 @Service
 public class MailServiceImpl implements MailService {

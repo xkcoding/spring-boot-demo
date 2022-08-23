@@ -7,11 +7,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 /**
  * <p>
- * 数据库密码测试
+ * jasypt密码加解密测试
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2019-08-27 16:15
+ * @date Created in 2022-08-23 14:52
  */
 @SpringBootTest
 class PasswordTest {

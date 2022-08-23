@@ -15,11 +15,11 @@ import java.net.URL;
 
 /**
  * <p>
- * 邮件测试
+ * 邮件逻辑测试
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2018-11-21 13:49
+ * @date Created in 2022-08-23 14:53
  */
 @SpringBootTest(classes = EmailApplication.class)
 class MailServiceTest {

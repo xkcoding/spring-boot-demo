@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2018-11-04 22:38
+ * @date Created in 2022-08-23 14:51
  */
 @SpringBootApplication
 public class EmailApplication {
