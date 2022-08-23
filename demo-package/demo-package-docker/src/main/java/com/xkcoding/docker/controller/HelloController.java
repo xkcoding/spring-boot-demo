@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
- * Hello Controller
+ * 测试路由
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2018-11-29 14:58
+ * @date Created in 2022-08-23 14:51
  */
 @Slf4j
 @RestController
