@@ -1,15 +1,16 @@
 package com.xkcoding.email.service;
 
 import cn.hutool.core.io.resource.ResourceUtil;
-import com.xkcoding.email.SpringBootDemoEmailApplicationTests;
-import org.junit.Test;
+import com.xkcoding.email.EmailApplication;
+import jakarta.mail.MessagingException;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
-import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
+import org.thymeleaf.spring6.templateresolver.SpringResourceTemplateResolver;
 
-import javax.mail.MessagingException;
 import java.net.URL;
 
 /**
@@ -20,7 +21,8 @@ import java.net.URL;
  * @author yangkai.shen
  * @date Created in 2018-11-21 13:49
  */
-public class MailServiceTest extends SpringBootDemoEmailApplicationTests {
+@SpringBootTest(classes = EmailApplication.class)
+class MailServiceTest {
     @Autowired
     private MailService mailService;
     @Autowired
@@ -37,19 +39,19 @@ public class MailServiceTest extends SpringBootDemoEmailApplicationTests {
     }
 
     /**
-     * 测试HTML邮件
+     * 测试HTML邮件（使用 classpath://templates/ 下的模板）
      *
      * @throws MessagingException 邮件异常
      */
     @Test
-    public void sendHtmlMail() throws MessagingException {
-        Context context = new Context();
-        context.setVariable("project", "Spring Boot Demo");
-        context.setVariable("author", "Yangkai.Shen");
-        context.setVariable("url", "https://github.com/xkcoding/spring-boot-demo");
+    void sendHtmlMail1() throws MessagingException {
+        Context varContext = new Context();
+        varContext.setVariable("project", "Spring Boot Demo");
+        varContext.setVariable("author", "Yangkai.Shen");
+        varContext.setVariable("url", "https://github.com/xkcoding/spring-boot-demo");
 
-        String emailTemplate = templateEngine.process("welcome", context);
-        mailService.sendHtmlMail("237497819@qq.com", "这是一封模板HTML邮件", emailTemplate);
+        String emailTemplate = templateEngine.process("welcome", varContext);
+        mailService.sendHtmlMail("237497819@qq.com", "这是一封模板HTML邮件(templates目录)", emailTemplate);
     }
 
     /**
@@ -58,7 +60,7 @@ public class MailServiceTest extends SpringBootDemoEmailApplicationTests {
      * @throws MessagingException 邮件异常
      */
     @Test
-    public void sendHtmlMail2() throws MessagingException {
+    void sendHtmlMail2() throws MessagingException {
 
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(context);
@@ -68,13 +70,13 @@ public class MailServiceTest extends SpringBootDemoEmailApplicationTests {
 
         templateEngine.setTemplateResolver(templateResolver);
 
-        Context context = new Context();
-        context.setVariable("project", "Spring Boot Demo");
-        context.setVariable("author", "Yangkai.Shen");
-        context.setVariable("url", "https://github.com/xkcoding/spring-boot-demo");
+        Context varContext = new Context();
+        varContext.setVariable("project", "Spring Boot Demo");
+        varContext.setVariable("author", "Yangkai.Shen");
+        varContext.setVariable("url", "https://github.com/xkcoding/spring-boot-demo");
 
-        String emailTemplate = templateEngine.process("test", context);
-        mailService.sendHtmlMail("237497819@qq.com", "这是一封模板HTML邮件", emailTemplate);
+        String emailTemplate = templateEngine.process("test", varContext);
+        mailService.sendHtmlMail("237497819@qq.com", "这是一封模板HTML邮件(自定义目录)", emailTemplate);
     }
 
     /**
@@ -83,7 +85,7 @@ public class MailServiceTest extends SpringBootDemoEmailApplicationTests {
      * @throws MessagingException 邮件异常
      */
     @Test
-    public void sendAttachmentsMail() throws MessagingException {
+    void sendAttachmentsMail() throws MessagingException {
         URL resource = ResourceUtil.getResource("static/xkcoding.png");
         mailService.sendAttachmentsMail("237497819@qq.com", "这是一封带附件的邮件", "邮件中有附件，请注意查收！", resource.getPath());
     }
@@ -94,7 +96,7 @@ public class MailServiceTest extends SpringBootDemoEmailApplicationTests {
      * @throws MessagingException 邮件异常
      */
     @Test
-    public void sendResourceMail() throws MessagingException {
+    void sendResourceMail() throws MessagingException {
         String rscId = "xkcoding";
         String content = "<html><body>这是带静态资源的邮件<br/><img src=\'cid:" + rscId + "\' ></body></html>";
         URL resource = ResourceUtil.getResource("static/xkcoding.png");

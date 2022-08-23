@@ -2,6 +2,8 @@ package com.xkcoding.email.service.impl;
 
 import cn.hutool.core.util.ArrayUtil;
 import com.xkcoding.email.service.MailService;
+import jakarta.mail.MessagingException;
+import jakarta.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.FileSystemResource;
@@ -10,8 +12,6 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
-import javax.mail.MessagingException;
-import javax.mail.internet.MimeMessage;
 import java.io.File;
 
 /**
@@ -26,7 +26,7 @@ import java.io.File;
 public class MailServiceImpl implements MailService {
     @Autowired
     private JavaMailSender mailSender;
-    @Value("${spring.mail.username}")
+    @Value("${spring.mail.from}")
     private String from;
 
     /**
@@ -57,20 +57,11 @@ public class MailServiceImpl implements MailService {
      * @param subject 邮件主题
      * @param content 邮件内容
      * @param cc      抄送地址
-     * @throws MessagingException 邮件发送异常
      */
     @Override
     public void sendHtmlMail(String to, String subject, String content, String... cc) throws MessagingException {
-        MimeMessage message = mailSender.createMimeMessage();
-        MimeMessageHelper helper = new MimeMessageHelper(message, true);
-        helper.setFrom(from);
-        helper.setTo(to);
-        helper.setSubject(subject);
-        helper.setText(content, true);
-        if (ArrayUtil.isNotEmpty(cc)) {
-            helper.setCc(cc);
-        }
-        mailSender.send(message);
+        MimeEmail mimeEmail = basicMimeEmailBuilder(to, subject, content, cc);
+        mailSender.send(mimeEmail.message());
     }
 
     /**
@@ -85,21 +76,14 @@ public class MailServiceImpl implements MailService {
      */
     @Override
     public void sendAttachmentsMail(String to, String subject, String content, String filePath, String... cc) throws MessagingException {
-        MimeMessage message = mailSender.createMimeMessage();
+        MimeEmail mimeEmail = basicMimeEmailBuilder(to, subject, content, cc);
 
-        MimeMessageHelper helper = new MimeMessageHelper(message, true);
-        helper.setFrom(from);
-        helper.setTo(to);
-        helper.setSubject(subject);
-        helper.setText(content, true);
-        if (ArrayUtil.isNotEmpty(cc)) {
-            helper.setCc(cc);
-        }
+        MimeMessageHelper helper = mimeEmail.helper();
         FileSystemResource file = new FileSystemResource(new File(filePath));
         String fileName = filePath.substring(filePath.lastIndexOf(File.separator));
         helper.addAttachment(fileName, file);
 
-        mailSender.send(message);
+        mailSender.send(mimeEmail.message());
     }
 
     /**
@@ -114,9 +98,22 @@ public class MailServiceImpl implements MailService {
      * @throws MessagingException 邮件发送异常
      */
     @Override
-    public void sendResourceMail(String to, String subject, String content, String rscPath, String rscId, String... cc) throws MessagingException {
-        MimeMessage message = mailSender.createMimeMessage();
+    public void sendResourceMail(String to, String subject, String content, String rscPath, String rscId, String... cc)
+        throws MessagingException {
+        MimeEmail mimeEmail = basicMimeEmailBuilder(to, subject, content, cc);
 
+        MimeMessageHelper helper = mimeEmail.helper();
+        FileSystemResource res = new FileSystemResource(new File(rscPath));
+        helper.addInline(rscId, res);
+
+        mailSender.send(mimeEmail.message());
+    }
+
+    /**
+     * 富文本邮件构造器，抽取重复代码，返回一个 MimeEmail record
+     */
+    private MimeEmail basicMimeEmailBuilder(String to, String subject, String content, String... cc) throws MessagingException {
+        MimeMessage message = mailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message, true);
         helper.setFrom(from);
         helper.setTo(to);
@@ -125,9 +122,10 @@ public class MailServiceImpl implements MailService {
         if (ArrayUtil.isNotEmpty(cc)) {
             helper.setCc(cc);
         }
-        FileSystemResource res = new FileSystemResource(new File(rscPath));
-        helper.addInline(rscId, res);
+        return new MimeEmail(message, helper);
+    }
 
-        mailSender.send(message);
+    private record MimeEmail(MimeMessage message, MimeMessageHelper helper) {
+
     }
 }

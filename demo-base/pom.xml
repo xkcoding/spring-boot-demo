@@ -23,6 +23,7 @@
     <module>demo-base-properties</module>
     <module>demo-base-async</module>
     <module>demo-base-exception</module>
+    <module>demo-base-email</module>
   </modules>
 
 </project>

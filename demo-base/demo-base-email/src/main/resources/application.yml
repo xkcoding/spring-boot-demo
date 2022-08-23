@@ -2,9 +2,10 @@ spring:
   mail:
     host: smtp.mxhichina.com
     port: 465
+    from: "SpringBootDemo测试<${spring.mail.username}>"
     username: spring-boot-demo@xkcoding.com
-    # 使用 jasypt 加密密码，使用com.xkcoding.email.PasswordTest.testGeneratePassword 生成加密密码，替换 ENC(加密密码)  
-    password: ENC(OT0qGOpXrr1Iog1W+fjOiIDCJdBjHyhy)
+    # 使用 jasypt 加密密码，使用com.xkcoding.email.PasswordTest.testGeneratePassword 生成加密密码，替换 ENC(加密密码)
+    password: ENC(aef0+nM5440HO7YFAo7iUz8ZHpkjZVlR0hNw3OI/QOPSkNhYRImE/Oy1LBgFKoB1OjqW0v4ZdM0xNS0eKxELfA==)
     protocol: smtp
     test-connection: true
     default-encoding: UTF-8

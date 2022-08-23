@@ -1,8 +1,9 @@
 package com.xkcoding.email;
 
 import org.jasypt.encryption.StringEncryptor;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 /**
  * <p>
@@ -12,7 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @author yangkai.shen
  * @date Created in 2019-08-27 16:15
  */
-public class PasswordTest extends SpringBootDemoEmailApplicationTests {
+@SpringBootTest
+class PasswordTest {
     @Autowired
     private StringEncryptor encryptor;
 
@@ -20,7 +22,7 @@ public class PasswordTest extends SpringBootDemoEmailApplicationTests {
      * 生成加密密码
      */
     @Test
-    public void testGeneratePassword() {
+    void testGeneratePassword() {
         // 你的邮箱密码
         String password = "Just4Test!";
         // 加密后的密码(注意：配置上去的时候需要加 ENC(加密密码))

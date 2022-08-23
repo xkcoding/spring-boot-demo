@@ -12,9 +12,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date Created in 2018-11-04 22:38
  */
 @SpringBootApplication
-public class SpringBootDemoEmailApplication {
+public class EmailApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootDemoEmailApplication.class, args);
+        SpringApplication.run(EmailApplication.class, args);
     }
 }

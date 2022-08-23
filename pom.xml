@@ -43,7 +43,6 @@
     <!--    <module>demo-upload</module>-->
     <!--    <module>demo-cache-redis</module>-->
     <!--    <module>demo-cache-ehcache</module>-->
-    <!--    <module>demo-email</module>-->
     <!--    <module>demo-task</module>-->
     <!--    <module>demo-task-quartz</module>-->
     <!--    <module>demo-task-xxl-job</module>-->

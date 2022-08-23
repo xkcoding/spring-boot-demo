@@ -1,6 +1,6 @@
 package com.xkcoding.email.service;
 
-import javax.mail.MessagingException;
+import jakarta.mail.MessagingException;
 
 /**
  * <p>
@@ -30,7 +30,7 @@ public interface MailService {
      * @param cc      抄送地址
      * @throws MessagingException 邮件发送异常
      */
-    void sendHtmlMail(String to, String subject, String content, String... cc) throws MessagingException;
+    void sendHtmlMail(String to, String subject, String content, String... cc) throws MessagingException, MessagingException;
 
     /**
      * 发送带附件的邮件
