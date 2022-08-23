@@ -37,6 +37,25 @@ public class WarApplication extends SpringBootServletInitializer {
     <scope>provided</scope>
   </dependency>
 </dependencies>
+
+<build>
+  <finalName>demo-package-war</finalName>
+  <plugins>
+    <plugin>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-maven-plugin</artifactId>
+    </plugin>
+    <!--若需要打成 war 包，则需要添加 war 插件，这样在mvn package的时候就可以打包成 war 包-->
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-war-plugin</artifactId>
+      <version>3.3.2</version>
+      <configuration>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
 ```
 
 ### 2.参考
