@@ -12,9 +12,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date Created in 2018-11-29 14:59
  */
 @SpringBootApplication
-public class SpringBootDemoDockerApplication {
+public class DockerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootDemoDockerApplication.class, args);
+        SpringApplication.run(DockerApplication.class, args);
     }
 }

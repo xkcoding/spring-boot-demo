@@ -68,7 +68,6 @@
     <!--    <module>demo-elasticsearch</module>-->
     <!--    <module>demo-mongodb</module>-->
     <!--    <module>demo-neo4j</module>-->
-    <!--    <module>demo-docker</module>-->
     <!--    <module>demo-multi-datasource-jpa</module>-->
     <!--    <module>demo-multi-datasource-mybatis</module>-->
     <!--    <module>demo-sharding-jdbc</module>-->
