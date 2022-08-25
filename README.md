@@ -56,10 +56,6 @@
 
 ## 其他
 
-###  团队纳新
-
-组内招人啦，HC 巨多，Base 杭州，感兴趣的小伙伴，查看 [岗位详情](./jd.md)
-
 ### 开源推荐
 
 ![11628591293_.pic_hd](https://static.aliyun.xkcoding.com/2021/08/14/11628591293pichd.jpg?x-oss-process=style/tag_compress)
