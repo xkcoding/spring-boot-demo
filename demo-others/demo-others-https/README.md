@@ -145,5 +145,5 @@ $ keytool --help
 使用 -conf <url> 选项可指定预配置的选项文件。
 ```
 
-- Spring Boot 配置 SSL 参考官方文档：https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#howto.webserver.configure-ssl
+- [Spring Boot 官方文档之配置 SSL](https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#howto.webserver.configure-ssl)
 - [Java Keytool工具简介](https://blog.csdn.net/liumiaocn/article/details/61921014)
