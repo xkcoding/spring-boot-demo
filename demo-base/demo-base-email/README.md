@@ -250,6 +250,6 @@ public class MailServiceImpl implements MailService {
 
 ### 3.参考
 
-- Spring Boot 官方文档：https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#io.email
-- Spring 官方文档：https://docs.spring.io/spring-framework/docs/6.0.0-M5/reference/html/integration.html#mail
-- jasypt 加解密文档：https://github.com/ulisesbocchio/jasypt-spring-boot#what-to-do-first
+- [Spring Boot 官方文档之邮件](https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#io.email)
+- [Spring 官方文档之邮件](https://docs.spring.io/spring-framework/docs/6.0.0-M5/reference/html/integration.html#mail)
+- [jasypt 加解密文档](https://github.com/ulisesbocchio/jasypt-spring-boot#what-to-do-first)
