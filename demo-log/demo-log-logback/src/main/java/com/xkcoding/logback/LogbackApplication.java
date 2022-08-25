@@ -11,14 +11,14 @@ import org.springframework.context.ConfigurableApplicationContext;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2018-09-30 23:16
+ * @date Created in 2022-08-25 17:03
  */
-@SpringBootApplication
 @Slf4j
-public class SpringBootDemoLogbackApplication {
+@SpringBootApplication
+public class LogbackApplication {
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(SpringBootDemoLogbackApplication.class, args);
+        ConfigurableApplicationContext context = SpringApplication.run(LogbackApplication.class, args);
         int length = context.getBeanDefinitionNames().length;
         log.trace("Spring boot启动初始化了 {} 个 Bean", length);
         log.debug("Spring boot启动初始化了 {} 个 Bean", length);

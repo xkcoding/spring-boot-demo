@@ -28,7 +28,6 @@
     <module>demo-workflow</module>
     <module>demo-package</module>
     <module>demo-others</module>
-    <!--    <module>demo-logback</module>-->
     <!--    <module>demo-log-aop</module>-->
     <!--    <module>demo-template-freemarker</module>-->
     <!--    <module>demo-template-thymeleaf</module>-->
