@@ -60,4 +60,4 @@ public class WarApplication extends SpringBootServletInitializer {
 
 ### 2.参考
 
-- Spring Boot 官方文档：https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#howto.traditional-deployment.war
+- [Spring Boot 官方文档之传统部署方式](https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#howto.traditional-deployment.war)
