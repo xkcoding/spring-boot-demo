@@ -149,4 +149,4 @@ public class LogbackApplication {
 
 ### 3.参考
 
-- [Spring Boot 官方文档 Logging 配置](https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#howto.logging)
+- [Spring Boot 官方文档之 Logging 配置](https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#howto.logging)
