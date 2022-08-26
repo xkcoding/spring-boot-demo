@@ -5,16 +5,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * <p>
- * 启动类
+ * 启动器
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2018-10-01 22:05
+ * @date Created in 2022-08-26 11:58
  */
 @SpringBootApplication
-public class SpringBootDemoLogAopApplication {
+public class LogAopApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootDemoLogAopApplication.class, args);
+        SpringApplication.run(LogAopApplication.class, args);
     }
 }

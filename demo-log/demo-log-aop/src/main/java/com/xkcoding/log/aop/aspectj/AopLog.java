@@ -3,11 +3,9 @@ package com.xkcoding.log.aop.aspectj;
 import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.json.JSONUtil;
 import com.google.common.collect.Maps;
+import com.xkcoding.log.aop.model.LogData;
 import eu.bitwalker.useragentutils.UserAgent;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
@@ -19,7 +17,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import javax.servlet.http.HttpServletRequest;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Collections;
@@ -33,11 +30,11 @@ import java.util.Objects;
  *
  * @author yangkai.shen
  * @author chen qi
- * @date Created in 2018-10-01 22:05
+ * @date Created in 2022-08-26 11:58
  */
+@Slf4j
 @Aspect
 @Component
-@Slf4j
 public class AopLog {
     /**
      * 切入点
@@ -56,7 +53,6 @@ public class AopLog {
      */
     @Around("log()")
     public Object aroundLog(ProceedingJoinPoint point) throws Throwable {
-
         // 开始打印请求日志
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = Objects.requireNonNull(attributes).getRequest();
@@ -67,7 +63,7 @@ public class AopLog {
         String header = request.getHeader("User-Agent");
         UserAgent userAgent = UserAgent.parseUserAgentString(header);
 
-        final Log l = Log.builder()
+        LogData logData = LogData.builder()
             .threadId(Long.toString(Thread.currentThread().getId()))
             .threadName(Thread.currentThread().getName())
             .ip(getIp(request))
@@ -82,18 +78,15 @@ public class AopLog {
             .browser(userAgent.getBrowser().toString())
             .os(userAgent.getOperatingSystem().toString()).build();
 
-        log.info("Request Log Info : {}", JSONUtil.toJsonStr(l));
+        log.info("Request Log Info : {}", JSONUtil.toJsonStr(logData));
 
         return result;
     }
 
     /**
-     *  获取方法参数名和参数值
-     * @param joinPoint
-     * @return
+     * 获取方法参数名和参数值
      */
     private Map<String, Object> getNameAndValue(ProceedingJoinPoint joinPoint) {
-
         final Signature signature = joinPoint.getSignature();
         MethodSignature methodSignature = (MethodSignature) signature;
         final String[] names = methodSignature.getParameterNames();
@@ -145,34 +138,4 @@ public class AopLog {
         return ip;
     }
 
-    @Data
-    @Builder
-    @NoArgsConstructor
-    @AllArgsConstructor
-    static class Log {
-        // 线程id
-        private String threadId;
-        // 线程名称
-        private String threadName;
-        // ip
-        private String ip;
-        // url
-        private String url;
-        // http方法 GET POST PUT DELETE PATCH
-        private String httpMethod;
-        // 类方法
-        private String classMethod;
-        // 请求参数
-        private Object requestParams;
-        // 返回参数
-        private Object result;
-        // 接口耗时
-        private Long timeCost;
-        // 操作系统
-        private String os;
-        // 浏览器
-        private String browser;
-        // user-agent
-        private String userAgent;
-    }
 }

@@ -13,12 +13,11 @@ import java.util.Map;
 
 /**
  * <p>
- * 测试 Controller
+ * 测试端点
  * </p>
  *
  * @author yangkai.shen
- * @author chen qi
- * @date Created in 2018-10-01 22:10
+ * @date Created in 2022-08-26 11:58
  */
 @Slf4j
 @RestController
@@ -36,7 +35,8 @@ public class TestController {
     }
 
     /**
-     *  测试post json方法
+     * 测试post json方法
+     *
      * @param map 请求的json参数
      * @return {@link Dict}
      */
