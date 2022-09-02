@@ -24,7 +24,7 @@
     <module>demo-api-doc</module>
     <module>demo-monitor</module>
     <module>demo-rate-limit</module>
-    <module>demo-idempotent</module>
+    <module>demo-distributed-lock</module>
     <module>demo-workflow</module>
     <module>demo-package</module>
     <module>demo-others</module>
