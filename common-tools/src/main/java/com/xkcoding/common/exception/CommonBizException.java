@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
 /**
  * 通用业务异常
  *
- * @author 一珩（沈扬凯 yk.shen@tuya.com）
+ * @author yangkai.shen
  * @date 2022-08-20 01:55
  */
 @Data

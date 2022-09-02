@@ -10,7 +10,7 @@ import java.io.Serializable;
 /**
  * 通用接口返回
  *
- * @author 一珩（沈扬凯 yk.shen@tuya.com）
+ * @author yangkai.shen
  * @date 2022-08-20 01:43
  */
 @Data
