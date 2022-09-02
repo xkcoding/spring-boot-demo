@@ -1,7 +1,7 @@
 package com.xkcoding.distributed.lock.api.impl;
 
 import com.xkcoding.distributed.lock.api.DistributedLock;
-import com.xkcoding.distributed.lock.api.LockClient;
+import com.xkcoding.distributed.lock.api.DistributedLockClient;
 
 import java.util.concurrent.TimeUnit;
 
@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
  * @author yangkai.shen
  * @date 2022-09-02 21:53
  */
-public class DummyDistributedLockClient implements LockClient {
+public class DummyDistributedLockClient implements DistributedLockClient {
     /**
      * 获取一把锁
      *

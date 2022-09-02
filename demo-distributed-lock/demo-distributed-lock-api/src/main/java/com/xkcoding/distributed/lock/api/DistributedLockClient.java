@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
  * @author yangkai.shen
  * @date 2022-09-02 21:48
  */
-public interface LockClient {
+public interface DistributedLockClient {
     /**
      * 获取一把锁
      *

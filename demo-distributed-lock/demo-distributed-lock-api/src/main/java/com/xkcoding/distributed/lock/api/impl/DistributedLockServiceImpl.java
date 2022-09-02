@@ -1,8 +1,8 @@
 package com.xkcoding.distributed.lock.api.impl;
 
 import com.xkcoding.distributed.lock.api.DistributedLock;
+import com.xkcoding.distributed.lock.api.DistributedLockClient;
 import com.xkcoding.distributed.lock.api.DistributedLockService;
-import com.xkcoding.distributed.lock.api.LockClient;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -20,7 +20,7 @@ import java.util.function.Supplier;
 @Slf4j
 @RequiredArgsConstructor
 public class DistributedLockServiceImpl implements DistributedLockService {
-    private final LockClient lockClient;
+    private final DistributedLockClient distributedLockClient;
 
     /**
      * 锁
@@ -33,7 +33,7 @@ public class DistributedLockServiceImpl implements DistributedLockService {
      */
     @Override
     public <T> T lock(String lockKey, long timeout, TimeUnit timeUnit, Supplier<T> execute) {
-        DistributedLock lock = lockClient.getLock(lockKey, timeout, timeUnit);
+        DistributedLock lock = distributedLockClient.getLock(lockKey, timeout, timeUnit);
         lock.lock();
 
         try {
