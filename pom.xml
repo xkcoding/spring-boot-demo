@@ -91,6 +91,10 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <spring.boot.version>3.0.0-M4</spring.boot.version>
+
+    <mysql.version>8.0.30</mysql.version>
+    <hutool.version>5.8.5</hutool.version>
+    <guava.version>31.1-jre</guava.version>
   </properties>
 
   <dependencyManagement>
@@ -102,6 +106,23 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>cn.hutool</groupId>
+        <artifactId>hutool-all</artifactId>
+        <version>${hutool.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>${guava.version}</version>
+      </dependency>
+
       <dependency>
         <groupId>com.xkcoding</groupId>
         <artifactId>common-tools</artifactId>

@@ -18,21 +18,16 @@
 
   <properties>
     <java.version>17</java.version>
-
-    <hutool.version>5.8.5</hutool.version>
-    <guava.version>31.1-jre</guava.version>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>cn.hutool</groupId>
       <artifactId>hutool-all</artifactId>
-      <version>${hutool.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
-      <version>${guava.version}</version>
     </dependency>
 
     <dependency>
