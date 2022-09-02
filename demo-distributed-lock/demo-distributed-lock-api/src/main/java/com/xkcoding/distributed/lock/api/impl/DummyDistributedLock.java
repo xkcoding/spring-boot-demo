@@ -1,7 +1,6 @@
 package com.xkcoding.distributed.lock.api.impl;
 
 import com.xkcoding.distributed.lock.api.DistributedLock;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.TimeUnit;
 
@@ -30,7 +29,7 @@ public class DummyDistributedLock extends DistributedLock {
     }
 
     @Override
-    public boolean tryLock(long time, @NotNull TimeUnit unit) throws InterruptedException {
+    public boolean tryLock(long time, TimeUnit unit) throws InterruptedException {
         return true;
     }
 

@@ -1,6 +1,6 @@
 package com.xkcoding.distributed.lock.service;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xkcoding.distributed.lock.annotation.DLock;
 import com.xkcoding.distributed.lock.mapper.StockMapper;
 import com.xkcoding.distributed.lock.model.Stock;
@@ -26,7 +26,7 @@ public class StockService {
     /**
      * 减货物
      */
-    @DLock(lockKey = "lock_stock_${stockId}", lockTime = 3000, timeUnit = TimeUnit.MICROSECONDS)
+    @DLock(lockKey = "'lock_stock_'+#stockId", lockTime = 3000, timeUnit = TimeUnit.MICROSECONDS)
     public void reduceStock(Long stockId) {
         // 先查询库存是否充足
         Stock stock = this.stockMapper.selectById(stockId);
@@ -44,7 +44,7 @@ public class StockService {
     public void resetStock() {
         log.info("start to init stock data...");
 
-        stockMapper.delete(new LambdaQueryWrapper<Stock>().gt(Stock::getId, 0));
+        stockMapper.delete(new QueryWrapper<Stock>().gt("id", 0));
 
         Stock mockStock = new Stock();
         mockStock.setId(1L);

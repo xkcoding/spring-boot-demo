@@ -3,7 +3,7 @@ package com.xkcoding.distributed.lock.api.impl;
 import com.xkcoding.distributed.lock.api.DistributedLock;
 import com.xkcoding.distributed.lock.api.DistributedLockService;
 import com.xkcoding.distributed.lock.api.LockClient;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.TimeUnit;
@@ -18,7 +18,7 @@ import java.util.function.Supplier;
  * @date 2022-09-02 21:41
  */
 @Slf4j
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class DistributedLockServiceImpl implements DistributedLockService {
     private final LockClient lockClient;
 

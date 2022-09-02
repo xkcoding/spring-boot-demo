@@ -1,5 +1,9 @@
 package com.xkcoding.distributed.lock.annotation;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -10,6 +14,8 @@ import java.util.concurrent.TimeUnit;
  * @author yangkai.shen
  * @date 2022-09-02 15:47
  */
+@Target({ElementType.METHOD})
+@Retention(RetentionPolicy.RUNTIME)
 public @interface DLock {
     /**
      * @return 锁的标识，支持 spel 表达式
