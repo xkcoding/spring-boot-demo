@@ -2,8 +2,6 @@ package com.xkcoding.distributed.lock.autoconfigure;
 
 import com.xkcoding.distributed.lock.aop.DistributedLockAspect;
 import com.xkcoding.distributed.lock.api.DistributedLockClient;
-import com.xkcoding.distributed.lock.api.DistributedLockService;
-import com.xkcoding.distributed.lock.api.impl.DistributedLockServiceImpl;
 import com.xkcoding.distributed.lock.api.impl.DummyDistributedLockClient;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -28,12 +26,7 @@ public class DistributedLockAutoConfiguration {
     }
 
     @Bean
-    public DistributedLockService distributedLockService(DistributedLockClient distributedLockClient) {
-        return new DistributedLockServiceImpl(distributedLockClient);
-    }
-
-    @Bean
-    public DistributedLockAspect distributedLockAspect(DistributedLockService distributedLockService) {
-        return new DistributedLockAspect(distributedLockService);
+    public DistributedLockAspect distributedLockAspect(DistributedLockClient distributedLockClient) {
+        return new DistributedLockAspect(distributedLockClient);
     }
 }

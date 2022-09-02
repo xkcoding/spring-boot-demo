@@ -16,15 +16,15 @@ public abstract class DistributedLock implements Lock {
     /**
      * 锁的标识
      */
-    private final String lockKey;
+    protected final String lockKey;
     /**
      * 锁的时间
      */
-    private final long lockTime;
+    protected final long lockTime;
     /**
      * 锁的时间单位
      */
-    private final TimeUnit timeUnit;
+    protected final TimeUnit timeUnit;
 
     protected DistributedLock(String lockKey, long lockTime, TimeUnit timeUnit) {
         this.lockKey = lockKey;

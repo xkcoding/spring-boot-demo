@@ -31,4 +31,9 @@ public @interface DLock {
      * @return 锁的时间单位
      */
     TimeUnit timeUnit() default TimeUnit.MILLISECONDS;
+
+    /**
+     * @return 快速失败，true: 限流，拿不到锁，直接失败；false: 不限流，接收所有请求，阻塞执行
+     */
+    boolean fastFail() default false;
 }

@@ -26,7 +26,7 @@ public class StockService {
     /**
      * 减货物
      */
-    @DLock(lockKey = "'lock_stock_'+#stockId", lockTime = 3000, timeUnit = TimeUnit.MICROSECONDS)
+    @DLock(lockKey = "'lock_stock_'+#stockId", lockTime = 3000, timeUnit = TimeUnit.MICROSECONDS, fastFail = false)
     public void reduceStock(Long stockId) {
         // 先查询库存是否充足
         Stock stock = this.stockMapper.selectById(stockId);

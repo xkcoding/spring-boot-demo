@@ -1,7 +1,8 @@
 package com.xkcoding.distributed.lock.aop;
 
 import com.xkcoding.distributed.lock.annotation.DLock;
-import com.xkcoding.distributed.lock.api.DistributedLockService;
+import com.xkcoding.distributed.lock.api.DistributedLock;
+import com.xkcoding.distributed.lock.api.DistributedLockClient;
 import lombok.RequiredArgsConstructor;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -27,24 +28,43 @@ import java.util.concurrent.TimeUnit;
 @Aspect
 @RequiredArgsConstructor
 public class DistributedLockAspect {
-    private final DistributedLockService distributedLockService;
+    private final DistributedLockClient distributedLockClient;
 
-    @Around("@annotation(lock)")
-    public Object around(ProceedingJoinPoint pjp, DLock lock) throws Throwable {
+    @Around("@annotation(dLock)")
+    public Object around(ProceedingJoinPoint pjp, DLock dLock) throws Throwable {
         Method method = ((MethodSignature) pjp.getSignature()).getMethod();
         Object[] args = pjp.getArgs();
-        String lockKey = lock.lockKey();
+        String lockKey = dLock.lockKey();
         lockKey = parseExpression(lockKey, method, args);
 
-        long timeout = lock.lockTime();
-        TimeUnit timeUnit = lock.timeUnit();
-        return distributedLockService.lock(lockKey, timeout, timeUnit, () -> {
+        long timeout = dLock.lockTime();
+        TimeUnit timeUnit = dLock.timeUnit();
+
+        DistributedLock lock = distributedLockClient.getLock(lockKey, timeout, timeUnit);
+
+        if (dLock.fastFail()) {
+            if (lock.tryLock()) {
+                try {
+                    return pjp.proceed();
+                } catch (Throwable t) {
+                    throw new RuntimeException(t);
+                } finally {
+                    lock.unlock();
+                }
+            } else {
+                throw new RuntimeException("请勿重复提交！");
+            }
+        } else {
+            lock.lock();
             try {
                 return pjp.proceed();
-            } catch (Throwable e) {
-                throw new RuntimeException(e);
+            } catch (Throwable t) {
+                throw new RuntimeException(t);
+            } finally {
+                lock.unlock();
             }
-        });
+        }
+
     }
 
     /**
