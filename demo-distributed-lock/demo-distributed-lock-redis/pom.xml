@@ -4,26 +4,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
     <groupId>com.xkcoding</groupId>
-    <artifactId>spring-boot-demo</artifactId>
+    <artifactId>demo-distributed-lock</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>demo-distributed-lock</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
+  <artifactId>demo-distributed-lock-redis</artifactId>
 
   <properties>
     <java.version>17</java.version>
   </properties>
-
-  <modules>
-    <module>demo-distributed-lock-api</module>
-    <module>demo-distributed-lock-redis</module>
-    <module>demo-distributed-lock-redisson</module>
-    <module>demo-distributed-lock-zookeeper</module>
-    <module>demo-distributed-lock-mysql</module>
-  </modules>
 
 </project>
