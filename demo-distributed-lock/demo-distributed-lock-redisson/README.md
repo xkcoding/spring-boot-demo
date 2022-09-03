@@ -134,6 +134,8 @@ $ docker compose -f docker-compose.env.yml up
 
 这里我通过 Apache Bench 进行模拟并发场景，我也构建了一个压测镜像 `xkcoding/ab:alpine-3.16.2` ，方便同学们进行快速测试
 
+> 注意：每次启动项目，都会在重置库存，你也可以手动调用 `/demo/stock/reset` 接口重置
+
 #### 2.2.1.测试无分布式锁下高并发请求是否会发生超卖
 
 1. 把 `RedissonDistributedLockAutoConfiguration` 类全部注释掉，这将不会装配 Redisson 分布式锁
