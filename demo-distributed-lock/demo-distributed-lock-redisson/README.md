@@ -4,7 +4,9 @@
 
 ## 1.开发步骤
 
-在 `demo-distributed-lock-api` 模块中，已经实现了基于 AOP 的分布式锁注解拦截、简单的扣减库存案例，因此本模块只需要实现 `com.xkcoding.distributed.lock.api.DistributedLock` 和 `com.xkcoding.distributed.lock.api.DistributedLockClient` 两个接口即可。
+在 `demo-distributed-lock-api` 模块中，已经实现了基于 AOP 的分布式锁注解拦截、简单的扣减库存案例，因此本模块只需要实现以下两个接口即可。
+- `com.xkcoding.distributed.lock.api.DistributedLock`
+- `com.xkcoding.distributed.lock.api.DistributedLockClient`
 
 ### 1.1.添加依赖
 
