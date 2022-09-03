@@ -37,4 +37,8 @@
     </dependency>
   </dependencies>
 
+  <build>
+    <finalName>common-tools</finalName>
+  </build>
+
 </project>

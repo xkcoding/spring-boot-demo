@@ -46,4 +46,9 @@
     </dependency>
   </dependencies>
 
+
+  <build>
+    <finalName>demo-distributed-lock-api</finalName>
+  </build>
+
 </project>
