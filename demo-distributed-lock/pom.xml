@@ -20,10 +20,11 @@
 
   <modules>
     <module>demo-distributed-lock-api</module>
+    <module>demo-distributed-lock-mysql</module>
     <module>demo-distributed-lock-redis</module>
     <module>demo-distributed-lock-redisson</module>
     <module>demo-distributed-lock-zookeeper</module>
-    <module>demo-distributed-lock-mysql</module>
+    <module>demo-distributed-lock-curator</module>
   </modules>
 
 </project>
