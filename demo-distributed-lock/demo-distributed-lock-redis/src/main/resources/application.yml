@@ -1,0 +1,19 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /demo
+spring:
+  sql:
+    init:
+      continue-on-error: true
+      mode: always
+      schema-locations:
+        - "classpath:db/schema.sql"
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring-boot-demo
+    username: root
+    password: root
+  redis:
+    host: 127.0.0.1
+    port: 6379

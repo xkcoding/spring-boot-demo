@@ -1,4 +1,4 @@
-package com.xkcoding.zookeeper;
+package com.xkcoding.distributed.lock;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,14 +9,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2018-12-27 14:51
+ * @date 2022-09-03 12:23
  */
 @SpringBootApplication
-public class SpringBootDemoZookeeperApplication {
+public class RedisDistributedLockApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootDemoZookeeperApplication.class, args);
+        SpringApplication.run(RedisDistributedLockApplication.class, args);
     }
 
 }
-
