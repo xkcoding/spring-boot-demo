@@ -33,6 +33,8 @@ public @interface DLock {
     TimeUnit timeUnit() default TimeUnit.MILLISECONDS;
 
     /**
+     * 该参数，仅在 redisson/curator 实现时，才可以生效
+     *
      * @return 快速失败，true: 限流，拿不到锁，直接失败；false: 不限流，接收所有请求，阻塞执行
      */
     boolean fastFail() default false;
