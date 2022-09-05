@@ -222,14 +222,14 @@ $ docker compose -f docker-compose.env.yml up
 
 #### 2.2.1.测试无分布式锁下高并发请求是否会发生超卖
 
-1. 把 `RedisDistributedLockAutoConfiguration` 类全部注释掉，这将不会装配 Redisson 分布式锁
+1. 把 `RedisDistributedLockAutoConfiguration` 类全部注释掉，这将不会装配 RedisTemplate 分布式锁
 2. 启动 `RedisDistributedLockApplication`
 3. 模拟 5000 请求数 100 并发的压测环境 `docker run -it --rm xkcoding/ab:alpine-3.16.2 ab -n 5000 -c 100 http://${替换成你电脑的内网IP}:8080/demo/stock/reduce`
 4. 等待压测结束，前往数据库查看库存是否从 5000 减为 0
 
-#### 2.2.2.测试 Redisson 分布式锁
+#### 2.2.2.测试 RedisTemplate 分布式锁
 
-1. 把 `RedisDistributedLockAutoConfiguration` 类的注释解开，此时 Spring Boot 会自动装配我们的 Redisson 分布式锁
+1. 把 `RedisDistributedLockAutoConfiguration` 类的注释解开，此时 Spring Boot 会自动装配我们的 RedisTemplate 分布式锁
 2. 再次启动 `RedisDistributedLockApplication`
 3. 再次模拟 5000 请求数 100 并发的压测环境 `docker run -it --rm xkcoding/ab:alpine-3.16.2 ab -n 5000 -c 100 http://${替换成你电脑的内网IP}:8080/demo/stock/reduce`
 4. 等待压测结束，前往数据库查看库存是否从 5000 减为 0
