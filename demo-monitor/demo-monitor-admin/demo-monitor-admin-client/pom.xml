@@ -3,16 +3,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
     <groupId>com.xkcoding</groupId>
-    <artifactId>demo-admin</artifactId>
+    <artifactId>demo-monitor-admin</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>admin-client</artifactId>
+  <artifactId>demo-monitor-admin-client</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>admin-client</name>
+  <name>demo-monitor-admin-client</name>
   <description>Demo project for Spring Boot</description>
 
   <properties>
@@ -50,7 +50,7 @@
   </dependencies>
 
   <build>
-    <finalName>admin-client</finalName>
+    <finalName>demo-monitor-admin-client</finalName>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>

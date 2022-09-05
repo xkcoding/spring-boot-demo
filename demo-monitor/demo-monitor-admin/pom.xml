@@ -10,7 +10,7 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>demo-admin</artifactId>
+  <artifactId>demo-monitor-admin</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
@@ -20,8 +20,8 @@
   </properties>
 
   <modules>
-    <module>admin-server</module>
-    <module>admin-client</module>
+    <module>demo-monitor-admin-server</module>
+    <module>demo-monitor-admin-client</module>
   </modules>
 
   <dependencyManagement>
