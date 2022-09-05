@@ -16,6 +16,20 @@
     <java.version>17</java.version>
   </properties>
 
+  <dependencies>
+    <dependency>
+      <groupId>com.xkcoding</groupId>
+      <artifactId>demo-distributed-lock-api</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <optional>true</optional>
+    </dependency>
+  </dependencies>
+
   <build>
     <finalName>demo-distributed-lock-mysql</finalName>
     <plugins>
