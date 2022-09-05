@@ -14,6 +14,41 @@
 
   <properties>
     <java.version>17</java.version>
+    <zookeeper.version>3.8.0</zookeeper.version>
   </properties>
 
+  <dependencies>
+    <dependency>
+      <groupId>com.xkcoding</groupId>
+      <artifactId>common-tools</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.xkcoding</groupId>
+      <artifactId>demo-distributed-lock-api</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.zookeeper</groupId>
+      <artifactId>zookeeper</artifactId>
+      <version>${zookeeper.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <optional>true</optional>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>demo-distributed-lock-zookeeper</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
 </project>
