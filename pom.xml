@@ -28,54 +28,6 @@
     <module>demo-workflow</module>
     <module>demo-package</module>
     <module>demo-others</module>
-    <!--    <module>demo-template-freemarker</module>-->
-    <!--    <module>demo-template-thymeleaf</module>-->
-    <!--    <module>demo-template-beetl</module>-->
-    <!--    <module>demo-template-enjoy</module>-->
-    <!--    <module>demo-orm-jdbctemplate</module>-->
-    <!--    <module>demo-orm-jpa</module>-->
-    <!--    <module>demo-orm-mybatis</module>-->
-    <!--    <module>demo-orm-mybatis-mapper-page</module>-->
-    <!--    <module>demo-orm-mybatis-plus</module>-->
-    <!--    <module>demo-orm-beetlsql</module>-->
-    <!--    <module>demo-upload</module>-->
-    <!--    <module>demo-cache-redis</module>-->
-    <!--    <module>demo-cache-ehcache</module>-->
-    <!--    <module>demo-task</module>-->
-    <!--    <module>demo-task-quartz</module>-->
-    <!--    <module>demo-task-xxl-job</module>-->
-    <!--    <module>demo-swagger</module>-->
-    <!--    <module>demo-swagger-beauty</module>-->
-    <!--    <module>demo-rbac-security</module>-->
-    <!--    <module>demo-rbac-shiro</module>-->
-    <!--    <module>demo-session</module>-->
-    <!--    <module>demo-oauth</module>-->
-    <!--    <module>demo-social</module>-->
-    <!--    <module>demo-mq-rabbitmq</module>-->
-    <!--    <module>demo-mq-rocketmq</module>-->
-    <!--    <module>demo-mq-kafka</module>-->
-    <!--    <module>demo-websocket</module>-->
-    <!--    <module>demo-websocket-socketio</module>-->
-    <!--    <module>demo-ureport2</module>-->
-    <!--    <module>demo-uflo</module>-->
-    <!--    <module>demo-urule</module>-->
-    <!--    <module>demo-activiti</module>-->
-    <!--    <module>demo-dubbo</module>-->
-    <!--    <module>demo-elasticsearch</module>-->
-    <!--    <module>demo-mongodb</module>-->
-    <!--    <module>demo-neo4j</module>-->
-    <!--    <module>demo-multi-datasource-jpa</module>-->
-    <!--    <module>demo-multi-datasource-mybatis</module>-->
-    <!--    <module>demo-sharding-jdbc</module>-->
-    <!--    <module>demo-tio</module>-->
-    <!--    <module>demo-codegen</module>-->
-    <!--    <module>demo-ldap</module>-->
-    <!--    <module>demo-dynamic-datasource</module>-->
-    <!--    <module>demo-ratelimit-guava</module>-->
-    <!--    <module>demo-ratelimit-redis</module>-->
-    <!--    <module>demo-elasticsearch-rest-high-level-client</module>-->
-    <!--    <module>demo-flyway</module>-->
-    <!--    <module>demo-pay</module>-->
   </modules>
   <packaging>pom</packaging>
 
