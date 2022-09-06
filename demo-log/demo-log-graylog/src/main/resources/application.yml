@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: spring-boot-demo-log-graylog

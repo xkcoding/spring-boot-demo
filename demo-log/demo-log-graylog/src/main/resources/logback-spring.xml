@@ -25,6 +25,9 @@
   <property name="GRAY_LOG_SHORT_PATTERN"
             value="%m%nopex"/>
 
+  <property name="GRAY_LOG_HOST" value="127.0.0.1"/>
+  <property name="GRAY_LOG_PORT" value="12201"/>
+
   <!-- 获取服务名 -->
   <springProperty scope="context" name="APP_NAME" source="spring.application.name"/>
 
@@ -38,8 +41,8 @@
 
   <!-- graylog 日志收集 -->
   <appender name="GELF" class="de.siegmar.logbackgelf.GelfUdpAppender">
-    <graylogHost>localhost</graylogHost>
-    <graylogPort>12201</graylogPort>
+    <graylogHost>${GRAY_LOG_HOST}</graylogHost>
+    <graylogPort>${GRAY_LOG_PORT}</graylogPort>
     <maxChunkSize>508</maxChunkSize>
     <useCompression>true</useCompression>
     <encoder class="de.siegmar.logbackgelf.GelfEncoder">
@@ -65,48 +68,7 @@
   <!-- 日志输出级别 -->
   <root level="INFO">
     <appender-ref ref="STDOUT"/>
-    <appender-ref ref="GELF" />
+    <appender-ref ref="GELF"/>
   </root>
-
-  <logger name="net.sf.ehcache" level="INFO"/>
-  <logger name="druid.sql" level="INFO"/>
-
-
-  <!-- MyBatis log configure -->
-  <logger name="com.apache.ibatis" level="INFO"/>
-  <logger name="org.mybatis.spring" level="DEBUG"/>
-  <logger name="java.sql.Connection" level="DEBUG"/>
-  <logger name="java.sql.Statement" level="DEBUG"/>
-  <logger name="java.sql.PreparedStatement" level="DEBUG"/>
-
-  <!-- 减少部分debug日志 -->
-  <logger name="druid.sql" level="INFO"/>
-  <logger name="org.apache.shiro" level="INFO"/>
-  <logger name="org.mybatis.spring" level="INFO"/>
-  <logger name="org.springframework" level="INFO"/>
-  <logger name="org.springframework.context" level="WARN"/>
-  <logger name="org.springframework.beans" level="WARN"/>
-  <logger name="com.baomidou.mybatisplus" level="INFO"/>
-  <logger name="org.apache.ibatis.io" level="INFO"/>
-  <logger name="org.apache.velocity" level="INFO"/>
-  <logger name="org.eclipse.jetty" level="INFO"/>
-  <logger name="io.undertow" level="INFO"/>
-  <logger name="org.xnio.nio" level="INFO"/>
-  <logger name="org.thymeleaf" level="INFO"/>
-  <logger name="springfox.documentation" level="INFO"/>
-  <logger name="org.hibernate.validator" level="INFO"/>
-  <logger name="com.netflix.loadbalancer" level="INFO"/>
-  <logger name="com.netflix.hystrix" level="INFO"/>
-  <logger name="com.netflix.zuul" level="INFO"/>
-  <logger name="de.codecentric" level="INFO"/>
-  <!-- cache INFO -->
-  <logger name="net.sf.ehcache" level="INFO"/>
-  <logger name="org.springframework.cache" level="INFO"/>
-  <!-- cloud -->
-  <logger name="org.apache.http" level="INFO"/>
-  <logger name="com.netflix.discovery" level="INFO"/>
-  <logger name="com.netflix.eureka" level="INFO"/>
-  <!-- 业务日志 -->
-  <Logger name="com.xkcoding" level="DEBUG"/>
 
 </configuration>

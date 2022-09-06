@@ -21,6 +21,7 @@
   <modules>
     <module>demo-log-logback</module>
     <module>demo-log-aop</module>
+    <module>demo-log-graylog</module>
   </modules>
 
 </project>

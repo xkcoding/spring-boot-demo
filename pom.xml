@@ -69,7 +69,6 @@
     <!--    <module>demo-sharding-jdbc</module>-->
     <!--    <module>demo-tio</module>-->
     <!--    <module>demo-codegen</module>-->
-    <!--    <module>demo-graylog</module>-->
     <!--    <module>demo-ldap</module>-->
     <!--    <module>demo-dynamic-datasource</module>-->
     <!--    <module>demo-ratelimit-guava</module>-->
