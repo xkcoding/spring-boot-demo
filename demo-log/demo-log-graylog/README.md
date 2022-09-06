@@ -54,14 +54,6 @@ $ docker compose -f docker-compose.env.yml up
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  ~ Copyright 2019 Yangkai.Shen
-  ~
-  ~ Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
-  ~
-  ~    http://www.apache.org/licenses/LICENSE-2.0
-  ~ Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
-  -->
 <configuration scan="true" scanPeriod="60 seconds">
 
   <!-- 彩色日志依赖的渲染类 -->
@@ -168,11 +160,11 @@ public class GraylogApplication {
 
 ### 3.2.配置 graylog 控制台，接收日志来源
 
+> 这里我采用的是 gelf udp 的方式收集日志，采用的是 push 的方式，也可以通过 filebeat 的方式直接收集日志文件，具体配置参考官方文档
+
 登录 `graylog`，打开浏览器访问：http://localhost:9000 输入配置的 `用户名/密码` 信息（默认为admin/admin）
 
 ![登录graylog](http://static.xkcoding.com/spring-boot-demo/graylog/063124.jpg)
-
-
 
 设置日志来源信息
 
@@ -195,4 +187,5 @@ public class GraylogApplication {
 - [Graylog 官方文档](https://docs.graylog.org/)
 - [Graylog 官方文档之docker启动](https://docs.graylog.org/docs/docker)
 - [Graylog 镜像地址](https://hub.docker.com/r/graylog/graylog)
+- [Graylog 日志收集](https://docs.graylog.org/docs/sending-data)
 - [logback gelf log appender 官方文档](https://github.com/osiegmar/logback-gelf)
