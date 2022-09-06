@@ -14,16 +14,15 @@
     <module>demo-log</module>
     <module>demo-template</module>
     <module>demo-orm</module>
-    <module>demo-multi-datasource</module>
     <module>demo-cache</module>
     <module>demo-nosql</module>
     <module>demo-mq</module>
     <module>demo-task</module>
     <module>demo-websocket</module>
     <module>demo-auth</module>
-    <module>demo-api-doc</module>
+    <module>demo-apidoc</module>
     <module>demo-monitor</module>
-    <module>demo-rate-limit</module>
+    <module>demo-ratelimit</module>
     <module>demo-distributed-lock</module>
     <module>demo-workflow</module>
     <module>demo-package</module>

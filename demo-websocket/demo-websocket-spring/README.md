@@ -120,7 +120,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
 ### 1.3. 服务器相关实体
 
-> 此部分实体 参见包路径 [com.xkcoding.websocket.model](./src/main/java/com/xkcoding/websocket/model)
+> 此部分实体 参见包路径 [com.xkcoding.websocket.model](src/main/java/com/xkcoding/websocket/model)
 
 ### 1.4. ServerTask.java
 
