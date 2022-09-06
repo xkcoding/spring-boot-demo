@@ -1,0 +1,8 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /demo
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  packages-to-scan: com.xkcoding.swagger.controller
