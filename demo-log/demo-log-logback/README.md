@@ -1,9 +1,10 @@
-## spring-boot-demo-logback
+# spring-boot-demo-logback
 
 > 此 demo 主要演示了如何使用 logback 记录程序运行过程中的日志，以及如何配置 logback，可以同时生成控制台日志和文件日志记录，文件日志以日期和大小进行拆分生成。
 
-### 1.开发步骤
-#### 1.1.添加依赖
+## 1.开发步骤
+
+### 1.1.添加依赖
 
 ```xml
 <dependencies>
@@ -28,7 +29,7 @@
 </dependencies>
 ```
 
-#### 1.2.编写日志配置文件
+### 1.2.编写日志配置文件
 
 > 在 `classpath` 下创建名为 `logback-spring.xml` 的配置文件
 
@@ -115,7 +116,8 @@
 </configuration>
 ```
 
-#### 1.3.添加日志打印
+### 1.3.添加日志打印
+
 ```java
 @Slf4j
 @SpringBootApplication
@@ -139,7 +141,7 @@ public class LogbackApplication {
 }
 ```
 
-### 2.测试
+## 2.测试
 
 运行 `LogbackApplication`
 
@@ -147,6 +149,6 @@ public class LogbackApplication {
 - `logs/demo-log/demo-log-logback/info.created_on_xxxx.log`
 - `logs/demo-log/demo-log-logback/error.created_on_xxxx.log`
 
-### 3.参考
+## 3.参考
 
 - [Spring Boot 官方文档之 Logging 配置](https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#howto.logging)

@@ -1,10 +1,11 @@
-## spring-boot-demo-helloworld
+# spring-boot-demo-helloworld
 
 > 本 demo 演示如何使用 Spring Boot 写一个hello world
 
-### 1.开发步骤
+## 1.开发步骤
 
-#### 1.1.添加依赖
+### 1.1.添加依赖
+
 ```xml
 <dependencies>
   <dependency>
@@ -25,7 +26,7 @@
 </dependencies>
 ```
 
-#### 1.2.启动类 HelloworldApplication.java
+### 1.2.启动类 HelloworldApplication.java
 
 ```java
 @SpringBootApplication
@@ -52,7 +53,7 @@ public class HelloworldApplication {
 }
 ```
 
-#### 1.3.配置文件 application.yml
+### 1.3.配置文件 application.yml
 
 ```yaml
 server:
@@ -60,7 +61,7 @@ server:
   servlet:
     context-path: /demo
 ```
-### 2.测试
+## 2.测试
 
 启动 `HelloworldApplication` 打开任意浏览器：
 - 输入 `http://localhost:8080/demo/hello` ，输出 `Hello, World!`；

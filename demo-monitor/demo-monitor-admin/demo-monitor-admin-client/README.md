@@ -1,10 +1,10 @@
-## spring-boot-demo-admin-client
+# spring-boot-demo-admin-client
 
 > 本 demo 主要演示了普通项目如何集成 Spring Boot Admin，并把自己的运行状态交给 Spring Boot Admin 进行展现。
 
-### 1.开发步骤
+## 1.开发步骤
 
-#### 1.1.添加依赖
+### 1.1.添加依赖
 
 ```xml
 <dependencies>
@@ -38,7 +38,7 @@
 </dependencies>
 ```
 
-#### 1.2.增加测试路由以及日志支持
+### 1.2.增加测试路由以及日志支持
 
 ```java
 @Slf4j
@@ -58,7 +58,7 @@ public class TestController {
 }
 ```
 
-#### 1.3.修改配置文件
+### 1.3.修改配置文件
 
 ```yaml
 server:
@@ -108,7 +108,7 @@ logging:
     file: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(${PID}){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wEx"
 ```
 
-### 2.测试
+## 2.测试
 
 1. 启动 `AdminServerApplication` 之后，再启动 `AdminClientApplication`，然后输入 `http://localhost:8080/demo` ，观察 client 程序是否启动成功
 2. 输入 `http://localhost:8080/demo/test` ，观察 admin-server 是否可以在线查看日志

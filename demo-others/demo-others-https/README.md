@@ -1,9 +1,10 @@
-## spring-boot-demo-https
+# spring-boot-demo-https
 
 > 此 demo 主要演示了 Spring Boot 如何集成 https
 
-### 1.开发步骤
-#### 1.1.添加依赖
+## 1.开发步骤
+
+### 1.1.添加依赖
 
 ```xml
 <dependencies>
@@ -20,7 +21,7 @@
 </dependencies>
 ```
 
-#### 1.2.生成证书
+### 1.2.生成证书
 
 首先使用 jdk 自带的 keytool 命令生成证书复制到项目的 `resources` 目录下
 
@@ -46,7 +47,7 @@ CN=xkcoding, OU=spring-boot-demo, O=spring-boot-demo, L=Hangzhou, ST=Zhejiang, C
 	 CN=xkcoding, OU=spring-boot-demo, O=spring-boot-demo, L=Hangzhou, ST=Zhejiang, C=CN
 ```
 
-#### 1.3.添加配置
+### 1.3.添加配置
 
 1. 在配置文件配置生成的证书
 
@@ -104,7 +105,7 @@ public class HttpsConfig {
 }
 ```
 
-### 2.测试
+## 2.测试
 
 启动 `HttpsApplication`，浏览器访问 `http://localhost:8080/demo/` 将自动跳转到 `https://localhost:8443/demo/` ，同时浏览器地址栏前面还会加一把小锁的标志，代表https已经生效。
 
@@ -112,7 +113,7 @@ public class HttpsConfig {
 > 1. 自己生成的证书浏览器会有危险提示，去ssl网站上使用金钱申请则不会
 > 2. Chrome 浏览器会因为证书不可信导致无法访问，因此测试请使用 FireFox 浏览器
 
-### 3.参考
+## 3.参考
 
 - `keytool`命令参考
 

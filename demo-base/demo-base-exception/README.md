@@ -1,10 +1,10 @@
-## spring-boot-demo-exception-handler
+# spring-boot-demo-exception-handler
 
 > 此 demo 演示了如何在Spring Boot中进行统一的异常处理，包括了两种方式的处理：第一种对常见API形式的接口进行异常处理，统一封装返回格式；第二种是对模板页面请求的异常处理，统一处理错误页面。
 
-### 1.开发步骤
+## 1.开发步骤
 
-#### 1.1.添加依赖
+### 1.1.添加依赖
 
 ```xml
 <dependencies>
@@ -38,7 +38,7 @@
 </dependencies>
 ```
 
-#### 1.2.构造JSON异常和页面跳转异常
+### 1.2.构造JSON异常和页面跳转异常
 
 ```java
 // JSON 异常
@@ -68,7 +68,8 @@ public class PageException extends CommonBizException {
 }
 ```
 
-#### 1.3.异常拦截
+### 1.3.异常拦截
+
 ```java
 @Slf4j
 @ControllerAdvice
@@ -105,7 +106,7 @@ public class DemoExceptionHandler {
 }
 ```
 
-#### 1.4.编写统一错误页面
+### 1.4.编写统一错误页面
 
 > 位于 `src/main/resources/template` 目录下
 
@@ -123,9 +124,9 @@ public class DemoExceptionHandler {
 </html>
 ```
 
-### 2.测试
+## 2.测试
 
-#### 2.1.编写测试路由代码模拟异常
+### 2.1.编写测试路由代码模拟异常
 
 ```java
 @Controller

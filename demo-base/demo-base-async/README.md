@@ -1,10 +1,10 @@
-## spring-boot-demo-async
+# spring-boot-demo-async
 
 > 此 demo 主要演示了 Spring Boot 如何使用原生提供的异步任务支持，实现异步执行任务。
 
-### 1.开发步骤
+## 1.开发步骤
 
-#### 1.1.添加依赖
+### 1.1.添加依赖
 
 ```xml
 <dependencies>
@@ -27,7 +27,7 @@
 </dependencies>
 ```
 
-#### 1.2.增加异步线程池的配置
+### 1.2.增加异步线程池的配置
 
 > 注意：如果不配置的话，会使用默认的线程池配置
 
@@ -50,7 +50,7 @@ spring:
       thread-name-prefix: async-task-
 ```
 
-#### 1.3.同步、异步任务模拟
+### 1.3.同步、异步任务模拟
 
 > 1. 异步方法的返回值，需要指定为：`java.util.concurrent.Future`,`org.springframework.util.concurrent.ListenableFuture`,`java.util.concurrent.CompletableFuture`
 > 2. 方法上标记 `@Async`
@@ -116,7 +116,7 @@ public class MockTaskFactory {
 }
 ```
 
-#### 1.4.在启动类上增加注解 `@EnableAsync`
+### 1.4.在启动类上增加注解 `@EnableAsync`
 
 ```java
 @EnableAsync
@@ -130,9 +130,9 @@ public class AsyncApplication {
 }
 ```
 
-### 2.测试
+## 2.测试
 
-#### 2.1.编写测试代码
+### 2.1.编写测试代码
 
 ```java
 @Slf4j
@@ -178,7 +178,7 @@ public class MockTaskFactoryTest {
 }
 ```
 
-#### 2.2运行结果
+### 2.2运行结果
 
 运行 `MockTaskFactoryTest`，查看日志
 
@@ -206,6 +206,6 @@ INFO 11574 --- [           main] com.xkcoding.async.task.MockTaskFactory  : task
 INFO 11574 --- [           main] c.x.async.task.MockTaskFactoryTest       : 同步任务全部执行结束，总耗时：10032 毫秒
 ```
 
-### 3.参考
+## 3.参考
 
 - [Spring Boot 官方文档之异步任务线程池的配置](https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#features.task-execution-and-scheduling)

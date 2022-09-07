@@ -1,9 +1,10 @@
-## spring-boot-demo-war
+# spring-boot-demo-war
 
 > 本 demo 主要演示了如何将 Spring Boot 项目打包成传统的 war 包程序。
 
-### 1.开发步骤
-#### 1.1.修改启动类
+## 1.开发步骤
+
+### 1.1.修改启动类
 
 ```java
 @SpringBootApplication
@@ -23,7 +24,7 @@ public class WarApplication extends SpringBootServletInitializer {
 }
 ```
 
-#### 1.2.修改 pom.xml
+### 1.2.修改 pom.xml
 
 ```xml
 <!-- 若需要打成 war 包，则需要将打包方式改成 war -->
@@ -58,6 +59,6 @@ public class WarApplication extends SpringBootServletInitializer {
 </build>
 ```
 
-### 2.参考
+## 2.参考
 
 - [Spring Boot 官方文档之传统部署方式](https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#howto.traditional-deployment.war)

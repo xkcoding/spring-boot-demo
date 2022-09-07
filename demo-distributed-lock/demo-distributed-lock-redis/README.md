@@ -1,4 +1,4 @@
-## spring-boot-demo-distributed-lock-redis
+# spring-boot-demo-distributed-lock-redis
 
 > 此 demo 主要演示了 Spring Boot 如何基于 RedisTemplate 实现一个分布式锁，支持集群部署、支持可重入、支持自动续期等功能
 

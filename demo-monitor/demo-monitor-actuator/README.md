@@ -1,10 +1,10 @@
-## spring-boot-demo-actuator
+# spring-boot-demo-actuator
 
 > 本 demo 主要演示了如何在 Spring Boot 中通过 actuator 检查项目运行情况
 
-### 1.开发步骤
+## 1.开发步骤
 
-#### 1.1.添加依赖
+### 1.1.添加依赖
 
 ```xml
 <dependencies>
@@ -36,7 +36,7 @@
 </dependencies>
 ```
 
-#### 1.2.配置文件 application.yml
+### 1.2.配置文件 application.yml
 
 ```yaml
 server:
@@ -65,14 +65,14 @@ management:
         include: '*'
 ```
 
-### 2.测试
+## 2.测试
 
 启动 `ActuatorApplication` ，会在**控制台**里查看所有可以访问的端口信息
 1. 打开浏览器，访问：http://localhost:8090/sys/actuator/mappings ，输入用户名(xkcoding)密码(123456)即可看到所有的mapping信息
 2. 访问：http://localhost:8090/sys/actuator/beans ，输入用户名(xkcoding)密码(123456)即可看到所有 Spring 管理的Bean
 3. 其余可访问的路径，参见文档
 
-### 3.参考
+## 3.参考
 
-- actuator文档：https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#actuator
-- 具体可以访问哪些路径，参考: https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#actuator.endpoints
+- [Spring Boot 官方文档之actuator文档](https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#actuator)
+- [Acutator 暴露端点列表](https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#actuator.endpoints)

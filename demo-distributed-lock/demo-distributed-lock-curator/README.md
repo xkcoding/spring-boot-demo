@@ -1,4 +1,4 @@
-## spring-boot-demo-distributed-lock-curator
+# spring-boot-demo-distributed-lock-curator
 
 > 此 demo 主要演示了 Spring Boot 如何基于 Curator 实现一个分布式锁
 

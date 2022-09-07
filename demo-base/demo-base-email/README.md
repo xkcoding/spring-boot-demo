@@ -1,10 +1,10 @@
-## spring-boot-demo-email
+# spring-boot-demo-email
 
 > 此 demo 主要演示了 Spring Boot 如何整合邮件功能，包括发送简单文本邮件、HTML邮件（包括模板HTML邮件）、附件邮件、静态资源邮件。
 
-### 1.开发步骤
+## 1.开发步骤
 
-#### 1.1.添加依赖
+### 1.1.添加依赖
 
 ```xml
 
@@ -41,7 +41,7 @@
 </dependencies>
 ```
 
-#### 1.2.添加邮件相关配置
+### 1.2.添加邮件相关配置
 
 ```yaml
 spring:
@@ -67,7 +67,7 @@ jasypt:
     password: spring-boot-demo
 ```
 
-#### 1.3.编写发送邮件代码
+### 1.3.编写发送邮件代码
 
 - **抽象邮件服务接口**，方便后期替换不同的客户端实现
 
@@ -240,7 +240,7 @@ public class MailServiceImpl implements MailService {
 
 - 其他资源文件参考 `classpath://resources` 目录
 
-### 2.测试
+## 2.测试
 
 参考 `MailServiceTest` 测试用例，分别运行各个方法，进行邮件测试
 > 注意：
@@ -248,7 +248,7 @@ public class MailServiceImpl implements MailService {
 > 2. **强烈建议各位同学测试的时候，把邮箱改成自己的邮箱进行测试，这样才能实际体会到收到的邮件内容**
 > 3. 请勿将 `spring-boot-demo@xkcoding.com` 的邮箱用于发送违法内容，否则作者将收回邮箱权限，同时提交给公安依法追究
 
-### 3.参考
+## 3.参考
 
 - [Spring Boot 官方文档之邮件](https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#io.email)
 - [Spring 官方文档之邮件](https://docs.spring.io/spring-framework/docs/6.0.0-M5/reference/html/integration.html#mail)

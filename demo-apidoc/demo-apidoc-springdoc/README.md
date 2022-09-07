@@ -1,9 +1,10 @@
-## spring-boot-demo-springdoc
+# spring-boot-demo-springdoc
 
 > 此 demo 主要演示了 Spring Boot 如何通过 Springdoc 集成 swagger
 
-### 1.开发步骤
-#### 1.1.添加依赖
+## 1.开发步骤
+
+### 1.1.添加依赖
 
 > 3.0.0-M4 依赖的 servlet 为 jakarta，目前 release 的 Springdoc 依赖的是 javax.servlet-api，需要同时使用最新的 2.0.0-M5
 
@@ -39,7 +40,7 @@
 </dependencies>
 ```
 
-#### 1.2.编写测试接口
+### 1.2.编写测试接口
 
 ```java
 @Slf4j
@@ -113,7 +114,7 @@ public class UserController {
 
 ```
 
-#### 1.3.编写返回对象
+### 1.3.编写返回对象
 
 ```java
 @Data
@@ -141,7 +142,7 @@ public class User implements Serializable {
 }
 ```
 
-#### 1.4.配置 Springdoc
+### 1.4.配置 Springdoc
 
 - **SpringdocAutoConfiguration**
 
@@ -169,11 +170,11 @@ springdoc:
   packages-to-scan: com.xkcoding.swagger.controller
 ```
 
-### 2.测试
+## 2.测试
 
 启动项目，访问地址：http://localhost:8080/demo/swagger-ui/index.html
 
-### 3.参考
+## 3.参考
 
 - [Springdoc 官方文档](https://springdoc.org/)
 - [Springfox 迁移到 Springdoc 步骤](https://springdoc.org/#migrating-from-springfox)

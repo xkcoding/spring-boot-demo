@@ -1,9 +1,10 @@
-## spring-boot-demo-properties
+# spring-boot-demo-properties
 
 > 本 demo 演示如何获取配置文件的自定义配置，以及如何多环境下的配置文件信息的获取
 
-### 1.开发步骤
-#### 1.1.添加依赖
+## 1.开发步骤
+
+### 1.1.添加依赖
 
 ```xml
  <dependencies>
@@ -42,7 +43,7 @@
 </dependencies>
 ```
 
-#### 1.2.配置类
+### 1.2.配置类
 
 > 分别使用两种方式获取配置
 
@@ -66,7 +67,7 @@ public class DeveloperProperty {
 }
 ```
 
-#### 1.3.测试入口
+### 1.3.测试入口
 
 ```java
 @RestController
@@ -87,7 +88,8 @@ public class PropertyController {
 }
 ```
 
-#### 1.4.配置文件
+### 1.4.配置文件
+
 **application.yml**
 ```yml
 server:
@@ -119,13 +121,13 @@ developer:
   email: prod环境 237497819@qq.com
 ```
 
-#### 1.5.其他
+### 1.5.其他
 
 编写配置提示，`additional-spring-configuration-metadata.json`
 
 参考： src/main/resources/META-INF/additional-spring-configuration-metadata.json
 
-### 2.测试
+## 2.测试
 
 1. 启动 `PropertiesApplication` ；
 2. 打开任意浏览器，输入 `http://localhost:8080/demo/property` ，检查输出结果；

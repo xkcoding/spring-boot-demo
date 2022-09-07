@@ -1,4 +1,4 @@
-## spring-boot-demo-cache-redis
+# spring-boot-demo-cache-redis
 
 > 此 demo 主要演示了 Spring Boot 如何整合 redis，操作redis中的数据，并使用redis缓存数据。连接池使用  Lettuce。
 
@@ -184,13 +184,13 @@ $ docker compose -f docker-compose.env.yml up
 ### 2.2.测试 Redis 基础功能
 
 > 主要测试使用 `RedisTemplate` 操作 `Redis` 中的数据，查看是否正常序列化：
->
-> - opsForValue：对应 String（字符串）
-> - opsForZSet：对应 ZSet（有序集合）
-> - opsForHash：对应 Hash（哈希）
-> - opsForList：对应 List（列表）
-> - opsForSet：对应 Set（集合）
-> - opsForGeo：** 对应 GEO（地理位置）
+
+- opsForValue：对应 String（字符串）
+- opsForZSet：对应 ZSet（有序集合）
+- opsForHash：对应 Hash（哈希）
+- opsForList：对应 List（列表）
+- opsForSet：对应 Set（集合）
+- opsForGeo：** 对应 GEO（地理位置）
 
 ```java
 @Slf4j
