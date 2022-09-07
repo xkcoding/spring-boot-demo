@@ -1,10 +1,11 @@
 package com.xkcoding.cache.redis.service;
 
-import com.xkcoding.cache.redis.SpringBootDemoCacheRedisApplicationTests;
-import com.xkcoding.cache.redis.entity.User;
+import com.xkcoding.cache.api.UserService;
+import com.xkcoding.cache.entity.User;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 /**
  * <p>
@@ -12,10 +13,11 @@ import org.springframework.beans.factory.annotation.Autowired;
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2018-11-15 16:53
+ * @date Created in 2022-09-07 14:37
  */
 @Slf4j
-public class UserServiceTest extends SpringBootDemoCacheRedisApplicationTests {
+@SpringBootTest
+public class UserServiceTest {
     @Autowired
     private UserService userService;
 

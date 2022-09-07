@@ -1,4 +1,4 @@
-package com.xkcoding.cache.redis.config;
+package com.xkcoding.cache.redis.configuration;
 
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
@@ -19,16 +19,16 @@ import java.io.Serializable;
 
 /**
  * <p>
- * redis配置
+ * redis 缓存自动装配，同时设置 redis 序列化
  * </p>
  *
  * @author yangkai.shen
- * @date Created in 2018-11-15 16:41
+ * @date Created in 2022-09-07 14:03
  */
+@EnableCaching
 @Configuration
 @AutoConfigureAfter(RedisAutoConfiguration.class)
-@EnableCaching
-public class RedisConfig {
+public class RedisCacheAutoConfiguration {
 
     /**
      * 默认情况下的模板只能支持RedisTemplate<String, String>，也就是只能存入字符串，因此支持序列化
@@ -49,7 +49,9 @@ public class RedisConfig {
     public CacheManager cacheManager(RedisConnectionFactory factory) {
         // 配置序列化
         RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig();
-        RedisCacheConfiguration redisCacheConfiguration = config.serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(new StringRedisSerializer())).serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer()));
+        RedisCacheConfiguration redisCacheConfiguration =
+            config.serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(new StringRedisSerializer()))
+                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer()));
 
         return RedisCacheManager.builder(factory).cacheDefaults(redisCacheConfiguration).build();
     }

@@ -1,94 +1,56 @@
-# spring-boot-demo-cache-redis
+## spring-boot-demo-cache-redis
 
 > 此 demo 主要演示了 Spring Boot 如何整合 redis，操作redis中的数据，并使用redis缓存数据。连接池使用  Lettuce。
 
-## pom.xml
+### 1.开发步骤
+
+#### 1.1.添加依赖
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<dependencies>
+  <dependency>
+    <groupId>com.xkcoding</groupId>
+    <artifactId>common-tools</artifactId>
+  </dependency>
 
-    <artifactId>spring-boot-demo-cache-redis</artifactId>
+  <dependency>
+    <groupId>com.xkcoding</groupId>
+    <artifactId>demo-cache-api</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+  </dependency>
 
-    <name>spring-boot-demo-cache-redis</name>
-    <description>Demo project for Spring Boot</description>
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+  </dependency>
 
-    <parent>
-        <groupId>com.xkcoding</groupId>
-        <artifactId>spring-boot-demo</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
-    </parent>
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-redis</artifactId>
+  </dependency>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-    </properties>
+  <!-- 对象池，如果存在该依赖会自动注入 -->
+  <!-- https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#data.nosql.redis.connecting -->
+  <dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-pool2</artifactId>
+  </dependency>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-test</artifactId>
+    <scope>test</scope>
+  </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-
-        <!-- 对象池，使用redis时必须引入 -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-pool2</artifactId>
-        </dependency>
-
-        <!-- 引入 jackson 对象json转换 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-json</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-    </dependencies>
-
-    <build>
-        <finalName>spring-boot-demo-cache-redis</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-
-</project>
+  <dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <optional>true</optional>
+  </dependency>
+</dependencies>
 ```
 
-## application.yml
+#### 1.2.配置文件
 
 ```yaml
 spring:
@@ -116,21 +78,13 @@ logging:
     com.xkcoding: debug
 ```
 
-## RedisConfig.java
+#### 1.3.自动装配Redis缓存管理
 
 ```java
-/**
- * <p>
- * redis配置
- * </p>
- *
- * @author yangkai.shen
- * @date Created in 2018-11-15 16:41
- */
+@EnableCaching
 @Configuration
 @AutoConfigureAfter(RedisAutoConfiguration.class)
-@EnableCaching
-public class RedisConfig {
+public class RedisCacheAutoConfiguration {
 
     /**
      * 默认情况下的模板只能支持RedisTemplate<String, String>，也就是只能存入字符串，因此支持序列化
@@ -151,40 +105,31 @@ public class RedisConfig {
     public CacheManager cacheManager(RedisConnectionFactory factory) {
         // 配置序列化
         RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig();
-        RedisCacheConfiguration redisCacheConfiguration = config.serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(new StringRedisSerializer())).serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer()));
+        RedisCacheConfiguration redisCacheConfiguration =
+            config.serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(new StringRedisSerializer()))
+                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer()));
 
         return RedisCacheManager.builder(factory).cacheDefaults(redisCacheConfiguration).build();
     }
 }
 ```
 
-## UserServiceImpl.java
+#### 1.4.缓存通过注解实现
+
+> 为了减少重复代码，该部分我将其抽取实现在 demo-cache-api 模块中
 
 ```java
-/**
- * <p>
- * UserService
- * </p>
- *
- * @author yangkai.shen
- * @date Created in 2018-11-15 16:45
- */
-@Service
 @Slf4j
-public class UserServiceImpl implements UserService {
+@Service
+public class UserService {
     /**
      * 模拟数据库
      */
-    private static final Map<Long, User> DATABASES = Maps.newConcurrentMap();
-
-    /**
-     * 初始化数据
-     */
-    static {
-        DATABASES.put(1L, new User(1L, "user1"));
-        DATABASES.put(2L, new User(2L, "user2"));
-        DATABASES.put(3L, new User(3L, "user3"));
-    }
+    private static final Map<Long, User> DATABASES = new HashMap<>() {{
+        put(1L, new User(1L, "user1"));
+        put(2L, new User(2L, "user2"));
+        put(3L, new User(3L, "user3"));
+    }};
 
     /**
      * 保存或修改用户
@@ -193,7 +138,6 @@ public class UserServiceImpl implements UserService {
      * @return 操作结果
      */
     @CachePut(value = "user", key = "#user.id")
-    @Override
     public User saveOrUpdate(User user) {
         DATABASES.put(user.getId(), user);
         log.info("保存用户【user】= {}", user);
@@ -207,7 +151,6 @@ public class UserServiceImpl implements UserService {
      * @return 返回结果
      */
     @Cacheable(value = "user", key = "#id")
-    @Override
     public User get(Long id) {
         // 我们假设从数据库读取
         log.info("查询用户【id】= {}", id);
@@ -220,7 +163,6 @@ public class UserServiceImpl implements UserService {
      * @param id key值
      */
     @CacheEvict(value = "user", key = "#id")
-    @Override
     public void delete(Long id) {
         DATABASES.remove(id);
         log.info("删除用户【id】= {}", id);
@@ -228,9 +170,20 @@ public class UserServiceImpl implements UserService {
 }
 ```
 
-## RedisTest.java
+### 2.测试
 
-> 主要测试使用 `RedisTemplate` 操作 `Redis` 中的数据：
+#### 2.1.环境搭建
+
+主要是 redis 环境的搭建，这里我提供了 docker-compose 文件，方便同学们一键启动测试环境
+
+```bash
+$ cd demo-cache/demo-cache-redis
+$ docker compose -f docker-compose.env.yml up
+```
+
+#### 2.2.测试 Redis 基础功能
+
+> 主要测试使用 `RedisTemplate` 操作 `Redis` 中的数据，查看是否正常序列化：
 >
 > - opsForValue：对应 String（字符串）
 > - opsForZSet：对应 ZSet（有序集合）
@@ -240,16 +193,9 @@ public class UserServiceImpl implements UserService {
 > - opsForGeo：** 对应 GEO（地理位置）
 
 ```java
-/**
- * <p>
- * Redis测试
- * </p>
- *
- * @author yangkai.shen
- * @date Created in 2018-11-15 17:17
- */
 @Slf4j
-public class RedisTest extends SpringBootDemoCacheRedisApplicationTests {
+@SpringBootTest
+public class RedisTest {
 
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
@@ -261,13 +207,19 @@ public class RedisTest extends SpringBootDemoCacheRedisApplicationTests {
      * 测试 Redis 操作
      */
     @Test
-    public void get() {
+    public void get() throws InterruptedException {
         // 测试线程安全，程序结束查看redis中count的值是否为1000
         ExecutorService executorService = Executors.newFixedThreadPool(1000);
-        IntStream.range(0, 1000).forEach(i -> executorService.execute(() -> stringRedisTemplate.opsForValue().increment("count", 1)));
+        CountDownLatch wait = new CountDownLatch(1000);
+        IntStream.range(0, 1000).forEach(i -> executorService.execute(() -> {
+            stringRedisTemplate.opsForValue().increment("count", 1);
+            wait.countDown();
+        }));
+        wait.await();
+        log.debug("【count】= {}", stringRedisTemplate.opsForValue().getAndExpire("count", Duration.ofSeconds(10)));
 
         stringRedisTemplate.opsForValue().set("k1", "v1");
-        String k1 = stringRedisTemplate.opsForValue().get("k1");
+        String k1 = stringRedisTemplate.opsForValue().getAndExpire("k1", Duration.ofSeconds(10));
         log.debug("【k1】= {}", k1);
 
         // 以下演示整合，具体Redis命令可以参考官方文档
@@ -275,27 +227,19 @@ public class RedisTest extends SpringBootDemoCacheRedisApplicationTests {
         redisCacheTemplate.opsForValue().set(key, new User(1L, "user1"));
         // 对应 String（字符串）
         User user = (User) redisCacheTemplate.opsForValue().get(key);
+        String userSerialized = stringRedisTemplate.opsForValue().getAndExpire(key, Duration.ofSeconds(10));
         log.debug("【user】= {}", user);
+        log.debug("【userSerialized】= {}", userSerialized);
     }
 }
-
 ```
 
-## UserServiceTest.java
-
-> 主要测试使用Redis缓存是否起效
+#### 2.3.测试Redis缓存是否生效
 
 ```java
-/**
- * <p>
- * Redis - 缓存测试
- * </p>
- *
- * @author yangkai.shen
- * @date Created in 2018-11-15 16:53
- */
 @Slf4j
-public class UserServiceTest extends SpringBootDemoCacheRedisApplicationTests {
+@SpringBootTest
+public class UserServiceTest {
     @Autowired
     private UserService userService;
 
@@ -340,8 +284,9 @@ public class UserServiceTest extends SpringBootDemoCacheRedisApplicationTests {
 }
 ```
 
-## 参考
+### 3.参考
 
-- spring-data-redis 官方文档：https://docs.spring.io/spring-data/redis/docs/2.0.1.RELEASE/reference/html/
-- redis 文档：https://redis.io/documentation
-- redis 中文文档：http://www.redis.cn/commands.html
+- [Spring Boot 官方文档之连接 Redis](https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#data.nosql.redis)
+- [Spring Boot 官方文档之 Redis 缓存](https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#io.caching.provider.redis)
+- [spring-data-redis 官方文档](https://docs.spring.io/spring-data/redis/docs/3.0.0-M5/reference/html/)
+- [Redis 官方文档](https://redis.io/docs/)

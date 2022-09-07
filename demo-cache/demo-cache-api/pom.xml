@@ -4,23 +4,33 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
     <groupId>com.xkcoding</groupId>
-    <artifactId>spring-boot-demo</artifactId>
+    <artifactId>demo-cache</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>demo-cache</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
+  <artifactId>demo-cache-api</artifactId>
 
   <properties>
     <java.version>17</java.version>
   </properties>
 
-  <modules>
-    <module>demo-cache-api</module>
-    <module>demo-cache-redis</module>
-  </modules>
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <optional>true</optional>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>demo-cache-api</finalName>
+  </build>
 
 </project>
