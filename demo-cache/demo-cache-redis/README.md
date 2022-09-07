@@ -2,9 +2,9 @@
 
 > 此 demo 主要演示了 Spring Boot 如何整合 redis，操作redis中的数据，并使用redis缓存数据。连接池使用  Lettuce。
 
-### 1.开发步骤
+## 1.开发步骤
 
-#### 1.1.添加依赖
+### 1.1.添加依赖
 
 ```xml
 <dependencies>
@@ -50,7 +50,7 @@
 </dependencies>
 ```
 
-#### 1.2.配置文件
+### 1.2.配置文件
 
 ```yaml
 spring:
@@ -78,7 +78,7 @@ logging:
     com.xkcoding: debug
 ```
 
-#### 1.3.自动装配Redis缓存管理
+### 1.3.自动装配Redis缓存管理
 
 ```java
 @EnableCaching
@@ -114,7 +114,7 @@ public class RedisCacheAutoConfiguration {
 }
 ```
 
-#### 1.4.缓存通过注解实现
+### 1.4.缓存通过注解实现
 
 > 为了减少重复代码，该部分我将其抽取实现在 demo-cache-api 模块中
 
@@ -170,9 +170,9 @@ public class UserService {
 }
 ```
 
-### 2.测试
+## 2.测试
 
-#### 2.1.环境搭建
+### 2.1.环境搭建
 
 主要是 redis 环境的搭建，这里我提供了 docker-compose 文件，方便同学们一键启动测试环境
 
@@ -181,7 +181,7 @@ $ cd demo-cache/demo-cache-redis
 $ docker compose -f docker-compose.env.yml up
 ```
 
-#### 2.2.测试 Redis 基础功能
+### 2.2.测试 Redis 基础功能
 
 > 主要测试使用 `RedisTemplate` 操作 `Redis` 中的数据，查看是否正常序列化：
 >
@@ -234,7 +234,7 @@ public class RedisTest {
 }
 ```
 
-#### 2.3.测试Redis缓存是否生效
+### 2.3.测试Redis缓存是否生效
 
 ```java
 @Slf4j
@@ -284,7 +284,7 @@ public class UserServiceTest {
 }
 ```
 
-### 3.参考
+## 3.参考
 
 - [Spring Boot 官方文档之连接 Redis](https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#data.nosql.redis)
 - [Spring Boot 官方文档之 Redis 缓存](https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#io.caching.provider.redis)
