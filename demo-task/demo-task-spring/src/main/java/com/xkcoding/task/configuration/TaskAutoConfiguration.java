@@ -1,8 +1,7 @@
-package com.xkcoding.task.config;
+package com.xkcoding.task.configuration;
 
-import org.apache.commons.lang3.concurrent.BasicThreadFactory;
+import cn.hutool.core.thread.NamedThreadFactory;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.SchedulingConfigurer;
@@ -19,10 +18,9 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
  * @author yangkai.shen
  * @date Created in 2018-11-22 19:02
  */
-@Configuration
 @EnableScheduling
-@ComponentScan(basePackages = {"com.xkcoding.task.job"})
-public class TaskConfig implements SchedulingConfigurer {
+@Configuration
+public class TaskAutoConfiguration implements SchedulingConfigurer {
     @Override
     public void configureTasks(ScheduledTaskRegistrar taskRegistrar) {
         taskRegistrar.setScheduler(taskExecutor());
@@ -36,6 +34,6 @@ public class TaskConfig implements SchedulingConfigurer {
      */
     @Bean
     public Executor taskExecutor() {
-        return new ScheduledThreadPoolExecutor(20, new BasicThreadFactory.Builder().namingPattern("Job-Thread-%d").build());
+        return new ScheduledThreadPoolExecutor(20, new NamedThreadFactory("Job-Thread-", false));
     }
 }

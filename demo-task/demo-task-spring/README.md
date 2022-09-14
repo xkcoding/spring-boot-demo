@@ -1,77 +1,38 @@
 # spring-boot-demo-task
 
-> 此 demo 主要演示了 Spring Boot 如何快速实现定时任务。
+> 此 demo 主要演示了 Spring Boot 如何通过 Spring Task 快速实现定时任务。
 
-## pom.xml
+## 1.开发步骤
+
+### 1.1.添加依赖
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<dependencies>
+  <dependency>
+    <groupId>com.xkcoding</groupId>
+    <artifactId>common-tools</artifactId>
+  </dependency>
 
-    <artifactId>spring-boot-demo-task</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+  </dependency>
 
-    <name>spring-boot-demo-task</name>
-    <description>Demo project for Spring Boot</description>
+  <dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <optional>true</optional>
+  </dependency>
 
-    <parent>
-        <groupId>com.xkcoding</groupId>
-        <artifactId>spring-boot-demo</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
-    </parent>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-    </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-
-        <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
-    <build>
-        <finalName>spring-boot-demo-task</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-
-</project>
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-test</artifactId>
+    <scope>test</scope>
+  </dependency>
+</dependencies>
 ```
 
-## TaskConfig.java
+### 1.2.SpringTask的自动装配
 
 > 此处等同于在配置文件配置
 >
@@ -81,18 +42,9 @@
 > ```
 
 ```java
-/**
- * <p>
- * 定时任务配置，配置线程池，使用不同线程执行任务，提升效率
- * </p>
- *
- * @author yangkai.shen
- * @date Created in 2018-11-22 19:02
- */
-@Configuration
 @EnableScheduling
-@ComponentScan(basePackages = {"com.xkcoding.task.job"})
-public class TaskConfig implements SchedulingConfigurer {
+@Configuration
+public class TaskAutoConfiguration implements SchedulingConfigurer {
     @Override
     public void configureTasks(ScheduledTaskRegistrar taskRegistrar) {
         taskRegistrar.setScheduler(taskExecutor());
@@ -106,25 +58,33 @@ public class TaskConfig implements SchedulingConfigurer {
      */
     @Bean
     public Executor taskExecutor() {
-        return new ScheduledThreadPoolExecutor(20, new BasicThreadFactory.Builder().namingPattern("Job-Thread-%d").build());
+        return new ScheduledThreadPoolExecutor(20, new NamedThreadFactory("Job-Thread-", false));
     }
 }
 ```
 
-## TaskJob.java
+### 1.3.配置文件
+
+```yaml
+server:
+  port: 8080
+  servlet:
+    context-path: /demo
+# 下面的配置等同于 TaskConfig
+#spring:
+#  task:
+#    scheduling:
+#      pool:
+#        size: 20
+#      thread-name-prefix: Job-Thread-
+```
+
+### 1.4.创建定时任务
 
 ```java
-/**
- * <p>
- * 定时任务
- * </p>
- *
- * @author yangkai.shen
- * @date Created in 2018-11-22 19:09
- */
-@Component
 @Slf4j
-public class TaskJob {
+@Component
+public class MockSpringTask {
 
     /**
      * 按照标准时间来算，每隔 10s 执行一次
@@ -154,22 +114,11 @@ public class TaskJob {
 }
 ```
 
-## application.yml
+## 2.测试
 
-```yaml
-server:
-  port: 8080
-  servlet:
-    context-path: /demo
-# 下面的配置等同于 TaskConfig
-#spring:
-#  task:
-#    scheduling:
-#      pool:
-#        size: 20
-#      thread-name-prefix: Job-Thread-
-```
+启动 `SpringTaskApplication` 观察控制台日志
 
-## 参考
+## 3.参考
 
-- Spring Boot官方文档：https://docs.spring.io/spring-boot/docs/2.1.0.RELEASE/reference/htmlsingle/#boot-features-task-execution-scheduling
+- [Spring Boot 官方文档之定时任务](https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#features.task-execution-and-scheduling)
+

@@ -15,9 +15,9 @@ import java.util.Date;
  * @author yangkai.shen
  * @date Created in 2018-11-22 19:09
  */
-@Component
 @Slf4j
-public class TaskJob {
+@Component
+public class MockSpringTask {
 
     /**
      * 按照标准时间来算，每隔 10s 执行一次

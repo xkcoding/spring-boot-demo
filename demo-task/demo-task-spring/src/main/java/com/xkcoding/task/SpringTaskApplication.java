@@ -12,9 +12,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date Created in 2018-11-22 19:00
  */
 @SpringBootApplication
-public class SpringBootDemoTaskApplication {
+public class SpringTaskApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootDemoTaskApplication.class, args);
+        SpringApplication.run(SpringTaskApplication.class, args);
     }
 }
