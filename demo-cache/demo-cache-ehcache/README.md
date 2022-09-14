@@ -1,240 +1,119 @@
 # spring-boot-demo-cache-ehcache
 
-> 此 demo 主要演示了 Spring Boot 如何集成 ehcache 使用缓存。
+> 此 demo 主要演示了 Spring Boot 如何集成 ehcache3 使用缓存。
 
-## pom.xml
+## 1.开发步骤
+
+### 1.1.添加依赖
+
+> 注意：Spring Boot 3 依赖 jakarta 的包，但是默认的 ehcache 依赖的是 javax 的，所以需要再引入依赖的时候设置 `<classifier>jakarta</classifier>`
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>spring-boot-demo-cache-ehcache</artifactId>
+<dependencies>
+  <dependency>
+    <groupId>com.xkcoding</groupId>
+    <artifactId>demo-cache-api</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+  </dependency>
 
-    <name>spring-boot-demo-cache-ehcache</name>
-    <description>Demo project for Spring Boot</description>
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+  </dependency>
 
-    <parent>
-        <groupId>com.xkcoding</groupId>
-        <artifactId>spring-boot-demo</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
-    </parent>
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-cache</artifactId>
+  </dependency>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-    </properties>
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-test</artifactId>
+    <scope>test</scope>
+  </dependency>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
+  <dependency>
+    <groupId>javax.cache</groupId>
+    <artifactId>cache-api</artifactId>
+  </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-cache</artifactId>
-        </dependency>
+  <dependency>
+    <groupId>org.ehcache</groupId>
+    <artifactId>ehcache</artifactId>
+    <version>${ehcache.version}</version>
+    <classifier>jakarta</classifier>
+  </dependency>
 
-        <dependency>
-            <groupId>net.sf.ehcache</groupId>
-            <artifactId>ehcache</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
-    <build>
-        <finalName>spring-boot-demo-cache-ehcache</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-
-</project>
+  <dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <optional>true</optional>
+  </dependency>
+</dependencies>
 ```
 
-## SpringBootDemoCacheEhcacheApplication.java
-
-```java
-/**
- * <p>
- * 启动类
- * </p>
- *
- * @author yangkai.shen
- * @date Created in 2018-11-16 17:02
- */
-@SpringBootApplication
-@EnableCaching
-public class SpringBootDemoCacheEhcacheApplication {
-
-    public static void main(String[] args) {
-        SpringApplication.run(SpringBootDemoCacheEhcacheApplication.class, args);
-    }
-}
-```
-
-## application.yml
+### 1.2.修改配置文件
 
 ```yaml
 spring:
   cache:
-    type: ehcache
-    ehcache:
-      config: classpath:ehcache.xml
+    type: jcache
+    jcache:
+      config: classpath:ehcache3.xml
 logging:
   level:
     com.xkcoding: debug
 ```
 
-## ehcache.xml
+### 1.3.配置 ehcache
 
 ```xml
-<!-- ehcache配置 -->
-<ehcache
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
-        updateCheck="false">
-    <!--缓存路径，用户目录下的base_ehcache目录-->
-    <diskStore path="user.home/base_ehcache"/>
+<?xml version="1.0" encoding="UTF-8" ?>
+<eh:config
+  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+  xmlns:eh='http://www.ehcache.org/v3'
+  xsi:schemaLocation="http://www.ehcache.org/v3 https://www.ehcache.org/schema/ehcache-core-3.3.xsd">
+  <!--指定缓存目录-->
+  <eh:persistence directory="${java.io.tmpdir}/cache-data"/>
 
-    <defaultCache
-            maxElementsInMemory="20000"
-            eternal="false"
-            timeToIdleSeconds="120"
-            timeToLiveSeconds="120"
-            overflowToDisk="true"
-            maxElementsOnDisk="10000000"
-            diskPersistent="false"
-            diskExpiryThreadIntervalSeconds="120"
-            memoryStoreEvictionPolicy="LRU"/>
+  <!--缓存模板-->
+  <eh:cache-template name="default">
+    <eh:expiry>
+      <eh:ttl unit="seconds">600</eh:ttl>
+    </eh:expiry>
+    <eh:resources>
+      <!--堆内内存可以放2000个条目，超出部分堆外100MB-->
+      <eh:heap unit="entries">2000</eh:heap>
+      <eh:offheap unit="MB">100</eh:offheap>
+    </eh:resources>
+  </eh:cache-template>
 
-    <!--
-    缓存文件名：user，同样的可以配置多个缓存
-    maxElementsInMemory：内存中最多存储
-    eternal：外部存储
-    overflowToDisk：超出缓存到磁盘
-    diskPersistent：磁盘持久化
-    timeToLiveSeconds：缓存时间
-    diskExpiryThreadIntervalSeconds：磁盘过期时间
-    -->
-    <cache name="user"
-           maxElementsInMemory="20000"
-           eternal="true"
-           overflowToDisk="true"
-           diskPersistent="false"
-           timeToLiveSeconds="0"
-           diskExpiryThreadIntervalSeconds="120"/>
+  <!--实际的缓存区间，继承了default缓存模板,user完全使用模板默认-->
+  <eh:cache alias="user" uses-template="default"/>
 
-</ehcache>
+</eh:config>
 ```
 
-## UserServiceImpl.java
+### 1.4.开启缓存自动装配
 
 ```java
-/**
- * <p>
- * UserService
- * </p>
- *
- * @author yangkai.shen
- * @date Created in 2018-11-16 16:54
- */
-@Service
-@Slf4j
-public class UserServiceImpl implements UserService {
-    /**
-     * 模拟数据库
-     */
-    private static final Map<Long, User> DATABASES = Maps.newConcurrentMap();
+@EnableCaching
+@Configuration(proxyBeanMethods = false)
+public class EhcacheCacheAutoConfiguration {
 
-    /**
-     * 初始化数据
-     */
-    static {
-        DATABASES.put(1L, new User(1L, "user1"));
-        DATABASES.put(2L, new User(2L, "user2"));
-        DATABASES.put(3L, new User(3L, "user3"));
-    }
-
-    /**
-     * 保存或修改用户
-     *
-     * @param user 用户对象
-     * @return 操作结果
-     */
-    @CachePut(value = "user", key = "#user.id")
-    @Override
-    public User saveOrUpdate(User user) {
-        DATABASES.put(user.getId(), user);
-        log.info("保存用户【user】= {}", user);
-        return user;
-    }
-
-    /**
-     * 获取用户
-     *
-     * @param id key值
-     * @return 返回结果
-     */
-    @Cacheable(value = "user", key = "#id")
-    @Override
-    public User get(Long id) {
-        // 我们假设从数据库读取
-        log.info("查询用户【id】= {}", id);
-        return DATABASES.get(id);
-    }
-
-    /**
-     * 删除
-     *
-     * @param id key值
-     */
-    @CacheEvict(value = "user", key = "#id")
-    @Override
-    public void delete(Long id) {
-        DATABASES.remove(id);
-        log.info("删除用户【id】= {}", id);
-    }
 }
 ```
 
-## UserServiceTest.java
+### 1.5.模拟数据服务
+
+> 为了减少重复代码，该部分我将其抽取实现在 demo-cache-api 模块中
+
+## 2.测试
 
 ```java
-/**
- * <p>
- * ehcache缓存测试
- * </p>
- *
- * @author yangkai.shen
- * @date Created in 2018-11-16 16:58
- */
 @Slf4j
-public class UserServiceTest extends SpringBootDemoCacheEhcacheApplicationTests {
+@SpringBootTest
+public class UserServiceTest {
 
     @Autowired
     private UserService userService;
@@ -279,8 +158,8 @@ public class UserServiceTest extends SpringBootDemoCacheEhcacheApplicationTests 
 }
 ```
 
-## 参考
+## 3.参考
 
-- Ehcache 官网：http://www.ehcache.org/documentation/
-- Spring Boot 官方文档：https://docs.spring.io/spring-boot/docs/2.1.0.RELEASE/reference/htmlsingle/#boot-features-caching-provider-ehcache2
-- 博客：https://juejin.im/post/5b308de9518825748b56ae1d
+- [Ehcache 官网](http://www.ehcache.org/documentation/)
+- [Spring Boot 官方文档之 JCache 集成](https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#io.caching.provider.jcache)
+

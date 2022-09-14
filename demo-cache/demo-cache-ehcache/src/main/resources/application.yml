@@ -1,8 +1,8 @@
 spring:
   cache:
-    type: ehcache
-    ehcache:
-      config: classpath:ehcache.xml
+    type: jcache
+    jcache:
+      config: classpath:ehcache3.xml
 logging:
   level:
     com.xkcoding: debug
