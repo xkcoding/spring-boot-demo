@@ -1,0 +1,10 @@
+spring:
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=500,expireAfterAccess=600s
+    cache-names:
+      - user
+logging:
+  level:
+    com.xkcoding: debug

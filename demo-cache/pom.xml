@@ -20,6 +20,7 @@
 
   <modules>
     <module>demo-cache-api</module>
+    <module>demo-cache-caffeine</module>
     <module>demo-cache-ehcache</module>
     <module>demo-cache-redis</module>
   </modules>

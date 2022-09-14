@@ -1,4 +1,4 @@
-package com.xkcoding.cache.ehcache.service;
+package com.xkcoding.cache.caffeine.service;
 
 import com.xkcoding.cache.api.UserService;
 import com.xkcoding.cache.entity.User;
@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 /**
  * <p>
- * ehcache缓存测试
+ * caffeine缓存测试
  * </p>
  *
  * @author yangkai.shen
@@ -50,13 +50,13 @@ public class UserServiceTest {
     }
 
     /**
-     * 测试删除，查看ehcache是否存在缓存数据
+     * 测试删除，查看caffeine是否存在缓存数据
      */
     @Test
     public void deleteUser() {
-        // 查询一次，使ehcache中存在缓存数据
+        // 查询一次，使caffeine中存在缓存数据
         userService.get(1L);
-        // 删除，查看ehcache是否存在缓存数据
+        // 删除，查看caffeine是否存在缓存数据
         userService.delete(1L);
     }
 }

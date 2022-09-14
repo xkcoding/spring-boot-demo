@@ -146,7 +146,7 @@ public class UserServiceTest {
     }
 
     /**
-     * 测试删除，查看redis是否存在缓存数据
+     * 测试删除，查看ehcache是否存在缓存数据
      */
     @Test
     public void deleteUser() {
