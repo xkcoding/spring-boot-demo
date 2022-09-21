@@ -1,11 +1,13 @@
-package com.xkcoding.upload.config;
+package com.xkcoding.upload.autoconfigure;
 
-import com.qiniu.common.Zone;
 import com.qiniu.storage.BucketManager;
+import com.qiniu.storage.Region;
 import com.qiniu.storage.UploadManager;
 import com.qiniu.util.Auth;
+import jakarta.servlet.MultipartConfigElement;
+import jakarta.servlet.Servlet;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -16,9 +18,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.DispatcherServlet;
-
-import javax.servlet.MultipartConfigElement;
-import javax.servlet.Servlet;
 
 /**
  * <p>
@@ -31,20 +30,11 @@ import javax.servlet.Servlet;
 @Configuration
 @ConditionalOnClass({Servlet.class, StandardServletMultipartResolver.class, MultipartConfigElement.class})
 @ConditionalOnProperty(prefix = "spring.http.multipart", name = "enabled", matchIfMissing = true)
-@EnableConfigurationProperties(MultipartProperties.class)
-public class UploadConfig {
-    @Value("${qiniu.accessKey}")
-    private String accessKey;
-
-    @Value("${qiniu.secretKey}")
-    private String secretKey;
-
+@EnableConfigurationProperties({MultipartProperties.class, QiniuProperties.class})
+@RequiredArgsConstructor(onConstructor_ = @Autowired)
+public class UploadAutoConfiguration {
     private final MultipartProperties multipartProperties;
-
-    @Autowired
-    public UploadConfig(MultipartProperties multipartProperties) {
-        this.multipartProperties = multipartProperties;
-    }
+    private final QiniuProperties qiniuProperties;
 
     /**
      * 上传配置
@@ -71,7 +61,7 @@ public class UploadConfig {
      */
     @Bean
     public com.qiniu.storage.Configuration qiniuConfig() {
-        return new com.qiniu.storage.Configuration(Zone.zone0());
+        return new com.qiniu.storage.Configuration(Region.region0());
     }
 
     /**
@@ -87,7 +77,7 @@ public class UploadConfig {
      */
     @Bean
     public Auth auth() {
-        return Auth.create(accessKey, secretKey);
+        return Auth.create(qiniuProperties.getAccessKey(), qiniuProperties.getSecretKey());
     }
 
     /**

@@ -38,3 +38,5 @@ logs/
 
 ### VS CODE ###
 .vscode/
+
+tmp/

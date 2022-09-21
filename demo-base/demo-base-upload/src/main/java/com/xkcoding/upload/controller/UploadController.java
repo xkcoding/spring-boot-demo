@@ -7,10 +7,12 @@ import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.qiniu.http.Response;
-import com.xkcoding.upload.service.IQiNiuService;
+import com.xkcoding.upload.autoconfigure.QiniuProperties;
+import com.xkcoding.upload.service.QiNiuService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.web.servlet.MultipartProperties;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,21 +31,22 @@ import java.io.IOException;
  * @author yangkai.shen
  * @date Created in 2018-11-06 16:33
  */
-@RestController
 @Slf4j
+@RestController
 @RequestMapping("/upload")
+@RequiredArgsConstructor(onConstructor_ = @Autowired)
 public class UploadController {
-    @Value("${spring.servlet.multipart.location}")
-    private String fileTempPath;
+    private final MultipartProperties multipartProperties;
 
-    @Value("${qiniu.prefix}")
-    private String prefix;
+    private final QiniuProperties qiniuProperties;
 
-    private final IQiNiuService qiNiuService;
+    private final QiNiuService qiNiuService;
 
-    @Autowired
-    public UploadController(IQiNiuService qiNiuService) {
-        this.qiNiuService = qiNiuService;
+    private String processLocalTmpFilePath(MultipartFile file) {
+        String fileName = file.getOriginalFilename();
+        String rawFileName = StrUtil.subBefore(fileName, ".", true);
+        String fileType = StrUtil.subAfter(fileName, ".", true);
+        return StrUtil.appendIfMissing(multipartProperties.getLocation(), "/") + rawFileName + "-" + DateUtil.current() + "." + fileType;
     }
 
     @PostMapping(value = "/local", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
@@ -51,10 +54,7 @@ public class UploadController {
         if (file.isEmpty()) {
             return Dict.create().set("code", 400).set("message", "文件内容为空");
         }
-        String fileName = file.getOriginalFilename();
-        String rawFileName = StrUtil.subBefore(fileName, ".", true);
-        String fileType = StrUtil.subAfter(fileName, ".", true);
-        String localFilePath = StrUtil.appendIfMissing(fileTempPath, "/") + rawFileName + "-" + DateUtil.current(false) + "." + fileType;
+        String localFilePath = processLocalTmpFilePath(file);
         try {
             file.transferTo(new File(localFilePath));
         } catch (IOException e) {
@@ -63,18 +63,16 @@ public class UploadController {
         }
 
         log.info("【文件上传至本地】绝对路径：{}", localFilePath);
-        return Dict.create().set("code", 200).set("message", "上传成功").set("data", Dict.create().set("fileName", fileName).set("filePath", localFilePath));
+        return Dict.create().set("code", 200).set("message", "上传成功")
+            .set("data", Dict.create().set("fileName", file.getOriginalFilename()).set("filePath", localFilePath));
     }
 
     @PostMapping(value = "/yun", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public Dict yun(@RequestParam("file") MultipartFile file) {
+    public Dict qiniu(@RequestParam("file") MultipartFile file) {
         if (file.isEmpty()) {
             return Dict.create().set("code", 400).set("message", "文件内容为空");
         }
-        String fileName = file.getOriginalFilename();
-        String rawFileName = StrUtil.subBefore(fileName, ".", true);
-        String fileType = StrUtil.subAfter(fileName, ".", true);
-        String localFilePath = StrUtil.appendIfMissing(fileTempPath, "/") + rawFileName + "-" + DateUtil.current(false) + "." + fileType;
+        String localFilePath = processLocalTmpFilePath(file);
         try {
             file.transferTo(new File(localFilePath));
             Response response = qiNiuService.uploadFile(new File(localFilePath));
@@ -82,19 +80,21 @@ public class UploadController {
                 JSONObject jsonObject = JSONUtil.parseObj(response.bodyString());
 
                 String yunFileName = jsonObject.getStr("key");
-                String yunFilePath = StrUtil.appendIfMissing(prefix, "/") + yunFileName;
+                String yunFilePath = StrUtil.appendIfMissing(qiniuProperties.getPrefix(), "/") + yunFileName;
 
+                // 删除本地临时文件
                 FileUtil.del(new File(localFilePath));
 
                 log.info("【文件上传至七牛云】绝对路径：{}", yunFilePath);
-                return Dict.create().set("code", 200).set("message", "上传成功").set("data", Dict.create().set("fileName", yunFileName).set("filePath", yunFilePath));
+                return Dict.create().set("code", 200).set("message", "上传成功")
+                    .set("data", Dict.create().set("fileName", yunFileName).set("filePath", yunFilePath));
             } else {
                 log.error("【文件上传至七牛云】失败，{}", JSONUtil.toJsonStr(response));
                 FileUtil.del(new File(localFilePath));
                 return Dict.create().set("code", 500).set("message", "文件上传失败");
             }
         } catch (IOException e) {
-            log.error("【文件上传至七牛云】失败，绝对路径：{}", localFilePath);
+            log.error("【文件上传至七牛云】失败，绝对路径：{}", localFilePath, e);
             return Dict.create().set("code", 500).set("message", "文件上传失败");
         }
     }

@@ -12,9 +12,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date Created in 2018-10-20 21:23
  */
 @SpringBootApplication
-public class SpringBootDemoUploadApplication {
+public class UploadApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootDemoUploadApplication.class, args);
+        SpringApplication.run(UploadApplication.class, args);
     }
 }

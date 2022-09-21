@@ -1,15 +1,15 @@
-package com.xkcoding.upload.service.impl;
+package com.xkcoding.upload.service;
 
 import com.qiniu.common.QiniuException;
 import com.qiniu.http.Response;
 import com.qiniu.storage.UploadManager;
 import com.qiniu.util.Auth;
 import com.qiniu.util.StringMap;
-import com.xkcoding.upload.service.IQiNiuService;
+import com.xkcoding.upload.autoconfigure.QiniuProperties;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -22,23 +22,16 @@ import java.io.File;
  * @author yangkai.shen
  * @date Created in 2018-11-06 17:22
  */
-@Service
 @Slf4j
-public class QiNiuServiceImpl implements IQiNiuService, InitializingBean {
-    private final UploadManager uploadManager;
-
+@Service
+@RequiredArgsConstructor(onConstructor_ = @Autowired)
+public class QiNiuService implements InitializingBean {
     private final Auth auth;
-
-    @Value("${qiniu.bucket}")
-    private String bucket;
+    private final UploadManager uploadManager;
+    private final QiniuProperties qiniuProperties;
 
     private StringMap putPolicy;
 
-    @Autowired
-    public QiNiuServiceImpl(UploadManager uploadManager, Auth auth) {
-        this.uploadManager = uploadManager;
-        this.auth = auth;
-    }
 
     /**
      * 七牛云上传文件
@@ -47,7 +40,6 @@ public class QiNiuServiceImpl implements IQiNiuService, InitializingBean {
      * @return 七牛上传Response
      * @throws QiniuException 七牛异常
      */
-    @Override
     public Response uploadFile(File file) throws QiniuException {
         Response response = this.uploadManager.put(file, file.getName(), getUploadToken());
         int retry = 0;
@@ -61,7 +53,8 @@ public class QiNiuServiceImpl implements IQiNiuService, InitializingBean {
     @Override
     public void afterPropertiesSet() {
         this.putPolicy = new StringMap();
-        putPolicy.put("returnBody", "{\"key\":\"$(key)\",\"hash\":\"$(etag)\",\"bucket\":\"$(bucket)\",\"width\":$(imageInfo.width), \"height\":${imageInfo.height}}");
+        putPolicy.put("returnBody",
+            "{\"key\":\"$(key)\",\"hash\":\"$(etag)\",\"bucket\":\"$(bucket)\",\"width\":$(imageInfo.width), \"height\":${imageInfo.height}}");
     }
 
     /**
@@ -70,6 +63,6 @@ public class QiNiuServiceImpl implements IQiNiuService, InitializingBean {
      * @return 上传凭证
      */
     private String getUploadToken() {
-        return this.auth.uploadToken(bucket, null, 3600, putPolicy);
+        return this.auth.uploadToken(qiniuProperties.getBucket(), null, 3600, putPolicy);
     }
 }
