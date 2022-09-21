@@ -186,7 +186,7 @@ public class QiNiuService implements InitializingBean {
 
 > 注意：测试七牛云时，需要先在 `application.yml` 中配置 `qiniu.xxx` 相关参数
 
-启动 `UploadApplication` ，打开浏览器，输入 http://localhost:8080/demo
+启动 `UploadApplication` ，打开浏览器，输入 `http://localhost:8080/demo`
 
 上传几张图片试试~
 
