@@ -194,7 +194,7 @@ public class QiNiuService implements InitializingBean {
 
 ## 3.参考
 
-- [Spring Boot 官方文档之文件上传](https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#howto.spring-mvc.multipart-file-uploads)
+- [Spring Boot 官方文档之文件上传](https://docs.spring.io/spring-boot/docs/3.0.0-M5/reference/htmlsingle/#howto.spring-mvc.multipart-file-uploads)
 
 - [七牛云官方文档之 Java SDK](https://developer.qiniu.com/kodo/1239/java)
 

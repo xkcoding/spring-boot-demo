@@ -6,7 +6,7 @@
 
 ### 1.1.添加依赖
 
-> 3.0.0-M4 依赖的 servlet 为 jakarta，目前 release 的 Springdoc 依赖的是 javax.servlet-api，需要同时使用最新的 2.0.0-M5
+> 3.0.0-M5 依赖的 servlet 为 jakarta，目前 release 的 Springdoc 依赖的是 javax.servlet-api，需要同时使用最新的 2.0.0-M5
 
 ```xml
 <dependencies>

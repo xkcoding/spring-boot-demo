@@ -126,5 +126,5 @@ public class UserServiceTest {
 ## 3.参考
 
 - [Caffeine 官网](https://github.com/ben-manes/caffeine)
-- [Spring Boot 官方文档之 Caffeine 集成](https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#io.caching.provider.caffeine)
+- [Spring Boot 官方文档之 Caffeine 集成](https://docs.spring.io/spring-boot/docs/3.0.0-M5/reference/htmlsingle/#io.caching.provider.caffeine)
 

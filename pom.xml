@@ -39,7 +39,7 @@
     <maven.compiler.target>17</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <spring.boot.version>3.0.0-M4</spring.boot.version>
+    <spring.boot.version>3.0.0-M5</spring.boot.version>
 
     <mysql.version>8.0.30</mysql.version>
     <hutool.version>5.8.5</hutool.version>

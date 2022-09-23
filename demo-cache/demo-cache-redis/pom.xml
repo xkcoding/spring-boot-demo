@@ -43,7 +43,7 @@
     </dependency>
 
     <!-- 对象池，如果存在该依赖会自动注入 -->
-    <!-- https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#data.nosql.redis.connecting -->
+    <!-- https://docs.spring.io/spring-boot/docs/3.0.0-M5/reference/htmlsingle/#data.nosql.redis.connecting -->
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-pool2</artifactId>

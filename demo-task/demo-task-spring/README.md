@@ -120,5 +120,5 @@ public class MockSpringTask {
 
 ## 3.参考
 
-- [Spring Boot 官方文档之定时任务](https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#features.task-execution-and-scheduling)
+- [Spring Boot 官方文档之定时任务](https://docs.spring.io/spring-boot/docs/3.0.0-M5/reference/htmlsingle/#features.task-execution-and-scheduling)
 

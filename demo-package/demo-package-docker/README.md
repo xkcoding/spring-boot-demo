@@ -75,6 +75,6 @@ $ docker run -p 8080:8080 demo-package-docker:v1
 
 ## 2.参考
 
-- [Spring Boot 官方文档之镜像构建](https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#container-images.dockerfiles)
+- [Spring Boot 官方文档之镜像构建](https://docs.spring.io/spring-boot/docs/3.0.0-M5/reference/htmlsingle/#container-images.dockerfiles)
 - [Docker 官方文档](https://docs.docker.com/)
 - [Dockerfile 命令参考文档](https://docs.docker.com/engine/reference/builder/)

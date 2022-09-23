@@ -30,7 +30,7 @@
   </dependency>
 
   <!-- 对象池，如果存在该依赖会自动注入 -->
-  <!-- https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#data.nosql.redis.connecting -->
+  <!-- https://docs.spring.io/spring-boot/docs/3.0.0-M5/reference/htmlsingle/#data.nosql.redis.connecting -->
   <dependency>
     <groupId>org.apache.commons</groupId>
     <artifactId>commons-pool2</artifactId>
@@ -286,7 +286,7 @@ public class UserServiceTest {
 
 ## 3.参考
 
-- [Spring Boot 官方文档之连接 Redis](https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#data.nosql.redis)
-- [Spring Boot 官方文档之 Redis 缓存](https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#io.caching.provider.redis)
+- [Spring Boot 官方文档之连接 Redis](https://docs.spring.io/spring-boot/docs/3.0.0-M5/reference/htmlsingle/#data.nosql.redis)
+- [Spring Boot 官方文档之 Redis 缓存](https://docs.spring.io/spring-boot/docs/3.0.0-M5/reference/htmlsingle/#io.caching.provider.redis)
 - [spring-data-redis 官方文档](https://docs.spring.io/spring-data/redis/docs/3.0.0-M5/reference/html/)
 - [Redis 官方文档](https://redis.io/docs/)

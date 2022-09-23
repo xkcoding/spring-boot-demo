@@ -161,5 +161,5 @@ public class UserServiceTest {
 ## 3.参考
 
 - [Ehcache 官网](http://www.ehcache.org/documentation/)
-- [Spring Boot 官方文档之 JCache 集成](https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#io.caching.provider.jcache)
+- [Spring Boot 官方文档之 JCache 集成](https://docs.spring.io/spring-boot/docs/3.0.0-M5/reference/htmlsingle/#io.caching.provider.jcache)
 

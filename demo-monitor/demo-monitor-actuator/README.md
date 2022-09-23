@@ -74,5 +74,5 @@ management:
 
 ## 3.参考
 
-- [Spring Boot 官方文档之actuator文档](https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#actuator)
-- [Acutator 暴露端点列表](https://docs.spring.io/spring-boot/docs/3.0.0-M4/reference/htmlsingle/#actuator.endpoints)
+- [Spring Boot 官方文档之actuator文档](https://docs.spring.io/spring-boot/docs/3.0.0-M5/reference/htmlsingle/#actuator)
+- [Acutator 暴露端点列表](https://docs.spring.io/spring-boot/docs/3.0.0-M5/reference/htmlsingle/#actuator.endpoints)
