@@ -1,0 +1,6 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: wxv3
