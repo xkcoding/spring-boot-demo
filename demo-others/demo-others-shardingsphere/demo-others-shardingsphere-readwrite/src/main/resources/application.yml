@@ -1,0 +1,44 @@
+spring:
+  shardingsphere:
+    mode:
+      type: Memory
+    # 数据源配置
+    datasource:
+      names: master,slave1,slave2
+      master:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/spring-boot-demo
+        username: root
+        password: root
+      slave1:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3307/spring-boot-demo
+        username: root
+        password: root
+      slave2:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3308/spring-boot-demo
+        username: root
+        password: root
+
+    rules:
+      # 读写分离规则配置
+      readwrite-splitting:
+        data-sources:
+          demo-datasource:
+            type: Static
+            props:
+              write-data-source-name: master
+              read-data-source-names: slave1,slave2
+              load-balancer-name: test_round_robin
+        # 负载均衡算法配置
+        load-balancers:
+          test_round_robin:
+            type: ROUND_ROBIN
+
+    # 打印 SQL
+    props:
+      sql-show: true
