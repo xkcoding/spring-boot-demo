@@ -16,7 +16,6 @@
     <groupId>com.xkcoding</groupId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
-
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>demo-admin</artifactId>

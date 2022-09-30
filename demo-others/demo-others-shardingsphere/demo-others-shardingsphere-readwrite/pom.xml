@@ -11,7 +11,7 @@
 
   <artifactId>demo-others-shardingsphere-readwrite</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>demo-others-shardingsphere-readwrite</name>
+  <name>${project.artifactId}</name>
   <description>Demo project for Spring Boot</description>
 
   <properties>
@@ -61,7 +61,7 @@
   </dependencies>
 
   <build>
-    <finalName>demo-others-shardingsphere-readwrite</finalName>
+    <finalName>${project.artifactId}</finalName>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>

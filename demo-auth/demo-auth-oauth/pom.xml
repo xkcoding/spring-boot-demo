@@ -11,7 +11,7 @@
   </modules>
   <packaging>pom</packaging>
 
-  <name>demo-oauth</name>
+  <name>${project.artifactId}</name>
   <description>Demo project for Spring Boot</description>
 
   <parent>
@@ -72,7 +72,7 @@
   </dependencies>
 
   <build>
-    <finalName>demo-oauth</finalName>
+    <finalName>${project.artifactId}</finalName>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>

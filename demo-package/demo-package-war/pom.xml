@@ -6,7 +6,6 @@
     <artifactId>demo-package</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
-
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>demo-package-war</artifactId>
@@ -14,7 +13,7 @@
   <!-- 若需要打成 war 包，则需要将打包方式改成 war -->
   <packaging>war</packaging>
 
-  <name>demo-package-war</name>
+  <name>${project.artifactId}</name>
   <description>Demo project for Spring Boot</description>
 
   <properties>
@@ -42,7 +41,7 @@
   </dependencies>
 
   <build>
-    <finalName>demo-package-war</finalName>
+    <finalName>${project.artifactId}</finalName>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>

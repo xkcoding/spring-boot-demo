@@ -40,7 +40,7 @@ public class WarApplication extends SpringBootServletInitializer {
 </dependencies>
 
 <build>
-  <finalName>demo-package-war</finalName>
+  <finalName>${project.artifactId}</finalName>
   <plugins>
     <plugin>
       <groupId>org.springframework.boot</groupId>

@@ -6,14 +6,13 @@
     <artifactId>demo-monitor</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
-
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>demo-monitor-actuator</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>demo-monitor-actuator</name>
+  <name>${project.artifactId}</name>
   <description>Demo project for Spring Boot</description>
 
   <properties>
@@ -50,7 +49,7 @@
   </dependencies>
 
   <build>
-    <finalName>demo-monitor-actuator</finalName>
+    <finalName>${project.artifactId}</finalName>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>

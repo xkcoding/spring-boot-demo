@@ -7,7 +7,7 @@
   <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-    <name>demo-dynamic-datasource</name>
+  <name>${project.artifactId}</name>
   <description>Demo project for Spring Boot</description>
 
   <parent>
@@ -59,7 +59,7 @@
   </dependencies>
 
   <build>
-      <finalName>demo-dynamic-datasource</finalName>
+    <finalName>${project.artifactId}</finalName>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
