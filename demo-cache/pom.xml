@@ -22,6 +22,7 @@
     <module>demo-cache-caffeine</module>
     <module>demo-cache-ehcache</module>
     <module>demo-cache-redis</module>
+    <module>demo-cache-multilevel</module>
   </modules>
 
 </project>
