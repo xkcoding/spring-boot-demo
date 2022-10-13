@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class BeansTest {
-    public static void fly(){
+    public static void flys(){
         System.out.println("FEI");
     }
 }
