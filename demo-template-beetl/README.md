@@ -138,7 +138,7 @@ public class UserController {
 }
 ```
 
-## index.html
+## index.btl
 
 ```jsp
 <!doctype html>
@@ -152,7 +152,7 @@ public class UserController {
 </html>
 ```
 
-## login.html
+## login.btl
 
 ```jsp
 <!doctype html>
