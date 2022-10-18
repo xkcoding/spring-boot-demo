@@ -221,7 +221,7 @@ public class BaseDao<T, P> {
 
         // 过滤数据库中不存在的字段，以及自增列
         List<Field> filterField;
-        Stream<Field> fieldStream = CollUtil.toList(fields).stream().filter(field -> ObjectUtil.isNull(field.getAnnotation(Ignore.class)) || ObjectUtil.isNull(field.getAnnotation(Pk.class)));
+        Stream<Field> fieldStream = CollUtil.toList(fields).stream().filter(field -> ObjectUtil.isNull(field.getAnnotation(Ignore.class)) && ObjectUtil.isNull(field.getAnnotation(Pk.class)));
 
         // 是否过滤字段值为null的字段
         if (ignoreNull) {
