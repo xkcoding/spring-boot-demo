@@ -18,6 +18,7 @@
   </properties>
 
   <modules>
+    <module>demo-orm-jpa</module>
     <module>demo-orm-multidatasource</module>
   </modules>
 

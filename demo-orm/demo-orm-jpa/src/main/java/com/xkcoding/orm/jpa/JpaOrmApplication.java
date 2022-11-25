@@ -12,9 +12,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date Created in 2018-10-28 22:58
  */
 @SpringBootApplication
-public class SpringBootDemoOrmJpaApplication {
+public class JpaOrmApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootDemoOrmJpaApplication.class, args);
+        SpringApplication.run(JpaOrmApplication.class, args);
     }
 }

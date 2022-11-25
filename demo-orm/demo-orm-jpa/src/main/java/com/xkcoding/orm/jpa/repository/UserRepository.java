@@ -6,13 +6,13 @@ import org.springframework.stereotype.Repository;
 
 /**
  * <p>
- * User Dao
+ * User Repository
  * </p>
  *
  * @author yangkai.shen
  * @date Created in 2018-11-07 14:07
  */
 @Repository
-public interface UserDao extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
 
 }

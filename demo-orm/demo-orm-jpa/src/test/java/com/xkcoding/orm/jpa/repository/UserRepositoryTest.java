@@ -3,13 +3,13 @@ package com.xkcoding.orm.jpa.repository;
 import cn.hutool.core.date.DateTime;
 import cn.hutool.core.util.IdUtil;
 import cn.hutool.crypto.SecureUtil;
-import com.xkcoding.orm.jpa.SpringBootDemoOrmJpaApplicationTests;
 import com.xkcoding.orm.jpa.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.util.Lists;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -27,9 +27,10 @@ import java.util.stream.Collectors;
  * @date Created in 2018-11-07 14:09
  */
 @Slf4j
-public class UserDaoTest extends SpringBootDemoOrmJpaApplicationTests {
+@SpringBootTest
+public class UserRepositoryTest {
     @Autowired
-    private UserDao userDao;
+    private UserRepository userRepository;
 
     /**
      * 测试保存
@@ -37,12 +38,14 @@ public class UserDaoTest extends SpringBootDemoOrmJpaApplicationTests {
     @Test
     public void testSave() {
         String salt = IdUtil.fastSimpleUUID();
-        User testSave3 = User.builder().name("testSave3").password(SecureUtil.md5("123456" + salt)).salt(salt).email("testSave3@xkcoding.com").phoneNumber("17300000003").status(1).lastLoginTime(new DateTime()).build();
-        userDao.save(testSave3);
+        User testSave3 =
+                User.builder().name("testSave3").password(SecureUtil.md5("123456" + salt)).salt(salt).email("testSave3@xkcoding.com")
+                        .phoneNumber("17300000003").status(1).lastLoginTime(new DateTime()).build();
+        userRepository.save(testSave3);
 
-        Assert.assertNotNull(testSave3.getId());
-        Optional<User> byId = userDao.findById(testSave3.getId());
-        Assert.assertTrue(byId.isPresent());
+        Assertions.assertNotNull(testSave3.getId());
+        Optional<User> byId = userRepository.findById(testSave3.getId());
+        Assertions.assertTrue(byId.isPresent());
         log.debug("【byId】= {}", byId.get());
     }
 
@@ -51,10 +54,10 @@ public class UserDaoTest extends SpringBootDemoOrmJpaApplicationTests {
      */
     @Test
     public void testDelete() {
-        long count = userDao.count();
-        userDao.deleteById(1L);
-        long left = userDao.count();
-        Assert.assertEquals(count - 1, left);
+        long count = userRepository.count();
+        userRepository.deleteById(2L);
+        long left = userRepository.count();
+        Assertions.assertEquals(count - 1, left);
     }
 
     /**
@@ -62,11 +65,11 @@ public class UserDaoTest extends SpringBootDemoOrmJpaApplicationTests {
      */
     @Test
     public void testUpdate() {
-        userDao.findById(1L).ifPresent(user -> {
+        userRepository.findById(1L).ifPresent(user -> {
             user.setName("JPA修改名字");
-            userDao.save(user);
+            userRepository.save(user);
         });
-        Assert.assertEquals("JPA修改名字", userDao.findById(1L).get().getName());
+        Assertions.assertEquals("JPA修改名字", userRepository.findById(1L).get().getName());
     }
 
     /**
@@ -74,8 +77,8 @@ public class UserDaoTest extends SpringBootDemoOrmJpaApplicationTests {
      */
     @Test
     public void testQueryOne() {
-        Optional<User> byId = userDao.findById(1L);
-        Assert.assertTrue(byId.isPresent());
+        Optional<User> byId = userRepository.findById(1L);
+        Assertions.assertTrue(byId.isPresent());
         log.debug("【byId】= {}", byId.get());
     }
 
@@ -84,8 +87,8 @@ public class UserDaoTest extends SpringBootDemoOrmJpaApplicationTests {
      */
     @Test
     public void testQueryAll() {
-        List<User> users = userDao.findAll();
-        Assert.assertNotEquals(0, users.size());
+        List<User> users = userRepository.findAll();
+        Assertions.assertNotEquals(0, users.size());
         log.debug("【users】= {}", users);
     }
 
@@ -101,10 +104,10 @@ public class UserDaoTest extends SpringBootDemoOrmJpaApplicationTests {
         Integer pageSize = 5;
         Sort sort = Sort.by(Sort.Direction.DESC, "id");
         PageRequest pageRequest = PageRequest.of(currentPage, pageSize, sort);
-        Page<User> userPage = userDao.findAll(pageRequest);
+        Page<User> userPage = userRepository.findAll(pageRequest);
 
-        Assert.assertEquals(5, userPage.getSize());
-        Assert.assertEquals(userDao.count(), userPage.getTotalElements());
+        Assertions.assertEquals(5, userPage.getSize());
+        Assertions.assertEquals(userRepository.count(), userPage.getTotalElements());
         log.debug("【id】= {}", userPage.getContent().stream().map(User::getId).collect(Collectors.toList()));
     }
 
@@ -113,13 +116,15 @@ public class UserDaoTest extends SpringBootDemoOrmJpaApplicationTests {
      */
     private void initData() {
         List<User> userList = Lists.newArrayList();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 10; i < 10; i++) {
             String salt = IdUtil.fastSimpleUUID();
             int index = 3 + i;
-            User user = User.builder().name("testSave" + index).password(SecureUtil.md5("123456" + salt)).salt(salt).email("testSave" + index + "@xkcoding.com").phoneNumber("1730000000" + index).status(1).lastLoginTime(new DateTime()).build();
+            User user = User.builder().name("testSave" + index).password(SecureUtil.md5("123456" + salt)).salt(salt)
+                    .email("testSave" + index + "@xkcoding.com").phoneNumber("1730000000" + index).status(1).lastLoginTime(new DateTime())
+                    .build();
             userList.add(user);
         }
-        userDao.saveAll(userList);
+        userRepository.saveAll(userList);
     }
 
 }
