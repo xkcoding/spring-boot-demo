@@ -82,7 +82,7 @@ public class BaseDao<T, P> {
         String tableName = getTableName();
         String sql = StrUtil.format("DELETE FROM {table} where id = ?", Dict.create().set("table", tableName));
         log.debug("【执行SQL】SQL：{}", sql);
-        log.debug("【执行SQL】参数：{}", JSONUtil.toJsonStr(pk));
+        log.debug("【执行SQL】参数：{}", pk);
         return jdbcTemplate.update(sql, pk);
     }
 
@@ -127,7 +127,7 @@ public class BaseDao<T, P> {
         String sql = StrUtil.format("SELECT * FROM {table} where id = ?", Dict.create().set("table", tableName));
         RowMapper<T> rowMapper = new BeanPropertyRowMapper<>(clazz);
         log.debug("【执行SQL】SQL：{}", sql);
-        log.debug("【执行SQL】参数：{}", JSONUtil.toJsonStr(pk));
+        log.debug("【执行SQL】参数：{}", pk);
         return jdbcTemplate.queryForObject(sql, new Object[]{pk}, rowMapper);
     }
 
