@@ -20,7 +20,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
-    <xxl-job.version>2.1.0</xxl-job.version>
+    <xxl-job.version>2.3.1</xxl-job.version>
   </properties>
 
   <dependencies>
