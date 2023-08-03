@@ -19,7 +19,7 @@
 
   <parent>
     <groupId>com.xkcoding</groupId>
-    <artifactId>spring-boot-demo-admin</artifactId>
+    <artifactId>demo-admin</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
