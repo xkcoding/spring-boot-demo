@@ -1,0 +1,8 @@
+rocketmq:
+  name-server:
+    127.0.0.1:9876
+  producer:
+    group: my-producer-group
+    retry-times-when-send-failed: 3
+  consumer:
+    consume-thread-max: 10
