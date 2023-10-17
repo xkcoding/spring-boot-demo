@@ -62,7 +62,11 @@
 
 ### 开源推荐
 
+
+![11628591293_.pic_hd](https://static.aliyun.xkcoding.com/2021/08/14/11628591293pichd.jpg?x-oss-process=style/tag_compress)
+
 - `JustAuth`：开箱即用的整合第三方登录的开源组件，已集成国内外数十家平台，是实现第三方 OAuth 登录的不二之选。https://github.com/justauth/JustAuth
+
 - `Mica`：SpringBoot 微服务高效开发工具集，https://github.com/lets-mica/mica
 - `awesome-collector`：https://github.com/P-P-X/awesome-collector
 - `SpringBlade`：完整的线上解决方案(企业开发必备)，https://github.com/chillzhuang/SpringBlade
@@ -142,11 +146,12 @@
 | [demo-flyway](./demo-flyway)                                 | spring boot 集成 Flyway，项目启动时初始化数据库表结构，同时支持数据库脚本版本控制 |
 
 
-### 感谢
 
+### 特别感谢
+
+- 感谢 [七牛云](https://portal.qiniu.com/signup?utm_source=kaiyuan&utm_media=xkcoding) 提供的免费云存储与 CDN 加速支持
+- 感谢史上最牛的代码生成插件 [MyBatisCodeHelper-Pro](https://gejun123456.github.io/MyBatisCodeHelper-Pro/#/?id=mybatiscodehelper-pro) 提供的永久激活码
 - <a href="https://www.jetbrains.com/?from=spring-boot-demo"><img src="http://static.xkcoding.com/spring-boot-demo/064312.jpg" width="100px" alt="jetbrains">**感谢 JetBrains 提供的免费开源 License**</a>
-
--  [感谢史上最牛的代码生成插件 MyBatisCodeHelper-Pro 提供的永久激活码](https://gejun123456.github.io/MyBatisCodeHelper-Pro/#/?id=mybatiscodehelper-pro)
 
 ### License
 
