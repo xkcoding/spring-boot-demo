@@ -34,7 +34,7 @@
       <version>4.9.1</version>
     </dependency>
 
-    <!-- Spring Boot Starter Security (如果需要) -->
+    <!-- Spring Boot Starter Security  -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-security</artifactId>
@@ -59,11 +59,20 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
+
+
+
     <dependency>
       <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>9.0.68</version>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.1</version> <!-- 使用适当的版本 -->
     </dependency>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-config</artifactId>
+      <version>6.1.4</version>
+    </dependency>
+
 
   </dependencies>
 
@@ -75,5 +84,4 @@
       </plugin>
     </plugins>
   </build>
-
 </project>
