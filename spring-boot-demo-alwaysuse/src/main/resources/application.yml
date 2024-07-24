@@ -1,0 +1,19 @@
+userinfo:
+  name: fengxb
+  qq: 12520623333
+  phoneNumber: 18501966666
+server:
+  port: 30001
+
+#es配置 rest-client
+elasticsearch:
+  hosts: 10.225.6.205:9200,10.225.6.206:9200,10.225.6.207:9200,10.225.6.208:9200
+  username: admin
+  passowrd: Admin@123
+  schema: http
+  connectTimeOut: 1000
+  socketTimeOut: 30000
+  connectionRequestTimeOut: 500
+  maxConnectNum: 100
+  maxConnectPerRoute: 100
+

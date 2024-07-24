@@ -1,0 +1,3 @@
+logging:
+  file:
+    path: /logDemo/a.log

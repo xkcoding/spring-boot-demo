@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="debug">
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout patter="%d [%t] %-5p [%c] - %m%n  "/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <logger name="com.shiny.disconf" level="debug">
+            <AppenderRef ref="console" />
+        </logger>
+        <Root level="debug">
+            <AppenderRef ref="console"/>
+        </Root>
+    </Loggers>
+</Configuration>
