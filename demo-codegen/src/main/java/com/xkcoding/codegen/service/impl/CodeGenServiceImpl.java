@@ -1,6 +1,7 @@
 package com.xkcoding.codegen.service.impl;
 
 import cn.hutool.core.io.IoUtil;
+import cn.hutool.core.util.PageUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.db.Db;
 import cn.hutool.db.Entity;
@@ -51,8 +52,9 @@ public class CodeGenServiceImpl implements CodeGenService {
     public PageResult<Entity> listTables(TableRequest request) {
         HikariDataSource dataSource = DbUtil.buildFromTableRequest(request);
         Db db = new Db(dataSource);
-
+        db.setCaseInsensitive(false);
         Page page = new Page(request.getCurrentPage(), request.getPageSize());
+        PageUtil.setFirstPageNo(1);
         int start = page.getStartPosition();
         int pageSize = page.getPageSize();
 
