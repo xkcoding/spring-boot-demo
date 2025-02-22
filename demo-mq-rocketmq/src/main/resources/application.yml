@@ -1,0 +1,28 @@
+
+server:
+  port: 8081
+  servlet:
+    context-path: /demo
+
+spring:
+  application:
+    name: spring-boot-demo-mq-rocketmq
+
+logging:
+  level:
+    root: info
+    com.xkcoding.mq.rocketmq: debug
+    org.apache.rocketmq: debug
+    RocketmqClient: debug
+
+rocketmq:
+  name-server: 127.0.0.1:9876
+  producer:
+    group: demo-producer-group
+    send-message-timeout: 3000
+    retry-times-when-send-failed: 3
+    retry-times-when-send-async-failed: 3
+    retry-next-server: true
+  consumer:
+    access-key: # 访问密钥，可选
+    secret-key: # 密钥，可选
