@@ -1,4 +1,4 @@
-package com.xkcoding.cache.ehcache;
+package com.xkcoding.cache.caffeine;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

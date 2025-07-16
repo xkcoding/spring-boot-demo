@@ -1,8 +1,8 @@
-package com.xkcoding.cache.ehcache.service.impl;
+package com.xkcoding.cache.caffeine.service.impl;
 
 import com.google.common.collect.Maps;
-import com.xkcoding.cache.ehcache.entity.User;
-import com.xkcoding.cache.ehcache.service.UserService;
+import com.xkcoding.cache.caffeine.entity.User;
+import com.xkcoding.cache.caffeine.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;

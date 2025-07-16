@@ -1,6 +1,6 @@
 # spring-boot-demo 项目待办列表
 
-## 模块计划(已完成：55 / 66)
+## 模块计划(已完成：56 / 67)
 
 - [x] ~~demo-helloworld（Helloworld 示例）~~
 - [x] ~~demo-properties（读取配置文件信息）~~
@@ -23,6 +23,7 @@
 - [x] ~~demo-orm-beetlsql（操作 SQL 关系型数据库 - beetlSQL）~~
 - [x] ~~demo-cache-redis（使用 redis 进行缓存）~~
 - [x] ~~demo-cache-ehcache（使用 Ehcache 进行缓存）~~
+- [x] ~~[demo-cache-caffeine](demo-cache-caffeine)（使用 Caffeine 进行缓存）~~
 - [x] ~~demo-email（集成邮件服务）~~
 - [x] ~~demo-task（定时任务 - Task 实现）~~
 - [x] ~~demo-task-quartz（定时任务 - Quartz 实现）~~
