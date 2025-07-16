@@ -1,0 +1,16 @@
+spring:
+  cache:
+    type: caffeine
+    #在配置中自定义 1-N项缓存空间
+    cache-names: user-caffeine-cache1, user-caffeine-cache2
+    caffeine:
+      # 这表示 user-caffeine-cache1 和 user-caffeine-cache2 都会使用相同的 Caffeine 配置：
+      # 最大缓存条目数为 3, 缓存条目在 5s 无访问后过期
+      spec: maximumSize=3,expireAfterAccess=5s
+
+
+logging:
+  level:
+    com.xkcoding: DEBUG
+    #启用 Spring 缓存抽象的日志输出，包括缓存的命中、失效、存储等操作。
+    org.springframework.cache: TRACE

@@ -1,4 +1,4 @@
-package com.xkcoding.cache.ehcache.entity;
+package com.xkcoding.cache.caffeine.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,6 +1,6 @@
-package com.xkcoding.cache.ehcache.service;
+package com.xkcoding.cache.caffeine.service;
 
-import com.xkcoding.cache.ehcache.entity.User;
+import com.xkcoding.cache.caffeine.entity.User;
 
 /**
  * <p>
