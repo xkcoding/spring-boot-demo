@@ -42,13 +42,13 @@ public class UserServiceImpl implements UserService {
      * @param user 用户对象
      * @return 操作结果
      */
-    @CachePut(value = "user", key = "#user.id")
-    @Override
-    public User saveOrUpdate(User user) {
-        DATABASES.put(user.getId(), user);
-        log.info("保存用户【user】= {}", user);
-        return user;
-    }
+//    @CachePut(value = "user", key = "#user.id")
+//    @Override
+//    public User saveOrUpdate(User user) {
+//        DATABASES.put(user.getId(), user);
+//        log.info("保存用户【user】= {}", user);
+//        return user;
+//    }
 
     /**
      * 获取用户
